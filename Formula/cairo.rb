@@ -4,7 +4,7 @@ class Cairo < Formula
   url "https://cairographics.org/releases/cairo-1.16.0.tar.xz"
   sha256 "5e7b29b3f113ef870d1e3ecf8adf21f923396401604bda16d44be45e66052331"
   license any_of: ["LGPL-2.1-only", "MPL-1.1"]
-  revision OS.mac? ? 4 : 5
+  revision OS.mac? ? 4 : 6
 
   livecheck do
     url "https://cairographics.org/releases/?C=M&O=D"
@@ -12,12 +12,10 @@ class Cairo < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 "35dff910ea99f2190e3ddbeeb12ec53c5076db04c29f3c34b7da77f4d34533fb" => :big_sur
-    sha256 "16848c3cd0434010d03c3210fd1cb67ba01d799a3e6417dbeec1ba3d8363593f" => :arm64_big_sur
-    sha256 "909d9d93758a1924ed2aa868d8efcbdf298806412d6ec3607dedac4ccf1b9a91" => :catalina
-    sha256 "68ab9e19b6ff25f94cb0296e9b54b9346b7c2d13c88e4ad89cadd998fd88b5d5" => :mojave
-    sha256 "130847f04a23699e4a544515eebb69f216ffd60cd4da6bf471b064c8173c2761" => :x86_64_linux
+    sha256 "45f0b6aa6d76fa7806e1eeb066d6737033da3de74ac247a27735ff3a29b1b62b" => :big_sur
+    sha256 "eb04d54ac340a4954a178e99d3ea064913d3fe89184b1edd479c2a96260bb989" => :arm64_big_sur
+    sha256 "3d772a45e12f548338893e11cff0cd5c6a0a929bc214de8aa8cb6995c359bae9" => :catalina
+    sha256 "9ab59fee2cf7e7c331b95a9d5f026dbfdc03b6fa761304f729cdf87921c786bf" => :mojave
   end
 
   head do
@@ -42,6 +40,13 @@ class Cairo < Formula
     depends_on "libxcb"
     depends_on "libxext"
     depends_on "libxrender"
+  end
+
+  # Avoid segfaults on Big Sur. Remove at version bump.
+  # https://gitlab.freedesktop.org/cairo/cairo/-/issues/420
+  patch do
+    url "https://gitlab.freedesktop.org/cairo/cairo/-/commit/e22d7212acb454daccc088619ee147af03883974.patch"
+    sha256 "363a6018efc52721e2eace8df3aa319c93f3ad765ef7e3ea04e2ddd4ee94d0e1"
   end
 
   def install
