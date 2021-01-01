@@ -3,10 +3,9 @@ class Pyinvoke < Formula
 
   desc "Pythonic task management & command execution"
   homepage "https://www.pyinvoke.org/"
-  url "https://files.pythonhosted.org/packages/b6/08/b345475cfaaa542ae78a172d5b23979ad0577f15a32b16e5e54b2a7e80c6/invoke-1.4.1.tar.gz"
-  sha256 "de3f23bfe669e3db1085789fd859eb8ca8e0c5d9c20811e2407fa042e8a5e15d"
+  url "https://files.pythonhosted.org/packages/f0/bf/12827f26d127549b0c17aeb075b8bec2b0a48873418c51fca4bfcd0bd985/invoke-1.5.0.tar.gz"
+  sha256 "f0c560075b5fb29ba14dad44a7185514e94970d1b9d57dcd3723bec5fed92650"
   license "BSD-2-Clause"
-  revision OS.mac? ? 2 : 3
   head "https://github.com/pyinvoke/invoke.git"
 
   livecheck do
@@ -15,12 +14,10 @@ class Pyinvoke < Formula
 
   bottle do
     cellar :any_skip_relocation
-    rebuild 2
-    sha256 "bc6c5c481dc4fd71c77f8897ee13531827166ddaaabfde81596433cc59c438bc" => :big_sur
-    sha256 "b43b7aa95b9028788979156f36665a609fa620d5905d75dd60c6a73efbb56994" => :arm64_big_sur
-    sha256 "7d269f6a0b6f652060e8da5f7b9e4470af36ccfb05735a2473e6351927b4deec" => :catalina
-    sha256 "9b33035828f3f74fa482e7f73a797a0ef0861d3b60eb52fc4d6466f188180077" => :mojave
-    sha256 "f57286ab6f927427b49e814bd20bf1eadad84f303788b1be9fd917c3261b70b6" => :x86_64_linux
+    sha256 "70f385b068f6f303a29679061c48b6e9adcf6db396bba3680f26d63d065d926c" => :big_sur
+    sha256 "c1f2ddf912dcc04d8c2d29eb7ec303fc377664c3a6fe3a67ac556e8da34f9535" => :arm64_big_sur
+    sha256 "b1b285e271f44c86c60c87a3891a3285f4c269ce4faba18b148bb28a7b7db5b8" => :catalina
+    sha256 "685969f8e173f38d99e309231dc44be88c2431b6d2eda004e7c05bbf210802cd" => :mojave
   end
 
   depends_on "python@3.9"

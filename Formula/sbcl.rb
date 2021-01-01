@@ -17,6 +17,8 @@ class Sbcl < Formula
     sha256 "4d405ac6f5f233bf2970ff440827258219cff57d49e49e09ff07a952c52ee3d3" => :x86_64_linux
   end
 
+  depends_on arch: :x86_64
+
   uses_from_macos "zlib"
 
   # Current binary versions are listed at https://sbcl.sourceforge.io/platform-table.html
