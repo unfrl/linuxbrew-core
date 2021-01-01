@@ -16,6 +16,7 @@ class Cairo < Formula
     sha256 "eb04d54ac340a4954a178e99d3ea064913d3fe89184b1edd479c2a96260bb989" => :arm64_big_sur
     sha256 "3d772a45e12f548338893e11cff0cd5c6a0a929bc214de8aa8cb6995c359bae9" => :catalina
     sha256 "9ab59fee2cf7e7c331b95a9d5f026dbfdc03b6fa761304f729cdf87921c786bf" => :mojave
+    sha256 "9febc219a1929e7306f63a938900b4516f813b8ea84a47f0f3ae201eab32fc25" => :x86_64_linux
   end
 
   head do
