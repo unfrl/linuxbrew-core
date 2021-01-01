@@ -17,6 +17,7 @@ class Librttopo < Formula
     sha256 "531ac2ca2e4247da1ebdacac77cbd68faaf5ea5935608de9ff842ae21aa18ce0" => :arm64_big_sur
     sha256 "9512f32068f310fc02c082828e4ebac85a698ef69f370243aa00a5b873569319" => :catalina
     sha256 "d6bc9674875a3eeb44cec544f6cc9ac9ce6435f7fd951f446801a8aadcb1a323" => :mojave
+    sha256 "f9c117dcc1dada2ebf17cc4e99f229f339fb8ea1e1a2f9a9bd0eadddb7dbe4c9" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
