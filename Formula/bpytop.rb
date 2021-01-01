@@ -3,16 +3,16 @@ class Bpytop < Formula
 
   desc "Linux/OSX/FreeBSD resource monitor"
   homepage "https://github.com/aristocratos/bpytop"
-  url "https://files.pythonhosted.org/packages/14/95/880671055bcd9d0fc1283b8937abab53e88e05d457b4822e29562e28d4ea/bpytop-1.0.53.tar.gz"
-  sha256 "d08b8120444e7f35fe032b33495ca551b5890702130c45ad8a56c1fa978fc358"
+  url "https://files.pythonhosted.org/packages/b0/f6/04590074b28cb8a1ffe6b85de17a21da5f7794a245ef1e0d471d003a22b0/bpytop-1.0.54.tar.gz"
+  sha256 "a25665e71627a5ec918e6ecf4422bea1ba449069958f64c3879029cfb58a0ac1"
   license "Apache-2.0"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "5f5fa3e246d5f0988ee1ec8fb875e01ed219217886dc0e04dfbfdd43ac4fcc6f" => :big_sur
-    sha256 "2e08dbf3aacdb20f7edcf230e52ce0f1ec49f83a6cb9d4f08db996a9963d3fa6" => :arm64_big_sur
-    sha256 "6a2e7f78fb787df2f0d42eae4fc409d8edee4754246ae18070060ce0ff9dd7cf" => :catalina
-    sha256 "f87d06001f4544107fcdc2942f129480f26ffebdc56a64464cec25b5a1572bf7" => :mojave
+    sha256 "783838028a580648e33483b04296340f0a4fe85f0d286e81fe076da9362ee627" => :big_sur
+    sha256 "45e6e01a34c709b1f03675afef5a41b5dc8ee91a29b104763d2c76b7f2dcafa6" => :arm64_big_sur
+    sha256 "9befa70b5bf6084f741666670f1abc4a148640d0a41c09fd2b3f45fa176cd409" => :catalina
+    sha256 "c0ab2a72db7e51121fbf6658c37443a54cdc42e93ddd1254b95a52207fdbc99c" => :mojave
   end
 
   depends_on "python@3.9"
