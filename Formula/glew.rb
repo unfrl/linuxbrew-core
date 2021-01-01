@@ -17,6 +17,7 @@ class Glew < Formula
     sha256 "4ec7d501b56e5e5682f752975340c57a9aca68431d0d2cc9f849e428860f09de" => :arm64_big_sur
     sha256 "d3113b746275f48d4f50316c9ddf0ce27e7a11e20ffaac33dd1a2aaf9e59d52a" => :catalina
     sha256 "728dbc75cee45763fcc89605d758de1ed950cf219012a1614808a6abd8883ae8" => :mojave
+    sha256 "0c7121cdf0692adceb4b3ec0cacefce1938e2ec54e91fab624b74245e0bc7e10" => :x86_64_linux
   end
 
   depends_on "cmake" => [:build, :test]
