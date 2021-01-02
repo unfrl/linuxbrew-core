@@ -1,17 +1,16 @@
 class Libilbc < Formula
   desc "Packaged version of iLBC codec from the WebRTC project"
   homepage "https://github.com/TimothyGu/libilbc"
-  url "https://github.com/TimothyGu/libilbc/releases/download/v3.0.3/libilbc-3.0.3.tar.gz"
-  sha256 "47c57deb26a36da11cbf7d51e76894c7b909ab007664f736319267bde57c73d0"
+  url "https://github.com/TimothyGu/libilbc/releases/download/v3.0.4/libilbc-3.0.4.tar.gz"
+  sha256 "6820081a5fc58f86c119890f62cac53f957adb40d580761947a0871cea5e728f"
   license "BSD-3-Clause"
 
   bottle do
     cellar :any
-    sha256 "7cf3a9708a5e405ae07b1e30862fe2636813e3d4675f5410907def2f5eeb5de1" => :big_sur
-    sha256 "1549132b9cb58c91b1f437ec1212b9ad59c7788f006b34e7ea29a030f25e3788" => :arm64_big_sur
-    sha256 "922b31da0782f99be36442b29a12b894f582153db289e19d33c39377d1a53a16" => :catalina
-    sha256 "709aca6a8540a022a9a8f52973f9796eee258c395321d3e311a38b67f960884c" => :mojave
-    sha256 "a455be2bbc2aea5890365f65920aad03dc47b01659e11ba5ce2ceb5d7580a996" => :x86_64_linux
+    sha256 "affe65f4320a2940b69ec54687be6c5387e51d79f3fd418a5dc42924c99eeee0" => :big_sur
+    sha256 "7b07dbf92042eb0f0692aec0381561eaa0a9c649347fd321ebf74cd22994813d" => :arm64_big_sur
+    sha256 "b75ace51e88894a45e406c7fbe4b4cafc06932b0e5ce90480fdee203aa9ede83" => :catalina
+    sha256 "496492e1aaecb1b41ba83eb033b75777ca08333edbb9e67bef23c933b5847cd5" => :mojave
   end
 
   depends_on "cmake" => :build

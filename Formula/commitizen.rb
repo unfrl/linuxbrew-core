@@ -3,8 +3,8 @@ class Commitizen < Formula
 
   desc "Defines a standard way of committing rules and communicating it"
   homepage "https://commitizen-tools.github.io/commitizen/"
-  url "https://files.pythonhosted.org/packages/3d/be/9b0f1773e3d1cbcbaf070e3f39938e9f5ffdc8be02bae39f3464ef95ffa5/commitizen-2.12.1.tar.gz"
-  sha256 "96d5ebf5a5ec4e2b7190611faaaff0b87246d753d933994b29a0125a939dd682"
+  url "https://files.pythonhosted.org/packages/6b/d1/9252cecb125c716f37dbbe67b7b8ded25ef9f13883554d56632c6bf85c69/commitizen-2.13.0.tar.gz"
+  sha256 "bef4c1dcb63eb8fc5cb6ca4bfa547c227caab8f69732c0fd72cb9f41a8de2e35"
   license "MIT"
   head "https://github.com/commitizen-tools/commitizen.git"
 
@@ -14,10 +14,10 @@ class Commitizen < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "ecb92a26bd8d09db21073e789c66e6f0108a7dc0330427f029423ec89e440c3b" => :big_sur
-    sha256 "529bb83ec047cf42eaa14fa8719f432eccf430f65bf485e654b0bec7b37c58ea" => :arm64_big_sur
-    sha256 "2a775f2bb2566b63f89b6cf661b8fecbacc3f88d45180283a4ac717b45010214" => :catalina
-    sha256 "8ac022d3cc82f33d75709097808a603fb5e6d330e551a67adbff79bfe9543b06" => :mojave
+    sha256 "a4de1478d503451335874f65d602fa36eb890a3c30267f02da17403fdc24a60a" => :big_sur
+    sha256 "847761e5112300c3fb1ae6f09ffe75522e0697dd42bc7e21a71da13af71a959a" => :arm64_big_sur
+    sha256 "4490305e830f2e4f21bbfc1eb34b77d70f174cac20d053a00bd19ae29a7a18e2" => :catalina
+    sha256 "e4f7de5a05b18e245f92cab6ecf0ca7abd1d0b62ae58f19b0e18b1e41e04b672" => :mojave
   end
 
   depends_on "python@3.9"
