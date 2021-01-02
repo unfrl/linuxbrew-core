@@ -11,6 +11,7 @@ class Libilbc < Formula
     sha256 "7b07dbf92042eb0f0692aec0381561eaa0a9c649347fd321ebf74cd22994813d" => :arm64_big_sur
     sha256 "b75ace51e88894a45e406c7fbe4b4cafc06932b0e5ce90480fdee203aa9ede83" => :catalina
     sha256 "496492e1aaecb1b41ba83eb033b75777ca08333edbb9e67bef23c933b5847cd5" => :mojave
+    sha256 "48e3ec1365e699143942456cfd5b93da9acb1f4a5dcbfa3d4cc0e8e18c7847b6" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
