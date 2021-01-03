@@ -1,8 +1,8 @@
 class HopenpgpTools < Formula
   desc "Command-line tools for OpenPGP-related operations"
   homepage "https://hackage.haskell.org/package/hopenpgp-tools"
-  url "https://hackage.haskell.org/package/hopenpgp-tools-0.23.5/hopenpgp-tools-0.23.5.tar.gz"
-  sha256 "0412e75caec74862bf8e3c80bd364c96c17b19eca1fa6afcca4dd7aeb56b898d"
+  url "https://hackage.haskell.org/package/hopenpgp-tools-0.23.6/hopenpgp-tools-0.23.6.tar.gz"
+  sha256 "3df2f26a8e1c2be92c54b1b347474464a23d213a7982dd4afb8c88c6b6325042"
   license "AGPL-3.0-or-later"
   head "https://salsa.debian.org/clint/hOpenPGP.git"
 
@@ -12,9 +12,9 @@ class HopenpgpTools < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "21561d7b5143e407d3d51f11588559a2faa51916176a75bb4763a81f4c5f8b6b" => :big_sur
-    sha256 "de41a843e1325e797106e247c07ca6feee07b94f23281fa9731e113c995a3703" => :catalina
-    sha256 "130c85ebf3ce03c6f3d74d3e4ae1e7d6053b77fd6462069d0603c9a503f85e7d" => :mojave
+    sha256 "2055a599363bac4729fdb4313373b505fc2172a38061c84b5088ba1ca2785a3b" => :big_sur
+    sha256 "dfe8f2f9e6aa6b58482f94a6735323aaf3d25815bec18efed443a93d57b02b4b" => :catalina
+    sha256 "6264bd67ac890655b532d0c9e65afcc830d3197cf8bd3669166561a1686e8837" => :mojave
   end
 
   depends_on "cabal-install" => :build
