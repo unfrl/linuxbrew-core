@@ -16,6 +16,9 @@ class Glide < Formula
     sha256 "ba268e6084c6309f1c9fd06d9e6cd9a144f22e2f00d4c54abdc4e950036f2d7a" => :x86_64_linux
   end
 
+  # See: https://github.com/Masterminds/glide/commit/c64b14592409a83052f7735a01d203ff1bab0983
+  deprecate! date: "2021-01-02", because: :deprecated_upstream
+
   depends_on "go"
 
   def install
