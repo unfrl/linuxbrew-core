@@ -16,6 +16,7 @@ class Ocrmypdf < Formula
     sha256 "6c83c9b8ec6f0589ede5be1934df80ebc3c070b728d24f57e48ea671ca7d2374" => :big_sur
     sha256 "93587a41a84d9ed9b86eb8dae6c703f99db108fe0e7927280a96b625bcd010f9" => :catalina
     sha256 "015fe8233ade3669443ff0f7a182775dfef64b2034150fd6fe4bae8070a18073" => :mojave
+    sha256 "3199971344f7a5081296195e44c5fa23372227d234ed2234649e9dd11113d564" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
