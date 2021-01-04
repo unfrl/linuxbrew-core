@@ -15,6 +15,7 @@ class Libofx < Formula
     sha256 "d6334a066f55eb6d54633ef7f297c91a23df73aaa804b3ecb66773e56741f60e" => :arm64_big_sur
     sha256 "7938515e518b14d4d6c177640ab7246018b92977013825f2107ef17532c90d34" => :catalina
     sha256 "d2e77015c1d6d7bc018a14cd0a7bb6ad54074619ffa41956d64aab03c713673c" => :mojave
+    sha256 "b660869c37ee0e88253bdbc9da501ba24d7b4281660424e2f314269eb8930012" => :x86_64_linux
   end
 
   depends_on "open-sp"
