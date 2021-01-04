@@ -11,6 +11,7 @@ class Uni < Formula
     sha256 "6edc8fe86733254e8ff4ee7176f2b97c47196206da7b714989f9c324d596ad08" => :arm64_big_sur
     sha256 "9a4a7180d2b989dcd2514e87b8a1153de5d8b284a07b191d6197fce9784b0ea3" => :catalina
     sha256 "b06d8669efefddbe70b7b07634f4db98a3283234284fbcc1e8326ec6c18ee9fe" => :mojave
+    sha256 "ccfe221a66d262c6a060e33370207847082c9c8443b39848ebd2fdbfb1545c72" => :x86_64_linux
   end
 
   depends_on "go" => :build
