@@ -12,6 +12,7 @@ class Flann < Formula
     sha256 "1d8425ca4d79dcf978e9bb43e7b1a52480febf9b9deadc8b966ffa2d004b2971" => :arm64_big_sur
     sha256 "101ec3e673a5b69c5f6cf6c79af0fbfca3a00ef90b7a4dde0a4bad638a187d1a" => :catalina
     sha256 "ab351183f61258ac6fefd9f64677c4b917929674fb36eff89aa9d85c825dfef8" => :mojave
+    sha256 "01879b304dc39a88b75c82c698527227a0f45ffc445723b06301b60832bcd9d9" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
