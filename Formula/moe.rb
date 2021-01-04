@@ -15,6 +15,7 @@ class Moe < Formula
     sha256 "ecf7d889fc677d4fbd201086dc195d5d072dfdbc78fc0c506104a8a1e5216365" => :arm64_big_sur
     sha256 "38b7920c9d82ba731f98bd1a56932b0d0ebe675d6d9006848a48e392013aad5a" => :catalina
     sha256 "688fc7c768e785581675079dd436c9cf3fef36094ea1aa078a8c3fc221d00fbc" => :mojave
+    sha256 "4ab7d521862b305f5efbb6f150ba7abd9c1a69825a5421b56ed209a953be4d49" => :x86_64_linux
   end
 
   uses_from_macos "ncurses"
