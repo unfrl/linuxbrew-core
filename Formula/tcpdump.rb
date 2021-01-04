@@ -17,6 +17,7 @@ class Tcpdump < Formula
     sha256 "603922412e7184c2f97aa7ab3757caad78105157ff486cd1fcd1fdc7b70c81ad" => :arm64_big_sur
     sha256 "f39b833288b92843f5e8aabb519a7bf4368476297abfbc718b7438d7cdb9f190" => :catalina
     sha256 "91d13cf3a6c5bf4eb37c04ab5efb30e006316c7e0a91e4d657ca9589d22a45e0" => :mojave
+    sha256 "6df21623300ddbf70c2ee30d81193b9b2b123662a76fec3954fbbd52a4e3f9ca" => :x86_64_linux
   end
 
   depends_on "libpcap"
