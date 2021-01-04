@@ -1,15 +1,16 @@
 class Distcc < Formula
   desc "Distributed compiler client and server"
   homepage "https://github.com/distcc/distcc/"
-  url "https://github.com/distcc/distcc/releases/download/3.3.4/distcc-3.3.4.tar.gz"
-  sha256 "9d4cddfa8cd510f157c6c082145bc0949e6851e96f5ee907b5948bb6896b7d7b"
+  url "https://github.com/distcc/distcc/releases/download/v3.3.5/distcc-3.3.5.tar.gz"
+  sha256 "6a20c0896d546c507dbf608660d22f5da606509f52d2e97f6c47ca9b8c1cc405"
   license "GPL-2.0-or-later"
   head "https://github.com/distcc/distcc.git"
 
   bottle do
-    sha256 "6ec64d10966ab54836c6d2888436548df956bb6e171341bf400b2f9298d2f584" => :big_sur
-    sha256 "b1889dcef582a41d013d687d376da26819e5206c4955f5aaeb19345afc9d4d18" => :catalina
-    sha256 "cc5c3141779bc778f42eadf71acfb4d4cd9a724bc745f763d67002ecf0c480b0" => :mojave
+    sha256 "b62f0b905384b156b5834f3df6c1d5af48e664a877073a13e0fe61c08e066a19" => :big_sur
+    sha256 "4cf6517529e644492aec155d68cb5d847b79a3371beb7ca6f007c852902951a1" => :arm64_big_sur
+    sha256 "385e370489a3334d46ccc67a809f1e52acd458c86793895002d4eb648147c5f2" => :catalina
+    sha256 "f156ea68069cfacf4292940e8adb399b463f27753e64bf3ea175a2889e12a0b0" => :mojave
   end
 
   depends_on "autoconf" => :build
@@ -33,9 +34,6 @@ class Distcc < Formula
     end
     ENV.append "LDFLAGS", "-L#{buildpath}/libiberty"
     ENV.append_to_cflags "-I#{buildpath}/include"
-
-    # Fix for https://github.com/distcc/distcc/issues/408
-    inreplace "src/util.c", /\bsd_is_socket_internal/, "not_sd_is_socket_internal"
 
     # Make sure python stuff is put into the Cellar.
     # --root triggers a bug and installs into HOMEBREW_PREFIX/lib/python2.7/site-packages instead of the Cellar.

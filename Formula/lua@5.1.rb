@@ -34,6 +34,8 @@ class LuaAT51 < Formula
     end
   end
 
+  deprecate! date: "2012-02-17", because: :unsupported
+
   # Be sure to build a dylib, or else runtime modules will pull in another static copy of liblua = crashy
   # See: https://github.com/Homebrew/homebrew/pull/5043
   patch :DATA if OS.mac?

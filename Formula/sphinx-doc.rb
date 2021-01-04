@@ -3,8 +3,8 @@ class SphinxDoc < Formula
 
   desc "Tool to create intelligent and beautiful documentation"
   homepage "https://www.sphinx-doc.org/"
-  url "https://files.pythonhosted.org/packages/4f/76/daa2e41de4e31788fc48c77d98e5113809f65b516b359503113e1b681dc0/Sphinx-3.4.1.tar.gz"
-  sha256 "e450cb205ff8924611085183bf1353da26802ae73d9251a8fcdf220a8f8712ef"
+  url "https://files.pythonhosted.org/packages/ef/47/807912d1723226d57871c50cf27fa14a167dde2a5d97ef78a435ab35b66f/Sphinx-3.4.2.tar.gz"
+  sha256 "77dec5ac77ca46eee54f59cf477780f4fb23327b3339ef39c8471abb829c1285"
   license "BSD-2-Clause"
 
   livecheck do
@@ -13,11 +13,10 @@ class SphinxDoc < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "16589db195a76745859112a11a52fc1a9166602ce323794f340cb7ce7a621f97" => :big_sur
-    sha256 "f30bd47b91f23b3b030b17f5936d53c7c6cb04c9913639af9d64800118316526" => :arm64_big_sur
-    sha256 "d1fc2ddacbf58bb484579af85977e4c0ecfa17a8e49efaaaf58bf0a306697a76" => :catalina
-    sha256 "b44e016572e77f0b856e193d8f413b7eca1ff2436ca3b4869eda769d6111902c" => :mojave
-    sha256 "be67f7b1676f6f6a1c6a9ae92f25b49424b2391f229abb8c0c5e55c5f374c587" => :x86_64_linux
+    sha256 "b1d039c0855802ecebc19e5e9d919225ea47b73b95eda0d84b58f7be3fa0166a" => :big_sur
+    sha256 "0e27184bd0e63db2c77337d0810db1f339826dc0a22846de7d276f0fbb300240" => :arm64_big_sur
+    sha256 "929df7e60282be09d482c64cde3b59a2ce7af112d8ab076287313a04a65fc4ea" => :catalina
+    sha256 "637a910fc735cd630bea791b8686a1303b9153f3e6466325c7a6bcf8ac039826" => :mojave
   end
 
   keg_only <<~EOS
@@ -88,8 +87,8 @@ class SphinxDoc < Formula
   end
 
   resource "pytz" do
-    url "https://files.pythonhosted.org/packages/09/07/448a8887c7195450604dfc0305d80d74324c36ee18ed997664051d4bffe3/pytz-2020.4.tar.gz"
-    sha256 "3e6b7dd2d1e0a59084bcee14a17af60c5c562cdc16d828e8eba2e683d3a7e268"
+    url "https://files.pythonhosted.org/packages/70/44/404ec10dca553032900a65bcded8b8280cf7c64cc3b723324e2181bf93c9/pytz-2020.5.tar.gz"
+    sha256 "180befebb1927b16f6b57101720075a984c019ac16b1b7575673bea42c6c3da5"
   end
 
   resource "requests" do
