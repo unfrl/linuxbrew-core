@@ -3,10 +3,9 @@ class Mackup < Formula
 
   desc "Keep your Mac's application settings in sync"
   homepage "https://github.com/lra/mackup"
-  url "https://files.pythonhosted.org/packages/66/de/e2c0c5145046cd261b4564840ee7fef66a278fa11d5db082e5659535cdc1/mackup-0.8.29.tar.gz"
-  sha256 "6918d9caba1c0e849f63f1868ce3c51e87d33ce0e5a5eb4266a553b6ac22871e"
-  license "GPL-3.0"
-  revision 1
+  url "https://files.pythonhosted.org/packages/28/1b/39e12cb3fba1dad657cc8a23c87370eef8e6646868f4ee4c3549dfd77fec/mackup-0.8.31.tar.gz"
+  sha256 "a905f8e93c4fda0cdb6e1cc71f866c619d5bb5109d95f5c0ce101dff7efcefd7"
+  license "GPL-3.0-or-later"
   head "https://github.com/lra/mackup.git"
 
   livecheck do
@@ -15,13 +14,10 @@ class Mackup < Formula
 
   bottle do
     cellar :any_skip_relocation
-    rebuild 1
-    sha256 "6b0b3e3a437afca62c19f6af8d1c0b1ebeb0ee14fd53bb63f3016fb08f9b117a" => :big_sur
-    sha256 "c5c272b4fe9395d88a003f6ce1bbce02a342c26b8ed6e4e358273f105f111750" => :arm64_big_sur
-    sha256 "8a4175d131fc7b0cbbaf7392bb1b8e991cedd1b0fe50491773b072e4f9df76db" => :catalina
-    sha256 "69f1b05d7d304e78e581176fa497ac66a2afb068f913337575460dc5dad7b238" => :mojave
-    sha256 "92b2c325f723586c3b1ed28ed313c5b8a0e2968cd594d1b184b497a87c06deab" => :high_sierra
-    sha256 "af91a528cb0fb7e6f185c8eecefdc0f63d44b9e2452982c9819c1531f1933286" => :x86_64_linux
+    sha256 "59cffa819c8619850341ccc11813648c8b421ec3fa73d0d116dbfb23fddae796" => :big_sur
+    sha256 "b69073a4a6b88a58eecd4bd274b5bfc50ef649712016aacbef3b0509aece6425" => :arm64_big_sur
+    sha256 "177e2e6cefb3cbbb301727dfb30d116b46b9a0a17e67f9601f226902946537f1" => :catalina
+    sha256 "9e1913542a61f77ca193300af533ef3d29a26f6862ab8d1d4b2eabfdd4dce47f" => :mojave
   end
 
   depends_on "python@3.9"

@@ -5,7 +5,7 @@ class Netcdf < Formula
   mirror "https://www.gfd-dennou.org/arch/netcdf/unidata-mirror/netcdf-c-4.7.4.tar.gz"
   sha256 "0e476f00aeed95af8771ff2727b7a15b2de353fb7bb3074a0d340b55c2bd4ea8"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https://github.com/Unidata/netcdf-c.git"
 
   livecheck do
@@ -15,13 +15,10 @@ class Netcdf < Formula
 
   bottle do
     cellar :any_skip_relocation
-    rebuild 1
-    sha256 "945407cca07cd5096c8f9e00520e5b51fef5d30d6e4bf68775de508268100f4e" => :big_sur
-    sha256 "14ddd3e04285be58a8a755e1c016901111a01ce65800dd59c3a4b017d093cc5d" => :arm64_big_sur
-    sha256 "bf768c6f17428104b463b55420ed6a57c64870c13f2c475604a3446122a0e6de" => :catalina
-    sha256 "1ef8f155374e15879156ba393750ef0449f5cea5215f625fcb457176350ea17b" => :mojave
-    sha256 "1866c199aaa33565c687d83f163a50ad779949d98dd563e967d9b385bdc030f1" => :high_sierra
-    sha256 "f4a1cac2d7cf02cacc782c05ae85dbcad46938f10875a822242ba50da60d0418" => :x86_64_linux
+    sha256 "55caff29df9b25ee906d2dcce6c78e02b6e9ac163b42e06f53c45aa0f6ade645" => :big_sur
+    sha256 "26eaaca9d9cf3bddea87d982c76c31df6df91b198d04ac62f0084141109457dd" => :arm64_big_sur
+    sha256 "b3aeca909a91b47e8e0d3fdc9d209dd13ecfb2b1879bab5ea49d3dcfd6404ddd" => :catalina
+    sha256 "9504a25d84dd6afb80553576474420cc074c64821aa346a58271dad26982b187" => :mojave
   end
 
   depends_on "cmake" => :build
