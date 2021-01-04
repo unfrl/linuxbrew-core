@@ -1,8 +1,8 @@
 class Libofx < Formula
   desc "Library to support OFX command responses"
   homepage "https://libofx.sourceforge.io"
-  url "https://downloads.sourceforge.net/project/libofx/libofx/libofx-0.9.15.tar.gz"
-  sha256 "e95c14e09fc37b331af3ef4ef7bea29eb8564a06982959fbd4bca7e331816144"
+  url "https://downloads.sourceforge.net/project/libofx/libofx/libofx-0.10.0.tar.gz"
+  sha256 "f11f46d91573e7d0964eb796c4dcaa33218ede8319b77b817356cf54aaa7bbcc"
   license "GPL-2.0"
 
   livecheck do
@@ -11,12 +11,10 @@ class Libofx < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 "1a79a86dec4941045cc078ac6f43b401972eb4a07b7ae72593e4972b3c2ba631" => :big_sur
-    sha256 "9d047abebed9d7c5554b6b853e256d4385152ecf67cc7109710140f988502a48" => :arm64_big_sur
-    sha256 "b10f735c4f3ac6359e776ba83622d89baa52ad422e2159e94d40e6d2c10a0fc5" => :catalina
-    sha256 "4b16fe23cf0cd2bc44db7e4816b04e3217742bec7ce0bba75fe8fa45754be28f" => :mojave
-    sha256 "f2157eeefdb52fa813f63a9496c0bf1f7ddeccb18649a2717822828f3f9e9f8d" => :x86_64_linux
+    sha256 "03a456e08ca084e4e35eb3b54c839d8b6b8428d8b997bba47c049843c80a969f" => :big_sur
+    sha256 "d6334a066f55eb6d54633ef7f297c91a23df73aaa804b3ecb66773e56741f60e" => :arm64_big_sur
+    sha256 "7938515e518b14d4d6c177640ab7246018b92977013825f2107ef17532c90d34" => :catalina
+    sha256 "d2e77015c1d6d7bc018a14cd0a7bb6ad54074619ffa41956d64aab03c713673c" => :mojave
   end
 
   depends_on "open-sp"
