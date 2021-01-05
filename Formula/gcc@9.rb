@@ -6,6 +6,7 @@ class GccAT9 < Formula
   url "https://ftp.gnu.org/gnu/gcc/gcc-9.3.0/gcc-9.3.0.tar.xz"
   mirror "https://ftpmirror.gnu.org/gcc/gcc-9.3.0/gcc-9.3.0.tar.xz"
   sha256 "71e197867611f6054aa1119b13a0c0abac12834765fe2d81f35ac57f84f742d1"
+  revision 1
 
   livecheck do
     url :stable
@@ -14,11 +15,9 @@ class GccAT9 < Formula
 
   # gcc is designed to be portable.
   bottle do
-    sha256 "7145501b8ae1900115ed6ed6ed3d991cf1fde3ae733007a2150375026392c1a6" => :big_sur
-    sha256 "68aa5249f09a70b9c46bd403a46ae42b64f6ea6b3a2af00603852ecaf77c72ce" => :catalina
-    sha256 "445cf4a6a4f8f3da61c7e1e6aceaf6fe919a08c475126b2b1e159eae829617a4" => :mojave
-    sha256 "682244d252f68de9513ed43f45e3e9f80bcd582e58df1d4aaa16197f3fc88742" => :high_sierra
-    sha256 "f0541e9d52543d196ea29085cb36a27ea4c844f4cef9bfd678473da270060c28" => :x86_64_linux
+    sha256 "29e25101260144bee0b09b045fce258352e0b832b269909f59d22dda16539926" => :big_sur
+    sha256 "9da2446533167ddef1c7ca78d132908d6c2a2d808c7f1569a7852db6fa21b00a" => :catalina
+    sha256 "65c34910dd7d637ed17e3ba222e940d79cb1a538947adcf616977bd10e88bdbb" => :mojave
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
