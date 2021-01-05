@@ -26,8 +26,6 @@ class XcbProto < Formula
   end
 
   def install
-    inreplace "xcbgen/align.py", "from fractions import gcd", "from math import gcd"
-
     args = %W[
       --prefix=#{prefix}
       --sysconfdir=#{etc}
