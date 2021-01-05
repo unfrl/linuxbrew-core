@@ -3,19 +3,17 @@ class TranslateToolkit < Formula
 
   desc "Toolkit for localization engineers"
   homepage "https://toolkit.translatehouse.org/"
-  url "https://github.com/translate/translate/archive/3.2.0.tar.gz"
-  sha256 "f55afa52e24f0327f8dfd53ae139d6123b4bfef89630d17517272c96f187b29c"
+  url "https://github.com/translate/translate/archive/3.3.0.tar.gz"
+  sha256 "7a7f605e48dfa20da3e8ea9e03a9bf8da00f5a33dcafee301123e01354542556"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://github.com/translate/translate.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "2a8e4095b7fdbee98080753726057fad9647f147a78aacf1b3c04796fab5971a" => :big_sur
-    sha256 "e975f51549f118fabe4bdb9a3229e307bac3d2a0be359ff53efa05735fc5eadd" => :arm64_big_sur
-    sha256 "aee1cb11f4814f2842ffecc3569586b235d8badb633493eb93e4ef34c2225109" => :catalina
-    sha256 "01c3d700b2ef9b1dd2b01946a314d1cab2910340a810f21462047098eabd7a36" => :mojave
-    sha256 "c202745005ba36f8f38f5da269e3b4ce24e74389fa839db1df8fecb87a5303b6" => :x86_64_linux
+    sha256 "2252b5c00295a305232b97f6012baf2cdbcbbde039f5070caa1218c3ece89bc4" => :big_sur
+    sha256 "00452ca853d17c31029f3d992e0fad06a38fd529ffe77e391ea49edfd6bf4d19" => :arm64_big_sur
+    sha256 "e4a0a4460589c926ad2c5645e19d379450daec1686536584e93296007e48450e" => :catalina
+    sha256 "ca6fc0acb707f1fb6b963e7da797de6b57abaf655c3fa73e72dc3b2dc9ee5d41" => :mojave
   end
 
   depends_on "python@3.9"
@@ -26,11 +24,6 @@ class TranslateToolkit < Formula
   resource "argparse" do
     url "https://files.pythonhosted.org/packages/18/dd/e617cfc3f6210ae183374cd9f6a26b20514bbb5a792af97949c5aacddf0f/argparse-1.4.0.tar.gz"
     sha256 "62b089a55be1d8949cd2bc7e0df0bddb9e028faefc8c32038cc84862aefdd6e4"
-  end
-
-  resource "diff-match-patch" do
-    url "https://files.pythonhosted.org/packages/f0/2a/5ba07def0e9107d935aba62cf632afbd0f7c723a98af47ccbcab753d2452/diff-match-patch-20181111.tar.gz"
-    sha256 "a809a996d0f09b9bbd59e9bbd0b71eed8c807922512910e05cbd3f9480712ddb"
   end
 
   resource "lxml" do
@@ -44,8 +37,8 @@ class TranslateToolkit < Formula
   end
 
   resource "six" do
-    url "https://files.pythonhosted.org/packages/21/9f/b251f7f8a76dec1d6651be194dfba8fb8d7781d10ab3987190de8391d08e/six-1.14.0.tar.gz"
-    sha256 "236bdbdce46e6e6a3d61a337c0f8b763ca1e8717c03b369e87a7ec7ce1319c0a"
+    url "https://files.pythonhosted.org/packages/6b/34/415834bfdafca3c5f451532e8a8d9ba89a21c9743a0c59fbd0205c7f9426/six-1.15.0.tar.gz"
+    sha256 "30639c035cdb23534cd4aa2dd52c3bf48f06e5f4a941509c8bafd8ce11080259"
   end
 
   def install
