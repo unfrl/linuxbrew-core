@@ -16,6 +16,7 @@ class Nettle < Formula
     sha256 "0f8cf7b90122188810887bd0b4b6230b1cf07898f7a135f8832db744fe89bd0d" => :arm64_big_sur
     sha256 "d36ac9557eea88d8bbc2395a722af383f51f15dba6d1334bff024134579be7f7" => :catalina
     sha256 "f3fd4302a0084c4be612b8f5d0968a86360bf5a080fa56977d9b293274144a13" => :mojave
+    sha256 "60b35111fbd75a0becbdc90a10eab57455e6dcb713f77523b246500fc424c5d3" => :x86_64_linux
   end
 
   depends_on "gmp"
