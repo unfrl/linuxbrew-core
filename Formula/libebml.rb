@@ -12,6 +12,7 @@ class Libebml < Formula
     sha256 "66c6769cd2da8da5573a43d3f106b5f0218ac172171c18f3b555ea26ff8f5f8c" => :arm64_big_sur
     sha256 "37fa610470ee8ced3f88e8e2a1222323f888d3b367105f9ca52ee055f7b789b3" => :catalina
     sha256 "0dcc4f56f9b16dbc4fa84e9f79474491490948edb5f7d0a5f1243b315c2968d1" => :mojave
+    sha256 "f7cd1b15225fd71e31e0446548fe9e916e12d194951711ff5c9e16dce54f4131" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
