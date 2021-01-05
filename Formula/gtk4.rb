@@ -1,4 +1,4 @@
-class Gtkx4 < Formula
+class Gtk4 < Formula
   desc "Toolkit for creating graphical user interfaces"
   homepage "https://gtk.org/"
   url "https://download.gnome.org/sources/gtk/4.0/gtk-4.0.0.tar.xz"
@@ -11,10 +11,10 @@ class Gtkx4 < Formula
   end
 
   bottle do
-    sha256 "393079a26d13a3bdbfb52a806af74a6a2a677619912549c966dd9eb6d4a151ce" => :big_sur
-    sha256 "22d8d06d4e3ff5e3e300f4b77d899ed3330cb643af5f8a4114fe6b213513115a" => :arm64_big_sur
-    sha256 "0c74e511794ab314900f21300ad9a2c3d93edc83604dbf99ca5c57dc9a81f24c" => :catalina
-    sha256 "320f43ecc1ea6ec38a28cc5e344d2d393318ef5bb661aeab6a34c5211d421259" => :mojave
+    sha256 "310c1cee59793970949da865c1bb63120391e5bb16aa34ad0676d75ce345b576" => :big_sur
+    sha256 "0fbc5903eb979a2e9f712b91bdff8cae08430290670e31fac8b3c517dd3655b2" => :arm64_big_sur
+    sha256 "2a0ac2c181ee997054f3a445634395854abffe32a5f3c7de0f207d74d5cb4837" => :catalina
+    sha256 "5c67410b8a00718cfd0f6367fa17d4325a322ea512c8d255a206187975818610" => :mojave
   end
 
   depends_on "docbook" => :build

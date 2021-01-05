@@ -1,17 +1,17 @@
 class GitDelta < Formula
   desc "Syntax-highlighting pager for git and diff output"
   homepage "https://github.com/dandavison/delta"
-  url "https://github.com/dandavison/delta/archive/0.5.0.tar.gz"
-  sha256 "aef2ef9e4260eabb7a04f36f0485c9b041029a7da1d69d9e6eabb03a7466ab26"
+  url "https://github.com/dandavison/delta/archive/0.5.1.tar.gz"
+  sha256 "dd59b747cd178184dff31c7e1707be41f8bc6b412c0c78e62b89aeca4c0f2e15"
   license "MIT"
   head "https://github.com/dandavison/delta.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "223b5315ca1c4977da846f8125feb3eec9ac95bb854c89c250838931294b6548" => :big_sur
-    sha256 "e6ea46ea542b446bd5402a0f03d1fb824da03d71ad64d2326824a954ab0ac1c9" => :catalina
-    sha256 "f6054d63ffe6a8958195901b798f50d586e216e0ad424145bd3d2d376e365be4" => :mojave
-    sha256 "50c20ad9dbf36ddad18128ac2ec1ca40ea9101b0f38662ab6d3c9423b8533995" => :x86_64_linux
+    sha256 "22e1edac6c4454720855fd206856e5899db6cbb105f25ce42a1b2577234c0613" => :big_sur
+    sha256 "1fffc0f5e4b4bf1b6a280f2af878485e2d74712bb2c591858535d3ea08d51de1" => :arm64_big_sur
+    sha256 "08e9ba2ad0cea3a581b5d5831fb7baa50f048307d8428eb72453397f779fc0c2" => :catalina
+    sha256 "42e1dab3a528bab5bb09be77d064f303f27939232a7f9fe51e5bf3f616270d5b" => :mojave
   end
 
   depends_on "rust" => :build

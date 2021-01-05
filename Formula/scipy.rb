@@ -1,8 +1,8 @@
 class Scipy < Formula
   desc "Software for mathematics, science, and engineering"
   homepage "https://www.scipy.org"
-  url "https://files.pythonhosted.org/packages/aa/d5/dd06fe0e274e579e1dff21aa021219c039df40e39709fabe559faed072a5/scipy-1.5.4.tar.gz"
-  sha256 "4a453d5e5689de62e5d38edf40af3f17560bfd63c9c5bd228c18c1f99afa155b"
+  url "https://files.pythonhosted.org/packages/16/48/ff7026d26dfd92520f00b109333e22c05a235f0c9115a5a2d7679cdf39ef/scipy-1.6.0.tar.gz"
+  sha256 "cb6dc9f82dfd95f6b9032a8d7ea70efeeb15d5b5fd6ed4e8537bb3c673580566"
   license "BSD-3-Clause"
   head "https://github.com/scipy/scipy.git"
 
@@ -12,12 +12,10 @@ class Scipy < Formula
 
   bottle do
     cellar :any
-    sha256 "e6ac47d444999cbfdf8c68f4016af207e093fcfa8f60da704e6e1ca1bf8963d2" => :big_sur
-    sha256 "c5624a8bf499a9b1491fd92a5b951f123348125a3ff362edabe83c52cb698324" => :arm64_big_sur
-    sha256 "459a424a9433cefd235ae700f3016a070df09fadff99246ac72be3427a2259d1" => :catalina
-    sha256 "a5955e92c790150cac7c173c73eaa70447762b7afb67c658889ceb2ddcef30ae" => :mojave
-    sha256 "b660e024594d7d6c0c7717888b50e4656a74fb04359cbeeb87903ce9d77aae2f" => :high_sierra
-    sha256 "4a4cf189388f27ded1d0e031b0d7c05933c1841034b4967e97ea43f32194ed97" => :x86_64_linux
+    sha256 "f6a771cfaca9b1a33ba7ba01e961ea1d22bc3d0b62ce756b2f6ae1b5c820d6f8" => :big_sur
+    sha256 "96ad6a2766163fc391c7732a7c4e1b0ed101a8950ca4ddc308f1f58a299d50de" => :arm64_big_sur
+    sha256 "22c5e9f85c11e58e5ec990ab9a8aa8e5a3564b1bec3df80a445fe116a75f2d1e" => :catalina
+    sha256 "05c95144b014c46f94c587688e8380bcb7fe2f4b8dbbceb1f229ade501e20981" => :mojave
   end
 
   depends_on "swig" => :build

@@ -13,11 +13,11 @@ class Glib < Formula
   end
 
   bottle do
-    sha256 "4f48567977f08be9d02920f54fc3a31d0ceb106e733d7e5e7fde44fcf7a59990" => :big_sur
-    sha256 "c81fcd1d7973f90f2923a0a569d8e748107da9fcc0e283c62c281bdda8bca059" => :arm64_big_sur
-    sha256 "56681d90bb716b6a7c28825a3e014571bae6e06b94325e434d4845d7b4502a34" => :catalina
-    sha256 "3a742af0366177f75672fd24839fa9c98e021cf677f2b94318a0207730886939" => :mojave
-    sha256 "e2aed7f40fc66d041378f5931757ab59fb03c7f4baf97ffbd28678705d33ff33" => :x86_64_linux
+    rebuild 1
+    sha256 "f8851f19a2ce75914f0b38a3a0ad4d357f16824bfa10344a0cdf5d3e2d794ef5" => :big_sur
+    sha256 "d728d6ad6037c6405da8d96da87ee0cb5146421b7296818d63635d310714b94c" => :arm64_big_sur
+    sha256 "be6477600e402b953ad33d0c0e9096deda1575928cf0d551abd2d24c3486d51d" => :catalina
+    sha256 "be3e56e1dff6cacef711bab03407cc8e499e66664cca909448b17cd07cf5a90f" => :mojave
   end
 
   depends_on "meson" => :build
@@ -40,7 +40,7 @@ class Glib < Formula
     sha256 "a57fec9e85758896ff5ec1ad483050651b59b7b77e0217459ea650704b7d422b"
   end
 
-  # required for gtk+4
+  # required for gtk4
   # see discussion at https://gitlab.gnome.org/GNOME/gtk/-/issues/3477
   patch do
     url "https://gitlab.gnome.org/GNOME/glib/-/commit/8c76bec77985be7f4c81a052ec649232341369f6.patch"

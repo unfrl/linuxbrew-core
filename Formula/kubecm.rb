@@ -1,17 +1,16 @@
 class Kubecm < Formula
   desc "KubeConfig Manager"
   homepage "https://kubecm.cloud"
-  url "https://github.com/sunny0826/kubecm/archive/v0.13.0.tar.gz"
-  sha256 "d9b42c57ef88fb5ca268a02254be0e4b2ed211e7a7678fb8d1463dbe00900247"
+  url "https://github.com/sunny0826/kubecm/archive/v0.13.1.tar.gz"
+  sha256 "b314688d4990cb3d0875daeb4ae0e2fa883709e1ab654659ca19812dddc0095e"
   license "Apache-2.0"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "a983a73d762316662a7aa92b5692321f5a8a960199820334199c79efede99163" => :big_sur
-    sha256 "6720d954d186b3da5a5ae39aec15ee8cf7f51108016bb769342ba99e96ebc688" => :arm64_big_sur
-    sha256 "4584fd305eaa2b5c81c57d8d01cc258af880f1cf58df9b5aed315237ad1803b9" => :catalina
-    sha256 "8ab23737c5c10d27109292c1dca60046a35047ad7788afe775ff6f5d7c9da226" => :mojave
-    sha256 "048f9240bd94d8063f502a1d4a5ca151e8770e4b31f45a2e512e51300754d8be" => :x86_64_linux
+    sha256 "2329c999724d487fbf5d399ebbd9c9e3310afb3a1930ef08bdc2dafd4bc09bd5" => :big_sur
+    sha256 "d2a5bb547ac0cee959027e050d0c13be6fadbd7d5495dbab3c16718f1367beba" => :arm64_big_sur
+    sha256 "89f61655a8938e8c2dda4f4c0fd3495af27a21b97c9c740d0bb178beb02589c5" => :catalina
+    sha256 "f43fad36e9155003c5eb05f727824a45305fca25fe32fe24db144c1c08e8e87f" => :mojave
   end
 
   depends_on "go" => :build
