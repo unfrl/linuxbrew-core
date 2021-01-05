@@ -17,6 +17,7 @@ class Pv < Formula
     sha256 "9fa320894a6ae215794b2952ea60165dcfb63bdf3dda557a1998daaf5304df6b" => :arm64_big_sur
     sha256 "9bb586c4dab67989e7fa800e7c764d1d4ee153db8ad7a5ed3563270ca93a7497" => :catalina
     sha256 "1877dffe8804fac2fe6f77582100e2b5ea3fbb7a305c1cfd025e251ede08c98e" => :mojave
+    sha256 "6791206a73c3badec80d77840ea29be7a8e44a79dbbf00f9fa32ea093ced2a0c" => :x86_64_linux
   end
 
   # Patch for macOS 11 on Apple Silicon support. Emailed to the maintainer in January 2021.
