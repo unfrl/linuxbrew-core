@@ -4,7 +4,7 @@ class Ffmpeg < Formula
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
   license "GPL-2.0-or-later"
-  revision OS.mac? ? 6 : 7
+  revision OS.mac? ? 7 : 8
   head "https://github.com/FFmpeg/FFmpeg.git"
 
   stable do
@@ -25,11 +25,10 @@ class Ffmpeg < Formula
   end
 
   bottle do
-    sha256 "c6342f638203e0d6bda7ce92add949a7a2db0a4fb2ac205637d92d713298ecad" => :big_sur
-    sha256 "f3d75997805fa7139d5dde99b1dd58d5877958b2dc76997f9e8ad0d84e8edd89" => :arm64_big_sur
-    sha256 "9af13c4b632cf0f092fe6178e256deb1a702f7465b0211c3c5994ae19467a59c" => :catalina
-    sha256 "3c3765174346a8da8043e376901deb15c22cc2c3ebf3554c87591d4ab6063cd1" => :mojave
-    sha256 "ca00c9d8ab726467e4ba21718bf10b0b995c5e201e6a697ee98914f8d3ff6bd6" => :x86_64_linux
+    sha256 "ec5caceb2f7c78990988a0590060b57d0a1baf9f5d1b0ae4788591126d8c1e0f" => :big_sur
+    sha256 "ffe19b3417581f7f7821300a100f13d1b4c0ad2096dd1d75dc59fbb689d9ce32" => :arm64_big_sur
+    sha256 "eb485bd45bac1e1b4df56361adb3a9bb3294961e77bcad6dd9f382393231c91e" => :catalina
+    sha256 "b2cb22e6e5dfdf5cc401b19e4a1ba8bba83735325b821a4ac854064658e545f2" => :mojave
   end
 
   depends_on "nasm" => :build
@@ -65,6 +64,7 @@ class Ffmpeg < Formula
   depends_on "xvid"
   depends_on "xz"
   depends_on "zeromq"
+  depends_on "zimg"
 
   uses_from_macos "bzip2"
   uses_from_macos "libxml2"
@@ -116,6 +116,7 @@ class Ffmpeg < Formula
       --enable-libspeex
       --enable-libsoxr
       --enable-libzmq
+      --enable-libzimg
       --disable-libjack
       --disable-indev=jack
     ]

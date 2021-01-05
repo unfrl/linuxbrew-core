@@ -9,15 +9,24 @@ class BoostPython3 < Formula
 
   bottle do
     cellar :any
-    sha256 "28d62d148f4112b39db89ab7b6893e471065c9d9b3156300551f040a1955a2b8" => :big_sur
-    sha256 "a1e07d3495b07641493eefa22a46700b32d5c8dfdf0208f7ea4517b3d16251ad" => :catalina
-    sha256 "354aa33c37f07d2bfc3f5031d8d4f7c829e064b0bf0844f81249c24ff0ff0189" => :mojave
-    sha256 "4a847798f43ee9ad533078f6a9496a92dc6f62ce1b98e8958ebdbe840dc5596b" => :x86_64_linux
+    rebuild 1
+    sha256 "7015c83ae4726838a1e67900ed201578949afd195ccdd6eb13fd7336794155e6" => :big_sur
+    sha256 "2737924fe270f67d7b6ed9913a30e18f084b5ce2590041d70d6523206f55e437" => :arm64_big_sur
+    sha256 "2daea9e8951e79d78ea85e4e5abd11c749ae5f6dea889a7357648f04328de0dd" => :catalina
+    sha256 "96dfc26b8b8a3a1090eb883f2f555cdacbb9425b6a9a9627e46c38759ff32257" => :mojave
   end
 
   depends_on "numpy" => :build
   depends_on "boost"
   depends_on "python@3.9"
+
+  # Fix build system issues on Apple silicon. This change has aleady
+  # been merged upstream, remove this patch once it lands in a release.
+  patch do
+    url "https://github.com/boostorg/build/commit/456be0b7ecca065fbccf380c2f51e0985e608ba0.patch?full_index=1"
+    sha256 "e7a78145452fc145ea5d6e5f61e72df7dcab3a6eebb2cade6b4cfae815687f3a"
+    directory "tools/build"
+  end
 
   def install
     # "layout" should be synchronized with boost

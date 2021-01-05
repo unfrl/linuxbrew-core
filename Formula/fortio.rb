@@ -2,16 +2,15 @@ class Fortio < Formula
   desc "HTTP and gRPC load testing and visualization tool and server"
   homepage "https://fortio.org/"
   url "https://github.com/fortio/fortio.git",
-      tag:      "v1.11.4",
-      revision: "6dd1b178adba1a28da7e20e8a0be4dc32ea7a048"
+      tag:      "v1.11.5",
+      revision: "696d6ace5d1ac8535ee5e49b20bcfa9a779035e2"
   license "Apache-2.0"
 
   bottle do
-    sha256 "dc3dcac1c7007b2b21dd9105c55505cb1b6f86149be1242ac413baa0a361feb4" => :big_sur
-    sha256 "8df5eecd8bff63c24abc875c6977cf5a1e548f8a52f12e9ffc64f8650fdeaaae" => :arm64_big_sur
-    sha256 "41a9b9b4ddb5729ee114dfb42e305f558260c055d786bd1b17cc837344bff1d0" => :catalina
-    sha256 "eb37c04b1d2bcdf1237fdf75fcbf0c83a274f4027b532b2eb6a9e62fe63f39d7" => :mojave
-    sha256 "7de326ef437edb7b5a701b472e3ab2622f29c680470478f27fe36f0bfaf8d869" => :x86_64_linux
+    sha256 "7abc5fc9821fb5247e4904b565303e4df7576fdf51a768179324b803eb48c2af" => :big_sur
+    sha256 "9513e525fc8c109ad78fa2e6469a989d61df1ee25765058c3689eadd5f0f960d" => :arm64_big_sur
+    sha256 "d8d2481d518527632bbd376fc86742a84f5e4214f68fed1497d94e4f2ba0ea01" => :catalina
+    sha256 "99d1d9593eee47c5317a26e1ef796f16d8c6bb13e0bad8cfa7588b337afccabf" => :mojave
   end
 
   depends_on "go" => :build

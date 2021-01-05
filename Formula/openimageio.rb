@@ -1,11 +1,10 @@
 class Openimageio < Formula
   desc "Library for reading, processing and writing images"
   homepage "https://openimageio.org/"
-  url "https://github.com/OpenImageIO/oiio/archive/Release-2.2.7.0.tar.gz"
-  version "2.2.7"
-  sha256 "857ac83798d6d2bda5d4d11a90618ff19486da2e5a4c4ff022c5976b5746fe8c"
+  url "https://github.com/OpenImageIO/oiio/archive/Release-2.2.10.0.tar.gz"
+  version "2.2.10"
+  sha256 "dbc0e3e9718497d9f71ea01fb1de8b87449775ad9dbcea4d2538d9c52bbe1d5a"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/OpenImageIO/oiio.git"
 
   livecheck do
@@ -15,10 +14,9 @@ class Openimageio < Formula
   end
 
   bottle do
-    sha256 "fcd03015832924e928fd3d3a8ca16c17389e95c062c11829e6630745df2d6fb1" => :big_sur
-    sha256 "1c95f07642c9c4ec91b19f6eb449b251c9f2ae82164561c84e4eb311d286730c" => :catalina
-    sha256 "97a22718f49ac48a5ebe1663e9fb2bbfbe13b2513dfa2eb0aeb68040d84cc500" => :mojave
-    sha256 "ba66d98bd371b1af625beb52269129ab904cc56927b3d50b1a9ccbe8afe2e074" => :high_sierra
+    sha256 "04f4bd4155cac4e081b846e84c04ac94760281f33faf79b63092702a8382ff00" => :big_sur
+    sha256 "6245ad7127eaf77d6b495d1b519b1b4ed1dce32b74f473e7b5b3b8d4fc5ec196" => :catalina
+    sha256 "ee2e238c2589ef215cb13f47d6b9993fab02b82fafe3d48baa1466e3fc789c19" => :mojave
   end
 
   depends_on "cmake" => :build
@@ -39,6 +37,14 @@ class Openimageio < Formula
   depends_on "pybind11"
   depends_on "python@3.9"
   depends_on "webp"
+
+  # Patch to remove explicit Python framework linkage:
+  # https://github.com/OpenImageIO/oiio/pull/2807
+  # Remove at version bump
+  patch do
+    url "https://github.com/OpenImageIO/oiio/commit/5ed9d270222d18c1a789e08cea543c8cb50e1030.patch?full_index=1"
+    sha256 "1fba4ce7bc33efcd1184a5aef87e76591008c0b1d823f9b82f51eae78802a591"
+  end
 
   def install
     args = std_cmake_args + %w[
@@ -67,16 +73,6 @@ class Openimageio < Formula
     args << "-DPYTHON_EXECUTABLE=#{py3prefix}/bin/python3"
     args << "-DPYTHON_LIBRARY=#{py3prefix}/lib/#{shared_library("libpython#{py3ver}")}"
     args << "-DPYTHON_INCLUDE_DIR=#{py3prefix}/include/python#{py3ver}"
-
-    # CMake picks up boost-python instead of boost-python3
-    args << "-DBOOST_ROOT=#{Formula["boost"].opt_prefix}"
-    boost_lib = Formula["boost-python3"].opt_lib
-    py3ver_without_dots = py3ver.to_s.delete(".")
-    args << "-DBoost_PYTHON_LIBRARIES=#{boost_lib}/#{shared_library("libboost_python#{py3ver_without_dots}-mt")}"
-
-    # This is strange, but must be set to make the hack above work
-    args << "-DBoost_PYTHON_LIBRARY_DEBUG=''"
-    args << "-DBoost_PYTHON_LIBRARY_RELEASE=''"
 
     mkdir "build" do
       system "cmake", "..", *args

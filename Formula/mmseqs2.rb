@@ -5,20 +5,20 @@ class Mmseqs2 < Formula
   version "12-113e3"
   sha256 "81fa0d77eab9d74b429567da00aa7ec2d46049537ce469595d7356b6d8b5458a"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/soedinglab/MMseqs2.git"
 
   bottle do
     cellar :any
-    sha256 "791977eec2f261f8b895d84baab2d8bbd4721c487515257ce1e9b929fa2eb52e" => :big_sur
-    sha256 "bd1efb5b4246c6e2ae92f44430885d73feb1e97d8d0fb6971fb3e27fc5868056" => :arm64_big_sur
-    sha256 "19e991c528466e6443a0772d6ea2c373b5323f3b6d919adde3ec2cd6958c6e04" => :catalina
-    sha256 "f31e32a418bb6a407be63e5d60c4bcc10497c3412b07fe270ac523851fbeeea7" => :mojave
-    sha256 "6a92a84f48542cac881e7bf4de5c7946d8038e8da1c799c98fe0992ed3f4d1a0" => :high_sierra
-    sha256 "f54c07dcf7e4a114e834099bc3e2dba269a204ddecd6b2c90dd3191fa330b7f4" => :x86_64_linux
+    sha256 "8bce632fcf02e77832aa363509cf025f6161355026767fe77c2fc36742c4f707" => :big_sur
+    sha256 "180bd9ce0ca379906e9ecea89e37ceacb6a268b49093d92c71ef3c967e58505b" => :arm64_big_sur
+    sha256 "e148e2ada88473dae80b9d56651ede55b134468ec4753d82fccef4951f2b59ab" => :catalina
+    sha256 "da9562c1ef7b42a9fd0e3bb5892e4e0ed5464c5d2be4b1a515cfc51f6ce25a83" => :mojave
   end
 
   depends_on "cmake" => :build
-  depends_on "libomp" if OS.mac?
+  depends_on "cmake" => [:build, :test]
+  depends_on "libomp"
   depends_on "wget"
 
   depends_on "gawk" unless OS.mac?
@@ -31,10 +31,19 @@ class Mmseqs2 < Formula
         revision: "d53d8be3761ee625b0dcddda29b092bbd02244ef"
   end
 
+  resource "testdata" do
+    url "https://github.com/soedinglab/MMseqs2/releases/download/12-113e3/MMseqs2-Regression-Minimal.zip"
+    sha256 "ab0c2953d1c27736c22a57a1ccbb976c1320435fad82b5c579dbd716b7bae4ce"
+  end
+
   def install
     args = *std_cmake_args << "-DHAVE_TESTS=0" << "-DHAVE_MPI=0"
     args << "-DVERSION_OVERRIDE=#{version}"
-    args << "-DHAVE_SSE4_1=1"
+    args << if Hardware::CPU.arm?
+      "-DHAVE_ARM8=1"
+    else
+      "-DHAVE_SSE4_1=1"
+    end
 
     if OS.mac?
       libomp = Formula["libomp"]
@@ -57,14 +66,12 @@ class Mmseqs2 < Formula
   end
 
   def caveats
-    "MMseqs2 requires at least SSE4.1 CPU instruction support." unless Hardware::CPU.sse4?
+    "MMseqs2 requires at least SSE4.1 CPU instruction support." unless Hardware::CPU.sse4? || Hardware::CPU.arm?
   end
 
   test do
-    system "#{bin}/mmseqs", "createdb", "#{pkgshare}/examples/QUERY.fasta", "q"
-    system "#{bin}/mmseqs", "cluster", "q", "res", "tmp", "-s", "1"
-    system "#{bin}/mmseqs", "createtsv", "q", "q", "res", "res.tsv"
-    assert_predicate testpath/"res.tsv", :exist?
-    assert_predicate (testpath/"res.tsv").size, :positive?
+    resource("testdata").stage do
+      system "./run_regression.sh", "#{bin}/mmseqs", "scratch"
+    end
   end
 end
