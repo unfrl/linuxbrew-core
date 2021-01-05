@@ -14,6 +14,7 @@ class Mmseqs2 < Formula
     sha256 "180bd9ce0ca379906e9ecea89e37ceacb6a268b49093d92c71ef3c967e58505b" => :arm64_big_sur
     sha256 "e148e2ada88473dae80b9d56651ede55b134468ec4753d82fccef4951f2b59ab" => :catalina
     sha256 "da9562c1ef7b42a9fd0e3bb5892e4e0ed5464c5d2be4b1a515cfc51f6ce25a83" => :mojave
+    sha256 "93c22bdb9dc4eba0cca67d473f182af53c31e684f05b7a844255722eadaf7fa3" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
