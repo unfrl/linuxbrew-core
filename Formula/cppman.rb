@@ -17,6 +17,7 @@ class Cppman < Formula
     sha256 "70b4580629afcf903d3d0782e9f6d5d18fb6ff4960cbd131de22b045c7eb5ef2" => :arm64_big_sur
     sha256 "2861b9d15f58b9c823b4ac9cf13ece45fdefddb4ee1a4b6f82699442ec6de2bc" => :catalina
     sha256 "c3c892fd4665b93e8901859593570630821443d84e238b627b9b613fba098980" => :mojave
+    sha256 "912ccda89450578efdfb9eea3789f78d56427e13b87e9ca61bf5f2637eb62b81" => :x86_64_linux
   end
 
   depends_on "python@3.9"
