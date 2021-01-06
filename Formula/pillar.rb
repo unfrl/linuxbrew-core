@@ -12,6 +12,7 @@ class Pillar < Formula
     sha256 "8aac25711310b56913c1838c9d6b4ef72af78ade7b20ca0f5b8519805854e285" => :catalina
     sha256 "935f68b739a2d86174a045032b5606fffb8c1fa4f7ef74fd0aabc6608dfe068a" => :mojave
     sha256 "74bd2dde375b70f3a6ad14c7c55bc511d372998d4901daebd627f0ca5200c6bd" => :high_sierra
+    sha256 "a7dc340ce3aa41a63e5fbebefd53fa9f255618f914f02649720b7bd7121cba4a" => :x86_64_linux
   end
 
   depends_on "sbt" => :build
