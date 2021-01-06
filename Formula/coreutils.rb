@@ -30,14 +30,13 @@ class Coreutils < Formula
     depends_on "texinfo" => :build
     depends_on "wget" => :build
     depends_on "xz" => :build
-    depends_on "gperf" => :build unless OS.mac?
   end
+
+  uses_from_macos "gperf" => :build
 
   on_linux do
     depends_on "attr"
   end
-
-  uses_from_macos "gperf" => :build
 
   conflicts_with "aardvark_shell_utils", because: "both install `realpath` binaries"
   conflicts_with "b2sum", because: "both install `b2sum` binaries"
