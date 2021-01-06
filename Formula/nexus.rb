@@ -19,6 +19,7 @@ class Nexus < Formula
     sha256 "0a380c9adffc5a2369f53993a5f0fb0b9504e41fd927a8c30f9e4fc44f2ff346" => :big_sur
     sha256 "ecc88348ce2a71dc67f38dc70cc16ffa028b0701278d084c2d5fed10b0cd76eb" => :catalina
     sha256 "34247af54e2fd88d3e9681d5c67195f1ae6d8de721a89be5c0c31a9a2c05f1d9" => :mojave
+    sha256 "d0639737fa5656d9c4f8f485be9482b5813dad6aeaa3b5ce478ab37f7b90d872" => :x86_64_linux
   end
 
   depends_on "maven" => :build
