@@ -1,10 +1,9 @@
 class Numpy < Formula
   desc "Package for scientific computing with Python"
   homepage "https://www.numpy.org/"
-  url "https://files.pythonhosted.org/packages/c5/63/a48648ebc57711348420670bb074998f79828291f68aebfff1642be212ec/numpy-1.19.4.zip"
-  sha256 "141ec3a3300ab89c7f2b0775289954d193cc8edb621ea05f99db9cb181530512"
+  url "https://files.pythonhosted.org/packages/51/60/3f0fe5b7675a461d96b9d6729beecd3532565743278a9c3fe6dd09697fa7/numpy-1.19.5.zip"
+  sha256 "a76f502430dd98d7546e1ea2250a7360c065a5fdea52b2dffe8ae7180909b6f4"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/numpy/numpy.git"
 
   livecheck do
@@ -12,11 +11,10 @@ class Numpy < Formula
   end
 
   bottle do
-    sha256 "fb2e87332b99e24056b915e28a78e17a33c1a13547e2cc144760646421aee01d" => :big_sur
-    sha256 "a32c273bf47a9304a415ea8c58b801e255eb69f3fbc1c3054c03ecdba0e0da13" => :arm64_big_sur
-    sha256 "ed781d5ce1f7c7a8495860b27b577cc83fd4eb056ad2f7f2c630a17141ccd0e8" => :catalina
-    sha256 "3ccaa0bf93bbc235d04af89c2777252e7655f6b4ddcef09b4fb100f28b2a5cc1" => :mojave
-    sha256 "44eb246857281411d3b868fd50941b963102016e8156a740ad2b35ff56d9a442" => :x86_64_linux
+    sha256 "7cb95a573088edce3373802ba84005c2bc461dcb098f94b15320a9a32db42a25" => :big_sur
+    sha256 "eae47ff8333fc9d0c5364ce6d71300ad5bd57cafbe5b124b0bf13a318f562774" => :arm64_big_sur
+    sha256 "1d336f68b7bfacfbd57e3b348ffacdb842e418ba219914549547982c2765d949" => :catalina
+    sha256 "bc985b0768c1c33db763b1b9d181f960509bda57a7c6cb58605b54ac0df93d3a" => :mojave
   end
 
   depends_on "cython" => :build

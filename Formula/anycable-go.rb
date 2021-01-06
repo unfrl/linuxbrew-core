@@ -1,8 +1,8 @@
 class AnycableGo < Formula
   desc "WebSocket server with action cable protocol"
   homepage "https://github.com/anycable/anycable-go"
-  url "https://github.com/anycable/anycable-go/archive/v1.0.2.tar.gz"
-  sha256 "bf2304768b1ca032d4413c567bfb7e445650c491b0d8471fb4cc78d4746287ef"
+  url "https://github.com/anycable/anycable-go/archive/v1.0.3.tar.gz"
+  sha256 "8aa780b0ee5bf527fe211585aba2441a9cd5b72e58f353e3d4f76286262bf33a"
   license "MIT"
   head "https://github.com/anycable/anycable-go.git"
 
@@ -13,12 +13,10 @@ class AnycableGo < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "f41de1cc84bba5012e16fd2373b0f6db6781d5196506c6933a2e3eed7ff068c3" => :big_sur
-    sha256 "a100c5990e3537d66f6225ab44fc22652a0c998210a56d36f839139d2c9d74e3" => :arm64_big_sur
-    sha256 "dd4aad7525d8582e96f3d782b1f541bd12653b393a39b04d34b83401f007dff8" => :catalina
-    sha256 "4584067882cb44c1af66c66e5730f040d6194ede81c6436d2622e3a2ddfae682" => :mojave
-    sha256 "4c88aa03c10d9f6d45374d7fddcc4d6763790528567c332432f476a4eb05c314" => :high_sierra
-    sha256 "259c04de425ab5190740df9ec88fad399c875d1b1476bf104d05483acb22b182" => :x86_64_linux
+    sha256 "4fad3cde32a0582f7c67e5b1c1cf042b26440550adbea601b8e47a8391628763" => :big_sur
+    sha256 "ee40011c6d573f3f567adeec8098428d602580fec188af1191027380b0017989" => :arm64_big_sur
+    sha256 "c9524a91cef04b327a268ed84a95bde54adaf82b82527bb3e086382c81fc6798" => :catalina
+    sha256 "3ca5d2a4a546fda4da5e840ef21f80494bcc0fd1df3890040cb63fcfc59911eb" => :mojave
   end
 
   depends_on "go" => :build
