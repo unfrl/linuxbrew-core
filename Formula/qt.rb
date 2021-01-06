@@ -58,6 +58,7 @@ class Qt < Formula
     depends_on "wayland"
   end
 
+  uses_from_macos "gperf" => :build
   uses_from_macos "bison"
   uses_from_macos "flex"
   uses_from_macos "sqlite"
