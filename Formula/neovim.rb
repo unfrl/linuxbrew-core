@@ -29,13 +29,13 @@ class Neovim < Formula
   depends_on "luajit"
   depends_on "msgpack"
   depends_on "unibilium"
-  unless OS.mac?
-    depends_on "unzip" => :build
-    depends_on "gperf"
-    depends_on "libnsl"
-  end
 
   uses_from_macos "gperf" => :build
+  uses_from_macos "unzip" => :build
+
+  on_linux do
+    depends_on "libnsl"
+  end
 
   # Keep resources updated according to:
   # https://github.com/neovim/neovim/blob/v#{version}/third-party/CMakeLists.txt
@@ -74,13 +74,10 @@ class Neovim < Formula
     ENV.prepend_path "LUA_CPATH", "#{buildpath}/deps-build/lib/lua/5.1/?.so"
     lua_path = "--lua-dir=#{Formula["luajit"].opt_prefix}"
 
-    cmake_compiler_args = if OS.mac?
-      %w[
-        -DCMAKE_C_COMPILER=/usr/bin/clang
-        -DCMAKE_CXX_COMPILER=/usr/bin/clang++
-      ]
-    else
-      []
+    cmake_compiler_args = []
+    on_macos do
+      cmake_compiler_args << "-DCMAKE_C_COMPILER=/usr/bin/clang"
+      cmake_compiler_args << "-DCMAKE_CXX_COMPILER=/usr/bin/clang++"
     end
 
     cd "deps-build" do
