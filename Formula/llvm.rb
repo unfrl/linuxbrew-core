@@ -5,6 +5,7 @@ class Llvm < Formula
   homepage "https://llvm.org/"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0"
+  revision 1
   head "https://github.com/llvm/llvm-project.git"
 
   stable do
@@ -39,12 +40,10 @@ class Llvm < Formula
 
   bottle do
     cellar :any
-    rebuild 1
-    sha256 "cd5f01eea2f16816ff7d8b706dcf3c1e0144f5670d66a8f0aa92151365792086" => :big_sur
-    sha256 "c43f734066dd9bf4093f68e31585abb55fa8a10bfdbf4418717ad3a3af3c70b8" => :arm64_big_sur
-    sha256 "337e5aed0dab5292de87f571b818b1a018d486051ff41e19d6b7431ed9174546" => :catalina
-    sha256 "621cafec72c02a299f64b4b2a55fa764209f208c4cd24772210ada18b32cc696" => :mojave
-    sha256 "a72876b2280a9d878085fc9e9d1fcaeceb6c42c9508cd44e33a206f1bfc4c168" => :x86_64_linux
+    sha256 "c8e30903a9a4f695780e1eeeaa2cf4d5a95141a1cac98ab1bbc811817cde39ca" => :big_sur
+    sha256 "5e8bf58b0737080fc76ec01af0f92515ab5104e6dc6d89201fe0a8422be19a94" => :arm64_big_sur
+    sha256 "f5b60a60a9e8da79bb677efa5caaf27d8904fbfeef7f7505fad83b9e85906fcf" => :catalina
+    sha256 "bcca17f7d97d86bdc8d934c2734bf8a83a2bdecc8ef2a1f5d93eab416f8880f3" => :mojave
   end
 
   # Clang cannot find system headers if Xcode CLT is not installed
