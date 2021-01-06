@@ -35,11 +35,6 @@ class Ncmpc < Formula
     depends_on "gcc@7"
   end
 
-  fails_with :clang do
-    build 800
-    cause "error: no matching constructor for initialization of 'value_type'"
-  end
-
   # remove in next release
   # commit reference, https://github.com/MusicPlayerDaemon/ncmpc/commit/1a45eab
   patch :DATA

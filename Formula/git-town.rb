@@ -18,10 +18,6 @@ class GitTown < Formula
 
   depends_on "go" => :build
 
-  on_macos do
-    depends_on macos: :el_capitan
-  end
-
   def install
     system "go", "build", *std_go_args, "-ldflags",
            "-X github.com/git-town/git-town/src/cmd.version=v#{version} "\
