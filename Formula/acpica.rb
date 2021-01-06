@@ -17,6 +17,7 @@ class Acpica < Formula
     sha256 "981ccd20f769657e066a915afbefe4db83b5b292b8580017939e305d40b72923" => :arm64_big_sur
     sha256 "039f6aac0aa654c064d4115c365f95c924e064eb8f9d29560f68eaf0848131e6" => :catalina
     sha256 "c8a1a05b4aaf62c6d022a288da490366dcf8f5d6258e52a4dcbe77ef862077fa" => :mojave
+    sha256 "783361be843ec100afc4f8a73928c9902c7c6f378f1b4f9d05df6bb64380efd4" => :x86_64_linux
   end
 
   uses_from_macos "bison" => :build
