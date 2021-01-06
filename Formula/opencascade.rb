@@ -4,6 +4,8 @@ class Opencascade < Formula
   url "https://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=refs/tags/V7_5_0;sf=tgz"
   version "7.5.0"
   sha256 "c8df7d23051b86064f61299a5f7af30004c115bdb479df471711bab0c7166654"
+  license "LGPL-2.1-only"
+  revision 1
 
   livecheck do
     url "https://www.opencascade.com/content/latest-release"
@@ -12,10 +14,9 @@ class Opencascade < Formula
 
   bottle do
     cellar :any
-    sha256 "d8da69190c25ca94d888b17dd46cdc90fb79379d22463366a4501c5d8e17d96d" => :big_sur
-    sha256 "dff73d65e119f968e9f64a0da66fa31f4eb3e3b0cddd2241add58dfb3dd641a0" => :catalina
-    sha256 "d55ddd954f14f50fe8fb4898fe17b0872a2a95a89fb15978585e01887d925915" => :mojave
-    sha256 "c1b1f1c3b05082464df1e130e518b536857beb8a07dea5d1f43120826346d6f0" => :high_sierra
+    sha256 "5e77b44f9574ac2894c1d6500e64bb75270e0751b3d61b8a34af0967790942a5" => :big_sur
+    sha256 "0b0eca3e82aeafba19c02faa6967fe4409c77157ea9e487162c062522c29e404" => :catalina
+    sha256 "8ef8c1fc9e70c03b35cde7f5f8eb699dd03a2a374149eef2bc09c43287dca079" => :mojave
   end
 
   depends_on "cmake" => :build
@@ -24,8 +25,10 @@ class Opencascade < Formula
   depends_on "freeimage"
   depends_on "freetype"
   depends_on "tbb"
+  depends_on "tcl-tk"
 
   def install
+    tcltk = Formula["tcl-tk"]
     system "cmake", ".",
                     "-DUSE_FREEIMAGE=ON",
                     "-DUSE_RAPIDJSON=ON",
@@ -36,9 +39,14 @@ class Opencascade < Formula
                     "-D3RDPARTY_RAPIDJSON_DIR=#{Formula["rapidjson"].opt_prefix}",
                     "-D3RDPARTY_RAPIDJSON_INCLUDE_DIR=#{Formula["rapidjson"].opt_include}",
                     "-D3RDPARTY_TBB_DIR=#{Formula["tbb"].opt_prefix}",
-                    "-D3RDPARTY_TCL_DIR:PATH=#{MacOS.sdk_path_if_needed}/usr",
-                    "-D3RDPARTY_TCL_INCLUDE_DIR=#{MacOS.sdk_path_if_needed}/usr/include",
-                    "-D3RDPARTY_TK_INCLUDE_DIR=#{MacOS.sdk_path_if_needed}/usr/include",
+                    "-D3RDPARTY_TCL_DIR:PATH=#{tcltk.opt_prefix}",
+                    "-D3RDPARTY_TK_DIR:PATH=#{tcltk.opt_prefix}",
+                    "-D3RDPARTY_TCL_INCLUDE_DIR:PATH=#{tcltk.opt_include}",
+                    "-D3RDPARTY_TK_INCLUDE_DIR:PATH=#{tcltk.opt_include}",
+                    "-D3RDPARTY_TCL_LIBRARY_DIR:PATH=#{tcltk.opt_lib}",
+                    "-D3RDPARTY_TK_LIBRARY_DIR:PATH=#{tcltk.opt_lib}",
+                    "-D3RDPARTY_TCL_LIBRARY:FILEPATH=#{tcltk.opt_lib}/libtcl#{tcltk.version.major_minor}.dylib",
+                    "-D3RDPARTY_TK_LIBRARY:FILEPATH=#{tcltk.opt_lib}/libtk#{tcltk.version.major_minor}.dylib",
                     *std_cmake_args
     system "make", "install"
 

@@ -116,7 +116,7 @@ class Qt < Formula
       args << "-no-sql-mysql"
     end
     if OS.mac?
-      if Hardware::CPU.arch == :arm64
+      if Hardware::CPU.arm?
         # Temporarily fixes for Apple Silicon
         args << "-skip" << "qtwebengine" << "-no-assimp"
       else
