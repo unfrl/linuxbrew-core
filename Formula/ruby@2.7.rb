@@ -16,6 +16,7 @@ class RubyAT27 < Formula
     sha256 "495d438227b12dd726981cbde5f97ad2266169976042c519086336918b118590" => :arm64_big_sur
     sha256 "6126c27ef5998b8ad3fb7112e4331191c9b6d8e45fadf52d9f4f21af823d25aa" => :catalina
     sha256 "74278fbbb07822bc074b9a75848ce7501b4e9171279e6c02988d51b5a72a056f" => :mojave
+    sha256 "b907fb00f10ed9835d0e836bc2d9645a1f48355e03ffed2f94f0c649bb4aa8cd" => :x86_64_linux
   end
 
   keg_only :versioned_formula
