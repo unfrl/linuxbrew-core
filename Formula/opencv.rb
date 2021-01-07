@@ -4,6 +4,7 @@ class Opencv < Formula
   url "https://github.com/opencv/opencv/archive/4.5.1.tar.gz"
   sha256 "e27fe5b168918ab60d58d7ace2bd82dd14a4d0bd1d3ae182952c2113f5637513"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,11 +12,10 @@ class Opencv < Formula
   end
 
   bottle do
-    sha256 "704c7659871dc1d5218b080e4ba6678646f41af5dc0d88b39322f5d6bf886742" => :big_sur
-    sha256 "3fb41eb33d22776480a3668cf70564ea87858f026b1bb4153281c909c1b5459e" => :arm64_big_sur
-    sha256 "4b4cc5b18c69ae719a6e01bc4c5e4d4fb22f03dd7fe11c1edd1aa53879aa85c9" => :catalina
-    sha256 "348ab7a5c2450d5d069c3825890e5791e176061cf2bf0b242dece4bb425f97c1" => :mojave
-    sha256 "f7ceb094b5e79a8c939d631f56395ba1d86f5d352bdc7f85e80cc3830c463b7a" => :x86_64_linux
+    sha256 "a327fdeb05d06a2061a11ec80eae069f24dbd6838aa613f1ae287304a2e7f23d" => :big_sur
+    sha256 "eca4ce75e161eb031e8646258751ffdf0b5564884d9d2de8377c3eecf164df51" => :arm64_big_sur
+    sha256 "0533939a627047748685cfc3bc0642e2549a0fcefd419ac30e518e8a0627f3b7" => :catalina
+    sha256 "c545a4708b5a3677c94ab7791e03a55b93cf45adb407c2b8e55423aa0d2493ae" => :mojave
   end
 
   depends_on "cmake" => :build
