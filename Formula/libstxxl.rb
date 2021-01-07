@@ -15,6 +15,7 @@ class Libstxxl < Formula
     sha256 "8454123ffed231405d684ed18c2ef1a0ab1bd118d74614748a5b5df23d8bb5fe" => :arm64_big_sur
     sha256 "b4d5ef6b70735617973eb1f45214b11e3e6baec242bc6aa5ba9ed4da1834f6ad" => :catalina
     sha256 "9b179722c61ea55b352c9196ae38d6915a3625096117088d43f854bee4eb6a39" => :mojave
+    sha256 "da132bcfb67ff680d1b5bf353627227b4956892c1cbe58df5037863d722dccf7" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
