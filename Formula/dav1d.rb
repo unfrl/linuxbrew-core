@@ -11,6 +11,7 @@ class Dav1d < Formula
     sha256 "5d7706832799921efd814f3f56f8a77a1004e254ea75c97a0c993c0a2577136a" => :arm64_big_sur
     sha256 "3dfee035e136d79127501d4a22c169ab4b0a832a5300591a0145c075220bac91" => :catalina
     sha256 "5a3f58f18e7314616a9d8f8b8de4675674f451fda032fd9e6dc07a8ce37c4b43" => :mojave
+    sha256 "fe7a76c44820466ad04b3f35979f1493643b344e2895e9a5e3d7801ef65f08be" => :x86_64_linux
   end
 
   depends_on "meson" => :build
