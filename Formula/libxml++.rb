@@ -75,7 +75,9 @@ class Libxmlxx < Formula
       -lxml++-2.6
       -lxml2
     ]
-    args << "-lintl" if OS.mac?
+    on_macos do
+      flags << "-lintl"
+    end
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", *flags
     system "./test"
   end
