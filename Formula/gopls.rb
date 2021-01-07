@@ -1,8 +1,8 @@
 class Gopls < Formula
   desc "Language server for the Go language"
   homepage "https://github.com/golang/tools/tree/master/gopls"
-  url "https://github.com/golang/tools/archive/gopls/v0.6.1.tar.gz"
-  sha256 "e02bd50379993220cec2c8a3ebda1214d759a547fb96daa41dbdd12d56e61a4f"
+  url "https://github.com/golang/tools/archive/gopls/v0.6.2.tar.gz"
+  sha256 "5103ccf16200000f92d1024cd662c589c7cae20955c9275234a10e942eff455a"
   license "BSD-3-Clause"
 
   livecheck do
@@ -13,11 +13,10 @@ class Gopls < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "a4f60e4c2e8a70aae414995319bb6b4dc5dfe4295a5d105fe0b0fcf84a02f5a9" => :big_sur
-    sha256 "38711952665cce5d9e6bf606c6ad08dba09f7ebef09f84ea6a35fb2a0a248b4c" => :arm64_big_sur
-    sha256 "a4d25c188943c90cd324b052cd43ab4560328051249f4be410dc9c5903e5b8c7" => :catalina
-    sha256 "1d79c7f315bf4e0737036293faf6c70af25d7162c463e0969915bf5c8d08d12c" => :mojave
-    sha256 "9956c18da5fbbe59cc96fa5476d8e1229469c8cb697e69f820e7b544c388c764" => :x86_64_linux
+    sha256 "993e041b4ba12cca38618de40b7ee84b30569a12cec6feaa1b448dad21d4b2a0" => :big_sur
+    sha256 "39a87f988618b133217f17887154108d4c49109e06f00f1ac4f9a3184605b001" => :arm64_big_sur
+    sha256 "88c819f3f983bdd985b82015ea00941e41e5911e1a5837abe0a75925a275f622" => :catalina
+    sha256 "493bfb615a76e0240b83a7522488d56418609c97c3f535e6892cf32636e87273" => :mojave
   end
 
   depends_on "go" => :build
@@ -33,6 +32,6 @@ class Gopls < Formula
     output = JSON.parse(output)
 
     assert_equal "gopls.generate", output["Commands"][0]["Command"]
-    assert_equal "false", output["Options"]["Debugging"][0]["Default"]
+    assert_equal "buildFlags", output["Options"]["User"][0]["Name"]
   end
 end

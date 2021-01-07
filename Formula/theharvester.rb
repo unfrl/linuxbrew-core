@@ -6,13 +6,15 @@ class Theharvester < Formula
   url "https://github.com/laramies/theHarvester/archive/3.2.2.tar.gz"
   sha256 "597b5fdfccf76a30258d56e9c62dffc56fdd78682f75f2ed5b62b5a703d633b4"
   license "GPL-2.0-only"
+  revision 1
   head "https://github.com/laramies/theHarvester.git"
 
   bottle do
     cellar :any
-    sha256 "004da10e5f04fb2116b54f9a968ee43c0411900eb919912981a1b5650434f3e1" => :big_sur
-    sha256 "cf89c8f5cc56749e4ccce6e2d9d6b24660bdf6513bd08acab447d2b67eafb8ba" => :catalina
-    sha256 "8105bda4a6e4ac00808559e59a5a178835410ee76e709f4a48426dee424928e4" => :mojave
+    sha256 "9dc1561d8d8b808f883e5f738116f20b9f40da8e23831c6b839b669a38718301" => :big_sur
+    sha256 "02ea573d0407250c3e25729bc4c727b75efd34131bd759f8971073611c3b644f" => :arm64_big_sur
+    sha256 "180c2e46cd59537a9fb3941b45651227458b824180d1e2dca953ef0dfdb82414" => :catalina
+    sha256 "dec2bf1a27212b9fab8afa967fded9c9b2b641a53b0f59b4118e93b863377471" => :mojave
   end
 
   depends_on "libyaml"
@@ -54,8 +56,8 @@ class Theharvester < Formula
   end
 
   resource "cffi" do
-    url "https://files.pythonhosted.org/packages/cb/ae/380e33d621ae301770358eb11a896a34c34f30db188847a561e8e39ee866/cffi-1.14.3.tar.gz"
-    sha256 "f92f789e4f9241cd262ad7a555ca2c648a98178a953af117ef7fad46aa1d5591"
+    url "https://files.pythonhosted.org/packages/66/6a/98e023b3d11537a5521902ac6b50db470c826c682be6a8c661549cb7717a/cffi-1.14.4.tar.gz"
+    sha256 "1a465cbe98a7fd391d47dce4b8f7e5b921e6cd805ef421d04f5f66ba8f06086c"
   end
 
   resource "chardet" do
