@@ -11,6 +11,7 @@ class Vttest < Formula
     sha256 "146b65073bd5cbed58ccaa43a2af7854a45a642fd81e27418b23e232a9d5126b" => :arm64_big_sur
     sha256 "67bea69b355e52582b491452592cf3e752ea8c229303b5aad91fbf79f8d943d5" => :catalina
     sha256 "77bdb11dde1c90472cf217f61c02e05520cfe39ad8635aaaa28a7e3bddc7e370" => :mojave
+    sha256 "3d66c40f8a6a42cdd3558ba011968bd5e774e64d5f5c81837fc9b4400aae7430" => :x86_64_linux
   end
 
   def install
