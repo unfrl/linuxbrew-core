@@ -6,7 +6,7 @@ class Grpc < Formula
       revision: "ee5b762f33a42170144834f5ab7efda9d76c480b",
       shallow:  false
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https://github.com/grpc/grpc.git"
 
   livecheck do
@@ -16,10 +16,9 @@ class Grpc < Formula
 
   bottle do
     cellar :any
-    sha256 "3e731c3e9d4c6d24f5293db3b93efc0d277f12f03679b6f35af9e0cea67e613c" => :big_sur
-    sha256 "56d08703d69bc715c72b93a28c848ddaac63f1c2fbad09ebf39b271ff658fe8a" => :catalina
-    sha256 "71b413ceeae0da5f236ef71fe9ea5168849df37462ba70a2ac9d99e1f5bf18c5" => :mojave
-    sha256 "05cfa98fcf89ed4ce8bdc12254a926656ccdba4490fee22ca2e7f391844537f1" => :x86_64_linux
+    sha256 "58661a605453a4c4e9b354b83f4a4bafd60c959264f47c517d0a34d3e8ccb69a" => :big_sur
+    sha256 "6e6f844c74329e4716772ca2980a3d71852acf06a34b04c166c3784474268b8a" => :catalina
+    sha256 "3bd3f893f80ea7e9682012655b7a07e7c4510897ed69bd2ae468a61fcf076b9b" => :mojave
   end
 
   depends_on "autoconf" => :build
@@ -73,7 +72,7 @@ class Grpc < Formula
       system "cmake", *args
       system "make", "grpc_cli"
       bin.install "grpc_cli"
-      lib.install Dir["libgrpc++_test_config*.{dylib,so}.*"]
+      lib.install Dir["libgrpc++_test_config*.{dylib,so}*"]
     end
   end
 
@@ -88,5 +87,7 @@ class Grpc < Formula
     EOS
     system ENV.cc, "test.cpp", "-I#{include}", "-L#{lib}", "-lgrpc", "-o", "test"
     system "./test"
+    output = shell_output("grpc_cli ls localhost:#{free_port} 2>&1", 1)
+    assert_match "Received an error when querying services endpoint.", output
   end
 end
