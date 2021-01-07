@@ -6,6 +6,7 @@ class SvtplayDl < Formula
   url "https://files.pythonhosted.org/packages/5d/99/da03abbaf27691fb684a22db5c6b65e255e4aa11f48b1ff7b3329f4fe329/svtplay-dl-2.8.tar.gz"
   sha256 "8c232a5272335f6133144a4a0faa62792a51bc87f5e8a7a9902efd6fa37d8049"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,9 +14,10 @@ class SvtplayDl < Formula
 
   bottle do
     cellar :any
-    sha256 "fed96734882f2cd71d217e4ca4190fa421a794d1d16866d3e06b84938d8dfdb7" => :big_sur
-    sha256 "22c495773d75b9df3b7dcb2cab6ed765c05ce9fa43b22db3ae7db8f787771292" => :catalina
-    sha256 "e51613cb742343b2f9cc6c3c3af621ac22be0649d1e2c523f1e84176cb09b313" => :mojave
+    sha256 "1e9ff023ae27237c46e5d67f0d22cb58fcaf97d7d678d05315e35f62c3cd2fa9" => :big_sur
+    sha256 "1b004732d32d13ad989a85bee109e99cbbd3b3a960c3201b0df004c5d8a58ac0" => :arm64_big_sur
+    sha256 "6b2f7d7da6c304fb4c71e4060f673bd03387cacb43abeb85a6de363fc1103dda" => :catalina
+    sha256 "37b5263f8b73651a48d6b6e344b2fe0ddbfb7762ba2988d836448e3b3e3cdf43" => :mojave
   end
 
   depends_on "openssl@1.1"
@@ -27,8 +29,8 @@ class SvtplayDl < Formula
   end
 
   resource "cffi" do
-    url "https://files.pythonhosted.org/packages/cb/ae/380e33d621ae301770358eb11a896a34c34f30db188847a561e8e39ee866/cffi-1.14.3.tar.gz"
-    sha256 "f92f789e4f9241cd262ad7a555ca2c648a98178a953af117ef7fad46aa1d5591"
+    url "https://files.pythonhosted.org/packages/66/6a/98e023b3d11537a5521902ac6b50db470c826c682be6a8c661549cb7717a/cffi-1.14.4.tar.gz"
+    sha256 "1a465cbe98a7fd391d47dce4b8f7e5b921e6cd805ef421d04f5f66ba8f06086c"
   end
 
   resource "asn1crypto" do

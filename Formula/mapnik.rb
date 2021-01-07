@@ -14,10 +14,11 @@ class Mapnik < Formula
 
   bottle do
     cellar :any
-    rebuild 1
-    sha256 "8850656d1fabeebf64166b650d63a5b7f23a9b8de6cfa1f3a28440260620e4aa" => :big_sur
-    sha256 "e38f7ec27f85e984d3eecb7068a4c70196465a2d5959ebd4c272c792febc4966" => :catalina
-    sha256 "8527d93cb122315f5a626a8dacf89af2b5f85c53f344762995a73e2680bd2bfd" => :mojave
+    rebuild 2
+    sha256 "48a0c9620a9ab8b0bdc9a5dce860b10929131fd4111d7867bb65b3edc3e5801f" => :big_sur
+    sha256 "ae4b934d41a83aae33c9683075eaead205b6394b6907be7c9807bd6dd335bb3c" => :arm64_big_sur
+    sha256 "f729bbdbe769cf517ac2a13ee2ef427b37ff0a6f81a57ad80f1469daf0352404" => :catalina
+    sha256 "0faa41637365731b2208661702c1c4f3acef2d37e8733fbd063dc72d45b53f29" => :mojave
   end
 
   depends_on "pkg-config" => :build
@@ -35,10 +36,17 @@ class Mapnik < Formula
   depends_on "webp"
 
   on_macos do
-    patch :p1 do
+    patch do
       url "https://raw.githubusercontent.com/Homebrew/formula-patches/57e635431e09fa1b00f3e1fd9574ad516de13308/mapnik/mapnik-2.0.23.patch"
       sha256 "b946071a95a52757e1aabb03ed7768408b864e20f46cbea39bda2cd1499b256c"
     end
+  end
+
+  # Fix for Boost >= 1.75
+  # https://github.com/mapnik/mapnik/issues/4201
+  patch do
+    url "https://github.com/mapnik/mapnik/commit/49e0ef18.patch?full_index=1"
+    sha256 "d8f12a85ad78f95e3cb2b3b5485e586c250fe2230a90874c0a70843189cc42f5"
   end
 
   def install

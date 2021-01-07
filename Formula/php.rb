@@ -2,11 +2,10 @@ class Php < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-8.0.0.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.0.0.tar.xz"
-  sha256 "b5278b3eef584f0c075d15666da4e952fa3859ee509d6b0cc2ed13df13f65ebb"
+  url "https://www.php.net/distributions/php-8.0.1.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.0.1.tar.xz"
+  sha256 "208b3330af881b44a6a8c6858d569c72db78dab97810332978cc65206b0ec2dc"
   license "PHP-3.01"
-  revision 1
 
   livecheck do
     url "https://www.php.net/releases/feed.php"
@@ -14,11 +13,10 @@ class Php < Formula
   end
 
   bottle do
-    sha256 "fb9e9a8db2d02ec3e80882d7f42894dde0c5a3f0d27990a3e365e470ff4ef63c" => :big_sur
-    sha256 "a0e82c1e9904cc5105a10c4bc1d4ce25e23e2db08dd737ead602d82c187126ad" => :arm64_big_sur
-    sha256 "b1453e4e8e9ad95ec36c6e97bd2b3e0773a62d52b84a568ce26f1ccb97bc1bc6" => :catalina
-    sha256 "7bd4b3ef362185ae7e7918b04d5bc40f4ed3fd533b8dbefbebceead4b2b82393" => :mojave
-    sha256 "5682e98adf8883c3f9d8878efa429bd9713b2051ff9423fdc4c7244f54c9eeb6" => :x86_64_linux
+    sha256 "d1f6a2b1430317b439896946ff689cea5f01c122da0358bc8ab3ab477f7fbcc2" => :big_sur
+    sha256 "44ee3bd80856fcded721e3c93539ae5464d434e99487389640dd81fa10b17c05" => :arm64_big_sur
+    sha256 "511b8e7a32673fa2c5cdfbfaae72a89b97bb882816cc60c6253547cb336474e3" => :catalina
+    sha256 "f36fc1d02847fc8ceace771347edc21830e41e41a53277ab89179fd22cff0103" => :mojave
   end
 
   head do

@@ -6,7 +6,7 @@ class Statik < Formula
   url "https://files.pythonhosted.org/packages/c1/f7/c1dc03a0ed218cb5d3e72f0983dcc18b441cc9d3275b527a5cb0a479dc2a/statik-0.23.0.tar.gz"
   sha256 "9ce2c5a76284aa7d3eba2dc5b167c39d0249f96da08213a14c89f0b7edcb7746"
   license "MIT"
-  revision OS.mac? ? 2 : 4
+  revision OS.mac? ? 3 : 5
   head "https://github.com/thanethomson/statik.git"
 
   livecheck do
@@ -15,11 +15,10 @@ class Statik < Formula
 
   bottle do
     cellar :any
-    rebuild 2
-    sha256 "dda0baaa97e649c54029d17a54700b3d65804874bb50317ba9d8e9554437b453" => :big_sur
-    sha256 "fd0ccec0435cfc0b72a254e6b3bf9df6ba2abb19794f8394394fe93ee24bd2e4" => :catalina
-    sha256 "099a851cbb721857a874b7e9d690e83e57d12b0f0f19e5e2ef0d102d8e2c6b94" => :mojave
-    sha256 "c32e1c7c1928c383426ea18c3307ced5d1e1189d4946fdd52b0a43c4c91547c4" => :x86_64_linux
+    sha256 "4e57a49a51d642f6bf6aa16ec861e0d598099243b2f8adffd1bacc1c99f1c5e1" => :big_sur
+    sha256 "d8ccb5efc25d0435ccf7c543d86991a83622845d04426eb1823e7e670ac9dbcd" => :arm64_big_sur
+    sha256 "6ead20ec4625d2155252c892c47342571dcd390d630c38be2c73cf89b68c98ca" => :catalina
+    sha256 "5579aa466a747a15839a89b48c875b7afc6d225ff9af028a62ccc9eacee115c7" => :mojave
   end
 
   depends_on "libpq"
@@ -49,8 +48,8 @@ class Statik < Formula
   end
 
   resource "cffi" do
-    url "https://files.pythonhosted.org/packages/05/54/3324b0c46340c31b909fcec598696aaec7ddc8c18a63f2db352562d3354c/cffi-1.14.0.tar.gz"
-    sha256 "2d384f4a127a15ba701207f7639d94106693b6cd64173d6c8988e2c25f3ac2b6"
+    url "https://files.pythonhosted.org/packages/66/6a/98e023b3d11537a5521902ac6b50db470c826c682be6a8c661549cb7717a/cffi-1.14.4.tar.gz"
+    sha256 "1a465cbe98a7fd391d47dce4b8f7e5b921e6cd805ef421d04f5f66ba8f06086c"
   end
 
   resource "chardet" do
