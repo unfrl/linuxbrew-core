@@ -12,6 +12,7 @@ class RubyAT26 < Formula
     sha256 "a96708875a8876b485f3363013325280b7bc430b2476f1a96eec868a576c3767" => :arm64_big_sur
     sha256 "9a4c70bb351c889e3b529be56eeb5699331f6de5bd0564e1baf14c94af37f523" => :catalina
     sha256 "30328442ad700d940208b1423bab0a0cdc84aaa02501de820ca6d7903fee09a3" => :mojave
+    sha256 "5245ec0a73e09b30fc85627310b6454cfa82c55572b27aac58a918826ecae983" => :x86_64_linux
   end
 
   keg_only :versioned_formula
