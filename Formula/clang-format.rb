@@ -37,6 +37,7 @@ class ClangFormat < Formula
     sha256 "9b299661bc571c3d711d0203f9b3de3f50b36f744f339ad3261d35ddc5f15db0" => :arm64_big_sur
     sha256 "679f98a5595d37a20e018471c3b12ca2bf18ba4e26fe5311caafc24c627b8d9b" => :catalina
     sha256 "70bbea9c85e84c730b36bd4ea27c0b219fe902d2a5ef8f9415c33b1653114e3e" => :mojave
+    sha256 "f7388e47d32ce549398be0fa0ffa33cb79b71139e0a9de794f54c526db34fa07" => :x86_64_linux
   end
 
   head do
