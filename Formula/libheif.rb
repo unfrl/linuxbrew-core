@@ -7,14 +7,15 @@ class Libheif < Formula
 
   bottle do
     cellar :any
-    sha256 "f137ce4e87878830da9c912f2e6db89f41ae086bb3057695f15dbdc0b8bbf96d" => :big_sur
-    sha256 "cf509e929cdf221b9ddf4c68135c0ec9b67425084d781a845846b96fd99778e5" => :arm64_big_sur
-    sha256 "cfbf48ac25a4a2d5c193837a03ad99abd2097f8be642c1fd234eebe082bdc4da" => :catalina
-    sha256 "68c9d90b2bb7325b34f18cf5bd175e8df8cd177bc0325fd13e327e81481a3d1c" => :mojave
-    sha256 "b1c4d0b2cc15a40275dae1d27ea9e583a6742bdddf2b8e58ad4afd07b31c320c" => :x86_64_linux
+    rebuild 1
+    sha256 "ad14eb7498f8e3ce88eab7080d5bab96a76625146f08f93d2c415a9c4a457300" => :big_sur
+    sha256 "668a7d16b976d5083224495433d20258b9b74dac82ea18ff3c01b95e9274290a" => :arm64_big_sur
+    sha256 "977d0b6b904a292dad214bfbd3e44d9f1bd5ea5b308f69d96153208333a037f1" => :catalina
+    sha256 "8e0cd658a818526c599bec0d22cd52ab854f49a46912729a0792c92fe86d45c9" => :mojave
   end
 
   depends_on "pkg-config" => :build
+  depends_on "aom"
   depends_on "jpeg"
   depends_on "libde265"
   depends_on "libpng"
@@ -27,6 +28,7 @@ class Libheif < Formula
                           "--prefix=#{prefix}"
     system "make", "install"
     pkgshare.install "examples/example.heic"
+    pkgshare.install "examples/example.avif"
   end
 
   def post_install
@@ -36,10 +38,17 @@ class Libheif < Formula
   test do
     output = "File contains 2 images"
     example = pkgshare/"example.heic"
-    exout = testpath/"example.jpg"
+    exout = testpath/"exampleheic.jpg"
 
     assert_match output, shell_output("#{bin}/heif-convert #{example} #{exout}")
-    assert_predicate testpath/"example-1.jpg", :exist?
-    assert_predicate testpath/"example-2.jpg", :exist?
+    assert_predicate testpath/"exampleheic-1.jpg", :exist?
+    assert_predicate testpath/"exampleheic-2.jpg", :exist?
+
+    output = "File contains 1 images"
+    example = pkgshare/"example.avif"
+    exout = testpath/"exampleavif.jpg"
+
+    assert_match output, shell_output("#{bin}/heif-convert #{example} #{exout}")
+    assert_predicate testpath/"exampleavif.jpg", :exist?
   end
 end

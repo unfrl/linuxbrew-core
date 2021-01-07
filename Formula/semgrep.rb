@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https://semgrep.dev"
   url "https://github.com/returntocorp/semgrep.git",
-      tag:      "v0.35.0",
-      revision: "1f5c79ceea37d6679ad3bd6c8549de199f557020"
+      tag:      "v0.36.0",
+      revision: "30c4eee3bad923cac66b03757ff43ce0f44b68e1"
   license "LGPL-2.1-only"
   head "https://github.com/returntocorp/semgrep.git", branch: "develop"
 
@@ -16,9 +16,9 @@ class Semgrep < Formula
 
   bottle do
     cellar :any
-    sha256 "0e1ba8602ba4c3863a8348b4cd1559b0ff9c02a5981b6bfa7ca2bf93a43886a7" => :big_sur
-    sha256 "37d1ce42e24f42e03e37010e5c73fdb6a39451ab05c82ce486292ade5c019000" => :catalina
-    sha256 "a60e9cd547b249c7ab0ea448c0532e0c63f0cb20aa385341ae51b096f95ddeb0" => :mojave
+    sha256 "d4a8fc635feaf8fd4c9ab04b5b32d7e296a5091afe478016c25d8a50ac66aedf" => :big_sur
+    sha256 "81e3799f943d8916cfedc27959c45d7d22f84bcacfcd8d9ffba1672e7341dc24" => :catalina
+    sha256 "1b0f73f9697ceda313b6332b513e4741013ad79c9b48ee66ca7fb5b4e4db7db7" => :mojave
   end
 
   depends_on "cmake" => :build
@@ -162,6 +162,7 @@ class Semgrep < Formula
       end
     end
 
+    ENV["SEMGREP_SKIP_BIN"] = "1"
     python_path = "semgrep"
     cd python_path do
       venv = virtualenv_create(libexec, Formula["python@3.9"].bin/"python3.9")
