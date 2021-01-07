@@ -16,6 +16,7 @@ class Lzlib < Formula
     sha256 "06e131d4c75dc18d8aa6571d4b80ff302c9e0b4c5487d661c9d9d0cd34d93100" => :arm64_big_sur
     sha256 "bd80163e5b149eff8a652ee79b8551af09bba6410d9549c481d680ffb6c5dcb9" => :catalina
     sha256 "d351d2530ffa16a75df2afaf35cad291acca3a8a9374ab0b7b3edfcf1bd4f64d" => :mojave
+    sha256 "c7847cfcea9367c30859f150f715fa824e8c3f4b5c49f0ffa81764355c802803" => :x86_64_linux
   end
 
   def install
