@@ -4,7 +4,7 @@ class PythonAT39 < Formula
   url "https://www.python.org/ftp/python/3.9.1/Python-3.9.1.tar.xz"
   sha256 "991c3f8ac97992f3d308fefeb03a64db462574eadbff34ce8bc5bb583d9903ff"
   license "Python-2.0"
-  revision 4
+  revision 5
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -12,11 +12,10 @@ class PythonAT39 < Formula
   end
 
   bottle do
-    sha256 "301f73951895b903f31def9defa1c20c83f8743f11b00a515983ac886ba8331f" => :big_sur
-    sha256 "b79adb7fbf9c8b99647257cb3d74f77a7af19f18b69c5bd4d8004a427398c232" => :arm64_big_sur
-    sha256 "43cb32e992849611802ba8b3dbe22051f6ea8142e17deeeb79058e560414d0da" => :catalina
-    sha256 "99d4ebd81a1de95418facef6d7f17ca8e01a252f505da2b531a49d71008e63bb" => :mojave
-    sha256 "468843201e4265ae7948e59e6eb1881358eb89a7b27cd7b62385597b37454f80" => :x86_64_linux
+    sha256 "ea0da0f7c21b1fffeb1ff917809faa211dce9960097484ea3a780316bfd5dbd0" => :big_sur
+    sha256 "d4977a7369b14be1154a5d759c8044eeaa6466da9363fd36ab855837b48c9193" => :arm64_big_sur
+    sha256 "ab9dfb9c8d3b24d01aabeeae8668e36d97f2d84869d5bbc40a452bc142d3319c" => :catalina
+    sha256 "d3eeaba118a9cc3bd4b082d845cabdc29f57e994eb30046db1ead6b47fc8b45e" => :mojave
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -308,6 +307,23 @@ class PythonAT39 < Formula
     # post_install happens after link
     %W[pip3 wheel3 pip#{version.major_minor} easy_install-#{version.major_minor}].each do |e|
       (HOMEBREW_PREFIX/"bin").install_symlink bin/e
+    end
+
+    # Replace bundled setuptools/pip with our own
+    rm Dir["#{lib_cellar}/ensurepip/_bundled/{setuptools,pip}-*.whl"]
+    system bin/"pip3", "wheel", "--wheel-dir=#{lib_cellar}/ensurepip/_bundled",
+           libexec/"setuptools", libexec/"pip"
+
+    # Patch ensurepip to bootstrap our updated versions of setuptools/pip
+    setuptools_whl = Dir["#{lib_cellar}/ensurepip/_bundled/setuptools-*.whl"][0]
+    setuptools_version = Pathname(setuptools_whl).basename.to_s.split("-")[1]
+
+    pip_whl = Dir["#{lib_cellar}/ensurepip/_bundled/pip-*.whl"][0]
+    pip_version = Pathname(pip_whl).basename.to_s.split("-")[1]
+
+    inreplace lib_cellar/"ensurepip/__init__.py" do |s|
+      s.gsub! /_SETUPTOOLS_VERSION = .*/, "_SETUPTOOLS_VERSION = \"#{setuptools_version}\""
+      s.gsub! /_PIP_VERSION = .*/, "_PIP_VERSION = \"#{pip_version}\""
     end
 
     # Help distutils find brewed stuff when building extensions
