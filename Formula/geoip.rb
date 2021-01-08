@@ -13,6 +13,7 @@ class Geoip < Formula
     sha256 "fd8787e3b88f91d97504992874d3fd358c6865e03fc19c5123b8e7f1a691f0dd" => :arm64_big_sur
     sha256 "140477567aa37b0418e1976bdc5f75bc0f933405c157e7170ae3441ee3fc74aa" => :catalina
     sha256 "e10d69d8595116bdb562b0ede63d7bd04f606c66becd3c03fb1e6d06ba99a964" => :mojave
+    sha256 "898161dc51426ac105597351aa979a625b38043eb5768a860c3a09111fdeb141" => :x86_64_linux
   end
 
   resource "database" do
