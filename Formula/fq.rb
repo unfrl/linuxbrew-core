@@ -1,15 +1,15 @@
 class Fq < Formula
   desc "Brokered message queue optimized for performance"
   homepage "https://github.com/circonus-labs/fq"
-  url "https://github.com/circonus-labs/fq/archive/v0.13.4.tar.gz"
-  sha256 "1ec2e6293d092c0a2b560a5bd325488d1ae11f7c571494192792abf300549420"
+  url "https://github.com/circonus-labs/fq/archive/v0.13.5.tar.gz"
+  sha256 "a882059d66334ea84e23a7b86f2ec9e1daeb14e1b7253ab080c13c09e1716dd8"
   license "MIT"
   head "https://github.com/circonus-labs/fq.git"
 
   bottle do
-    sha256 "526f8bd3827c657b68e255548af318404f488dbb52e270b68aa4035579094edc" => :big_sur
-    sha256 "2bfae7445286bb2cac9ccde216c00d4bab996da613621b4a6332a0c39463d900" => :catalina
-    sha256 "a2f5a81b57c0c701a95fde6a328d4ade2111d79a1d674b9afb4bf02acf6a9c25" => :mojave
+    sha256 "57f2a5e22f9f7d6712cfde3f6339d3487460d795086b6d09f67a01f68dd75fe2" => :big_sur
+    sha256 "1da3d575b5ef3350c1410e90ba924b79455fa98adf8a637d189041aabdb136a0" => :catalina
+    sha256 "fd3170bfa075df77cf33297020fee3b9cbf91f6069f3b3d9ff828af195ec64fb" => :mojave
   end
 
   depends_on "concurrencykit"

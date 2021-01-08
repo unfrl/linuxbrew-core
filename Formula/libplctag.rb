@@ -1,8 +1,8 @@
 class Libplctag < Formula
   desc "Portable and simple API for accessing AB PLC data over Ethernet"
   homepage "https://github.com/libplctag/libplctag"
-  url "https://github.com/libplctag/libplctag/archive/v2.1.21.tar.gz"
-  sha256 "6409dcca5d47dc65fd67ba9b84ddc4a001c2108826b3c29109a983e56429bb77"
+  url "https://github.com/libplctag/libplctag/archive/v2.1.22.tar.gz"
+  sha256 "0c6b0ffb5a625c59873ca0da76b11fa52b6e83ec7fe09a2ce7fc4387878d668b"
   license any_of: ["LGPL-2.0-or-later", "MPL-2.0"]
 
   livecheck do
@@ -12,11 +12,10 @@ class Libplctag < Formula
 
   bottle do
     cellar :any
-    sha256 "c2ec604baf5a893508ae8a45fc2af74efd0abb22aaba2119743e00c8c8685858" => :big_sur
-    sha256 "ec91e0e4c5565138b4faf0f2e9b36f00c606c678a12e112542648793c15dcfa4" => :arm64_big_sur
-    sha256 "d45af9651866466b70b2c5c6479d7681d216230ef6b7c892c0450edeedb5714c" => :catalina
-    sha256 "56a3926222b479954123f5e922d09d0ec71817f7afbbfcffac57a31daa2eee29" => :mojave
-    sha256 "78106acfd2d1a8d597fdf0d508606366f7bca9fbd600ebb62e7418238dc6af7b" => :x86_64_linux
+    sha256 "4ae1e19a43a22ceae58258052580171199f5d8d410e0dc2a2f3e6fc2af4e1e0b" => :big_sur
+    sha256 "23131f240da580b83beb29c6f7862d6f829ee994d83121918905eea3033467ad" => :arm64_big_sur
+    sha256 "d24ac6daf5f21ee971aa04a9240ebd9cb75147c9cab4081f23f261f5923037ad" => :catalina
+    sha256 "41ebd02e8ef20058db1950e6c69523f4e02a38a439c9b96d802a34376c4ec0dd" => :mojave
   end
 
   depends_on "cmake" => :build

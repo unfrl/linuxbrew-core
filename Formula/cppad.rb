@@ -2,8 +2,8 @@ class Cppad < Formula
   desc "Differentiation of C++ Algorithms"
   homepage "https://www.coin-or.org/CppAD"
   # Stable versions have numbers of the form 201x0000.y
-  url "https://github.com/coin-or/CppAD/archive/20210000.2.tar.gz"
-  sha256 "6fae54ea670f07138a45a0aa6e0e4078999bbe7309eec3916ff892f0e81e9e4a"
+  url "https://github.com/coin-or/CppAD/archive/20210000.3.tar.gz"
+  sha256 "35c9fc5de4d919fe9f56613f54ab605b6442c6936bf17671e44e67f184e980d2"
   license "EPL-2.0"
   version_scheme 1
   head "https://github.com/coin-or/CppAD.git"
@@ -15,11 +15,10 @@ class Cppad < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "abf0bfcea6fa4593d9e23c8e69649db10357dfb253455b9b8dade87835459a20" => :big_sur
-    sha256 "efebca37aabaae80c9fe4ebd8b3d7b226673516d10d4bf2eae54d22fff981cbe" => :arm64_big_sur
-    sha256 "65677bf817415212bcef2f1b8358398972f19dbd7d1162d7c6c873aed8bbb87d" => :catalina
-    sha256 "797f1e9dde9b9b6ce86722bf75a21d7d8129c9d28443f86f3ff22b230df87639" => :mojave
-    sha256 "3cbdad6b54dc085ebaa02710a9aaef4ad6c4609428ff5ea653ca2943eb2082b3" => :x86_64_linux
+    sha256 "4abb02a14de2587593cd00ceb6bef953529969e87dddad3b331845330f560415" => :big_sur
+    sha256 "62c2c9be49532a807e1d9698548496c21903124b8c6b4dc408ff8db186bf9a91" => :arm64_big_sur
+    sha256 "de8b01a4ded52362908c9b4551c5170de57ccd75c7d85877eefb1002bf8ff140" => :catalina
+    sha256 "4e233fc020fbb8cef7372ba617d5591547738a793f4180559633cc59008756c1" => :mojave
   end
 
   depends_on "cmake" => :build
