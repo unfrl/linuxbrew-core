@@ -6,7 +6,7 @@ class Credstash < Formula
   url "https://files.pythonhosted.org/packages/b4/89/f929fda5fec87046873be2420a4c0cb40a82ab5e30c6d9cb22ddec41450b/credstash-1.17.1.tar.gz"
   sha256 "6c04e8734ef556ab459018da142dd0b244093ef176b3be5583e582e9a797a120"
   license "Apache-2.0"
-  revision OS.mac? ? 1 : 3
+  revision OS.mac? ? 2 : 4
   head "https://github.com/fugue/credstash.git"
 
   livecheck do
@@ -15,12 +15,10 @@ class Credstash < Formula
 
   bottle do
     cellar :any
-    rebuild 1
-    sha256 "ac128c3f6e9c8d0db68bbcef0785478522604560ceffa8c9005b378e4e0fb5cd" => :big_sur
-    sha256 "10daccee7f42ffdf841e32cc15cf074259190134180809282b388b5c6f9f9841" => :catalina
-    sha256 "0c19a60c70002ef247819231c4fd6a23118b74ae6e0ccedea1ebefb7d2371067" => :mojave
-    sha256 "341878a22ac587b17bdf61b20b69c573318d5c7cff9200b7038c4564c8f5ad11" => :high_sierra
-    sha256 "1630295bd26d6744a3366f1d0d6e0d49bd1806dfd09a0a0febdc2ad66743c590" => :x86_64_linux
+    sha256 "014126c51fdc447aaf9cd276bcf1e5db3e7f47de375d7df6b5c987e707406fba" => :big_sur
+    sha256 "0158907bb9ea77ca4df22484d8f5706707e395963cedb88c2e8e9269b697c8fb" => :arm64_big_sur
+    sha256 "37f16c3f6d9c37adb3c4923005da62eb0bf76521e1650d414132b2b186cd3768" => :catalina
+    sha256 "59f8ed1c377249d7732b65bc9b20f17ca440d18ce019a0334d47db8c2cc36d49" => :mojave
   end
 
   depends_on "openssl@1.1"
@@ -43,8 +41,8 @@ class Credstash < Formula
   end
 
   resource "cffi" do
-    url "https://files.pythonhosted.org/packages/cb/ae/380e33d621ae301770358eb11a896a34c34f30db188847a561e8e39ee866/cffi-1.14.3.tar.gz"
-    sha256 "f92f789e4f9241cd262ad7a555ca2c648a98178a953af117ef7fad46aa1d5591"
+    url "https://files.pythonhosted.org/packages/66/6a/98e023b3d11537a5521902ac6b50db470c826c682be6a8c661549cb7717a/cffi-1.14.4.tar.gz"
+    sha256 "1a465cbe98a7fd391d47dce4b8f7e5b921e6cd805ef421d04f5f66ba8f06086c"
   end
 
   resource "cryptography" do

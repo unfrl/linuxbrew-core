@@ -1,17 +1,16 @@
 class TreeSitter < Formula
   desc "Parser generator tool and incremental parsing library"
   homepage "https://tree-sitter.github.io/"
-  url "https://github.com/tree-sitter/tree-sitter/archive/0.17.3.tar.gz"
-  sha256 "a897e5c9a7ccb74271d9b20d59121d2d2e9de8b896c4d1cfaac0f8104c1ef9f8"
+  url "https://github.com/tree-sitter/tree-sitter/archive/0.18.0.tar.gz"
+  sha256 "574458dbc8b6761027d3090bc2fd474f17ea77d875d4713ed9260d0def125bce"
   license "MIT"
   head "https://github.com/tree-sitter/tree-sitter.git"
 
   bottle do
     cellar :any
-    rebuild 2
-    sha256 "242c2c1e1867674641caec723aa5d8865f6912f83c2475de2c43fdad25282e36" => :big_sur
-    sha256 "97c837df6b17cdaa5653638e48d043750e3917b3681b76000fdfaae31b8f667d" => :catalina
-    sha256 "d9302818f0caddc5a60e0c5a6a3f9f316da0c76322fc55d986ad4982e6661e30" => :mojave
+    sha256 "97c14d2044ea8b1fdfccc4d90896b3891b9548881196b325b589f2eba494d4cb" => :big_sur
+    sha256 "cf3250f1497a679a0eade461a54a68257b580bbb2372d8da3a8bdb8ac50f57cd" => :catalina
+    sha256 "c0b56ca3d9cfcd1d4537a74232d3fc54b3fa26010af74dbc3aad9f290b9cab28" => :mojave
   end
 
   depends_on "rust" => :build

@@ -6,6 +6,7 @@ class Awscurl < Formula
   url "https://files.pythonhosted.org/packages/79/0f/5e011f592861d0c582abd628cb8ef35ec42ae442674760268392ec0cc46e/awscurl-0.21.tar.gz"
   sha256 "b0e2aa95160917e8b7320fe3ea35b31536d61b1084541f0ff249c44250a92c53"
   license "MIT"
+  revision 1
   head "https://github.com/okigan/awscurl.git"
 
   livecheck do
@@ -14,12 +15,10 @@ class Awscurl < Formula
 
   bottle do
     cellar :any
-    rebuild 1
-    sha256 "1cbe7ba64032047ffdc0485460e4ed3b9812425897932b1504b02bee47fd66f8" => :big_sur
-    sha256 "750f3ad6f616b1c1273424ff10fdc949d3b2f2365021e22fb7e345c50e9b6bb6" => :catalina
-    sha256 "2c0fad7c4e223c05a8454010b32a4832635e75d500e79391e6b2affb176cf05a" => :mojave
-    sha256 "f96e6fe97b9e61bba1503474deaf158e0cc694c0cb9e078236e84d02d0427a1b" => :high_sierra
-    sha256 "79f39689520b7f34d38c9701901474be1e05f7e604c2bb5ec30057413c605f27" => :x86_64_linux
+    sha256 "bd800eb06b31ccd926313d9f2f31e0acd465db5879777f5c18ef8f9e67fa13b1" => :big_sur
+    sha256 "e4406bc4e1383339f207c1df729c0379baedb4142c6636ccbcf17762ae417633" => :arm64_big_sur
+    sha256 "b0559cfb4473666ca3cb64108344f25f9821f016c1e71f68eca7efdb1e89c8ee" => :catalina
+    sha256 "5b0d11b44030188e9195a21d6dfa780dc50a1eca9714b0e2a8a038d973aa1c5e" => :mojave
   end
 
   depends_on "python@3.9"
@@ -36,8 +35,8 @@ class Awscurl < Formula
   end
 
   resource "cffi" do
-    url "https://files.pythonhosted.org/packages/cb/ae/380e33d621ae301770358eb11a896a34c34f30db188847a561e8e39ee866/cffi-1.14.3.tar.gz"
-    sha256 "f92f789e4f9241cd262ad7a555ca2c648a98178a953af117ef7fad46aa1d5591"
+    url "https://files.pythonhosted.org/packages/66/6a/98e023b3d11537a5521902ac6b50db470c826c682be6a8c661549cb7717a/cffi-1.14.4.tar.gz"
+    sha256 "1a465cbe98a7fd391d47dce4b8f7e5b921e6cd805ef421d04f5f66ba8f06086c"
   end
 
   resource "chardet" do

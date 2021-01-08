@@ -6,6 +6,7 @@ class AwsElasticbeanstalk < Formula
   url "https://files.pythonhosted.org/packages/84/0e/0df616d87aaa363454dbf342f7f3996bf036c1a4d5dbf64e8f046fd89142/awsebcli-3.19.2.tar.gz"
   sha256 "bd5221c26b3c7eb64597c6ae03b76c2025ed210e68d3702819bdfa1afb015230"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,11 +14,10 @@ class AwsElasticbeanstalk < Formula
 
   bottle do
     cellar :any
-    sha256 "49497cfc82e4f7077a892545ad614413d6e987def058543240617efeeab39974" => :big_sur
-    sha256 "09c2375ad6e5af51cc9bf164dbc24c959482e4817d3124d52ad65accdf45735b" => :catalina
-    sha256 "de5a139b9a021fcbdb19ad4b706b1f6a82d5cb0532653619b3f016efb968d761" => :mojave
-    sha256 "b035c2a053af7744834b780c599d53788e714ac9c029b23538a276239ad6b0ad" => :high_sierra
-    sha256 "707849ef92cfbdb03df1ca9fe342ecd007fbbb46baada6ab3db4880151f31295" => :x86_64_linux
+    sha256 "665585db115e65f850fb9ba0dc61e5db70477a75ac9e621727377e9b2cc56e55" => :big_sur
+    sha256 "2df427b7811edba430e96430c4424c747a6c758c6d5b3109ffcc75ad505296a1" => :arm64_big_sur
+    sha256 "db6db3ecc962a7da8a57dfa25b1f9b32404cdebd9777815edbb42c31c51535ef" => :catalina
+    sha256 "0c4578e3cbc966243f385bcfb90e545434a00b36dafbf7745456dbd4cb97c43d" => :mojave
   end
 
   depends_on "python@3.9"
@@ -64,8 +64,8 @@ class AwsElasticbeanstalk < Formula
   end
 
   resource "cffi" do
-    url "https://files.pythonhosted.org/packages/cb/ae/380e33d621ae301770358eb11a896a34c34f30db188847a561e8e39ee866/cffi-1.14.3.tar.gz"
-    sha256 "f92f789e4f9241cd262ad7a555ca2c648a98178a953af117ef7fad46aa1d5591"
+    url "https://files.pythonhosted.org/packages/66/6a/98e023b3d11537a5521902ac6b50db470c826c682be6a8c661549cb7717a/cffi-1.14.4.tar.gz"
+    sha256 "1a465cbe98a7fd391d47dce4b8f7e5b921e6cd805ef421d04f5f66ba8f06086c"
   end
 
   resource "chardet" do

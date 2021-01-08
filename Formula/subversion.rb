@@ -5,19 +5,17 @@ class Subversion < Formula
   mirror "https://archive.apache.org/dist/subversion/subversion-1.14.0.tar.bz2"
   sha256 "6ba8e218f9f97a83a799e58a3c6da1221d034b18d9d8cbbcb6ec52ab11722102"
   license "Apache-2.0"
-  revision 6
+  revision 7
 
   livecheck do
     url :stable
   end
 
   bottle do
-    sha256 "1b9eb020913cf0e9ba84fdd6961733b60bb39c55e8e6b96d0190a51152ecde99" => :big_sur
-    sha256 "90112891fcfed4fbaf63e0a51b864ac0046321f7e97a014bdbf029c0738e5e56" => :arm64_big_sur
-    sha256 "a077210ae884ac59170e51a4ff0566f9576f0a42f772effd4860b92e7ff5150e" => :catalina
-    sha256 "fbb5d261fae9924f357aecde6f7624712709bda2fd7403dc80f9e88fc4b017c0" => :mojave
-    sha256 "352b4a47df3cafc0171ba56f1a157ff375cab54ce10278abbcf98c1ca2408999" => :high_sierra
-    sha256 "2164d65df0104ae9c09bdd0827ab9ed685e16ccb92f8c023bf0716234137c681" => :x86_64_linux
+    sha256 "0c9c96e6d321a1e6d523d0783a315529e8f169c230017209d85f9afe6aa37693" => :big_sur
+    sha256 "cbf0d587edf228480d7ff2f94bb850d96d30e2f03ed47fae7fed6e3efa2bfd43" => :arm64_big_sur
+    sha256 "074d4f24adf5242be5a23996db6abcc7a2a4b25ae0faf6fbe52d5fcd71d7405a" => :catalina
+    sha256 "c4d00745a6ef81fe3e856da71e3cc3600108f32a9f4912bcaaca743f591c8da3" => :mojave
   end
 
   head do
@@ -38,11 +36,10 @@ class Subversion < Formula
   depends_on "apr-util"
 
   # build against Homebrew versions of
-  # gettext, lz4, perl, sqlite and utf8proc for consistency
+  # gettext, lz4, sqlite and utf8proc for consistency
   depends_on "gettext"
   depends_on "lz4"
   depends_on "openssl@1.1" # For Serf
-  depends_on "perl" if Hardware::CPU.intel?
   depends_on "sqlite"
   depends_on "utf8proc"
 
@@ -50,6 +47,7 @@ class Subversion < Formula
 
   uses_from_macos "expat"
   uses_from_macos "krb5"
+  uses_from_macos "perl"
   uses_from_macos "ruby"
   uses_from_macos "zlib"
 
@@ -162,9 +160,18 @@ class Subversion < Formula
       system "make", "javahl"
       system "make", "install-javahl"
 
-      archlib = Utils.safe_popen_read("perl", "-MConfig", "-e", "print $Config{archlib}")
-      perl_core = Pathname.new(archlib)/"CORE"
-      onoe "'#{perl_core}' does not exist" unless perl_core.exist?
+      perl_archlib = Utils.safe_popen_read("perl", "-MConfig", "-e", "print $Config{archlib}")
+      perl_core = Pathname.new(perl_archlib)/"CORE"
+      perl_extern_h = perl_core/"EXTERN.h"
+
+      unless perl_extern_h.exist?
+        # No EXTERN.h, maybe it's system perl
+        perl_version = Utils.safe_popen_read("perl", "--version")[/v(\d+\.\d+)(?:\.\d+)?/, 1]
+        perl_core = MacOS.sdk_path/"System/Library/Perl"/perl_version/"darwin-thread-multi-2level/CORE"
+        perl_extern_h = perl_core/"EXTERN.h"
+      end
+
+      onoe "'#{perl_extern_h}' does not exist" unless perl_extern_h.exist?
 
       if OS.mac?
         inreplace "Makefile" do |s|
@@ -201,7 +208,12 @@ class Subversion < Formula
   test do
     system "#{bin}/svnadmin", "create", "test"
     system "#{bin}/svnadmin", "verify", "test"
-    system "perl", "-e", "use SVN::Client; new SVN::Client()" if Hardware::CPU.intel?
+
+    if Hardware::CPU.intel?
+      perl_version = Utils.safe_popen_read("perl", "--version")[/v(\d+\.\d+(?:\.\d+)?)/, 1]
+      ENV["PERL5LIB"] = "#{lib}/perl5/site_perl/#{perl_version}/darwin-thread-multi-2level"
+      system "perl", "-e", "use SVN::Client; new SVN::Client()"
+    end
   end
 end
 
