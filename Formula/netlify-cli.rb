@@ -18,6 +18,7 @@ class NetlifyCli < Formula
     sha256 "884c723d22ee0895136ba74a2eb42da6bc54c030919e90358f67023fbde771f0" => :arm64_big_sur
     sha256 "929cd2a1534e22a8b706522850a465fe87ddbd89a14cf700c8dd67f830f3084a" => :catalina
     sha256 "fe64b5f50f942dbd6ee01b12521011c32cc2fe4a118ff9090935ea367633bf42" => :mojave
+    sha256 "f1146f9bee9f20d122f8b3b70c6c86d00394b430952a82eb31d1e97f2a1ec1fb" => :x86_64_linux
   end
 
   depends_on "node"
