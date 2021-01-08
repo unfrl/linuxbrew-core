@@ -12,6 +12,7 @@ class Pdf2svg < Formula
     sha256 "dc5018cf8ccb7b474fe5c575d562c59e361c3c251ce88d9e36b7636d1f77ef3b" => :arm64_big_sur
     sha256 "a2af2e44c752994638edbd3aa7684290d116d20f1da2fe3e4490527be5b23bac" => :catalina
     sha256 "b0cf8046c13335a16496cc5601af7a82f14b45c866cf9f3ae9072075ccc867fe" => :mojave
+    sha256 "98a0e701b595abda653f23e02b7247c858b3ad8290ae70d4c562a1aa6f247e8f" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
