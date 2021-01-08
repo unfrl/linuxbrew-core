@@ -13,6 +13,7 @@ class YoutubeDl < Formula
     sha256 "5830a74e0fad078e68c5866deea607846bd70b1e7c47d430a19eeaf625e97170" => :arm64_big_sur
     sha256 "32cde0c3e4e40469eae6005df8e3f65fe0aa44aa69a65bb20e422d479571f560" => :catalina
     sha256 "be97c9636cc7faeaf814ec4332bd09c53d7833e2fdd912037542e5c99f32b37c" => :mojave
+    sha256 "a8c9d3c45cea19104f5012840c69f1b3dbd970b5ce301a3c5a05f1f94582fb2b" => :x86_64_linux
   end
 
   depends_on "python@3.9"
