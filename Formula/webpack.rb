@@ -4,8 +4,8 @@ require "json"
 class Webpack < Formula
   desc "Bundler for JavaScript and friends"
   homepage "https://webpack.js.org/"
-  url "https://registry.npmjs.org/webpack/-/webpack-5.11.0.tgz"
-  sha256 "cf8fc82308a8196eab9d2e905a645b9eb65d72b704868880110db34112b54ffc"
+  url "https://registry.npmjs.org/webpack/-/webpack-5.12.0.tgz"
+  sha256 "7e3eb6bd2291ae33aaeffad5cdb73b593e0dc44363be9cc2b15b0ae119e57661"
   license "MIT"
   head "https://github.com/webpack/webpack.git"
 
@@ -15,18 +15,17 @@ class Webpack < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "c2ebd9cad7f2b642264f15666283a50305c6950509d025e52706980721ae6a37" => :big_sur
-    sha256 "84c6816293c4065037800196ddeabeb6c9209be47c3248d71ff7a851eb4f84a3" => :arm64_big_sur
-    sha256 "253d5b31cc29da6c3419d796f6d0e70371a984ba91f6bc03d3a3b8bb69cd7aee" => :catalina
-    sha256 "53a73b0092cb4427a443ed30cf8fa26f01e9844d159b1c082a3b2d07d69ddcc2" => :mojave
-    sha256 "312ce3b077c303e4a5ef1c8b88b6a9286fb749e4a292a66234b66127aabf9423" => :x86_64_linux
+    sha256 "b9d086e12a33c0b3c2dcce4dd3697a87172ab3bcf07418db8507e5b8df0671f6" => :big_sur
+    sha256 "fbd786d675dfaad4beb9f7940e2cb506f56c9d591b1a1f3bebb6c2b124a5d2ff" => :arm64_big_sur
+    sha256 "a5fa281e496e46ca6dec99f7c417e38fa7d09be9b44a0ec38204c17bc4b48852" => :catalina
+    sha256 "9775db0ba6289f38c13f8fd5618513b30c724238d2afced3685d09e9114664ae" => :mojave
   end
 
   depends_on "node"
 
   resource "webpack-cli" do
-    url "https://registry.npmjs.org/webpack-cli/-/webpack-cli-4.2.0.tgz"
-    sha256 "09ca2de6deee939a4a2f8edf206a776caafb6fe3590ed1a8310a3e3b69ad4a18"
+    url "https://registry.npmjs.org/webpack-cli/-/webpack-cli-4.3.1.tgz"
+    sha256 "9d12d225e965d5c7d7d7145b215d297b93f47dc621f61a3185e0c69f09a64d43"
   end
 
   def install
@@ -60,7 +59,7 @@ class Webpack < Formula
       document.body.appendChild(component());
     EOS
 
-    system bin/"webpack", testpath/"index.js"
+    system bin/"webpack", "bundle", "--mode", "production", "--entry", testpath/"index.js"
     assert_match "const e=document\.createElement(\"div\");", File.read(testpath/"dist/main.js")
   end
 end

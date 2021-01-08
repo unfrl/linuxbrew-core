@@ -1,8 +1,8 @@
 class Mapnik < Formula
   desc "Toolkit for developing mapping applications"
   homepage "https://mapnik.org/"
-  url "https://github.com/mapnik/mapnik/releases/download/v3.0.24/mapnik-v3.0.24.tar.bz2"
-  sha256 "75520a98ff688f48e4dd36e86199530ea084b296f2d4972478db1fcb3475d71c"
+  url "https://github.com/mapnik/mapnik/releases/download/v3.1.0/mapnik-v3.1.0.tar.bz2"
+  sha256 "43d76182d2a975212b4ad11524c74e577576c11039fdab5286b828397d8e6261"
   license "LGPL-2.1-or-later"
   head "https://github.com/mapnik/mapnik.git"
 
@@ -13,10 +13,10 @@ class Mapnik < Formula
 
   bottle do
     cellar :any
-    sha256 "e8e6c39326cb7982c82597fda507635ce80d6b2cbdf261d15330ae2d680332a4" => :big_sur
-    sha256 "a2383ae9820b4ad50ab5ab72e16d85374ff723eb37ad1ea3a07edc1452ab1286" => :arm64_big_sur
-    sha256 "e50c65129ab5a5a2348f7177620aae74094aa5830fb0b5717f907e12fca5ffae" => :catalina
-    sha256 "3e7c475e36c0d2712069736b3e983d1820ff0662ed735a182f6d475e876ea7c3" => :mojave
+    sha256 "393431760e716e1486d6db7444a4eda2b5af3d778b11f5cfcec3d2866cc9c338" => :big_sur
+    sha256 "f8e6c2aebb84d38a4e93b17bba0b9210f61b5d3f4034963440c20af45b8e02ec" => :arm64_big_sur
+    sha256 "fc68ba4d5314b418a23bc78578cc4e3579d31832d3a49031a2e40c07ed83a3ec" => :catalina
+    sha256 "ff48d9d688e35d2d683089500267e193e0b11ff55053176c2d81d09b629ef52a" => :mojave
   end
 
   depends_on "pkg-config" => :build
@@ -32,13 +32,6 @@ class Mapnik < Formula
   depends_on "postgresql"
   depends_on "proj"
   depends_on "webp"
-
-  # Fix for Boost >= 1.75
-  # https://github.com/mapnik/mapnik/issues/4201
-  patch do
-    url "https://github.com/mapnik/mapnik/commit/49e0ef18.patch?full_index=1"
-    sha256 "d8f12a85ad78f95e3cb2b3b5485e586c250fe2230a90874c0a70843189cc42f5"
-  end
 
   def install
     ENV.cxx11

@@ -3,12 +3,13 @@ class Mapserver < Formula
   homepage "https://mapserver.org/"
   url "https://download.osgeo.org/mapserver/mapserver-7.6.2.tar.gz"
   sha256 "36768819f28024312f76a791085f3731d2cc451f7f0c9015c91c12b3929fe179"
+  revision 1
 
   bottle do
     cellar :any
-    sha256 "a8dcfcea4fa268bfdc5450bfa1aee3a97e8801d3927faceba51d8ae7295c03c8" => :big_sur
-    sha256 "246e960227ab824fb504119806d992fa0732067681ad56fabc7b17ccd26283ae" => :catalina
-    sha256 "1805b0f0708b4aa41986afd03a46f8c01740524f9e8b0d861bc64931416404ee" => :mojave
+    sha256 "79e5808f2f4fb786f71e210418a512b75dd17a158d7705b0d3d1f81e2cfceedd" => :big_sur
+    sha256 "1717fd24bea730366e323a38968a30e9478c0feaa10d57bf5dfb1b8a343caf14" => :catalina
+    sha256 "98591cd1dda572b8fb3ae6ffe1cc501aa0140447c8ecadbcd81183343ec20f0d" => :mojave
   end
 
   depends_on "cmake" => :build
