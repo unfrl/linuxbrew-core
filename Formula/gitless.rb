@@ -14,6 +14,7 @@ class Gitless < Formula
     sha256 "8fe3da387f2212fe2618a07b2e1682e3bae08be20f105734e21079f0f3df7d79" => :arm64_big_sur
     sha256 "1f52f84f5a9f9c9633e7fc9ef7ef8227431abd37ca6629f33986766b61470cc0" => :catalina
     sha256 "50884b829598dab4558bc9f338b96b6ac18302c426ad6cfd440d2d721b1cb30a" => :mojave
+    sha256 "9c856bebe3d2c1b816e07bfb723a5bb756216f588358235b20530c0917ef001b" => :x86_64_linux
   end
 
   depends_on "libgit2"
