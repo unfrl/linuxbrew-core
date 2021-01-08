@@ -15,6 +15,7 @@ class Coq < Formula
     sha256 "c594d8561d100889e27e95a2db3eebdb77a71a907bfac452569687cbf3e3d7ff" => :big_sur
     sha256 "c073e48034114bd7ab8cf351b60b448e9f5c6c90d8cf0424133fc9d44032f8e3" => :catalina
     sha256 "667ee964b95dc9e7a5a49f1a33c43098dc1b223fa17b41d79e97e083b492b37e" => :mojave
+    sha256 "7636af9adf3028ddf0759a763e6dfae1fbd9ef35f69b314bcfa69e3536653a6a" => :x86_64_linux
   end
 
   depends_on "ocaml-findlib" => :build
