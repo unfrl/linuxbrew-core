@@ -13,6 +13,7 @@ class Doxygen < Formula
     sha256 "2b5b2de93ac8703785860bfaf3e14f3268a07dc29bac9def13172785bcac7c5f" => :arm64_big_sur
     sha256 "10e13f7bf6977bee6487366b3fc1dc55b4c191d5d505cb816997838504b3e0a4" => :catalina
     sha256 "0422adc9bfa6e1558cdcca24f8f4266f0927cf4c10fe3e245fe8e3017a7717b5" => :mojave
+    sha256 "4a4bdafe1082ed127d04f7cdb589df6aefec88bc133fe65d15deacf0dd3e783e" => :x86_64_linux
   end
 
   depends_on "bison" => :build
