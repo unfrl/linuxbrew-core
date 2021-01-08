@@ -6,6 +6,7 @@ class Dxpy < Formula
   url "https://files.pythonhosted.org/packages/1c/bc/268976aa00e5decccdf767aff1a36624c90bf4fcc3edbc6619efd933ce6a/dxpy-0.303.1.tar.gz"
   sha256 "d5e38966d7f8e0e9ee4d60b105dfff8862dd91e1151c17f78ba12b7bce5221ca"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,10 +14,10 @@ class Dxpy < Formula
 
   bottle do
     cellar :any
-    sha256 "b09506eb6e0e753145aaee91948d2c4d9b863953c68e9f9043c63972a9c67ffe" => :big_sur
-    sha256 "382e77df6d62f9e53afe2ff915aab858e538f7640dcf66ac3643fa9a7987adfd" => :catalina
-    sha256 "c16e3935d8b5d7e797558442a9920b17ebe7bcaf479942ea18625e1cf196817f" => :mojave
-    sha256 "fe6a3a2ae0ca718d57cd05cf36cb12f759ef674486d72cfdb16bbae27443f27f" => :x86_64_linux
+    sha256 "47e94e855de48a6ca376f24a758ddc1a746e7ed013fdff6ffde57c32a275e0fe" => :big_sur
+    sha256 "9d650eb18f94e03faebacef02409b597b627da09e4a01742d806463d7d181481" => :arm64_big_sur
+    sha256 "059b9c72131c995d7e14f034ac6ecd363d4da35d3d28e8c05597218a38c35c73" => :catalina
+    sha256 "d240fb030f1101de94568dda8d6260ba30f8f21e922126182ab94686bfcdaab5" => :mojave
   end
 
   depends_on "python@3.9"
@@ -46,8 +47,8 @@ class Dxpy < Formula
   end
 
   resource "cffi" do
-    url "https://files.pythonhosted.org/packages/cb/ae/380e33d621ae301770358eb11a896a34c34f30db188847a561e8e39ee866/cffi-1.14.3.tar.gz"
-    sha256 "f92f789e4f9241cd262ad7a555ca2c648a98178a953af117ef7fad46aa1d5591"
+    url "https://files.pythonhosted.org/packages/66/6a/98e023b3d11537a5521902ac6b50db470c826c682be6a8c661549cb7717a/cffi-1.14.4.tar.gz"
+    sha256 "1a465cbe98a7fd391d47dce4b8f7e5b921e6cd805ef421d04f5f66ba8f06086c"
   end
 
   resource "chardet" do

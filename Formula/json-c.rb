@@ -44,11 +44,7 @@ class JsonC < Formula
         return 0;
       }
     EOS
-    if OS.mac?
-      system ENV.cc, "-I#{include}", "-L#{lib}", "-ljson-c", "test.c", "-o", "test"
-    else
-      system ENV.cc, "-I#{include}", "test.c", "-L#{lib}", "-ljson-c", "-o", "test"
-    end
+    system ENV.cc, "-I#{include}", "test.c", "-L#{lib}", "-ljson-c", "-o", "test"
     assert_equal '{ "key": "value" }', shell_output("./test").chomp
   end
 end

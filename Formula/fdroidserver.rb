@@ -6,6 +6,7 @@ class Fdroidserver < Formula
   url "https://files.pythonhosted.org/packages/84/d6/d6230250054ea642b963592a4ecdc5b28e404778e8247ad9a649c3c82eb2/fdroidserver-1.1.10.tar.gz"
   sha256 "30e3da797b994c8b295ef3ae68081e60019d484ba73e008b86f7a43d4f23d2e7"
   license "AGPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,11 +14,10 @@ class Fdroidserver < Formula
 
   bottle do
     cellar :any
-    sha256 "a53a754f00a3b4e32cfe70efac5145a5ae3be5d6cc1a4483f5f7845f1e5150e2" => :big_sur
-    sha256 "6d640234123d13d4bdacd8f84ecdf417563b461f35fb003ba77a94cf76392e1d" => :catalina
-    sha256 "4c63bee7bfbc167cbca0205724bd8fb32730f05370d0944776ccd4f1938b8646" => :mojave
-    sha256 "b0ac3694db543cacc00f92f9f08962b4d05f7199a7edf5ee8d45bdf9a37bd7b3" => :high_sierra
-    sha256 "1d7ddd515b4338d7ab9f6c0eda846319ca2954171bc3f5636eede8a0e77e865a" => :x86_64_linux
+    sha256 "5233e1568fc8ce34001f22bd614e1e40d1df6e94ebbf5c3104a408f39cf78c73" => :big_sur
+    sha256 "898c9e4f8ff6e2ed572ec636481e9a039dedfa9ed50dd54c71a3e84c682d5616" => :arm64_big_sur
+    sha256 "544c63dac2c15bd0461aef67dce43515e75dbf632662ffc20dcfb2c5701529cd" => :catalina
+    sha256 "666af7192baa19ae11874d22c2a2e8ada60a99db1273724599b42ca32b333289" => :mojave
   end
 
   depends_on "pkg-config" => :build
@@ -77,8 +77,8 @@ class Fdroidserver < Formula
   end
 
   resource "cffi" do
-    url "https://files.pythonhosted.org/packages/cb/ae/380e33d621ae301770358eb11a896a34c34f30db188847a561e8e39ee866/cffi-1.14.3.tar.gz"
-    sha256 "f92f789e4f9241cd262ad7a555ca2c648a98178a953af117ef7fad46aa1d5591"
+    url "https://files.pythonhosted.org/packages/66/6a/98e023b3d11537a5521902ac6b50db470c826c682be6a8c661549cb7717a/cffi-1.14.4.tar.gz"
+    sha256 "1a465cbe98a7fd391d47dce4b8f7e5b921e6cd805ef421d04f5f66ba8f06086c"
   end
 
   resource "chardet" do

@@ -6,16 +6,15 @@ class Mujs < Formula
       tag:      "1.0.9",
       revision: "6871e5b41c07558b17340f985f2af39717d3ba77"
   license "ISC"
+  revision 1
   head "https://github.com/ccxvii/mujs.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "0fdceb128ad3fed5618bb9d29d9afc81da346df39982c44050e0a831a1bd9267" => :big_sur
-    sha256 "3f80db9f82ac77a48f0dfed8e624f1ca39f84fa20a034d3937665ea072b4f92e" => :arm64_big_sur
-    sha256 "eb7344e1f8e8e407fddc9484dd7392be6c6e7a4b88ca05f912a2028ffd780991" => :catalina
-    sha256 "1c945e15f08632584cde81b06d233bf62bcd3fee4bde016cbdb37bb067e85a22" => :mojave
-    sha256 "9d94f85a85c383c131a32b31f87548d7a8bd89595227a63470925ce5272b41d8" => :high_sierra
-    sha256 "5c134e99f55dc4045e3e0e7f0372388b6a6c7bb0915da3e409428a7480a37026" => :x86_64_linux
+    sha256 "352e5c6c8ad24b3f36ad44e1b929e6f34a00360e5144a4fd490b228e2c9837bb" => :big_sur
+    sha256 "b346f30e520540c9bf22be4438ea215ef7954eaf85c66ba71f4fc7be0f5c7f1d" => :arm64_big_sur
+    sha256 "f0392da52d7b94279981010c643dc106946cb6a669e1cdb4de03f4732d260341" => :catalina
+    sha256 "138027da2db61c148fb93d5176717c10265467551ec5762163d9b7017614c774" => :mojave
   end
 
   on_linux do
@@ -25,7 +24,7 @@ class Mujs < Formula
   def install
     system "make", "release"
     system "make", "prefix=#{prefix}", "install"
-    system "make", "prefix=#{prefix}", "install-shared" unless OS.mac?
+    system "make", "prefix=#{prefix}", "install-shared"
   end
 
   test do
