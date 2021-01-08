@@ -7,26 +7,18 @@ class Hcloud < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "2430a366d43eb83d64cad15d49681918dcda9a46300a8bf9ac8c23f9fb00eb98" => :big_sur
-    sha256 "d2e742678a740e0dca5905278073f4118e36ab88f386b38088676df62597e5d6" => :arm64_big_sur
-    sha256 "eae32494202f0802d016674a7d7d88ed835fe3c53736a4e95aac5071fcdebc76" => :catalina
-    sha256 "0a2006376bae1e28cc3f6f1254aa78a43ff5206423b61720f87770b55c903375" => :mojave
-    sha256 "0b4c72eaeac1f22e2e6a54004ef963a7f90c1cecdb681c09d82238abf9725261" => :high_sierra
-    sha256 "a561a3417be7ed1519f1165c42f20ecda058fee847631ec6bdd6288c21faaaf9" => :x86_64_linux
+    rebuild 1
+    sha256 "7c10f79205f3e38247cb40db50a81f5dcba875be47e34ab42871e8dc4f43eee9" => :big_sur
+    sha256 "bc0060e4db541d77ab09fea18eefbb3711ba806efa944ed44186c0c5330d3f08" => :arm64_big_sur
+    sha256 "365e9535a762a7be3ab78d2ea33e9ba3444311805bfadec8c81f79e702211348" => :catalina
+    sha256 "99878daa16a1aa6b393292bc874faf9d6f7071d18cfb0383081c3a33f867a326" => :mojave
   end
 
   depends_on "go" => :build
 
   def install
-    ENV["GOPATH"] = HOMEBREW_CACHE/"go_cache"
-    (buildpath/"src/github.com/hetznercloud/cli").install buildpath.children
-
-    cd "src/github.com/hetznercloud/cli" do
-      ldflags = "-w -X github.com/hetznercloud/cli/cli.Version=v#{version}"
-      system "go", "build", "-o", bin/"hcloud", "-ldflags", ldflags,
-                   "./cmd/hcloud"
-      prefix.install_metafiles
-    end
+    ldflags = "-s -w -X github.com/hetznercloud/cli/cli.Version=v#{version}"
+    system "go", "build", *std_go_args, "-ldflags", ldflags, "./cmd/hcloud"
 
     output = Utils.safe_popen_read("#{bin}/hcloud", "completion", "bash")
     (bash_completion/"hcloud").write output
