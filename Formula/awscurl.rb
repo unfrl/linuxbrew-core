@@ -19,6 +19,7 @@ class Awscurl < Formula
     sha256 "e4406bc4e1383339f207c1df729c0379baedb4142c6636ccbcf17762ae417633" => :arm64_big_sur
     sha256 "b0559cfb4473666ca3cb64108344f25f9821f016c1e71f68eca7efdb1e89c8ee" => :catalina
     sha256 "5b0d11b44030188e9195a21d6dfa780dc50a1eca9714b0e2a8a038d973aa1c5e" => :mojave
+    sha256 "85d4be0f4a8d65d63eb00923b15cb2fc90686677987826038a5be031917e4fcf" => :x86_64_linux
   end
 
   depends_on "python@3.9"
