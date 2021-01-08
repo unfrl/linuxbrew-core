@@ -12,6 +12,7 @@ class Jd < Formula
     sha256 "dcc2f40817719ab6db214cf102ef282e7d5bd24fdb55b3a0f3e242bea28c3e9a" => :arm64_big_sur
     sha256 "ed5e5d307438bf853693618019f776d6907ae948fd06ae1f7317b6d886645895" => :catalina
     sha256 "d58d2bdb2a3a7f81f4ee78ac8dec5b71a1f0c2b6b89e83be8a921a74a263ac2d" => :mojave
+    sha256 "f86e2acf22428138423da9726d5f5f5e340ff22354382afec50e969a61bdce86" => :x86_64_linux
   end
 
   depends_on "go" => :build
