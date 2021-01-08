@@ -13,6 +13,7 @@ class Dlib < Formula
     sha256 "81dc4133691925848cc96ccaac3158456d47544a0614b35c29a9948f7faef10b" => :arm64_big_sur
     sha256 "597a1595ee2f5071afcac72128f85b3aadda96002253e54ae16995e151fb5432" => :catalina
     sha256 "52ab2f5e4073682520ec0f5cf7410bad8f1a03a4e783bdc4a93d1372cacee808" => :mojave
+    sha256 "30f4e8f448b76a19e969007387dc0bef0651531cdbbca5894e1c59aa6f4558d7" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
