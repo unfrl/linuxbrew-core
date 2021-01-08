@@ -12,6 +12,7 @@ class Slackcat < Formula
     sha256 "f9a013fef9bfc12b384cee438b7d6fed60eda90b5d047b2cd574661ae7ee6b73" => :arm64_big_sur
     sha256 "c2aeed6d82c38d56f4f1875db98543d06b225568c0c619d63ebac1885092b033" => :catalina
     sha256 "10da5931d1023b2c34b82c96bbd059edacf8986f7d47dcbc60097ecbf765e429" => :mojave
+    sha256 "be69aa815f6656e4ee7242f0732a67c262faa4e276eff8eb3c604a7813b6e51f" => :x86_64_linux
   end
 
   depends_on "go" => :build
