@@ -13,6 +13,7 @@ class Whalebrew < Formula
     sha256 "8353be040989f4bff9fd7817d07d4c2d74865700760101e7063b511bb8c760b9" => :arm64_big_sur
     sha256 "f901fadcfb4bea48de0317c43b6cbbe292dd58a271f3c42a1731eee964fd6ba1" => :catalina
     sha256 "13cf645f882ac7cb4350af0b607ca0732c83a4260dc41a30b8cf37531c3d11d2" => :mojave
+    sha256 "8c8c73359fe7aee91aeb285929e8a6012922bbe56e40dc0b10121a2b5586ea37" => :x86_64_linux
   end
 
   depends_on "go" => :build
