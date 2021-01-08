@@ -12,6 +12,7 @@ class Scmpuff < Formula
     sha256 "152725eafc16f39267d4ffc3bf99953be7fe024b01593721fc5adadc244ddbfe" => :arm64_big_sur
     sha256 "0d673b2326d88ca0b4c952122f37d8c2cc269bf687e62f0161a9a75288b6ccbb" => :catalina
     sha256 "30853a0768a6b6c65bdd0522854ae335f50f80ea24bbc64fd16a5411fcd7f2d6" => :mojave
+    sha256 "e8b4b16906375d72f0bc3323583e274636bd0db31b41eee35e829da7a61a4c7f" => :x86_64_linux
   end
 
   depends_on "go" => :build
