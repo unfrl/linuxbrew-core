@@ -15,6 +15,7 @@ class Rhash < Formula
     sha256 "8eb637a12522739222253513a13aa3fafdc9ab586987f5648290349543017aca" => :arm64_big_sur
     sha256 "108986af36d715a05223344f3f338c04b0ce5aa6d6cf0c26776be015adaef36a" => :catalina
     sha256 "87ac3199498088f7d465dafefc6f014e10b4692ed3997895bbf1eb288dce8cdd" => :mojave
+    sha256 "5900246a7a807f942e49b646df6cc45d3ded62461f0e0e6dc8d05b751f6bd924" => :x86_64_linux
   end
 
   def install
