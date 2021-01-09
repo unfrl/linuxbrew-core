@@ -1,8 +1,8 @@
 class Gtk4 < Formula
   desc "Toolkit for creating graphical user interfaces"
   homepage "https://gtk.org/"
-  url "https://download.gnome.org/sources/gtk/4.0/gtk-4.0.0.tar.xz"
-  sha256 "d46cf5b127ea27dd9e5d2ff6ed500cb4067eeb2cb1cd2c313ccde8013b0b9bf9"
+  url "https://download.gnome.org/sources/gtk/4.0/gtk-4.0.1.tar.xz"
+  sha256 "5e778f75e3808529d8300aae47b873675891de7d474c43bea32cc32e10d6df9c"
   license "LGPL-2.0-or-later"
 
   livecheck do
@@ -11,10 +11,10 @@ class Gtk4 < Formula
   end
 
   bottle do
-    sha256 "310c1cee59793970949da865c1bb63120391e5bb16aa34ad0676d75ce345b576" => :big_sur
-    sha256 "0fbc5903eb979a2e9f712b91bdff8cae08430290670e31fac8b3c517dd3655b2" => :arm64_big_sur
-    sha256 "2a0ac2c181ee997054f3a445634395854abffe32a5f3c7de0f207d74d5cb4837" => :catalina
-    sha256 "5c67410b8a00718cfd0f6367fa17d4325a322ea512c8d255a206187975818610" => :mojave
+    sha256 "8eb6bf2d9aa0371b71eefd07436b3f4073141197d096aa5e334699d50e2222e2" => :big_sur
+    sha256 "aed4f9db955e8895e416285d5dd74433e097f546eb9b10c2e646bc6045adfb34" => :arm64_big_sur
+    sha256 "9416f5c808896268263d0a9756a46c41495a34b5592e18a334ec1ff5a5715013" => :catalina
+    sha256 "f6627a73db97d14ca84186feb0e0b5d470c8651190356e525b3430302178e76d" => :mojave
   end
 
   depends_on "docbook" => :build
@@ -32,9 +32,6 @@ class Gtk4 < Formula
   depends_on "pango"
 
   uses_from_macos "libxslt" => :build # for xsltproc
-
-  # submitted upstream at https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/2962
-  patch :DATA
 
   def install
     args = std_meson_args + %w[
@@ -84,19 +81,3 @@ class Gtk4 < Formula
     assert_match version.to_s, shell_output("cat #{lib}/pkgconfig/gtk4.pc").strip
   end
 end
-
-__END__
-diff --git a/gdk/macos/gdkmacostoplevelsurface.c b/gdk/macos/gdkmacostoplevelsurface.c
-index e1f60e8221..4a84dc8304 100644
---- a/gdk/macos/gdkmacostoplevelsurface.c
-+++ b/gdk/macos/gdkmacostoplevelsurface.c
-@@ -97,7 +97,7 @@ _gdk_macos_toplevel_surface_present (GdkToplevel       *toplevel,
-   GdkSurfaceHints mask;
-   NSWindowStyleMask style_mask;
-   gboolean maximize;
--  gboolean fullscreen
-+  gboolean fullscreen;
-
-   g_assert (GDK_IS_MACOS_TOPLEVEL_SURFACE (self));
-   g_assert (GDK_IS_MACOS_WINDOW (nswindow));
-
