@@ -1,8 +1,8 @@
 class KdeExtraCmakeModules < Formula
   desc "Extra modules and scripts for CMake"
   homepage "https://api.kde.org/frameworks/extra-cmake-modules/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.77/extra-cmake-modules-5.77.0.tar.xz"
-  sha256 "42f071f628b192122894026de20097cb0b3de411cb41c6935b48eb86ce992a65"
+  url "https://download.kde.org/stable/frameworks/5.78/extra-cmake-modules-5.78.0.tar.xz"
+  sha256 "eede1f0c21f24eca56bd71a805fa76500a8c683bf21982cb33f4bba682d012f9"
   license all_of: ["BSD-2-Clause", "BSD-3-Clause", "MIT"]
   head "https://invent.kde.org/frameworks/extra-cmake-modules.git"
 
@@ -13,10 +13,10 @@ class KdeExtraCmakeModules < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "ddb3aa8fc133d2cb3bbb59945639205dd13b1b753b3a3cd987ace33e3334e5bd" => :big_sur
-    sha256 "f6d3546b322052f93272ce60d45ea5ed7cd418239223fceb5dfe6d012c021671" => :arm64_big_sur
-    sha256 "bb0655a32826cb4d2d973dacd758130c59ca4a012930630d87605f49be634c6c" => :catalina
-    sha256 "8eaa93ae5208af856982385e97a31b41f206d6e1d74de9b11de9dd8ff874516b" => :mojave
+    sha256 "c4dbad4835c3abd9e784d2525f3490e0c600faf36d5b4ff71bd1020d618add8b" => :big_sur
+    sha256 "ad78be49a63a55f83e6351db2000980ad1addfef434ebc025b1d753db688e31c" => :arm64_big_sur
+    sha256 "0959c61b9dd8310b4f20011b6fcb94ef75e7106549d4790596834cf8a45662e5" => :catalina
+    sha256 "157fffc317070515531225c93ec0b1a0c598cdf1155924f578b6925f46d5de41" => :mojave
   end
 
   depends_on "cmake" => [:build, :test]

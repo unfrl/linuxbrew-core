@@ -1,15 +1,15 @@
 class Kubie < Formula
   desc "Much more powerful alternative to kubectx and kubens"
   homepage "https://blog.sbstp.ca/introducing-kubie/"
-  url "https://github.com/sbstp/kubie/archive/v0.11.1.tar.gz"
-  sha256 "5a0e262d6dfadf1dbb48c54af9952718857df947b2df9f69584e474b4ffc2a95"
+  url "https://github.com/sbstp/kubie/archive/v0.12.0.tar.gz"
+  sha256 "a88f07c49cf3a0683564117684aa28240e4749cc1d81d366d7076d4ffccfba30"
   license "Zlib"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "354930a57e38874a9642179711b2adb3579d5efb0abddf9703ee00ef6dc8980b" => :big_sur
-    sha256 "d405cf8c7345fdfdac5fe31773a66c0102adac7b9e86d9f0011cbae48e8b0f9f" => :catalina
-    sha256 "f32943f40d0473be59df67805040039368942f56525a0f6071b4a8ce818b2f4a" => :mojave
+    sha256 "ece936adc6cd39b11ab17e90bd4eac82a071a94f8acde1a2ebd6fd2e7138eba5" => :big_sur
+    sha256 "db79733460ef7556aaf4a8386381375183f1e4e2d0ce821314c738198ecd0044" => :catalina
+    sha256 "ccbf1e79224dd77205a29ba84969fb1737a1eca94b1786bd9a5abd0620452022" => :mojave
   end
 
   depends_on "rust" => :build
