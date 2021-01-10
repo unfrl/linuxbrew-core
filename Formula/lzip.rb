@@ -16,6 +16,7 @@ class Lzip < Formula
     sha256 "78014ac2f6011ba98beeabd7aa79e37b6ee78a5e9c72b7bf7594005bfcc7f082" => :arm64_big_sur
     sha256 "91a7214e357c949e0a06736e6a73eb667c0c487efaeebeb4df6fae99ee660575" => :catalina
     sha256 "7c4d9d33bda8dd4043a48903d9348e683c1c64c1b0ab39b1680fcaadb952896f" => :mojave
+    sha256 "3c1767dd5b26d585a33843f6666027a581cab0cacb987883270cabdc420e3b20" => :x86_64_linux
   end
 
   def install
