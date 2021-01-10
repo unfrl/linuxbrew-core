@@ -4,15 +4,14 @@ class Bullet < Formula
   url "https://github.com/bulletphysics/bullet3/archive/3.08.tar.gz"
   sha256 "05826c104b842bcdd1339b86894cb44c84ac2525ac296689d34b38a14bbba0dd"
   license "Zlib"
-  revision 1
+  revision 2
   head "https://github.com/bulletphysics/bullet3.git"
 
   bottle do
-    sha256 "c24a6a53450090dbccc161dd17f2555b8988934771019809c4c5e33aca9864b5" => :big_sur
-    sha256 "565e712684c82a288a59d47bc9bbde23ff076fb6b48f85433b1997516b014b72" => :arm64_big_sur
-    sha256 "c6fdc1cb6d9d45e68ed4c2ed841edacfc0d7d1b44ffc05c77869329260f2c266" => :catalina
-    sha256 "8c66500f251d89ee7ae7e9c282984fe81f43c21dd9566024e47132ec78a1322a" => :mojave
-    sha256 "3399b131d7febb7daf69edfb9427d66d7aed5d3ddc6ae34018b9c92cc968ac94" => :x86_64_linux
+    sha256 "cbf1daed6725c676797fb40910049ffcff8e2c28f52614f9da5392585c4b07ef" => :big_sur
+    sha256 "a5a64a05831e6387debb1f54dbfa9609478444e131562f5a5f7be09fbd434b33" => :arm64_big_sur
+    sha256 "8beddcd17b7277b00526201a97d1057fe9881ce62a9a60faf4b73dcc054393fd" => :catalina
+    sha256 "c11bec4ded6cac76461e6f8ae18342770a812c3bc5d5e574924b0840a35a9e14" => :mojave
   end
 
   depends_on "cmake" => :build
@@ -23,7 +22,6 @@ class Bullet < Formula
     args = std_cmake_args + %W[
       -DBUILD_PYBULLET=ON
       -DBUILD_PYBULLET_NUMPY=ON
-      -DUSE_DOUBLE_PRECISION=ON
       -DBT_USE_EGL=ON
       -DBUILD_UNIT_TESTS=OFF
       -DCMAKE_INSTALL_RPATH=#{lib}

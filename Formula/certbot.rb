@@ -3,18 +3,17 @@ class Certbot < Formula
 
   desc "Tool to obtain certs from Let's Encrypt and autoenable HTTPS"
   homepage "https://certbot.eff.org/"
-  url "https://github.com/certbot/certbot/archive/v1.10.1.tar.gz"
-  sha256 "7652d14a12678425d3c1c618da00730b9f09147a53e11c7021f66c907cbc35b0"
+  url "https://github.com/certbot/certbot/archive/v1.11.0.tar.gz"
+  sha256 "a5b170f81bc5aab507a480006218bd4d256e0ae7cb43c37ba46018c00299af91"
   license "Apache-2.0"
   head "https://github.com/certbot/certbot.git"
 
   bottle do
     cellar :any
-    sha256 "e1ba970a17f85f1ab0cb1d785ef1842e0ba2691604e25598335b403b69c2ea35" => :big_sur
-    sha256 "52e9367676903b46ca27f92f189b119f425aea073d78e5be5cfa85be6f4cb396" => :arm64_big_sur
-    sha256 "ffce387c91071c64807900aac16390562f44eff931c000f0af1d27b90c4d64e8" => :catalina
-    sha256 "a4e510d8174cacdc39a51228d223769a5a4d15b141c80c56869afd9d67fc11a8" => :mojave
-    sha256 "1466c4c998a5230364d341567337d52128d28bf46157e341a7e442abb9b8d7b1" => :x86_64_linux
+    sha256 "dbe0a755e36de20f8512233a7b6b55790695594f6f577ca7b5ce6730e17a04a2" => :big_sur
+    sha256 "5333489bcfe120e0c930ecfd8e6c25d4d51189c5a6fcaadf04da7c96c99497f9" => :arm64_big_sur
+    sha256 "0ea6b82bbe72e5835f38ff2c5ea01b03c67ff8a55617e78c9aca0aa6cb4d7ecf" => :catalina
+    sha256 "3e7936d9f31832d762e9496387293e8b7e67a0ee2da13552bb005372c5f29402" => :mojave
   end
 
   depends_on "augeas"

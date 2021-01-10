@@ -6,6 +6,7 @@ class Ocrmypdf < Formula
   url "https://files.pythonhosted.org/packages/61/da/c95cdef733b639abcf8f4d93f4e4cd691c052ebafae1200376e100fca27e/ocrmypdf-11.4.5.tar.gz"
   sha256 "416a9c4321bfc844f250694b8c68ebb538f60609bbc8686bd9f84a13c5127d68"
   license "MPL-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,10 +14,9 @@ class Ocrmypdf < Formula
 
   bottle do
     cellar :any
-    sha256 "5155e8fd8f24aa3b8ee378c4e618bbf2eb9419a15f3adc8e1b465e8b91b39963" => :big_sur
-    sha256 "dba298a9dae23ed47fa2a24fcd81007a4d4b12a4ab5323588211d7c34738212b" => :catalina
-    sha256 "a228bf706b21eae1785b9f58b123196ffc1fdb7062e3006088d89be0095a012f" => :mojave
-    sha256 "d69f9ef1371c7fe98f7b21b279c1cb54baefc2f6065c8d30a1a54c49def04b30" => :x86_64_linux
+    sha256 "c28e97f3add92f837c87d254212a20b543750bb8e3da9989e29a7f58af7853d2" => :big_sur
+    sha256 "ddac40175c136b76b14ddb472c8852b2c6ad03df2a734394b85a4fe221106c47" => :catalina
+    sha256 "7beabcd343d9f872912dd281462592183cbcd48d93a4674e128273266497498e" => :mojave
   end
 
   depends_on "pkg-config" => :build
@@ -25,6 +25,7 @@ class Ocrmypdf < Formula
   depends_on "jbig2enc"
   depends_on "jpeg"
   depends_on "leptonica"
+  depends_on "libffi"
   depends_on "libpng"
   depends_on "pngquant"
   depends_on "pybind11"
@@ -34,6 +35,7 @@ class Ocrmypdf < Formula
   depends_on "unpaper"
 
   uses_from_macos "libffi"
+  uses_from_macos "libxml2"
   uses_from_macos "libxslt"
   uses_from_macos "zlib"
 
