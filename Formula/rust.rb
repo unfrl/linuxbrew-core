@@ -20,6 +20,7 @@ class Rust < Formula
     sha256 "b7919ddd88ded38459e7367e3823497848e6c6dac3661e02f06fadbe0924da7a" => :arm64_big_sur
     sha256 "79a71993f6bd900369575448730cc767a2dc6bf26783941f2144520f16806205" => :catalina
     sha256 "b2a5b69b08e333a39ac8742c6abf5d57c1e9aeb12f93e5a3fb97bd4269bbfe4b" => :mojave
+    sha256 "97c0e1cabe7a87a1ce503fe8220a8520b037e749c444631ae0351f7cb9c1ff2d" => :x86_64_linux
   end
 
   head do
