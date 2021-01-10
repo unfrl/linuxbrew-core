@@ -18,6 +18,7 @@ class AnsibleLint < Formula
     sha256 "08eb30d773543f0fe03cee479b418b45d8564cfeaf8b5a1266b4126d9e4abf44" => :arm64_big_sur
     sha256 "14fc26d9ee87f7c9360468b79dd385b425b18b770aacd447ee39fe77bde81bc0" => :catalina
     sha256 "a9d684087748ac7beb39ec2b4201a6f3ce71ce28dfbb186921f32bd9a1dd33dd" => :mojave
+    sha256 "fcbc9e22649558126d2a7905947b343bdd028c558122e47b1edaa3f568711d19" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
