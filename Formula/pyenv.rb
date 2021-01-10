@@ -19,6 +19,7 @@ class Pyenv < Formula
     sha256 "21cd3cc25153de842b519606d689824bddc55912b9021cbfedd80d25fa09d4d3" => :arm64_big_sur
     sha256 "b4f3038e29acde1d99579104ae100777621b9716fe797e7917dad1e9795d3473" => :catalina
     sha256 "525b4cc06fb46fd1e86d2272b4b692585679c5bb5c6a7b543cbdedd6f0096cf9" => :mojave
+    sha256 "a385816f450a40e7c0eab66ac572e9e136f314950fc597f5aa97834c4123d721" => :x86_64_linux
   end
 
   depends_on "autoconf"
