@@ -16,6 +16,7 @@ class Byacc < Formula
     sha256 "8893ed78ff7c45e04651cbd56e5b4acd1e3f09cbee425615516f7a4f7e305d8c" => :arm64_big_sur
     sha256 "d96b70d8631bc6feffabef7e00d98b5f41b00a49c9542cf6390f561dcb3bcd32" => :catalina
     sha256 "e9422616cbec15f16ab180fc1fcfbabd9680a2a06f8163c1483c25f18cfe3a2f" => :mojave
+    sha256 "8e620f13c2929181efd8c5964052e599421f1d0dd80eef8be300913754c173ae" => :x86_64_linux
   end
 
   def install
