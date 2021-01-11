@@ -16,6 +16,7 @@ class Perltidy < Formula
     sha256 "54e4729027c5da8ce8cd34b6d85e4a148984fc6ab7525f8433a4d660e8001bc6" => :arm64_big_sur
     sha256 "160dc31f00f4bdb67ee28102c8e44497d1d2ac2e364edd822e9ee7e4275a61cf" => :catalina
     sha256 "c1a7f1eb5fccd061b53c88312e4573302d3ea0b7a443aa7addae078cc1e5251c" => :mojave
+    sha256 "2a389a0d0937b6e39bd6f1642d8ae283201e6ac75c8084c64e12eadc8aee4ef5" => :x86_64_linux
   end
 
   uses_from_macos "perl"
