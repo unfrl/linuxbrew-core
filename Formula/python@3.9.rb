@@ -4,7 +4,7 @@ class PythonAT39 < Formula
   url "https://www.python.org/ftp/python/3.9.1/Python-3.9.1.tar.xz"
   sha256 "991c3f8ac97992f3d308fefeb03a64db462574eadbff34ce8bc5bb583d9903ff"
   license "Python-2.0"
-  revision 5
+  revision 6
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -12,11 +12,10 @@ class PythonAT39 < Formula
   end
 
   bottle do
-    sha256 "ea0da0f7c21b1fffeb1ff917809faa211dce9960097484ea3a780316bfd5dbd0" => :big_sur
-    sha256 "d4977a7369b14be1154a5d759c8044eeaa6466da9363fd36ab855837b48c9193" => :arm64_big_sur
-    sha256 "ab9dfb9c8d3b24d01aabeeae8668e36d97f2d84869d5bbc40a452bc142d3319c" => :catalina
-    sha256 "d3eeaba118a9cc3bd4b082d845cabdc29f57e994eb30046db1ead6b47fc8b45e" => :mojave
-    sha256 "3bbe39c9d01db1fcbbb4c2fdff474aa24b8d2bf9a12a5fd914ea4096147fa05a" => :x86_64_linux
+    sha256 "48d123683fa125de9f02f7777683edda40e998f0e2dca492024c00bbd3f05ea2" => :big_sur
+    sha256 "7f82ca7930bbb463ae58bec9f40443c7f1b369c54c68bc2b56c7e73c59f46a29" => :arm64_big_sur
+    sha256 "34f5d1a82cb72accee802e949eb30d37545a12290d0b9ed8e13ba9ad00f7836a" => :catalina
+    sha256 "931abae2981e2390b1a478195c377637ad90e91ac70792fa0ae475e123c9036e" => :mojave
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -37,6 +36,7 @@ class PythonAT39 < Formula
   depends_on "openssl@1.1"
   depends_on "readline"
   depends_on "sqlite"
+  depends_on "tcl-tk" if OS.mac?
   depends_on "xz"
 
   uses_from_macos "bzip2"
@@ -133,13 +133,14 @@ class PythonAT39 < Formula
       # The setup.py looks at "-isysroot" to get the sysroot (and not at --sysroot)
       cflags  << "-isysroot #{MacOS.sdk_path}" << "-I#{MacOS.sdk_path}/usr/include"
       ldflags << "-isysroot #{MacOS.sdk_path}"
-      # For the Xlib.h, Python needs this header dir with the system Tk
-      # Yep, this needs the absolute path where zlib needed a path relative
-      # to the SDK.
-      cflags << "-I#{MacOS.sdk_path}/System/Library/Frameworks/Tk.framework/Versions/8.5/Headers"
     end
     # Avoid linking to libgcc https://mail.python.org/pipermail/python-dev/2012-February/116205.html
     args << "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
+
+    if OS.mac?
+      args << "--with-tcltk-includes=-I#{Formula["tcl-tk"].opt_include}"
+      args << "--with-tcltk-libs=-L#{Formula["tcl-tk"].opt_lib} -ltcl8.6 -ltk8.6"
+    end
 
     # We want our readline! This is just to outsmart the detection code,
     # superenv makes cc always find includes/libs!
@@ -327,11 +328,19 @@ class PythonAT39 < Formula
       s.gsub! /_PIP_VERSION = .*/, "_PIP_VERSION = \"#{pip_version}\""
     end
 
-    # Help distutils find brewed stuff when building extensions
-    include_dirs = [HOMEBREW_PREFIX/"include", Formula["openssl@1.1"].opt_include,
-                    Formula["sqlite"].opt_include]
-    library_dirs = [HOMEBREW_PREFIX/"lib", Formula["openssl@1.1"].opt_lib,
-                    Formula["sqlite"].opt_lib]
+    if OS.mac?
+      # Help distutils find brewed stuff when building extensions
+      include_dirs = [HOMEBREW_PREFIX/"include", Formula["openssl@1.1"].opt_include,
+                      Formula["sqlite"].opt_include, Formula["tcl-tk"].opt_include]
+      library_dirs = [HOMEBREW_PREFIX/"lib", Formula["openssl@1.1"].opt_lib,
+                      Formula["sqlite"].opt_lib, Formula["tcl-tk"].opt_lib]
+    else
+      # Help distutils find brewed stuff when building extensions
+      include_dirs = [HOMEBREW_PREFIX/"include", Formula["openssl@1.1"].opt_include,
+                      Formula["sqlite"].opt_include]
+      library_dirs = [HOMEBREW_PREFIX/"lib", Formula["openssl@1.1"].opt_lib,
+                      Formula["sqlite"].opt_lib]
+    end
 
     cfg = lib_cellar/"distutils/distutils.cfg"
 
@@ -407,9 +416,7 @@ class PythonAT39 < Formula
     system "#{bin}/python#{version.major_minor}", "-c", "import _gdbm"
     system "#{bin}/python#{version.major_minor}", "-c", "import zlib"
     on_macos do
-      # Temporary failure on macOS 11.1 due to https://bugs.python.org/issue42480
-      # Reenable unconditionnaly once Apple fixes the Tcl/Tk issue
-      system "#{bin}/python#{version.major_minor}", "-c", "import tkinter; root = tkinter.Tk()" if MacOS.full_version < "11.1"
+      system "#{bin}/python#{version.major_minor}", "-c", "import tkinter; root = tkinter.Tk()"
     end
 
     # Verify that the selected DBM interface works
