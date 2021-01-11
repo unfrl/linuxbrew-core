@@ -13,6 +13,7 @@ class AngleGrinder < Formula
     sha256 "4ff200cdd8142e3d16a89a3050c690be506023da7ea6c6ca59700a209aa647dd" => :arm64_big_sur
     sha256 "15943cf324e460ab66b499fe6399c8da05b305289ef42e5dfc385ca2e3c7177d" => :catalina
     sha256 "4b3d867ea87b7c6a478aa7e6e5ea5909e01946c59473d4467254298c2ec524e8" => :mojave
+    sha256 "4775952ee6627e467f1d879eafd20b76f29dc7ff73e9ba0b55de197c3cfa6f72" => :x86_64_linux
   end
 
   depends_on "rust" => :build
