@@ -11,6 +11,7 @@ class Bingrep < Formula
     sha256 "3006a4b60bb139967b5df41ebf5b0c249e555f67d7cbca687f71c44a689c9a39" => :arm64_big_sur
     sha256 "f7f25ab475eb4401fcc7a117236e0fa9d50d210d470dd21678cc45e38cc87abe" => :catalina
     sha256 "32512bb7405dd8006668cef6c5f837c8d65d4877e4a0e7a0ad51120d0cdc070b" => :mojave
+    sha256 "8db5ee8abf828a77d4b73efaeddbc357be4bc3c6be4f04dbf01d6aae05dbc5bb" => :x86_64_linux
   end
 
   depends_on "rust" => :build
