@@ -17,6 +17,7 @@ class Masscan < Formula
     sha256 "147e7c46071329d24e43c5cbfc9187f8e098f576510fcf6b43bb2fd7cb637aac" => :arm64_big_sur
     sha256 "ea14dde3b5fe0813ca9737cc0be54e46078ba3de67d701a7249a84bbd34271bf" => :catalina
     sha256 "b0ebd8c0f61bc44267bdda6467f71b4c6b7f363f705e58b30160b7d341ce58f2" => :mojave
+    sha256 "6e9e5f13bd03d67326b2541d6b01f8653e42f06108d09eeaa808ee30179d4212" => :x86_64_linux
   end
 
   def install
