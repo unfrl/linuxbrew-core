@@ -12,13 +12,15 @@ class Archivemount < Formula
     sha256 "ee2773fc8e07405e24007dcb9351f89e455f7533eea3d2b878c67af5473a3006" => :x86_64_linux
   end
 
-  deprecate! date: "2020-11-10", because: "requires FUSE"
-
   depends_on "pkg-config" => :build
   depends_on "libarchive"
-  if OS.mac?
+
+  on_macos do
+    deprecate! date: "2020-11-10", because: "requires FUSE"
     depends_on :osxfuse
-  else
+  end
+
+  on_linux do
     depends_on "libfuse"
   end
 

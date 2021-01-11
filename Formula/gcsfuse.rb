@@ -14,12 +14,14 @@ class Gcsfuse < Formula
     sha256 "b629482617acea1454f3d4878e2d00092250aea89012b5aa0afe920a33dd8172" => :x86_64_linux
   end
 
-  deprecate! date: "2020-11-10", because: "requires FUSE"
-
   depends_on "go" => :build
-  if OS.mac?
+
+  on_macos do
+    deprecate! date: "2020-11-10", because: "requires FUSE"
     depends_on :osxfuse
-  else
+  end
+
+  on_linux do
     depends_on "libfuse"
   end
 

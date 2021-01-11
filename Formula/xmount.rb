@@ -13,16 +13,18 @@ class Xmount < Formula
     sha256 "48685578f4d3cca24e4d583b47977835607918011187a23c17dd6672aa5ef13d" => :x86_64_linux
   end
 
-  deprecate! date: "2020-11-10", because: "requires FUSE"
-
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "afflib"
   depends_on "libewf"
   depends_on "openssl@1.1"
-  if OS.mac?
+
+  on_macos do
+    deprecate! date: "2020-11-10", because: "requires FUSE"
     depends_on :osxfuse
-  else
+  end
+
+  on_linux do
     depends_on "libfuse"
   end
 

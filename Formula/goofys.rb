@@ -16,12 +16,14 @@ class Goofys < Formula
     sha256 "50aa904c2158d48a4dac55c47de1511f6530592f489aab0b982f32a7d12f6bdb" => :x86_64_linux
   end
 
-  deprecate! date: "2020-11-10", because: "requires FUSE"
-
   depends_on "go" => :build
-  if OS.mac?
+
+  on_macos do
+    deprecate! date: "2020-11-10", because: "requires FUSE"
     depends_on :osxfuse
-  else
+  end
+
+  on_linux do
     depends_on "libfuse"
   end
 

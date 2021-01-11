@@ -15,12 +15,14 @@ class Securefs < Formula
     sha256 "284e62bbc94eba3cfbe57561eb41ddc6c42b22c4c18da74190429fb13debeb74" => :x86_64_linux
   end
 
-  deprecate! date: "2020-11-10", because: "requires FUSE"
-
   depends_on "cmake" => :build
-  if OS.mac?
+
+  on_macos do
+    deprecate! date: "2020-11-10", because: "requires FUSE"
     depends_on :osxfuse
-  else
+  end
+
+  on_linux do
     depends_on "libfuse"
   end
 

@@ -11,14 +11,19 @@ class Avfs < Formula
     sha256 "c06806fc965f9ca3e161ac243e9291f07e2f8859df270040206ebbaede6fc749" => :x86_64_linux
   end
 
-  deprecate! date: "2020-11-10", because: "requires FUSE"
-
   depends_on "pkg-config" => :build
   depends_on macos: :sierra # needs clock_gettime
   depends_on "openssl@1.1"
-  depends_on :osxfuse if OS.mac?
   depends_on "xz"
-  depends_on "libfuse" unless OS.mac?
+
+  on_macos do
+    deprecate! date: "2020-11-10", because: "requires FUSE"
+    depends_on :osxfuse
+  end
+
+  on_linux do
+    depends_on "libfuse"
+  end
 
   def install
     args = %W[
