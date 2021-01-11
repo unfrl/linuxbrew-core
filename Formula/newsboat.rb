@@ -11,6 +11,7 @@ class Newsboat < Formula
     sha256 "e9fcc698d8778d553246fb3d1bf53976818e59376c56e3c28bdc041f34526a6c" => :arm64_big_sur
     sha256 "180667d4eb94c77f4fbc43e542b823fccbd91b020e341a5fa132d4789d105c49" => :catalina
     sha256 "bbf2e67497c2c4985401be6d13effd2794ed2619e2a2cbdb014e30f98faa3830" => :mojave
+    sha256 "44316e6610d474e5d788820af646f3edeb01274eba9ae5321d70ac3446046d61" => :x86_64_linux
   end
 
   depends_on "asciidoctor" => :build
