@@ -2,8 +2,8 @@ class V8 < Formula
   desc "Google's JavaScript engine"
   homepage "https://github.com/v8/v8/wiki"
   # Track V8 version from Chrome stable: https://omahaproxy.appspot.com
-  url "https://github.com/v8/v8/archive/8.7.220.29.tar.gz"
-  sha256 "36ebf7a55ccc0f2c765a45f23ed152caceb7612f31ce29d3f49ff1614afbe54d"
+  url "https://github.com/v8/v8/archive/8.7.220.31.tar.gz"
+  sha256 "f8b74ea7cda54bfd37c46533fa543909954a44848f97d9f08d1c372a303abfab"
   license "BSD-3-Clause"
 
   livecheck do
@@ -13,13 +13,13 @@ class V8 < Formula
 
   bottle do
     cellar :any
-    sha256 "50f51a34a06ca28c52401df43275755396b7fdee7e8f18356cedf026884783eb" => :big_sur
-    sha256 "e98659632153492b81057e7c7b155f5b2c846536b606319a43c01844613f7466" => :arm64_big_sur
-    sha256 "19550a7952ac8e8882e746ec5c9cd17f8903a6e1e3859bd10c3255f373af4e13" => :catalina
-    sha256 "b8222edfa40c8838b910eefe67b17c5b278447e94dc4d365ae9cb55d0e35d7e9" => :mojave
+    sha256 "cf43ee1269cd2b69ed3d9f70845aa5b362f27e68627c012b8a0aa2b92251c460" => :big_sur
+    sha256 "20dd91225bb39478a1f7f6ef2660cdf7fb4539e9c71b414826f54566a88a219c" => :arm64_big_sur
+    sha256 "b07dbd5045ea5a4e78db22e2ceaaf7b511db0e5fc6c2c2950cb4d966add8356f" => :catalina
+    sha256 "4b9767f4bcfb37ef65cfa064c656c50a8b3c8aa1469466f6e5b94183d2525df0" => :mojave
   end
 
-  depends_on "llvm" => :build if DevelopmentTools.clang_build_version < 1200
+  depends_on "llvm" => :build if DevelopmentTools.clang_build_version < 1200 || Hardware::CPU.arm?
   depends_on "ninja" => :build
 
   depends_on xcode: ["10.0", :build] # required by v8
@@ -104,7 +104,7 @@ class V8 < Formula
     }
 
     # use clang from homebrew llvm formula for XCode 11- , because the system clang is too old for V8
-    if DevelopmentTools.clang_build_version < 1200
+    if DevelopmentTools.clang_build_version < 1200 || Hardware::CPU.arm?
       ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib # but link against system libc++
       gn_args[:clang_base_path] = "\"#{Formula["llvm"].prefix}\""
     end

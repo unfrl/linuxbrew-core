@@ -11,9 +11,11 @@ class Pyside < Formula
   end
 
   bottle do
-    sha256 "59e5c373a67322e16ede374a28a56a33dc24e4c5915b25a6a144379be3464637" => :big_sur
-    sha256 "2dc161b5c9cd38d7502a4798bcd196ca91d69316be5474619548ec0012850f5b" => :catalina
-    sha256 "7ce52066861e3a94b3dc903e277c2c09824e89f5ce8f37490bb181175215cbc0" => :mojave
+    rebuild 1
+    sha256 "b5fbef8f97a40637dde5e19d7d7748c68d6791aff605a9fbc727ec7ab9a59a20" => :big_sur
+    sha256 "a7ad725f886a87be690a6dbd6f692c12ad80217ca4da32ae288835e65b8ebd2f" => :arm64_big_sur
+    sha256 "21ee031fac323276085a0e50bf35bec8b21a1a048114d00143cecbc389c1f97b" => :catalina
+    sha256 "51c56d621de2ecec0ba899fadf2243ceddf7461744f973c2e8c27f4c85d01633" => :mojave
   end
 
   depends_on "cmake" => :build
@@ -23,11 +25,22 @@ class Pyside < Formula
 
   def install
     ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib
+    if MacOS.version == :big_sur
+      # Sysconfig promotes '11' to an integer which confuses the build
+      # system. See:
+      #  * https://bugreports.qt.io/browse/PYSIDE-1469
+      #  * https://codereview.qt-project.org/c/pyside/pyside-setup/+/328375
+      inreplace "build_scripts/wheel_utils.py",
+                "python_target_split = [int(x) for x in python_target.split('.')]",
+                "python_target_split = [int(x) for x in str(python_target).split('.')]"
+    end
 
     args = %W[
       --ignore-git
       --parallel=#{ENV.make_jobs}
       --install-scripts #{bin}
+      --rpath=#{lib}
+      --macos-sysroot=#{MacOS.sdk_path}
     ]
 
     xy = Language::Python.major_minor_version Formula["python@3.9"].opt_bin/"python3"
@@ -48,7 +61,7 @@ class Pyside < Formula
 
   test do
     system Formula["python@3.9"].opt_bin/"python3", "-c", "import PySide2"
-    %w[
+    modules = %w[
       Core
       Gui
       Location
@@ -56,9 +69,14 @@ class Pyside < Formula
       Network
       Quick
       Svg
-      WebEngineWidgets
       Widgets
       Xml
-    ].each { |mod| system Formula["python@3.9"].opt_bin/"python3", "-c", "import PySide2.Qt#{mod}" }
+    ]
+
+    # QT web engine is currently not supported on Apple
+    # silicon. Re-enable it once it has been enabled in the qt.rb.
+    modules << "WebEngineWidgets" unless Hardware::CPU.arch == :arm64
+
+    modules.each { |mod| system Formula["python@3.9"].opt_bin/"python3", "-c", "import PySide2.Qt#{mod}" }
   end
 end

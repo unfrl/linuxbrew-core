@@ -1,11 +1,9 @@
 class Openimageio < Formula
   desc "Library for reading, processing and writing images"
   homepage "https://openimageio.org/"
-  url "https://github.com/OpenImageIO/oiio/archive/Release-2.2.10.0.tar.gz"
-  version "2.2.10"
-  sha256 "dbc0e3e9718497d9f71ea01fb1de8b87449775ad9dbcea4d2538d9c52bbe1d5a"
+  url "https://github.com/OpenImageIO/oiio/archive/Release-2.2.10.1.tar.gz"
+  sha256 "625f4ad666f9aa133039c0ae6ade8fc5dab835fadac988cbe65f824463d614dc"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/OpenImageIO/oiio.git"
 
   livecheck do
@@ -15,9 +13,9 @@ class Openimageio < Formula
   end
 
   bottle do
-    sha256 "643fd20eaa5e435cf4deff4c7021ec5ac4dc4cb55a159ad86ead8adb5ca188a6" => :big_sur
-    sha256 "ba17ccc5b23756da20b05e4086e41a338092bf9a0f967838151960da35225820" => :catalina
-    sha256 "e42650494b1264b27cc13b7549cf2504e9174a0f4f2c2fc552c8650b1b28f5bd" => :mojave
+    sha256 "dbf0227c735a171d07aba6af381bb93671f61c79d6976163ffad13e0ce51e6eb" => :big_sur
+    sha256 "2ec25e439836298b38c6f8107c788c877af223dfd02d76e39d9c18f814735ff7" => :catalina
+    sha256 "bfe208f44fca47f8ed2d591f2752d7bd815c88084d6905cbb2ffdbbfd9cac909" => :mojave
   end
 
   depends_on "cmake" => :build
@@ -91,6 +89,6 @@ class Openimageio < Formula
       import OpenImageIO
       print(OpenImageIO.VERSION_STRING)
     EOS
-    assert_match version.to_s, pipe_output(Formula["python@3.9"].opt_bin/"python3", output, 0)
+    assert_match version.major_minor_patch.to_s, pipe_output(Formula["python@3.9"].opt_bin/"python3", output, 0)
   end
 end
