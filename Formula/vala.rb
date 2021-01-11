@@ -14,6 +14,7 @@ class Vala < Formula
     sha256 "a0036331ef47150a376cb47fb8b71202eeea545ccc36a18475a5a36569086f70" => :arm64_big_sur
     sha256 "49928d667fe02a27bad5e960ee1dfa24496a5b3ebec45486b1cafbd74573360e" => :catalina
     sha256 "2b5bb380c683c16993b56ce4554cb32fa94b653377f9cb0f5d49afe0350f1732" => :mojave
+    sha256 "11ec654891d2ce5bb3bdf24c07f179bf7e2b5f10aa07f2082f855a2b495c569b" => :x86_64_linux
   end
 
   depends_on "gettext"
