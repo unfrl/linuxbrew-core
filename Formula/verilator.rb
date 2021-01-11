@@ -1,8 +1,8 @@
 class Verilator < Formula
   desc "Verilog simulator"
   homepage "https://www.veripool.org/wiki/verilator"
-  url "https://www.veripool.org/ftp/verilator-4.106.tgz"
-  sha256 "e31f43fcd984f17c0f10fb4e26bed4203919a5c8c9f1beafc9aafcb5f85d72b7"
+  url "https://www.veripool.org/ftp/verilator-4.108.tgz"
+  sha256 "8e8ec1de0bf200b6206035214f9071a5acc64bd2e7134361d564271e48552702"
   license any_of: ["LGPL-3.0-only", "Artistic-2.0"]
 
   livecheck do
@@ -11,10 +11,10 @@ class Verilator < Formula
   end
 
   bottle do
-    sha256 "f7def3eedd4e4ceb417b02054986524d0c69818c8837fc5a2ed479001804f93e" => :big_sur
-    sha256 "11944229b6818c17042010a7267303350da32275864d0c5d6414d00097522263" => :arm64_big_sur
-    sha256 "8c9d1253dd911dca93ddc8e2da53aed9b634c0cafa26609b13a123254d7679c0" => :catalina
-    sha256 "f45ae45c72884a8da166bbc4fb0eea4f4e602aaa8c89c2c2594cc851dd46338b" => :mojave
+    sha256 "45d7504fefb899372cd2ee8876e8a82d56b59f14972309b9dbeed83b580029b3" => :big_sur
+    sha256 "54cb01cc42dcbb937393cb3359459b18c4cc29c424d19065b09f1095fdee685b" => :arm64_big_sur
+    sha256 "8e616f827d635b2659f454a3f5dc302fced30bad4b26930ccd392944f71dbfd9" => :catalina
+    sha256 "97797a992b626adf8ae83c8ee22d881ec26bf12f390c6a807e0635bc67d6e09b" => :mojave
   end
 
   head do
@@ -22,6 +22,9 @@ class Verilator < Formula
     depends_on "autoconf" => :build
     depends_on "automake" => :build
   end
+
+  depends_on "python@3.9" => :build
+  uses_from_macos "perl"
 
   skip_clean "bin" # Allows perl scripts to keep their executable flag
 
