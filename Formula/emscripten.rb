@@ -3,8 +3,8 @@ require "language/node"
 class Emscripten < Formula
   desc "LLVM bytecode to JavaScript compiler"
   homepage "https://emscripten.org/"
-  url "https://github.com/emscripten-core/emscripten/archive/2.0.11.tar.gz"
-  sha256 "92389951c46af18921547aae96977150c220ba8a2cd73dd1d0c94e031988eff4"
+  url "https://github.com/emscripten-core/emscripten/archive/2.0.12.tar.gz"
+  sha256 "d9419c9ea6df4c9582a3a09fdeafec16f5f3c64866f6faf86989ea1ef99f54ea"
   # Emscripten is available under 2 licenses, the MIT license and the
   # University of Illinois/NCSA Open Source License.
   license all_of: [
@@ -21,9 +21,9 @@ class Emscripten < Formula
 
   bottle do
     cellar :any
-    sha256 "12ed7be9b509066598d45828dad7dad800e287a8cc8373be0bf03c85222ebeac" => :big_sur
-    sha256 "a4d006811787d98589df911506cdd41c2f3ec67ce4d776c953476bce746f7a42" => :catalina
-    sha256 "663c1a2d8e70ac68982bc7cbf9069aad19b30b597db091103434bf2ff722cce7" => :mojave
+    sha256 "48800d0fa4e87506b21bd9bd770f701260e38a38db5e70ea1ea01235974e5817" => :big_sur
+    sha256 "ffa23a77ca9960849cd6a21dacec13d25daf03b638e54a08365ac5970c5790ed" => :catalina
+    sha256 "986de7621ea1965fdc7c20cb54e864da4039c477b2700bfdaf34e4ad83ae3c30" => :mojave
   end
 
   depends_on "cmake" => :build
@@ -35,7 +35,7 @@ class Emscripten < Formula
   # See llvm resource below for instructions on how to update this.
   resource "binaryen" do
     url "https://github.com/WebAssembly/binaryen.git",
-        revision: "a8ded16f56afd880a9a6459fe5ce55a8667d9b3e"
+        revision: "d7e9150e38f14c7ca083fe48bf1f49ab77cfc794"
   end
 
   # emscripten needs argument '-fignore-exceptions', which is only available in llvm >= 12
@@ -46,7 +46,7 @@ class Emscripten < Formula
   # Then use the listed llvm_project_revision for the resource below.
   resource "llvm" do
     url "https://github.com/llvm/llvm-project.git",
-        revision: "f4c8b80318005ca61bfed9b40ee9e6039194159b"
+        revision: "52e240a0721e4120a7143f6f5bab4760d28d48e8"
   end
 
   def install

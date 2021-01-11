@@ -1,17 +1,16 @@
 class Yq < Formula
   desc "Process YAML documents from the CLI"
   homepage "https://github.com/mikefarah/yq"
-  url "https://github.com/mikefarah/yq/archive/v4.3.0.tar.gz"
-  sha256 "6b6c816408776d683d554a7aa49a6d48cb5e35843f6ac07b74ed14f20427077a"
+  url "https://github.com/mikefarah/yq/archive/v4.3.1.tar.gz"
+  sha256 "d06aff91e97f02aa51a16bd608954d5b9ec35950db1ac06addbde60dd360c9ba"
   license "MIT"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "bcf6d5c8f29111721d235fdcfd1c044774f9b1003cc4ffe966462fbe8241e289" => :big_sur
-    sha256 "0ad163536fbe51151fcf6e87196d528ebae9edfb0cf99687f5b1be8a39582775" => :arm64_big_sur
-    sha256 "d32e01248a64c87315290a8b0ac5abec3d485ad5181889cfbf14634467604b02" => :catalina
-    sha256 "0fda89ff32c11864247d64a47b0baa6f2a32ce57ce5c0fd753c59bc9d3e25b41" => :mojave
-    sha256 "cee84d4f6a0dbcca684753a8d3617535ce3b887b625bd1adf605eb836ec662f4" => :x86_64_linux
+    sha256 "1155fbb777da8bd4b86bae16483aac01bc9d12878abf01c07b4c60d51ce54b56" => :big_sur
+    sha256 "2944791e1cfddc09d68df13f71efdd2aaa7112fea8d6e7cf25b4163ec377128e" => :arm64_big_sur
+    sha256 "e8051fedf6a479b65cc0dded30435d355ab6ddff575b1038186f91f766c2a4c5" => :catalina
+    sha256 "ba661f505d8c2705ea36c29f77a3328e2e9e3f65b029407961cd33d8769a662d" => :mojave
   end
 
   depends_on "go" => :build

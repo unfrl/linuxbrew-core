@@ -3,8 +3,8 @@ class Molecule < Formula
 
   desc "Automated testing for Ansible roles"
   homepage "https://molecule.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/78/ab/b816db4b4cb1e7ca591c03d0fe837efdfc11ebb6c9b20ebf4b080678ac53/molecule-3.2.1.tar.gz"
-  sha256 "b85e078fe24c53022ac14e406a11088bd3e1dc388d94dfbee5fe6aa5f5dff584"
+  url "https://files.pythonhosted.org/packages/dc/7b/04113eec790197889b82702380e4f596f8e3419e21bfd73a768b1c4fa091/molecule-3.2.2.tar.gz"
+  sha256 "9e360073598d45ec86036d84084fc6493dfc4270fd7600ee9ebe0ce03a0af6e5"
   license "MIT"
 
   livecheck do
@@ -13,11 +13,10 @@ class Molecule < Formula
 
   bottle do
     cellar :any
-    sha256 "1d220cb85537103e3efa09c70abd6063aedd4646f90c832bb17febbb81333210" => :big_sur
-    sha256 "110fb66e0d3274b4ff0b6d51e5b2c60412b79bf15d83287305dde5d0bc18cd8d" => :arm64_big_sur
-    sha256 "4243e7520f07d85ffb3ad2de6ccc66e8c18b8f864e186838710c92f293b121fa" => :catalina
-    sha256 "4f16475fb35228cb6562055c22f21e545ee7ed458722487af4322471a3db419b" => :mojave
-    sha256 "fc409a3a9fdca8e34ece29ec9d084b63011eac52f7a8707d3aac9e513b0679f4" => :x86_64_linux
+    sha256 "e2470e5b18d6a4228ae9f3d7324887a194e2de6b48fe0f5cfb3626c7594ede8d" => :big_sur
+    sha256 "b407355e8afca4271af4fb01435b0e36ccf05b5c824490fe39730835777be450" => :arm64_big_sur
+    sha256 "9537406f23728a7e2f7a4a587f66b182743cc9b56f90b4f0c4d6965d53dfe674" => :catalina
+    sha256 "a19b353f56cf41bfb0fd3e4eb777c7150af2bc57ccf14f5bc3864e9307fa8ed9" => :mojave
   end
 
   depends_on "ansible"
@@ -109,11 +108,6 @@ class Molecule < Formula
   resource "cryptography" do
     url "https://files.pythonhosted.org/packages/b7/82/f7a4ddc1af185936c1e4fa000942ffa8fb2d98cff26b75afa7b3c63391c4/cryptography-3.3.1.tar.gz"
     sha256 "7e177e4bea2de937a584b13645cab32f25e3d96fc0bc4a4cf99c27dc77682be6"
-  end
-
-  resource "distro" do
-    url "https://files.pythonhosted.org/packages/a6/a4/75064c334d8ae433445a20816b788700db1651f21bdb0af33db2aab142fe/distro-1.5.0.tar.gz"
-    sha256 "0e58756ae38fbd8fc3020d54badb8eae17c5b9dcbed388b17bb55b8a5928df92"
   end
 
   resource "docker-py" do
@@ -222,13 +216,8 @@ class Molecule < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/39/8f/8cbda9eb259d37e0c6b21c67edfae7b13b1d2feed0ee3d7372da02fc0e75/rich-9.5.1.tar.gz"
-    sha256 "8b937e2d2c4ff9dcfda8a5910a8cd384bd30f50ec92346d616f62065c662df5f"
-  end
-
-  resource "selinux" do
-    url "https://files.pythonhosted.org/packages/1a/f1/5755b134895bb9b29d6937cae52d0f58140bb97df0f72c33231345294e80/selinux-0.2.1.tar.gz"
-    sha256 "d435f514e834e3fdc0941f6a29d086b80b2ea51b28112aee6254bd104ee42a74"
+    url "https://files.pythonhosted.org/packages/67/47/765d57cdd54d74d2a70de26d7ffad1109745f14f3c425015905e6749d3b9/rich-9.7.0.tar.gz"
+    sha256 "25583ce533afae71de086ca97cf0aa883a5e1a220dfcc6049a2809a74bc79ca0"
   end
 
   resource "shellingham" do
