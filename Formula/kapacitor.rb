@@ -2,8 +2,8 @@ class Kapacitor < Formula
   desc "Open source time series data processor"
   homepage "https://github.com/influxdata/kapacitor"
   url "https://github.com/influxdata/kapacitor.git",
-      tag:      "v1.5.7",
-      revision: "0cb75d8c317c529d657f53c41c8870c37ebd0d18"
+      tag:      "v1.5.8",
+      revision: "873d93b7377bf1c7bfbcd508e4ea6a6213997aff"
   license "MIT"
   head "https://github.com/influxdata/kapacitor.git"
 
@@ -14,11 +14,10 @@ class Kapacitor < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "ab34c0300102c0e772e734ee8169effe333c7065f10f2e6b6efc131a6e7bbb31" => :big_sur
-    sha256 "e418264589e6068854fea663315369616977a59568dad1c4b5641cccef1cf38b" => :catalina
-    sha256 "8c78689d4c22160d4acbf4aeb11af9906a20c0d922d95401134ee6786bcfaf63" => :mojave
-    sha256 "d39896edf580fa9692057a2acbd04b204021a3f6ce31d47c3d1471a230a86836" => :high_sierra
-    sha256 "4cba6cca229fb1d13d90d7c2aeeef2971c174b23dd860767a5bb386abe19071e" => :x86_64_linux
+    sha256 "a1381a3e165a2aeaac47206ab1de2898de021b1e6508253fdc04d57afe599d6a" => :big_sur
+    sha256 "53a4ffb90955abd638c370b605249e59cebf063a9bab2a91f8cd78f5ae81542c" => :arm64_big_sur
+    sha256 "6e5902e6a5524d6062185bc20eaedaccf68d48ff9a12e374fce7d7666e0b8ad7" => :catalina
+    sha256 "786f624493214d9b7135f4e01753cab017eb5db0f24a0629319f6c85101755f0" => :mojave
   end
 
   depends_on "go" => :build

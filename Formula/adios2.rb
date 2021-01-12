@@ -1,18 +1,16 @@
 class Adios2 < Formula
   desc "Next generation of ADIOS developed in the Exascale Computing Program"
   homepage "https://adios2.readthedocs.io"
-  url "https://github.com/ornladios/ADIOS2/archive/v2.6.0.tar.gz"
-  sha256 "45b41889065f8b840725928db092848b8a8b8d1bfae1b92e72f8868d1c76216c"
+  url "https://github.com/ornladios/ADIOS2/archive/v2.7.0.tar.gz"
+  sha256 "4b5df1a1f92d7ff380416dec7511cfcfe3dc44da27e486ed63c3e6cffb173924"
   license "Apache-2.0"
-  revision 3
   head "https://github.com/ornladios/ADIOS2.git", branch: "master"
 
   bottle do
-    sha256 "2e6889eacff86171837feafd9c53cf3c3f5ecb47323a4d5a50bba6439e743b6e" => :big_sur
-    sha256 "80bc705482d7f6e79d696e95424e2e5b1652b1e5d8a209543aa0593a416b7e30" => :arm64_big_sur
-    sha256 "b2e21f05ce51864584440bbee0df419a4adf1c842159af0a975415f2d31dbb9d" => :catalina
-    sha256 "9b91ada3dc230fa55c94f8a13fbb7fa0483b5487d84c464d31b04fcc831148ba" => :mojave
-    sha256 "3d12753838588f88e5e55de6095bc93af2731b34ff65c807414208cf443a3442" => :high_sierra
+    sha256 "a0f3beec027c3c5737c635d3d6269d9b250854dbc0c98230b94224cdd02d1e6d" => :big_sur
+    sha256 "44565766502bd063a951af4fff018de095cebbf09c029d88fbc4a8ddb9ff2390" => :arm64_big_sur
+    sha256 "c1db45b317e80c44fe8db1df23021df58da5fb4acac6b560f0fcc65633507d89" => :catalina
+    sha256 "075003cff98ea53e409189517ac97cea24fee45f7785ced3ee32103c114014c0" => :mojave
   end
 
   depends_on "cmake" => :build
@@ -27,14 +25,6 @@ class Adios2 < Formula
   depends_on "zeromq"
 
   uses_from_macos "bzip2"
-
-  # macOS 10.13 configuration-time issue detecting float types
-  # reference: https://github.com/ornladios/ADIOS2/pull/2305
-  # can be removed after v2.6.0
-  patch do
-    url "https://github.com/ornladios/ADIOS2/commit/e92f052bc26816b30d3399343a005ea82b88afaf.patch?full_index=1"
-    sha256 "6d0b84af71d6ccf4cf1cdad5e064cca837d505334316e7e78d18fa30a959666a"
-  end
 
   def install
     # fix `include/adios2/common/ADIOSConfig.h` file audit failure
