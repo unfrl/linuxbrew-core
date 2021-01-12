@@ -5,18 +5,25 @@ class GitGui < Formula
   url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.30.0.tar.xz"
   sha256 "55735021109565721af805af382c45cce73c3cfaa59daad22443d1477d334d19"
   license "GPL-2.0"
+  revision 1
   head "https://github.com/git/git.git", shallow: false
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "6daa1a3d93f88e183dd97a9dfe564a0e73daabeb3f6b55b92c69c02b9a1bce3b" => :big_sur
-    sha256 "a88e400fae60a6415a45299f4a979b8539c06b990e66d3c5897f796d5fe12420" => :arm64_big_sur
-    sha256 "d23a4f19ee1235aca94ba49c9b3d04290df910bacb991a71ea9dfcd4d7ed4453" => :catalina
-    sha256 "5983f88520e038b1dbe555d8bf09490cc8b1dc71961b57e31d1e46f684f9f0cf" => :mojave
-    sha256 "a9bd499b262287ea44e41398abf4fdac9260bf7eb772c0db76dfa06751dc4505" => :x86_64_linux
+    sha256 "27a0f42ff0d90bdfe57eff9a5077049303722c7ca25be401dd5dafbe1eff3cfe" => :big_sur
+    sha256 "045a1afff977d4973f123b1088567fe15b4d4f9c70beff602c4101aa1816e499" => :arm64_big_sur
+    sha256 "39ac88d194e39f15648b2c0a5667e04666b40c003d3d64dc21ed6e46db56437f" => :catalina
+    sha256 "9ec9d216c68fe11fa2f36c0f62e5f995836745d373a3521f6d87f418610c75dc" => :mojave
   end
 
   depends_on "tcl-tk"
+
+  # Patch to fix Homebrew/homebrew-core#68798.
+  # Remove at version bump
+  patch do
+    url "https://github.com/git/git/commit/1db62e44b7ec93b6654271ef34065b31496cd02e.patch?full_index=1"
+    sha256 "0c7816ee9c8ddd7aa38aa29541c9138997650713bce67bdef501b1de0b50f539"
+  end
 
   def install
     # build verbosely

@@ -1,17 +1,16 @@
 class Topgrade < Formula
   desc "Upgrade all the things"
   homepage "https://github.com/r-darwish/topgrade"
-  url "https://github.com/r-darwish/topgrade/archive/v6.2.2.tar.gz"
-  sha256 "385cd9334865051b5d6a5ba170b96e78e2913d6530ddcfcdf72590c382e3f065"
+  url "https://github.com/r-darwish/topgrade/archive/v6.2.3.tar.gz"
+  sha256 "bc1c385be2003462af1bc21fd0556bff88498bb510d80c419ead7adffb4239d2"
   license "GPL-3.0-or-later"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "32c581b7cf70b69b11f3612c7a0fe5f18244ba7b07c8029e2c84f209a3028a1c" => :big_sur
-    sha256 "5fb852456ab2be99cf69d53973ead4eb3d981c4c467bcef81ef638a03bdedc25" => :arm64_big_sur
-    sha256 "bae219e1b7bc6a2b1c71d3a083a080f43e65e052c1c66d58df880e62d1d9749c" => :catalina
-    sha256 "fa19ea1c24e448a1599fca74af25998c966739adb0d0ca52e58aa5017354a284" => :mojave
-    sha256 "4a6c15da6b80a37688ea312a86b83342aff4865cb75a367169f0ce9810dae7f1" => :x86_64_linux
+    sha256 "947b4a2f95b153fe6d36164265d9701ecd31ee6508bba9368eea1ef634ec39f9" => :big_sur
+    sha256 "cade9faf92ce5fae797590a4ffb8b38954964133d266b6593bc3777aed57d875" => :arm64_big_sur
+    sha256 "dc61b0277bc66618f1b560d1336b543d4b2ec8f468833abd33663eecf7ee7ba9" => :catalina
+    sha256 "8b0f26d1e7eb8859bc1a0023ed89bde3d5fbdbd31591ce5a3922a49bf3021829" => :mojave
   end
 
   depends_on "rust" => :build

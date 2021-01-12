@@ -4,14 +4,14 @@ class Igraph < Formula
   url "https://github.com/igraph/igraph/releases/download/0.8.5/igraph-0.8.5.tar.gz"
   sha256 "2e5da63a2b8e9bb497893a17cf77c691df1739c298664f8adb1310a01218f95b"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
     cellar :any
-    sha256 "f465b8d9fefa756c504d37e0af723557c276b15d1f7d548ed25d45368dded147" => :big_sur
-    sha256 "c545569d11877ab3692dff937cd885f6ee58ca492af51839e47c2f0cef8a538d" => :arm64_big_sur
-    sha256 "8e9868d06e9ad6a4bc388f7f44ed175fcc54f81c4362eb3de324fadadaf8c3c3" => :catalina
-    sha256 "e14e7cb3c9925863daea2981b4130bcdb969a34c6e73b43dcfc49820c809948d" => :mojave
-    sha256 "3c7033845f5e720ede6f9e9fb7bb0ecffc8ad243b5a5f5b0912defab4cbd532b" => :x86_64_linux
+    sha256 "df32f814a2a0ab2a4385709941e986fd397f49314845d2f46a0a738eb1ff074e" => :big_sur
+    sha256 "c47315766863332a294eb63c135d674142f66faf6176b28f35c0572be3237bcc" => :arm64_big_sur
+    sha256 "fd1f5b91421abd8f0daffeb8f6f5399add7703a574eae94d001b6692a717faf8" => :catalina
+    sha256 "a1b5b395940614336af1155290e4eed9f964e58138ed9e515950d64d9d34ef3c" => :mojave
   end
 
   depends_on "glpk"
@@ -29,7 +29,8 @@ class Igraph < Formula
                           "--prefix=#{prefix}",
                           "--with-external-blas",
                           "--with-external-lapack",
-                          "--with-external-glpk"
+                          "--with-external-glpk",
+                          "--enable-tls"
     system "make", "install"
   end
 
