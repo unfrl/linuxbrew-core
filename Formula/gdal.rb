@@ -15,6 +15,7 @@ class Gdal < Formula
     sha256 "82a98a4bf1a3cb49b8eadca15c26c6801daf67466d9650b4a48eb6aa8a93440e" => :arm64_big_sur
     sha256 "b1c946acb57fbca8c67162da0550a153a3e81aa4d751503ff7e1226ab8963d45" => :catalina
     sha256 "af4520bf4794d7cc5c67bcd67f04875583888f9f56cb04d43006d3de7c283e81" => :mojave
+    sha256 "a69ff7206574411e1c06b61abd4aaf8b7c1e963fe64fd1c5131e2c05e01cb894" => :x86_64_linux
   end
 
   head do
