@@ -16,6 +16,7 @@ class Socat < Formula
     sha256 "1d355658a55eb44cb6ffe1fa8dc140883359467080e13be0d4237cf181c05dc0" => :arm64_big_sur
     sha256 "f2a0d0d0bca542cb0f4b700d42dc244e82b8da9be2d5aff8d98b8a7fef77c9fe" => :catalina
     sha256 "531f3ea55671c8d01165c3a314b24cef873c51442a1729fe2e9ce14ff908aebb" => :mojave
+    sha256 "b4e2763f4454ff3f3731e3b2df346a998065e8b04a7d03bc9a6e72ae1a0bf8cc" => :x86_64_linux
   end
 
   depends_on "openssl@1.1"
