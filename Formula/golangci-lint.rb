@@ -12,6 +12,7 @@ class GolangciLint < Formula
     sha256 "162646975e25eeb6389c5c23ecc18d2bd96e848e998646a3e96d508a567ed2fb" => :arm64_big_sur
     sha256 "1aa34b8b1b5fbfda2054c4dc9747a4a6c0fe04ff2d58517216e07ec26d280037" => :catalina
     sha256 "a1cbc50471307ab478291578587b518266178ba07bf2af2818d3d0982c652057" => :mojave
+    sha256 "cac9c468d7625a68fede64c3e3580cf6f30115247d1e2e4f393241f60b15f118" => :x86_64_linux
   end
 
   depends_on "go"
