@@ -17,6 +17,7 @@ class NodeSass < Formula
     sha256 "35ff179b97414b610eb7b45b155248199c25f1b3b49176e9bdbbef73bb9562f4" => :arm64_big_sur
     sha256 "9cec2d6c5036b5c771921c87e13373f26873be91d9c04bbcdeedac25c8cb9f86" => :catalina
     sha256 "7cbbd382e9c9ebf89656bdb82f3057fa85eaaecae1f59eda221068fe5d3ca895" => :mojave
+    sha256 "7b05e92ed950872e7e5dfdc18595435f0cda7febfbcdce31d6de4e97839b6bf9" => :x86_64_linux
   end
 
   depends_on "node"
