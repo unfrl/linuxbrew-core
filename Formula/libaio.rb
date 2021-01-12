@@ -7,7 +7,6 @@ class Libaio < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "95183f63bab7cc5f5f14f7b71c2d47d66aff94faab35ab621acac695e25b257e" => :x86_64_linux
   end
 
   depends_on :linux
