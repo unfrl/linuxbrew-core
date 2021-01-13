@@ -5,19 +5,17 @@ class Httpd < Formula
   mirror "https://archive.apache.org/dist/httpd/httpd-2.4.46.tar.bz2"
   sha256 "740eddf6e1c641992b22359cabc66e6325868c3c5e2e3f98faf349b61ecf41ea"
   license "Apache-2.0"
-  revision 1 unless OS.mac?
+  revision OS.mac? ? 1 : 2
 
   livecheck do
     url :stable
   end
 
   bottle do
-    rebuild 1
-    sha256 "52044b82ea97ef07416b50c9a5a4814d01826f216aacaed18b421fe8dcdacf3f" => :big_sur
-    sha256 "6aae607116448980a05419c497ae3fb04aa9822251e8f869835f9e3e85cf6ac5" => :arm64_big_sur
-    sha256 "a927b3b0661465316615333e7ae7836b14188691b36d7ede06fb30ac1fe00aee" => :catalina
-    sha256 "c31ed64fef5c5a063ac3d973533d1e71d01baa4f342e9811191ca65f7ad57a6e" => :mojave
-    sha256 "4cb81bc0fdce317935ad610d9b245687f3d10396952696211ecf2001748e2cbf" => :x86_64_linux
+    sha256 "58958f4f22c9e815f2590bd84dbae5f34d761836e45b625b001f71047d055660" => :big_sur
+    sha256 "2c9351c32678a6c266d066a54cc8d17ea2a660caf8390d6e32b37c0794199283" => :arm64_big_sur
+    sha256 "7351527d21a67d696ba732e43924a1b8f73f987098b45f96c366afbbaede03ef" => :catalina
+    sha256 "93a50743615ce0bef192e2d40c05255456016e4c5774a817f3f9a8ca3ef03375" => :mojave
   end
 
   depends_on "apr"

@@ -6,12 +6,12 @@ class PhpAT73 < Formula
   mirror "https://fossies.org/linux/www/php-7.3.26.tar.xz"
   sha256 "d93052f4cb2882090b6a37fd1e0c764be1605a2461152b7f6b8f04fa48875208"
   license "PHP-3.01"
+  revision 1
 
   bottle do
-    sha256 "6dd8344cf7941b0f716fff42c19456e489cf9b276b1667b5dae0e340a646958b" => :big_sur
-    sha256 "f751c325bcfa4a8bec63078505fd15f74c6e6df86ab62771437c0a4c5eb0abee" => :catalina
-    sha256 "e28fc8cdce15408bd3bf3b9d3c29b41f7e23a7ee1a426a2c5683234181153553" => :mojave
-    sha256 "b0f6a861162e2b478fa785a3179df6ab183c903a535ea77cabc16e6f705db2cf" => :x86_64_linux
+    sha256 "06671f8f745ffb772680f3c682114ba442137252b63be1269e106ec2aca37184" => :big_sur
+    sha256 "ead08def2ae05dfc8524fd7e47e3a09ff08762b41a4d61577a031b55e11e6914" => :catalina
+    sha256 "ba28f17495fdb6a853578a759dfc50255588f9eb6d75f0f1f350e812dc558202" => :mojave
   end
 
   keg_only :versioned_formula

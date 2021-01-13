@@ -1,29 +1,28 @@
 class OsmPbf < Formula
   desc "Tools related to PBF (an alternative to XML format)"
   homepage "https://wiki.openstreetmap.org/wiki/PBF_Format"
-  url "https://github.com/scrosby/OSM-binary/archive/v1.3.3.tar.gz"
-  sha256 "a109f338ce6a8438a8faae4627cd08599d0403b8977c185499de5c17b92d0798"
+  url "https://github.com/scrosby/OSM-binary/archive/v1.5.0.tar.gz"
+  sha256 "2abf3126729793732c3380763999cc365e51bffda369a008213879a3cd90476c"
   license "LGPL-3.0"
-  revision 6
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "bb6525bab64e792c04a42dc14f4c282357a1ca810528291c708ad4bb675850ef" => :big_sur
-    sha256 "d69b8678764efa4aa16a5eebd85610bdd3ec411655946447d56ca7571f8057db" => :arm64_big_sur
-    sha256 "848d0ffd20470d7988d5bb9f4a93e5b58f799646a4c551732c271d4d57b5a1f8" => :catalina
-    sha256 "324c716503518b77533db927144643db877d3cf3297234333c056ae45f85d911" => :mojave
-    sha256 "1bd74afe54bdcee7e36262e89ae97ce7ed2cbf98f35f4f34400f3de2c0aa2e71" => :x86_64_linux
+    sha256 "cde905f5e30549acb2e9d002b95e8ebbf581aa078108abddc2e8a645329ffa71" => :big_sur
+    sha256 "5cfaf02637be652c5d7913288a576961c1d6bd9bf67c7818196c18aff0bda149" => :arm64_big_sur
+    sha256 "a61abe978818b7abd27cf0716204b24cc0135f2589298b63d7cad95577d2550f" => :catalina
+    sha256 "16ba12db1cc49ec09169e8463cdac17edeefb91ef7a32ff0eaa62556bfc409a0" => :mojave
   end
 
+  depends_on "cmake" => :build
   depends_on "protobuf"
 
   def install
-    ENV.cxx11
+    system "cmake", ".", *std_cmake_args
+    system "make", "install"
+    pkgshare.install "resources/sample.pbf"
+  end
 
-    cd "src" do
-      system "make"
-      lib.install "libosmpbf.a"
-    end
-    include.install Dir["include/*"]
+  test do
+    assert_match "OSMHeader", shell_output("#{bin}/osmpbf-outline #{pkgshare}/sample.pbf")
   end
 end
