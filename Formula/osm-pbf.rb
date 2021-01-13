@@ -11,6 +11,7 @@ class OsmPbf < Formula
     sha256 "5cfaf02637be652c5d7913288a576961c1d6bd9bf67c7818196c18aff0bda149" => :arm64_big_sur
     sha256 "a61abe978818b7abd27cf0716204b24cc0135f2589298b63d7cad95577d2550f" => :catalina
     sha256 "16ba12db1cc49ec09169e8463cdac17edeefb91ef7a32ff0eaa62556bfc409a0" => :mojave
+    sha256 "4e9f3892dd20ce64f59809f7e0227038f40bcc01d6fb5202e2266f98f5f86ac1" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
