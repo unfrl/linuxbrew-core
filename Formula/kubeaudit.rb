@@ -12,6 +12,7 @@ class Kubeaudit < Formula
     sha256 "d5132b86c9683d1568b4e603f796b338de04b03140b93e141c48ccce75c3395b" => :arm64_big_sur
     sha256 "77543931b661a0ecfe9e0a91dd9b25c87fc0b54e70835d4db47e033f32fc0fe7" => :catalina
     sha256 "6deea8095f482a21689c036cdbb89766fd042c5b92d1c9915b2fedd797c904b1" => :mojave
+    sha256 "164a7029cda889e84e65a24cad91e3b9e6d61aa2b2b0f36e7590cede35af0a88" => :x86_64_linux
   end
 
   depends_on "go" => :build
