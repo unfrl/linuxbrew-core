@@ -16,6 +16,7 @@ class Diffstat < Formula
     sha256 "4ca28eac2743d6dea9f9128b51ac0107d627f64cc421033538468930f291f3fc" => :arm64_big_sur
     sha256 "9d8296df829318dce8e829eef894867a74d3f18d438de98309b0c3fe02e065cf" => :catalina
     sha256 "5b035ed0d84aa480965b56e0a8db59ebbb947dee3379297a3f05f88dcd610d81" => :mojave
+    sha256 "b7a22c3ca50cc20a3711698fa3c48b604045e5ab17f25a8af1d331f9bd3da40c" => :x86_64_linux
   end
 
   def install
