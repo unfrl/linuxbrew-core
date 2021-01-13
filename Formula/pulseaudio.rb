@@ -1,8 +1,9 @@
 class Pulseaudio < Formula
   desc "Sound system for POSIX OSes"
   homepage "https://wiki.freedesktop.org/www/Software/PulseAudio/"
-  url "https://www.freedesktop.org/software/pulseaudio/releases/pulseaudio-14.0.tar.xz"
-  sha256 "a834775d9382b055504e5ee7625dc50768daac29329531deb6597bf05e06c261"
+  url "https://www.freedesktop.org/software/pulseaudio/releases/pulseaudio-14.1.tar.xz"
+  sha256 "b0bcca2a45e4fe1f73c7709dcf75a17dd5235688d5d150069e765dda4884b837"
+  license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later", "BSD-3-Clause"]
 
   # The regex here avoids x.99 releases, as they're pre-release versions.
   livecheck do
@@ -11,11 +12,10 @@ class Pulseaudio < Formula
   end
 
   bottle do
-    sha256 "36f025d67efa9bc8198e4810dfc58b584d28f7980d4a98a3c2310f84caf7b773" => :big_sur
-    sha256 "b395d9b2f2c5a89971b5fa65abeb9c7a3469f4572a496b554eacbaaff09a6586" => :arm64_big_sur
-    sha256 "fc7ff97eaf91b6bcfeeb391b6c885c2fd9c6d3843ab668d9e85a68d7bb55f92d" => :catalina
-    sha256 "78718069edbad1c576f4abf5c6fa2e6945e08699b006863dc3e94e27990f044c" => :mojave
-    sha256 "9984a1e25b2bf79373e3f60c956febfd1d4e24a48205daf69be3326f698a51e9" => :x86_64_linux
+    sha256 "78e3fae17b2d33cb1606b1f3072fa833229833dfe8f0e8d1ce1a014fce3bba58" => :big_sur
+    sha256 "6289c0626c739e546b659d127400d636929da4a3249442b3906607e6a56406b9" => :arm64_big_sur
+    sha256 "ba20f1bc46b0f7134c2e1407f59d2bfc35b3217d5b2e85a8146ce2ececd30f69" => :catalina
+    sha256 "e488038f6b789bb06fc581ef485ed8fc5d7da72727631923d1bdd639a7c1dad2" => :mojave
   end
 
   head do

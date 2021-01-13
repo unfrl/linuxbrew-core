@@ -3,17 +3,17 @@ class Ptpython < Formula
 
   desc "Advanced Python REPL"
   homepage "https://github.com/prompt-toolkit/ptpython"
-  url "https://files.pythonhosted.org/packages/bf/38/951869ab41f65855db08dc38dc3c8e6070215d27dfc0260b7e18e828601c/ptpython-3.0.9.tar.gz"
-  sha256 "e9933a9d00c3571cbd824881ba0ff1e6e23706fd466d038b9230d845184f514b"
+  url "https://files.pythonhosted.org/packages/97/82/0b7849d6e63e59017e746af6799f455867752bcb018a019d2eca4f97538a/ptpython-3.0.10.tar.gz"
+  sha256 "8e694f174d075943b26ff45c9eed00211e2aca516ef538bd3bc16b15966646ea"
   license "BSD-3-Clause"
   head "https://github.com/prompt-toolkit/ptpython.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "b3c2b22c3dd6fe2d361bd8ca2ef3e797b95f07f67fa6e0048ffc5f8fca4366a5" => :big_sur
-    sha256 "4f4e20182faca4cd1e2e3dc59aebb5844c302ab32f3ebc685bfabda8fbfdd4de" => :arm64_big_sur
-    sha256 "42f820b8e9d062cdd08e576bca12d95cd2004af426b30f8661a4d40dafab8ab6" => :catalina
-    sha256 "5326423ad48bc4adeeb3e11b7ac27adfff6cbd28e26e6d5bb66125a74bbac71e" => :mojave
+    sha256 "4d673d03655bad59faf514da60ab5d1699c32597f09af3abd03afc6ae795958e" => :big_sur
+    sha256 "a0d317014a70b8639ca825719fc2facc25a14765d2c5433d2916804aca7e325d" => :arm64_big_sur
+    sha256 "fc89ba912d833774329a34243d6ea945e0b647dab2f3e79debc5843bff6b5bac" => :catalina
+    sha256 "0df6bf59720b4235565196aacce1e00363244baf2cd8078d68b423932986396e" => :mojave
   end
 
   depends_on "python@3.9"

@@ -3,8 +3,8 @@ class Tox < Formula
 
   desc "Generic Python virtualenv management and test command-line tool"
   homepage "https://tox.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/7c/98/e75a77a04b6240c4a48dbd07081966ad07ca8f18402da3d894e01a7141d0/tox-3.21.0.tar.gz"
-  sha256 "8cccede64802e78aa6c69f81051b25f0706639d1cbbb34d9366ce00c70ee054f"
+  url "https://files.pythonhosted.org/packages/e7/a0/70463912e118e7ac9daa13fde5c0c73dac3ee4207daf85731ec9ecff15ba/tox-3.21.1.tar.gz"
+  sha256 "31379f2662393034203c5d6b2ebb7b86c67452cfc689784475c1c6e4a3cbc0cd"
   license "MIT"
 
   livecheck do
@@ -13,11 +13,10 @@ class Tox < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "a751b2f61e2a5e1726c3c7f5a8a39488f8e2097517ce8ccbc7bf79e2d5b9171a" => :big_sur
-    sha256 "57dcf0db69a478ec5eb3d68964b20fe96fc901ba38f79b1a20f2cea89a94a79a" => :arm64_big_sur
-    sha256 "57a91be33f9cc253918a3beed78ed192397f6467b466f37cf5e6654b8e702ed7" => :catalina
-    sha256 "07b159d7ca1a92550b279fd448c41516b77634fe53dda63fe049d7ef8a42d3f1" => :mojave
-    sha256 "7f87c4d076637ac99e4c9da434d44162b68aad68172eb4d7cb19de2e6f928348" => :x86_64_linux
+    sha256 "b83cf2f0c9c49a855c69e0e65651121fe79fbf6936c44cad3cec70036fcf22d4" => :big_sur
+    sha256 "95b4ba23b15eef97a8fda3948f9fb9cbba88d84f313fda3f6cde1e7ac5938ebc" => :arm64_big_sur
+    sha256 "eb71cffc44ac3051922eeb977cd606e6f75782399d9368dedc110910429901c4" => :catalina
+    sha256 "eda0dac7d9fec6fd4e0f3f37420cded5d541b8cf81cfc7130328ec4dc484b484" => :mojave
   end
 
   depends_on "python@3.9"
@@ -68,8 +67,8 @@ class Tox < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/c6/3e/d00f1500aa0e8a69323101c33f6e6910bbc68d34df3e8a0b1e510219a956/virtualenv-20.2.2.tar.gz"
-    sha256 "b7a8ec323ee02fb2312f098b6b4c9de99559b462775bc8fe3627a73706603c1b"
+    url "https://files.pythonhosted.org/packages/aa/08/2c6c5a295133bd8244d74ccd21e7b3008d0cc96bad29163b3fedbd7c3ffc/virtualenv-20.3.1.tar.gz"
+    sha256 "0c111a2236b191422b37fe8c28b8c828ced39aab4bf5627fa5c331aeffb570d9"
   end
 
   def install

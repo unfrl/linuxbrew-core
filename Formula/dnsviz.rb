@@ -6,6 +6,7 @@ class Dnsviz < Formula
   url "https://files.pythonhosted.org/packages/c1/e8/263e91aa263eab8c3152d2860e805440d3d7b5e28f33200c0922ce8a9a38/dnsviz-0.9.0.tar.gz"
   sha256 "505dd9aa3397fab4f3f61a9bf0e658316fd9cb1e3b3a8f0de563401aece30678"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,17 +14,16 @@ class Dnsviz < Formula
 
   bottle do
     cellar :any
-    sha256 "8a9950e233a2303befae0a7e0bc88d903d454d111199b3878b1a1aa77d8e993c" => :big_sur
-    sha256 "26b6d346c86cd79c39ff7a5abac115f8e8a29311fd729f7a11dc847cba55d152" => :arm64_big_sur
-    sha256 "937b6719517fcd7b830bf404c84a368854178b90a12371220322adae76ffa044" => :catalina
-    sha256 "a569b55af2ee1c39251139f43a7fbe4a10616df47f08b49379d3725e72df8a41" => :mojave
+    sha256 "fbe6838e30362cfe8ccfa666484f6340969fe2e01eb56baa68568121e082d606" => :big_sur
+    sha256 "993c8d514d9b4873bee83cb3cb8563fc39c3cad498e32f5fc605251379f040e0" => :arm64_big_sur
+    sha256 "67e4a6c62210c8cdeeae7019f221607e8c3cb95cf5f55fade577547a0098d1df" => :catalina
+    sha256 "a7e8f043fa526d6d5e4752a52d02abd1102b65a1e903abcf52c68eda632b7303" => :mojave
   end
 
   depends_on "pkg-config" => :build
   depends_on "swig" => :build
   depends_on "bind" => :test
   depends_on "graphviz"
-  depends_on "libsodium"
   depends_on "openssl@1.1"
   depends_on "python@3.9"
 
@@ -35,11 +35,6 @@ class Dnsviz < Formula
   resource "dnspython" do
     url "https://files.pythonhosted.org/packages/13/27/5277de856f605f3429d752a39af3588e29d10181a3aa2e2ee471d817485a/dnspython-2.1.0.zip"
     sha256 "e4a87f0b573201a0f3727fa18a516b055fd1107e0e5477cded4a2de497df1dd4"
-  end
-
-  resource "libnacl" do
-    url "https://files.pythonhosted.org/packages/5e/a2/5c8cdfa3a30efaf9d503217a5b8a70be2ee551cb5a7150047d43428ea023/libnacl-1.7.2.tar.gz"
-    sha256 "b53999817435d24bf87bc9c7a2fb95e865f8ff7dc6a36655c28d6c62443c3d6b"
   end
 
   resource "M2Crypto" do
