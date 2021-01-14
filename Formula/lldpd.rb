@@ -14,6 +14,7 @@ class Lldpd < Formula
     sha256 "015c4c0324661d90e06436a348dfc37af918e7bbea32ee63e2db58469a5a230e" => :arm64_big_sur
     sha256 "9c82d5c9c454ce3cd453b379e31bd79922ebe5e0b7377c6e845cb039ca3fddf1" => :catalina
     sha256 "2f35d49b7ca199a2980f08816bc055cfec43f29b0c2c55a05cb55dcc72b9ccea" => :mojave
+    sha256 "364e380bd95ec500793aeef5929c4fb9c20b72f29058ba58489c3a28862e6f54" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
