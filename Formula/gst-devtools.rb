@@ -13,6 +13,7 @@ class GstDevtools < Formula
     sha256 "a3662cb83ba270a922c7d9c24567583ed71554519f4f9e763c29d2a3ffbbd82a" => :arm64_big_sur
     sha256 "51eca8aaf936f56140cc632f242a3124e49c4a9fcb8b44f5ae5eaf25e7936bfa" => :catalina
     sha256 "2bc663d80768ec5c2b2ddcbbc689eea373179d2a8388f093dc2b90232fd31653" => :mojave
+    sha256 "54795a37a6768efebbd9e7a42d6e0017c212147d4b93540bc914134bac09f3cc" => :x86_64_linux
   end
 
   depends_on "gobject-introspection" => :build
