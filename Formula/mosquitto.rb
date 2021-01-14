@@ -13,6 +13,7 @@ class Mosquitto < Formula
   end
 
   bottle do
+  	rebuild 1
     sha256 "a5ab20b5308364826813a73664fe189e7b94b7566e189035541cbed899df2766" => :big_sur
     sha256 "f554564201f79e0b985c30549d4e814321e2307e416ea5eb27c6a9a5c2a19348" => :arm64_big_sur
     sha256 "fef9a9f4dfb0e4e45dab36053bb91c30776959601056e9c7058bd738b598b61c" => :catalina
