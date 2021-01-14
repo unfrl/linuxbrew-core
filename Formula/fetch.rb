@@ -1,19 +1,17 @@
 class Fetch < Formula
   desc "Download assets from a commit, branch, or tag of GitHub repositories"
   homepage "https://www.gruntwork.io/"
-  url "https://github.com/gruntwork-io/fetch/archive/v0.3.11.tar.gz"
-  sha256 "13169c30619ebc3ec4d3b122d933e080df8200abef98318bf5552f58fa52dffb"
+  url "https://github.com/gruntwork-io/fetch/archive/v0.3.12.tar.gz"
+  sha256 "949e7ba4123c358d961a0bef7a389f07d1021d9d6e33b205dbe91be4a87bf586"
   license "MIT"
   head "https://github.com/gruntwork-io/fetch.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "6a106ac8e98524efb62d5094a3b06f6b0883ef95f1affff388ae8656f84fcfa7" => :big_sur
-    sha256 "7af2df6cedb0fa7d6e0565fef2667a5bd2a4434e1705b6c3555d0e7950c08249" => :arm64_big_sur
-    sha256 "4ff8bb89d5ce13392ed8f96d7da747eaacb842fa5829d799aa469c15197e8caf" => :catalina
-    sha256 "e2c9c3b2aa915880cda1e940763d6adc09bca9de097003a06c2b900b24616ef8" => :mojave
-    sha256 "47a73e9563c765b488948574e9ef935fb3a2f8db8f2c98b4997829d877a233ca" => :high_sierra
-    sha256 "0ef13d512361a8b2ff0937d91c5875398c8fb2d515bb637aa158658980705c5e" => :x86_64_linux
+    sha256 "9b51881c031a1a69f6c5a4e71302328b09df6486ab277124318f261523cae431" => :big_sur
+    sha256 "280a2436bf5fa3bdfe399cbfb21300c65d5a0fe049c7d95f52e099f4abc1902f" => :arm64_big_sur
+    sha256 "5c9e2f5f27cc12d38717073b082b31c3ad50b9cc3a40555211ef3385a27b0706" => :catalina
+    sha256 "92d29770f6071eb78017423cb89f7177bee95e176e0263e70ccb3e9ccbccd393" => :mojave
   end
 
   depends_on "go" => :build

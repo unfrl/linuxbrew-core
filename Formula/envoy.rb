@@ -2,15 +2,15 @@ class Envoy < Formula
   desc "Cloud-native high-performance edge/middle/service proxy"
   homepage "https://www.envoyproxy.io"
   url "https://github.com/envoyproxy/envoy.git",
-      tag:      "v1.16.2",
-      revision: "e98e41a8e168af7acae8079fc0cd68155f699aa3"
+      tag:      "v1.17.0",
+      revision: "5c801b25cae04f06bf48248c90e87d623d7a6283"
   license "Apache-2.0"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "b3ec63685e5ebe11d51641db8a0d4ad0b02ff8687dd1c19d0ea578dbc405dcfc" => :big_sur
-    sha256 "15fcd5993171d022e2813c3c7cd7f25a48c0627ef33dd572aeee0e3621966c4a" => :catalina
-    sha256 "976e3adb1a9942e058c0ffb2fd6e194ce1590acb7ba4480246b54841126f218d" => :mojave
+    sha256 "64fb2911d8e1a74fc85ddee0bf885e2af75c8e9f29a043756279e82d1214a118" => :big_sur
+    sha256 "80380eb1bfb2c92fb2367fb8394ca3e46b6ab2e8d3c49003da9d1510b3bb1877" => :catalina
+    sha256 "2467bf6590b509ad2fe96d4f3eaa4c1e3612835b63c93544f13775a1cd9c6d56" => :mojave
   end
 
   depends_on "automake" => :build
@@ -37,7 +37,7 @@ class Envoy < Formula
   test do
     port = free_port
 
-    cp pkgshare/"configs/google_com_proxy.v2.yaml", testpath/"envoy.yaml"
+    cp pkgshare/"configs/envoyproxy_io_proxy.yaml", testpath/"envoy.yaml"
     inreplace "envoy.yaml" do |s|
       s.gsub! "port_value: 9901", "port_value: #{port}"
       s.gsub! "port_value: 10000", "port_value: #{free_port}"

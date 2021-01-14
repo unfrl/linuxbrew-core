@@ -3,8 +3,8 @@ class Dxpy < Formula
 
   desc "DNAnexus toolkit utilities and platform API bindings for Python"
   homepage "https://github.com/dnanexus/dx-toolkit"
-  url "https://files.pythonhosted.org/packages/8e/79/cdb48a5e3b576221563d7a5faa39eb3da1353146d26c327fceec94745c62/dxpy-0.304.1.tar.gz"
-  sha256 "b402f4df520bb9b75ce5b7c04d16ac244ab5e77adce917a5a4e30700d4157554"
+  url "https://files.pythonhosted.org/packages/33/bf/be976e6aeeae38398e730a1a0f2323dd889a10c80c59a51b8a5ae222537a/dxpy-0.305.0.tar.gz"
+  sha256 "e2fe6c430b63c96b13062975fdf9cae5624d5c431af81479fadfa650290e7910"
   license "Apache-2.0"
 
   livecheck do
@@ -13,11 +13,10 @@ class Dxpy < Formula
 
   bottle do
     cellar :any
-    sha256 "734cab349139acbfced69ae68d08beace041b9f06782ffc435eb2e7eff2f9cd7" => :big_sur
-    sha256 "ba02d6cfdbd5b81d777ac5c849861cdd3c924ed8b45935e04681aa9a4db54a46" => :arm64_big_sur
-    sha256 "c07ac4ef1438f4e9d4803698ce0a8f22cc52f50c1eb863e6c8d28f27f249c338" => :catalina
-    sha256 "73440a442eda3526a034d326063367566ef56fc4b2aa83b17916cf29321fe9b3" => :mojave
-    sha256 "b88728686d4e65cb461dceed3405d552a077df933ac817ffd5e8181f5a883ad8" => :x86_64_linux
+    sha256 "6aed97a5a06cb834c88557c292524877c34ab500d28077d0fa97c2dfa449c7bd" => :big_sur
+    sha256 "60d3abf999ad1f7c1a00c242d277ff76be420e84b4400ac7ae385867db78c770" => :arm64_big_sur
+    sha256 "8d436199b4a62c23b18ee19707332f3d0dcb6c4208a974278fc3e655b993fc5c" => :catalina
+    sha256 "5f48c70a0aa9743421b75a0b4d3503c50d19f5d27da95ddd65e0b87baf54a2f0" => :mojave
   end
 
   depends_on "python@3.9"
@@ -34,11 +33,6 @@ class Dxpy < Formula
   resource "argcomplete" do
     url "https://files.pythonhosted.org/packages/cb/53/d2e3d11726367351b00c8f078a96dacb7f57aef2aca0d3b6c437afc56b55/argcomplete-1.12.2.tar.gz"
     sha256 "de0e1282330940d52ea92a80fea2e4b9e0da1932aaa570f84d268939d1897b04"
-  end
-
-  resource "beautifulsoup4" do
-    url "https://files.pythonhosted.org/packages/26/79/ef9a8bcbec5abc4c618a80737b44b56f1cb393b40238574078c5002b97ce/beautifulsoup4-4.4.1.tar.gz"
-    sha256 "87d4013d0625d4789a4f56b8d79a04d5ce6db1152bb65f1d39744f7709a366b4"
   end
 
   resource "certifi" do
@@ -81,11 +75,6 @@ class Dxpy < Formula
   resource "python-dateutil" do
     url "https://files.pythonhosted.org/packages/be/ed/5bbc91f03fa4c839c4c7360375da77f9659af5f7086b7a7bdda65771c8e0/python-dateutil-2.8.1.tar.gz"
     sha256 "73ebfe9dbf22e832286dafa60473e4cd239f8592f699aa5adaf10050e6e1823c"
-  end
-
-  resource "python-magic" do
-    url "https://files.pythonhosted.org/packages/21/57/57c47169c651534014a9852ec690fc0893bab2f67e24d6dab3c945522e7d/python-magic-0.4.6.tar.gz"
-    sha256 "903d3d3c676e2b1244892954e2bbbe27871a633385a9bfe81f1a81a7032df2fe"
   end
 
   resource "requests" do
