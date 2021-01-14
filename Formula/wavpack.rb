@@ -11,6 +11,7 @@ class Wavpack < Formula
     sha256 "3e51f2f593fffc58cd550236d6a9711900841d388d6ac7833c09f272270d5156" => :arm64_big_sur
     sha256 "29360357a18df2827e8acb41fdd874495b62f431deb230c96b8d5dcca5f6d316" => :catalina
     sha256 "89815dc5f1b4af0d647d2b1d3ad484ddce39208958bb315793240aa7be0c4565" => :mojave
+    sha256 "c9d438e30cc4489ccb47b61053af430575cf6fa56b3488eafc8e70f525ff2782" => :x86_64_linux
   end
 
   head do
