@@ -3,16 +3,16 @@ class Richmd < Formula
 
   desc "Format Markdown in the terminal with Rich"
   homepage "https://github.com/willmcgugan/rich"
-  url "https://files.pythonhosted.org/packages/38/93/fdad196d6c58a541bf1d34db17f677e24f71cbd8bc746ed58f418cddf2ad/rich-9.8.0.tar.gz"
-  sha256 "c91c2587dba9aa8dd30c5f090e700f54433ccd73e209f4737e10385c4c1cbf19"
+  url "https://files.pythonhosted.org/packages/c7/dd/634c0474026b323cddd9b38939e40b502d04eebd36b47d994d4919de5d4c/rich-9.8.1.tar.gz"
+  sha256 "0ec853f882613e75a5e46d545ddaa48cad235c616eaeb094792012fe22e8b2c6"
   license "MIT"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "171191f6478e6e5d080e73f883c424625dd32cfc51b8dfcb4e69685d30302aaa" => :big_sur
-    sha256 "ffc25b76a928f678bed98027aa249ab9b88b15e8905ca33fa7e66433d83dd1ba" => :arm64_big_sur
-    sha256 "1d125f573f16cafa4c637862ed81b95770259b3895949746962c08c874475e5c" => :catalina
-    sha256 "66a0cb03e0b6f5ce7a12089dd6361732c03b0fee132b850303fce73c319f06d2" => :mojave
+    sha256 "0007b69601ace0d8cbdad0d0e86766bcaf347b7a75d1168a06ebcd51543a5084" => :big_sur
+    sha256 "a794407f3d43aab3b70acf278e6568a1fe610f9ce4d63f8bb8bc29afed5d1fd6" => :arm64_big_sur
+    sha256 "ca966a273829f5903ba839d9a78b669bb7fa696b96df86b9296b615da76b97c6" => :catalina
+    sha256 "b5d72dfd0e880c6c695869e11af4cdb67a1b9015fb3dfc2f26458021a6fc3795" => :mojave
   end
 
   depends_on "python@3.9"
@@ -28,8 +28,8 @@ class Richmd < Formula
   end
 
   resource "Pygments" do
-    url "https://files.pythonhosted.org/packages/29/60/8ff9dcb5eac7f4da327ba9ecb74e1ad783b2d32423c06ef599e48c79b1e1/Pygments-2.7.3.tar.gz"
-    sha256 "ccf3acacf3782cbed4a989426012f1c535c9a90d3a7fc3f16d231b9372d2b716"
+    url "https://files.pythonhosted.org/packages/e1/86/8059180e8217299079d8719c6e23d674aadaba0b1939e25e0cc15dcf075b/Pygments-2.7.4.tar.gz"
+    sha256 "df49d09b498e83c1a73128295860250b0b7edd4c723a32e9bc0d295c7c2ec337"
   end
 
   resource "typing-extensions" do
