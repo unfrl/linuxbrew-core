@@ -12,6 +12,7 @@ class Fetch < Formula
     sha256 "280a2436bf5fa3bdfe399cbfb21300c65d5a0fe049c7d95f52e099f4abc1902f" => :arm64_big_sur
     sha256 "5c9e2f5f27cc12d38717073b082b31c3ad50b9cc3a40555211ef3385a27b0706" => :catalina
     sha256 "92d29770f6071eb78017423cb89f7177bee95e176e0263e70ccb3e9ccbccd393" => :mojave
+    sha256 "3fb8e4775a9067bd7948489e6f5c6d44b50a59f4c53455def80b8bb34527bc03" => :x86_64_linux
   end
 
   depends_on "go" => :build
