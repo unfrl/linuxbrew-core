@@ -17,6 +17,7 @@ class Castxml < Formula
     sha256 "c65e8a6a8f4c7d1428525423f30aad4c523e73f6d36a1e7d908848b6821df94c" => :arm64_big_sur
     sha256 "aa5aa9e65ec5c47228e25e4b93345cc3e2198578eaca3614a468b9a3b485a5cc" => :catalina
     sha256 "6e6b3353e5700078c4395ec23876c7cd015883dfa618e92a5347bd45c8e865da" => :mojave
+    sha256 "3af6d45b24626a2e5a8a49a586201d1be549694ea23614e709231954b9ae4e3d" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
