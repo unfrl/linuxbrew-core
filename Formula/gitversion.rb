@@ -4,12 +4,13 @@ class Gitversion < Formula
   url "https://github.com/GitTools/GitVersion/archive/5.6.3.tar.gz"
   sha256 "f29ce37ed3cd6e8f81895c431fdb356de280807952986bcc54e3eefd3e054cda"
   license "MIT"
+  revision 1
 
   bottle do
     cellar :any
-    sha256 "1601a6dfc5828efdba04cea3b825afc120278fd0b46f686fa33d5772c0648a53" => :big_sur
-    sha256 "e281e4f074503fca3b8916f29e32904b7594979f18cee69e24630e6fadfd3728" => :catalina
-    sha256 "4c697ffa13d9bfe663279c735abe6d0ef70438ce42984974f2add7374c5a3c2e" => :mojave
+    sha256 "8d85c8dcca7b5ea17b655558d64e0bb3d87c011403feb37dc48fd9be7ce4de93" => :big_sur
+    sha256 "badc233636cd445698802092daca591f30cf51c2bd78f1d5d0fed0b1fee45f70" => :catalina
+    sha256 "e1c08db8fbfdc8ad6c4d6826e78b246260ab6b06266ea9f85b8747c5efbb9e2f" => :mojave
   end
 
   depends_on "dotnet"
@@ -17,7 +18,7 @@ class Gitversion < Formula
   def install
     system "dotnet", "build",
            "--configuration", "Release",
-           "--framework", "netcoreapp3.1",
+           "--framework", "net#{Formula["dotnet"].version.major_minor}",
            "--output", "out",
            "src/GitVersionExe/GitVersionExe.csproj"
 

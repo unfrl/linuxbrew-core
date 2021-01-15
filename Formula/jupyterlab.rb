@@ -3,8 +3,8 @@ class Jupyterlab < Formula
 
   desc "Interactive environments for writing and running code"
   homepage "https://jupyter.org/"
-  url "https://files.pythonhosted.org/packages/da/eb/d26d97fead801598ca33073601f60b6c4964209cad84a3d03ae957d1e03a/jupyterlab-3.0.4.tar.gz"
-  sha256 "c70a638907a1cdad499fe39b3388a1dbce257ab4e76b05d08c9791b94ad79b94"
+  url "https://files.pythonhosted.org/packages/5c/6a/5374b23cd4bfea0dc4c1e156ec3ef6602ba41ac5d9814533397882f27dd3/jupyterlab-3.0.5.tar.gz"
+  sha256 "ea75d43d9a054e9192b78ae1eefa72270818d1d787ec21f19db1a92d5cc8db35"
   license "BSD-3-Clause"
 
   livecheck do
@@ -13,10 +13,9 @@ class Jupyterlab < Formula
 
   bottle do
     cellar :any
-    sha256 "6e3bd267414fe59f0cdf6e1fcf7a5788ec0f2600688eeb1609eea1801c99bfa1" => :big_sur
-    sha256 "1c2812f010193d020419a5ba4c6b66328ad920292e9b0794014c4898661d9e87" => :catalina
-    sha256 "a3851b2b4eceeef7d5734988e77c5c3243e2087f23bfd059a9f383d5f0b77cc6" => :mojave
-    sha256 "c5f2cbf28720be6239ba9f6dc832a305e2de0d08e1033b649d3097bf4001d5ea" => :x86_64_linux
+    sha256 "6c426082fd9b68e0ac58fa93d1b5611344dedb5b012cb60494d36ab4d5215ae0" => :big_sur
+    sha256 "09da5f1a0d99dc38993c060b901c301ab4dc68e41935fe8880c9352e9541d7c8" => :catalina
+    sha256 "38848f8f65f87593e0e3980fb1797b7c607a40cdbda6a8ad6e7356ce070d9faa" => :mojave
   end
 
   depends_on "ipython"
@@ -140,8 +139,8 @@ class Jupyterlab < Formula
   end
 
   resource "jupyter-server" do
-    url "https://files.pythonhosted.org/packages/a5/c9/598bb365be05b65184b2bf62ae4f66a5dd61a10f3bf955477e730c3619fd/jupyter_server-1.2.1.tar.gz"
-    sha256 "5c55bdd098159f3e57faad102fa91de5b3f2f46ca8be01ad3d289e85a5beba9c"
+    url "https://files.pythonhosted.org/packages/91/ba/051592cc9478f1674d0d4dc20d57878f89d209972f455ae744c4f492d7de/jupyter_server-1.2.2.tar.gz"
+    sha256 "26a98cd5c45b8ebd1e10215586c350a8fa3ca2971e757ee6bf517a180f9933ae"
   end
 
   resource "jupyterlab-pygments" do
@@ -180,8 +179,8 @@ class Jupyterlab < Formula
   end
 
   resource "nbformat" do
-    url "https://files.pythonhosted.org/packages/ad/6c/ab9715323ed5c0893f619788e5c0a452c42fce4a42c032245eae2c2fa31d/nbformat-5.0.8.tar.gz"
-    sha256 "f545b22138865bfbcc6b1ffe89ed5a2b8e2dc5d4fe876f2ca60d8e6f702a30f8"
+    url "https://files.pythonhosted.org/packages/4e/4d/36023eaabe8ec48635178558015d14572835c24adbf7c3cd1107b748317b/nbformat-5.1.2.tar.gz"
+    sha256 "1d223e64a18bfa7cdf2db2e9ba8a818312fc2a0701d2e910b58df66809385a56"
   end
 
   resource "nest-asyncio" do
@@ -190,8 +189,8 @@ class Jupyterlab < Formula
   end
 
   resource "notebook" do
-    url "https://files.pythonhosted.org/packages/84/99/5c73a5d9b4743b25e2fc53a76050838f9c46834e7fe702be8d3b0c3affb7/notebook-6.1.6.tar.gz"
-    sha256 "cf40d4f81541401db5a2fda1707ca7877157abd41f04ef7b88f02b67f3c61791"
+    url "https://files.pythonhosted.org/packages/a0/3a/a8109b2df61a25fce11eda502a03165a26d36267d39ae07ddbd5855ca934/notebook-6.2.0.tar.gz"
+    sha256 "0464b28e18e7a06cec37e6177546c2322739be07962dd13bf712bcb88361f013"
   end
 
   resource "packaging" do
@@ -265,8 +264,8 @@ class Jupyterlab < Formula
   end
 
   resource "pyzmq" do
-    url "https://files.pythonhosted.org/packages/15/81/009a2cd08bc5de6ed092c94508b45d6dbc6f6d0bbeddbe14d36b51f28216/pyzmq-20.0.0.tar.gz"
-    sha256 "824ad5888331aadeac772bce27e1c2fbcab82fade92edbd234542c4e12f0dca9"
+    url "https://files.pythonhosted.org/packages/4c/c5/22744ce59129b11195337d86b0025e9ba9609dea5cf24f45f0017f7237d0/pyzmq-21.0.0.tar.gz"
+    sha256 "95a85f29d1248da85e8bc09b1a22a659644b606dcae74d663eab9cafd1a4905f"
   end
 
   resource "requests" do
