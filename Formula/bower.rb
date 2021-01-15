@@ -19,6 +19,7 @@ class Bower < Formula
     sha256 "32480f78d1238505be4d7031e9d39d51a7167fc4ff24b762afeaa6f712915481" => :arm64_big_sur
     sha256 "bc9d7b039ab0f4542330d662ea1af873f1d0313e7216ba5aa179ef6065e1eed0" => :catalina
     sha256 "aa51c9ec9aa6d785ff9973d81d9ece85decf852f3812fe82534f48a9c2f8dc23" => :mojave
+    sha256 "04612cee6d7b4e1984f380c48c2f98a16ceb43a3c2396f20526f9a8e13138ceb" => :x86_64_linux
   end
 
   depends_on "node"
