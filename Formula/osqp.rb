@@ -11,6 +11,7 @@ class Osqp < Formula
     sha256 "e632fa361ed8e194da854c8caff4b015482015fda56af0bd6f0ca76bbadecc74" => :arm64_big_sur
     sha256 "2f78c81c56d6f153e55f6e6ce4524eec62cf806b7834ef48337d08aefb2643ec" => :catalina
     sha256 "2f15d564ee6028766215aa931f0ee0c65af87da9fe4697662354a6b9c53e1a30" => :mojave
+    sha256 "98b96c1aa66f25d9a8948b990857ce659e25577178521f98a56668c93e376e11" => :x86_64_linux
   end
 
   depends_on "cmake" => [:build, :test]
