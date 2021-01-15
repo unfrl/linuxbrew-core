@@ -16,6 +16,7 @@ class Jupyterlab < Formula
     sha256 "6c426082fd9b68e0ac58fa93d1b5611344dedb5b012cb60494d36ab4d5215ae0" => :big_sur
     sha256 "09da5f1a0d99dc38993c060b901c301ab4dc68e41935fe8880c9352e9541d7c8" => :catalina
     sha256 "38848f8f65f87593e0e3980fb1797b7c607a40cdbda6a8ad6e7356ce070d9faa" => :mojave
+    sha256 "c7b01c6886a2e09ed2dd1b59299c8561c889bd7c6aa46b2e0fc1eba867f0bd48" => :x86_64_linux
   end
 
   depends_on "ipython"
