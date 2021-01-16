@@ -5,6 +5,7 @@ class FaasCli < Formula
       tag:      "0.12.21",
       revision: "598336a0cad38a79d5466e6a3a9aebab4fc61ba9"
   license "MIT"
+  head "https://github.com/openfaas/faas-cli.git"
 
   livecheck do
     url :stable
@@ -13,11 +14,11 @@ class FaasCli < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "d315d6e973ff51cdc45f80d80d1d6c97f116209f2846321a6717191ea0618b22" => :big_sur
-    sha256 "f72ba197d349a4bcb69e323f917eb89ac7474e4636a9dcf80924eddc114ff978" => :arm64_big_sur
-    sha256 "f367b80343e7d3287e7b8cdb5d26bc21d6b8cdd1cbd321b1ec19db0e41495b81" => :catalina
-    sha256 "fcf8712bedfd506e1d654b3b29fc4b6b935f627ad8f49c89e2fd5b63026434c4" => :mojave
-    sha256 "37413768a847f123455cc73b68e4198d23f3ad2854928c37a8bda1ab3cc634e0" => :x86_64_linux
+    rebuild 1
+    sha256 "fc72787d12d87458a7f4316b6bb17b787de281ad29b1278b67e52e961b5fc46c" => :big_sur
+    sha256 "a9d872e863bd0f6dfdc67f8409c219e563b1bf7c1ea387da412269d9c25fd213" => :arm64_big_sur
+    sha256 "3a10c82fa4f9fa0b086704079ba0161b3883ce5d185841dae218770727d775b3" => :catalina
+    sha256 "40f441a84115426863d186f994fc247d115f46917d88f81b92c54628b172a7f8" => :mojave
   end
 
   depends_on "go" => :build
@@ -26,10 +27,12 @@ class FaasCli < Formula
     ENV["XC_OS"] = OS.mac? ? "darwin" : "linux"
     ENV["XC_ARCH"] = "amd64"
     project = "github.com/openfaas/faas-cli"
-    commit = Utils.safe_popen_read("git", "rev-parse", "HEAD").chomp
-    system "go", "build", "-ldflags",
-            "-s -w -X #{project}/version.GitCommit=#{commit} -X #{project}/version.Version=#{version}", "-a",
-            "-installsuffix", "cgo", "-o", bin/"faas-cli"
+    ldflags = %W[
+      -s -w
+      -X #{project}/version.GitCommit=#{Utils.git_head}
+      -X #{project}/version.Version=#{version}
+    ]
+    system "go", "build", "-ldflags", ldflags.join(" "), "-a", "-installsuffix", "cgo", "-o", bin/"faas-cli"
     bin.install_symlink "faas-cli" => "faas"
   end
 
@@ -74,11 +77,10 @@ class FaasCli < Formula
       output = shell_output("#{bin}/faas-cli deploy --tls-no-verify -yaml test.yml", 1)
       assert_match "Deploying: dummy_function.", output
 
-      stable_resource = stable.instance_variable_get(:@resource)
-      commit = stable_resource.instance_variable_get(:@specs)[:revision]
+      commit_regex = /[a-f0-9]{40}/
       faas_cli_version = shell_output("#{bin}/faas-cli version")
-      assert_match /\s#{commit}$/, faas_cli_version
-      assert_match /\s#{version}$/, faas_cli_version
+      assert_match commit_regex, faas_cli_version
+      assert_match version.to_s, faas_cli_version
     ensure
       Process.kill("TERM", pid)
       Process.wait(pid)

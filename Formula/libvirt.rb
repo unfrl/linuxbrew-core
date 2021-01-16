@@ -1,8 +1,8 @@
 class Libvirt < Formula
   desc "C virtualization API"
   homepage "https://www.libvirt.org"
-  url "https://libvirt.org/sources/libvirt-6.10.0.tar.xz"
-  sha256 "30cfc1365b7a62bf08c5254103087fac51c4210343aa958a7d38cedd280ed2aa"
+  url "https://libvirt.org/sources/libvirt-7.0.0.tar.xz"
+  sha256 "ca3833844d08c22867f1d1a46edc36bda7d6fe1a4f267e7d77100b79fc9ddd89"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
 
   livecheck do
@@ -11,9 +11,9 @@ class Libvirt < Formula
   end
 
   bottle do
-    sha256 "0691fb2e0adb30adb37933107a1ac5c34f01656438fa6840dd650fa63ebf93f6" => :big_sur
-    sha256 "e28aaebcf0a86ae8e2906bbd0c228abbe86512184d6d82be01f98e10acc9a2ba" => :catalina
-    sha256 "178e78989b00690c1407d6c2e31703040dc69b7a0af096c18d95619fdedf4136" => :mojave
+    sha256 "e938967382f8bbaf26fa13347af40cd447277bcefd66363057a16aa84599dc71" => :big_sur
+    sha256 "34251a1f80e19044ac5b7f59978fef583ca543ec0da3a2ce202274585ccb14af" => :catalina
+    sha256 "c067a0606d1ed6bdf8d9a3338bfc31c3ee4e856ee9b55f52b8bc004b39db5083" => :mojave
   end
 
   head do
