@@ -17,6 +17,7 @@ class Apr < Formula
     sha256 "d8adb33071a6a845ff928b6166377dea6de5b642b412042002386416354932b9" => :arm64_big_sur
     sha256 "3f5c1fa8f17715291ce9f66cf4eb4f518ac1aa856c485f0157036459ad63792c" => :catalina
     sha256 "4627416a5d9c651d2d4fbb7faa639d6f7a89c7c0558576eeac1f17a81a17f3bd" => :mojave
+    sha256 "2a84daae135cba580e909b0580625c3a77d214127d3ff072da730f4b9f631426" => :x86_64_linux
   end
 
   keg_only :provided_by_macos, "Apple's CLT provides apr"
