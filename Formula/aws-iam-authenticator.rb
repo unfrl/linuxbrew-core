@@ -14,6 +14,7 @@ class AwsIamAuthenticator < Formula
     sha256 "0374175f7d0a1965de553e0a4d990d92690d5984c9f1fd0275384f58cd1ec921" => :arm64_big_sur
     sha256 "99c0b3d4f1987306f04553d0d8f234d1d105131c844d14c2197b8aa21602f6a1" => :catalina
     sha256 "5c722bc544bfaa0d51c903aabe81e1beb4c4f607c5559340fc6a3b2aecc8d5f2" => :mojave
+    sha256 "a4bf5f5bd8798c8d87b91acc268fe09e5e7ae34eed21881c8b3e6b8ba0a87a67" => :x86_64_linux
   end
 
   depends_on "go" => :build
