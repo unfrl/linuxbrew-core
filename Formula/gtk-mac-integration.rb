@@ -1,10 +1,9 @@
 class GtkMacIntegration < Formula
   desc "Integrates GTK macOS applications with the Mac desktop"
   homepage "https://wiki.gnome.org/Projects/GTK+/OSX/Integration"
-  url "https://download.gnome.org/sources/gtk-mac-integration/2.1/gtk-mac-integration-2.1.3.tar.xz"
-  sha256 "d5f72302daad1f517932194d72967a32e72ed8177cfa38aaf64f0a80564ce454"
+  url "https://download.gnome.org/sources/gtk-mac-integration/3.0/gtk-mac-integration-3.0.0.tar.xz"
+  sha256 "af88bb3a284e24c550e15290e07e562fcd2a038ebb0fcc863dd069d3738952ae"
   license "LGPL-2.1-only"
-  revision 6
 
   # We use a common regex because gtk-mac-integration doesn't use GNOME's
   # "even-numbered minor is stable" version scheme.
@@ -14,14 +13,14 @@ class GtkMacIntegration < Formula
   end
 
   bottle do
-    sha256 "691c07cfd431e5388935a3b281b815f13cc3e7be8280962f88dfe86b5d2304b3" => :big_sur
-    sha256 "ef5a2b5f7fe43e02983c1ef32d1de720fdcfa5db08cb7ecb87ff06d14836dfdb" => :arm64_big_sur
-    sha256 "2fc4360143f0dc7464d4aded53ce3ba32bf08a094cffbcb431c748eb50a235ba" => :catalina
-    sha256 "36d524103f6ee6062af215b2fff733b950453a4b9c4d8f6e2f32451fc73d1d8b" => :mojave
+    sha256 "4dbaba924b79a4b09e30cd27d1ae62f300d59231e972641efa3d35c863d907f0" => :big_sur
+    sha256 "133b558e42113237d02387f4951aac3e64e9ed63c44ce17c0b7bfc4f1750ea57" => :arm64_big_sur
+    sha256 "6409347cf27701ae7b9cc4a7eb3620291d1023c4b20cdaed899423fab9cc85e2" => :catalina
+    sha256 "33025ae0eb0f311ed92782f589e9ae36a528bcf2330e3b119d5225ba3f3db1af" => :mojave
   end
 
   head do
-    url "https://github.com/jralls/gtk-mac-integration.git"
+    url "https://gitlab.gnome.org/GNOME/gtk-mac-integration.git"
   end
 
   depends_on "autoconf" => :build
@@ -34,8 +33,6 @@ class GtkMacIntegration < Formula
   depends_on "gtk+"
   depends_on "gtk+3"
   depends_on :macos
-
-  patch :DATA
 
   def install
     args = %W[
@@ -116,64 +113,3 @@ class GtkMacIntegration < Formula
     system "./test"
   end
 end
-
-__END__
-diff --git a/src/Makefile.am b/src/Makefile.am
-index 3180e5e..2915df5 100644
---- a/src/Makefile.am
-+++ b/src/Makefile.am
-@@ -13,11 +13,7 @@ SOURCES = \
- 	cocoa_menu_item.c				\
- 	gtkosxapplication_quartz.c		\
- 	gtkosxapplication.c				\
--	gtkosx-image.c					\
--	gtk-mac-dock.c					\
--	gtk-mac-bundle.c				\
--	gtk-mac-menu.c					\
--	gtk-mac-image-utils.c
-+	gtkosx-image.c
-
- HEADER = \
- 	cocoa_menu.h              \
-@@ -26,12 +22,6 @@ HEADER = \
- 	GNSMenuBar.h              \
- 	GNSMenuDelegate.h         \
- 	GNSMenuItem.h             \
--	gtk-mac-bundle.h          \
--	gtk-mac-dock.h            \
--	gtk-mac-image-utils.h     \
--	gtk-mac-integration.h     \
--	gtk-mac-menu.h            \
--	gtk-mac-private.h         \
- 	GtkApplicationDelegate.h  \
- 	GtkApplicationNotify.h    \
- 	gtkosx-image.h            \
-@@ -45,7 +35,7 @@ libgtkmacintegration_gtk3_la_SOURCES = $(SOURCES)
- libgtkmacintegration_gtk3_la_CFLAGS = $(GTK3_CFLAGS) -xobjective-c
- libgtkmacintegration_gtk3_la_OBJCFLAGS = $(GTK3_CFLAGS)
- libgtkmacintegration_gtk3_la_LIBADD =  $(GTK3_LIBS) -lobjc
--libgtkmacintegration_gtk3_la_LDFLAGS = -framework Carbon -framework ApplicationServices -version-info $(GTK_MAC_INTEGRATION_LT_VERSION)
-+libgtkmacintegration_gtk3_la_LDFLAGS = -framework ApplicationServices -version-info $(GTK_MAC_INTEGRATION_LT_VERSION)
- endif
- if WITH_GTK2
- lib_LTLIBRARIES += libgtkmacintegration-gtk2.la
-@@ -53,16 +43,12 @@ libgtkmacintegration_gtk2_la_SOURCES = $(SOURCES)
- libgtkmacintegration_gtk2_la_CFLAGS = $(GTK2_CFLAGS) -xobjective-c
- libgtkmacintegration_gtk2_la_OBJCFLAGS = $(GTK2_CFLAGS)
- libgtkmacintegration_gtk2_la_LIBADD = $(GTK2_LIBS) -lobjc
--libgtkmacintegration_gtk2_la_LDFLAGS = -framework Carbon -framework ApplicationServices -version-info $(GTK_MAC_INTEGRATION_LT_VERSION)
-+libgtkmacintegration_gtk2_la_LDFLAGS = -framework ApplicationServices -version-info $(GTK_MAC_INTEGRATION_LT_VERSION)
- endif
-
- integration_includedir = $(includedir)/gtkmacintegration
- integration_include_HEADERS =				\
--	gtk-mac-integration.h				\
--	gtkosxapplication.h				\
--	gtk-mac-menu.h					\
--	gtk-mac-dock.h					\
--	gtk-mac-bundle.h
-+	gtkosxapplication.h
-
- noinst_PROGRAMS =
- test_integration_gtk3_CFLAGS =
-

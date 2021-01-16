@@ -4,16 +4,17 @@ class Gedit < Formula
   url "https://download.gnome.org/sources/gedit/3.38/gedit-3.38.1.tar.xz"
   sha256 "0053853d2cd59cad8a1662f5b4fdcfab47b4c0940063bacd6790a9948642844d"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
   end
 
   bottle do
-    sha256 "841bf24ceaaace6e6f844bbdf328b5a482682856e70243cd9e9acc041a53c502" => :big_sur
-    sha256 "b3eec1140627c453da0b6f8436715a5376209486e837cbb296cfb9344c075579" => :arm64_big_sur
-    sha256 "c1960a0d6062d4dd90839c331654bce9af5ad47fd46aff8612bdb565db6ff63c" => :catalina
-    sha256 "ce6bf4a9ee9e03ea5634b50f26f50a0a7cd032e0f613434fde66de49989b7c01" => :mojave
+    sha256 "21b705058ca192bd2e0d8ef85efa3d6161d893286d9b0696307f4bcbee0d8458" => :big_sur
+    sha256 "7e2ee800477f0616c684e787b666b70153bd89ea686db852e07d6ece2ddd7ee6" => :arm64_big_sur
+    sha256 "9fa220812eb73ae117aa410e438311ea6bb9f7477ba757dd9d5f706c8e65319d" => :catalina
+    sha256 "5b23b365f2b2a0308a3e28c82ee103d07bd2766559ed3a95c4d2101ae37336bf" => :mojave
   end
 
   depends_on "itstool" => :build

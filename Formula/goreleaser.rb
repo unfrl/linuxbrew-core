@@ -2,24 +2,24 @@ class Goreleaser < Formula
   desc "Deliver Go binaries as fast and easily as possible"
   homepage "https://goreleaser.com/"
   url "https://github.com/goreleaser/goreleaser.git",
-      tag:      "v0.154.0",
-      revision: "e8ea231122dc98ec2315eff2df2defc5191764d6"
+      tag:      "v0.155.0",
+      revision: "ba82f43c5f2eefcc82d8d14634fe21b37ffc1799"
   license "MIT"
+  head "https://github.com/goreleaser/goreleaser.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "50e7d5997d9e7dc20583969885dafbbec85fbeae733232feb49219f5df7163a0" => :big_sur
-    sha256 "a1d96297b63e7372d082e750d08fc45f4d8b2ccb14cd1755eff442148da9006f" => :arm64_big_sur
-    sha256 "ee5db7c6ea67d0925f8f88a9930b9a925d45e7ac6102f7ae18cd5154196d8c2f" => :catalina
-    sha256 "923a80f28f496a69b5aaa70de720a37c1d70c687d48a4e2d861b4c2f2f6e05e9" => :mojave
-    sha256 "703e30894d54247767b0a81f1c342968b90f6e106839e9cf0e5496fc663ee236" => :x86_64_linux
+    sha256 "632981ce9324cead70e9c587aeb26a45ec92f5dd25fc800e28903958c56f3a08" => :big_sur
+    sha256 "abb7642b9bb609bca4f7331783923b6b2b92c752d659a07fd343eaf6f6eb3dc0" => :arm64_big_sur
+    sha256 "ece7b31704b18ad57f8d910cdc58af4a81a9f45546dca7d6b253ee10e8741933" => :catalina
+    sha256 "bbb9bf8c6a989a11dbdd5bd4aaf8dc41e251ff78fea2c3832525336ca826177f" => :mojave
   end
 
   depends_on "go" => :build
 
   def install
     system "go", "build", "-ldflags",
-             "-s -w -X main.version=#{version} -X main.commit=#{stable.specs[:revision]} -X main.builtBy=homebrew",
+             "-s -w -X main.version=#{version} -X main.commit=#{Utils.git_head} -X main.builtBy=homebrew",
              *std_go_args
   end
 
