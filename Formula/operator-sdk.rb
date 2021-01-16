@@ -14,6 +14,7 @@ class OperatorSdk < Formula
     sha256 "a22d0f48e4c1e576dbdf49bec25d53b786bd277b67b91a332acb3788469c92e8" => :arm64_big_sur
     sha256 "2ed94d42e41836039a0123267f5dcda3841ce177f30bafdb23da10fa111f7ec3" => :catalina
     sha256 "77b5e1584361d8d1cce7e0b1ebff6e09e6f0de39102e8d167522151ca02674f0" => :mojave
+    sha256 "550c81d7abd1db9932aefac650148504c9277ada12cdcc653887a4c1ef1f2f1f" => :x86_64_linux
   end
 
   depends_on "go"
