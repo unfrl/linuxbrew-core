@@ -4,14 +4,14 @@ class Mpv < Formula
   url "https://github.com/mpv-player/mpv/archive/v0.33.0.tar.gz"
   sha256 "f1b9baf5dc2eeaf376597c28a6281facf6ed98ff3d567e3955c95bf2459520b4"
   license :cannot_represent
-  revision 2
+  revision 3
   head "https://github.com/mpv-player/mpv.git"
 
   bottle do
-    sha256 "f455a0000b72c8503f056a407a02900649dca3f11b60812a1e57a70568854da1" => :big_sur
-    sha256 "1a1dc82ceaa274c82192088377d3fc40fa32330242296e54f6a686b79536bd6e" => :arm64_big_sur
-    sha256 "7efb79d88900d81c09419b529373d123b26d86c2971cbb44bfc85d7f62513a0e" => :catalina
-    sha256 "f0363897b147c2517468d98e76341d46f39cbaac43a6c6613820a9194ff8c754" => :mojave
+    sha256 "58a1f5371def7e860246dfbff2f065070838bb70a766a5601fc1b275be183170" => :big_sur
+    sha256 "1679746b14f23e60d01d41c461f4ffec1142f95989059aa13bd136b6b062b694" => :arm64_big_sur
+    sha256 "f990b241e40cb6c2b1a2cda146e6e51dfd613f450a94b637fcdbeddb2ef2eb77" => :catalina
+    sha256 "40262c2fe5cf5676ae4f18715ba9eaac2ded398a484a447f7732e37201fe1d90" => :mojave
   end
 
   depends_on "docutils" => :build
@@ -23,7 +23,7 @@ class Mpv < Formula
   depends_on "libarchive"
   depends_on "libass"
   depends_on "little-cms2"
-  depends_on "lua@5.1"
+  depends_on "luajit-openresty"
   depends_on "mujs"
   depends_on "uchardet"
   depends_on "vapoursynth"
@@ -37,6 +37,8 @@ class Mpv < Formula
 
     # libarchive is keg-only
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["libarchive"].opt_lib/"pkgconfig"
+    # luajit-openresty is keg-only
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["luajit-openresty"].opt_lib/"pkgconfig"
 
     args = %W[
       --prefix=#{prefix}
@@ -51,7 +53,7 @@ class Mpv < Formula
       --mandir=#{man}
       --docdir=#{doc}
       --zshdir=#{zsh_completion}
-      --lua=51deb
+      --lua=luajit
     ]
 
     system Formula["python@3.9"].opt_bin/"python3", "bootstrap.py"

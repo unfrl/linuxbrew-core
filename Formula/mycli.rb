@@ -3,8 +3,8 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/63/5f/8d0796b8189bd3e8262352b84a06687e17cf1c891f11698b73698c12b678/mycli-1.23.0.tar.gz"
-  sha256 "935507a44a2ccd3854be82f8879f6f199ef56c0c76e95274893fd8b95424fcb9"
+  url "https://files.pythonhosted.org/packages/0c/9e/f822a87b6bf52b5f3181d66132fac0b5d70922ea026300b9946e1f219c04/mycli-1.23.1.tar.gz"
+  sha256 "3338137581816b9d6ce1277760442659e2b34700db27bcace0f840645c91db48"
   license "BSD-3-Clause"
 
   livecheck do
@@ -13,11 +13,10 @@ class Mycli < Formula
 
   bottle do
     cellar :any
-    sha256 "9597781341f38c778556571a0c75c524447643da59b040c5cfc3cfe7c3ab3a33" => :big_sur
-    sha256 "cd6559220937e79affb7b5a2dcb02f8ba1ecc179bdcec1287dcae8fb06871bb3" => :arm64_big_sur
-    sha256 "fe607d3117ef85547ced1e516e164f2b3ed4d79ddeb5c591191bd5b5f84713bc" => :catalina
-    sha256 "2159e3b07d59c601f16dd815bcd81034c93b3bff0b623c807e4e2f4edd47c08a" => :mojave
-    sha256 "940a9128e094d4f35a4ff08e5a6d5b0ecb85a02641d2a3acadcbb79fba3dfbee" => :x86_64_linux
+    sha256 "4330bad05a909ae40743ef8b773a1bd8c815611717ad3f6c253eb0cd5adccb2f" => :big_sur
+    sha256 "3dd8416e5e67cf6b6ed0fd128ae68590c06383b868d766a1d37783c46ce58321" => :arm64_big_sur
+    sha256 "3b81b2cd3c85ddef0f98137023e9005d1b3674086b49e0ac8ac39fb5cfb33f03" => :catalina
+    sha256 "617b9731931d57b437a5ce41c7f010fd9c9888e9f71f8837a0ad803b0ee24d9e" => :mojave
   end
 
   depends_on "openssl@1.1"

@@ -2,8 +2,8 @@ class Volta < Formula
   desc "JavaScript toolchain manager for reproducible environments"
   homepage "https://volta.sh"
   url "https://github.com/volta-cli/volta.git",
-      tag:      "v1.0.0",
-      revision: "d523e32f03f8c4a653ded9a73fb4cc8a8b49ea22"
+      tag:      "v1.0.1",
+      revision: "56a306c4fd0c0a88d7ff986724d5cf8e1af920b1"
   license "BSD-2-Clause"
 
   livecheck do
@@ -13,9 +13,9 @@ class Volta < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "b8bffc3f480bd53dfd54be6e5d80ff40eb88ae2d02fe67a1b9604e7c3d1a59f9" => :big_sur
-    sha256 "bfc3ab319797126e880603726b81fd2655d6dbc739a1a3f3b99e886a1347ae4b" => :catalina
-    sha256 "84fb97810a95d64a61bec2a49da0e2c8fddd9332978e1ccecd4b338d63044dd8" => :mojave
+    sha256 "4e7951a24ade9e61114ec23e5920fdcb89df268722b827122b666f391c4e6038" => :big_sur
+    sha256 "a5c08ed458919dbf9c4468e667b8b1af83f0f0df422006fea5866fa0edeae526" => :catalina
+    sha256 "ba38fc76ebf6147ed51db93469ef0b880b6368ca72c4bb7e4acf1fcd2109e922" => :mojave
   end
 
   depends_on "rust" => :build
