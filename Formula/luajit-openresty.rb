@@ -12,6 +12,7 @@ class LuajitOpenresty < Formula
     sha256 "60153b2fbc7fe9735802e9c603b07f811713a3f7afc3af1f5662e9abebee3a96" => :arm64_big_sur
     sha256 "ff62b7661154ef6b28e686dd5a5f50c732f375b67700b7aa285ef6d01b91987c" => :catalina
     sha256 "6ba231a307a5ff68374d543b8a8a59eedb2b35228f4e822f666a187c16ef16d3" => :mojave
+    sha256 "1f15cf85c6a6cf180c26f50f143be7f7aaa558d0d7d5dc4d859a2021061dc067" => :x86_64_linux
   end
 
   keg_only "it conflicts with the LuaJIT formula"
