@@ -37,6 +37,7 @@ class Gcc < Formula
   # gcc is designed to be portable.
   # reminder: always add 'cellar :any'
   bottle do
+    cellar :any
     rebuild 1
     sha256 "9c9b0681ad6d577b2c0b29e9998994ef02845a7b793e6272d1adfcb9649892f2" => :big_sur
     sha256 "fe518a0c7323164fc9fc99b3c8b70ff62ed2d3ff0cdb4dcb082f4b455f4946ef" => :arm64_big_sur
