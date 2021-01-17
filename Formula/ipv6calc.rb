@@ -11,6 +11,7 @@ class Ipv6calc < Formula
     sha256 "e17e06249b6fe16ec89c97604f933feae4f2b796ea74b2f7affe932f9c314a41" => :arm64_big_sur
     sha256 "f802589e58b5a2b28357418bd919058db4ddc4cadd9f27f4e67f1c892e63a9dd" => :catalina
     sha256 "d3916c02853129681d10f5d16772314fbd0243ab9641784fba9484009c0cced7" => :mojave
+    sha256 "0a9aa6116f4f6fe3d9d3d3035a933246fff0e088d2b1e9ee9a3e462a6abc10f6" => :x86_64_linux
   end
 
   def install
