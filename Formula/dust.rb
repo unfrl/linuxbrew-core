@@ -17,6 +17,7 @@ class Dust < Formula
     sha256 "63975da52bf489fa48faf28948811662e212ba34bd3eec9e46326ef75c90d3aa" => :arm64_big_sur
     sha256 "7b30dd40fba19a354809b0d311afb061b3d67134a4e8dc522911240fc04f1c56" => :catalina
     sha256 "9a20691424cccdb57170661480740191517a617d2a1a079d29411fd376f4f78a" => :mojave
+    sha256 "e2a294c12212fb797d03191585476ed01fb4eb48e0d1d32a95c7a23b43a2c28a" => :x86_64_linux
   end
 
   depends_on "rust" => :build
