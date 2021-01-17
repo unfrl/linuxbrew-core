@@ -8,11 +8,11 @@ class PreCommit < Formula
   license "MIT"
 
   bottle do
-    sha256 "81f18e83e858feffacc9a9441c836a2abcf5b1a880f09ee99a261f12ac8ceca7" => :big_sur
-    sha256 "ad84b382bed019d2574f985a6b9253634930764d14a16de1b9cc8c6c9b387b02" => :arm64_big_sur
-    sha256 "16977b9f715b4330e7975761edddbaad4b891b25e6c8e4c4186ca4e2e99b11e7" => :catalina
-    sha256 "82af5cc062aed6375aff5dfc759bac2cbc549ae0709f1a720ec805368944b46e" => :mojave
-    sha256 "b2f43e142f285d7299c68b12ac5967a8346c99dab3ca2f99dce30e28eae32ffa" => :x86_64_linux
+    rebuild 1
+    sha256 "9f3e5baf1b9b60a24857b5b7f094856c586e26fe7e252db0884d62ff2ab29c4d" => :big_sur
+    sha256 "33f007b01f82457bcb6094a70546022f4b09fe083d2c2c6fec03a9175be7a07f" => :arm64_big_sur
+    sha256 "567656ee42a44152e91d1d5863b596a9ceb0af21fe2a4d948409392797df7d1e" => :catalina
+    sha256 "f8429a3459917cdff5b3c9ca240cdaaf8fdb5f1dcc2a4a511bc7ef7582c0d9dd" => :mojave
   end
 
   depends_on "libyaml"
@@ -87,13 +87,17 @@ class PreCommit < Formula
 
   # Avoid relative paths
   def post_install
-    lib_python_path = Pathname.glob(libexec/"lib/python*").first
-    lib_python_path.each_child do |f|
-      next unless f.symlink?
+    xy = Language::Python.major_minor_version Formula["python@3.9"].opt_bin/"python3"
+    bin_python_path = Pathname(libexec/"bin")
+    lib_python_path = Pathname(libexec/"lib/python#{xy}")
+    [lib_python_path, bin_python_path].each do |folder|
+      folder.each_child do |f|
+        next unless f.symlink?
 
-      realpath = f.realpath
-      rm f
-      ln_s realpath, f
+        realpath = f.realpath
+        rm f
+        ln_s realpath, f
+      end
     end
 
     unless OS.mac?

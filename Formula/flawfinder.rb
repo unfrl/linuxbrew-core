@@ -5,7 +5,7 @@ class Flawfinder < Formula
   homepage "https://www.dwheeler.com/flawfinder/"
   url "https://www.dwheeler.com/flawfinder/flawfinder-2.0.15.tar.gz"
   sha256 "0a65cf93b1d380669476e576abbb04ea0766a557ce2bf75d9e71f387fcd74406"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
   head "https://github.com/david-a-wheeler/flawfinder.git"
 
   livecheck do
@@ -15,19 +15,14 @@ class Flawfinder < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "cc2b451e91cddac64a29f13a1814bd5b481dcce2ea86fb5c5652b4c90cb7f63d" => :big_sur
-    sha256 "8f5389db1dd74bbe6a91c856ef66e49de443a08eb6d5864dda113b2593a347bd" => :arm64_big_sur
-    sha256 "76104b50b01df54c7eab1c58a4bda74ae890e935caa151aefa5ea37bf8ea87f3" => :catalina
-    sha256 "f7fba945f5bc32530cd73e9d00627b47e129ad6e2562a748b54eacba6a40404f" => :mojave
-    sha256 "28a70ebb072e8f0823e12900134595e00fad3da0a657b1c8c2d8f25e7d9c1919" => :x86_64_linux
+    rebuild 1
+    sha256 "be0c6b6c0819fece1f9d37f8275deec415c6435f7a5285659e8a310ff602bfa5" => :big_sur
+    sha256 "234bf06a99252223cb9acfc14b439b1ab6ed8143caa59cda8a5d8424aad9e743" => :arm64_big_sur
+    sha256 "2bba36ebc01b78e23dae0d7a9696f9fb8714ff82ad6a31cde9499b22e293516b" => :catalina
+    sha256 "6d371f08132175d2c34d3e20e95febceb469a104a6789dd382de3479303ceba9" => :mojave
   end
 
   depends_on "python@3.9"
-
-  resource "flaws" do
-    url "https://www.dwheeler.com/flawfinder/test.c"
-    sha256 "4a9687a091b87eed864d3e35a864146a85a3467eb2ae0800a72e330496f0aec3"
-  end
 
   def install
     rewrite_shebang detected_python_shebang, "flawfinder"
@@ -35,9 +30,12 @@ class Flawfinder < Formula
   end
 
   test do
-    resource("flaws").stage do
-      assert_match "Hits = 36",
-                   shell_output("#{bin}/flawfinder test.c")
-    end
+    (testpath/"test.c").write <<~EOS
+      int demo(char *a, char *b) {
+        strcpy(a, "\n");
+        strcpy(a, gettext("Hello there"));
+      }
+    EOS
+    assert_match("Hits = 2\n", shell_output("#{bin}/flawfinder test.c"))
   end
 end

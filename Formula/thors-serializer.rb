@@ -2,17 +2,16 @@ class ThorsSerializer < Formula
   desc "Declarative serialization library (JSON/YAML) for C++"
   homepage "https://github.com/Loki-Astari/ThorsSerializer"
   url "https://github.com/Loki-Astari/ThorsSerializer.git",
-      tag:      "2.0.15",
-      revision: "a3105857c3c12365a61c79d96e3a938b1942c385"
+      tag:      "2.1.2",
+      revision: "735427a7ceb8317f62eee844e51dc2820cfba8cb"
   license "MIT"
 
   bottle do
     cellar :any
-    sha256 "c9e5ad98aa1ec0ce8b0003e865ab33f8d53583548bb4eeb8500e2c1a98e08f99" => :big_sur
-    sha256 "832d5ce674557e3c007d8224c3c16f89ee4d8d6cd4e39848ecc28bd94b9297b7" => :arm64_big_sur
-    sha256 "b03bf969cade0d22b86d88ad9c7414ee49c585bed65b3aed18dc28c24bd5ddf4" => :catalina
-    sha256 "eddf2665dbf5da0f54b4ad942a4b78214afa0242f22106b91a55e6868bb5a2a5" => :mojave
-    sha256 "8649be65f46b9cbde2fadc93962d4ad4a4e06478ead0469505ba6c5fa4ea36c4" => :high_sierra
+    sha256 "76659fd2fccd00a3dfb2ead0f29c2ac449be37bfbede717c7fa50b9d166643f7" => :big_sur
+    sha256 "c40d919edcef045430f2318f7fe074f06a2e52c1adf99cadc4afbd1c16ed3387" => :arm64_big_sur
+    sha256 "035c0adeb315c6291902743dacf1b19a99657fcded3dc7d5a8c7f8412cd3ec27" => :catalina
+    sha256 "5d2b889102c559efc3bee745f2cbcaf3a353bda2c65198ed144e93248cfa0597" => :mojave
   end
 
   depends_on "boost" => :build
@@ -62,7 +61,7 @@ class ThorsSerializer < Formula
     EOS
     system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test",
            "-I#{Formula["boost"].opt_include}",
-           "-I#{include}", "-L#{lib}", "-lThorSerialize17"
+           "-I#{include}", "-L#{lib}", "-lThorSerialize17", "-lThorsLogging17"
     system "./test"
   end
 end

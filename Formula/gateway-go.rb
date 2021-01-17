@@ -5,23 +5,28 @@ class GatewayGo < Formula
       tag:      "v0.1.95",
       revision: "19c8673a044deb3ec419e05b74b3fd745fe8678c"
   license "MIT"
+  head "https://github.com/OpenIoTHub/gateway-go.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "619f94589ac0509a812c35b9537a61014cef95e6c390b43e6ee714590950b1d3" => :big_sur
-    sha256 "d40cad6d997c01d5ac077be80822f6f49e9c69681506ab3bde703697d2d205a2" => :arm64_big_sur
-    sha256 "29d348627eaf641ad24036a54c835dbdb8864f84a803113faed10330e22607b0" => :catalina
-    sha256 "c5c13841c70ed28694b18659125bec1dda2249377de12ae9ad6e86c2ed9e2160" => :mojave
+    rebuild 1
+    sha256 "0062a8e104361cc6206e962c581b1d2f20dfe136c5088940841bd1b4ff09734e" => :big_sur
+    sha256 "98534050956e22d423d5450968b2319ae38478b9881ebca0a81a3d76dcfd57ad" => :arm64_big_sur
+    sha256 "bdfb63466aee4c484ec01e3345c1804fbdb52ac9a40caa175bcb01b9fc7f4de1" => :catalina
+    sha256 "93fe2255aa6f888afdf45225c76bb74481cb0c8dd3cba4d243d45e518db933ae" => :mojave
   end
 
   depends_on "go" => :build
 
   def install
-    (etc/"gateway-go").mkpath
-    system "go", "build", "-mod=vendor", "-ldflags",
-             "-s -w -X main.version=#{version} -X main.commit=#{stable.specs[:revision]} -X main.builtBy=homebrew",
-             *std_go_args
-    etc.install "gateway-go.yaml" => "gateway-go/gateway-go.yaml"
+    ldflags = %W[
+      -s -w
+      -X main.version=#{version}
+      -X main.commit=#{Utils.git_head}
+      -X main.builtBy=homebrew
+    ]
+    system "go", "build", "-mod=vendor", "-ldflags", ldflags.join(" "), *std_go_args
+    (etc/"gateway-go").install "gateway-go.yaml"
   end
 
   plist_options manual: "gateway-go -c #{HOMEBREW_PREFIX}/etc/gateway-go/gateway-go.yaml"

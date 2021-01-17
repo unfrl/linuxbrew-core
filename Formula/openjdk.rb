@@ -20,17 +20,17 @@ class Openjdk < Formula
 
   bottle do
     cellar :any
-    sha256 "6f31366f86a5eacf66673fca9ad647b98b207820f8cfea49a22af596395d3dba" => :big_sur
-    sha256 "679c34348a8ce43888280c0a9724b644e503b0476c6ef679358234845986af21" => :arm64_big_sur
-    sha256 "9376a1c6fdf8b0268b6cb56c9878358df148b530fcb0e3697596155fad3ca8d7" => :catalina
-    sha256 "a4f00dc8b4c69bff53828f32c82b0a6be41b23a69a7775a95cdbc9e01d9bdb68" => :mojave
-    sha256 "bef2e4a43a6485253c655979cfc719332fb8631792720c0b9f6591559fb513f1" => :high_sierra
-    sha256 "318eb6cddc71cff93aaf9c419730a05d802cef0270051907aa2f938cbf1b4512" => :x86_64_linux
+    rebuild 1
+    sha256 "e91cd8028e8bb7415bcb9a8dfb0843e98cb983d9fd2a65f6bbe7a58efaf8a9e3" => :big_sur
+    sha256 "64da5d70d63d617def59e16bd411f236b822626f130a6b16576eb9eb5bc8519a" => :arm64_big_sur
+    sha256 "243c608c22a4de274d20d7f58edfbc2ee991b0e92861000de22d793230af9412" => :catalina
+    sha256 "13c9bf7e3d1ccb71863249ed983fad3b19324b22557bf12247331a693504c235" => :mojave
   end
 
   keg_only "it shadows the macOS `java` wrapper"
 
   depends_on "autoconf" => :build
+  depends_on xcode: :build if Hardware::CPU.arm?
 
   unless OS.mac?
     depends_on "cups"
@@ -86,13 +86,13 @@ class Openjdk < Formula
     end
   end
 
-  # Calculate Xcode's dual-arch JavaNativeFoundation.framework path
-  def framework_path
-    File.expand_path("../SharedFrameworks/ContentDeliveryServices.framework/Versions/Current/itms/java/Frameworks",
-                     MacOS::Xcode.prefix)
-  end
-
   def install
+    # Path to dual-arch JavaNativeFoundation.framework from Xcode
+    framework_path = File.expand_path(
+      "../SharedFrameworks/ContentDeliveryServices.framework/Versions/Current/itms/java/Frameworks",
+      MacOS::Xcode.prefix,
+    )
+
     boot_jdk_dir = Pathname.pwd/"boot-jdk"
     resource("boot-jdk").stage boot_jdk_dir
     boot_jdk = OS.mac? ? boot_jdk_dir/"Contents/Home" : boot_jdk_dir
@@ -180,14 +180,15 @@ class Openjdk < Formula
       include.install_symlink Dir["#{libexec}/include/*.h"]
       include.install_symlink Dir["#{libexec}/include/linux/*.h"]
     end
-  end
 
-  def post_install
-    # Copy JavaNativeFoundation.framework from Xcode after install to avoid signature corruption
-    if Hardware::CPU.arm?
-      cp_r "#{framework_path}/JavaNativeFoundation.framework",
-           "#{libexec}/openjdk.jdk/Contents/Home/lib/JavaNativeFoundation.framework",
-           remove_destination: true
+    if OS.mac? && Hardware::CPU.arm?
+      dest = libexec/"openjdk.jdk/Contents/Home/lib/JavaNativeFoundation.framework"
+      # Copy JavaNativeFoundation.framework from Xcode
+      # https://gist.github.com/claui/ea4248aa64d6a1b06c6d6ed80bc2d2b8#gistcomment-3539574
+      cp_r "#{framework_path}/JavaNativeFoundation.framework", dest, remove_destination: true
+
+      # Replace Apple signature by ad-hoc one (otherwise relocation will break it)
+      system "codesign", "-f", "-s", "-", "#{dest}/Versions/A/JavaNativeFoundation"
     end
   end
 
