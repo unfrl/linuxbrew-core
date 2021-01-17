@@ -16,6 +16,7 @@ class Pulseaudio < Formula
     sha256 "efcbf144da932e05394e9768bf27dfa1908dbb17f4b7c52f49e56c791dd51860" => :arm64_big_sur
     sha256 "e1c181ae27f945ceee403e2e2ec80f44aebd52ac44b8e63140c1c9d2083a643b" => :catalina
     sha256 "ae0d2ec72fc10a895c7efc330174abef08458576ed847fb4547301a2d8cc147e" => :mojave
+    sha256 "0df43644558f381d34ba673490a1717ca4b7bbbee961bc5681c77996cc67d9a9" => :x86_64_linux
   end
 
   head do
