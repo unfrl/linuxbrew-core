@@ -12,6 +12,7 @@ class Openjpeg < Formula
     sha256 "b57a02c3bc4ee8a43e47df5015e6e40a04d7149e172806157e279b1b03c715ef" => :arm64_big_sur
     sha256 "80426609c75b98ee0ee394e9017bb621dc73dd2d6f60d0c851f6940d0b268676" => :catalina
     sha256 "e26d092b6177ee282d3724dea5ea4cb76af3645472791c3fefb002e2638588b0" => :mojave
+    sha256 "017924a40ebcef9ef63048215f7a66e794cbeebb47b024e9306796b143e65e46" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
