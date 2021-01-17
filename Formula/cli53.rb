@@ -11,6 +11,7 @@ class Cli53 < Formula
     sha256 "98cb37be5b6af7dd7cc216a93ad0c5fb000d4bac22762e9731832de6119a9f0c" => :arm64_big_sur
     sha256 "9bf273343ecbaadbae4b55c1bc48bc529d1e6ecfe651848db995f2cd70966756" => :catalina
     sha256 "6e3fff5c7242c391fa6a43d1a9cb79467b56149102624b60abc8008e46280199" => :mojave
+    sha256 "c249895c1c4f649a513af7b62a5e31c488618bcd5fa39cb65138ad3cb46a8f31" => :x86_64_linux
   end
 
   depends_on "go" => :build
