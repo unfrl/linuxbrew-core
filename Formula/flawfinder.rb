@@ -20,6 +20,7 @@ class Flawfinder < Formula
     sha256 "234bf06a99252223cb9acfc14b439b1ab6ed8143caa59cda8a5d8424aad9e743" => :arm64_big_sur
     sha256 "2bba36ebc01b78e23dae0d7a9696f9fb8714ff82ad6a31cde9499b22e293516b" => :catalina
     sha256 "6d371f08132175d2c34d3e20e95febceb469a104a6789dd382de3479303ceba9" => :mojave
+    sha256 "72f4ff1daa16879cca0dd3c2ebea4fd9152fcd67c8e224f26106b676c76696b0" => :x86_64_linux
   end
 
   depends_on "python@3.9"
