@@ -11,6 +11,7 @@ class Tmx < Formula
     sha256 "770cdb601ea6b496a29832960cb5fd79626a99f55f01c635985aa921f3e5f31d" => :arm64_big_sur
     sha256 "1013715fdb263f6d6985c9145a5dbc05d2e41ba6c4aa28af766f0bc82a87f2c5" => :catalina
     sha256 "060eab2a5090afed9dfbf6ca716a2867b956be2222e6a623a5b98774bf06ef6e" => :mojave
+    sha256 "8128ee3ceceb0e76a87ee220a541a0aca8cd59a0cce9b1010e8cbe0622f14f50" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
