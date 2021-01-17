@@ -16,6 +16,7 @@ class Libsigsegv < Formula
     sha256 "709a1a801698a0e0862be0f71d9b15ed8af9b6777956ae2caf0795d418956ce4" => :arm64_big_sur
     sha256 "0d7f731afff70661df049267de9fe2c34b74d3918a7a7695fbfd1deef664aa68" => :catalina
     sha256 "95525c7e620743555e44175496c21c57a8cc39b8ca2670bf0fd690cc42a2977c" => :mojave
+    sha256 "72569b2cd41d617e7034a66f7681786b46cce8e49ed59846a9e8c3207b206a6e" => :x86_64_linux
   end
 
   head do
