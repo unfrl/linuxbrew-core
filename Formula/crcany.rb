@@ -12,6 +12,7 @@ class Crcany < Formula
     sha256 "6fae645339969bae0ce4cc2af169508a6ace50ccea0c5062ad67706ae573f0ae" => :arm64_big_sur
     sha256 "302ec3819e25f3478ebdd9dc50e539d3ba7602f479ee9d8bb08c0cc97ccd9d39" => :catalina
     sha256 "7f75a8e8101a52045412398dcc1a1ba26229373251131af3b0cf76bd9d5acae2" => :mojave
+    sha256 "d766d7fc59c16a965c06ef5ae3f0510c63ee726337b85cf644ac386a865feae2" => :x86_64_linux
   end
 
   def install
