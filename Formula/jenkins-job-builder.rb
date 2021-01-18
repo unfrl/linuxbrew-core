@@ -15,6 +15,7 @@ class JenkinsJobBuilder < Formula
     sha256 "46dfdb8e7ef7fa8c64af646b4e05678ceecf42b28623ac8841131450f7a8d049" => :arm64_big_sur
     sha256 "acc2780f1192afa3319909faddaf12852cec5d4c22e7889e262c9fbf2a9bf531" => :catalina
     sha256 "0e45165252f69efa7f8f7ae83e79d2243622358c91949e2d949414e21073f604" => :mojave
+    sha256 "68a6ba80e0a7be0e0d5fe381979ec3da0bc96902c98897b7a95d81f6a3271790" => :x86_64_linux
   end
 
   depends_on "python@3.9"
