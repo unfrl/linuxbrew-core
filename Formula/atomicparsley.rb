@@ -14,6 +14,7 @@ class Atomicparsley < Formula
     sha256 "a8e5692e8ef0283fd49d2f49c4496bfc89a083514da2334fa02eb6fc2f4e2989" => :arm64_big_sur
     sha256 "49a797a44dce461bbd76fea51e4d4a855eec29bd6b83e592ff8acee2d44f8055" => :catalina
     sha256 "a979f00c124189f4799f08b55b8554c5e36ddc17a1e682ac33e4d9615bdcc339" => :mojave
+    sha256 "852d987f1257766f155f7b275a5583ba45a00608923bd5e4866988abd19fcee2" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
