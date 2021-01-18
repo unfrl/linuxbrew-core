@@ -13,13 +13,23 @@ class ClozureCl < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "44532f82d79ee308886614d8a8ccafd65e049a8621cc7a54a6af15d9985486e7" => :catalina
-    sha256 "b17d10463b8101707ad7385a896e3252e6ffd4231c0334ac25aa7967c689226f" => :mojave
-    sha256 "3e2a8e6263055e8e21ae373b0def8f4ad5aebaa4e64df12d67b148bbb3fde177" => :high_sierra
-    sha256 "600a19c2c6bad5a82bf07686b8428920afd55625cbc8521c7917c4eefd4de1bc" => :x86_64_linux
+    rebuild 1
+    sha256 "8d92feb08987fc74fb3a105f94ec0e8664b587a31fa7077b95d1f3d5c86f6a7d" => :big_sur
+    sha256 "c3fbe11dec5f77264369a8b95a774599e5247771f4df475faeed1e589cf1033d" => :catalina
   end
 
   depends_on xcode: :build
+  depends_on macos: :catalina # The GNU assembler frontend which ships macOS 10.14 is incompatible with clozure-ccl: https://github.com/Clozure/ccl/issues/271
+
+  # Patch to build heap image with linker shipped with Big Sur.  Remove for next version.
+  on_macos do
+    if MacOS.version >= :catalina
+      patch do
+        url "https://github.com/Clozure/ccl/commit/553c0f25f38b2b0d5922ca7b4f62f09eb85ace1c.patch?full_index=1"
+        sha256 "deb9e35df75d82c1694fec569a246388485fb64ab7bae3addff6ff3650160b04"
+      end
+    end
+  end
 
   on_linux do
     depends_on "m4"
@@ -45,16 +55,7 @@ class ClozureCl < Formula
       buildpath.install tmpdir/"dx86cl64.image"
       buildpath.install tmpdir/"darwin-x86-headers64"
       cd "lisp-kernel/darwinx8664" do
-        args = []
-
-        if DevelopmentTools.clang_build_version == 1100 && MacOS::CLT.installed?
-          # Xcode 11.0-11.3 assembler is broken. Try the CLT in case it is older.
-          # https://github.com/Clozure/ccl/issues/271
-          # NOTE: ccl NEEDS the system assembler - it is not compatible with Clang's
-          args << "AS=/Library/Developer/CommandLineTools/usr/bin/as"
-        end
-
-        system "make", *args
+        system "make"
       end
     end
 
