@@ -2,8 +2,8 @@ class Filebeat < Formula
   desc "File harvester to ship log files to Elasticsearch or Logstash"
   homepage "https://www.elastic.co/products/beats/filebeat"
   url "https://github.com/elastic/beats.git",
-      tag:      "v7.10.1",
-      revision: "1da173a9e716715a7a54bb3ff4db05b5c24fc8ce"
+      tag:      "v7.10.2",
+      revision: "aacf9ecd9c494aa0908f61fbca82c906b16562a8"
   # Outside of the "x-pack" folder, source code in a given file is licensed
   # under the Apache License Version 2.0
   license "Apache-2.0"
@@ -11,9 +11,9 @@ class Filebeat < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "5cc1835e59e12a24a232bd57550545bf1f18e2a3a98cb725badafe5eb02eba2c" => :big_sur
-    sha256 "d300d5a673811790c0af4e70d213810115015b4586d7a2a8f5546707c98c44b1" => :catalina
-    sha256 "0357cef2137fe707ce30d64a4be57ac5eea2919605a70fe20b184c0deb1e0ac4" => :mojave
+    sha256 "e61cfbd9a512b682f92b4a8eb671de6e5e07eca094bade3aa228c337f2bf2c39" => :big_sur
+    sha256 "7f6f1c8c7a09a9e22b7851f09bcd5df276f0dd25a13356d7cbd92b12085a4352" => :catalina
+    sha256 "f5365d692e77423773f383e3cbf0d7d8469d0f54d0b202c42ae64507c795d025" => :mojave
   end
 
   depends_on "go" => :build

@@ -23,14 +23,11 @@ class TclTk < Formula
 
   depends_on "openssl@1.1"
 
+  uses_from_macos "zlib"
+
   on_linux do
     depends_on "freetype" => :build
     depends_on "pkg-config" => :build
-    depends_on "freetype"   => :build
-  end
-
-  unless OS.mac?
-    depends_on "zlib"
     depends_on "libx11"
     depends_on "libxext"
   end
@@ -82,8 +79,10 @@ class TclTk < Formula
 
     resource("tk").stage do
       cd "unix" do
-        system "./configure", *args, *("--enable-aqua=yes" if OS.mac?),
-                              "--without-x", "--with-tcl=#{lib}"
+        on_macos do
+          args << "--enable-aqua=yes"
+        end
+        system "./configure", *args, "--without-x", "--with-tcl=#{lib}"
         system "make"
         system "make", "install"
         system "make", "install-private-headers"
@@ -98,10 +97,14 @@ class TclTk < Formula
     resource("tcllib").stage do
       system "./configure", "--prefix=#{prefix}", "--mandir=#{man}"
       system "make", "install"
-      ENV["SDKROOT"] = MacOS.sdk_path if OS.mac?
+      on_macos do
+        ENV["SDKROOT"] = MacOS.sdk_path
+      end
       system "make", "critcl"
       cp_r "modules/tcllibc", "#{lib}/"
-      ln_s "#{lib}/tcllibc/macosx-x86_64-clang", "#{lib}/tcllibc/macosx-x86_64" if OS.mac?
+      on_macos do
+        ln_s "#{lib}/tcllibc/macosx-x86_64-clang", "#{lib}/tcllibc/macosx-x86_64"
+      end
     end
 
     resource("tcltls").stage do
@@ -127,14 +130,16 @@ class TclTk < Formula
     end
 
     # Conflicts with perl
-    mv man/"man3/Thread.3", man/"man3/ThreadTclTk.3" unless OS.mac?
+    mv man/"man3/Thread.3", man/"man3/ThreadTclTk.3"
   end
 
   test do
     assert_equal "honk", pipe_output("#{bin}/tclsh", "puts honk\n").chomp
 
-    # Fails with: no display name and no $DISPLAY environment variable
-    return if ENV["CI"]
+    on_linux do
+      # Fails with: no display name and no $DISPLAY environment variable
+      return if ENV["CI"]
+    end
 
     test_itk = <<~EOS
       # Check that Itcl and Itk load, and that we can define, instantiate,
