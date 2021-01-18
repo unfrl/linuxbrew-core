@@ -13,14 +13,14 @@ class Help2man < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "64157a192452284e835e7826c9a4deb9afaa9a7fadae2407989aad35e3e20fba" => :big_sur
-    sha256 "0df51bfb13aae7a1cc8fefd2d5853d5659ef29bd676ae1b84de1c5775fd46475" => :catalina
-    sha256 "0c6508b21593f464813e5d0f813801fb26af4792bb8cc4aaee0a4ad9b44350f9" => :mojave
-    sha256 "46f3e7058af47162c5649eed42b2e573b27ac2187f0c397e83357e0ba0724e93" => :high_sierra
-    sha256 "55d4c42900aa41a658811a85b420ee2b9577c97d73bc25b3ec2662b0009ac1c1" => :x86_64_linux
+    rebuild 1
+    sha256 "45e30569a906318428642a079e7b528ce7bf4a3093d4bc74b42cfdf465024747" => :big_sur
+    sha256 "eb514b632ea6772589c038ee185c1d5f69ad8a828ce7c66b8da4e9a4ec9e1ca6" => :arm64_big_sur
+    sha256 "26e1576582cf0be060f656a44dbad2a296fe4ba159e939fa5be627595ee3d53a" => :catalina
+    sha256 "d390ddda63284c31d16a93d0af2d6c857798b12704e9eb402411d931aff31ca6" => :mojave
   end
 
-  depends_on "gettext"
+  depends_on "gettext" if Hardware::CPU.intel?
 
   uses_from_macos "perl"
 
@@ -32,11 +32,9 @@ class Help2man < Formula
   def install
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
 
-    resources.each do |r|
-      r.stage do
-        args = ["INSTALL_BASE=#{libexec}"]
-        args.unshift "--defaultdeps" if r.name == "MIME::Charset"
-        system "perl", "Makefile.PL", *args
+    if Hardware::CPU.intel?
+      resource("Locale::gettext").stage do
+        system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}"
         system "make", "install"
       end
     end
@@ -45,13 +43,22 @@ class Help2man < Formula
     # see https://github.com/Homebrew/homebrew/issues/12609
     ENV.deparallelize
 
-    system "./configure", "--prefix=#{prefix}", "--enable-nls"
+    args = []
+    args << "--enable-nls" if Hardware::CPU.intel?
+
+    system "./configure", "--prefix=#{prefix}", *args
     system "make", "install"
     (libexec/"bin").install "#{bin}/help2man"
     (bin/"help2man").write_env_script("#{libexec}/bin/help2man", PERL5LIB: ENV["PERL5LIB"])
   end
 
   test do
-    assert_match "help2man #{version}", shell_output("#{bin}/help2man --locale=en_US.UTF-8 #{bin}/help2man")
+    out = if Hardware::CPU.intel?
+      shell_output("#{bin}/help2man --locale=en_US.UTF-8 #{bin}/help2man")
+    else
+      shell_output("#{bin}/help2man #{bin}/help2man")
+    end
+
+    assert_match "help2man #{version}", out
   end
 end

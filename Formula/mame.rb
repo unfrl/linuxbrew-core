@@ -1,9 +1,10 @@
 class Mame < Formula
   desc "Multiple Arcade Machine Emulator"
   homepage "https://mamedev.org/"
-  url "https://github.com/mamedev/mame/archive/mame0226.tar.gz"
-  version "0.226"
-  sha256 "7c4c9ec232ba988e65fd29665c9b8e40b5ac3aa9f561eeb107cebbf08ba94baf"
+  # NOTE: Please keep these values in sync with rom-tools.rb when updating.
+  url "https://github.com/mamedev/mame/archive/mame0227.tar.gz"
+  version "0.227"
+  sha256 "95dbce00a4f05a35f66ef966fe9efad1e4e78ce62e0eba3f7031dfa6737829a5"
   license "GPL-2.0-or-later"
   head "https://github.com/mamedev/mame.git"
 
@@ -19,15 +20,14 @@ class Mame < Formula
 
   bottle do
     cellar :any
-    rebuild 1
-    sha256 "df514e97b41c36a65fb3d0729f8e927887cd9d1f7b3f23a189e4430a1e48bb76" => :big_sur
-    sha256 "9bc14fa247f653226bcdc771ad60ba70d2dc5e19b3386b547cf9b02c6f760615" => :catalina
-    sha256 "ca698bbefa83ddc6be99d0a471fe7f6303b35a6c757bb5b6b73a70acf8281c3f" => :mojave
+    sha256 "a9928dea0decc1809066fac18fb53e103ee00bc590344835b63aa4a70855a769" => :big_sur
+    sha256 "4aa1aec5b30ddf102e83c08422c946f031cdb1a73c1d9744963adf7d4b793b48" => :arm64_big_sur
+    sha256 "219af6c0bed8c13a4535fff691d779ffc71c425e8e55b82bf739547de45b759b" => :catalina
+    sha256 "4b23b592f444fdfaad894633c74959161dcfdeb5a35dadb7e6032259f02b87aa" => :mojave
   end
 
   depends_on "glm" => :build
   depends_on "pkg-config" => :build
-  depends_on "pugixml" => :build
   depends_on "python@3.9" => :build
   depends_on "rapidjson" => :build
   depends_on "sphinx-doc" => :build
@@ -37,18 +37,13 @@ class Mame < Formula
   depends_on macos: :high_sierra
   depends_on "portaudio"
   depends_on "portmidi"
+  depends_on "pugixml"
   depends_on "sdl2"
   depends_on "sqlite"
   depends_on "utf8proc"
 
   uses_from_macos "expat"
   uses_from_macos "zlib"
-
-  # Disable BGFX threading. Remove in next version.
-  patch do
-    url "https://github.com/mamedev/mame/commit/48d1f0de37fc6c429051dd1bcd1a49dbef581b1a.patch?full_index=1"
-    sha256 "9f9aba588ab1e82d927d1c101780415672c54cb463e80d435be3cb1d0ec34217"
-  end
 
   def install
     # Cut sdl2-config's invalid option.
