@@ -3,8 +3,8 @@ class Pdm < Formula
 
   desc "Modern Python package manager with PEP 582 support"
   homepage "https://pdm.fming.dev"
-  url "https://files.pythonhosted.org/packages/31/1d/cdc46957943d55ebf27d18ec0f8df6905d22544e0a84edc16a3183e12c8c/pdm-1.0.0.tar.gz"
-  sha256 "a1e969fb9cc28ca0491f91cbc6e1b574803c9c3c32d8188a6dad50f5f8d30ca5"
+  url "https://files.pythonhosted.org/packages/94/e6/dabb30a4ad199a5c30739e6758e4af928f7cd0c260de49000d48490cd392/pdm-1.1.0.tar.gz"
+  sha256 "5adf2fa34ac0a9872d3b112534fcbefb5a7e7ef87e3d1afb62a1d9a1695c93ff"
   license "MIT"
   head "https://github.com/frostming/pdm.git"
 
@@ -14,10 +14,10 @@ class Pdm < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "4fa9c4c312e302f8d38fdfbb9c3c2dbcfe7ad4d3fa295c27f0eac3d6897118e8" => :big_sur
-    sha256 "b44cc479d868a2a9f82f2b5793618602484bded75f2d303c3fa45ba826771291" => :arm64_big_sur
-    sha256 "becf8b188d9d44865839bbbba4a3de14ff273ef22dbf8c5e2228c4ff45b69a30" => :catalina
-    sha256 "b641604f6eaccf9c6b8cfa196d076bca03e72e8d65e2111ec2b7bab3c0b80871" => :mojave
+    sha256 "7a23d54393e63d1655cea46ee34a536f0029709c3bebc337d4297bca0af4d43a" => :big_sur
+    sha256 "153a16242ce3623660a3e5755ab6836bf6c514c84cb032a345b66dda4272983c" => :arm64_big_sur
+    sha256 "77c38040b13a745dca4b6649bd7c5e0429bbac1facb2f1709fb338d99d274ca4" => :catalina
+    sha256 "e3ae77402a8e6ed461704875c48acef5a3bc7c86dc704dc6a1f54625d0ccd998" => :mojave
   end
 
   depends_on "python@3.9"
@@ -52,14 +52,19 @@ class Pdm < Formula
     sha256 "edf6116872c863e1aa9d5bb7cb5e05a022c519a4594dc703843343a9ddd9bff1"
   end
 
+  resource "keyring" do
+    url "https://files.pythonhosted.org/packages/19/c7/e1a9c556745518c9c3d46613c10a968757b16e29341ec8e0815fd07e0f93/keyring-21.8.0.tar.gz"
+    sha256 "1746d3ac913d449a090caf11e9e4af00e26c3f7f7e81027872192b2398b98675"
+  end
+
   resource "packaging" do
     url "https://files.pythonhosted.org/packages/d7/c5/e81b9fb8033fe78a2355ea7b1774338e1dca2c9cbd2ee140211a9e6291ab/packaging-20.8.tar.gz"
     sha256 "78598185a7008a470d64526a8059de9aaa449238f280fc9eb6b13ba6c4109093"
   end
 
   resource "pdm-pep517" do
-    url "https://files.pythonhosted.org/packages/e0/38/09010920c54d92d5d4d9bede860204cbba26a115c188cf7130bff8a07df9/pdm-pep517-0.4.0.tar.gz"
-    sha256 "82005cbc901d39140818898eecb911ec1c6f90465ab8e897b307d94852c613e6"
+    url "https://files.pythonhosted.org/packages/67/c7/e8ece4c6bed887d6fc4cac9152a4022c3424c5260b91463c08a53f68d789/pdm-pep517-0.5.1.tar.gz"
+    sha256 "397e1ffae3233f861cec6d11863bac61dc94c0962f98e2524616515b3757ff47"
   end
 
   resource "pep517" do
@@ -115,6 +120,11 @@ class Pdm < Formula
   resource "tomlkit" do
     url "https://files.pythonhosted.org/packages/64/e0/6c8c96024d118cb029a97752e9a6d70bd06e4fd4c8b00fd9446ad6178f1d/tomlkit-0.7.0.tar.gz"
     sha256 "ac57f29693fab3e309ea789252fcce3061e19110085aa31af5446ca749325618"
+  end
+
+  resource "wheel" do
+    url "https://files.pythonhosted.org/packages/ed/46/e298a50dde405e1c202e316fa6a3015ff9288423661d7ea5e8f22f589071/wheel-0.36.2.tar.gz"
+    sha256 "e11eefd162658ea59a60a0f6c7d493a7190ea4b9a85e335b33489d9f17e0245e"
   end
 
   def install
