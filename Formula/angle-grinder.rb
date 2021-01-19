@@ -1,19 +1,16 @@
 class AngleGrinder < Formula
   desc "Slice and dice log files on the command-line"
   homepage "https://github.com/rcoh/angle-grinder"
-  # Remove "Cargo.lock" resource at version bump!
-  url "https://github.com/rcoh/angle-grinder/archive/v0.15.0.tar.gz"
-  sha256 "5359d6e241eca2bc3bdb7ddf9344b4ef8315cbe7629775c09e0ab7ed70310c8d"
+  url "https://github.com/rcoh/angle-grinder/archive/v0.16.tar.gz"
+  sha256 "575e5398cfcddc78152f76ade632f7be2aa6b54b4adaaf1776344529fb9c0561"
   license "MIT"
-  revision 1
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "5a1256b4d29478fbaf24b5683d1a97f78c5acce41292f5e49c164545c197388b" => :big_sur
-    sha256 "4ff200cdd8142e3d16a89a3050c690be506023da7ea6c6ca59700a209aa647dd" => :arm64_big_sur
-    sha256 "15943cf324e460ab66b499fe6399c8da05b305289ef42e5dfc385ca2e3c7177d" => :catalina
-    sha256 "4b3d867ea87b7c6a478aa7e6e5ea5909e01946c59473d4467254298c2ec524e8" => :mojave
-    sha256 "4775952ee6627e467f1d879eafd20b76f29dc7ff73e9ba0b55de197c3cfa6f72" => :x86_64_linux
+    sha256 "25e2cec189b99c508be9de6ef7076028e49dfb8c806bb2c0637071c4c4479f6a" => :big_sur
+    sha256 "15d4fb499d5ba409e212603382bfa5277d24d84ab53561fb78bbb14ac1e6bfaa" => :arm64_big_sur
+    sha256 "567fb4aea30314ed1ff6b5bfe07b84ccdebaadf5de7e150c849fd2bd59fe020b" => :catalina
+    sha256 "003d5093badf3df2e29df03a0098d1ad346f788979e03568638c5c7067168112" => :mojave
   end
 
   depends_on "rust" => :build
@@ -23,15 +20,7 @@ class AngleGrinder < Formula
     depends_on "openssl@1.1"
   end
 
-  # Replace stale lock file. Remove at version bump.
-  resource "Cargo.lock" do
-    url "https://raw.githubusercontent.com/rcoh/angle-grinder/6c5cf552dec605aac75c3da04e8618518b63abf2/Cargo.lock"
-    sha256 "a52f0e1d81eb77bdb10f9fa6b4bc5a2f4551045794570ac5d766de9085da4a54"
-  end
-
   def install
-    rm_f "Cargo.lock"
-    resource("Cargo.lock").stage buildpath
     system "cargo", "install", *std_cargo_args
   end
 

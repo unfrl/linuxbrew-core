@@ -1,10 +1,9 @@
 class Mysql < Formula
   desc "Open source relational database management system"
   homepage "https://dev.mysql.com/doc/refman/8.0/en/"
-  url "https://cdn.mysql.com/Downloads/MySQL-8.0/mysql-boost-8.0.22.tar.gz"
-  sha256 "ba765f74367c638d7cd1c546c05c14382fd997669bcd9680278e907f8d7eb484"
+  url "https://cdn.mysql.com/Downloads/MySQL-8.0/mysql-boost-8.0.23.tar.gz"
+  sha256 "1c7a424303c134758e59607a0b3172e43a21a27ff08e8c88c2439ffd4fc724a5"
   license "GPL-2.0-only"
-  revision 1
 
   livecheck do
     url "https://dev.mysql.com/downloads/mysql/?tpl=files&os=src"
@@ -12,12 +11,10 @@ class Mysql < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 "4032192bba2d0aa3433573019c8b4b6566e9c0aa2f69a493e141cc15f53de63b" => :big_sur
-    sha256 "2ec33bf3278faa988e8586c93a27aa87cb58fe7d4ed9a84a2e64d80b55c8d35f" => :arm64_big_sur
-    sha256 "42239a4ab5d73f7ba533cefd0065566e9a68ae8faf977966103b20f80c1fe9d5" => :catalina
-    sha256 "ba3267e7fad1b6e2c991a1dc40d2b4177c554a6ae7734fc7c33c3cc26f4d327e" => :mojave
-    sha256 "7a007dbf15211514a0c6d8e17ff5369a429e7f66b4140eff071b2f54b42254ca" => :x86_64_linux
+    sha256 "c47107257dff45ee81f671271a213e232b8c682c560277e6f3c554234ae1a686" => :big_sur
+    sha256 "e3508cd61df805a453628e8bbc52115c3665b9b8affddb2732f0481ec015a19f" => :arm64_big_sur
+    sha256 "308601d9802846e2a47e8d9ffed21bfe10a4186c9cd3adcff25e3ba936a2d94d" => :catalina
+    sha256 "080fd12e447803dfe1312d8628b07b8764b2634e7a0136fc69f506766e68146e" => :mojave
   end
 
   depends_on "cmake" => :build

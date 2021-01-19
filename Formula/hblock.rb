@@ -1,16 +1,16 @@
 class Hblock < Formula
   desc "Adblocker that creates a hosts file from multiple sources"
   homepage "https://hblock.molinero.dev/"
-  url "https://github.com/hectorm/hblock/archive/v3.1.3.tar.gz"
-  sha256 "e7dad9febc5205f19b36ce9268a41374931d27e0195a2d7504b62c2d1721ab7f"
+  url "https://github.com/hectorm/hblock/archive/v3.2.0.tar.gz"
+  sha256 "a5a86a0e9913d88dcba7270c9e3ed37f4c626c8a6a8b5e9303a8a173824bdfee"
   license "MIT"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "e983c78b4e45ffcef65cea8dbd253d0c7893670dd2edebfd489c234598122b0c" => :big_sur
-    sha256 "f4a73b36a9d7e96dee2632760f5bf4d449f0445d9f782b88726ab12d1a544695" => :arm64_big_sur
-    sha256 "400142a4275501a8ea5630260a41169e4b2bd9ab711cd4053bb716ac14510c52" => :catalina
-    sha256 "631a6da27cd7728a9c87caed412ccfa1236a8023385bbd623b482609a18cc30f" => :mojave
+    sha256 "8752ac1c6b5d9a16197c952cab95d0ed0f7259db9f98738471b679434ea533e6" => :big_sur
+    sha256 "07cf3cb10349f9afbd7adb36ae2f4c7e3444ec9fc4c6bcfb5cd65c77488eaabd" => :arm64_big_sur
+    sha256 "4599d523e51403bc471db40003a8c340d261acda6ed2b5eb26f92d5800aeec68" => :catalina
+    sha256 "1a04f7ac7b843758d8fd74b9885f6bd608c28fffd2c127904515922720c6b360" => :mojave
   end
 
   uses_from_macos "curl"
