@@ -1,8 +1,8 @@
 class Gtk4 < Formula
   desc "Toolkit for creating graphical user interfaces"
   homepage "https://gtk.org/"
-  url "https://download.gnome.org/sources/gtk/4.0/gtk-4.0.1.tar.xz"
-  sha256 "5e778f75e3808529d8300aae47b873675891de7d474c43bea32cc32e10d6df9c"
+  url "https://download.gnome.org/sources/gtk/4.0/gtk-4.0.2.tar.xz"
+  sha256 "626707ac6751426ed76fed49c5b2d052dfee45757ce3827088ba87ca7f1dbc84"
   license "LGPL-2.0-or-later"
 
   livecheck do
@@ -11,10 +11,10 @@ class Gtk4 < Formula
   end
 
   bottle do
-    sha256 "8eb6bf2d9aa0371b71eefd07436b3f4073141197d096aa5e334699d50e2222e2" => :big_sur
-    sha256 "aed4f9db955e8895e416285d5dd74433e097f546eb9b10c2e646bc6045adfb34" => :arm64_big_sur
-    sha256 "9416f5c808896268263d0a9756a46c41495a34b5592e18a334ec1ff5a5715013" => :catalina
-    sha256 "f6627a73db97d14ca84186feb0e0b5d470c8651190356e525b3430302178e76d" => :mojave
+    sha256 "b6abf6800954f62aec5a7247a3e9770b369a928e1218fdd38f4032fc7c010859" => :big_sur
+    sha256 "1159bfb49111f3507fbab1220a90d1cbb01ca8a2529c4db0ea3d511e6a731f41" => :arm64_big_sur
+    sha256 "3a910d30c4e69c6cbfc8e205843567a14fe9627b359b7414e9eba310d87cf87e" => :catalina
+    sha256 "5f8c723029b787a4d579eebd225b9e26d97e7b81b6f88e945693fe68dd836a97" => :mojave
   end
 
   depends_on "docbook" => :build
