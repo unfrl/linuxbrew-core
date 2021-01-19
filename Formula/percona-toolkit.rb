@@ -21,6 +21,7 @@ class PerconaToolkit < Formula
     sha256 "f9a61f98a776a1e43d6019f7624ef1e989e1f7d02003ea50c1347cf8f1e051a9" => :arm64_big_sur
     sha256 "83b295ee83a59f0bd55db724ee8b9525c62107fe2155cb834f12158d22867f32" => :catalina
     sha256 "383bce5fcca7a6b1c3cb7263e149594ea5db49058e7a0fbfe5190e1edd5e97fa" => :mojave
+    sha256 "11bfaa746b47409035732fba5d8438f5504f88a4ddf66e684251b47c1f1d7edf" => :x86_64_linux
   end
 
   depends_on "mysql-client"
