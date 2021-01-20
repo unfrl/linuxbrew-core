@@ -12,6 +12,7 @@ class Pueue < Formula
     sha256 "85465e35ad5470d8e42578f25fbdb38bf00e6855880c886317816f515de9f4d2" => :arm64_big_sur
     sha256 "8d98cefc0bf5f1a64122ad769f570661a6d96de06910a42821a4912483a39ade" => :catalina
     sha256 "949387054d56f8fab44cae482b659cbf3a40eb65c264c9d5acf5885b241e7795" => :mojave
+    sha256 "bd00567a920fe1f252d6e353712fb27e7cdf90d2d6823da19f655df45b83065b" => :x86_64_linux
   end
 
   depends_on "rust" => :build
