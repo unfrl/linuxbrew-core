@@ -1,17 +1,18 @@
 class Xmake < Formula
   desc "Cross-platform build utility based on Lua"
   homepage "https://xmake.io/"
-  url "https://github.com/xmake-io/xmake/releases/download/v2.3.9/xmake-v2.3.9.tar.gz"
-  sha256 "74ac394a71a137874393ff0f112b048a3c1c88c05efaa0059bb2268de9f4f672"
+  url "https://github.com/xmake-io/xmake/releases/download/v2.3.9/xmake-v2.3.9.m1.tar.gz"
+  version "2.3.9.m1"
+  sha256 "25a8fc39c6859854d26cec918eca94e16427d76870a9f29f4b302f7d300674a2"
   license "Apache-2.0"
   head "https://github.com/xmake-io/xmake.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "9102ec2c17817f4aaf96710c73f568078ceba2201d35fd33cbeb09fc5a52c3e7" => :big_sur
-    sha256 "97601c30b48b566feede80e8c546fa8a7f8f47340d5fa99775ae89fa21ebf798" => :catalina
-    sha256 "1d38ca72d9c6b48a735ad97896956a795a74e85f99318eb84eb8ac856d363628" => :mojave
-    sha256 "73d9f61f8d68b6b85e9bd51cca62ed1d226c5fe059caf021c923bf11e1ac6cd4" => :x86_64_linux
+    sha256 "304929df3becb98dbb71c977c378c7bee7a82b625e4829178d744ecba9733df8" => :big_sur
+    sha256 "2934592e40f18bfa65bd290b7343a30178117e8f88a4a344745774760fc8cbba" => :arm64_big_sur
+    sha256 "5b43f0aecef9254ea7d2f8bcff909165d6b3dce3f7c93afe8294a429173596bd" => :catalina
+    sha256 "66edef034918bdaec425876134c341d6092f1fd83e346403d14b23ac483c906d" => :mojave
   end
 
   on_linux do
@@ -22,6 +23,7 @@ class Xmake < Formula
     on_linux do
       ENV["XMAKE_ROOT"] = "y" if ENV["CI"]
     end
+
     system "make", "build"
     system "make", "install", "prefix=#{prefix}"
   end

@@ -1,18 +1,16 @@
 class K6 < Formula
   desc "Modern load testing tool, using Go and JavaScript"
   homepage "https://k6.io"
-  url "https://github.com/loadimpact/k6/archive/v0.29.0.tar.gz"
-  sha256 "1ffb392c6c83e4c688a1043608bf3bc06dea2b328a6ab0334e9ce33bd9e60d4a"
+  url "https://github.com/loadimpact/k6/archive/v0.30.0.tar.gz"
+  sha256 "5074b8b7e1a9ca7b96a55512737ad2cac8d92de22964973724c5f5424f98e177"
   license "AGPL-3.0-or-later"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "18408a1b36d5bd61dbf10fc55e83efaa33b358e51fc5d2a91879c9049c5d0f10" => :big_sur
-    sha256 "0e85503cca920ecedaa16511deac86a088ce1d49f422bc6101210abd7eb03567" => :arm64_big_sur
-    sha256 "b7bd5708af3593bb66e252e35d37aad25c8f2b86686ed53f67d438cb0da4adc9" => :catalina
-    sha256 "0eb5aa720d0a1bc5b306e7c7e4d767a346b7073f14e018bc866a5e2540cd9423" => :mojave
-    sha256 "037428689ad82115999e98f4f8967f615339e9c9f3e9211d0935ac63a73fbf20" => :high_sierra
-    sha256 "46479b387f87abc55d2b845f16bd53a9894ff85459eb34f6a639ac3e418bc783" => :x86_64_linux
+    sha256 "2137c88a32ac557df0d8738c18d010772ebde7467bcdc97c55c71cf7b6696b79" => :big_sur
+    sha256 "9188e1dc69294c2f6066e9d81ec3f211fa6388645c1daab9e5a5ff57dc9912e6" => :arm64_big_sur
+    sha256 "9417f296cc2f5a7e360f466577ab4a001dc0b8ed5ea99fb998280eeae39a13a1" => :catalina
+    sha256 "ada361abbd7089c348837364177526524198ccb569468cadb9b01b95ac20a9c9" => :mojave
   end
 
   depends_on "go" => :build

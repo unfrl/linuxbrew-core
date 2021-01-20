@@ -1,25 +1,24 @@
 class Pueue < Formula
   desc "Command-line tool for managing long-running shell commands"
   homepage "https://github.com/Nukesor/pueue"
-  url "https://github.com/Nukesor/pueue/archive/v0.10.2.tar.gz"
-  sha256 "dbd333079df9249609f6a01d7c96175ec9d74f9d621688b95ec755134b7fa1f5"
+  url "https://github.com/Nukesor/pueue/archive/pueue-v0.11.1.tar.gz"
+  sha256 "72cdfb5a460c76bd26a0824fc68c984b88c70f65ff79e8b047e53f9d68b792ce"
   license "MIT"
   head "https://github.com/Nukesor/pueue.git"
 
   bottle do
     cellar :any_skip_relocation
-    rebuild 1
-    sha256 "7198c69473088117d81cbce3a2873852f8fb8b947298b128843116e1347f3dbc" => :big_sur
-    sha256 "ba014e839a9178f7c2b90db5d7e96ae6495ba7127be184a5b09ae6101e457136" => :arm64_big_sur
-    sha256 "1bac5127cd26fe85dfe204c523cf8618672110e35e4c42fc6fd06d7bbc542df3" => :catalina
-    sha256 "52bf8fdd86821ac5864bda91b659980eff21869c70c8c0a6ede080318d70909f" => :mojave
-    sha256 "b23fcf48584f618ac2770789011ed1158ba56844c637b3c1d583e4e6ed7077c8" => :x86_64_linux
+    sha256 "886f95008b45fbf70caf75a6172cb5872a8e19e1e1dbeb0e78f27ca9b5c50d00" => :big_sur
+    sha256 "85465e35ad5470d8e42578f25fbdb38bf00e6855880c886317816f515de9f4d2" => :arm64_big_sur
+    sha256 "8d98cefc0bf5f1a64122ad769f570661a6d96de06910a42821a4912483a39ade" => :catalina
+    sha256 "949387054d56f8fab44cae482b659cbf3a40eb65c264c9d5acf5885b241e7795" => :mojave
   end
 
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", "--locked", "--root", libexec, "--path", "pueue"
+    bin.install [libexec/"bin/pueue", libexec/"bin/pueued"]
 
     system "./build_completions.sh"
     bash_completion.install "utils/completions/pueue.bash" => "pueue"
@@ -60,15 +59,22 @@ class Pueue < Formula
   end
 
   test do
-    mkdir OS.mac? ? testpath/"Library/Preferences" : testpath/".config"
+    pid = fork do
+      exec bin/"pueued"
+    end
+    sleep 2
 
     begin
-      pid = fork do
-        exec bin/"pueued"
-      end
-      sleep 5
-      cmd = "#{bin}/pueue status"
-      assert_match /Task list is empty.*/m, shell_output(cmd)
+      mkdir OS.mac? ? testpath/"Library/Preferences" : testpath/".config"
+
+      output = shell_output("#{bin}/pueue status")
+      assert_match "Task list is empty. Add tasks with `pueue add -- [cmd]`", output
+
+      output = shell_output("#{bin}/pueue add x")
+      assert_match "New task added (id 0).", output
+
+      output = shell_output("#{bin}/pueue status")
+      assert_match "(1 parallel): running", output
     ensure
       Process.kill("TERM", pid)
     end
