@@ -11,6 +11,7 @@ class Xtensor < Formula
     sha256 "1a256282dc60a06b042a75c0f925bd1d41595ed35a1b6fffb986bd6b73acf16f" => :arm64_big_sur
     sha256 "50282bf733c6d27583f9709ddfbe0dd70211dd0732dedffcc49c699a5ef45fb1" => :catalina
     sha256 "a2dd16b94e98a9a53cbba847c2e4563629ee6bbff49d7043836c6513cda22a87" => :mojave
+    sha256 "f6f1b588eccc839cc2ac44d3ffc6ca4724d8f774a733a09777963642320efc42" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
