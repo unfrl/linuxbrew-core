@@ -4,19 +4,21 @@ class Luaradio < Formula
   url "https://github.com/vsergeev/luaradio/archive/v0.9.1.tar.gz"
   sha256 "25150fa6b2cfd885d59453a9c4599811573176451c659278c12d50fece69f7f3"
   license "MIT"
+  revision 1
   head "https://github.com/vsergeev/luaradio.git"
 
   bottle do
     cellar :any
-    sha256 "37cc6f1e7768f09604159e620d807423ad566e5e4627d475897faf4f13bd24f5" => :big_sur
-    sha256 "3d9268b432e3804d2bd01b20a5296219f491470038ef5babb5621145f06a0022" => :catalina
-    sha256 "3012079cffefd761936341440ed384f7cee310930504b09b4758b0ec397737ed" => :mojave
+    sha256 "055327aacdb7cfb4ff1b2f3173d74a4e722912c83c40b20471d7ca1a6a69de52" => :big_sur
+    sha256 "a603c19d3aa76490299c95ced28c7b522c8b3e4580878bd77381b1dd8a15dad8" => :arm64_big_sur
+    sha256 "c0af371bf5dd9240c43a72cabd5bd49bb0782f2d86333d4aa342d896e3ff0f75" => :catalina
+    sha256 "266f5c368e4f6a50bb2097bf682ac9e975018da4733592691e92a24c466fe6d9" => :mojave
   end
 
   depends_on "pkg-config" => :build
   depends_on "fftw"
   depends_on "liquid-dsp"
-  depends_on "luajit"
+  depends_on "luajit-openresty"
 
   def install
     cd "embed" do
@@ -29,6 +31,14 @@ class Luaradio < Formula
       end
       system "make", "install", "PREFIX=#{prefix}"
     end
+
+    env = {
+      PATH:      "#{Formula["luajit-openresty"].opt_bin}:$PATH",
+      LUA_PATH:  "#{lib}/lua/5.1/?.lua${LUA_PATH:+:$LUA_PATH}",
+      LUA_CPATH: "#{lib}/lua/5.1/?.so${LUA_CPATH:+:$LUA_CPATH}",
+    }
+
+    bin.env_script_all_files libexec/"bin", env
   end
 
   test do

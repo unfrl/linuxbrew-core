@@ -3,8 +3,9 @@ class Mmctl < Formula
   homepage "https://github.com/mattermost/mmctl"
   url "https://github.com/mattermost/mmctl.git",
       tag:      "v5.31.0",
-      revision: "689bd041b5aa02183721fda0c4e9a4e3d84fab15"
+      revision: "fc161b2931110a913169a0601f0d9d0a36b1749a"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/mattermost/mmctl.git"
 
   livecheck do
@@ -14,11 +15,10 @@ class Mmctl < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "721438192923535b1a0d1af45bea885c48ee21ad1a39d22519c1a98c37eb8c81" => :big_sur
-    sha256 "77ed293627e135ce9a6fc8ed77f4781b09b04920735dc81b961de3b4f054ab37" => :arm64_big_sur
-    sha256 "fa783633ae2b76697b720868db53ad68ccd394cd1fc35c59e8b65fa38d7a32da" => :catalina
-    sha256 "77a2d30d20b3476022a223bc471833710f43034d92eff9b74a50e552dda504dd" => :mojave
-    sha256 "f8c43728e8b695e3f1431daa5de0dca71a5037b658daef436f38c2818ba7e81d" => :x86_64_linux
+    sha256 "0c01ada6d6a6b8084f10e1fb3b2b735963792333e607cdb8e4a5d0c2871ba82e" => :big_sur
+    sha256 "ab8f81ea9e3e3a7433923592b47be7edfceb302dac64b19fc96ee20e3c9c149f" => :arm64_big_sur
+    sha256 "ba9befddcab79938e336168f6bfc08dbb9590fb1c0d32425e02f1c4ff8cc0034" => :catalina
+    sha256 "dd23fa7b84f2b7f39f19ee60f69fa751f21ee2eb86b4a612603665d9d30810d6" => :mojave
   end
 
   depends_on "go" => :build
@@ -26,7 +26,7 @@ class Mmctl < Formula
   def install
     ENV["GOBIN"] = buildpath/bin
     ENV["ADVANCED_VET"] = "FALSE"
-    ENV["BUILD_HASH"] = Utils.safe_popen_read("git", "rev-parse", "HEAD").chomp
+    ENV["BUILD_HASH"] = Utils.git_head
     ENV["BUILD_VERSION"] = version.to_s
     (buildpath/"src/github.com/mattermost/mmctl").install buildpath.children
     cd "src/github.com/mattermost/mmctl" do
