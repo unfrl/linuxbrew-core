@@ -16,6 +16,7 @@ class Help2man < Formula
     sha256 "7bc46236d8916519b432020f2d51df5c6006c7000b67835ff7e1276c58ec208c" => :arm64_big_sur
     sha256 "603b604aaf17770dd4f4a0f9b45c266848d8c005228c64773fdec2d94e3d45dd" => :catalina
     sha256 "f57b3269934c79434b70ac7807ea364af47ae8a3b6096364c0615b2789d4a0a9" => :mojave
+    sha256 "ee254c07a107d8da4a088af1f8c63842e4c3863d5044c18c63e4854b289b4861" => :x86_64_linux
   end
 
   depends_on "gettext" if Hardware::CPU.intel?
