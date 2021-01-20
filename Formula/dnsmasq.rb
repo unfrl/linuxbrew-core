@@ -15,6 +15,7 @@ class Dnsmasq < Formula
     sha256 "5eaac9c49cc46b01e2c969edb078414945d75827e930002475742ee22949e00e" => :arm64_big_sur
     sha256 "cd4bccd3c41ef17b4a71c9dec0e8ceaed15e5e4dd4c9ca23cc681a1b0d391566" => :catalina
     sha256 "f122bdd0e288193e65cf366c560570e9de1aee2d68ed04d1c94b49e9e519a3e5" => :mojave
+    sha256 "07ecc3b02f5a9e55daf05efd4025875c28399fec6945a4a8636b3d8e09a23dd4" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
