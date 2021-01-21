@@ -12,10 +12,11 @@ class MinimalRacket < Formula
   end
 
   bottle do
-    cellar :any
+    cellar :any_skip_relocation
     sha256 "e505c77a1703d75d214e081250cff9cbdbb13d604f8995703bd96f5a5454803d" => :big_sur
     sha256 "68ce8bdaed9890086696fe63ce655c994848e58da24040363441bdc6eaa0d9d6" => :catalina
     sha256 "4fd0070df83c2d0761bc64e31b479f776f9cee55fe51a770811748706742e528" => :mojave
+    sha256 "062b1e2e241fd01dd4c917966b246ce59ff84e29ce7c1c8c5855309857f316e4" => :x86_64_linux
   end
 
   uses_from_macos "libffi"
