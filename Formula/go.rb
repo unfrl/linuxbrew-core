@@ -7,11 +7,11 @@ class Go < Formula
     if Hardware::CPU.arm?
       url "https://golang.org/dl/go1.16beta1.src.tar.gz"
       sha256 "48e032c8cf71af4dc8119a29ee829c4fbd5265e32fd012564d4a70bb207695c1"
-      version "1.15.6"
+      version "1.15.7"
     else
-      url "https://golang.org/dl/go1.15.6.src.tar.gz"
-      mirror "https://fossies.org/linux/misc/go1.15.6.src.tar.gz"
-      sha256 "890bba73c5e2b19ffb1180e385ea225059eb008eb91b694875dd86ea48675817"
+      url "https://golang.org/dl/go1.15.7.src.tar.gz"
+      mirror "https://fossies.org/linux/misc/go1.15.7.src.tar.gz"
+      sha256 "8631b3aafd8ecb9244ec2ffb8a2a8b4983cf4ad15572b9801f7c5b167c1a2abc"
     end
 
     go_version = version.major_minor
@@ -27,11 +27,10 @@ class Go < Formula
   end
 
   bottle do
-    sha256 "2107796e255869aae4a2b1bd5766182f38c87544f968750d78b7ba520d907b1a" => :big_sur
-    sha256 "c2bd24b5a24c19bfdf97a8904aaa76c4db2a8f59096aade83310fee7af4b186c" => :arm64_big_sur
-    sha256 "9dac57ef268c5fee434ac7896fc77f16f16f34462822e216c9973ade6a768e0b" => :catalina
-    sha256 "af0b8702944cde293206a5847bea8fb5aed66babed82fb202aff696ac5211691" => :mojave
-    sha256 "1f9fe5de75650da3e328b763ffc7a3c807c271b1029cab6859b1d291036c73fd" => :x86_64_linux
+    sha256 "096d7cc1408bb88499a61bbd7a223d7ffd614e98be57442f6756c50c88373bdd" => :big_sur
+    sha256 "2d5f8a726655d72e9b07cc4e79c08829f750a07fdeb2bc5d63802965e2c617f9" => :arm64_big_sur
+    sha256 "35669f4bca27f415ca1365c752aa8f7389c419042f0e9416f311670c599297ef" => :catalina
+    sha256 "8f718cc71177e5fd28981e0323c09e0cfd4ad1b8cc5f1cd303e2b7a3276a7ded" => :mojave
   end
 
   head do
