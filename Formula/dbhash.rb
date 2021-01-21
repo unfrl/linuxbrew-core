@@ -12,6 +12,7 @@ class Dbhash < Formula
     sha256 "5c1f600e1c3b9a4dffda17d135c5451a6370a66e929907cd542482bd9b78c00d" => :arm64_big_sur
     sha256 "33915e5efb31f85f70b224a895ec7d559ace851bb2db908e1ad9dfd7e7e48689" => :catalina
     sha256 "58bdc1479bae920500e6f3193094b08ee4ccbbf34d209a4aaf89b86bec2b449d" => :mojave
+    sha256 "812d5d4a09c115c674db33946fc5c619ed00f729511bb393b15fc9fc10d725b9" => :x86_64_linux
   end
 
   uses_from_macos "tcl-tk" => :build
