@@ -2,17 +2,16 @@ class Xgboost < Formula
   desc "Scalable, Portable and Distributed Gradient Boosting Library"
   homepage "https://xgboost.ai/"
   url "https://github.com/dmlc/xgboost.git",
-      tag:      "v1.3.2",
-      revision: "3e343159efaab1ec18ceab3a0425e5de6b50075b"
+      tag:      "v1.3.3",
+      revision: "000292ce6d99ed658f6f9aebabc6e9b330696e7e"
   license "Apache-2.0"
 
   bottle do
     cellar :any
-    sha256 "c5e9eba15f0cc7ad17f9d2f5702dd1d3991742ee54228236aa5ea39d52878099" => :big_sur
-    sha256 "edbc24cbd487da78603ed223d7ae55828757b089dc17d8267f1960f2cba000da" => :arm64_big_sur
-    sha256 "c62dbca19d3958ff374479d8cd3cd2c926d7b5e422d31d3bf9ae01feb01d294e" => :catalina
-    sha256 "b316dbad3eb0dea34062f11b6de052e414a22cb795c6b185054ef47ed2788812" => :mojave
-    sha256 "f06eeb5eb83cf4d5c2919c5e95b53a689476fa8f08b93f229b982c27b08a5a80" => :x86_64_linux
+    sha256 "42a3ec388bf05959fbd05c6b918cad2fba99a2a1812e9916e7ae9cd92dfb7af8" => :big_sur
+    sha256 "b5365cde699802720656bfa80f19f09f49825fd0f3156a7ce6c5a4cd5ccaf84d" => :arm64_big_sur
+    sha256 "b27e1a0394848b9840c09198bda4cae9bc57314ce833082f701336c434bbd4c8" => :catalina
+    sha256 "2a65f86dc8a2d9576c64a94f2296c481880482739d80dca988abf6a96e1ccf34" => :mojave
   end
 
   depends_on "cmake" => :build

@@ -3,10 +3,9 @@ class Dnsviz < Formula
 
   desc "Tools for analyzing and visualizing DNS and DNSSEC behavior"
   homepage "https://github.com/dnsviz/dnsviz/"
-  url "https://files.pythonhosted.org/packages/c1/e8/263e91aa263eab8c3152d2860e805440d3d7b5e28f33200c0922ce8a9a38/dnsviz-0.9.0.tar.gz"
-  sha256 "505dd9aa3397fab4f3f61a9bf0e658316fd9cb1e3b3a8f0de563401aece30678"
+  url "https://files.pythonhosted.org/packages/64/77/b0a03044bda0fc57581dbac832ad974b47fafda6fe0f1efd9394d7dac0ea/dnsviz-0.9.1.tar.gz"
+  sha256 "368b25ce506c8f5ce0ce9e5a4b1817ace3459bd65883eb3edf6011e2a3a4b330"
   license "GPL-2.0-or-later"
-  revision 1
 
   livecheck do
     url :stable
@@ -14,10 +13,10 @@ class Dnsviz < Formula
 
   bottle do
     cellar :any
-    sha256 "fbe6838e30362cfe8ccfa666484f6340969fe2e01eb56baa68568121e082d606" => :big_sur
-    sha256 "993c8d514d9b4873bee83cb3cb8563fc39c3cad498e32f5fc605251379f040e0" => :arm64_big_sur
-    sha256 "67e4a6c62210c8cdeeae7019f221607e8c3cb95cf5f55fade577547a0098d1df" => :catalina
-    sha256 "a7e8f043fa526d6d5e4752a52d02abd1102b65a1e903abcf52c68eda632b7303" => :mojave
+    sha256 "d4f4e549c3184c0e7bf1ab1639e096b5eb53e2ee4f00a2015c84cc2991eb80f6" => :big_sur
+    sha256 "a7198e45539b7bbee521cb2433670269c98cce7e47f8d511503323cdfe8c110e" => :arm64_big_sur
+    sha256 "ef016731870649b2f385f19e3f2750fe7a3ec1597232943f6c30539e2a80daec" => :catalina
+    sha256 "7cba6ba3c4ed08f3dbb8d992077dac4b73cff72a61d6020aa45ccd7c6c0a3c2a" => :mojave
   end
 
   depends_on "pkg-config" => :build
