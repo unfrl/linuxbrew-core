@@ -1,41 +1,47 @@
 class Deno < Formula
   desc "Secure runtime for JavaScript and TypeScript"
   homepage "https://deno.land/"
-  url "https://github.com/denoland/deno/releases/download/v1.6.0/deno_src.tar.gz"
-  sha256 "60491d842e04ce162face61bb8857bf18a41726afbcbcd9fa532055ace7431ae"
+  url "https://github.com/denoland/deno/releases/download/v1.7.0/deno_src.tar.gz"
+  sha256 "f215103d0bea381495008a8f9e90c467248a2a14d3357c6d105c084186423072"
   license "MIT"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "f57ffbf236768e798bda681cf9d6809752fb53763469c37164ab7e5bf71d98ef" => :big_sur
-    sha256 "6a100d4b0384eae1eec6bb8bd52587b99633d13a07ad8811759216aef45366db" => :catalina
-    sha256 "1bb8ada642868d8741e44316c3b7d69b6a2bd1741d4653d5b19f6c6749e5c07e" => :mojave
+    sha256 "7c82d5c5333984894c6b5c394ec16c837820562fd7e42f3fedcf0b960f0b0a7d" => :arm64_big_sur
+    sha256 "fd4a8f90450e6b5c185ca5d517efa18fd1e41a242a34989c43c104cda7263072" => :catalina
+    sha256 "b20854b2f3884cffa7f3620f6810cdc7cba4a0900b7e1635c60c850984cb74a8" => :mojave
   end
 
   depends_on "llvm" => :build
+  depends_on "ninja" => :build
   depends_on "rust" => :build
+  depends_on "sccache" => :build
   depends_on xcode: ["10.0", :build] # required by v8 7.9+
   depends_on :macos # Due to Python 2 (see https://github.com/denoland/deno/issues/2893)
 
   uses_from_macos "xz"
 
-  # Remove at next version bump. Check that new release includes:
-  # https://github.com/denoland/deno/pull/8718
-  patch do
-    url "https://github.com/denoland/deno/commit/cea42bec3272a8020f1d94afcf1a4cd7e3985553.patch?full_index=1"
-    sha256 "640ece7aab8e7486ea0ec4bfd29ac7e980822a57d12123e802d022bdc7bbaed7"
+  resource "gn" do
+    url "https://gn.googlesource.com/gn.git",
+        revision: "53d92014bf94c3893886470a1c7c1289f8818db0"
   end
 
   def install
     # env args for building a release build with our clang, ninja and gn
     ENV["GN"] = buildpath/"gn/out/gn"
+    ENV["NINJA"] = Formula["ninja"].opt_bin/"ninja"
+    ENV["SCCACHE"] = Formula["sccache"].opt_bin/"sccache"
     # build rusty_v8 from source
     ENV["V8_FROM_SOURCE"] = "1"
-    # overwrite Chromium minimum sdk version of 10.15
-    ENV["FORCE_MAC_SDK_MIN"] = "10.13"
-    # build with llvm and link against system libc++ (no runtime dep)
+    # Build with llvm. We don't remove llvm from HOMEBREW_LIBRARY_PATHS
+    # as this causes build failures. This does not create a runtime dependency.
     ENV["CLANG_BASE_PATH"] = Formula["llvm"].prefix
-    ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib
+
+    resource("gn").stage buildpath/"gn"
+    cd "gn" do
+      system "python", "build/gen.py"
+      system "ninja", "-C", "out"
+    end
 
     system "core/libdeno/build/linux/sysroot_scripts/install-sysroot.py", "--arch=amd64" unless OS.mac?
 
@@ -43,11 +49,12 @@ class Deno < Formula
       system "cargo", "install", "-vv", *std_cargo_args
     end
 
-    # Install bash and zsh completion
-    output = Utils.safe_popen_read("#{bin}/deno", "completions", "bash")
-    (bash_completion/"deno").write output
-    output = Utils.safe_popen_read("#{bin}/deno", "completions", "zsh")
-    (zsh_completion/"_deno").write output
+    bash_output = Utils.safe_popen_read("#{bin}/deno", "completions", "bash")
+    (bash_completion/"deno").write bash_output
+    zsh_output = Utils.safe_popen_read("#{bin}/deno", "completions", "zsh")
+    (zsh_completion/"_deno").write zsh_output
+    fish_output = Utils.safe_popen_read("#{bin}/deno", "completions", "fish")
+    (fish_completion/"deno.fish").write fish_output
   end
 
   test do

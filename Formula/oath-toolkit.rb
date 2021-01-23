@@ -1,9 +1,9 @@
 class OathToolkit < Formula
   desc "Tools for one-time password authentication systems"
   homepage "https://www.nongnu.org/oath-toolkit/"
-  url "https://download.savannah.gnu.org/releases/oath-toolkit/oath-toolkit-2.6.5.tar.gz"
-  mirror "https://fossies.org/linux/privat/oath-toolkit-2.6.5.tar.gz"
-  sha256 "d207120c7e7fdd540142d04ca06d83fb3277c8f2fb794a74535d04b2aa0ec219"
+  url "https://download.savannah.gnu.org/releases/oath-toolkit/oath-toolkit-2.6.6.tar.gz"
+  mirror "https://fossies.org/linux/privat/oath-toolkit-2.6.6.tar.gz"
+  sha256 "fd68b315c71ba1db47bcc6e67f598568db4131afc33abd23ed682170e3cb946c"
   license all_of: ["GPL-3.0-or-later", "LGPL-2.1-or-later"]
 
   livecheck do
@@ -12,11 +12,10 @@ class OathToolkit < Formula
   end
 
   bottle do
-    sha256 "461150aa963067a32286e1e9dc433abc8979ded568406763de8143066c5f2031" => :big_sur
-    sha256 "c2bcad1082c8c069fdc3ee33a667f55498dd87fed6ae73ad8dec8bffcaf342ff" => :arm64_big_sur
-    sha256 "ba7b1965a0a32616bcc13f6475aaa97c3a16de6bbcc2779b8f88cdf801ce4465" => :catalina
-    sha256 "dbae2b106ca1338f2e610d5121e9b318135f1608302cad122ba6912a34f03b6a" => :mojave
-    sha256 "af182b384c5e4c685539cc03d5c9eb63c7ac50db98f5c4396cf6e61b0a997db2" => :x86_64_linux
+    sha256 "ed6ceb54edc0b0bea449a75c756b604c6204f6fd80c9e280ce57b1e3d7140ac7" => :big_sur
+    sha256 "3e54014feda461a1aa6f68f71570c8be14076aac4a6823345b76b10feba0cf94" => :arm64_big_sur
+    sha256 "04c85d25d9c1e8cac2164a4b538344f95181346fd3170e65e43173aca6770b6d" => :catalina
+    sha256 "136fc9c533486f31645fdd6594d96fc8f17487439248b78a8c42a868ce7aaacb" => :mojave
   end
 
   depends_on "pkg-config" => :build

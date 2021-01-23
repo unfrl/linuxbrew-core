@@ -3,8 +3,8 @@ class Exiftool < Formula
   homepage "https://exiftool.org"
   # Ensure release is tagged production before submitting.
   # https://exiftool.org/history.html
-  url "https://exiftool.org/Image-ExifTool-12.15.tar.gz"
-  sha256 "02e07fae4070c6bf7cdeb91075f783fea17c766b7caa23e6834e8bba424551b9"
+  url "https://exiftool.org/Image-ExifTool-12.16.tar.gz"
+  sha256 "c140797d72acdaf04f7ce0629867353510b56fbe99ceaac0742bbc379610756a"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
 
   livecheck do
@@ -14,11 +14,10 @@ class Exiftool < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "460e9669b490c7eb499fe22a79a61af24274b29f8ed30630f3066b5bafc78569" => :big_sur
-    sha256 "c3f82fb1ef904fdfda38001924c9a0e4c1ad97f14cee34982cf2b36c2db80a58" => :arm64_big_sur
-    sha256 "b21f5d6bdf69f77fba7803b27eaf24c8f564503a192774ed4cf0c6bf259052b0" => :catalina
-    sha256 "fca252c42eec5f3a026668e9e96997c57d4ce5cc4a8bfd3a844f8016fe7bc41e" => :mojave
-    sha256 "166a2318025bc3261abc56d7c17a887ca81f84189a2f6b4fef79ba73cf971c52" => :x86_64_linux
+    sha256 "25ff309cacd34da2b0e285b0ae6a1eda155afe8fc76270f881127cef9fea9524" => :big_sur
+    sha256 "a0d8370ee8da32d13b5deb9acfbfa5e460a17c248b358f44c026690a8d22905f" => :arm64_big_sur
+    sha256 "8abcffb62ed34374bdb53169396db443b968631904a4450f6b68c9603e9392b9" => :catalina
+    sha256 "3faea0b5e1f2c4aba9273949f583e06a3a4cf7624b57883cd87f7889f2265989" => :mojave
   end
 
   def install
