@@ -16,6 +16,7 @@ class Jsvc < Formula
     sha256 "771e112751eb5c424f61c04f9a4aec6c02e0001ce88b400565c7a2b8fce71a51" => :arm64_big_sur
     sha256 "2e4c9e5eaf94ec1b3f9bc70288ea4dc4459e766dbc0f4df9c018f3bbdbf62456" => :catalina
     sha256 "357dc6a1c7e9f7c5e07263e0e9985ed3e2a578e9319289479ca204f7c10efc8d" => :mojave
+    sha256 "364bcd221ed2022c793a0d0b2ab9e562101fbbaeb8c5925c1555ac650d387d18" => :x86_64_linux
   end
 
   depends_on "openjdk"
