@@ -15,6 +15,7 @@ class Gsoap < Formula
     sha256 "b27b5c8ba8cc9bd7bb5bee7850e79abe2a83827a66e07b8ec1616d9e91c2927b" => :arm64_big_sur
     sha256 "cbaaa15033dc9a62aa74195175860bba1201d54a1cf05c809424caa38cfd735a" => :catalina
     sha256 "8474f840a2b849a0779a9d7a54ecf390d4d6cdf2b4898530ca7e4415b31c9625" => :mojave
+    sha256 "2be11017a9821c15e088ce0b349e462b6c3add45916f97201efe63ddba54e998" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
