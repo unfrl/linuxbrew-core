@@ -12,6 +12,7 @@ class Ahcpd < Formula
     sha256 "49ef92eb18038f60e6419a5dfecd11be62f3b69cb4778c473050e5443e72ac06" => :arm64_big_sur
     sha256 "9320f1465296a364f0d55ffca9342f087b781f0853ad2213b278189bfc062202" => :catalina
     sha256 "22a512b076e972064d6b0af3eb696a5d2ee62c06aadd2aea01a0bec886d28379" => :mojave
+    sha256 "42fb84d1c4dc82de4e74fde394685ea1abf9b8d21911ff0cba51c38abcbbfc47" => :x86_64_linux
   end
 
   patch :DATA
