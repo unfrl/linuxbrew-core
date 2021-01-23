@@ -12,6 +12,7 @@ class Minikube < Formula
     sha256 "9543a3d3316da0e7727938b4c517e5dc18958328c8c0b2cfc9998685819fc9e3" => :big_sur
     sha256 "ff66b35900830df46f2178601e0cdd103348615c4e8abc964ad544a189906b13" => :catalina
     sha256 "24aec8391f1188177782c730621b1862e80d681adac891a0a7ae4bd656bd7c04" => :mojave
+    sha256 "9b011dfa62efb5e7c8931c9d8f9b8ba11edc2e843326a03eccc7d727935fa156" => :x86_64_linux
   end
 
   depends_on "go" => :build
