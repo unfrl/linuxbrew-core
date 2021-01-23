@@ -18,6 +18,7 @@ class Babeld < Formula
     sha256 "6a56133eedc55610cbd65c8862584e2a109702e6f6c3619c58bcc99a41c99da1" => :arm64_big_sur
     sha256 "1e311a15868154bf204fe2d9d19ed1db24c830fcf9cfaa32cf1255d7ed35b108" => :catalina
     sha256 "1ddbacdd3433b008c2ad86e582ab2376cf0bab93b7939bb9f47d6e1e1fd06ad3" => :mojave
+    sha256 "560f7d73b3d1f4c987766f8a669fc666f44711bfbdac99e8d353f8edb118fe38" => :x86_64_linux
   end
 
   def install
