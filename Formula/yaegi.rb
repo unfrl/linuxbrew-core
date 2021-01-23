@@ -12,6 +12,7 @@ class Yaegi < Formula
     sha256 "e8e2e114ab838a7540ab78e98f2f41b0d083e2743d5c71b25dd3ac8e1da46613" => :arm64_big_sur
     sha256 "0761773a460df6af65c38813e173fb2673246cf1e635950651151b3276bc4d59" => :catalina
     sha256 "1c9e3915c5d8a0494c0de9120c9e86e99d351e8424fce8c7e3f64f36507ab28e" => :mojave
+    sha256 "28253ac2b35d21654065bcc5175f4811a89bb79daf52bbf5f26b538278856810" => :x86_64_linux
   end
 
   depends_on "go" => :build
