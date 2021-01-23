@@ -1,8 +1,8 @@
 class Nss < Formula
   desc "Libraries for security-enabled client and server applications"
   homepage "https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS"
-  url "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_60_1_RTM/src/nss-3.60.1.tar.gz"
-  sha256 "2051c20b61112df24bad533ac37f6c66c1bc0d6ea70bb9d9cad102d20324279d"
+  url "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_61_RTM/src/nss-3.61.tar.gz"
+  sha256 "312e2d804b34ccf0fec70b57cf8cd6ac853f8ced60df53e30ebb0a7bcd0e1370"
   license "MPL-2.0"
 
   livecheck do
@@ -12,11 +12,10 @@ class Nss < Formula
 
   bottle do
     cellar :any
-    sha256 "12e021d10f98f0bf6df1975c98a23e79e050109c874acdca9ff246051e97cd9a" => :big_sur
-    sha256 "fc6d984dfc5495be9c16151e9b54a50575ba52c0ee2ab96526062be28d6672bb" => :arm64_big_sur
-    sha256 "6568b1349fce2795f4ea07506446df9949a59b9224dedbebd87aa2cbd5067d8b" => :catalina
-    sha256 "c45aab528147c56d4ab4ae50c9567fa41b2051111e1eea8070fe8b1594e7a2be" => :mojave
-    sha256 "9d72a635c95f9a64b2d521e72481b1db58137370c60ddbee0ca3197e208e8e82" => :x86_64_linux
+    sha256 "8056292df9295e56731a0b05a6d9d6a81aba4ce42ade6b0d396e5f5bb8d4cfad" => :big_sur
+    sha256 "fb2e0ca15986a088d7c745b4bb79a775bdc790a713e5fad4caf705fad4e3799d" => :arm64_big_sur
+    sha256 "9397434fec5b5f91b80cab57feca33f70c0c7cad087da3bbd0f826bcadd7d5cc" => :catalina
+    sha256 "56deeaaa1e946638c40eefd416c303a08c0dd01eb2fe234713c148c65a7c01e1" => :mojave
   end
 
   depends_on "nspr"

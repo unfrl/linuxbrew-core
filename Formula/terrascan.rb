@@ -1,18 +1,17 @@
 class Terrascan < Formula
   desc "Detect compliance and security violations across Infrastructure as Code"
   homepage "https://www.accurics.com/products/terrascan/"
-  url "https://github.com/accurics/terrascan/archive/v1.2.0.tar.gz"
-  sha256 "8e9daa4e3b1a1e93d12925fe4facb8171f534dece6742c23ebb9049bf3dd739e"
+  url "https://github.com/accurics/terrascan/archive/v1.3.1.tar.gz"
+  sha256 "8be53cec9a55691bf14d035c99417b7566e43abeee1fd152e8fb9ef69ea67119"
   license "Apache-2.0"
   head "https://github.com/accurics/terrascan.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "911488ef4e334a7496edeb386a656bb8b5aa48de81c2ace70ea22cd857e79289" => :big_sur
-    sha256 "99003f4d8cede3a65bc5fcc494cc6d03349b150b4ef27c37d3bfca06799db5c0" => :arm64_big_sur
-    sha256 "3d66e898e68386b23fae88df32df00a46ec1a03d1431c36aeadc96e3a233b52d" => :catalina
-    sha256 "6337a9985ded331f613fa958daf4d444feba3174d127997b6120891817afb1fb" => :mojave
-    sha256 "374a85c163ad81f8167fea7e18f1b3bfef5685452206ef766e4c75c57510b294" => :x86_64_linux
+    sha256 "f651acbd7467858a3edb9b320c71473ec6949686bf095aadffb1696d3d1921b2" => :big_sur
+    sha256 "2b44fb20d0dd5794a028d0c897f3335bb4d1aa4f23cec2be26a58c473977c9f2" => :arm64_big_sur
+    sha256 "c2b0cb042bf6b3739e77d391eda6e3b1eceffc3d746c81194772daa074426ffd" => :catalina
+    sha256 "bab112682da7663edec11998f40bf43753ee8793bd1107722e92376c7ffe2fa4" => :mojave
   end
 
   depends_on "go" => :build
@@ -37,16 +36,14 @@ class Terrascan < Formula
     EOS
 
     expected = <<~EOS
-      results:
-          violations: []
-          count:
-              low: 0
-              medium: 0
-              high: 0
-              total: 0
+      \tPolicies Validated  :	149
+      \tViolated Policies   :	0
+      \tLow                 :	0
+      \tMedium              :	0
+      \tHigh                :	0
     EOS
 
-    assert_match expected, shell_output("#{bin}/terrascan scan -f ami.tf -t aws")
+    assert_match expected, shell_output("#{bin}/terrascan scan -f #{testpath}/ami.tf -t aws")
 
     assert_match "version: v#{version}", shell_output("#{bin}/terrascan version")
   end
