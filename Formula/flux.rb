@@ -13,11 +13,12 @@ class Flux < Formula
   end
 
   bottle do
-    cellar :any
+    cellar :any_skip_relocation
     sha256 "db5a7adde712f1874d90a9b9da3b0a9ec63f2b0925ab4b84f8438528098b3714" => :big_sur
     sha256 "823c3b21063fe38784315263aea12bd9185ffa3b1bc8f8120a4ae1a6f814be10" => :arm64_big_sur
     sha256 "2f24b7e81975b7b3330ab5344ea5a3f558bc1cb31ff674b598a92c60c73f0a0a" => :catalina
     sha256 "72b7ab5f16a3a880645afb97f0a30e7353442182bf3dfc3a36b5b19b66fb104b" => :mojave
+    sha256 "e5c7304930962db37324783a28a093440f92cc97727813ce4f9c86a24e1dd630" => :x86_64_linux
   end
 
   depends_on "go" => :build
