@@ -3,8 +3,8 @@ class Diffoscope < Formula
 
   desc "In-depth comparison of files, archives, and directories"
   homepage "https://diffoscope.org"
-  url "https://files.pythonhosted.org/packages/91/1a/f15768b9af208111eec34135f26e0993e0e3b33164b2742d684dc29fcc1c/diffoscope-164.tar.gz"
-  sha256 "bc269a39ec72261d9fead55bd951f6cbbe3d2ccce1481f974665999a5b141fff"
+  url "https://files.pythonhosted.org/packages/d6/13/d2c9f32aaf2f90a51ff84e0ea69c5ea6e0867f7f8faccdd39141da8239a6/diffoscope-165.tar.gz"
+  sha256 "c25b9e4f03ee6c1ad94024a95bd4e572d25372ed457b6cb7ef18cb01d9fdf9a4"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -13,11 +13,10 @@ class Diffoscope < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "d6e3f6814e03ae94ece8aee3cea561fe352ffaba54e26d0f83e863b4102b9c2e" => :big_sur
-    sha256 "7f4516261a620f685012a5284b179d14a934ad0130f3379e3312ee80f5674be3" => :arm64_big_sur
-    sha256 "de7f317c11377d4ca92aee688c08eeee974fda4fe9680e30f818068fbe125bea" => :catalina
-    sha256 "0dc9c9e70d89f649e68966ac146ce8e03ddc01021af8b62323c8f4f77dd093f8" => :mojave
-    sha256 "0e6d6fe26b7f8647454707611f04c8369c52c9e14fcc5477bf56f73932acd60a" => :x86_64_linux
+    sha256 "fe14f34879e07c0d0b9296da3f6a423920390abb261f97c132a233b4b73a28bd" => :big_sur
+    sha256 "b1c4bef0c194f34d6e1acca358224a8e6897140590e3c90138120d4f93d595ef" => :arm64_big_sur
+    sha256 "2eff4543a80d793ed35b0710af3c1be9e4fcdaf94ad7a46e5f7a7e6901bf0333" => :catalina
+    sha256 "407ba3201357bef783ce1a457a12df99064aaefc6ca11372052909ae8a5afd90" => :mojave
   end
 
   depends_on "gnu-tar"
@@ -42,8 +41,8 @@ class Diffoscope < Formula
   end
 
   resource "python-magic" do
-    url "https://files.pythonhosted.org/packages/e3/85/1aff76b966622868a73717abd8b501a3c91890e23a65e5f574ff6df1970f/python-magic-0.4.18.tar.gz"
-    sha256 "b757db2a5289ea3f1ced9e60f072965243ea43a2221430048fd8cacab17be0ce"
+    url "https://files.pythonhosted.org/packages/2a/d5/2ad6bba29e8f6911d0b1719370e11d5961f4ba6f71845f6421c0ba2badb3/python-magic-0.4.20.tar.gz"
+    sha256 "0cc52ccad086c377b9194014e3dbf98d94b194344630172510a6a3e716b47801"
   end
 
   def install

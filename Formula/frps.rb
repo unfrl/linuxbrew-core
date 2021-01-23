@@ -2,17 +2,16 @@ class Frps < Formula
   desc "Server app of fast reverse proxy to expose a local server to the internet"
   homepage "https://github.com/fatedier/frp"
   url "https://github.com/fatedier/frp.git",
-      tag:      "v0.34.3",
-      revision: "aa0a41ee4e3fd332978d509dcdbb09a7f457c880"
+      tag:      "v0.35.0",
+      revision: "b2ae433e18fcecaa752df49806c2d230570a5900"
   license "Apache-2.0"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "d241cfd3c4a597f5029eb2f850841ca0c253bdab371e500c8b92404dcde4c8b6" => :big_sur
-    sha256 "61c1686bf5383eec54dddc6ee31f356462d96e8e7ce01caa80a0761e1e51bd65" => :arm64_big_sur
-    sha256 "d799ca6b6935799ef65f44627f36878fb00e5b7c03ee62f560abd3ff2623be81" => :catalina
-    sha256 "20f2faf0dd368b69d9273efc21bb61bd8b1f6d62191867ae8bca0ff7bb956456" => :mojave
-    sha256 "a63fb2a0f0ad8b55e3d1a3f5f9fa8202bd20c17fa3fe307018735733c8e2ab86" => :x86_64_linux
+    sha256 "612649a42ecaa4a4944e58aec5d23f88864cf354896178e1f8c0a49417d586aa" => :big_sur
+    sha256 "a255964e956fe5f414d4f652a9cdf9d797c72f0814321c9e1fae3335e9ad74a4" => :arm64_big_sur
+    sha256 "345ddc79073aecc07287ce06e61afa401ffa39c2707e654e26fc5cc38c9beb87" => :catalina
+    sha256 "3390cff5af37dea9d372424ce2e6b8ac29546fdb1767c50c982d29f2c48b11c6" => :mojave
   end
 
   depends_on "go" => :build
@@ -65,6 +64,6 @@ class Frps < Formula
     sleep 3
 
     output = read.gets
-    assert_match "frps tcp listen on", output
+    assert_match "frps uses command line arguments for config", output
   end
 end
