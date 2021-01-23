@@ -12,6 +12,7 @@ class Kind < Formula
     sha256 "4b233d91a8d967dd1c2e0b1cda5abfc9c18d67d7062d74193d6bbb3247726227" => :arm64_big_sur
     sha256 "88fc4241b464cfec95189c325d2d28eecb0b04aeb1d7e56f9d04a7cd82f7ebd5" => :catalina
     sha256 "0e920ee972ce05f98aaddf4a7bc4b591df4fdd19dc95db508dfaa763499ff118" => :mojave
+    sha256 "7a5595da7f271219a53cbd95a5b729c581fb3e4f8ece6d449074cbe33f10d627" => :x86_64_linux
   end
 
   depends_on "go" => :build
