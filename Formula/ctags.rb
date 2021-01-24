@@ -27,6 +27,7 @@ class Ctags < Formula
     sha256 "8e8ee6051008e73c999dbc8476221f220ef87fdf9cbc409a308df6a956e114e6" => :arm64_big_sur
     sha256 "2292b70a7b744c2238507417e40c2dc7273c6d919c9fe037bf668cf00863ad92" => :catalina
     sha256 "238b65e5e1614f1d24fd88b6741c04d1cf48fd5f5d247cdbcd1f82d5796197d5" => :mojave
+    sha256 "1b18fd41f63d6dac15a567e7ac15d0fabf5a1197ebe09beea7b5702c9e956f98" => :x86_64_linux
   end
 
   head do
