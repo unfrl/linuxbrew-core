@@ -11,6 +11,7 @@ class AliyunCli < Formula
     sha256 "a71e9efe791ca38f748250d63985a08b0b2f669c5c9d0435ae057d6865635622" => :arm64_big_sur
     sha256 "2459f19e21d19673e1eea47c13614052cc14f8cc6a6fc7d616ca3cd89ac97d8e" => :catalina
     sha256 "43243173df150a04c0b17f9d42276e979784d13c9d1102efec26455d7d01f4f5" => :mojave
+    sha256 "445c45510656ab218a4753722ede9ceeb5a9d0ed772f3ca91a2fa63709cf27df" => :x86_64_linux
   end
 
   depends_on "go" => :build
