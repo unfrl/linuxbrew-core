@@ -12,6 +12,7 @@ class Mhonarc < Formula
     sha256 "7100a27e7d9ea90abbee2f1d5eba2ef8a26c8fb38febb8fbf49f6da3a8bd785f" => :arm64_big_sur
     sha256 "d8d93f40967293512be76d832dd5ced8f4b40b720e20350f32a4237de04bcd19" => :catalina
     sha256 "23a6289c76372033b3c328a8fc67cc94b3b0895b7be58a67bb2f5da21c2b4707" => :mojave
+    sha256 "a7ce0f782fc27bf1cbe4f9a855d2eba359bef81ef31cb0d276aac531dda3f14a" => :x86_64_linux
   end
 
   depends_on "perl"
