@@ -1,8 +1,8 @@
 class Perl < Formula
   desc "Highly capable, feature-rich programming language"
   homepage "https://www.perl.org/"
-  url "https://www.cpan.org/src/5.0/perl-5.32.0.tar.xz"
-  sha256 "6f436b447cf56d22464f980fac1916e707a040e96d52172984c5d184c09b859b"
+  url "https://www.cpan.org/src/5.0/perl-5.32.1.tar.xz"
+  sha256 "57cc47c735c8300a8ce2fa0643507b44c4ae59012bfdad0121313db639e02309"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
   head "https://github.com/perl/perl5.git", branch: "blead"
 
@@ -12,12 +12,10 @@ class Perl < Formula
   end
 
   bottle do
-    sha256 "7db44dc9609acbada14bd4cf847b26b49f1b3f18693e0870e806741a274c957a" => :big_sur
-    sha256 "e7ef68c4055b20ecaaaff6e90634a885c33a26a87921ee5c333f7be6aa1bc0f2" => :arm64_big_sur
-    sha256 "bc6c97521b6edf723c8ee0742aebb1954b5c8fec81bf2d96861c3f8bcc4e404d" => :catalina
-    sha256 "f09b3fefe2175b36e590ee13e7aa84d28ebcbce3ef8e252e24a0aebb752405ab" => :mojave
-    sha256 "718a54da6e3b02c33d5230776aaa54eaaac710c09cf412078014c9c50dd0ac51" => :high_sierra
-    sha256 "82ccac650bfefacad6b1ce088d3b612c16ae3677cb0d3c3ea52a2d4f786a1cd8" => :x86_64_linux
+    sha256 "846c28c0b3ae4d63fb82feef77832b37f198a5669f4fb58a9a4cd081aa9c1e27" => :big_sur
+    sha256 "94989cfa38487dfbea5d430da2e4e85734d79b6125020992a5009624628899f1" => :arm64_big_sur
+    sha256 "dce1838f66ce3929a58c1a68f351c98f7f2176b41d624e3cfc7bd8ec72d8cf90" => :catalina
+    sha256 "45de452aa689c422e320ea35fa040a9cc0c6640c2a3b1dff9cabff3f4f17b490" => :mojave
   end
 
   uses_from_macos "expat"
@@ -29,13 +27,6 @@ class Perl < Formula
 
   # Prevent site_perl directories from being removed
   skip_clean "lib/perl5/site_perl"
-
-  patch do
-    # Enable build support on macOS 11.x
-    # Remove when https://github.com/Perl/perl5/pull/17946 is merged
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/526faca9830646b974f563532fa27a1515e51ca1/perl/version_check.patch"
-    sha256 "cff250437f141eb677ec2215a9f2dfcbacba77304dac06499db6c722c9d30b58"
-  end
 
   def install
     args = %W[

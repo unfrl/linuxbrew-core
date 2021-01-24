@@ -3,8 +3,8 @@ class Jrnl < Formula
 
   desc "Command-line note taker"
   homepage "https://jrnl.sh/"
-  url "https://files.pythonhosted.org/packages/5f/d6/73a8656987ea072e579ff71810eb4b8c386baf26de214cf02995f2a9c05a/jrnl-2.6.tar.gz"
-  sha256 "ea2c35737bdda0ab5f8887d81733e1ad7d1f6e61fa13745102651386b530c15d"
+  url "https://files.pythonhosted.org/packages/42/03/23da43bd2d7e3bfb9492ed27815dbbb7ece978bf440ac31df734d5480412/jrnl-2.7.tar.gz"
+  sha256 "7eacdee43675cc2b9ac091e5a843ccbd334d83d8802c7097bd71d0f2b0d3ba58"
   license "GPL-3.0-only"
 
   livecheck do
@@ -13,11 +13,10 @@ class Jrnl < Formula
 
   bottle do
     cellar :any
-    sha256 "f9ca8bca15329ef3d89d3a2b8a5532ae7cceac1886d602042925f85880d63041" => :big_sur
-    sha256 "d8b8f4d8b72fa13db0c6c233819684144f0f4a509354a9e7a3444dbd55bcea4a" => :arm64_big_sur
-    sha256 "0b6415a27a1ae8295c766fe06a9eb0de676382ae46b27374e153e7d24d2528bf" => :catalina
-    sha256 "7ddcbda75725c2e3e6de6442c96cb45d0f4db767232c70eb22c7d7430f592058" => :mojave
-    sha256 "c53c2442b7f459df038365e1a4ef494bfa7b5ca0bf1356f77284639dd9f27a21" => :x86_64_linux
+    sha256 "4e448410c5aaeb2956c40164885b44acbf490654b167e070d71994f801686846" => :big_sur
+    sha256 "61c9d11c1bb47b070876ca61df5f0b0fa15fb67ca5b818cacb47bd2dd6c6869f" => :arm64_big_sur
+    sha256 "98e893542a7b48585a5a1a6a5fd01f6d13e43043142c8e195d3e712f64d00647" => :catalina
+    sha256 "c216cd7f0bc5d2fc62aa327aa7ea474cc2e7c2c313ab722994201c0f7a997775" => :mojave
   end
 
   depends_on "python@3.9"
@@ -54,8 +53,8 @@ class Jrnl < Formula
   end
 
   resource "keyring" do
-    url "https://files.pythonhosted.org/packages/c9/5a/c7aefc112d75872ea2099c494b84ba6e108b20584264929e614c60939368/keyring-21.5.0.tar.gz"
-    sha256 "207bd66f2a9881c835dad653da04e196c678bf104f8252141d2d3c4f31051579"
+    url "https://files.pythonhosted.org/packages/19/c7/e1a9c556745518c9c3d46613c10a968757b16e29341ec8e0815fd07e0f93/keyring-21.8.0.tar.gz"
+    sha256 "1746d3ac913d449a090caf11e9e4af00e26c3f7f7e81027872192b2398b98675"
   end
 
   resource "parsedatetime" do
@@ -74,8 +73,8 @@ class Jrnl < Formula
   end
 
   resource "pytz" do
-    url "https://files.pythonhosted.org/packages/09/07/448a8887c7195450604dfc0305d80d74324c36ee18ed997664051d4bffe3/pytz-2020.4.tar.gz"
-    sha256 "3e6b7dd2d1e0a59084bcee14a17af60c5c562cdc16d828e8eba2e683d3a7e268"
+    url "https://files.pythonhosted.org/packages/70/44/404ec10dca553032900a65bcded8b8280cf7c64cc3b723324e2181bf93c9/pytz-2020.5.tar.gz"
+    sha256 "180befebb1927b16f6b57101720075a984c019ac16b1b7575673bea42c6c3da5"
   end
 
   resource "pyxdg" do
@@ -84,8 +83,8 @@ class Jrnl < Formula
   end
 
   resource "PyYAML" do
-    url "https://files.pythonhosted.org/packages/64/c2/b80047c7ac2478f9501676c988a5411ed5572f35d1beff9cae07d321512c/PyYAML-5.3.1.tar.gz"
-    sha256 "b8eac752c5e14d3eca0e6dd9199cd627518cb5ec06add0de9d32baeee6fe645d"
+    url "https://files.pythonhosted.org/packages/a0/a4/d63f2d7597e1a4b55aa3b4d6c5b029991d3b824b5bd331af8d4ab1ed687d/PyYAML-5.4.1.tar.gz"
+    sha256 "607774cbba28732bfa802b54baa7484215f530991055bb562efbed5b2f20a45e"
   end
 
   resource "six" do

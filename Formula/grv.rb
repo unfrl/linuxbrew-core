@@ -16,6 +16,10 @@ class Grv < Formula
     sha256 "84ec8581649a0367f502b39d1803f4e70bce7b4837ddc5e7c61886d2af5d00a7" => :x86_64_linux
   end
 
+  # Reported upstream at
+  # https://github.com/rgburke/grv/issues/107
+  disable! date: "2021-08-11", because: :does_not_build
+
   depends_on "cmake" => :build
   depends_on "go" => :build
   depends_on "pkg-config" => :build
