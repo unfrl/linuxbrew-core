@@ -16,6 +16,7 @@ class Perl < Formula
     sha256 "94989cfa38487dfbea5d430da2e4e85734d79b6125020992a5009624628899f1" => :arm64_big_sur
     sha256 "dce1838f66ce3929a58c1a68f351c98f7f2176b41d624e3cfc7bd8ec72d8cf90" => :catalina
     sha256 "45de452aa689c422e320ea35fa040a9cc0c6640c2a3b1dff9cabff3f4f17b490" => :mojave
+    sha256 "e1b506ab35bdd27e12bce3e3adb86e8121eb21166abfe07e6e8258f3041e331b" => :x86_64_linux
   end
 
   uses_from_macos "expat"
