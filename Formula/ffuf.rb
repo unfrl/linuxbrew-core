@@ -11,6 +11,7 @@ class Ffuf < Formula
     sha256 "c34f392d06f10f6b8ed06460e849d3cbebdbd579a684424f66803ec8d168d9b7" => :arm64_big_sur
     sha256 "130a3fd2a4df3d28a6211566f312e18ca50dec665d7d47477f60bb3808d439fb" => :catalina
     sha256 "8040d1fd3ef12a29855b0e3a35dabe91212feec555466b15e879506522ddca6f" => :mojave
+    sha256 "1e8e295709b91457b017b42a969cb53c0b39f869b974fa6301250b47b34573c0" => :x86_64_linux
   end
 
   depends_on "go" => :build
