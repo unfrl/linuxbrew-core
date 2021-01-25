@@ -4,15 +4,15 @@ class LuajitOpenresty < Formula
   url "https://github.com/openresty/luajit2/archive/v2.1-20201229.tar.gz"
   sha256 "4275bf97356d713826e7195d1c330568b6089ff1fd4c6954f998e0f60a2baa30"
   license "MIT"
+  revision 1
   head "https://github.com/openresty/luajit2.git", branch: "v2.1-agentzh"
 
   bottle do
     cellar :any
-    sha256 "9fa20c915d38bc34cf61def4820d6f07e7bf16f1a2e01a8a2a80db6ba3f7567e" => :big_sur
-    sha256 "60153b2fbc7fe9735802e9c603b07f811713a3f7afc3af1f5662e9abebee3a96" => :arm64_big_sur
-    sha256 "ff62b7661154ef6b28e686dd5a5f50c732f375b67700b7aa285ef6d01b91987c" => :catalina
-    sha256 "6ba231a307a5ff68374d543b8a8a59eedb2b35228f4e822f666a187c16ef16d3" => :mojave
-    sha256 "1f15cf85c6a6cf180c26f50f143be7f7aaa558d0d7d5dc4d859a2021061dc067" => :x86_64_linux
+    sha256 "969786cd904fce0a2ec3cdeba2348603d767fff7b8a954194228ff05e151518d" => :big_sur
+    sha256 "d9700884c04219e458886ba68abdfc980a5ba40cdc073edb2ac70e63a4283e26" => :arm64_big_sur
+    sha256 "f6c7e24c8ba0faaeb9b831851c50175c942acccb2c916127e409214edd5bbf7d" => :catalina
+    sha256 "3efbb3a071c3ec6a2a9bdb9aa3724a1c8f36634e8377a27751b89d1c26e40fe8" => :mojave
   end
 
   keg_only "it conflicts with the LuaJIT formula"
@@ -50,10 +50,6 @@ class LuajitOpenresty < Formula
               "INSTALL_LMOD=#{HOMEBREW_PREFIX}/share/lua/${abiver}"
       s.gsub! "INSTALL_CMOD=${prefix}/${multilib}/lua/${abiver}",
               "INSTALL_CMOD=#{HOMEBREW_PREFIX}/${multilib}/lua/${abiver}"
-      unless build.head?
-        s.gsub! "Libs:",
-                "Libs: -pagezero_size 10000 -image_base 100000000"
-      end
     end
 
     # Having an empty Lua dir in lib/share can mess with other Homebrew Luas.
