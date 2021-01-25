@@ -11,6 +11,7 @@ class Aide < Formula
     sha256 "2f0181e158a1a2eb318f453534ca37418d102508525cfd090cc1405c3e7f7554" => :arm64_big_sur
     sha256 "ffc37c63e0b9511714e4c29030c765239a203de201aebc297dc77019eeacce8b" => :catalina
     sha256 "aed7265c6f9b83234b08790276d9e4b8fd2e8c2def9e3641c81310bb56fa1a23" => :mojave
+    sha256 "3825e7784abd034a18ef937f0a56b474feb42eb4e19d4306f9eaf73513389753" => :x86_64_linux
   end
 
   head do
