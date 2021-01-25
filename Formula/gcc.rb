@@ -4,7 +4,7 @@ class Gcc < Formula
   desc "GNU compiler collection"
   homepage "https://gcc.gnu.org/"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
-  revision OS.mac? ? 2 : 7
+  revision OS.mac? ? 3 : 7
   head "https://gcc.gnu.org/git/gcc.git" if OS.mac?
 
   if OS.mac?
@@ -39,10 +39,10 @@ class Gcc < Formula
   bottle do
     cellar :any
     rebuild 1
-    sha256 "9c9b0681ad6d577b2c0b29e9998994ef02845a7b793e6272d1adfcb9649892f2" => :big_sur
-    sha256 "fe518a0c7323164fc9fc99b3c8b70ff62ed2d3ff0cdb4dcb082f4b455f4946ef" => :arm64_big_sur
-    sha256 "890e47667229416dcafa9c11498e34c4329b8a25830dbad8bcda4b7b27a78568" => :catalina
-    sha256 "3ea30e6319c5a1dbde77c01f5012ea6183199f2cfe598b4e6ec4cc9d36e82d94" => :mojave
+    sha256 "f02c7193b10ea81529c0246bc196b725b1072e92d383e099d78c22956d29347e" => :big_sur
+    sha256 "b4b7c67dd8092a1c8f8da6c90bdc561507bd800d1f115746a10d2fd4bfdc6e28" => :arm64_big_sur
+    sha256 "83c9ae812879188b9b5e772092b1841a57a2c838927f43376b1f9e715d331a48" => :catalina
+    sha256 "fb30e8f0df703e30a0be874a5f3ec4567d67ad42337cb76451199dccdd2de530" => :mojave
     sha256 "8bde377e3d9ca28bfa842583accbacfa912666e71ffb5de7cb401663ca894c25" => :x86_64_linux
   end
 
@@ -69,11 +69,11 @@ class Gcc < Formula
   cxxstdlib_check :skip
 
   if OS.mac? && Hardware::CPU.intel?
-    # Patch for Big Sur version numbering, remove with GCC 11
-    # https://github.com/iains/gcc-darwin-arm64/commit/556ab512
+    # Patch for Big Sur, remove with GCC 10.3
+    # https://gcc.gnu.org/bugzilla/show_bug.cgi?id=98805
     patch do
-      url "https://raw.githubusercontent.com/Homebrew/formula-patches/7baf6e2f/gcc/bigsur.diff"
-      sha256 "42de3bc4889b303258a4075f88ad8624ea19384cab57a98a5270638654b83f41"
+      url "https://raw.githubusercontent.com/Homebrew/formula-patches/6a83f36d/gcc/bigsur_2.patch"
+      sha256 "347a358b60518e1e0fe3c8e712f52bdac1241e44e6c7738549d969c24095f65b"
     end
   end
 
@@ -292,9 +292,13 @@ class Gcc < Formula
 
     (testpath/"hello-cc.cc").write <<~EOS
       #include <iostream>
+      struct exception { };
       int main()
       {
         std::cout << "Hello, world!" << std::endl;
+        try { throw exception{}; }
+          catch (exception) { }
+          catch (...) { }
         return 0;
       }
     EOS
