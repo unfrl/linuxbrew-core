@@ -4,6 +4,7 @@ class Qscintilla2 < Formula
   url "https://www.riverbankcomputing.com/static/Downloads/QScintilla/2.11.6/QScintilla-2.11.6.tar.gz"
   sha256 "e7346057db47d2fb384467fafccfcb13aa0741373c5d593bc72b55b2f0dd20a7"
   license "GPL-3.0-only"
+  revision 1
 
   livecheck do
     url "https://www.riverbankcomputing.com/software/qscintilla/download"
@@ -12,10 +13,10 @@ class Qscintilla2 < Formula
 
   bottle do
     cellar :any
-    sha256 "f5546d10d3c473aeed9ecb374feab4fe893cb66fae6f19ac471375f988a81b10" => :big_sur
-    sha256 "e6d4bf7383c3358038268d418cf83f529dac7e5883ef11d19acab98204703094" => :catalina
-    sha256 "48ed5b801eb552d398cdf3f1ba4881be8335fd0beb3515f9525ab1d8c1006c1d" => :mojave
-    sha256 "fe0996bfc75204cbc62f0e870db714d925d569c96af21b9b2ebf823d7fc88bb2" => :x86_64_linux
+    sha256 "3fb749e627e819fab00681faf62d46f2cf796e646ad4a0bc312322e6472c1919" => :big_sur
+    sha256 "9550210145964f8fc695cc754be7cc49a1021cb745e8220f27303c6092694a92" => :arm64_big_sur
+    sha256 "2190099d2eea41edb52044c085e22dfe7febb504e0ac2a98665e559488cc96a2" => :catalina
+    sha256 "b33ca58c5d08b150054ee0d4d0b4a5cee2e3a796791efe439ddee26ee8b82281" => :mojave
   end
 
   depends_on "pyqt"
@@ -23,12 +24,15 @@ class Qscintilla2 < Formula
   depends_on "qt"
   depends_on "sip"
 
+  # Fix for rpath in library install name. Taken from
+  # https://github.com/macports/macports-ports/pull/7790
+  # https://www.riverbankcomputing.com/pipermail/qscintilla/2020-March/001444.html
+  patch :DATA
+
   def install
-    # Only add compiler spec on macOS
-    if OS.mac?
-      spec = (ENV.compiler == :clang) ? "macx-clang" : "macx-g++"
-      args = ["-config release", "-spec #{spec}"]
-    end
+    spec = (ENV.compiler == :clang) ? "macx-clang" : "macx-g++"
+    spec << "-arm64" if Hardware::CPU.arm?
+    args = %W[-config release -spec #{spec}]
 
     cd "Qt4Qt5" do
       inreplace "qscintilla.pro" do |s|
@@ -92,3 +96,20 @@ class Qscintilla2 < Formula
     system Formula["python@3.9"].opt_bin/"python3", "test.py"
   end
 end
+
+__END__
+diff --git a/Qt4Qt5/qscintilla.pro b/Qt4Qt5/qscintilla.pro
+index 35b37da..7953c1b 100644
+--- a/Qt4Qt5/qscintilla.pro
++++ b/Qt4Qt5/qscintilla.pro
+@@ -37,10 +37,6 @@ CONFIG(debug, debug|release) {
+     TARGET = qscintilla2_qt$${QT_MAJOR_VERSION}
+ }
+
+-macx:!CONFIG(staticlib) {
+-    QMAKE_POST_LINK += install_name_tool -id @rpath/$(TARGET1) $(TARGET)
+-}
+-
+ INCLUDEPATH += . ../include ../lexlib ../src
+
+ !CONFIG(staticlib) {
