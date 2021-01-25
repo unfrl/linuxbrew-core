@@ -11,11 +11,12 @@ class Ngt < Formula
   end
 
   bottle do
-    cellar :any
+    cellar :any_skip_relocation
     sha256 "319379f32e41e57bb1bc2dcc4b33a1b7fdea1ad46f11e74014fa3c312323d5e6" => :big_sur
     sha256 "7d4c8c2068b32859a3c176f46cb153b8211c2c1be8c56d229a4adac1ef16b826" => :arm64_big_sur
     sha256 "12bf96dee60beae5392ab710d3cf059159a75ae088a14b908425a1a375f7c449" => :catalina
     sha256 "3c0de52764c93413bb73bf9da81af843a4aae3ac2c50d4f5788ac8231d6d9c2f" => :mojave
+    sha256 "bf8812f8ff692bf810498eb667ad18e742fe60dbfee39bdbaf9b72689da02e3e" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
