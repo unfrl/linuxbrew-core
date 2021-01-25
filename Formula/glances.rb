@@ -1,17 +1,16 @@
 class Glances < Formula
   desc "Alternative to top/htop"
   homepage "https://nicolargo.github.io/glances/"
-  url "https://github.com/nicolargo/glances/archive/v3.1.6.tar.gz"
-  sha256 "1dde246748cec67995c296d17f0a331bb26c27283ec9449b37e6575c600d2aeb"
+  url "https://files.pythonhosted.org/packages/fd/12/8b572d2944d5e2e6f9298c39933cbedc296325e5c650083ee3864ccb87eb/Glances-3.1.6.1.tar.gz"
+  sha256 "e9b21da06994d91822a43679ad57c03703e40f699ef9d3ce6a0f478b23602e90"
   license "LGPL-3.0-or-later"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "f0b69083701a86ff073467c20ef586ab74a7a7c330361bda4f2647fd260734c5" => :big_sur
-    sha256 "8bf34f1bc64e0f111b800607da07b1c67c2f2ca77686dcf27da474a59875a237" => :arm64_big_sur
-    sha256 "21524d3f04fcd3e9fbe933bfd1364845f41c4c9db21c7802b8095df48ace6cb3" => :catalina
-    sha256 "6a1c6b11d6ceff49d885d5369fc3c972034f63225b782420bd4b2748f3c41330" => :mojave
-    sha256 "c1e766bb482aae3a25c9658c91d3d2b2bc6b2c40d23ca05ca1082d0584ed1c5c" => :x86_64_linux
+    sha256 "76c4d76215950ba7c9739b42bb0542a2ae5675950104bdd99b3c1e9eacd801d2" => :big_sur
+    sha256 "b8df470b377572b9586901f7c64aed23d84e9ff1490ffb16afbc24ae7be4d379" => :arm64_big_sur
+    sha256 "1fd1fa2bfce06817d40711060ce0d2918303ce62e32e203de70bf89175d0176a" => :catalina
+    sha256 "6939d40ec9f567132efbcf71539d503e2d5407fefcb08a90337a2059bf8e0dc4" => :mojave
   end
 
   depends_on "python@3.9"
@@ -132,8 +131,8 @@ class Glances < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/aa/3e/d18f2c04cf2b528e18515999b0c8e698c136db78f62df34eee89cee205f1/psutil-5.7.2.tar.gz"
-    sha256 "90990af1c3c67195c44c9a889184f84f5b2320dce3ee3acbd054e3ba0b4a7beb"
+    url "https://files.pythonhosted.org/packages/e1/b0/7276de53321c12981717490516b7e612364f2cb372ee8901bd4a66a000d7/psutil-5.8.0.tar.gz"
+    sha256 "0c9ccb99ab76025f2f0bbecf341d4656e9c1351db8cc8a03ccd62e318ab4b5c6"
   end
 
   resource "py-cpuinfo" do
