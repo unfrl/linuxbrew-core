@@ -3,8 +3,8 @@ require "language/node"
 class VercelCli < Formula
   desc "Command-line interface for Vercel"
   homepage "https://vercel.com/home"
-  url "https://registry.npmjs.org/vercel/-/vercel-21.1.0.tgz"
-  sha256 "7cf5e8965e007699b3e688949ed6345280d592d81e558ee44214118d0dde91f7"
+  url "https://registry.npmjs.org/vercel/-/vercel-21.2.0.tgz"
+  sha256 "9d4ecc02aeae05c7825711d7873d0c769e123d7ce177c3f4c34a95f2ecc7c44c"
   license "Apache-2.0"
 
   livecheck do
@@ -13,11 +13,10 @@ class VercelCli < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "a843f9b77b54a36965efaecb319513000afc9cf2e2cd20af484b13e3075cd9ea" => :big_sur
-    sha256 "e34d6fc77c0f48e4e32ecdb0ce976addc3a0b7e765323d0406036ab7334708fd" => :arm64_big_sur
-    sha256 "3b2522d085f1f7900062c43c274e910001cffc538f8bd7e06002edb2c5af57f4" => :catalina
-    sha256 "e2dd181480ab734e9addae4cc12ca2dd63d75730546ea9652026223e0fc5e984" => :mojave
-    sha256 "880b9be70989ca13817e66313b571dc9641d48c18265fde1fa283537ccdde020" => :x86_64_linux
+    sha256 "efc5b8d087f6ad5ad66271710241bee0ccf1817875553eefcbcf00177d438253" => :big_sur
+    sha256 "69a025d44af2e69f182276d619dcc157786220e9eb177a34d46403e1336b92ea" => :arm64_big_sur
+    sha256 "de63eefef023d565c9c35e0c780ba2d711c53f12254fd141d8acd12bfd2eaafd" => :catalina
+    sha256 "b125e7a8ead0f36a4f43478665de3d214dcbd92905005a5f8e5bc59b5fe50cf8" => :mojave
   end
 
   depends_on "node"

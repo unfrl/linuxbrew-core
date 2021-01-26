@@ -2,8 +2,8 @@ class Dotnet < Formula
   desc ".NET Core"
   homepage "https://dotnet.microsoft.com/"
   url "https://github.com/dotnet/source-build.git",
-      tag:      "v5.0.100-SDK",
-      revision: "67f4df5115c23264eb7193cc623d1fa1050a3cc2"
+      tag:      "v5.0.102-SDK",
+      revision: "de79212ef1b49ee853e09d079445cdeb5db56348"
   license "MIT"
 
   livecheck do
@@ -13,9 +13,9 @@ class Dotnet < Formula
 
   bottle do
     cellar :any
-    sha256 "ef85174cadba36ccf383397c64b8011f926487f54c0b46d746e2f2b841789080" => :big_sur
-    sha256 "aecc9ad3cab61e010c33466af11cc5e7b5e5900ba8d755c42162f025ab8c7bbf" => :catalina
-    sha256 "1fa3555e3d83dda4d04508b06e10cf5f1b14b496f53dee99fad709447f7418aa" => :mojave
+    sha256 "68a93a15aa4db08f45dd3dd505a5103b8305586657b4b94ae4cbf1323462f51c" => :big_sur
+    sha256 "1ba952b990bbd7b89d3a4da62714fac9efcffcd047af1d6a038a22dcb6ec30ba" => :catalina
+    sha256 "f51ec76312e0001a4bf0ad14dec2c1f3fe642e6d8f807ea8d6b2e7d7beb7d962" => :mojave
   end
 
   depends_on "cmake" => :build
@@ -24,13 +24,6 @@ class Dotnet < Formula
   depends_on "curl"
   depends_on "icu4c"
   depends_on "openssl@1.1"
-
-  # Replace legacy MyGet feeds
-  # https://github.com/dotnet/source-build/pull/1972
-  patch do
-    url "https://github.com/dotnet/source-build/commit/eea00e5feef14010533a60ab240f54f12e2c5764.patch?full_index=1"
-    sha256 "76d9b638200d3d2712d8a3380f68a0c12f370ff21881631567f2704788636c47"
-  end
 
   # Fix the find command used for logger
   # Use TargetOverrideRid (osx-x64) instead of TargetRid (osx.10.13-x64)
@@ -119,8 +112,8 @@ index 6cb3e80ab1808704973ee1ef6a7f2f5171752877..74d9064f711f3cbb8ec02fd392113766
      <!-- Additional Targets -->
    <Target Name="InstallJustBuiltRuntime" AfterTargets="RemoveBuiltPackagesFromCache">
      <!-- Install the runtime that was just built to be used by downstream repos, namely, aspnetcore -->
--    <Exec Command="tar -xvf $(SourceBuiltAssetsDir)dotnet-runtime-$(runtimeOutputPackageVersion)-$(TargetRid).tar.gz -C $(DotNetRoot)" />
-+    <Exec Command="tar -xvf $(SourceBuiltAssetsDir)dotnet-runtime-$(runtimeOutputPackageVersion)-$(OverrideTargetRid).tar.gz -C $(DotNetRoot)" />
+-    <Exec Command="tar -xvf $(SourceBuiltAssetsDir)dotnet-runtime-$(runtimeOutputPackageVersion)-$(TargetRid).tar.gz -C $(DotNetCliToolDir)" />
++    <Exec Command="tar -xvf $(SourceBuiltAssetsDir)dotnet-runtime-$(runtimeOutputPackageVersion)-$(OverrideTargetRid).tar.gz -C $(DotNetCliToolDir)" />
    </Target>
  
  
