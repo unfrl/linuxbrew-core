@@ -3,8 +3,8 @@ class Pdm < Formula
 
   desc "Modern Python package manager with PEP 582 support"
   homepage "https://pdm.fming.dev"
-  url "https://files.pythonhosted.org/packages/94/e6/dabb30a4ad199a5c30739e6758e4af928f7cd0c260de49000d48490cd392/pdm-1.1.0.tar.gz"
-  sha256 "5adf2fa34ac0a9872d3b112534fcbefb5a7e7ef87e3d1afb62a1d9a1695c93ff"
+  url "https://files.pythonhosted.org/packages/43/0a/9631f6430b495d42bf490cd44cff4a642fe141545595d7300d733be38b8c/pdm-1.2.0.post1.tar.gz"
+  sha256 "159df7a208b28c35324ed5ecca08e038a36473da72cfac0c14dc85165636083c"
   license "MIT"
   head "https://github.com/frostming/pdm.git"
 
@@ -14,10 +14,10 @@ class Pdm < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "7a23d54393e63d1655cea46ee34a536f0029709c3bebc337d4297bca0af4d43a" => :big_sur
-    sha256 "153a16242ce3623660a3e5755ab6836bf6c514c84cb032a345b66dda4272983c" => :arm64_big_sur
-    sha256 "77c38040b13a745dca4b6649bd7c5e0429bbac1facb2f1709fb338d99d274ca4" => :catalina
-    sha256 "e3ae77402a8e6ed461704875c48acef5a3bc7c86dc704dc6a1f54625d0ccd998" => :mojave
+    sha256 "e7105237fad081ab87c65f97a8184b7d86b4c6a05df4856d1988d504568f407d" => :big_sur
+    sha256 "a221439d7ff09e734b181ce9e16e378d856df5f5981637c2783a1d5b7c129e60" => :arm64_big_sur
+    sha256 "56568138f3f5f980f2ef7d01920ed39515432565605f6bc5286920d299816110" => :catalina
+    sha256 "d6a4272b317a6d5db94bddea6505956b0fe0d9f802a023a8c64718fef64956ca" => :mojave
   end
 
   depends_on "python@3.9"
@@ -53,8 +53,8 @@ class Pdm < Formula
   end
 
   resource "keyring" do
-    url "https://files.pythonhosted.org/packages/19/c7/e1a9c556745518c9c3d46613c10a968757b16e29341ec8e0815fd07e0f93/keyring-21.8.0.tar.gz"
-    sha256 "1746d3ac913d449a090caf11e9e4af00e26c3f7f7e81027872192b2398b98675"
+    url "https://files.pythonhosted.org/packages/93/aa/84c06467f269a36582cf0212d2d39bd6300f6e0cbce49508af634c126d2e/keyring-22.0.0.tar.gz"
+    sha256 "0bd9124892bdafd8db3c2ba22498dc6cca19b2b19fbcb32464f556889285241d"
   end
 
   resource "packaging" do
@@ -63,8 +63,8 @@ class Pdm < Formula
   end
 
   resource "pdm-pep517" do
-    url "https://files.pythonhosted.org/packages/67/c7/e8ece4c6bed887d6fc4cac9152a4022c3424c5260b91463c08a53f68d789/pdm-pep517-0.5.1.tar.gz"
-    sha256 "397e1ffae3233f861cec6d11863bac61dc94c0962f98e2524616515b3757ff47"
+    url "https://files.pythonhosted.org/packages/b4/1b/9bc753a9782bd0dd25cc5fce4329affa5444911d6c4ccf9990f4f0d0fe15/pdm-pep517-0.5.4.tar.gz"
+    sha256 "4933f06b9664f7540c9518fcca30ac4c530b507af49e4a5e9ce0d8c0d0bee6f1"
   end
 
   resource "pep517" do
