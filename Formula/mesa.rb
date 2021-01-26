@@ -6,6 +6,7 @@ class Mesa < Formula
   url "https://mesa.freedesktop.org/archive/mesa-20.3.3.tar.xz"
   sha256 "f74e212d4838e982a10c203ffa998817d1855c5cf448ae87b58f96edea61d156"
   license "MIT"
+  revision 1
   head "https://gitlab.freedesktop.org/mesa/mesa.git"
 
   livecheck do
@@ -13,11 +14,10 @@ class Mesa < Formula
   end
 
   bottle do
-    sha256 "881fc567fc963b90c11aee365fddae3cada63a51348adb2b41251fdc8521bf8b" => :big_sur
-    sha256 "c02a30332e271b8f4fd0b725c0d2365b1453d32123a8424e5c49814c039808b1" => :arm64_big_sur
-    sha256 "59128e38491cd106301c23ba3063668338156bf10c8beaaf4f12fb4461acbcba" => :catalina
-    sha256 "6b75a105ec1fedabef2fdfb5e8bb366a3627abf333044b2e2d0902bdc95832bf" => :mojave
-    sha256 "4602706e1179bfce56f23aac37bab701259bf1f14d8be8ba30c6037262a2c716" => :x86_64_linux
+    sha256 "de19172509d1d200b275abc87f3e4239bcd786ca9629c47d9dde8f37e825d2aa" => :big_sur
+    sha256 "b00018a0517349b91003f295ec96874621a0a4056c8138c49e0cf2c8d267e54c" => :arm64_big_sur
+    sha256 "fa1446210f1f08b95d113ab2fea439c448d7746f11095a396e0b87d36f45c2c3" => :catalina
+    sha256 "6831faac87491e5321db31744457dc19a47985017605c9c01471a217d6b0b189" => :mojave
   end
 
   depends_on "meson" => :build
@@ -54,8 +54,8 @@ class Mesa < Formula
   end
 
   resource "Mako" do
-    url "https://files.pythonhosted.org/packages/72/89/402d2b4589e120ca76a6aed8fee906a0f5ae204b50e455edd36eda6e778d/Mako-1.1.3.tar.gz"
-    sha256 "8195c8c1400ceb53496064314c6736719c6f25e7479cd24c77be3d9361cddc27"
+    url "https://files.pythonhosted.org/packages/5c/db/2d2d88b924aa4674a080aae83b59ea19d593250bfe5ed789947c21736785/Mako-1.1.4.tar.gz"
+    sha256 "17831f0b7087c313c0ffae2bcbbd3c1d5ba9eeac9c38f2eb7b50e8c99fe9d5ab"
   end
 
   resource "glxgears.c" do

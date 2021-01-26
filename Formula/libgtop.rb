@@ -10,12 +10,11 @@ class Libgtop < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 "973fc8add2e31a02533932aef1f796ca423f316ec566b995cdba040ea377832a" => :big_sur
-    sha256 "61b8fb81ad64f49c86c088f7bf3f21b9f9fd9fd850d4b39a1c845800a76a93dd" => :arm64_big_sur
-    sha256 "9794f2b20646011aaff625c099484987d887f7a5587cffcdec1d3b35ada15470" => :catalina
-    sha256 "c42027859936dd0725f77c845ef2bb2fc87cabf6929878722a4539b63784fb9a" => :mojave
-    sha256 "2bcc23574cd3051f0a5a04bce246c08a7451d600c07e3a817666a56491629728" => :x86_64_linux
+    rebuild 2
+    sha256 "e749a43ebcc150fba221570873bb6df8765eedd1719ad7080dbbb84b809b477d" => :big_sur
+    sha256 "1b03ee2aee7281a673eff7004f5141e4077e0dfbd2e1ce31a9590fb1f3fc221c" => :arm64_big_sur
+    sha256 "9946efd963f1911a13a57d684d9b441ce804777711cfb88fc48fdcf55e6ba620" => :catalina
+    sha256 "9a219f60e6ad45d0c4c01e3477789ea27a54595fdc16751f3b964d4cfb56fc3a" => :mojave
   end
 
   depends_on "gobject-introspection" => :build
@@ -24,7 +23,9 @@ class Libgtop < Formula
   depends_on "gettext"
   depends_on "glib"
 
-  depends_on "libxau" unless OS.mac?
+  on_linux do
+    depends_on "libxau"
+  end
 
   def install
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
