@@ -15,6 +15,7 @@ class Libgtop < Formula
     sha256 "1b03ee2aee7281a673eff7004f5141e4077e0dfbd2e1ce31a9590fb1f3fc221c" => :arm64_big_sur
     sha256 "9946efd963f1911a13a57d684d9b441ce804777711cfb88fc48fdcf55e6ba620" => :catalina
     sha256 "9a219f60e6ad45d0c4c01e3477789ea27a54595fdc16751f3b964d4cfb56fc3a" => :mojave
+    sha256 "94d49e6f4c4e8f09be9eb2bd28065cd51864b140afac5718b3ee139d61a767d6" => :x86_64_linux
   end
 
   depends_on "gobject-introspection" => :build
