@@ -10,11 +10,13 @@ class Librsvg < Formula
   end
 
   bottle do
+    cellar :any_skip_relocation
     rebuild 1
     sha256 "6dfa8c1d2b9cdf1130450547f53d6e361b0c8aec617c08065a6471ad310e8b8c" => :big_sur
     sha256 "b95e4e275fddfac4d7c55c4c7bc0921474cc60cae2df104fae7bf0359afef5c9" => :arm64_big_sur
     sha256 "6f27ab0ce3d090c1135b76a5d4790720034d84954594e7fe092276190c0d6961" => :catalina
     sha256 "2ef3c8faa59893db2f5d7dfc419564718956805c884a1e4507fce7bd24265bf3" => :mojave
+    sha256 "0e66fee9bf1a73487d89cdc0b51292049689c77478011d5e3080cb685a6a001c" => :x86_64_linux
   end
 
   depends_on "gobject-introspection" => :build
