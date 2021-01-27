@@ -6,6 +6,7 @@ class AnsibleAT29 < Formula
   url "https://files.pythonhosted.org/packages/f0/03/4547c6afee926b842a288b12036a7bddce4f7f661b6797414eaee6ac2ccc/ansible-2.9.17.tar.gz"
   sha256 "d78b46d647d91dd478ba7f43baf36ffa27f9a5992b826b16a6cc15cf993f19dc"
   license "GPL-3.0-or-later"
+  revision 1
 
   # The newest PyPI release won't be a 2.9.x version, so we match versions from
   # the links in the "Release History" section.
@@ -16,10 +17,10 @@ class AnsibleAT29 < Formula
 
   bottle do
     cellar :any
-    sha256 "8a7e1983a53cf1cb125ab500e6c1dfd7b4d4fe78ae47ed86e3db28900992df95" => :big_sur
-    sha256 "c095c4571e1acec337f3619afdc91b9384801f4587d3eee68e31205bfed93255" => :arm64_big_sur
-    sha256 "e2e6408b7ef18540783f1b499e7a924afa8316f153ed7631ff6c814bb6fa83f3" => :catalina
-    sha256 "0b9ea098f0d24b94c1c3bfa7a919e912cfd11049a45f86ad096368c0ac6be502" => :mojave
+    sha256 "1ca9e46eee49b3310f53be7c39f6467b577859057c4e966e6f73c87f364ff324" => :big_sur
+    sha256 "989f5b3288a405bda5fe6953d7bd4ac3ff3a62d7d12419cb4a2245a078e9a682" => :arm64_big_sur
+    sha256 "e9d3a400597c5c8e5f599f509a310565cd5780e9d639a5411f6516a7143ee707" => :catalina
+    sha256 "27dad9dea5fa29a84189b77eb772db8864a4df8715659370d76cb2d11c997754" => :mojave
   end
 
   keg_only :versioned_formula
@@ -305,8 +306,8 @@ class AnsibleAT29 < Formula
   end
 
   resource "kubernetes" do
-    url "https://files.pythonhosted.org/packages/a1/56/fd57e391f60dc143402e45560ca87df1d74ddade5ac9b7e9f2cc0338171e/kubernetes-12.0.1.tar.gz"
-    sha256 "ec52ea01d52e2ec3da255992f7e859f3a76f2bdb51cf65ba8cd71dfc309d8daa"
+    url "https://files.pythonhosted.org/packages/60/3f/2fef94fb65e8f94d768356e5fb9be222d18027e6167ccc65e2090917a771/kubernetes-11.0.0.tar.gz"
+    sha256 "1a2472f8b01bc6aa87e3a34781f859bded5a5c8ff791a53d889a8bd6cc550430"
   end
 
   resource "lxml" do
@@ -435,8 +436,8 @@ class AnsibleAT29 < Formula
   end
 
   resource "prettytable" do
-    url "https://files.pythonhosted.org/packages/78/dc/96f8633fcd49fad2189dd57918ff410627818ff3ebe1649678d8ac2e7126/prettytable-2.0.0.tar.gz"
-    sha256 "e37acd91976fe6119172771520e58d1742c8479703489321dc1d9c85e7259922"
+    url "https://files.pythonhosted.org/packages/ef/30/4b0746848746ed5941f052479e7c23d2b56d174b82f4fd34a25e389831f5/prettytable-0.7.2.tar.bz2"
+    sha256 "853c116513625c738dc3ce1aee148b5b5757a86727e67eff6502c7ca59d43c36"
   end
 
   resource "ptyprocess" do

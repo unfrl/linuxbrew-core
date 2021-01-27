@@ -5,6 +5,7 @@ class Wireshark < Formula
   mirror "https://1.na.dl.wireshark.org/src/wireshark-3.4.2.tar.xz"
   sha256 "de9868729e426a469baabd8d444240d84fa5445020e92c842dd19afd0d47a4c4"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://gitlab.com/wireshark/wireshark.git"
 
   livecheck do
@@ -13,9 +14,9 @@ class Wireshark < Formula
   end
 
   bottle do
-    sha256 "a7574115b2e92bbdc12108e14641e7e77f6a8613126e04960ce4f133025b6f71" => :big_sur
-    sha256 "8f09f802d20dc9d86b77482004347f034a3875e9d2c1ea3bf4d72dc937e78655" => :catalina
-    sha256 "e363ca19a898a0f480ec35fac73dc3fdbc6cbe75428edb03c74b5ee478cedeb6" => :mojave
+    sha256 "b74afee6ca234736d637d7b3fa71105e888cba493818c5e5bcc56a5d113d00d6" => :big_sur
+    sha256 "bfe2ca25a2354776b2b013e2799e53e0d545961a1c10874577d39cccda1d7a8c" => :catalina
+    sha256 "d334dab5611afd12870a85b27c9dd34a503f7283c5ae44359af1da5666945bfb" => :mojave
   end
 
   depends_on "cmake" => :build
@@ -26,7 +27,7 @@ class Wireshark < Formula
   depends_on "libmaxminddb"
   depends_on "libsmi"
   depends_on "libssh"
-  depends_on "lua@5.1"
+  depends_on "lua"
   depends_on "nghttp2"
 
   uses_from_macos "bison" => :build
@@ -40,8 +41,8 @@ class Wireshark < Formula
       -DBUILD_wireshark_gtk=OFF
       -DENABLE_PORTAUDIO=OFF
       -DENABLE_LUA=ON
-      -DLUA_INCLUDE_DIR=#{Formula["lua@5.1"].opt_include}/lua-5.1
-      -DLUA_LIBRARY=#{Formula["lua@5.1"].opt_lib}/liblua5.1.dylib
+      -DLUA_INCLUDE_DIR=#{Formula["lua"].opt_include}/lua
+      -DLUA_LIBRARY=#{Formula["lua"].opt_lib}/liblua.dylib
       -DCARES_INCLUDE_DIR=#{Formula["c-ares"].opt_include}
       -DGCRYPT_INCLUDE_DIR=#{Formula["libgcrypt"].opt_include}
       -DGNUTLS_INCLUDE_DIR=#{Formula["gnutls"].opt_include}

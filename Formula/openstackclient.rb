@@ -6,7 +6,7 @@ class Openstackclient < Formula
   url "https://files.pythonhosted.org/packages/02/0d/18025e48934e59768a085cb4393bebd385be2c4da1d39b4095ab48a321bf/python-openstackclient-5.4.0.tar.gz"
   sha256 "21d228d600421ad5145f31178cdc8578df7d2e569f43381c654caae5a1993b67"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   livecheck do
     url :stable
@@ -14,10 +14,10 @@ class Openstackclient < Formula
 
   bottle do
     cellar :any
-    sha256 "c14bf809f08f4a42feb2806d85b400fc1c7cdf979f1828339d218fb60bf57e7b" => :big_sur
-    sha256 "c16d937d4d77c6309f3a329e17431b32edf68f81afe76127ca08a5bdb68a9035" => :arm64_big_sur
-    sha256 "4716739949114ff5b6ad57274d33e954505afc847d1d56bf18e02ab279937442" => :catalina
-    sha256 "3c54f67e3b8c3fe619bef8dd10bbf641372044ca6afc4ffd0f06ea330fae8d0f" => :mojave
+    sha256 "d457a82ceb9d43b5089b03f3d94aa15e5ff08fbd95dc82b107f368c3b3eaa169" => :big_sur
+    sha256 "efa827b3bf78979962f0883719229c1c250d1fc1a6e0fa16940f9c80cd1c5ac7" => :arm64_big_sur
+    sha256 "883710d6c9447fc21749e21907ea4ac6899de08b53e9b1f8875df4e5530cab50" => :catalina
+    sha256 "562b0c8618c43e49b36f1dfe66997d1d260478cae70eab6d60db16672f9c543c" => :mojave
   end
 
   depends_on "python@3.9"
@@ -30,6 +30,11 @@ class Openstackclient < Formula
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/f0/cb/80a4a274df7da7b8baf083249b0890a0579374c3d74b5ac0ee9291f912dc/attrs-20.3.0.tar.gz"
     sha256 "832aa3cde19744e49938b91fea06d69ecb9e649c93ba974535d08ad92164f700"
+  end
+
+  resource "Babel" do
+    url "https://files.pythonhosted.org/packages/41/1b/5ed6e564b9ca54318df20ebe5d642ab25da4118df3c178247b8c4b26fa13/Babel-2.9.0.tar.gz"
+    sha256 "da031ab54472314f210b0adcff1588ee5d1d1d0ba4dbd07b94dba82bde791e05"
   end
 
   resource "certifi" do
@@ -48,8 +53,8 @@ class Openstackclient < Formula
   end
 
   resource "cliff" do
-    url "https://files.pythonhosted.org/packages/eb/ac/f4a5fd1845521e64a0d2224ceb65d81d8dccfb845ed1ccb3918f67836b44/cliff-3.5.0.tar.gz"
-    sha256 "5bfb684b5fcdff0afaaccd1298a376c0e62e644c46b7e9abc034595b41fe1759"
+    url "https://files.pythonhosted.org/packages/6e/82/97ae0291e339eb6992a8d58aca5caa337ee9e6c465e909cdd8fb8015d835/cliff-3.6.0.tar.gz"
+    sha256 "a3f4fa67eeafbcfa7cf9fe4b1755d410876528e1d0d115740db00b50a1250272"
   end
 
   resource "cmd2" do
@@ -133,8 +138,8 @@ class Openstackclient < Formula
   end
 
   resource "openstacksdk" do
-    url "https://files.pythonhosted.org/packages/84/19/f1bc34691a0db5d5072d389f114d0b99080c8a418912ee8690f825760dbf/openstacksdk-0.52.0.tar.gz"
-    sha256 "c9a2dd8c9d2cf44d7ba2075c7963f8fc79adf98f44af6aac2f4b612c12b798b3"
+    url "https://files.pythonhosted.org/packages/1a/dc/b5099bdb4e280b922b7fd0c46d8549387ca96a8e64eefa7449fca0a2758d/openstacksdk-0.53.0.tar.gz"
+    sha256 "3500f2a7b3c317db255510dea6ff59500b4525899f4a083acf764546ea427402"
   end
 
   resource "os-service-types" do
@@ -143,8 +148,8 @@ class Openstackclient < Formula
   end
 
   resource "osc-lib" do
-    url "https://files.pythonhosted.org/packages/2e/99/7d0c86e6b153a4946e0b3ba0c09c065a699244a76c18538d57bfee88f6a3/osc-lib-2.3.0.tar.gz"
-    sha256 "ee4f8b6989d3a3fb1021a6a32665000b1db27e615a0ab5c86c35eb59c90003f1"
+    url "https://files.pythonhosted.org/packages/f4/70/a92bb13b8eaf13be71e72d5137c338279eb139dddc8b146b9849f5e20259/osc-lib-2.3.1.tar.gz"
+    sha256 "f7d178dc6fcf5e5c069206e4fcf7206bf6369e3c855ec5b8498c7f6bb28be75e"
   end
 
   resource "oslo.config" do
@@ -198,8 +203,13 @@ class Openstackclient < Formula
   end
 
   resource "python-cinderclient" do
-    url "https://files.pythonhosted.org/packages/3c/1e/639dc4474dbc5230750132228fa61c50d94dacf1705b9ad5400f14d57b14/python-cinderclient-7.2.0.tar.gz"
-    sha256 "b8f756598c629ebee1924d9357b5a560f40708bc30de19dd088abeac2f71dc56"
+    url "https://files.pythonhosted.org/packages/b0/d1/3cd271a0e9a0b4b5e7d8582d8de976454a5eb799089870a675019790f6a9/python-cinderclient-7.3.0.tar.gz"
+    sha256 "928eb45616eb4146e3ab21534b2c87723298fbf02957bcf219408abfe7f4fc67"
+  end
+
+  resource "python-heatclient" do
+    url "https://files.pythonhosted.org/packages/21/3e/9b8291832fa40bb39d46e13a8327705460ab3fb25c46c950f0fafec9ceaf/python-heatclient-2.3.0.tar.gz"
+    sha256 "d6fe15e610523f96e1ee26e84e9d5fd06846a3fa72d352c38f1fc79abe7eb44a"
   end
 
   resource "python-keystoneclient" do
@@ -208,8 +218,13 @@ class Openstackclient < Formula
   end
 
   resource "python-novaclient" do
-    url "https://files.pythonhosted.org/packages/df/cb/a87d504d62d9987de4b0e69ea98d96004f0c12ea0fed5c7901fead0ee8e9/python-novaclient-17.2.1.tar.gz"
-    sha256 "3f5ced712235f069d4d9fcde994c71a37916b7c307a1c1332b832be1493930bf"
+    url "https://files.pythonhosted.org/packages/3b/58/03c306eb957e4c428484ba10d8a14696e03fae2a1cae8579f8aa8acf3f89/python-novaclient-17.3.0.tar.gz"
+    sha256 "718e37d39739e9f3f504bf80875c883f1dafe653a08f3581bd21d3c0e83c7df0"
+  end
+
+  resource "python-swiftclient" do
+    url "https://files.pythonhosted.org/packages/87/59/5f0657c8fa0f142d43a82cf4c69842eb578ad785b412e9e1b717a777afc4/python-swiftclient-3.11.0.tar.gz"
+    sha256 "3972f8b1986e60ea786ad01697e6882f331209ae947ef8b795531940f1e0732b"
   end
 
   resource "pytz" do
@@ -218,8 +233,8 @@ class Openstackclient < Formula
   end
 
   resource "PyYAML" do
-    url "https://files.pythonhosted.org/packages/64/c2/b80047c7ac2478f9501676c988a5411ed5572f35d1beff9cae07d321512c/PyYAML-5.3.1.tar.gz"
-    sha256 "b8eac752c5e14d3eca0e6dd9199cd627518cb5ec06add0de9d32baeee6fe645d"
+    url "https://files.pythonhosted.org/packages/a0/a4/d63f2d7597e1a4b55aa3b4d6c5b029991d3b824b5bd331af8d4ab1ed687d/PyYAML-5.4.1.tar.gz"
+    sha256 "607774cbba28732bfa802b54baa7484215f530991055bb562efbed5b2f20a45e"
   end
 
   resource "requests" do
@@ -273,7 +288,13 @@ class Openstackclient < Formula
 
   test do
     system bin/"openstack", "-h"
-    output = shell_output("#{bin}/openstack server list 2>&1", 1)
-    assert_match "Missing value auth-url required", output
+    openstack_subcommands = [
+      "server list",
+      "stack list",
+    ]
+    openstack_subcommands.each do |subcommand|
+      output = shell_output("#{bin}/openstack #{subcommand} 2>&1", 1)
+      assert_match "Missing value auth-url required", output
+    end
   end
 end
