@@ -1,6 +1,6 @@
 class Python3Requirement < Requirement
   fatal true
-  satisfy { which "python3" }
+  satisfy(build_env: false) { which "python3" }
   def message
     <<~EOS
       An existing Python 3 installation is required in order to avoid cyclic
@@ -27,7 +27,7 @@ class Libxcb < Formula
   depends_on "pkg-config" => :build
   # Use existing Python 3, to avoid a cyclic dependency on Linux:
   # python3 -> tcl-tk -> libx11 -> libxcb -> python3
-  depends_on "python@3.9" => :build
+  depends_on Python3Requirement => :build
   depends_on "xcb-proto" => :build
   depends_on "libpthread-stubs"
   depends_on "libxau"
