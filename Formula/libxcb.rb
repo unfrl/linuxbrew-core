@@ -18,10 +18,11 @@ class Libxcb < Formula
   revision 1
 
   bottle do
-    cellar :any
+    cellar :any_skip_relocation
     sha256 "d8c096c4f253747c9f19f12d36c084deb6bb7e108e06e0359179b54008704db4" => :big_sur
     sha256 "d3f1f2afcf583b5dfb1660630e8ef30d05c401205453918fcef71e6ee033186f" => :arm64_big_sur
     sha256 "b631a2c2ab299af91f482ab2897089cf10386b3ed99ba0939e80fe2d72074fc2" => :catalina
+    sha256 "df3a352fb0212ba57317ade0f2c68bd5ad2dcad999cbfb990d35a0e09c3770b9" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
