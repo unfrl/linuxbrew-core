@@ -27,7 +27,7 @@ class XcbProto < Formula
   depends_on "pkg-config" => [:build, :test]
   # Use Python 3, to avoid a cyclic dependency on Linux:
   # python3 -> tcl-tk -> libx11 -> libxcb -> xcb-proto -> python3
-  depends_on Python3Requirement => :build
+  depends_on "python@3.9" => :build
 
   # Fix for Python 3.9. Use math.gcd() for Python >= 3.5.
   # fractions.gcd() has been deprecated since Python 3.5.
