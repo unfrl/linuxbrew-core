@@ -12,11 +12,12 @@ class Node < Formula
   end
 
   bottle do
-    cellar :any
+    cellar :any_skip_relocation
     sha256 "ef1a8fd3e593171b8e2d3a2973a11cdd276b38a35e5b0087bce7597f623a5f90" => :big_sur
     sha256 "6ef05e7d451509813751697ebc9bafa16663d72d488e8c5f0f616ddf92aa0147" => :arm64_big_sur
     sha256 "e427197424ece40be40bf45fda3a0fbe5fad8dd3e7ed1679ba89cc19d4ff2f1a" => :catalina
     sha256 "417e1add782f676ae2ce82e4b11234c645cd0ae8be398baf0cda8ce43b44155a" => :mojave
+    sha256 "47b9f6dfcba2c41febe4dbd86c099c8ec08c7e7a43edba262643cebe2ae06581" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
