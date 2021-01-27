@@ -11,6 +11,7 @@ class Gron < Formula
     sha256 "18f72c72d99203bd58c670642d6c33fa9e1f67e6861212ba21f98b975df406f0" => :big_sur
     sha256 "dc6b46a589f618ab5b2e9d4aea01bd75f0326f585085c3b1f12e266dda2e7e5d" => :catalina
     sha256 "2a0ad03c4c7dfd2098758be2c5b65f16107ce8c67b586a4679f9d871aaee09a7" => :mojave
+    sha256 "d845fa277fd9957de0401937879f4b2bf9c3d7ae5a228dc53f7f58db95c9857b" => :x86_64_linux
   end
 
   depends_on "go" => :build
