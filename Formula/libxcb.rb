@@ -27,7 +27,7 @@ class Libxcb < Formula
   depends_on "pkg-config" => :build
   # Use existing Python 3, to avoid a cyclic dependency on Linux:
   # python3 -> tcl-tk -> libx11 -> libxcb -> python3
-  depends_on Python3Requirement => :build
+  depends_on "python@3.9" => :build
   depends_on "xcb-proto" => :build
   depends_on "libpthread-stubs"
   depends_on "libxau"
