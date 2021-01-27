@@ -17,6 +17,7 @@ class Rtptools < Formula
     sha256 "a760c9b142e55aba7732406eeb2603c49b9b7514e02bd01bc245d0661772bf20" => :arm64_big_sur
     sha256 "59fa4c8c53c3430c6bb47b82c752eef710f692ad3fb1bd3ab82c108524aabe00" => :catalina
     sha256 "eb8412186a92c44426b2f4c4bef7adcffb308afd4bb036a2dd9d1a0d184b504e" => :mojave
+    sha256 "bbfb31ced19e272381ab68e3bac5ce0bf5dfd1f7259b786d1be532a99d473205" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
