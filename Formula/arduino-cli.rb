@@ -17,6 +17,7 @@ class ArduinoCli < Formula
     sha256 "2910b98ddb35b67574faa191f27981072368dad2a4b85be119e011962a9b8abb" => :big_sur
     sha256 "6f44a31d5a24a5119a4e7dd47a7bc6fef5286892849e9ddd8878744d3f7304f2" => :catalina
     sha256 "ef086512edf0eca6b6465b3155b7f6d42c3629674994a2f0900c975bd8e75369" => :mojave
+    sha256 "08fe641c99973dda8b74ed54529d55fe99b31309441522cbd561ababf5be274b" => :x86_64_linux
   end
 
   depends_on "go" => :build
