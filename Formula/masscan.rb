@@ -1,9 +1,9 @@
 class Masscan < Formula
   desc "TCP port scanner, scans entire Internet in under 5 minutes"
   homepage "https://github.com/robertdavidgraham/masscan/"
-  url "https://github.com/robertdavidgraham/masscan/archive/1.3.0.tar.gz"
-  sha256 "a6c0f0c95d3205110f67e8887d8164ece4c2b40bf099978f0ee1668d0f091820"
-  license "AGPL-3.0"
+  url "https://github.com/robertdavidgraham/masscan/archive/1.3.1.tar.gz"
+  sha256 "44c303eff8274c689d306b5f21b8b15acf6bf2b2980a2c01698a94ebae2bc166"
+  license "AGPL-3.0-only"
   head "https://github.com/robertdavidgraham/masscan.git"
 
   livecheck do
@@ -13,11 +13,10 @@ class Masscan < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "bd1e27ecc33563b9d658443216bbd46526db0a4bcae7068293deda858f9077b7" => :big_sur
-    sha256 "147e7c46071329d24e43c5cbfc9187f8e098f576510fcf6b43bb2fd7cb637aac" => :arm64_big_sur
-    sha256 "ea14dde3b5fe0813ca9737cc0be54e46078ba3de67d701a7249a84bbd34271bf" => :catalina
-    sha256 "b0ebd8c0f61bc44267bdda6467f71b4c6b7f363f705e58b30160b7d341ce58f2" => :mojave
-    sha256 "6e9e5f13bd03d67326b2541d6b01f8653e42f06108d09eeaa808ee30179d4212" => :x86_64_linux
+    sha256 "612d8beacadb4af14a1dd776b422d224d3430bd6bfae2c7b7e459184e53bd50e" => :big_sur
+    sha256 "94df6861a365e06e6c8670f494263ad8a7b99ee7dfd52640afffe9caa0b29a74" => :arm64_big_sur
+    sha256 "d25f5a0ebdce09e1f2adb6a30f0b3fb2510133142707e534880d1883f41a3de1" => :catalina
+    sha256 "5502310faef46572223ac81702ed48327bbe93778bc2031aaef4ff99b4a0d185" => :mojave
   end
 
   def install
@@ -32,6 +31,6 @@ class Masscan < Formula
   end
 
   test do
-    assert_match "ports =", shell_output("#{bin}/masscan --echo | head -n 6 | tail -n 1")
+    assert_match "ports =", shell_output("#{bin}/masscan --echo")
   end
 end
