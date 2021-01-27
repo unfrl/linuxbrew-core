@@ -12,6 +12,7 @@ class Staticcheck < Formula
     sha256 "6b7c908b171158a2e7bd736d903cf349542d504197a753c9967be8fcb42400e4" => :arm64_big_sur
     sha256 "c207bf44becf6d82ad8fed9eff75db5a14a106df080fb90eb8ed6e1b7a0c0375" => :catalina
     sha256 "2e7d67e9a2aba779e109c18b0aac9729438033ae3666e332b83f2a9c5c84f3fe" => :mojave
+    sha256 "0f28d102a6da3acb8d9d5f97b2d3b3d6c19b994258ae9d4f4db62e9f59cb9184" => :x86_64_linux
   end
 
   depends_on "go"
