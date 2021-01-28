@@ -17,6 +17,7 @@ class VercelCli < Formula
     sha256 "b6676fc47590426b78833c10b0cc04aebe80ed9e55b8a939060d943ca0173ab9" => :arm64_big_sur
     sha256 "d016df1cff85ff21a026696d7f934eb51bfa2b449ef283d0ce8848d01a1a9e96" => :catalina
     sha256 "ba17b5562f6b291a71d3c57c16dc7678fa31f303c93846e6ae466d8c20d9abb7" => :mojave
+    sha256 "4d5afd3876adfc48fcb3b64f12bda96031b04f30e4b2d3472bdb4d8e75e453cb" => :x86_64_linux
   end
 
   depends_on "node"
