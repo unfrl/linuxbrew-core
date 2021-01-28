@@ -20,6 +20,7 @@ class Zabbix < Formula
     sha256 "06e0c80759269bf5b3012744f5941303d2f3dd6ffcd2f0869293455b82145f57" => :arm64_big_sur
     sha256 "192b4cb43357824e0967f73f707d3cf33bdb830b48e2dc22dd7161cd831fa607" => :catalina
     sha256 "e9af4d5e670a2f6116ed53d3927853b4b197feb72329bb1c165f74237e9a88ca" => :mojave
+    sha256 "0dadf55bae515dadf304985478baeded466f6f96b795579f14d09082a15ab991" => :x86_64_linux
   end
 
   depends_on "openssl@1.1"
