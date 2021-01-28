@@ -3,17 +3,16 @@ class PreCommit < Formula
 
   desc "Framework for managing multi-language pre-commit hooks"
   homepage "https://pre-commit.com/"
-  url "https://files.pythonhosted.org/packages/b1/7b/1536387577a2f01d6aea901b9331319a9f927725bfbfae78ddb7200141cc/pre_commit-2.9.3.tar.gz"
-  sha256 "ee784c11953e6d8badb97d19bc46b997a3a9eded849881ec587accd8608d74a4"
+  url "https://files.pythonhosted.org/packages/e2/a0/7940bd43af00bd7397bfd97ac7c036195d86fbbbb6a2c5d7f14a060efd1a/pre_commit-2.10.0.tar.gz"
+  sha256 "f413348d3a8464b77987e36ef6e02c3372dadb823edf0dfe6fb0c3dc2f378ef9"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 "9f3e5baf1b9b60a24857b5b7f094856c586e26fe7e252db0884d62ff2ab29c4d" => :big_sur
-    sha256 "33f007b01f82457bcb6094a70546022f4b09fe083d2c2c6fec03a9175be7a07f" => :arm64_big_sur
-    sha256 "567656ee42a44152e91d1d5863b596a9ceb0af21fe2a4d948409392797df7d1e" => :catalina
-    sha256 "f8429a3459917cdff5b3c9ca240cdaaf8fdb5f1dcc2a4a511bc7ef7582c0d9dd" => :mojave
-    sha256 "4a4eff11ddcdd1134cae2afdb2db12e762cf2c26dbfc07cf85a25dbc8869c14d" => :x86_64_linux
+    cellar :any
+    sha256 "35633b36fb6357e1914fd403b09f0fe18befc15dd15126c1c08308f5e4de63dc" => :big_sur
+    sha256 "6b51d81169ee92b13b1e41090f626e82208dced8617dcc646f938ab72806de20" => :arm64_big_sur
+    sha256 "a70905e16ed28315642ba9d0eb55a738c64c1ae5b19796235a5944eee2f401e5" => :catalina
+    sha256 "be43bb173daa5bec3297cb233ced8ce1f74db3bc062b1955defb3ab3f5622f46" => :mojave
   end
 
   depends_on "libyaml"
@@ -40,8 +39,8 @@ class PreCommit < Formula
   end
 
   resource "identify" do
-    url "https://files.pythonhosted.org/packages/81/2d/e9ca41910763d4c9f3fd6773baafb513f14b3f1281723eed924847ea1f47/identify-1.5.10.tar.gz"
-    sha256 "943cd299ac7f5715fcb3f684e2fc1594c1e0f22a90d15398e5888143bd4144b5"
+    url "https://files.pythonhosted.org/packages/2c/c2/cd5e7807dc0d9f76ce6a4016e7adc15d7745da3571db73c43ca4ea2fa02f/identify-1.5.13.tar.gz"
+    sha256 "70b638cf4743f33042bebb3b51e25261a0a10e80f978739f17e7fd4837664a66"
   end
 
   resource "nodeenv" do
@@ -50,8 +49,8 @@ class PreCommit < Formula
   end
 
   resource "PyYAML" do
-    url "https://files.pythonhosted.org/packages/64/c2/b80047c7ac2478f9501676c988a5411ed5572f35d1beff9cae07d321512c/PyYAML-5.3.1.tar.gz"
-    sha256 "b8eac752c5e14d3eca0e6dd9199cd627518cb5ec06add0de9d32baeee6fe645d"
+    url "https://files.pythonhosted.org/packages/a0/a4/d63f2d7597e1a4b55aa3b4d6c5b029991d3b824b5bd331af8d4ab1ed687d/PyYAML-5.4.1.tar.gz"
+    sha256 "607774cbba28732bfa802b54baa7484215f530991055bb562efbed5b2f20a45e"
   end
 
   resource "six" do
@@ -65,8 +64,8 @@ class PreCommit < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/c6/3e/d00f1500aa0e8a69323101c33f6e6910bbc68d34df3e8a0b1e510219a956/virtualenv-20.2.2.tar.gz"
-    sha256 "b7a8ec323ee02fb2312f098b6b4c9de99559b462775bc8fe3627a73706603c1b"
+    url "https://files.pythonhosted.org/packages/46/3d/81513f1aeab4c11c50d8c01ee041223350ddfad3d75eb05d0fce4a1d82dc/virtualenv-20.4.0.tar.gz"
+    sha256 "219ee956e38b08e32d5639289aaa5bd190cfbe7dafcb8fa65407fca08e808f9c"
   end
 
   def install
