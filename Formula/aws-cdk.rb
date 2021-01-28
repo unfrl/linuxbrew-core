@@ -17,6 +17,7 @@ class AwsCdk < Formula
     sha256 "0a86aeecfdb3e96ac8bdbd05d0021a6c9acb425330bc7502e4faf9f58778e5ae" => :arm64_big_sur
     sha256 "05108b57cb17ea59ab7e797028c22fe3c25f437867d17070f256ba0fdd682088" => :catalina
     sha256 "73da30b245db3892c9ad5fb95a50a42dff5da1bb2edc509660e73637f351323b" => :mojave
+    sha256 "5b99fbe839e445efacb1c613832596b3abeb64e423805e682bcebab947dc5a19" => :x86_64_linux
   end
 
   depends_on "node"
