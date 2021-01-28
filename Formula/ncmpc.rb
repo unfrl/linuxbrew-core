@@ -11,11 +11,12 @@ class Ncmpc < Formula
   end
 
   bottle do
-    cellar :any
+    cellar :any_skip_relocation
     sha256 "eb6dfde7e68a9b4bea16ab8ce081368544e111a12969c2d4787f151a524416fb" => :big_sur
     sha256 "e693f61a2205bf8db4237bbcd28186cdedd9e1b1ab0d3092a943b9084e9030bc" => :arm64_big_sur
     sha256 "918092c3e9b19ca5510cddd48aa571de8023f4d985472208349f7760c9a45148" => :catalina
     sha256 "192cb123d0e9b3ee61ddbe1c1f214c00557784f09812f1eef72b09b9f572207f" => :mojave
+    sha256 "26cd03fada1eda2cbe7360372ac9c4b618e9a0cb74b42f8a4550a73faed589c2" => :x86_64_linux
   end
 
   depends_on "boost" => :build
