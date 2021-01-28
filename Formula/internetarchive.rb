@@ -17,6 +17,7 @@ class Internetarchive < Formula
     sha256 "6fc93b7d1a7b5445af264cf80dbc46543ffaecfa5828aebbb8b8fa7a07cf12cc" => :arm64_big_sur
     sha256 "f24d4891757cca45c3fbf30c2c3a8f38caf727b6e63897717dbb1ed0390cb819" => :catalina
     sha256 "1dff0700defb5d43a0f161024b86f1ed308793cc660150d3086760f649eb7623" => :mojave
+    sha256 "29d1ed06297c5f3a1094e06df930fb7dba50148ddf5af844b3b01403cc83bb17" => :x86_64_linux
   end
 
   depends_on "python@3.9"
