@@ -16,6 +16,7 @@ class Platformio < Formula
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "11de8a3e5c7303a0fb22728305939a3f2d62fecf50cea39de0c4d986e8307b0a"
     sha256 cellar: :any_skip_relocation, catalina: "13c6d901982b59873b581fef869b93ac91ca5db32428de46628a69ee385dc89b"
     sha256 cellar: :any_skip_relocation, mojave: "b164440f9684f5428f86006375143bda3916f582a61e06b38df52f308d35a702"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ab28da3665c7142fe62e91e55f5a5bdb6442c48904df44d7075074dd10010e4c"
   end
 
   depends_on "python@3.9"
