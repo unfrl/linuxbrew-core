@@ -3,8 +3,8 @@ class Tox < Formula
 
   desc "Generic Python virtualenv management and test command-line tool"
   homepage "https://tox.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/43/5f/fdf5a733cbffb0eafb41cf458b0a0bb1e90ef6ef6cd1a0bcc6e3fa9ecfd7/tox-3.21.2.tar.gz"
-  sha256 "f501808381c01c6d7827c2f17328be59c0a715046e94605ddca15fb91e65827d"
+  url "https://files.pythonhosted.org/packages/58/d0/8021ebb1d9a5e88b141854a3eff82aba57c823f26258af3b875230210b16/tox-3.21.3.tar.gz"
+  sha256 "854e6e4a71c614b488f81cb88df3b92edcb1a9ec43d4102e6289e9669bbf7f18"
   license "MIT"
 
   livecheck do
@@ -13,11 +13,10 @@ class Tox < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "00e17596439cb15ad8514a9620b194686c8853f4482e289cd50eec40cb2e18b2" => :big_sur
-    sha256 "4ff9df7a454b815a2680150af9e9f917b03ef68f8e38064b3075b6cd7f3b43db" => :arm64_big_sur
-    sha256 "df8474cfbca95deedd7e76f61c0179c767b86efdddbedd888759946b30bd9af1" => :catalina
-    sha256 "bfc511569a2a67911cc17dc194e7e4fc22416b2960e964405364da2e6b0374ce" => :mojave
-    sha256 "4ec02f32294acd8b7d82d063e002f456c029497af47cfc499c47bba445793020" => :x86_64_linux
+    sha256 "bc55e81f5526b0d2b1c0527d1e5d4a5d472ff07c59197bff9fd5f76ac7f82789" => :big_sur
+    sha256 "d9483892c2e47fb1701d3f9b5e80c9c9646d7be3dfb4fe41eb37c2f45ec0afc0" => :arm64_big_sur
+    sha256 "2fcf02391677ccab995c52e308c99707ab6a1dc27e4a308e55547fddc265b99a" => :catalina
+    sha256 "f4403a90fb67b1ff0598e918108941fde1dd5596e2c15a05069451f328f6ea8e" => :mojave
   end
 
   depends_on "python@3.9"
