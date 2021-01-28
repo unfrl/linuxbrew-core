@@ -3,8 +3,8 @@ class CfnLint < Formula
 
   desc "Validate CloudFormation templates against the CloudFormation spec"
   homepage "https://github.com/aws-cloudformation/cfn-python-lint/"
-  url "https://files.pythonhosted.org/packages/54/c5/685c6e0c21b8f01912ab2066fe8c747e6d82a81aa3df9732074c9c611b2d/cfn-lint-0.44.4.tar.gz"
-  sha256 "8f7e249353d2335a5346994cc179ef2364c0ad2161cdf036ee6817ab3cea816b"
+  url "https://files.pythonhosted.org/packages/df/54/ff7f33dff0a7ed9829a0a59b1bfb06b31ef0b10c8e74f6210fa56a23e343/cfn-lint-0.44.5.tar.gz"
+  sha256 "6889c171eb2bbbe9e175149d8bada8ae627137748c42b04581e79469dc6b35e7"
   license "MIT"
 
   livecheck do
@@ -13,11 +13,10 @@ class CfnLint < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "1a358e9630d519cac2921703eca3de35e02abdc75daefd603482a7b756225d9f" => :big_sur
-    sha256 "40d5d7911a6b191b89a1c597ff73f8f9799372d38e7d089d8ae403ccb5ce38ea" => :arm64_big_sur
-    sha256 "bdeffaf9dd157e706b40fc847fd9c99a8cb33ca5ec321b1cf96222974cdda269" => :catalina
-    sha256 "4836ff61cce26e5f8e980e5f8d3df9554416ca42799faff0112c6d63a9033892" => :mojave
-    sha256 "02975eef6dcedb5f3445129fbb5e6a670fe15b44762b19dc71c9c0f2ba0114cb" => :x86_64_linux
+    sha256 "737632bb39a0ec7c27f7ffca183325aae6e177be025c40598b03848320387f28" => :big_sur
+    sha256 "99227264bccab34ad88af8af815e70d8b2f2ea10a46786ebc4363ae4acb26dae" => :arm64_big_sur
+    sha256 "94fe08c3e9c65dfd403b3b33fac96d1955ce0a9a5cce36eccf5aefc361c01f4f" => :catalina
+    sha256 "1c44664d1c1f2ed9e4e4632e240b4d76c2bca4833e1efc6216b6d39c49ddc054" => :mojave
   end
 
   depends_on "python@3.9"
@@ -33,13 +32,13 @@ class CfnLint < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/0d/e0/d1c11b391a4753741eb061e05b9390d39a6b01fb31ccb60ff189c01270d4/boto3-1.16.57.tar.gz"
-    sha256 "4a499cc2f53dd557a88c6db6a552748a2abd83ffeda70ceb71dc8db39a027314"
+    url "https://files.pythonhosted.org/packages/0c/ab/db17dca8a7af1e23446b6f816823f881d97bc389f4f5204e124230cf8a8a/boto3-1.16.60.tar.gz"
+    sha256 "10e8d9b18a8ae15677e850c7240140b9539635a03098f01dfdd75b2042d15862"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/4c/09/3627fe82aa27e49463bf03019e2e4e39a8c2a419421e96de7bb88a053284/botocore-1.19.57.tar.gz"
-    sha256 "c756d65ffa989c5c0e92178175e41abf7b18ad19b2fe2e82e192f085e264e03a"
+    url "https://files.pythonhosted.org/packages/5d/c4/5c9f3d055c4eeae5a4caf43fbd7f41faa61fe2700f6ade29cdaebdd17a73/botocore-1.19.60.tar.gz"
+    sha256 "423a1a9502bd7bc5db8c6e64f9374f64d8ac18e6b870278a9ff65f59d268cd58"
   end
 
   resource "decorator" do
@@ -89,8 +88,8 @@ class CfnLint < Formula
   end
 
   resource "PyYAML" do
-    url "https://files.pythonhosted.org/packages/b5/fd/15638de2da0a5aa91c095718444624aa565f766fc178249ca6faa372f71a/PyYAML-5.4.tar.gz"
-    sha256 "3c49e39ac034fd64fd576d63bb4db53cda89b362768a67f07749d55f128ac18a"
+    url "https://files.pythonhosted.org/packages/a0/a4/d63f2d7597e1a4b55aa3b4d6c5b029991d3b824b5bd331af8d4ab1ed687d/PyYAML-5.4.1.tar.gz"
+    sha256 "607774cbba28732bfa802b54baa7484215f530991055bb562efbed5b2f20a45e"
   end
 
   resource "s3transfer" do
@@ -104,8 +103,8 @@ class CfnLint < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/29/e6/d1a1d78c439cad688757b70f26c50a53332167c364edb0134cadd280e234/urllib3-1.26.2.tar.gz"
-    sha256 "19188f96923873c92ccb987120ec4acaa12f0461fa9ce5d3d0772bc965a39e08"
+    url "https://files.pythonhosted.org/packages/d7/8d/7ee68c6b48e1ec8d41198f694ecdc15f7596356f2ff8e6b1420300cf5db3/urllib3-1.26.3.tar.gz"
+    sha256 "de3eedaad74a2683334e282005cd8d7f22f4d55fa690a2a1020a416cb0a47e73"
   end
 
   def install
