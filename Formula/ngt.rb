@@ -16,6 +16,7 @@ class Ngt < Formula
     sha256 "2904b34765e80cab35c4ba6eced566acebd6ccc785dc0b02cda507d1fce44256" => :arm64_big_sur
     sha256 "5bb09741c501f1dfec11e46652022c929de3d79d7a268fa52f90e3d2dbde41a4" => :catalina
     sha256 "b00f6760adccd430822d17e27b8fd3202ff332a5a8bb93734e5e0b8ebcc01958" => :mojave
+    sha256 "fd4746592786f02b682b62a81a31f9fd90b803e1c802dfe2461279a0dba94cde" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
