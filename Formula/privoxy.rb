@@ -1,8 +1,8 @@
 class Privoxy < Formula
   desc "Advanced filtering web proxy"
   homepage "https://www.privoxy.org/"
-  url "https://downloads.sourceforge.net/project/ijbswa/Sources/3.0.29%20%28stable%29/privoxy-3.0.29-stable-src.tar.gz"
-  sha256 "25c6069efdaf577d47c257da63b03cd6d063fb790e19cc39603d82e5db72489d"
+  url "https://downloads.sourceforge.net/project/ijbswa/Sources/3.0.30%20%28stable%29/privoxy-3.0.30-stable-src.tar.gz"
+  sha256 "a4fe241c5da7010b284bf89e9e9e31a321f1f3eb1cc796559d3fbab9b9415ee1"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,11 +11,10 @@ class Privoxy < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "7b49313bc0ca6074e83753c56c192cc8c922e63f37a07ffd6954d81f63b39e69" => :big_sur
-    sha256 "08590216716f79252f4485179965c2a41a5db7064f86e575874a85dccda4adaa" => :arm64_big_sur
-    sha256 "8e6f41dd3f0828b17ed3ee516de139ae4baa66d7c01c633bf3fc95097029e5a8" => :catalina
-    sha256 "8c382bc37d0a27ca33786a09e435942f38aac55bb48b22f4dafe8810002a06da" => :mojave
+    sha256 cellar: :any, big_sur: "6afd2d69f94fe21894e98ed6527f5b59b708e0549e975dba750f4f8bd7319e5b"
+    sha256 cellar: :any, arm64_big_sur: "a31ccb4ed242cdb08eeb7f847dd22d0c5d561e50cf792d828db809005838cbee"
+    sha256 cellar: :any, catalina: "e0a480997db3af1527a6458f3a64817daf963dc2f0fc38e8ea04ff7da9876a08"
+    sha256 cellar: :any, mojave: "2a3156bbd30ebb8cb25eaaf796044d2e549fd96dfdfc921d0f41ab2f85fd6625"
   end
 
   depends_on "autoconf" => :build

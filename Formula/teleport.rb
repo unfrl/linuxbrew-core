@@ -1,8 +1,8 @@
 class Teleport < Formula
   desc "Modern SSH server for teams managing distributed infrastructure"
   homepage "https://gravitational.com/teleport"
-  url "https://github.com/gravitational/teleport/archive/v5.1.0.tar.gz"
-  sha256 "3b9a5625ba786c425aa34ecb153e1d1e6e1eca179e63dd1efbe6a5f1b009d9d9"
+  url "https://github.com/gravitational/teleport/archive/v5.1.2.tar.gz"
+  sha256 "dbd08c25458d93e9536a399cb902c81511fa7c2242d1810d3509436b5b6a54ab"
   license "Apache-2.0"
   head "https://github.com/gravitational/teleport.git"
 
@@ -17,11 +17,10 @@ class Teleport < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "35d3e932558d45b596456a470281693afeeaa61ffb5974255a16d79874e2aa81" => :big_sur
-    sha256 "6d466b48d274116470d8424ed25a3fe2d260dde46953c1895e1e1b689d7c948c" => :arm64_big_sur
-    sha256 "4a5793602fbc72a2b99535f0203b24ee3e2ee8f8598216065d18c7a284a10caf" => :catalina
-    sha256 "89357a0db8c72641d2edd8866a5aa1afe62a49ab98404bf2c9b0a6c7cb0c7dba" => :mojave
+    sha256 cellar: :any_skip_relocation, big_sur: "5449dd0e13c91857979475f18c1b19c7c13cfd44cdf8c112d474ef732dc3a77a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "d297ac059f06b0f1c6087cdf8f0d7ad35566bcbf4344a4f707c9de68ee435a1b"
+    sha256 cellar: :any_skip_relocation, catalina: "7cb26e9d367302c80202e560fb932438a38e1541d1519a18ca4542cb11b29715"
+    sha256 cellar: :any_skip_relocation, mojave: "12ce513bfead1a75d22433748e713376302afa8aeb92fa098ac6c62d207a60e6"
   end
 
   depends_on "go" => :build
@@ -32,9 +31,10 @@ class Teleport < Formula
 
   conflicts_with "etsh", because: "both install `tsh` binaries"
 
+  # Keep this in sync with https://github.com/gravitational/teleport/tree/v#{version}
   resource "webassets" do
-    url "https://github.com/gravitational/webassets/archive/72412062d6d55ec7faa9707abf500d703e7d09da.tar.gz"
-    sha256 "c84767bea0a723f406e3b6566a0a48892758b2e5f3a9e9b453d22171315fd29d"
+    url "https://github.com/gravitational/webassets/archive/2d79788dbcd005bdcfe5b5120007d0faf8f1fc82.tar.gz"
+    sha256 "dd27115583899234569b8cb7dc67dfcce69f2a972a27fb4b29904960ee36b9e2"
   end
 
   def install

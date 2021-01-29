@@ -1,17 +1,15 @@
 class Procs < Formula
   desc "Modern replacement for ps written by Rust"
   homepage "https://github.com/dalance/procs"
-  url "https://github.com/dalance/procs/archive/v0.10.10.tar.gz"
-  sha256 "dbef5afc118f54e794b539b86fc3a53ac4a94ec566ad78cddfe0580940388421"
+  url "https://github.com/dalance/procs/archive/v0.11.1.tar.gz"
+  sha256 "91b70857bc8c691e4d45f13af5f24267541a7e6147419186a437cdae963b4916"
   license "MIT"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "212bb791a261e19856eda7ff7cdae3ee3d96a5553f5f1a6fd94a882b8663121f" => :big_sur
-    sha256 "20c0b4166c8968e34e777e67f934890ad4449d4619db6cae53f6b14d3d289c3b" => :arm64_big_sur
-    sha256 "7bd872fd51bc821cb102ed245545918b6c95356395a66665807dc089c245409e" => :catalina
-    sha256 "435573168fd92844915ffc08bb1d29b424549fb805ee9205094d27892ec0c33a" => :mojave
-    sha256 "2550674158596e61941305731a639733b22a72c5d54f2d78148869e2628bfc25" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, big_sur: "0c33d537b44ce397cb3b4b7ee5c686280605eee88c0b5b2814f2fd2699d1d88d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "e2cddf6c2b08741774dff4f01aae9ff52eb06726bdfd89f02026e83865e65d0e"
+    sha256 cellar: :any_skip_relocation, catalina: "7e9aa3af0f6c2fcb50c2b53689e1a32faa1a21806539ff53d505ebe7283b8d51"
+    sha256 cellar: :any_skip_relocation, mojave: "b9573536a98e6ed6180a58386de775cf50e3851a910158f78e1102f26eb6fff1"
   end
 
   depends_on "rust" => :build

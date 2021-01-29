@@ -3,16 +3,15 @@ class Bear < Formula
 
   desc "Generate compilation database for clang tooling"
   homepage "https://github.com/rizsotto/Bear"
-  url "https://github.com/rizsotto/Bear/archive/3.0.7.tar.gz"
-  sha256 "90004c7f8c83b81b3c6d9a1dced83e6cc212f60a1d1434b934ae0cf0045b3193"
+  url "https://github.com/rizsotto/Bear/archive/3.0.8.tar.gz"
+  sha256 "663ef2fcf359e1efb20831fae3901a3edbbb906dd0bc5e62af92e353651c5cec"
   license "GPL-3.0-or-later"
   head "https://github.com/rizsotto/Bear.git"
 
   bottle do
-    cellar :any
-    sha256 "b2cb1d2a69961eb48dfe78b1a904e5e062121a36bc833b32750d5d2e9e4b1303" => :big_sur
-    sha256 "3400e1dd8f85207ca25fa696bf9888e0ed1474246713ded9d1263407b72e5465" => :arm64_big_sur
-    sha256 "97abc44083299426ade4bf4fa96cf9bd91741214beb7ffb1fa3c03739ca9a123" => :catalina
+    sha256 big_sur: "a7804434d6a07751d04e290817c5ba3212c43b78e7e4c86651b3b4053878e791"
+    sha256 arm64_big_sur: "12f52a5923b8fa6861a912f0d693c7d3b20eae237069afb37a75f242f92b42e1"
+    sha256 catalina: "0188bcf2c380ae32007526f63f5b9752d5bc491b12f11f0d44da27058ce9ac74"
   end
 
   depends_on "cmake" => :build
