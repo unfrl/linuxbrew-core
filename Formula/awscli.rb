@@ -13,6 +13,7 @@ class Awscli < Formula
     sha256 cellar: :any, arm64_big_sur: "5970413cf75bce3e0908c0bc02fafe96d83559eec80e618e264638b007673efd"
     sha256 catalina: "dbdbf05a94e97c5acec62d09272dc407f42244a0d2546ac6f273843484142183"
     sha256 mojave: "99139c8d3d78914799034b4ce56aeefa106be643eff5ab2952b06eeff98231db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "5a422a1fc4d9f4f333d7c2c20b854dc17707fc9b39320e7d42bab5c389abaef7"
   end
 
   depends_on "python@3.9"
