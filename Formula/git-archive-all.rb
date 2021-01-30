@@ -12,6 +12,7 @@ class GitArchiveAll < Formula
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "6b56c146d2bc161c6214878d142cd67bc646ade222b7e45aab1691f7f3987a37"
     sha256 cellar: :any_skip_relocation, catalina: "7a8f0e71281afa27399fab199e975f0d717c0593526701d2f43eac2f096a41b9"
     sha256 cellar: :any_skip_relocation, mojave: "a375cfca74cda33d29bc74ed712e0dedb0495c56a1378a25009edcabcbdb44fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a75ee48eb98086e7a06bd0a9eefa84620031e62533daf861572e05b74afae42f"
   end
 
   depends_on "python@3.9" unless OS.mac?
