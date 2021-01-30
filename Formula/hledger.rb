@@ -1,8 +1,8 @@
 class Hledger < Formula
   desc "Easy plain text accounting with command-line, terminal and web UIs"
   homepage "https://hledger.org/"
-  url "https://hackage.haskell.org/package/hledger-1.20.3/hledger-1.20.3.tar.gz"
-  sha256 "a9638c12d1eb7325af057d225d77411d60b0f144d907012617b44ec5ee2dc4f3"
+  url "https://hackage.haskell.org/package/hledger-1.20.4/hledger-1.20.4.tar.gz"
+  sha256 "25e155fcee541e9c5a295dc5002b03f184049b80485b18901d9d660a26814dbb"
   license "GPL-3.0-or-later"
 
   # A new version is sometimes present on Hackage before it's officially
@@ -14,10 +14,9 @@ class Hledger < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "d6afd6441959d6dd3da9df2ccf5fffd0ba01a1945d42e20ee523c79888487bef" => :big_sur
-    sha256 "5c7c5e170066f06f125bd9d26faf480c2cb1ac31135188e71c50194e9ea02ae6" => :catalina
-    sha256 "99ccb9c6e74d3914f67af8df09a45256866763af58da4f347c1dc2baf7d224df" => :mojave
+    sha256 cellar: :any_skip_relocation, big_sur: "3fcdfd761351cc052d8e88477288056592559574bb45605c3fa5674a2df0dc49"
+    sha256 cellar: :any_skip_relocation, catalina: "9d4da9897d54c3d5a92b1462d5583530dc6aaf789bf5248020c93a7469bb4e4d"
+    sha256 cellar: :any_skip_relocation, mojave: "41634adcf3e65ca93e31ffbfc048ca45e6b6282a546545bf0c1a914ae86c9343"
   end
 
   depends_on "ghc" => :build
@@ -27,16 +26,16 @@ class Hledger < Formula
   uses_from_macos "zlib"
 
   resource "hledger-lib" do
-    url "https://hackage.haskell.org/package/hledger-lib-1.20.3/hledger-lib-1.20.3.tar.gz"
-    sha256 "97a10c74fad977628e6ab9c3262db69e531598d5577f753a7933cf50e364a65e"
+    url "https://hackage.haskell.org/package/hledger-lib-1.20.4/hledger-lib-1.20.4.tar.gz"
+    sha256 "dc7f00517d33062ed9c495dea6dc20181a0c4fd1805f2ce37f30743ea01cda9d"
   end
   resource "hledger-ui" do
-    url "https://hackage.haskell.org/package/hledger-ui-1.20.3/hledger-ui-1.20.3.tar.gz"
-    sha256 "81fe2b4480cc0291a90e0b4c7d36cf5174d859327c6a998d94ee18177bebe609"
+    url "https://hackage.haskell.org/package/hledger-ui-1.20.4/hledger-ui-1.20.4.tar.gz"
+    sha256 "71009410e2267377ff572b04f0ac860c94c75ba1c58c0f8ea2fec35bc9f63279"
   end
   resource "hledger-web" do
-    url "https://hackage.haskell.org/package/hledger-web-1.20.3/hledger-web-1.20.3.tar.gz"
-    sha256 "0493a7fa977910abbd5c6076cd10ef03f4148408aac1226d6e9536832ea7e3b7"
+    url "https://hackage.haskell.org/package/hledger-web-1.20.4/hledger-web-1.20.4.tar.gz"
+    sha256 "c4ba461165dd0513282bd0463c88effea2c29f2ca1bc8f7ed043d26572b9fa1a"
   end
 
   def install
