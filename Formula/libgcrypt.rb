@@ -58,40 +58,40 @@ index 243997e..1987265 100644
 --- a/src/g10lib.h
 +++ b/src/g10lib.h
 @@ -217,7 +217,6 @@ char **_gcry_strtokenize (const char *string, const char *delim);
-
-
+ 
+ 
  /*-- src/hwfeatures.c --*/
 -#if defined(HAVE_CPU_ARCH_X86)
-
+ 
  #define HWF_PADLOCK_RNG         (1 << 0)
  #define HWF_PADLOCK_AES         (1 << 1)
 @@ -238,29 +237,21 @@ char **_gcry_strtokenize (const char *string, const char *delim);
  #define HWF_INTEL_RDTSC         (1 << 15)
  #define HWF_INTEL_SHAEXT        (1 << 16)
-
+ 
 -#elif defined(HAVE_CPU_ARCH_ARM)
-
+-
  #define HWF_ARM_NEON            (1 << 0)
  #define HWF_ARM_AES             (1 << 1)
  #define HWF_ARM_SHA1            (1 << 2)
  #define HWF_ARM_SHA2            (1 << 3)
  #define HWF_ARM_PMULL           (1 << 4)
-
+ 
 -#elif defined(HAVE_CPU_ARCH_PPC)
 -
  #define HWF_PPC_VCRYPTO         (1 << 0)
  #define HWF_PPC_ARCH_3_00       (1 << 1)
  #define HWF_PPC_ARCH_2_07       (1 << 2)
-
+ 
 -#elif defined(HAVE_CPU_ARCH_S390X)
 -
  #define HWF_S390X_MSA           (1 << 0)
  #define HWF_S390X_MSA_4         (1 << 1)
  #define HWF_S390X_MSA_8         (1 << 2)
  #define HWF_S390X_VX            (1 << 3)
-
+ 
 -#endif
-
+-
  gpg_err_code_t _gcry_disable_hw_feature (const char *name);
  void _gcry_detect_hw_features (void);
  unsigned int _gcry_get_hw_features (void);
