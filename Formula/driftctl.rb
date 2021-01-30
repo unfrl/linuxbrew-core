@@ -1,15 +1,14 @@
 class Driftctl < Formula
   desc "Detect, track and alert on infrastructure drift"
   homepage "https://driftctl.com"
-  url "https://github.com/cloudskiff/driftctl/archive/v0.3.0.tar.gz"
-  sha256 "6d63ce17341cd7d49a802f0d934f30d0a3fb8b0bbbc4c6a5668aa2df563bed58"
+  url "https://github.com/cloudskiff/driftctl/archive/v0.3.1.tar.gz"
+  sha256 "0ef5b38c83acf008c5e0367710d4b20981b19f04d8129e1ab1f0ade1735d34cd"
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "336cd18c3acdc4c7f544dd175be198424d0500864a1f60ed49910ab2d0323206" => :big_sur
-    sha256 "cd518abec7d1aaa19503e6905193cf6dbc4610179201d5c7a9e8b59a95b603bc" => :catalina
-    sha256 "8a2539b7a0c52566ab67edce670cd9d421f0d75a925ee331cffa92a180844bfa" => :mojave
+    sha256 cellar: :any_skip_relocation, big_sur: "f89c53afa445e2b212f28bb247639da1b4b8faef876bcf3297a05c7f8f134da7"
+    sha256 cellar: :any_skip_relocation, catalina: "05813efabc5842c7a36689efad64ea531ec0f48943a7f34b847b4198c3ab40a8"
+    sha256 cellar: :any_skip_relocation, mojave: "0890fa0da64601b2d6046357e3598b7ba3c45da3f30359169e6d73f597d05205"
   end
 
   depends_on "go" => :build
