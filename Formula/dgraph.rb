@@ -1,8 +1,8 @@
 class Dgraph < Formula
   desc "Fast, Distributed Graph DB"
   homepage "https://dgraph.io"
-  url "https://github.com/dgraph-io/dgraph/archive/v20.07.2.tar.gz"
-  sha256 "4474f3efad9d16d6d1a82eda6f1ad8e187194e933aeec5de3b42cf9463f6301c"
+  url "https://github.com/dgraph-io/dgraph/archive/v20.11.1.tar.gz"
+  sha256 "b70c80d516b728081a67f6a4d2dbc8ffb74ba82df6068b5c3561e3fc96b5092d"
   # Source code in this repository is variously licensed under the Apache Public License 2.0 (APL)
   # and the Dgraph Community License (DCL). A copy of each license can be found in the licenses directory.
   license "Apache-2.0"
@@ -14,19 +14,18 @@ class Dgraph < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "7ac1f2a4a9af53e4fa6ee2137825e1095417b9f066acf4cb82b2ccf0a70f6007" => :big_sur
-    sha256 "2b82433d3cf3925380091c736f1e0eda58ecf7d81dda1531530857a179c43ec9" => :arm64_big_sur
-    sha256 "8bafc5de5848440c3f1c978a475c128432029a638f2d2febf7104fc1bfc73533" => :catalina
-    sha256 "57e295bc99e16fa92f1253752957530c97d102c1c713ca89e6d59cc6a3c07a3c" => :mojave
-    sha256 "0150fc8ae2de160040728047de34b74223f4f3ecedd2b979df64c220b609074a" => :high_sierra
+    sha256 cellar: :any_skip_relocation, big_sur: "d9f6184eabe58ac2ffe70348101d7b5faa5592807b649c464749317c82a7331b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "783faa5e8541f8117d1a830675f4ebf97b44a75b2f8703fe5cd8fb0ad520f129"
+    sha256 cellar: :any_skip_relocation, catalina: "39f4a8a78fe7dd86e091721069b65b6c41b6d874f5b6bdab3a04056b2b2a6fe8"
+    sha256 cellar: :any_skip_relocation, mojave: "b5e991c811c8c43ac0df4a465192736aeb42bce572c34631ec4a31aa8de9c6c8"
   end
 
   depends_on "go" => :build
+  depends_on "jemalloc"
 
   def install
     ENV["GOBIN"] = bin
-    system "make", "oss_install"
+    system "make", "HAS_JEMALLOC=jemalloc", "oss_install"
   end
 
   test do
