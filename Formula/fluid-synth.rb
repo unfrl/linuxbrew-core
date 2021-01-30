@@ -11,6 +11,7 @@ class FluidSynth < Formula
     sha256 cellar: :any, arm64_big_sur: "4305044cba000c5d84091d08212a591ee194095d64f58bfd3a2f7774eb74aa80"
     sha256 cellar: :any, catalina: "b42d65523f293bd5f684f218954598b7512a7a9ad70f5ee70d4c0d8653267390"
     sha256 cellar: :any, mojave: "c362af5dc1a15d2d0798b79452068c1f65a98f8604b04734cf48dad22ebba4c3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "57b623ba3579c38240bb4d5bb3e6d67a74078e8504f061b04450fbe9ae94412b"
   end
 
   depends_on "cmake" => :build
