@@ -16,6 +16,7 @@ class Molecule < Formula
     sha256 cellar: :any, arm64_big_sur: "8cafe8a6db8393d7f5d74e8412c63457272ecd258354642aaf2f2104a07ae40f"
     sha256 cellar: :any, catalina: "e1cd27572c4ee35da836e09f499c8ad8c2ddd1923e9690d2c804f57c5e0945bd"
     sha256 cellar: :any, mojave: "a0a79dedb86016fe2dd72cc3672c039c5d63b4f26c9355c844591eedca1d68b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "46128b73eb2a67a780f32524609b8c0efe7dc0386756cd22e8e5e7bf959e004d"
   end
 
   depends_on "ansible"
