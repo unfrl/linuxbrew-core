@@ -2,11 +2,12 @@ class Go < Formula
   desc "Open source programming language to build simple/reliable/efficient software"
   homepage "https://golang.org"
   license "BSD-3-Clause"
+  revision 1
 
   stable do
     if Hardware::CPU.arm?
-      url "https://golang.org/dl/go1.16beta1.src.tar.gz"
-      sha256 "48e032c8cf71af4dc8119a29ee829c4fbd5265e32fd012564d4a70bb207695c1"
+      url "https://golang.org/dl/go1.16rc1.src.tar.gz"
+      sha256 "6a33569f9d0d21db31614086cc2a4f0fbc683b41c1c53fb512a1341ce5763ff5"
       version "1.15.7"
     else
       url "https://golang.org/dl/go1.15.7.src.tar.gz"
@@ -27,11 +28,10 @@ class Go < Formula
   end
 
   bottle do
-    sha256 "096d7cc1408bb88499a61bbd7a223d7ffd614e98be57442f6756c50c88373bdd" => :big_sur
-    sha256 "2d5f8a726655d72e9b07cc4e79c08829f750a07fdeb2bc5d63802965e2c617f9" => :arm64_big_sur
-    sha256 "35669f4bca27f415ca1365c752aa8f7389c419042f0e9416f311670c599297ef" => :catalina
-    sha256 "8f718cc71177e5fd28981e0323c09e0cfd4ad1b8cc5f1cd303e2b7a3276a7ded" => :mojave
-    sha256 "e5497c244a9e6d129c5fdb6e9e76fbe3bce160062e6224c6fbaf6b7552deb3cd" => :x86_64_linux
+    sha256 big_sur: "f9fafcc83029a1f568e586a8acbd95834d35b03153d6de8f9b52db97313c65d0"
+    sha256 arm64_big_sur: "142cd5c1aaec872347771022567305de891bcfd3d5563bc66860f35f2416a1a0"
+    sha256 catalina: "591f8cb8670af19adffa3917416c36d0222f0010f078851f452f8ac0305f4558"
+    sha256 mojave: "61e4f758c48b7b6cf5d302328bf34d72be2316606d1f93f4152934b874319c84"
   end
 
   head do
@@ -98,8 +98,8 @@ class Go < Formula
 
     if Hardware::CPU.arm?
       s += <<~EOS
-        This is a beta version of the Go compiler for Apple Silicon
-        (Go 1.16beta1).
+        This is a release candidate version of the Go compiler for Apple Silicon
+        (Go 1.16rc1).
       EOS
     end
 
