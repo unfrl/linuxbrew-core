@@ -16,6 +16,7 @@ class Gtkmm < Formula
     sha256 cellar: :any, arm64_big_sur: "d0ed84fa9b225419e612a9b230914a7ffc89edb7911d8c9c93259c4b22ae7d42"
     sha256 cellar: :any, catalina: "36bb5da441b53edde4c238f3db1cf9c6ac4c7d6cbf615dc6f8ab6a9aaf75c6be"
     sha256 cellar: :any, mojave: "23182625b2ad79dac53a931d009b4e4621fbd75682c598e54d58ea8bfebb73f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f82392ac3c892cda75690c2d1ea4bb6071dd3d087f6d06b1b5e69b0a9b516b5c"
   end
 
   depends_on "pkg-config" => :build
