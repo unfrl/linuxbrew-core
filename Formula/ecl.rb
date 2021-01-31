@@ -11,6 +11,7 @@ class Ecl < Formula
     sha256 big_sur: "bbdf0be3bd7607484c959f54b1237f9f74020d9539ce66167cd1cd2195ca9953"
     sha256 catalina: "59311b4250de8733f88bb1a3f02e1a7e7c39f148e2e881c35d87ca7aad68c23e"
     sha256 mojave: "dbbfb2aa9172ec1d3b905da9059fef5ff524caeab42ada84220c0251a913103e"
+    sha256 x86_64_linux: "8d4cdad5e1f4072dfa0f683f728bf7ad50e3e17d9a378572f2aefedb03a8c9a5"
   end
 
   depends_on "texinfo" => :build # Apple's is too old
