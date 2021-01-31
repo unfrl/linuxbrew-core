@@ -4,25 +4,23 @@ class Libxmlxx3 < Formula
   url "https://download.gnome.org/sources/libxml++/3.2/libxml++-3.2.2.tar.xz"
   sha256 "a53d0af2c9bf566b4d5d57d1c6495b189555c54785941d7e3bef666728952f0b"
   license "LGPL-2.1-or-later"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
   end
 
   bottle do
-    cellar :any
-    sha256 "7c1c805e82abcb022693b2c406cdb315b722a82bf510f0b6fbf65a04bb5be4d5" => :big_sur
-    sha256 "3dc301c85f0b5f9da58de539e50df1b9f22e7fa8d7840f498bfdb4b118dfe4e9" => :arm64_big_sur
-    sha256 "ec019c33706d717ab23eb6666fb7a99984b12928bb7c12f65d97e8804b0e5021" => :catalina
-    sha256 "a4785f6c1dfdc802e564d637a3be7047dca1cdc24bf680ca4ab4130921812d3a" => :mojave
-    sha256 "23c9e9da1e993eb1361837168a9be589743ab2bc90728362d34e2c30f1b60a65" => :x86_64_linux
+    sha256 cellar: :any, big_sur: "f0c270ebd865837c345f5299c221d6053dafcc836df83c6a4e07b3efab0b4847"
+    sha256 cellar: :any, arm64_big_sur: "031e2c0f7344a8dca24441939a6770c5f65d2f6aa6525b9fc033e71161ea07c8"
+    sha256 cellar: :any, catalina: "b1d3151c29eccac4958990d44da7d2ecf1bc7d215035a09cba74804dbc7f4e8c"
+    sha256 cellar: :any, mojave: "6badb352f2664e3e0994063b6aadc6f5f150706dd256095485db10155f939507"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
-  depends_on "glibmm@2.64"
+  depends_on "glibmm@2.66"
 
   uses_from_macos "libxml2"
 
@@ -50,7 +48,7 @@ class Libxmlxx3 < Formula
     ENV.libxml2
     gettext = Formula["gettext"]
     glib = Formula["glib"]
-    glibmm = Formula["glibmm@2.64"]
+    glibmm = Formula["glibmm@2.66"]
     libsigcxx = Formula["libsigc++@2"]
     flags = %W[
       -I#{gettext.opt_include}

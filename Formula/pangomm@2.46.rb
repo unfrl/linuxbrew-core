@@ -1,29 +1,27 @@
-class PangommAT242 < Formula
+class PangommAT246 < Formula
   desc "C++ interface to Pango"
   homepage "https://www.pango.org/"
-  url "https://download.gnome.org/sources/pangomm/2.42/pangomm-2.42.2.tar.xz"
-  sha256 "1b24c92624ae1275ccb57758175d35f7c39ad3342d8c0b4ba60f0d9849d2d08a"
+  url "https://download.gnome.org/sources/pangomm/2.46/pangomm-2.46.0.tar.xz"
+  sha256 "d3787d04d6198b606f3efa357b3b452a7140e2a7dee56f9f9ce516d7d5fcec1b"
   license "LGPL-2.1-only"
 
   livecheck do
     url :stable
-    regex(/pangomm-(2\.42(?:\.\d+)*)\.t/i)
+    regex(/pangomm-(2\.46(?:\.\d+)*)\.t/i)
   end
 
   bottle do
-    cellar :any
-    sha256 "5c9e14b2e7c96d10ffc4411eae99ce059578163bdc2230aaaf2f122c2ed1f816" => :big_sur
-    sha256 "dae1ce875ec88688f1235bc0587c272232017a9380b25b742db10964c158190c" => :arm64_big_sur
-    sha256 "98a193de21bc07a5e39cadd4e4967f30fd19e06c44c46ef24f0d4b8e184bec59" => :catalina
-    sha256 "cf3d702b8b506abcbcce428435b16f78a0ba75c2865094e9b391a8c2622af022" => :mojave
-    sha256 "98fa8017004423b492d30bd559a47f299f9290ac272b78ab89ffd7b93b386aab" => :x86_64_linux
+    sha256 cellar: :any, big_sur: "9a870c15a49dcf494cfb0c246be4644ad3e7c0d8cdf259f86e3406b819471d96"
+    sha256 cellar: :any, arm64_big_sur: "0268b741bd164b6cac87ac38ae0533836fe5b270ffc50b3fba764811e17c075b"
+    sha256 cellar: :any, catalina: "2bf76c319136106e007194615bc4eabff96845f7bcc7d256237b24eb15e0d179"
+    sha256 cellar: :any, mojave: "34e3d85dd6821af7aa8e14c4a019fd858a16f303f7bbb13164b57348ed69bee7"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "cairomm@1.14"
-  depends_on "glibmm@2.64"
+  depends_on "glibmm@2.66"
   depends_on "pango"
 
   def install
@@ -50,7 +48,7 @@ class PangommAT242 < Formula
     freetype = Formula["freetype"]
     gettext = Formula["gettext"]
     glib = Formula["glib"]
-    glibmm = Formula["glibmm@2.64"]
+    glibmm = Formula["glibmm@2.66"]
     harfbuzz = Formula["harfbuzz"]
     libpng = Formula["libpng"]
     libsigcxx = Formula["libsigc++@2"]

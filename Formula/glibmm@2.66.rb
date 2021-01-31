@@ -1,23 +1,21 @@
-class GlibmmAT264 < Formula
+class GlibmmAT266 < Formula
   desc "C++ interface to glib"
   homepage "https://www.gtkmm.org/"
-  url "https://download.gnome.org/sources/glibmm/2.64/glibmm-2.64.5.tar.xz"
-  sha256 "508fc86e2c9141198aa16c225b16fd6b911917c0d3817602652844d0973ea386"
+  url "https://download.gnome.org/sources/glibmm/2.66/glibmm-2.66.0.tar.xz"
+  sha256 "9e1db7d43d2e2d4dfa2771354e21a69a6beec7c446b711619cf8c779e13a581e"
   license "LGPL-2.1-or-later"
 
   livecheck do
-    url "https://download.gnome.org/sources/glibmm/2.64/"
+    url "https://download.gnome.org/sources/glibmm/2.66/"
     strategy :page_match
-    regex(/href=.*?glibmm[._-]v?(2\.64(?:\.\d+)+)\.t/i)
+    regex(/href=.*?glibmm[._-]v?(2\.66(?:\.\d+)+)\.t/i)
   end
 
   bottle do
-    cellar :any
-    sha256 "59179b822c27f1c01e10ae59e44562dabc44f5f00f04c0951644f7d2465146eb" => :big_sur
-    sha256 "411944557e76a827e1ece0e6a34f862ab30bdaaae2de37e0a4ce5338a3f33112" => :arm64_big_sur
-    sha256 "d8e9d38b8a4a3945777ccacc703363e1c036efa1aa2b49ee857a08e7938f7c5e" => :catalina
-    sha256 "838331b973d6d0498c16a28330e1354d63fa7dda297a32093eaf37660a0227c0" => :mojave
-    sha256 "677b69d2f0dc5e8c064bf2ba98677b7b326c4ed6ef6afec5205bf019dd4296bd" => :x86_64_linux
+    sha256 cellar: :any, big_sur: "8ebe988cf869ff827670bbbe44e7c5e5c917a39c85010aaf0e15eed06bad9847"
+    sha256 cellar: :any, arm64_big_sur: "1199ae1aed0d8ea5245cdab8bc123888948ae5e6ac97a86b85569655af279dc0"
+    sha256 cellar: :any, catalina: "8b3d2f2a50ccdd9999da0f7ff4c519c84cdaa3202b4bd4b877cd4383d29fca03"
+    sha256 cellar: :any, mojave: "ab3fe7f773300420e75c53c42a4fb69a139b04dae386f5db9425c0b9f420d7ed"
   end
 
   depends_on "meson" => :build

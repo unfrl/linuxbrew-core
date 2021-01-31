@@ -4,7 +4,7 @@ class Gtkmm < Formula
   url "https://download.gnome.org/sources/gtkmm/2.24/gtkmm-2.24.5.tar.xz"
   sha256 "0680a53b7bf90b4e4bf444d1d89e6df41c777e0bacc96e9c09fc4dd2f5fe6b72"
   license "LGPL-2.1-or-later"
-  revision OS.mac? ? 7 : 8
+  revision OS.mac? ? 8 : 9
 
   livecheck do
     url :stable
@@ -12,21 +12,19 @@ class Gtkmm < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "dd431cc6f06e5756f09c2370f78867dc531804551a1b25c67abb5c18b5510fa6" => :big_sur
-    sha256 "516fe7ab94bff8ea23ec1275226104362acfd73eecf568e87431c8f366d9829b" => :arm64_big_sur
-    sha256 "45cf02a214ef2b5d67a5c8eab95557973539203891617188ba7071943aa4cba2" => :catalina
-    sha256 "64f506804f243615dcda445208698183e7389f7fb5c3f79a045b4a7018e11a44" => :mojave
-    sha256 "daa019f67ddb8578b84d726c70321a4f4d99a59b2e66871e6040f3e2cfb4cc9e" => :x86_64_linux
+    sha256 cellar: :any, big_sur: "d38edddb1e41fead71b2758b3f73e98745d4437e7be367be7ceb02d461524cb3"
+    sha256 cellar: :any, arm64_big_sur: "d0ed84fa9b225419e612a9b230914a7ffc89edb7911d8c9c93259c4b22ae7d42"
+    sha256 cellar: :any, catalina: "36bb5da441b53edde4c238f3db1cf9c6ac4c7d6cbf615dc6f8ab6a9aaf75c6be"
+    sha256 cellar: :any, mojave: "23182625b2ad79dac53a931d009b4e4621fbd75682c598e54d58ea8bfebb73f1"
   end
 
   depends_on "pkg-config" => :build
   depends_on "atkmm@2.28"
   depends_on "cairomm@1.14"
-  depends_on "glibmm@2.64"
+  depends_on "glibmm@2.66"
   depends_on "gtk+"
   depends_on "libsigc++@2"
-  depends_on "pangomm@2.42"
+  depends_on "pangomm@2.46"
 
   def install
     ENV.cxx11
@@ -52,13 +50,13 @@ class Gtkmm < Formula
     gdk_pixbuf = Formula["gdk-pixbuf"]
     gettext = Formula["gettext"]
     glib = Formula["glib"]
-    glibmm = Formula["glibmm@2.64"]
+    glibmm = Formula["glibmm@2.66"]
     gtkx = Formula["gtk+"]
     harfbuzz = Formula["harfbuzz"]
     libpng = Formula["libpng"]
     libsigcxx = Formula["libsigc++@2"]
     pango = Formula["pango"]
-    pangomm = Formula["pangomm@2.42"]
+    pangomm = Formula["pangomm@2.46"]
     pixman = Formula["pixman"]
     flags = %W[
       -I#{atk.opt_include}/atk-1.0
