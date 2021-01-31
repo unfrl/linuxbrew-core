@@ -5,14 +5,13 @@ class Aom < Formula
       tag:      "v2.0.1",
       revision: "b52ee6d44adaef8a08f6984390de050d64df9faa"
   license "BSD-2-Clause"
+  revision 1
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "c03472a3e8dd38972fe30ee245dade96626c7927f511b7c39eb5b1b6f789e34b" => :big_sur
-    sha256 "06d96aee6c62b57139fec871110fb0c53bbe0bea114f50ab4655dda087ae54ba" => :arm64_big_sur
-    sha256 "ebac8d7473e89b82ad00046243ef47207c0823e410c4d3c40483a81324ad2a4c" => :catalina
-    sha256 "99912d7dfc789ce059c33ea739f736930c40ea59ce58a70a6ee2478199b4363b" => :mojave
-    sha256 "dae1bae7e7091a0ce11b07c65a7cc1581c0d28b5fbf4c8efe627abb5d9278b99" => :x86_64_linux
+    sha256 big_sur: "630f7667afa820f812e6db647a35daed6a0c178234e9d021f327e77209d291f6"
+    sha256 arm64_big_sur: "40ff3aca3a017ec17da8b1e259d6d73279eb05d04d88d34da67363187a9a7706"
+    sha256 catalina: "0ff8bc71b78e7dab72a5f51d877c4566e8933308e282e4225fb30d9858d71a3d"
+    sha256 mojave: "d53d69ac2b2a129d20322b3c994d3e3491bc669deb08d46c253f43ec8b5e145a"
   end
 
   depends_on "cmake" => :build
@@ -25,13 +24,13 @@ class Aom < Formula
 
   def install
     mkdir "macbuild" do
-      args = std_cmake_args.concat(["-DENABLE_DOCS=off",
+      args = std_cmake_args.concat(["-DCMAKE_INSTALL_RPATH=#{lib}",
+                                    "-DENABLE_DOCS=off",
                                     "-DENABLE_EXAMPLES=on",
                                     "-DENABLE_TESTDATA=off",
                                     "-DENABLE_TESTS=off",
-                                    "-DENABLE_TOOLS=off"])
-
-      args << "-DBUILD_SHARED_LIBS=1" unless OS.mac?
+                                    "-DENABLE_TOOLS=off",
+                                    "-DBUILD_SHARED_LIBS=on"])
       # Runtime CPU detection is not currently enabled for ARM on macOS.
       args << "-DCONFIG_RUNTIME_CPU_DETECT=0" if Hardware::CPU.arm?
       system "cmake", "..", *args

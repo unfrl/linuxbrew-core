@@ -4,6 +4,7 @@ class IncludeWhatYouUse < Formula
   url "https://include-what-you-use.org/downloads/include-what-you-use-0.15.src.tar.gz"
   sha256 "2bd6f2ae0d76e4a9412f468a5fa1af93d5f20bb66b9e7bf73479c31d789ac2e2"
   license "NCSA"
+  revision 1
 
   # This omits the 3.3, 3.4, and 3.5 versions, which come from the older
   # version scheme like `Clang+LLVM 3.5` (25 November 2014). The current
@@ -15,12 +16,10 @@ class IncludeWhatYouUse < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 "1bed2b82b945ee9b4734f94b3849b580815f42a810330ae59175621468fa39d8" => :big_sur
-    sha256 "98241b31fbe2a8b7634b75ab896e36c30dd6c3550e8adf789f9834838d972a0c" => :arm64_big_sur
-    sha256 "41834e9b7418fc7bbd93a33496ddd1f39e8e75ca9c0de0348d79506eba07c5b1" => :catalina
-    sha256 "42cc540a9dd70c2507253552d8cd67d103e7f9f083925e0c0f8cb9abd572f19c" => :mojave
-    sha256 "f81c7e20d7fd0ec078f298a6fc92f8b2f9440e9e15703668122a01daef982b01" => :x86_64_linux
+    sha256 big_sur: "5c106df7922e05e61e2a3b6e625c0c06afc254a63f7b1ac8506c292455487207"
+    sha256 arm64_big_sur: "f62162f5365b047b87134efef2b50f24e258bf850eecda6b8ee4b29166fab099"
+    sha256 catalina: "dd12e81abc59893a49bf42f12d86998a11563032fdb3e87f6325dca9dadfa29b"
+    sha256 mojave: "1d4904f0adafd004c47d7c23244bbd34ee301cc26cd3211901515c1b0f194340"
   end
 
   depends_on "cmake" => :build
