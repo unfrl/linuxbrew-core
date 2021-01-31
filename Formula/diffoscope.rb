@@ -16,6 +16,7 @@ class Diffoscope < Formula
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "9f653b6e9b2c87e5bd8b7510393ca221ffbb41091ab3d7c845e6bac72702e92b"
     sha256 cellar: :any_skip_relocation, catalina: "a8bf294f2d6bf89b91ea4813524125d2290eee907c464e1fb1b9bfa807954b83"
     sha256 cellar: :any_skip_relocation, mojave: "93271ba0f90255a8a93e2bd4d75701b9e4404fed70c27bb4dd97bcebe6d386a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d4f3122f33e0e70fe364dcec58befd6847293418ca5397e815ee4eaab8427a9c"
   end
 
   depends_on "gnu-tar"
