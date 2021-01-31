@@ -3,14 +3,14 @@ class Ecl < Formula
   homepage "https://common-lisp.net/project/ecl/"
   url "https://common-lisp.net/project/ecl/static/files/release/ecl-20.4.24.tgz"
   sha256 "670838edf258a936b522fdb620da336de7e575aa0d27e34841727252726d0f07"
+  license "LGPL-2.1-or-later"
   head "https://gitlab.com/embeddable-common-lisp/ecl.git", branch: "develop"
 
   bottle do
-    rebuild 1
-    sha256 "23de8394468aa1682fdfaa00544b0316798eaf726b674f5003c6451dbecbb6f8" => :big_sur
-    sha256 "612d10e1c4c34d9fcb5ec731e683210634f12111c30862ae890d225a604343ce" => :catalina
-    sha256 "a29d90c9343ff63a28c6442caccf1161724804b0632624a531546db9ea63ce45" => :mojave
-    sha256 "3bed72bcbf2af2b505f591b6072fd9630d352a4b162c7cac7387fef3db16ab1e" => :x86_64_linux
+    rebuild 2
+    sha256 big_sur: "bbdf0be3bd7607484c959f54b1237f9f74020d9539ce66167cd1cd2195ca9953"
+    sha256 catalina: "59311b4250de8733f88bb1a3f02e1a7e7c39f148e2e881c35d87ca7aad68c23e"
+    sha256 mojave: "dbbfb2aa9172ec1d3b905da9059fef5ff524caeab42ada84220c0251a913103e"
   end
 
   depends_on "texinfo" => :build # Apple's is too old
@@ -28,7 +28,10 @@ class Ecl < Formula
     system "./configure", "--prefix=#{prefix}",
                           "--enable-threads=yes",
                           "--enable-boehm=system",
-                          "--enable-gmp=system"
+                          "--enable-gmp=system",
+                          "--with-gmp-prefix=#{Formula["gmp"].opt_prefix}",
+                          "--with-libffi-prefix=#{Formula["libffi"].opt_prefix}",
+                          "--with-libgc-prefix=#{Formula["bdw-gc"].opt_prefix}"
     system "make"
     system "make", "install"
   end
