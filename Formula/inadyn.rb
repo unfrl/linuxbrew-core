@@ -10,6 +10,7 @@ class Inadyn < Formula
     sha256 arm64_big_sur: "2cbabfe7c86d67e99218fd34afd49f97cf7f9a164f383072d50c8d95f343fd9a"
     sha256 catalina: "29c03eaf67c3ca7d75ddbdee20c8875156d014f37f1f81afa5e4718dc2349167"
     sha256 mojave: "0408849a9bdec78ccb0e503d2db0a6d4b9b0110f02a1b5c05c082351d07eff97"
+    sha256 x86_64_linux: "57e5f682af25b7d8ea832273c47448f5492a1df43b954f1e15a29847c5527aec"
   end
 
   depends_on "autoconf" => :build
