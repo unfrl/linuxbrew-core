@@ -6,14 +6,14 @@ class Lanraragi < Formula
   url "https://github.com/Difegue/LANraragi/archive/v.0.7.6.tar.gz"
   sha256 "2c498cc6a18b9fbb77c52ca41ba329c503aa5d4ec648075c3ebb72bfa7102099"
   license "MIT"
+  revision 1
   head "https://github.com/Difegue/LANraragi.git"
 
   bottle do
-    cellar :any
-    sha256 "5b9611acede455e4cf1824e66a679e85afd16a42415ba99ebd5e2fa003f0e8e3" => :big_sur
-    sha256 "5148e0c27b0c846b47e07709881535bb5f9275bb56ee1606ae8dcf4187c2e2a4" => :arm64_big_sur
-    sha256 "29db68f2046e913cb84ab42287f11a3947e7254880f1c62d681a3dc615419829" => :catalina
-    sha256 "3dd8f138db740d32a6f1b6c87687efa307dc0c88e7d61375d203b20070a41955" => :mojave
+    sha256 cellar: :any, big_sur: "107ca8fb3207f324b61f7115019512c8a93280cbd8f16d60df2838d6ae8fbe44"
+    sha256 cellar: :any, arm64_big_sur: "fb0c87e940a7cc1575c7125d983b468ed7ff1564ac2c448fc70c30c5920c1189"
+    sha256 cellar: :any, catalina: "a35ce1425f35485335912860dbf0276dd429b7091ee1166ad9b68828dc2a79b5"
+    sha256 cellar: :any, mojave: "ed87a8d37fdb8a48cf537bd3483b42e58f3c8517abf513f9f3f1b575e1236152"
   end
 
   depends_on "pkg-config" => :build
@@ -32,6 +32,11 @@ class Lanraragi < Formula
   resource "Image::Magick" do
     url "https://cpan.metacpan.org/authors/id/J/JC/JCRISTY/PerlMagick-6.9.11.tar.gz"
     sha256 "3af99fb4625fe6c7ccb55c79709afe31df4af66886a35e5c5a494507a0814061"
+  end
+
+  resource "IO::Socket::SSL" do
+    url "https://cpan.metacpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.069.tar.gz"
+    sha256 "d83c2cae5e8a22ab49c9f2d964726625e9efe56490d756a48a7b149a3d6e278d"
   end
 
   resource "libarchive-headers" do
@@ -58,6 +63,11 @@ class Lanraragi < Formula
 
       system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}"
       system "make"
+      system "make", "install"
+    end
+
+    resource("IO::Socket::SSL").stage do
+      system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}"
       system "make", "install"
     end
 

@@ -2,14 +2,13 @@ class X264 < Formula
   desc "H.264/AVC encoder"
   homepage "https://www.videolan.org/developers/x264.html"
   license "GPL-2.0-only"
-  revision 1
   head "https://code.videolan.org/videolan/x264.git"
 
   stable do
     # the latest commit on the stable branch
     url "https://code.videolan.org/videolan/x264.git",
-        revision: "4121277b40a667665d4eea1726aefdc55d12d110"
-    version "r3027"
+        revision: "59c06095de90db362b959a4975d8cc6f1566dbdb"
+    version "r3043"
   end
 
   # There's no guarantee that the versions we find on the `release-macos` index
@@ -21,13 +20,10 @@ class X264 < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "ae4f4d320db6d3c52c118da312de4118870c0d60228c085f87cf75b88b63c5fe" => :big_sur
-    sha256 "7d52ee2a419ad50d0c1ba7fa5e8f7d85791a98319d891a5fd78c98be4cf72fe5" => :arm64_big_sur
-    sha256 "60b2b82a877d14c5c02f28e0d51ae90b89d4a141fa3c4efcc3fed6926d41033a" => :catalina
-    sha256 "25c5033625c3de8f4f2e4de5b9d2e3f954e42ec9ec04104f49d6d4c255f65286" => :mojave
-    sha256 "7a7dbe31d8afd48909c01294cc165b60fcaa20ca3df245617151b13f38d7c626" => :high_sierra
-    sha256 "b6f7ab164cba125a2087b9a7435391f17ebbca9eca77921ccb67ef094b247c2d" => :x86_64_linux
+    sha256 cellar: :any, big_sur: "0c50bd2414e1cc79c3936747455523b8a4a149ac251891b68fd0a7a68464a21c"
+    sha256 cellar: :any, arm64_big_sur: "6d7df76a6715b6dd306b970bddcd2c03e12af34e4b9ad778432bf64cedef0531"
+    sha256 cellar: :any, catalina: "ab0f1283e786e219af1ebfe7bddd22ce4e5568de2101aac151ef8d7140a38656"
+    sha256 cellar: :any, mojave: "e225e569be5557df7c27699661d858e76e9b38f3aa9b142295fd6d3b5098963c"
   end
 
   depends_on "nasm" => :build

@@ -1,17 +1,15 @@
 class Mpdecimal < Formula
   desc "Library for decimal floating point arithmetic"
   homepage "https://www.bytereef.org/mpdecimal/"
-  url "https://www.bytereef.org/software/mpdecimal/releases/mpdecimal-2.5.0.tar.gz"
-  sha256 "15417edc8e12a57d1d9d75fa7e3f22b158a3b98f44db9d694cfd2acde8dfa0ca"
+  url "https://www.bytereef.org/software/mpdecimal/releases/mpdecimal-2.5.1.tar.gz"
+  sha256 "9f9cd4c041f99b5c49ffb7b59d9f12d95b683d88585608aa56a6307667b2b21f"
   license "BSD-2-Clause"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "720cac61e7e5d61abb0dd1ba0df369ef7a7b1cf188db7e8a1d22a1e62fc84613" => :big_sur
-    sha256 "e0703b703eacc78c9c472e9d4266831ba66a0764310a846e2e8a958a85aa3a28" => :arm64_big_sur
-    sha256 "f43f2a183184abe0bf78291472ac115897fb7defda7394f61367659d95c84c5c" => :catalina
-    sha256 "9619a02392403884e72cd78113eade5bc7687270a762dabf063231f574966221" => :mojave
-    sha256 "1069e9956c6dca6d7a04dce374c1a5644e9f03a493b3b392416d6c121f2e1bda" => :x86_64_linux
+    sha256 cellar: :any, big_sur: "255b6226cdcfaf0d40167012593e863e73dfed2884c10e7fc3eb4018e81712df"
+    sha256 cellar: :any, arm64_big_sur: "eebbc5c7e71710c848eb60b90f946aefdee1b5269c840c30b8098d6bb758500b"
+    sha256 cellar: :any, catalina: "1a8314428019cec85756be0ea10bc4703cd754ef78a4cb560ddcc559af616a72"
+    sha256 cellar: :any, mojave: "eebb16e048219e5e3d298db0e7ff8a7bfea60d54c4cf08af76efd81647f1b38b"
   end
 
   def install
