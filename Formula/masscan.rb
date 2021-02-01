@@ -16,6 +16,7 @@ class Masscan < Formula
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "b99bf991011be4ee7d76fe43aa000159f0665b888a0cbc7c4d528d102a3daa67"
     sha256 cellar: :any_skip_relocation, catalina: "a77ea3fd36501d9a0d0398e585f1d30fd64163ca378e6af9660601a10e1ddce3"
     sha256 cellar: :any_skip_relocation, mojave: "19def74a8381541e80c530a5f0599bc92f067ac3e211ecc173afbbb0aee72752"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "48ae7c951facf7e06f816399aca3db2b78970a49e6a4446c2f30c73c294a91a4"
   end
 
   def install
