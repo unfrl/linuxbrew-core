@@ -11,6 +11,7 @@ class Numcpp < Formula
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "dc65d6ab452da76bc43ea0bc472adfcc6e34c868e907c6bb7b1c07d6e4c0ae9d"
     sha256 cellar: :any_skip_relocation, catalina: "f87c93639d7fa92051882b55f0878d3bd6ca4ec0d7fced6432bef13280869271"
     sha256 cellar: :any_skip_relocation, mojave: "c93e65a45a86781f6f7f3d86b80e616ac57c2f79e1ecff27b97dfe549d63c5f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "21dbb1f0d1f085543945eb9cce3a6307f07484891cb77fcb539b64d6e771b414"
   end
 
   depends_on "cmake" => :build
