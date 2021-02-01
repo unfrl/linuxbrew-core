@@ -1,8 +1,8 @@
 class Pngcheck < Formula
   desc "Print info and check PNG, JNG, and MNG files"
   homepage "http://www.libpng.org/pub/png/apps/pngcheck.html"
-  url "http://www.libpng.org/pub/png/src/pngcheck-3.0.1.tar.gz"
-  sha256 "66bf4cbaa29908984c0d7ba539358ed63c7c2f02a0b2407ac691465b143efbbb"
+  url "http://www.libpng.org/pub/png/src/pngcheck-3.0.2.tar.gz"
+  sha256 "0d7e262f24116fddf2847a8ceb5c92d9f5f26efb42e9fff63ec2bb7676131ca7"
   license all_of: ["MIT", "GPL-2.0-or-later"]
 
   livecheck do
@@ -11,11 +11,10 @@ class Pngcheck < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "e4d716fb0d3ff48095b36044e50b79fa80b8cfd962e9a58f0b227ade97bdbbc8" => :big_sur
-    sha256 "bf4febdb6ed3286ae86ceadee979aac9e829e477abd5fb83c595d0edf605194b" => :arm64_big_sur
-    sha256 "02af550fd568214ed59e4fc9d85359b48f4a9520d653fdfa53157f201a803208" => :catalina
-    sha256 "312428dc1c9917eb598d32e0889047adf9789e6b5aca9462f09817c93cfb2193" => :mojave
+    sha256 cellar: :any_skip_relocation, big_sur: "3440f1f335a0bd2ddffe9a30b0186bc19085f9fb83bfa80a81ba9f3c143d9641"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "c188297adf8fb8a9d17c90aba9036287e3dc1578ff5343e8efbccd0936e888e0"
+    sha256 cellar: :any_skip_relocation, catalina: "a771117cbf3b11ec082ceaaa62ae6ed14f57e77cafb8b62f8bf9959e265274b6"
+    sha256 cellar: :any_skip_relocation, mojave: "83edeec573d0aa0032cf4f242d9c5b15462678da50c80dd922c4254a22b7ae16"
   end
 
   def install

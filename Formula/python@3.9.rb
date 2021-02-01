@@ -4,7 +4,7 @@ class PythonAT39 < Formula
   url "https://www.python.org/ftp/python/3.9.1/Python-3.9.1.tar.xz"
   sha256 "991c3f8ac97992f3d308fefeb03a64db462574eadbff34ce8bc5bb583d9903ff"
   license "Python-2.0"
-  revision OS.mac? ? 6 : 7
+  revision OS.mac? ? 7 : 8
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -12,11 +12,10 @@ class PythonAT39 < Formula
   end
 
   bottle do
-    sha256 "48d123683fa125de9f02f7777683edda40e998f0e2dca492024c00bbd3f05ea2" => :big_sur
-    sha256 "7f82ca7930bbb463ae58bec9f40443c7f1b369c54c68bc2b56c7e73c59f46a29" => :arm64_big_sur
-    sha256 "34f5d1a82cb72accee802e949eb30d37545a12290d0b9ed8e13ba9ad00f7836a" => :catalina
-    sha256 "931abae2981e2390b1a478195c377637ad90e91ac70792fa0ae475e123c9036e" => :mojave
-    sha256 "7490826974e5ebcef1c7bf5e787b5eb8a12d4af70407ebccfe0df791a2c1c924" => :x86_64_linux
+    sha256 big_sur: "5dc376aa20241233b76e2ec2c1d4e862443a0250916b2838a1ff871e8a6dc2c5"
+    sha256 arm64_big_sur: "a9ae578b05c3da46cedc07dd428d94a856aeae7f3ef80a0f405bf89b8cde893a"
+    sha256 catalina: "924afbbc16549d8c2b80544fd03104ff8c17a4b1460238e3ed17a1313391a2af"
+    sha256 mojave: "678d338adc7d6e8c352800fe03fc56660c796bd6da23eda2b1411fed18bd0d8d"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -66,13 +65,13 @@ class PythonAT39 < Formula
   link_overwrite "Frameworks/Python.framework/Versions/Current"
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/94/23/e9e3d96500c063129a19feb854efbb01e6ffe7d913f1da8176692418ab8e/setuptools-51.1.1.tar.gz"
-    sha256 "0b43d1e0e0ac1467185581c2ceaf86b5c1a1bc408f8f6407687b0856302d1850"
+    url "https://files.pythonhosted.org/packages/84/48/5c99d8770fd0a9eb0f82654c3294aad6d0ba9f8600638c2e2ad74f2c5d52/setuptools-52.0.0.tar.gz"
+    sha256 "fb3a1ee622509550dbf1d419f241296169d7f09cb1eb5b1736f2f10965932b96"
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/ca/1e/d91d7aae44d00cd5001957a1473e4e4b7d1d0f072d1af7c34b5899c9ccdf/pip-20.3.3.tar.gz"
-    sha256 "79c1ac8a9dccbec8752761cb5a2df833224263ca661477a2a9ed03ddf4e0e3ba"
+    url "https://files.pythonhosted.org/packages/b7/2d/ad02de84a4c9fd3b1958dc9fb72764de1aa2605a9d7e943837be6ad82337/pip-21.0.1.tar.gz"
+    sha256 "99bbde183ec5ec037318e774b0d8ae0a64352fe53b2c7fd630be1d07e94f41e5"
   end
 
   resource "wheel" do
@@ -325,6 +324,7 @@ class PythonAT39 < Formula
     inreplace lib_cellar/"ensurepip/__init__.py" do |s|
       s.gsub! /_SETUPTOOLS_VERSION = .*/, "_SETUPTOOLS_VERSION = \"#{setuptools_version}\""
       s.gsub! /_PIP_VERSION = .*/, "_PIP_VERSION = \"#{pip_version}\""
+      s.gsub! "    (\"pip\", _PIP_VERSION, \"py2.py3\"),", "    (\"pip\", _PIP_VERSION, \"py3\")," # pip21 is py3 only
     end
 
     # Help distutils find brewed stuff when building extensions
@@ -402,6 +402,9 @@ class PythonAT39 < Formula
     # Check if sqlite is ok, because we build with --enable-loadable-sqlite-extensions
     # and it can occur that building sqlite silently fails if OSX's sqlite is used.
     system "#{bin}/python#{version.major_minor}", "-c", "import sqlite3"
+
+    # check to see if we can create a venv
+    system "#{bin}/python#{version.major_minor}", "-m", "venv", testpath/"myvenv"
 
     # Check if some other modules import. Then the linked libs are working.
     system "#{bin}/python#{version.major_minor}", "-c", "import _gdbm"
