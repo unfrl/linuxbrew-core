@@ -106,22 +106,20 @@ class Gcc < Formula
       "--with-mpfr=#{Formula["mpfr"].opt_prefix}",
       "--with-mpc=#{Formula["libmpc"].opt_prefix}",
       "--with-pkgversion=#{pkgversion}",
+      "--with-bugurl=#{tap.issues_url}",
     ]
 
     if OS.mac?
+      cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
+
       args += [
-        "--build=x86_64-apple-darwin#{OS.kernel_version.major}",
-        "--build=x86_64-apple-darwin#{osmajor}",
+        "--build=#{cpu}-apple-darwin#{OS.kernel_version.major}",
         "--libdir=#{lib}/gcc/#{version_suffix}",
         "--with-isl=#{Formula["isl"].opt_prefix}",
         "--with-system-zlib",
-        "--with-bugurl=https://github.com/Homebrew/homebrew/issues",
       ]
     else
-      args += [
-        "--with-isl=#{Formula["isl@0.18"].opt_prefix}",
-        "--with-bugurl=https://github.com/Homebrew/linuxbrew-core/issues",
-      ]
+      args << "--with-isl=#{Formula["isl@0.18"].opt_prefix}"
 
       # Change the default directory name for 64-bit libraries to `lib`
       # http://www.linuxfromscratch.org/lfs/view/development/chapter06/gcc.html
