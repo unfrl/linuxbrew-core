@@ -13,16 +13,6 @@ class ClangFormat < Formula
       url "https://github.com/llvm/llvm-project/releases/download/llvmorg-11.0.1/clang-11.0.1.src.tar.xz"
       sha256 "73f572c2eefc5a155e01bcd84815751d722a4d3925f53c144acfb93eeb274b4d"
     end
-
-    resource "libcxx" do
-      url "https://github.com/llvm/llvm-project/releases/download/llvmorg-11.0.1/libcxx-11.0.1.src.tar.xz"
-      sha256 "9fd5f669621ffea88a2b93e3d99f3a958b5defb954f71bf754709b63275f5e3d"
-    end
-
-    resource "libcxxabi" do
-      url "https://github.com/llvm/llvm-project/releases/download/llvmorg-11.0.1/libcxxabi-11.0.1.src.tar.xz"
-      sha256 "4a697056a5c08621a8380dcaf3836525835aa76b3008d9e8f27abf9270bf683f"
-    end
   end
 
   livecheck do
@@ -32,12 +22,11 @@ class ClangFormat < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    rebuild 1
-    sha256 "210043c597e9bde9a3f0237c1c31a8ef7da945594bbe9ae19dd1dd3775188ca4" => :big_sur
-    sha256 "a083e51ce20a166020467d8f706dcb5de057df3a597c75e73fe10d5036ad2cce" => :arm64_big_sur
-    sha256 "c43220c14172612d612f7d04df938b9ad646fdb29531c48cf4fc5a2ad17a196f" => :catalina
-    sha256 "8db2426af381b430422595e1841dd9d134f37ab8551a1ffbc6025bf2cd852f96" => :mojave
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, big_sur: "a2a124fe20d721ad490731dad173da4c7a57d635792739680a45c40cecd48409"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "bc823d2b0fe175abfecaf85f913035a4a27cec9054a2f094608f295f1a040069"
+    sha256 cellar: :any_skip_relocation, catalina: "c2a08aaf48ea39e832f9460c42c75b87f1296dc5c9360888a9eb297e3fd1ce28"
+    sha256 cellar: :any_skip_relocation, mojave: "37a27e538177b4d9b44eeb6d7749301eba4422763994189cc50f1e2c6cc21344"
   end
 
   head do
@@ -70,12 +59,8 @@ class ClangFormat < Formula
 
   def install
     if build.head?
-      ln_s buildpath/"libcxx", buildpath/"llvm/projects/libcxx"
-      ln_s buildpath/"libcxxabi", buildpath/"llvm/tools/libcxxabi"
       ln_s buildpath/"clang", buildpath/"llvm/tools/clang"
     else
-      (buildpath/"projects/libcxx").install resource("libcxx")
-      (buildpath/"projects/libcxxabi").install resource("libcxxabi")
       (buildpath/"tools/clang").install resource("clang")
     end
 
@@ -83,9 +68,7 @@ class ClangFormat < Formula
 
     mkdir llvmpath/"build" do
       args = std_cmake_args
-      args << "-DLLVM_ENABLE_LIBCXX=ON"
-      args << "-DLLVM_EXTERNAL_PROJECTS=\"clang;libcxx;libcxxabi\""
-      args << "-DLLVM_EXTERNAL_LIBCXX_SOURCE_DIR=\"#{buildpath/"projects/libcxx"}\""
+      args << "-DLLVM_EXTERNAL_PROJECTS=\"clang\""
       args << ".."
       system "cmake", "-G", "Ninja", *args
       system "ninja", "clang-format"
