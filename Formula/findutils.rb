@@ -15,6 +15,7 @@ class Findutils < Formula
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "39ffd40141c1d583f89ffe0c091a76cba9f4ebdbe3035c007e45b37774eb5b84"
     sha256 cellar: :any_skip_relocation, catalina: "86d61877d4c20e5bf2f89939034b0a058526c7f614d454c602fdd5685021f058"
     sha256 cellar: :any_skip_relocation, mojave: "34bffcfa0d3924fdc7140ba766615ef66ccd5a0336ce779ff062b66b6f60af3e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "3b89e899076ea3c9c80df1989ff9083ec35e0e93a423cbcc09fc920c30c64ffc"
   end
 
   def install
