@@ -2,8 +2,8 @@ class Consul < Formula
   desc "Tool for service discovery, monitoring and configuration"
   homepage "https://www.consul.io"
   url "https://github.com/hashicorp/consul.git",
-      tag:      "v1.9.2",
-      revision: "6530cf370af2187db9d37e026cc56e5a2bcb421a"
+      tag:      "v1.9.3",
+      revision: "f55da93061e8f696ed94ae2b3c18ec412049f9af"
   license "MPL-2.0"
   head "https://github.com/hashicorp/consul.git", shallow: false
 
@@ -13,10 +13,9 @@ class Consul < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "9c7099cd353c37ea92c066a0a841c0b5eb26c2b992f8fbad872f002970bca3ac" => :big_sur
-    sha256 "6759ecab21796a2f9f13e0be800b9d56e48a2ad1dd8b64223e7c7885e2a19d3a" => :catalina
-    sha256 "c4d00c32bb71bf3fe0bbe1630daa3738e5fd76c6eba5d55584d021d0630bdbb6" => :mojave
+    sha256 cellar: :any_skip_relocation, big_sur: "10fcf297158cee309525e15ded0cdce0b5fc695f93f776797df7c5855a9fe6ed"
+    sha256 cellar: :any_skip_relocation, catalina: "95df1d24f79344a5b28ced7474f7e009974230f661e2219338ab8b83b0d7d7d2"
+    sha256 cellar: :any_skip_relocation, mojave: "fb67b8a32db1a09a21217c0a7063eaec9a5b97a414d360ab637b555a06258eee"
   end
 
   depends_on "go" => :build
