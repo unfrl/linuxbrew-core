@@ -15,6 +15,9 @@ class Docker2aci < Formula
     sha256 "cd729e36e463154b10f4198024ca0760669ebf198f12dc2d3b73162684ae2ddd" => :x86_64_linux
   end
 
+  # See https://github.com/rkt/rkt/issues/4024
+  deprecate! date: "2020-02-24", because: :repo_archived
+
   depends_on "go" => :build
 
   def install

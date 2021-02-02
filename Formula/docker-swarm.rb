@@ -6,11 +6,6 @@ class DockerSwarm < Formula
   license "Apache-2.0"
   head "https://github.com/docker/classicswarm.git"
 
-  livecheck do
-    url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   bottle do
     cellar :any_skip_relocation
     rebuild 1
@@ -19,6 +14,11 @@ class DockerSwarm < Formula
     sha256 "29e47d799c8e2d2977dd58444095a51c9ac7f261f56eeb5d5b6f71ed299e7533" => :high_sierra
     sha256 "a42a84b6767a59aabcb8d3ba43abfd97c654ba389c6f4137686ffa6f40ca4434" => :x86_64_linux
   end
+
+  # "Classic Swarm has been archived and is no longer actively developed. You
+  # may want to use the Swarm mode built into the Docker Engine instead, or
+  # another orchestration system."
+  deprecate! date: "2020-06-11", because: :repo_archived
 
   depends_on "go" => :build
 

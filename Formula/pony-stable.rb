@@ -14,8 +14,9 @@ class PonyStable < Formula
     sha256 "a9fbfdd5f7ff7790718cd2c246a1e98a014ef6cdb03251b598f2df75769b9d6b" => :x86_64_linux
   end
 
-  # See https://github.com/ponylang/pony-stable/commit/efd64049752210a71796a125792aa01b74476912
-  deprecate! date: "2021-01-02", because: :repo_archived
+  # "Stable is no longer being developed. It's been replaced by Corral
+  # (https://github.com/ponylang/corral)."
+  deprecate! date: "2020-05-12", because: :repo_archived
 
   depends_on "ponyc"
 

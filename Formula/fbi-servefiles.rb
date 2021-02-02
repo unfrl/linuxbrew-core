@@ -16,6 +16,8 @@ class FbiServefiles < Formula
     sha256 "5fe5372bcb379d644427261a91a9efbe76394a9cd41c09b0db00eec2213a3cb1" => :x86_64_linux
   end
 
+  deprecate! date: "2020-11-12", because: :repo_archived
+
   depends_on "python@3.9"
 
   def install

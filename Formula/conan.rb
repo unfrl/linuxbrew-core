@@ -3,8 +3,8 @@ class Conan < Formula
 
   desc "Distributed, open source, package manager for C/C++"
   homepage "https://conan.io"
-  url "https://files.pythonhosted.org/packages/cf/3b/7fc6030e64609ef6ddf9a3f88c297794d59d89fd2ab13989a9aee47cad02/conan-1.33.0.tar.gz"
-  sha256 "3debc02daf1be7198ed190322ff6d7deaeab0a2ef3e3f4b23033100cfa9bd8ab"
+  url "https://files.pythonhosted.org/packages/ce/83/9d14a3445882741ef8219fff5b7eabf09b2a4223c32b1e5352686474d6ba/conan-1.33.1.tar.gz"
+  sha256 "2977f127975110caecc952fbfc03261d6bfd3f61b827639638e297aa9d0806cd"
   license "MIT"
   head "https://github.com/conan-io/conan.git"
 
@@ -13,11 +13,9 @@ class Conan < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "7e6bbac9608bcc1aa8dfae7301b3202540254c7e0c1bc2372b568d0f67fbfe5a" => :big_sur
-    sha256 "341f1ade395e5aad309b85129e0fe4adee49c71767cdcc32f7f84c8ce3c09e72" => :catalina
-    sha256 "17a0b803521d540e6c5db8a3c4a2e158c2c0a1f1c38e9af08e030f4d8a16de99" => :mojave
-    sha256 "2236985b8cb8353b2326c28a9e3bd3e88ac154f1c0ebe94a1e10a0f9fa93a9fe" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, big_sur: "7f536d007c8d2797263346bc285e86baeb7fd76a9c48ea2d5ba62c772a6840a8"
+    sha256 cellar: :any_skip_relocation, catalina: "0c2b0407be2cc7ff458f603c45018b16dfbfc93ce75c57fa380f3b2c1b07a3a6"
+    sha256 cellar: :any_skip_relocation, mojave: "3d1c1273cf363752c0e08cdb0d8d810b03913100a1381ca9da79feb8efcb2fed"
   end
 
   depends_on "pkg-config" => :build
@@ -71,8 +69,8 @@ class Conan < Formula
   end
 
   resource "Jinja2" do
-    url "https://files.pythonhosted.org/packages/64/a7/45e11eebf2f15bf987c3bc11d37dcc838d9dc81250e67e4c5968f6008b6c/Jinja2-2.11.2.tar.gz"
-    sha256 "89aab215427ef59c34ad58735269eb58b1a5808103067f7bb9d5836c651b3bb0"
+    url "https://files.pythonhosted.org/packages/4f/e7/65300e6b32e69768ded990494809106f87da1d436418d5f1367ed3966fd7/Jinja2-2.11.3.tar.gz"
+    sha256 "a6d58433de0ae800347cab1fa3043cebbabe8baa9d29e668f1c768cb87a333c6"
   end
 
   resource "MarkupSafe" do
@@ -86,8 +84,8 @@ class Conan < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d7/c5/e81b9fb8033fe78a2355ea7b1774338e1dca2c9cbd2ee140211a9e6291ab/packaging-20.8.tar.gz"
-    sha256 "78598185a7008a470d64526a8059de9aaa449238f280fc9eb6b13ba6c4109093"
+    url "https://files.pythonhosted.org/packages/86/3c/bcd09ec5df7123abcf695009221a52f90438d877a2f1499453c6938f5728/packaging-20.9.tar.gz"
+    sha256 "5b327ac1320dc863dca72f4514ecc086f31186744b84a230374cc1fd776feae5"
   end
 
   resource "patch-ng" do
@@ -121,8 +119,8 @@ class Conan < Formula
   end
 
   resource "PyYAML" do
-    url "https://files.pythonhosted.org/packages/b5/fd/15638de2da0a5aa91c095718444624aa565f766fc178249ca6faa372f71a/PyYAML-5.4.tar.gz"
-    sha256 "3c49e39ac034fd64fd576d63bb4db53cda89b362768a67f07749d55f128ac18a"
+    url "https://files.pythonhosted.org/packages/a0/a4/d63f2d7597e1a4b55aa3b4d6c5b029991d3b824b5bd331af8d4ab1ed687d/PyYAML-5.4.1.tar.gz"
+    sha256 "607774cbba28732bfa802b54baa7484215f530991055bb562efbed5b2f20a45e"
   end
 
   resource "requests" do

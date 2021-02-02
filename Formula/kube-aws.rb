@@ -1,11 +1,11 @@
 class KubeAws < Formula
   desc "Command-line tool to declaratively manage Kubernetes clusters on AWS"
-  homepage "https://kubernetes-incubator.github.io/kube-aws/"
-  url "https://github.com/kubernetes-incubator/kube-aws.git",
+  homepage "https://kubernetes-retired.github.io/kube-aws/"
+  url "https://github.com/kubernetes-retired/kube-aws.git",
       tag:      "v0.16.4",
       revision: "c74d91ecd6760d33111dc8c7f8f51bf816424310"
   license "Apache-2.0"
-  head "https://github.com/kubernetes-incubator/kube-aws.git"
+  head "https://github.com/kubernetes-retired/kube-aws.git"
 
   bottle do
     cellar :any_skip_relocation
@@ -14,6 +14,9 @@ class KubeAws < Formula
     sha256 "5172a4ad55d3977c81d405bc67d91a35ead719e24c555d5843529d2489323d79" => :high_sierra
     sha256 "21e37d410018852f7ea1c3d5e3859d53087db3616845f5f50e116d5e6aadfc47" => :x86_64_linux
   end
+
+  # Fork can be found at: https://github.com/kube-aws/kube-aws
+  deprecate! date: "2020-09-29", because: :repo_archived
 
   depends_on "go" => :build
   depends_on "packr" => :build

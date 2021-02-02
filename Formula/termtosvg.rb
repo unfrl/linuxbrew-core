@@ -18,7 +18,7 @@ class Termtosvg < Formula
     sha256 "564428687edf353e231ef7fe70fc77b35d29654a9a3e31f45dff5855da3252e6" => :x86_64_linux
   end
 
-  deprecate! date: "2020-10-08", because: :repo_archived
+  deprecate! date: "2020-06-16", because: :repo_archived
 
   depends_on "python@3.9"
 

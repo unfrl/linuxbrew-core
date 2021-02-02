@@ -1,17 +1,15 @@
 class Ecl < Formula
   desc "Embeddable Common Lisp"
   homepage "https://common-lisp.net/project/ecl/"
-  url "https://common-lisp.net/project/ecl/static/files/release/ecl-20.4.24.tgz"
-  sha256 "670838edf258a936b522fdb620da336de7e575aa0d27e34841727252726d0f07"
+  url "https://common-lisp.net/project/ecl/static/files/release/ecl-21.2.1.tgz"
+  sha256 "b15a75dcf84b8f62e68720ccab1393f9611c078fcd3afdd639a1086cad010900"
   license "LGPL-2.1-or-later"
   head "https://gitlab.com/embeddable-common-lisp/ecl.git", branch: "develop"
 
   bottle do
-    rebuild 2
-    sha256 big_sur: "bbdf0be3bd7607484c959f54b1237f9f74020d9539ce66167cd1cd2195ca9953"
-    sha256 catalina: "59311b4250de8733f88bb1a3f02e1a7e7c39f148e2e881c35d87ca7aad68c23e"
-    sha256 mojave: "dbbfb2aa9172ec1d3b905da9059fef5ff524caeab42ada84220c0251a913103e"
-    sha256 x86_64_linux: "8d4cdad5e1f4072dfa0f683f728bf7ad50e3e17d9a378572f2aefedb03a8c9a5"
+    sha256 big_sur: "5df2258cb07a0f70a7e5d664f691d843fd5cae916009dbbc1ee0f6867c3dff48"
+    sha256 catalina: "5286a86476c459ce1694d50363a885be2869df62bf632c532755eb51fe9fdbc5"
+    sha256 mojave: "db02128ab8feb220552e2dad2f565283c44b64b688e2e467ecfbe68e4dce6bef"
   end
 
   depends_on "texinfo" => :build # Apple's is too old
@@ -21,10 +19,6 @@ class Ecl < Formula
 
   def install
     ENV.deparallelize
-    # Work around configure issues with Xcode 12
-    # https://gitlab.com/embeddable-common-lisp/ecl/-/merge_requests/231
-    # Remove once the commit is released
-    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
 
     system "./configure", "--prefix=#{prefix}",
                           "--enable-threads=yes",
