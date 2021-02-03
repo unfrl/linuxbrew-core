@@ -24,7 +24,14 @@ class Dep < Formula
 
   def install
     ENV["GOPATH"] = buildpath
-    platform = OS.mac? ? "darwin" : "linux"
+
+    platform = nil
+    on_macos do
+      platform = "darwin"
+    end
+    on_linux do
+      platform = "linux"
+    end
     (buildpath/"src/github.com/golang/dep").install buildpath.children
     cd "src/github.com/golang/dep" do
       ENV["DEP_BUILD_PLATFORMS"] = platform
