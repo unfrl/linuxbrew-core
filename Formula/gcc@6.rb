@@ -73,7 +73,6 @@ class GccAT6 < Formula
       args += [
         "--build=x86_64-apple-darwin#{OS.kernel_version}",
         "--with-system-zlib",
-        "--with-bugurl=https://github.com/Homebrew/homebrew-core/issues",
       ]
 
       # The pre-Mavericks toolchain requires the older DWARF-2 debugging data
@@ -81,10 +80,6 @@ class GccAT6 < Formula
       # See: https://gcc.gnu.org/bugzilla/show_bug.cgi?id=45248
       args << "--with-dwarf2" if MacOS.version <= :mountain_lion
     else
-      args += [
-        "--with-bugurl=https://github.com/Homebrew/linuxbrew-core/issues",
-      ]
-
       # Change the default directory name for 64-bit libraries to `lib`
       # http://www.linuxfromscratch.org/lfs/view/development/chapter06/gcc.html
       inreplace "gcc/config/i386/t-linux64", "m64=../lib64", "m64="
@@ -112,6 +107,7 @@ class GccAT6 < Formula
       "--with-build-config=bootstrap-debug",
       "--disable-werror",
       "--with-pkgversion=Homebrew GCC #{pkg_version} #{build.used_options*" "}".strip,
+      "--with-bugurl=#{tap.issues_url}",
       "--disable-nls",
     ]
 

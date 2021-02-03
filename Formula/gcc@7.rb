@@ -65,14 +65,10 @@ class GccAT7 < Formula
       args += [
         "--build=x86_64-apple-darwin#{OS.kernel_version}",
         "--with-system-zlib",
-        "--with-bugurl=https://github.com/Homebrew/homebrew-core/issues",
       ]
     else
-      args += [
-        "--with-bugurl=https://github.com/Homebrew/linuxbrew-core/issues",
-        # Fix Linux error: gnu/stubs-32.h: No such file or directory.
-        "--disable-multilib",
-      ]
+      # Fix Linux error: gnu/stubs-32.h: No such file or directory.
+      args << "--disable-multilib"
 
       # Change the default directory name for 64-bit libraries to `lib`
       # http://www.linuxfromscratch.org/lfs/view/development/chapter06/gcc.html
@@ -95,6 +91,7 @@ class GccAT7 < Formula
       "--with-isl=#{Formula["isl"].opt_prefix}",
       "--enable-checking=release",
       "--with-pkgversion=Homebrew GCC #{pkg_version} #{build.used_options*" "}".strip,
+      "--with-bugurl=#{tap.issues_url}",
       "--disable-nls",
     ]
 
