@@ -4,7 +4,7 @@ class PythonAT37 < Formula
   url "https://www.python.org/ftp/python/3.7.9/Python-3.7.9.tar.xz"
   sha256 "91923007b05005b5f9bd46f3b9172248aea5abc1543e8a636d59e629c3331b01"
   license "Python-2.0"
-  revision 2
+  revision 3
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -12,10 +12,9 @@ class PythonAT37 < Formula
   end
 
   bottle do
-    sha256 "936bd387e48d2dea1b743eb2812d2799f40cefbb4a4c85d1c6be8657f99f8c92" => :big_sur
-    sha256 "16b18528550d8d787456711ec1ed056cc3d6d5d6be6eb34653e20df1987ba033" => :catalina
-    sha256 "7bbb9383f3ad61757e806bae4f858ac8d46b476e18e1490209daa05bcf544311" => :mojave
-    sha256 "0656aee9d84037803406000c07979f2a7f45916c82d050096765e1961fd04415" => :x86_64_linux
+    sha256 big_sur: "2d9215895a5e535cf257e1e0a8c95473ab8e67711022962e362270e0e204d919"
+    sha256 catalina: "4cc6c6f6fd0e26a3a652481f94a3d9e2c14de1085a11aeb20b0bd752b92df57c"
+    sha256 mojave: "fb4a30c8314cb99cf8022bbb992593256ab2c3eb630b13866d85844f65edaf4f"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -74,6 +73,15 @@ class PythonAT37 < Formula
     sha256 "ed5eee1974372595f9e416cc7bbeeb12335201d8081ca8a0743c954d4446e5cb"
   end
 
+  # Patch for MACOSX_DEPLOYMENT_TARGET on Big Sur. Upstream currently does
+  # not have plans to backport the fix to 3.7, so we're maintaining this patch
+  # ourselves.
+  # https://bugs.python.org/issue42504
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/05a27807/python/3.7.9.patch"
+    sha256 "486188ac1a4af4565de5ad54949939bb69bffc006297e8eac9339f19d7d7492b"
+  end
+
   def lib_cellar
     prefix / (OS.mac? ? "Frameworks/Python.framework/Versions/#{xy}" : "") /
       "lib/python#{xy}"
@@ -121,12 +129,12 @@ class PythonAT37 < Formula
     if OS.mac? && MacOS.sdk_path_if_needed
       # Help Python's build system (setuptools/pip) to build things on SDK-based systems
       # The setup.py looks at "-isysroot" to get the sysroot (and not at --sysroot)
-      cflags  << "-isysroot #{MacOS.sdk_path}" << "-I#{MacOS.sdk_path}/usr/include"
+      cflags  << "-isysroot #{MacOS.sdk_path}"
       ldflags << "-isysroot #{MacOS.sdk_path}"
       # For the Xlib.h, Python needs this header dir with the system Tk
       # Yep, this needs the absolute path where zlib needed a path relative
       # to the SDK.
-      cflags << "-I#{MacOS.sdk_path}/System/Library/Frameworks/Tk.framework/Versions/8.5/Headers"
+      cflags << "-isystem #{MacOS.sdk_path}/System/Library/Frameworks/Tk.framework/Versions/8.5/Headers"
     end
     # Avoid linking to libgcc https://mail.python.org/pipermail/python-dev/2012-February/116205.html
     args << "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
@@ -373,7 +381,11 @@ class PythonAT37 < Formula
     # and it can occur that building sqlite silently fails if OSX's sqlite is used.
     system "#{bin}/python#{xy}", "-c", "import sqlite3"
     # Check if some other modules import. Then the linked libs are working.
-    system "#{bin}/python#{xy}", "-c", "import tkinter; root = tkinter.Tk()" if OS.mac?
+
+    # Temporary failure on macOS 11.1 due to https://bugs.python.org/issue42480
+    # Reenable unconditionnaly once Apple fixes the Tcl/Tk issue
+    system "#{bin}/python#{xy}", "-c", "import tkinter; root = tkinter.Tk()" if OS.mac? && MacOS.full_version < "11.1"
+
     system "#{bin}/python#{xy}", "-c", "import _gdbm"
     system "#{bin}/python#{xy}", "-c", "import zlib"
     system bin/"pip3", "list", "--format=columns"

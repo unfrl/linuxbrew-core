@@ -4,6 +4,7 @@ class PythonAT38 < Formula
   url "https://www.python.org/ftp/python/3.8.7/Python-3.8.7.tar.xz"
   sha256 "ddcc1df16bb5b87aa42ec5d20a5b902f2d088caa269b28e01590f97a798ec50a"
   license "Python-2.0"
+  revision 1
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -11,11 +12,10 @@ class PythonAT38 < Formula
   end
 
   bottle do
-    sha256 "6b0d7c5a104db889edc53d303af10186b525c5c82efb9453aea864b578172ec1" => :big_sur
-    sha256 "332f28558a2f59abc244a1aa921506de7221eb6784b86aaa54644992373694d5" => :arm64_big_sur
-    sha256 "be57e0e5df329ef97654e9f90a98039100768ceb4ad5eead89e4207e25d7dddb" => :catalina
-    sha256 "bd23bb30fba341753f8822307f877cc141813f304edab8711f2cc0e6dd4d13a2" => :mojave
-    sha256 "61021dfebc5a22b438b144a72cc33d379eb9192a5bfc0bc3c4c91670e8acf695" => :x86_64_linux
+    sha256 big_sur: "67f0cc89c13c7a36c108777840b979f25a0f4bd5d81c672005943664ea664f7d"
+    sha256 arm64_big_sur: "25780a9d561dad484faf4a881e45df8eca606a5b94af0a4466e44ef9120e83e6"
+    sha256 catalina: "9b8188d7d37854ebbe40b71d522ce0045c5e030ec5b66a3bb4079c4b8b9bc207"
+    sha256 mojave: "b0de5dbbbcb805c6430719dd946146c6417d26214dc351b1c0ecdd423b230012"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -117,19 +117,26 @@ class PythonAT38 < Formula
     # see https://github.com/Linuxbrew/homebrew-core/pull/1007#issuecomment-252421573
     args << "--with-system-ffi" unless OS.mac?
 
-    cflags   = ["-I#{HOMEBREW_PREFIX}/include"]
-    ldflags  = ["-L#{HOMEBREW_PREFIX}/lib"]
-    cppflags = ["-I#{HOMEBREW_PREFIX}/include"]
+    # Python re-uses flags when building native modules.
+    # Since we don't want native modules prioritizing the brew
+    # include path, we move them to [C|LD]FLAGS_NODIST.
+    # Note: Changing CPPFLAGS causes issues with dbm, so we
+    # leave it as-is.
+    cflags         = []
+    cflags_nodist  = ["-I#{HOMEBREW_PREFIX}/include"]
+    ldflags        = []
+    ldflags_nodist = ["-L#{HOMEBREW_PREFIX}/lib"]
+    cppflags       = ["-I#{HOMEBREW_PREFIX}/include"]
 
     if OS.mac? && MacOS.sdk_path_if_needed
       # Help Python's build system (setuptools/pip) to build things on SDK-based systems
       # The setup.py looks at "-isysroot" to get the sysroot (and not at --sysroot)
-      cflags  << "-isysroot #{MacOS.sdk_path}" << "-I#{MacOS.sdk_path}/usr/include"
+      cflags  << "-isysroot #{MacOS.sdk_path}"
       ldflags << "-isysroot #{MacOS.sdk_path}"
       # For the Xlib.h, Python needs this header dir with the system Tk
       # Yep, this needs the absolute path where zlib needed a path relative
       # to the SDK.
-      cflags << "-I#{MacOS.sdk_path}/System/Library/Frameworks/Tk.framework/Versions/8.5/Headers"
+      cflags << "-isystem #{MacOS.sdk_path}/System/Library/Frameworks/Tk.framework/Versions/8.5/Headers"
     end
     # Avoid linking to libgcc https://mail.python.org/pipermail/python-dev/2012-February/116205.html
     args << "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
@@ -169,7 +176,9 @@ class PythonAT38 < Formula
     end
 
     args << "CFLAGS=#{cflags.join(" ")}" unless cflags.empty?
+    args << "CFLAGS_NODIST=#{cflags_nodist.join(" ")}" unless cflags_nodist.empty?
     args << "LDFLAGS=#{ldflags.join(" ")}" unless ldflags.empty?
+    args << "LDFLAGS_NODIST=#{ldflags_nodist.join(" ")}" unless ldflags_nodist.empty?
     args << "CPPFLAGS=#{cppflags.join(" ")}" unless cppflags.empty?
 
     system "./configure", *args

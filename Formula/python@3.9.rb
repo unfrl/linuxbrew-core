@@ -12,11 +12,11 @@ class PythonAT39 < Formula
   end
 
   bottle do
-    sha256 big_sur: "5dc376aa20241233b76e2ec2c1d4e862443a0250916b2838a1ff871e8a6dc2c5"
-    sha256 arm64_big_sur: "a9ae578b05c3da46cedc07dd428d94a856aeae7f3ef80a0f405bf89b8cde893a"
-    sha256 catalina: "924afbbc16549d8c2b80544fd03104ff8c17a4b1460238e3ed17a1313391a2af"
-    sha256 mojave: "678d338adc7d6e8c352800fe03fc56660c796bd6da23eda2b1411fed18bd0d8d"
-    sha256 x86_64_linux: "65d535e5147550088a56adc5d729675a34b5185cc87b9104edb7e1b2ba50cd66"
+    rebuild 1
+    sha256 big_sur: "3aac55edc7b729b38d97f551560056414b732dd2d8764a8c9a60f897eb372078"
+    sha256 arm64_big_sur: "86d6a425d2916c3a953f0a916b2e973aa15a43c5fb31c1ee7d691dd247eb3721"
+    sha256 catalina: "506f6963d6b33d371b83a13c275c9892fa952ff01a56593f359c27f0bfd48b37"
+    sha256 mojave: "e3e9e5c3e4f926308b1fd5130962fbe6a840dbd4fcbbe4f775c89d84d94dbea9"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -125,14 +125,21 @@ class PythonAT39 < Formula
       args << "--with-system-ffi"
     end
 
-    cflags   = ["-I#{HOMEBREW_PREFIX}/include"]
-    ldflags  = ["-L#{HOMEBREW_PREFIX}/lib"]
-    cppflags = ["-I#{HOMEBREW_PREFIX}/include"]
+    # Python re-uses flags when building native modules.
+    # Since we don't want native modules prioritizing the brew
+    # include path, we move them to [C|LD]FLAGS_NODIST.
+    # Note: Changing CPPFLAGS causes issues with dbm, so we
+    # leave it as-is.
+    cflags         = []
+    cflags_nodist  = ["-I#{HOMEBREW_PREFIX}/include"]
+    ldflags        = []
+    ldflags_nodist = ["-L#{HOMEBREW_PREFIX}/lib"]
+    cppflags       = ["-I#{HOMEBREW_PREFIX}/include"]
 
     if MacOS.sdk_path_if_needed
       # Help Python's build system (setuptools/pip) to build things on SDK-based systems
       # The setup.py looks at "-isysroot" to get the sysroot (and not at --sysroot)
-      cflags  << "-isysroot #{MacOS.sdk_path}" << "-I#{MacOS.sdk_path}/usr/include"
+      cflags  << "-isysroot #{MacOS.sdk_path}"
       ldflags << "-isysroot #{MacOS.sdk_path}"
     end
     # Avoid linking to libgcc https://mail.python.org/pipermail/python-dev/2012-February/116205.html
@@ -163,7 +170,9 @@ class PythonAT39 < Formula
     end
 
     args << "CFLAGS=#{cflags.join(" ")}" unless cflags.empty?
+    args << "CFLAGS_NODIST=#{cflags_nodist.join(" ")}" unless cflags_nodist.empty?
     args << "LDFLAGS=#{ldflags.join(" ")}" unless ldflags.empty?
+    args << "LDFLAGS_NODIST=#{ldflags_nodist.join(" ")}" unless ldflags_nodist.empty?
     args << "CPPFLAGS=#{cppflags.join(" ")}" unless cppflags.empty?
 
     system "./configure", *args
