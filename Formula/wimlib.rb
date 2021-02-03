@@ -17,6 +17,7 @@ class Wimlib < Formula
     sha256 arm64_big_sur: "a2ff0fc910f2cd3925474e7f7ea700d1f4dd9df724df1c634a47e733752393cf"
     sha256 cellar: :any, catalina: "51512426e7836eb9a204f036993ef023bf260129fadde73761c1ff487cfa2518"
     sha256 cellar: :any, mojave: "479dd4c3bb4eade0c59f92c776aab3bcceba107f6ed7e65ab1ba6006dce1823e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "31af9b4d59dd393d0e1eb2a43cbbca6c1e0fd1aa318e746b1212e99d0276c80a"
   end
 
   depends_on "pkg-config" => :build
