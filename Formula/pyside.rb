@@ -11,56 +11,38 @@ class Pyside < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 "b5fbef8f97a40637dde5e19d7d7748c68d6791aff605a9fbc727ec7ab9a59a20" => :big_sur
-    sha256 "a7ad725f886a87be690a6dbd6f692c12ad80217ca4da32ae288835e65b8ebd2f" => :arm64_big_sur
-    sha256 "21ee031fac323276085a0e50bf35bec8b21a1a048114d00143cecbc389c1f97b" => :catalina
-    sha256 "51c56d621de2ecec0ba899fadf2243ceddf7461744f973c2e8c27f4c85d01633" => :mojave
+    rebuild 2
+    sha256 big_sur: "de6776cd9bf4d54feaee3c83acec3de9aae517ac35297c4beb7c0d23e8a99d8a"
+    sha256 arm64_big_sur: "9d5453546a594dd0e7873628e5b39d712e5c233bcd5c30300ebca69bba5234b8"
+    sha256 catalina: "179300a978bc575037dac68319cd1db18cdb4755382c7d2c46e8372a78276de3"
+    sha256 mojave: "17d79dc60d1f3fe413bc874f4f82535f7bfe9739af107525291cc4c5b5a5db06"
   end
 
   depends_on "cmake" => :build
-  depends_on "llvm" => :build
+  depends_on "ninja" => :build
+  depends_on "llvm"
   depends_on "python@3.9"
   depends_on "qt"
 
   def install
-    ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib
-    if MacOS.version == :big_sur
-      # Sysconfig promotes '11' to an integer which confuses the build
-      # system. See:
-      #  * https://bugreports.qt.io/browse/PYSIDE-1469
-      #  * https://codereview.qt-project.org/c/pyside/pyside-setup/+/328375
-      inreplace "build_scripts/wheel_utils.py",
-                "python_target_split = [int(x) for x in python_target.split('.')]",
-                "python_target_split = [int(x) for x in str(python_target).split('.')]"
-    end
-
-    args = %W[
-      --ignore-git
-      --parallel=#{ENV.make_jobs}
-      --install-scripts #{bin}
-      --rpath=#{lib}
-      --macos-sysroot=#{MacOS.sdk_path}
-    ]
-
     xy = Language::Python.major_minor_version Formula["python@3.9"].opt_bin/"python3"
 
-    system Formula["python@3.9"].opt_bin/"python3",
-           *Language::Python.setup_install_args(prefix),
-           "--install-lib", lib/"python#{xy}/site-packages", *args,
-           "--build-type=shiboken2"
+    args = std_cmake_args + %W[
+      -GNinja
+      -DPYTHON_EXECUTABLE=#{Formula["python@3.9"].opt_bin}/python#{xy}
+      -DCMAKE_INSTALL_RPATH=#{lib}
+    ]
 
-    system Formula["python@3.9"].opt_bin/"python3",
-           *Language::Python.setup_install_args(prefix),
-           "--install-lib", lib/"python#{xy}/site-packages", *args,
-           "--build-type=pyside2"
-
-    lib.install_symlink Dir.glob(lib/"python#{xy}/site-packages/PySide2/*.dylib")
-    lib.install_symlink Dir.glob(lib/"python#{xy}/site-packages/shiboken2/*.dylib")
+    mkdir "build" do
+      system "cmake", *args, ".."
+      system "ninja", "install"
+    end
   end
 
   test do
     system Formula["python@3.9"].opt_bin/"python3", "-c", "import PySide2"
+    system Formula["python@3.9"].opt_bin/"python3", "-c", "import shiboken2"
+
     modules = %w[
       Core
       Gui
@@ -78,5 +60,24 @@ class Pyside < Formula
     modules << "WebEngineWidgets" unless Hardware::CPU.arm?
 
     modules.each { |mod| system Formula["python@3.9"].opt_bin/"python3", "-c", "import PySide2.Qt#{mod}" }
+
+    pyincludes = shell_output("#{Formula["python@3.9"].opt_bin}/python3-config --includes").chomp.split
+    pylib = shell_output("#{Formula["python@3.9"].opt_bin}/python3-config --ldflags --embed").chomp.split
+    pyver = Language::Python.major_minor_version(Formula["python@3.9"].opt_bin/"python3").to_s.delete(".")
+
+    (testpath/"test.cpp").write <<~EOS
+      #include <shiboken.h>
+      int main()
+      {
+        Py_Initialize();
+        Shiboken::AutoDecRef module(Shiboken::Module::import("shiboken2"));
+        assert(!module.isNull());
+        return 0;
+      }
+    EOS
+    system ENV.cxx, "-std=c++11", "test.cpp",
+           "-I#{include}/shiboken2", "-L#{lib}", "-lshiboken2.cpython-#{pyver}-darwin",
+           *pyincludes, *pylib, "-o", "test"
+    system "./test"
   end
 end

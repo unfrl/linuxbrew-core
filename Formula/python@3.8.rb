@@ -4,7 +4,7 @@ class PythonAT38 < Formula
   url "https://www.python.org/ftp/python/3.8.7/Python-3.8.7.tar.xz"
   sha256 "ddcc1df16bb5b87aa42ec5d20a5b902f2d088caa269b28e01590f97a798ec50a"
   license "Python-2.0"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -12,11 +12,10 @@ class PythonAT38 < Formula
   end
 
   bottle do
-    sha256 big_sur: "67f0cc89c13c7a36c108777840b979f25a0f4bd5d81c672005943664ea664f7d"
-    sha256 arm64_big_sur: "25780a9d561dad484faf4a881e45df8eca606a5b94af0a4466e44ef9120e83e6"
-    sha256 catalina: "9b8188d7d37854ebbe40b71d522ce0045c5e030ec5b66a3bb4079c4b8b9bc207"
-    sha256 mojave: "b0de5dbbbcb805c6430719dd946146c6417d26214dc351b1c0ecdd423b230012"
-    sha256 x86_64_linux: "6ed7a6b43be3079ea62b9a2af981aa16d33faeed72ec9a4697e48ebad6de31b9"
+    sha256 big_sur: "efc5d582cb6e3e2ab35622442434875efadba621ccd7b06d529b65049029cf3b"
+    sha256 arm64_big_sur: "25bd1842448e449935d3ce5f7caab7a51202ef93d010be2c307dd1d49800fc50"
+    sha256 catalina: "4042005836f8e666000c8d0b627728c5c3b0935fc7f56dede3fee88fc1e8936f"
+    sha256 mojave: "35c910b0b6ace555dd96dd93a8089eda6f0abd94a07fee30cf7a0046a75cf9c1"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -37,6 +36,7 @@ class PythonAT38 < Formula
   depends_on "openssl@1.1"
   depends_on "readline"
   depends_on "sqlite"
+  depends_on "tcl-tk"
   depends_on "xz"
 
   uses_from_macos "bzip2"
@@ -134,10 +134,6 @@ class PythonAT38 < Formula
       # The setup.py looks at "-isysroot" to get the sysroot (and not at --sysroot)
       cflags  << "-isysroot #{MacOS.sdk_path}"
       ldflags << "-isysroot #{MacOS.sdk_path}"
-      # For the Xlib.h, Python needs this header dir with the system Tk
-      # Yep, this needs the absolute path where zlib needed a path relative
-      # to the SDK.
-      cflags << "-isystem #{MacOS.sdk_path}/System/Library/Frameworks/Tk.framework/Versions/8.5/Headers"
     end
     # Avoid linking to libgcc https://mail.python.org/pipermail/python-dev/2012-February/116205.html
     args << "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
@@ -154,6 +150,8 @@ class PythonAT38 < Formula
       cppflags << ENV.cppflags << " -I#{HOMEBREW_PREFIX}/include"
       ldflags << ENV.ldflags << " -L#{HOMEBREW_PREFIX}/lib"
     end
+    args << "--with-tcltk-includes=-I#{Formula["tcl-tk"].opt_include}"
+    args << "--with-tcltk-libs=-L#{Formula["tcl-tk"].opt_lib} -ltcl8.6 -ltk8.6"
 
     # We want our readline! This is just to outsmart the detection code,
     # superenv makes cc always find includes/libs!
@@ -314,9 +312,9 @@ class PythonAT38 < Formula
 
     # Help distutils find brewed stuff when building extensions
     include_dirs = [HOMEBREW_PREFIX/"include", Formula["openssl@1.1"].opt_include,
-                    Formula["sqlite"].opt_include]
+                    Formula["sqlite"].opt_include], Formula["tcl-tk"].opt_include
     library_dirs = [HOMEBREW_PREFIX/"lib", Formula["openssl@1.1"].opt_lib,
-                    Formula["sqlite"].opt_lib]
+                    Formula["sqlite"].opt_lib], Formula["tcl-tk"].opt_lib
 
     cfg = if OS.mac?
       prefix/"Frameworks/Python.framework/Versions/#{xy}/lib/python#{xy}/distutils/distutils.cfg"

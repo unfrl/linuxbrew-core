@@ -2,8 +2,8 @@ class Datasette < Formula
   include Language::Python::Virtualenv
   desc "Open source multi-tool for exploring and publishing data"
   homepage "https://docs.datasette.io/en/stable/"
-  url "https://files.pythonhosted.org/packages/8e/da/9a365cce97d1fa65ee27da9bd3350e2800569f0ecd5fa4c4caf0555819e5/datasette-0.54.tar.gz"
-  sha256 "0a9e1a72616b1689bb5e58c504a8090ab99ef4838cb6c5a3c036568153324a1c"
+  url "https://files.pythonhosted.org/packages/2d/14/f19329dfb741ee12da22ff01ee66fc8a274b49b75f9df0af762105405c8d/datasette-0.54.1.tar.gz"
+  sha256 "6502838ac784bb7d09264ec8b31b193b2a04cb42547945bb88198423c5352c6a"
   license "Apache-2.0"
   head "https://github.com/simonw/datasette.git"
 
@@ -12,11 +12,10 @@ class Datasette < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "5a88a49894d66f8e001b4668d81e7e80a41117fc54322507c8d4503dddddf675" => :big_sur
-    sha256 "7ced75dfbe2299be7f30dae9b2fd465517f024865eaee3b3746feb247ac87384" => :arm64_big_sur
-    sha256 "2bf3d86242ff77078dfdfb768d4df0e5ee13695a03a609a55ba88ab48a93e7c7" => :catalina
-    sha256 "fae7e3b8861074cc12884d3f51e061f82371605b1e6eb1b91af3f12036fe90ba" => :mojave
+    sha256 cellar: :any_skip_relocation, big_sur: "97c69650fe117746694414a30abeb8495452fef0fa3e5c665a815b1e352b6fa5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "2b491724fa7ab5ea685346cd1c64a1009d7019bdf9c9aaae5c3e1afe727b4c66"
+    sha256 cellar: :any_skip_relocation, catalina: "744d7ac1130301a1939950dfac7faa428e167eb08014c4182f919554484ee5ab"
+    sha256 cellar: :any_skip_relocation, mojave: "bab63c125aa6e99114c9dd9cce0a34bd6e0769d7045229da00dc709984be3321"
   end
 
   depends_on "python@3.9"
@@ -57,8 +56,8 @@ class Datasette < Formula
   end
 
   resource "httpcore" do
-    url "https://files.pythonhosted.org/packages/9f/32/0001b9ebc116f78df57428cc9971e9dd518baa3b5b754d7685866837051e/httpcore-0.12.2.tar.gz"
-    sha256 "dd1d762d4f7c2702149d06be2597c35fb154c5eff9789a8c5823fbcf4d2978d6"
+    url "https://files.pythonhosted.org/packages/e0/c5/c6aa5cdf93808549d8495569f12757f9800a1c59be4b153b23814712a604/httpcore-0.12.3.tar.gz"
+    sha256 "37ae835fb370049b2030c3290e12ed298bf1473c41bb72ca4aa78681eba9b7c9"
   end
 
   resource "httpx" do
@@ -87,8 +86,8 @@ class Datasette < Formula
   end
 
   resource "Jinja2" do
-    url "https://files.pythonhosted.org/packages/64/a7/45e11eebf2f15bf987c3bc11d37dcc838d9dc81250e67e4c5968f6008b6c/Jinja2-2.11.2.tar.gz"
-    sha256 "89aab215427ef59c34ad58735269eb58b1a5808103067f7bb9d5836c651b3bb0"
+    url "https://files.pythonhosted.org/packages/4f/e7/65300e6b32e69768ded990494809106f87da1d436418d5f1367ed3966fd7/Jinja2-2.11.3.tar.gz"
+    sha256 "a6d58433de0ae800347cab1fa3043cebbabe8baa9d29e668f1c768cb87a333c6"
   end
 
   resource "MarkupSafe" do
@@ -102,8 +101,8 @@ class Datasette < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d7/c5/e81b9fb8033fe78a2355ea7b1774338e1dca2c9cbd2ee140211a9e6291ab/packaging-20.8.tar.gz"
-    sha256 "78598185a7008a470d64526a8059de9aaa449238f280fc9eb6b13ba6c4109093"
+    url "https://files.pythonhosted.org/packages/86/3c/bcd09ec5df7123abcf695009221a52f90438d877a2f1499453c6938f5728/packaging-20.9.tar.gz"
+    sha256 "5b327ac1320dc863dca72f4514ecc086f31186744b84a230374cc1fd776feae5"
   end
 
   resource "Pint" do

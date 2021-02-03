@@ -1,10 +1,10 @@
 class MitScheme < Formula
   desc "MIT/GNU Scheme development tools and runtime library"
   homepage "https://www.gnu.org/software/mit-scheme/"
-  url "https://ftp.gnu.org/gnu/mit-scheme/stable.pkg/10.1.11/mit-scheme-10.1.11.tar.gz"
-  mirror "https://ftpmirror.gnu.org/gnu/mit-scheme/stable.pkg/10.1.11/mit-scheme-10.1.11.tar.gz"
-  sha256 "03a6df3b9d4c2472b9db7ad92010ea06423d81b018b12d0231d4241b57c80d54"
-  license "GPL-2.0"
+  url "https://ftp.gnu.org/gnu/mit-scheme/stable.pkg/11.1/mit-scheme-11.1.tar.gz"
+  mirror "https://ftpmirror.gnu.org/gnu/mit-scheme/stable.pkg/11.1/mit-scheme-11.1.tar.gz"
+  sha256 "76c4f2eb61b5c4b4c2fe5159484a8d4a24e469fae14c0dd4c9df6221016856a6"
+  license "GPL-2.0-or-later"
 
   livecheck do
     url "https://ftp.gnu.org/gnu/mit-scheme/stable.pkg/?C=M&O=D"
@@ -13,11 +13,9 @@ class MitScheme < Formula
   end
 
   bottle do
-    sha256 "ae2167a7a177e9731350e5f7d91679dc29856fd1b504653c5e54c5e3d2266393" => :big_sur
-    sha256 "5ae123ef4a76b34e2b927873991a823b0ab68a5518d1543f1e76bf9d3c36e589" => :catalina
-    sha256 "7f74120df838cc2f4542c73f20b7f3e3473f23a775d249e2b8170e6acfd43ed1" => :mojave
-    sha256 "cf0d2bf18da0dd0454f53f125bcb4d85632619cd8a79f3dd30ddb16a19c0d470" => :high_sierra
-    sha256 "91f09c9fbc4731da8933b9bbfb2f089ac4e7ec9a61298468903159b4eea3fdc8" => :x86_64_linux
+    sha256 big_sur: "575c4d509b9718b21324f135fd9945a6906d5d09c72da10c3f48915ab21976f8"
+    sha256 catalina: "02fa401eabf3c3b2c382e257b64e15b13f5e3a27cf97a7a1c13f629242fd0061"
+    sha256 mojave: "02ddca7dbe1b6bb1e0e69496dde10ee3e4de49a623c7a6ec2ee2d43f5dfda2bb"
   end
 
   # Has a hardcoded compile check for /Applications/Xcode.app
@@ -31,8 +29,8 @@ class MitScheme < Formula
   uses_from_macos "ncurses"
 
   resource "bootstrap" do
-    url "https://ftp.gnu.org/gnu/mit-scheme/stable.pkg/10.1.11/mit-scheme-10.1.11-x86-64.tar.gz"
-    sha256 "32c29fe08588ed325774113bac00dce72c2454955c64ba32fc40f30db011c21c"
+    url "https://ftp.gnu.org/gnu/mit-scheme/stable.pkg/11.1/mit-scheme-11.1-x86-64.tar.gz"
+    sha256 "92bcb77788d982a6522119ea0a51935b680b9ada88f99c21bcb9d843d6b384cd"
   end
 
   def install
@@ -81,14 +79,6 @@ class MitScheme < Formula
     system "./configure", "--prefix=#{prefix}", "--mandir=#{man}", "--without-x"
     system "make"
     system "make", "install"
-    # Copy over all.com and runtime.com from the original bootstrap
-    # binaries to avoid shims
-    %w[
-      mit-scheme-x86-64/all.com
-      mit-scheme-x86-64/runtime.com
-    ].each do |f|
-      cp buildpath/"staging/lib/#{f}", lib/f
-    end
   end
 
   test do
