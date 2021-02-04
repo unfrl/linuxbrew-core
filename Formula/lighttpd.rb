@@ -15,6 +15,7 @@ class Lighttpd < Formula
     sha256 arm64_big_sur: "83be5fc9ff54264e3a2ec2633259eb9121fc5fdc7bdd3f43c3319971bc9a6e97"
     sha256 catalina:      "bcc720caef8110766bad93f27016cac6443a000ab5de0cb7b231e8f01d3f1129"
     sha256 mojave:        "243daa151b9d0bc1fb6ac914eb807a78f219bbced3ed76f1cfbe1c319189bcbc"
+    sha256 x86_64_linux:  "6560b99bcacc176a4240f1f0ee8579a95980bd1d21f1d65807255a0992e478d6"
   end
 
   depends_on "autoconf" => :build
