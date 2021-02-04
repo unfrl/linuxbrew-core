@@ -10,9 +10,10 @@ class Binwalk < Formula
   head "https://github.com/ReFirmLabs/binwalk.git"
 
   bottle do
-    sha256 cellar: :any, big_sur:  "b1e5dd1e7292c12e45849813f43a4b57e2f853096ea411f3b9f3668d210d7b18"
-    sha256 cellar: :any, catalina: "35b8be77b69cf292e94d6acc1a84f4ff91bcee2cf5cfb98dacd3b15dea1b7a33"
-    sha256 cellar: :any, mojave:   "f1e6fbd62185d6d102752c0d4eb3f430851c1fe820cae4877c7b45b7869a4e6e"
+    sha256 cellar: :any,                 big_sur:      "b1e5dd1e7292c12e45849813f43a4b57e2f853096ea411f3b9f3668d210d7b18"
+    sha256 cellar: :any,                 catalina:     "35b8be77b69cf292e94d6acc1a84f4ff91bcee2cf5cfb98dacd3b15dea1b7a33"
+    sha256 cellar: :any,                 mojave:       "f1e6fbd62185d6d102752c0d4eb3f430851c1fe820cae4877c7b45b7869a4e6e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "936d8de19a3b055d445b1ca70c199a9304003bf67664017d13eefd7af1b894f4"
   end
 
   depends_on "pkg-config" => :build
