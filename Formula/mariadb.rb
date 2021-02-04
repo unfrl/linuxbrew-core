@@ -11,11 +11,11 @@ class Mariadb < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 big_sur:      "8a27f4ff10628a7366f0a63480433fa1138c547fbd49343258abb47cd4908e67"
-    sha256 catalina:     "4b32c4d13a178a568d7a8668f0d42c40a02d161fac8ea7b10f5c2e468cbca4a6"
-    sha256 mojave:       "c52e7c5c5a92e4e5faf2ab5aa6cb66eeabc943869161bf5c8853b37dbd6a49a3"
-    sha256 x86_64_linux: "0928802e959042170c7a838aeac6cc22252d79f459ad5250a97134031a0f7a61"
+    rebuild 3
+    sha256 big_sur:       "802d047b15b594c3170d90e355f44a6585cd5cd255788ee4922b6e757b216bd0"
+    sha256 arm64_big_sur: "1e168542dc43d8c2d88153ee7bfcbbac167de161599a257ef82e8c2ebc094fd5"
+    sha256 catalina:      "abd58d85de7c08ed22f82331b09afe3f90bab796fc4bfe318a952826b7c1498e"
+    sha256 mojave:        "a0c0f4cb430cf7b462be33c94f34e840f6d0510b1c78c50e596bb36bf0536761"
   end
 
   depends_on "cmake" => :build
@@ -39,9 +39,16 @@ class Mariadb < Formula
   conflicts_with "mytop", because: "both install `mytop` binaries"
   conflicts_with "mariadb-connector-c", because: "both install `mariadb_config`"
 
+  # Upstream fix for Apple Silicon, remove in next version
+  # https://github.com/MariaDB/server/pull/1743
   fails_with gcc: "4"
   fails_with gcc: "5"
   fails_with gcc: "6"
+
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/bc0c5033d15f4aa30ed6f4bf29e2ad61608f3299/mariadb/mariadb-10.5.8-apple-silicon.patch"
+    sha256 "30a3c608b25e25d2b98b4a3508f8c0be211f0e02ba919d2d2b50fa2d77744a52"
+  end
 
   def install
     # Set basedir and ldata so that mysql_install_db can find the server
@@ -83,6 +90,9 @@ class Mariadb < Formula
 
     # disable TokuDB, which is currently not supported on macOS
     args << "-DPLUGIN_TOKUDB=NO"
+
+    # Disable RocksDB on Apple Silicon (currently not supported)
+    args << "-DPLUGIN_ROCKSDB=NO" if Hardware::CPU.arm?
 
     system "cmake", ".", *std_cmake_args, *args
     system "make"

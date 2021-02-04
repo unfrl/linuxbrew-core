@@ -2,17 +2,15 @@ class PhpAT73 < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-7.3.26.tar.xz"
-  mirror "https://fossies.org/linux/www/php-7.3.26.tar.xz"
-  sha256 "d93052f4cb2882090b6a37fd1e0c764be1605a2461152b7f6b8f04fa48875208"
+  url "https://www.php.net/distributions/php-7.3.27.tar.xz"
+  mirror "https://fossies.org/linux/www/php-7.3.27.tar.xz"
+  sha256 "65f616e2d5b6faacedf62830fa047951b0136d5da34ae59e6744cbaf5dca148d"
   license "PHP-3.01"
-  revision 1
 
   bottle do
-    sha256 big_sur:      "06671f8f745ffb772680f3c682114ba442137252b63be1269e106ec2aca37184"
-    sha256 catalina:     "ead08def2ae05dfc8524fd7e47e3a09ff08762b41a4d61577a031b55e11e6914"
-    sha256 mojave:       "ba28f17495fdb6a853578a759dfc50255588f9eb6d75f0f1f350e812dc558202"
-    sha256 x86_64_linux: "187a6cfde3f844d33b77f6c863af80ce83afad935974c84e677fafd051297dcc"
+    sha256 big_sur:  "f732c10eb1031729f23f28dc3c7568ae4b6565609cbedf8b37a038cd41281aea"
+    sha256 catalina: "b8b66dec270300f49b0c55454884b7ab0b93ffa03b61b536249bca24050d3dae"
+    sha256 mojave:   "1a901cc15023cdf13d2ecec7cec878149ef505d934e10885e716091face5ffe3"
   end
 
   keg_only :versioned_formula

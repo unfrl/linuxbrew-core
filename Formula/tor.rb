@@ -1,9 +1,9 @@
 class Tor < Formula
   desc "Anonymizing overlay network for TCP"
   homepage "https://www.torproject.org/"
-  url "https://www.torproject.org/dist/tor-0.4.4.6.tar.gz"
-  mirror "https://www.torservers.net/mirrors/torproject.org/dist/tor-0.4.4.6.tar.gz"
-  sha256 "5f154c155803adf5c89e87cab53017b6908c5ebe50c65839e8cf4fbd2abe1fdc"
+  url "https://www.torproject.org/dist/tor-0.4.4.7.tar.gz"
+  mirror "https://www.torservers.net/mirrors/torproject.org/dist/tor-0.4.4.7.tar.gz"
+  sha256 "326d2926177f0c7838cac213456d0056817d57f3f2e46714a2911c7d7a9b05ee"
 
   livecheck do
     url "https://dist.torproject.org/"
@@ -11,12 +11,10 @@ class Tor < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "652dd8e0b2154d100747672e64eb45b2a7ffd9c9117b1f17a29df537d15f1f28"
-    sha256 big_sur:       "345a31685faa4b551c32ea7265191ef71db9dc90ab41af189535b831b6877f47"
-    sha256 catalina:      "a6f0a222f1ce3670521392887eea1b491f4cefa8031e1cea7e2e33dea93d715b"
-    sha256 mojave:        "cc4678fc4cdf9a93cb5dc7f10a02df0e1bd950becd2b944afad59b7d64bbad3b"
-    sha256 high_sierra:   "52937701615bbe2ec97bdccd6dcd287a095f20128fc574fff1bfe04d775dac4a"
-    sha256 x86_64_linux:  "90c8f1c29af5b081a8c3e809aa57257a74318e2e094f6cd75a774913a3eea6a3"
+    sha256 big_sur:       "a757e5ff16ae66933aa729fb2f022e62564dd4007daccda31e1d415fdf600e09"
+    sha256 arm64_big_sur: "707a87a267fcb0a4186415a9eee85eee62509747a61a31530813146409602d00"
+    sha256 catalina:      "203af4c3f78c82d07e75775bf14c767ed7082d69ecd2126db5a8ebb6a48e51ee"
+    sha256 mojave:        "14774e8f2e1ba72edf08d773e66ff7a819c9bde7fb9d6e6c1165d6570f0b8c88"
   end
 
   depends_on "pkg-config" => :build
