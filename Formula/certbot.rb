@@ -13,6 +13,7 @@ class Certbot < Formula
     sha256 cellar: :any, big_sur:       "10d99154d4f477f963485fd1e346c652a6719a797ee4392f6d7ea6b17ded8e57"
     sha256 cellar: :any, catalina:      "32a50594c947ede27153dc4eb75653aa66a3ddae546a9d076c782e68b61a0758"
     sha256 cellar: :any, mojave:        "2e6f5d380da787a79c8c817eb3436a1000ba77885fa124075e980e8285a9a95e"
+    sha256               x86_64_linux:  "4bbc5afbf5ab5042479cfcb30ab605cc6de8b558a6e7322c211a00d66abbc69f"
   end
 
   depends_on "augeas"
