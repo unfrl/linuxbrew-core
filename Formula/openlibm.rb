@@ -5,10 +5,11 @@ class Openlibm < Formula
   sha256 "eb585204d6c995691e5545ea4ffcb887c159bf05cc5ee1bbf92a6fcdde2fccae"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "2046c2a9f7874150036e25091ea934377c7579f0396ae7570f4c2ff350bb6094"
-    sha256 cellar: :any, big_sur:       "efd441cb260e064ee213c0c7008c02baf6c552d4ea45afc11c6df26371032131"
-    sha256 cellar: :any, catalina:      "23ae6cbf040c349d0bab99cfe267f2a416c1a24a804724543687d748ab55cfaa"
-    sha256 cellar: :any, mojave:        "42e992c9bee0975fa22df4313c80180c08a772fe7b1345808a61c469b00e2044"
+    sha256 cellar: :any,                 arm64_big_sur: "2046c2a9f7874150036e25091ea934377c7579f0396ae7570f4c2ff350bb6094"
+    sha256 cellar: :any,                 big_sur:       "efd441cb260e064ee213c0c7008c02baf6c552d4ea45afc11c6df26371032131"
+    sha256 cellar: :any,                 catalina:      "23ae6cbf040c349d0bab99cfe267f2a416c1a24a804724543687d748ab55cfaa"
+    sha256 cellar: :any,                 mojave:        "42e992c9bee0975fa22df4313c80180c08a772fe7b1345808a61c469b00e2044"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e43ed127eb56d3b8bc8519b54eb03510f9323001e75dc68261e242b496fc2366"
   end
 
   keg_only :provided_by_macos
