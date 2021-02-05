@@ -8,10 +8,11 @@ class Opencolorio < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_big_sur: "3f501b862fd81a38e3395b74cea1c315222cae167d218bf29e9781880b40bc60"
-    sha256 big_sur:       "cac7814fd18e6b7bfafc5e00a2b0bd82ff31bc8c93b80fb6d50b5c89816081b8"
-    sha256 catalina:      "f421a922c08d79d16cb3b13a0bd5e89391b532d3d4f4bd673a265d01c21913da"
-    sha256 mojave:        "f1300eca64637ad73adbfb2d3a77e59d65b5eae008fbbf4676d30555636f645e"
+    sha256                               arm64_big_sur: "3f501b862fd81a38e3395b74cea1c315222cae167d218bf29e9781880b40bc60"
+    sha256                               big_sur:       "cac7814fd18e6b7bfafc5e00a2b0bd82ff31bc8c93b80fb6d50b5c89816081b8"
+    sha256                               catalina:      "f421a922c08d79d16cb3b13a0bd5e89391b532d3d4f4bd673a265d01c21913da"
+    sha256                               mojave:        "f1300eca64637ad73adbfb2d3a77e59d65b5eae008fbbf4676d30555636f645e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ed3679be524c271f3b6a176c20658897cdaeda1ff40f7df3f4487d5206aa954"
   end
 
   depends_on "cmake" => :build
