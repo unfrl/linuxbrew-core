@@ -13,10 +13,11 @@ class Lmdb < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "e841311d68877f2fb3d1ed488b33ce07c1d4b164babd5bbe6552c4f01765fce1"
-    sha256 cellar: :any, big_sur:       "1fe7ed983f30164a0558431649e1b6f86b28dc36660c0ffc215db205f85bbe39"
-    sha256 cellar: :any, catalina:      "cb42f85558a8825f775ae80c79a9f5f7ed015d0d4f46f91eba5a4f61474a8b99"
-    sha256 cellar: :any, mojave:        "9b1e6d9b6436d526e1798e132d1529366511d18b5c7a8547336cbd3f1683121f"
+    sha256 cellar: :any,                 arm64_big_sur: "e841311d68877f2fb3d1ed488b33ce07c1d4b164babd5bbe6552c4f01765fce1"
+    sha256 cellar: :any,                 big_sur:       "1fe7ed983f30164a0558431649e1b6f86b28dc36660c0ffc215db205f85bbe39"
+    sha256 cellar: :any,                 catalina:      "cb42f85558a8825f775ae80c79a9f5f7ed015d0d4f46f91eba5a4f61474a8b99"
+    sha256 cellar: :any,                 mojave:        "9b1e6d9b6436d526e1798e132d1529366511d18b5c7a8547336cbd3f1683121f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b161a3fabff40acc29a150ca2ec76a7c099b504110be9f8d3a59a093371824d"
   end
 
   def install
