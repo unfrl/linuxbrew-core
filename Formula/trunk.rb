@@ -11,6 +11,7 @@ class Trunk < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "6048e4ac198b442011f29daab363a5ad0e63cf0e2c0bdbc55393a74eba7aa8ec"
     sha256 cellar: :any_skip_relocation, catalina:      "eb6f94ad5c40e7a6d93887a3b7379643592f5ccead01874a2be775fb6936b43f"
     sha256 cellar: :any_skip_relocation, mojave:        "0e9519ffc6995c91a89e7a2fe103778cf6be65ca036070d2afef9670db648656"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c1e5f907fc3a2d93ce98780aae4b5ee538abf841417a9c2374b6f6493aa60d4"
   end
 
   depends_on "rust" => :build
