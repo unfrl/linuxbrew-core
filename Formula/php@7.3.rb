@@ -8,9 +8,10 @@ class PhpAT73 < Formula
   license "PHP-3.01"
 
   bottle do
-    sha256 big_sur:  "f732c10eb1031729f23f28dc3c7568ae4b6565609cbedf8b37a038cd41281aea"
-    sha256 catalina: "b8b66dec270300f49b0c55454884b7ab0b93ffa03b61b536249bca24050d3dae"
-    sha256 mojave:   "1a901cc15023cdf13d2ecec7cec878149ef505d934e10885e716091face5ffe3"
+    sha256 big_sur:      "f732c10eb1031729f23f28dc3c7568ae4b6565609cbedf8b37a038cd41281aea"
+    sha256 catalina:     "b8b66dec270300f49b0c55454884b7ab0b93ffa03b61b536249bca24050d3dae"
+    sha256 mojave:       "1a901cc15023cdf13d2ecec7cec878149ef505d934e10885e716091face5ffe3"
+    sha256 x86_64_linux: "21eb7bc27e1ef8fbfb49c5ae397b88c32b867b665c632b4e9543a98235139ca1"
   end
 
   keg_only :versioned_formula
