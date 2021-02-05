@@ -24,7 +24,11 @@ class Gotop < Formula
     assert_match version.to_s, shell_output("#{bin}/gotop --version").chomp
 
     system bin/"gotop", "--write-config"
-    path = OS.mac? ? "Library/Application Support/gotop": ".config/gotop"
-    assert_predicate testpath/"#{path}/gotop.conf", :exist?
+    on_macos do
+      assert_predicate testpath/"Library/Application Support/gotop/gotop.conf", :exist?
+    end
+    on_linux do
+      assert_predicate testpath/".config/gotop/gotop.conf", :exist?
+    end
   end
 end

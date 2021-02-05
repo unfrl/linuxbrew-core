@@ -3,39 +3,33 @@ class Libprelude < Formula
   homepage "https://www.prelude-siem.org/"
   url "https://www.prelude-siem.org/attachments/download/1395/libprelude-5.2.0.tar.gz"
   sha256 "187e025a5d51219810123575b32aa0b40037709a073a775bc3e5a65aa6d6a66e"
+  license "GPL-2.0-or-later"
 
   bottle do
-    sha256 x86_64_linux: "cb1b9bfee9be1ab5512a2c6fa8b67726c36b851ea713a265b35376b68c6e6e87"
+    sha256 arm64_big_sur: "7b7bd68152744ba511e577cbba513e86155f0b9734ed54591a462482d94c5679"
+    sha256 big_sur:       "6917b8d5d3ff58f90327fb818d920de6aea2b5ae78043f00368e3b927fd6ddcd"
+    sha256 catalina:      "6e8f95a1d163f021c7f6a7e09b92b9f695edd8de41e787dcbcafc87781380980"
+    sha256 mojave:        "0bb4d2090cb2f2aa0acb868402232a725e1ad51ead0786988bf1628a94491dde"
   end
 
   depends_on "libtool" => :build
-  depends_on "perl" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.9" => :build
-  depends_on "ruby@2.6" => :build
-  depends_on "swig" => :build
-  depends_on "valgrind" => :build
   depends_on "gnutls"
-  depends_on "libgcrypt"
   depends_on "libgpg-error"
-  depends_on :linux
-  depends_on "lua"
+  depends_on "python@3.8"
 
   def install
     ENV["HAVE_CXX"] = "yes"
     args = %W[
       --disable-dependency-tracking
       --prefix=#{prefix}
-      --disable-rpath
-      --with-pic
-      --with-python3
+      --without-valgrind
+      --without-lua
+      --without-ruby
+      --without-perl
+      --without-swig
       --without-python2
-      --with-valgrind
-      --with-lua
-      --with-ruby
-      --with-perl
-      --with-swig
-      --with-libgcrypt-prefix=#{Formula["libgcrypt"].opt_prefix}
+      --with-python3=#{Formula["python@3.8"].opt_bin/"python3"}
       --with-libgnutls-prefix=#{Formula["gnutls"].opt_prefix}
     ]
 
@@ -47,5 +41,19 @@ class Libprelude < Formula
   test do
     assert_equal prefix.to_s, shell_output(bin/"libprelude-config --prefix").chomp
     assert_equal version.to_s, shell_output(bin/"libprelude-config --version").chomp
+
+    (testpath/"test.c").write <<~EOS
+      #include <libprelude/prelude.h>
+
+      int main(int argc, const char* argv[]) {
+        int ret = prelude_init(&argc, argv);
+        if ( ret < 0 ) {
+          prelude_perror(ret, "unable to initialize the prelude library");
+          return -1;
+        }
+      }
+    EOS
+    system ENV.cc, "-L#{lib}", "-lprelude", "test.c", "-o", "test"
+    system "./test"
   end
 end

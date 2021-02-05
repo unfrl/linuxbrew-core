@@ -17,18 +17,17 @@ class Ccfits < Formula
   depends_on "cfitsio"
 
   def install
-    if OS.mac?
-      system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
-    else
-      system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}",
-                          "pfk_cxx_lib_path=/usr/bin/g++"
+    args = %W[
+      --disable-debug
+      --disable-dependency-tracking
+      --disable-silent-rules
+      --prefix=#{prefix}
+    ]
+    on_linux do
+      # Remove references to brew's shims
+      args << "pfk_cxx_lib_path=/usr/bin/g++"
     end
+    system "./configure", *args
     system "make"
     system "make", "install"
   end

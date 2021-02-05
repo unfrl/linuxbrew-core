@@ -2,7 +2,7 @@ class Crystal < Formula
   desc "Fast and statically typed, compiled language with Ruby-like syntax"
   homepage "https://crystal-lang.org/"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   stable do
     url "https://github.com/crystal-lang/crystal/archive/0.36.1.tar.gz"
@@ -20,9 +20,9 @@ class Crystal < Formula
   end
 
   bottle do
-    sha256 cellar: :any, big_sur:  "ac5f52170b9be5f15878d81fef3d6cd918ebed5d413f0a6904e46f8893d53b0b"
-    sha256 cellar: :any, catalina: "a3091f12520a9298bf0e86811125a0f2eb884152e621cc7da71f2ca75f7781cc"
-    sha256 cellar: :any, mojave:   "29aa03814c1576aa8509ec65205425a3e2300f7eb9613f506d2b198277d13e7c"
+    sha256 cellar: :any, big_sur:  "4694a0e3cf3ce92bc193f1de4bec7fc3f3da821a77b3c3dc62c82702c26815cd"
+    sha256 cellar: :any, catalina: "66115f7be21465192f8cec8e39176e86415f378eec1bd769b1fbf3b2cc10ae73"
+    sha256 cellar: :any, mojave:   "9686c1d0c02629fc17f6ae20324e0d89f7e57f3a81dfcd5eec63519b7c860c8e"
   end
 
   head do
@@ -58,6 +58,8 @@ class Crystal < Formula
   def install
     (buildpath/"boot").install resource("boot")
     ENV.append_path "PATH", "boot/bin"
+    ENV.append_path "CRYSTAL_LIBRARY_PATH", Formula["bdw-gc"].lib
+    ENV.append_path "CRYSTAL_LIBRARY_PATH", ENV["HOMEBREW_LIBRARY_PATHS"]
 
     # Build crystal
     crystal_build_opts = []
@@ -76,7 +78,6 @@ class Crystal < Formula
     #       building the formula. Otherwise this ad-hoc setup could be avoided.
     embedded_crystal_path=`"#{buildpath/".build/crystal"}" env CRYSTAL_PATH`.strip
     ENV["CRYSTAL_PATH"] = "#{embedded_crystal_path}:#{buildpath/"src"}"
-    ENV["CRYSTAL_LIBRARY_PATH"] = ENV["HOMEBREW_LIBRARY_PATHS"]
 
     # Install shards
     resource("shards").stage do

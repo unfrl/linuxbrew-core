@@ -7,10 +7,11 @@ class Opencolorio < Formula
   head "https://github.com/imageworks/OpenColorIO.git"
 
   bottle do
-    sha256 cellar: :any,                 big_sur:      "71158ec7ad5d639725b0fff7c959c917ef487b57a5ab86a50be513f37bc2de27"
-    sha256 cellar: :any,                 catalina:     "ed6222a9cd879320f401346aef14e0c2bf32f530c7deb6738376923d98474e10"
-    sha256 cellar: :any,                 mojave:       "d4168fbcacc162d72f1ed558d3e0aa19efdd93ffd49b24078d6f9abb998a545e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "22731599937a83a01d0f01f4ff8441e07d45b5712303e1a666919952105ba638"
+    rebuild 1
+    sha256 arm64_big_sur: "3f501b862fd81a38e3395b74cea1c315222cae167d218bf29e9781880b40bc60"
+    sha256 big_sur:       "cac7814fd18e6b7bfafc5e00a2b0bd82ff31bc8c93b80fb6d50b5c89816081b8"
+    sha256 catalina:      "f421a922c08d79d16cb3b13a0bd5e89391b532d3d4f4bd673a265d01c21913da"
+    sha256 mojave:        "f1300eca64637ad73adbfb2d3a77e59d65b5eae008fbbf4676d30555636f645e"
   end
 
   depends_on "cmake" => :build
@@ -21,6 +22,7 @@ class Opencolorio < Formula
   def install
     args = std_cmake_args + %W[
       -DCMAKE_VERBOSE_MAKEFILE=OFF
+      -DCMAKE_INSTALL_RPATH=#{lib}
       -DPYTHON=python3
       -DPYTHON_EXECUTABLE=#{Formula["python@3.9"].opt_bin}/"python3"
     ]
