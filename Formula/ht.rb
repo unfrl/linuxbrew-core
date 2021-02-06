@@ -7,10 +7,11 @@ class Ht < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any, arm64_big_sur: "405e3628c0af358c0014fa5fe79ddd258f1b9b080ecfc2910c362a2daae77785"
-    sha256 cellar: :any, big_sur:       "4f552c6754e25dc6d790015516167222490dbf15f2b490b714b078278d444b3e"
-    sha256 cellar: :any, catalina:      "94df31fe5a0bd007170030e65a25242acd467270d9960c42a128fcfbfb43e379"
-    sha256 cellar: :any, mojave:        "62adaf2ac899b3e0b3e6fec81de26eec41f38be0316f55b42fb0fe2a829dcbe7"
+    sha256 cellar: :any,                 arm64_big_sur: "405e3628c0af358c0014fa5fe79ddd258f1b9b080ecfc2910c362a2daae77785"
+    sha256 cellar: :any,                 big_sur:       "4f552c6754e25dc6d790015516167222490dbf15f2b490b714b078278d444b3e"
+    sha256 cellar: :any,                 catalina:      "94df31fe5a0bd007170030e65a25242acd467270d9960c42a128fcfbfb43e379"
+    sha256 cellar: :any,                 mojave:        "62adaf2ac899b3e0b3e6fec81de26eec41f38be0316f55b42fb0fe2a829dcbe7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0064adedf76284400b995a87d2f995139872edd25247ade947c42d0d89885e0b"
   end
 
   depends_on "lzo"
