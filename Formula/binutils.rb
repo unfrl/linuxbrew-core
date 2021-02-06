@@ -6,10 +6,6 @@ class Binutils < Formula
   sha256 "5788292cc5bbcca0848545af05986f6b17058b105be59e99ba7d0f9eb5336fb8"
   license all_of: ["GPL-2.0-or-later", "GPL-3.0-or-later", "LGPL-2.0-or-later", "LGPL-3.0-only"]
 
-  livecheck do
-    url :stable
-  end
-
   # binutils is portable.
   bottle do
     sha256 cellar: :any, arm64_big_sur: "5227a5695421c8471b43801b12e2935a7bbaffbad405552d7473f0c1c36c8d3e"

@@ -3,26 +3,22 @@ class Jc < Formula
 
   desc "Serializes the output of command-line tools to structured JSON output"
   homepage "https://github.com/kellyjonbrazil/jc"
-  url "https://files.pythonhosted.org/packages/e1/7f/eda44d7d881bd0356038382741bacd93ff93546c75a8a2af0271f882ff6e/jc-1.14.1.tar.gz"
-  sha256 "b6bfde3079d4385a643d9eb31c1c554e122ac32e594318363306375b25269473"
+  url "https://files.pythonhosted.org/packages/8d/29/86df73f51b814001b4145550bfa0bacc7ff6e76706fb347748c158e93363/jc-1.14.2.tar.gz"
+  sha256 "e872986ba158b83ebaca204ab2f249e8dadb4b4761925cccaf090d61f391cd2d"
   license "MIT"
 
-  livecheck do
-    url :stable
-  end
-
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "2dd7f9b8ebf3e1bd248c70d5c37536edaa211066f87149b9b334998c8319d10b"
-    sha256 cellar: :any_skip_relocation, big_sur:       "a25ee1525851783426dd349304fc17c4ba253ea94afe2491b998ebfc48a8af57"
-    sha256 cellar: :any_skip_relocation, catalina:      "c64f06e2c16d01d2ec7c8cada2594af5c14893413affe2ee054eef60efc59141"
-    sha256 cellar: :any_skip_relocation, mojave:        "14421f56a7db47dc027a0b65ce5bfd468fcf822a5eb2f7f8775069809f965526"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "1f8dcd2ebf9a5d61cbf2a2196f659196891029704071077a4e4cc4dddc2fd32a"
+    sha256 cellar: :any_skip_relocation, big_sur:       "55bdbbc88aab58e75fe6ab4d1dffca858da1a5510e89466490dab8198b021f63"
+    sha256 cellar: :any_skip_relocation, catalina:      "f3133fcfc183b7f903516c572c06888f22568ee16e54d929f5f75d53a33069a4"
+    sha256 cellar: :any_skip_relocation, mojave:        "bffaab54e2058ae37fa96d32c2e9386db5c30bb22c27a840de203f010a1eefae"
   end
 
   depends_on "python@3.9"
 
   resource "Pygments" do
-    url "https://files.pythonhosted.org/packages/29/60/8ff9dcb5eac7f4da327ba9ecb74e1ad783b2d32423c06ef599e48c79b1e1/Pygments-2.7.3.tar.gz"
-    sha256 "ccf3acacf3782cbed4a989426012f1c535c9a90d3a7fc3f16d231b9372d2b716"
+    url "https://files.pythonhosted.org/packages/e1/86/8059180e8217299079d8719c6e23d674aadaba0b1939e25e0cc15dcf075b/Pygments-2.7.4.tar.gz"
+    sha256 "df49d09b498e83c1a73128295860250b0b7edd4c723a32e9bc0d295c7c2ec337"
   end
 
   resource "ruamel.yaml" do

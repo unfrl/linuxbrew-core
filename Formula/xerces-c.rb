@@ -7,10 +7,6 @@ class XercesC < Formula
   revision 1 unless OS.mac?
   license "Apache-2.0"
 
-  livecheck do
-    url :stable
-  end
-
   bottle do
     rebuild 1
     sha256 cellar: :any, arm64_big_sur: "482e14a0ff78e66b3f701a744411b2144479f69a7d4b876def7723d4683ae81a"

@@ -6,10 +6,6 @@ class Foma < Formula
   license "GPL-2.0-only"
   revision 1 unless OS.mac?
 
-  livecheck do
-    url :stable
-  end
-
   bottle do
     rebuild 1
     sha256 cellar: :any, arm64_big_sur: "8cac09b69356887a31f4d2314b9eb7a193ad21858b0cc43ade7d48a485e4b55d"

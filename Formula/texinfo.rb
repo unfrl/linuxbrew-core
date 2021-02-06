@@ -7,10 +7,6 @@ class Texinfo < Formula
   license "GPL-3.0"
   revision 1 unless OS.mac?
 
-  livecheck do
-    url :stable
-  end
-
   bottle do
     sha256 arm64_big_sur: "8767f78e25929771eeb011b44247b0d864765094e707aeaff9b4783385ba05a8"
     sha256 big_sur:       "7332c7a1665fc64484fff626116928630d4ee21983f1e221bda360a4d590a396"
