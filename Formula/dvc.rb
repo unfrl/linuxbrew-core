@@ -3,8 +3,8 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/87/eb/9009869e7d8d4c71b2a10d59897aaf7651690bbee9f88d97a3e196e40012/dvc-1.11.14.tar.gz"
-  sha256 "55d47ff0da7138dbe07bde6d9a82a8f5f1c2006d6682f4401fb2baf96431e103"
+  url "https://files.pythonhosted.org/packages/a8/9e/b4c35b1a6449aed256d7083a106b3031d598b64f528c58c66531918010cc/dvc-1.11.15.tar.gz"
+  sha256 "65d22c4232d38ca8ed524b45d5e987b6f87db0cec99f0f0c56205e10103947b5"
   license "Apache-2.0"
 
   livecheck do
@@ -12,10 +12,10 @@ class Dvc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "e119a623616544d988f0bc48b802ba82d36645ad877fadddf472f2a0e32b8ccf"
-    sha256 cellar: :any, big_sur:       "998a5f2a3d6c5635a8d96bd9141edfd1dbf223153b09af9168eb0f8a5e670596"
-    sha256 cellar: :any, catalina:      "4b434e08cb83f4fa6f7cb58a461a6b1baa6461c4e7fc82fd8ef6d90ba2962122"
-    sha256 cellar: :any, mojave:        "183d1516a6f1538bb65c0e2b4c4130286ea16306235665025e043ca385978c72"
+    sha256 cellar: :any, arm64_big_sur: "7c6f9ecf99a96f0b2f8adcbbf769761547f606637bb1b9e0587a1a84f2b49f9a"
+    sha256 cellar: :any, big_sur:       "24460ffba980d2bef98d34af82b57b0eff0c20419dfa1e500bc02792cc5d4aba"
+    sha256 cellar: :any, catalina:      "22b83a5f6d8233f4a1783c64caf20f3455014528cfdf76bca0dc265b5592a003"
+    sha256 cellar: :any, mojave:        "613f26b3ee4d61d22a07da4f79eac4dbda9b8379cd69a21d10d49e6fdb558873"
   end
 
   depends_on "pkg-config" => :build
@@ -79,8 +79,8 @@ class Dvc < Formula
   end
 
   resource "dulwich" do
-    url "https://files.pythonhosted.org/packages/23/e1/38f2fa20d223c635c8f9a939e45ad6c06d55a7f867c013ee98cf250fb262/dulwich-0.20.15.tar.gz"
-    sha256 "fb1773373ec2af896031f8312af6962a1b8b0176a2de3fb3d84a84ec04498888"
+    url "https://files.pythonhosted.org/packages/21/54/faa913d4e404dffc55f97f88b539c8caf9418cf1a8ba8a30061ef6c46ec4/dulwich-0.20.18.tar.gz"
+    sha256 "0131387f9b99aecc69ac98655b3931f2ad43da53d3a63e050fa3a6d6260ac554"
   end
 
   resource "flatten-dict" do

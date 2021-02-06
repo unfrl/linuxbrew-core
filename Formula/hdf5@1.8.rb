@@ -1,9 +1,8 @@
 class Hdf5AT18 < Formula
   desc "File format designed to store large amounts of data"
   homepage "https://www.hdfgroup.org/HDF5"
-  url "https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8/hdf5-1.8.21/src/hdf5-1.8.21.tar.bz2"
-  sha256 "e5b1b1dee44a64b795a91c3321ab7196d9e0871fe50d42969761794e3899f40d"
-  revision 2
+  url "https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8/hdf5-1.8.22/src/hdf5-1.8.22.tar.bz2"
+  sha256 "0ac77e1c22bce5bbbdb337bd7f97aeb5ef43c727a84ccb6d683d092eb57ebd8e"
 
   livecheck do
     url "https://support.hdfgroup.org/ftp/HDF5/current18/src/"
@@ -11,10 +10,9 @@ class Hdf5AT18 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, catalina:     "cf26b031bb492997d0f6731eb563637d8c37c434ea82bced9e324a1bf40d9031"
-    sha256 cellar: :any_skip_relocation, mojave:       "869247e293d26ce1988ae02cab81e71d92cb8c845ce5587def24a3c473c2201a"
-    sha256 cellar: :any_skip_relocation, high_sierra:  "cc7478ecc9b526b32bb9919a05094d5feff0833d1f5f27b6f7fef60545e6c998"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "48c329cc61843f5387d3ba88e22b2c64fa0d0d7a183e70b5b29224fdd9d0a05e"
+    sha256 cellar: :any, big_sur:  "e48732946d17c335fa5a76755f84740bb28871fff41776dbe283952f5729fc24"
+    sha256 cellar: :any, catalina: "b5143d69b2ef67f5811e24bbefc2b762b4bd65355c7bd572a2b8bae449d5e295"
+    sha256 cellar: :any, mojave:   "f2669a1ae176f1ffd9f408ad0e66d42a864fb921e1750ca100d83f54c3c5ad31"
   end
 
   keg_only :versioned_formula
@@ -26,12 +24,17 @@ class Hdf5AT18 < Formula
   depends_on "szip"
 
   def install
-    inreplace %w[c++/src/h5c++.in fortran/src/h5fc.in tools/misc/h5cc.in],
-      "${libdir}/libhdf5.settings", "#{pkgshare}/libhdf5.settings"
+    inreplace %w[c++/src/h5c++.in fortran/src/h5fc.in bin/h5cc.in],
+      "${libdir}/libhdf5.settings",
+      "#{pkgshare}/libhdf5.settings"
 
     inreplace "src/Makefile.am", "settingsdir=$(libdir)", "settingsdir=#{pkgshare}"
 
     system "autoreconf", "-fiv"
+
+    # necessary to avoid compiler paths that include shims directory being used
+    ENV["CC"] = "/usr/bin/cc"
+    ENV["CXX"] = "/usr/bin/c++"
 
     args = %W[
       --disable-dependency-tracking
