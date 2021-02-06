@@ -3,17 +3,16 @@ class Xonsh < Formula
 
   desc "Python-powered, cross-platform, Unix-gazing shell language and command prompt"
   homepage "https://xon.sh/"
-  url "https://files.pythonhosted.org/packages/7f/3d/a29fe1f9dc61502a0cdee70e4bd4f97164106975209b6feaa2e064d241fc/xonsh-0.9.25.tar.gz"
-  sha256 "20af3480d6ac1b8a48f03288796b16a35f498f047e3472c300e4ef5a26f03d60"
+  url "https://files.pythonhosted.org/packages/06/e2/e610db811c1717c9dc0f38c1039a88b746ec5c0e0249f1712703f0dd04ca/xonsh-0.9.26.tar.gz"
+  sha256 "a7a4e4bdf1784e7c3e08a989538e85892481a46b0c79bac9c6cc6f7802858e01"
   license "BSD-2-Clause-Views"
   head "https://github.com/xonsh/xonsh.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "adf5638b08a02469fda9b604245892717519c3e2e6672f2a0d45fde285e235b6"
-    sha256 cellar: :any_skip_relocation, big_sur:       "f452f1a1bb8d5d47fcc882a8fc9819b39a38570e4b5a5aa259569f974e88619e"
-    sha256 cellar: :any_skip_relocation, catalina:      "c32fcc12a0c3e00d98929d4d2a31f7d3c890ac5210a48a17087eb3e854af7982"
-    sha256 cellar: :any_skip_relocation, mojave:        "3ef62348b98b48176fb167fefc2097bb88fc5c0d4194c895234f72e86f79101c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ca2fe502a6cb348331cbe0d7f1dd3f751c15af47361d961d80dbc0c41e47a09"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "c60d56f621c34f1ac9a74e7efb546d14daeaa7af861387389a9b50de851f4fa2"
+    sha256 cellar: :any_skip_relocation, big_sur:       "a7c6e1baa7e13f77d649886cc3fd86affaaf0faea7312f93ab0f50b4759f743f"
+    sha256 cellar: :any_skip_relocation, catalina:      "97b60288e023017c4570a9e6d161646c74b1c7d78efe2053fb0879c9e7e41299"
+    sha256 cellar: :any_skip_relocation, mojave:        "da8aec9b98fe5e8c8457bb6d64367993b237998a71ac641034f67a6c7d84c3a2"
   end
 
   depends_on "python@3.9"
