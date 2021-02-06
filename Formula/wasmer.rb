@@ -11,6 +11,7 @@ class Wasmer < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "117e7170049d7a22f19eb3a886a672ee25a025055c626745abb8dc159df9954c"
     sha256 cellar: :any_skip_relocation, catalina:      "a3d8d4564d2ca240d5410e2d4186b081f270f630b45becf31776668503a4a690"
     sha256 cellar: :any_skip_relocation, mojave:        "ca3bb35344bf5e3269e123842f622180939b3b240f0e98f1824ca79305212cae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd673303dfef4b4924aa6cbbfb6c3c986993f1b512cc3999452addfa07627481"
   end
 
   depends_on "cmake" => :build
