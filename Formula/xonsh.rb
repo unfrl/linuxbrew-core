@@ -13,6 +13,7 @@ class Xonsh < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "a7c6e1baa7e13f77d649886cc3fd86affaaf0faea7312f93ab0f50b4759f743f"
     sha256 cellar: :any_skip_relocation, catalina:      "97b60288e023017c4570a9e6d161646c74b1c7d78efe2053fb0879c9e7e41299"
     sha256 cellar: :any_skip_relocation, mojave:        "da8aec9b98fe5e8c8457bb6d64367993b237998a71ac641034f67a6c7d84c3a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "793021cfce1093989ca90e3bd44948b3a58fd300b5d956177037aa297232da9e"
   end
 
   depends_on "python@3.9"
