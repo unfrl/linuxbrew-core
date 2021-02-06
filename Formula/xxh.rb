@@ -14,6 +14,7 @@ class Xxh < Formula
     sha256 cellar: :any_skip_relocation, catalina:      "7fde18469744ddf9ac4d92cbf864dd5aa4019b5e58ed796cb5d23a11c8d6e0b8"
     sha256 cellar: :any_skip_relocation, mojave:        "3b122613ebc9631201b902b99b26810c02c2b51084e70242c2fce6b55c7b8fd3"
     sha256 cellar: :any_skip_relocation, high_sierra:   "a01521553c7ee0f9c143e9c58f95233d9b0d497fbc08ccef90c11c0a60412a10"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ad2685107045588bf47bb0acc50062e9f385261f42f5928953e6bd797365bfd"
   end
 
   depends_on "python@3.9"
