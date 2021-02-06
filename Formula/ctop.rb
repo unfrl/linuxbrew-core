@@ -12,6 +12,7 @@ class Ctop < Formula
     sha256 cellar: :any_skip_relocation, catalina:      "1a8acea8608a1451d2bb263eeb469c9213dd27002e2397a9694d4f8708fef933"
     sha256 cellar: :any_skip_relocation, mojave:        "fa29c78f4b919a60158697b51bd8d5e7c90120bf496411bdc0ddbf45c09bb1a5"
     sha256 cellar: :any_skip_relocation, high_sierra:   "f90e8d5b775f60a289995a7015976af28df4a54550e29a39a0cead75dd0c4743"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "621a325c1e5bb112c3724c459925a41442b09e24bdb1d465713fce33836e0b69"
   end
 
   depends_on "go" => :build
