@@ -17,6 +17,7 @@ class Inlets < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "4c89bedf66827ec3d8247a195a997de7bd7df075ae78cc74c1af408b4a6c3d49"
     sha256 cellar: :any_skip_relocation, catalina:      "2a0d9aa35bd843b2ed9773cee4b7b05c02b21cbcb78b085bb1c73363dc8a8ec4"
     sha256 cellar: :any_skip_relocation, mojave:        "b1c8a139e4d6f18c666d7f6380bfad18ea3d8836c6aa394c5026e1e872840225"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d68f4e3fd5fa0b415c151554f4cecb045c8cc30d7dead92abf57a1dc6edfa26"
   end
 
   depends_on "go" => :build
