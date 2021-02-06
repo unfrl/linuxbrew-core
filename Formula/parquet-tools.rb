@@ -14,6 +14,7 @@ class ParquetTools < Formula
     sha256 cellar: :any_skip_relocation, catalina:      "9a8d696b41cd9b0c06a79aefeab6f1c8dd3124dec409390563adc2a2976e3a9b"
     sha256 cellar: :any_skip_relocation, mojave:        "90f8b4dc30bb841afe9a1e1654d95a4e7fe6fd3338196ea7c82e503c8a88b1d8"
     sha256 cellar: :any_skip_relocation, high_sierra:   "3fba4dc621d0ddb6e8cb648dba43398d98e37e0f954130353f368b6f849e6f06"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c36938c72840be7016c06f5e0427868781b0f86572fa16d46dfdfb5f67bddb0"
   end
 
   depends_on "maven" => :build
