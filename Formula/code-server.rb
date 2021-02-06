@@ -14,6 +14,7 @@ class CodeServer < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "52be90308e8b09b5fd9d74d1778dc2d4cf43d35e048ad0e171bbfa0ff41f19fc"
     sha256 cellar: :any_skip_relocation, catalina:      "de0c1e1abca52e96877b8e62d8b52e177a67e873882f7e72bce6f2eab7736440"
     sha256 cellar: :any_skip_relocation, mojave:        "2d99d114e087e90336e5257caf14fce64b0d5db3caff357c7f86b2f81fb2292a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b14f4e91a2f97322827ba48f1114bf617fbc88b7c919a9b1d52f4fa330cc34a"
   end
 
   depends_on "python@3.9" => :build
