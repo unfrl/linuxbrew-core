@@ -11,6 +11,7 @@ class SwaggerCodegen < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "1f05debff6dc788a0b151dd5bd82f97c0c09ac1cde7c2d88215c9f186ffec7af"
     sha256 cellar: :any_skip_relocation, catalina:      "ba994325a0b782b2c072d925c45ace5169df282c57e27d11cb3a29471542accb"
     sha256 cellar: :any_skip_relocation, mojave:        "926d1fd46f1e1f0f48b916dd3aaef1fe9f0470b9b23dbb54ad75ca8885104880"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ac57848631bd51740d684afe9385f6fe5f9672a40aae90391519eaf80b49ef6"
   end
 
   depends_on "maven" => :build
