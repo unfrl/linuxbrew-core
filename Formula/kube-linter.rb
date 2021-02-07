@@ -8,9 +8,10 @@ class KubeLinter < Formula
   head "https://github.com/stackrox/kube-linter.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:  "5420d80aae62be7329f23944eddf424800abd9ffa88679628f664b672ba9d592"
-    sha256 cellar: :any_skip_relocation, catalina: "93e1bcc15e05ef89f75b24be258a4e3a13dc06ac2967d0b02420d8f4ceb9d6cd"
-    sha256 cellar: :any_skip_relocation, mojave:   "9790cd431046ab7e4464a627d8e51462313b15d59389cb7fb4e937293f2833ec"
+    sha256 cellar: :any_skip_relocation, big_sur:      "5420d80aae62be7329f23944eddf424800abd9ffa88679628f664b672ba9d592"
+    sha256 cellar: :any_skip_relocation, catalina:     "93e1bcc15e05ef89f75b24be258a4e3a13dc06ac2967d0b02420d8f4ceb9d6cd"
+    sha256 cellar: :any_skip_relocation, mojave:       "9790cd431046ab7e4464a627d8e51462313b15d59389cb7fb4e937293f2833ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c5b16ec4f66e3b8fd3f2cbdc9064f463410b3a00ffe1d189fd2a0904fe2dbac0"
   end
 
   depends_on "go" => :build
