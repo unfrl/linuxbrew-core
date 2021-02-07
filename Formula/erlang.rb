@@ -13,10 +13,11 @@ class Erlang < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "d21f5b3a4416fabded1201d3379df0fef54f90bdd063021df96d468f8674b437"
-    sha256 cellar: :any, big_sur:       "629a7b1edadd32b18e3211030fe9cc237ebf194c722a5cea83f8542958410ccc"
-    sha256 cellar: :any, catalina:      "1f34d39cc033f317f297bd5af61a4a632f281e9e37b00822e602c494231b0390"
-    sha256 cellar: :any, mojave:        "189eac920f3d2e8a850d0592d0edbd422b78ca7bfbd65c09c47fb62be57721cb"
+    sha256 cellar: :any,                 arm64_big_sur: "d21f5b3a4416fabded1201d3379df0fef54f90bdd063021df96d468f8674b437"
+    sha256 cellar: :any,                 big_sur:       "629a7b1edadd32b18e3211030fe9cc237ebf194c722a5cea83f8542958410ccc"
+    sha256 cellar: :any,                 catalina:      "1f34d39cc033f317f297bd5af61a4a632f281e9e37b00822e602c494231b0390"
+    sha256 cellar: :any,                 mojave:        "189eac920f3d2e8a850d0592d0edbd422b78ca7bfbd65c09c47fb62be57721cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dcb6cb482cde70d667c34467a0afc42b91216f9c2a181b90de956d23342c35a6"
   end
 
   depends_on "autoconf" => :build
