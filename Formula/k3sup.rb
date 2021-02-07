@@ -19,6 +19,7 @@ class K3sup < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "1a58b4c61dd608e30e4ae2010d0cbcc5cc1208fe4035e4b152759b3e9b5c1424"
     sha256 cellar: :any_skip_relocation, catalina:      "4303e006d4fafd8622976c09af83003e59512e062fb57cd4622bf4d99f0da691"
     sha256 cellar: :any_skip_relocation, mojave:        "4790e0a97346b18606cdaa1f1f4fcccc6c1dfecccf4b7ba40abefd4960bb096d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ec0f2e0ee12ea959b5ed15265962466a4771f6a831bf1a04adba4f0967c712c"
   end
 
   depends_on "go" => :build
