@@ -6,10 +6,11 @@ class Lightgbm < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "b5003bf5c04772c9fad6c34134bee20ec9bd25cb1e9b7c438e704b0f88aa325b"
-    sha256 cellar: :any, big_sur:       "e439b3e99f5df4196b48c937cd6b38be16fd566c04e3b52ba78610eaaa8c6185"
-    sha256 cellar: :any, catalina:      "ff1a50ff028ff22997b0a2807f50bec7d4ef8a297ee0a0965d938166983943a0"
-    sha256 cellar: :any, mojave:        "055dbb284840813e365d14b020d9c01c96491ce6586fe6f1b9e90236f8d9f605"
+    sha256 cellar: :any,                 arm64_big_sur: "b5003bf5c04772c9fad6c34134bee20ec9bd25cb1e9b7c438e704b0f88aa325b"
+    sha256 cellar: :any,                 big_sur:       "e439b3e99f5df4196b48c937cd6b38be16fd566c04e3b52ba78610eaaa8c6185"
+    sha256 cellar: :any,                 catalina:      "ff1a50ff028ff22997b0a2807f50bec7d4ef8a297ee0a0965d938166983943a0"
+    sha256 cellar: :any,                 mojave:        "055dbb284840813e365d14b020d9c01c96491ce6586fe6f1b9e90236f8d9f605"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55f10ae9889aa8887069ffee3e7f46217852bafdfca73a199c904ce5db9373bc"
   end
 
   depends_on "cmake" => :build
