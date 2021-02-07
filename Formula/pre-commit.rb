@@ -3,16 +3,15 @@ class PreCommit < Formula
 
   desc "Framework for managing multi-language pre-commit hooks"
   homepage "https://pre-commit.com/"
-  url "https://files.pythonhosted.org/packages/e2/a0/7940bd43af00bd7397bfd97ac7c036195d86fbbbb6a2c5d7f14a060efd1a/pre_commit-2.10.0.tar.gz"
-  sha256 "f413348d3a8464b77987e36ef6e02c3372dadb823edf0dfe6fb0c3dc2f378ef9"
+  url "https://files.pythonhosted.org/packages/31/c1/5dfe39aa1d94471b4c6afe4c9aba7fedfa5fe0d1b727a6e6d7a59bd53231/pre_commit-2.10.1.tar.gz"
+  sha256 "399baf78f13f4de82a29b649afd74bef2c4e28eb4f021661fc7f29246e8c7a3a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "6b51d81169ee92b13b1e41090f626e82208dced8617dcc646f938ab72806de20"
-    sha256 cellar: :any_skip_relocation, big_sur:       "35633b36fb6357e1914fd403b09f0fe18befc15dd15126c1c08308f5e4de63dc"
-    sha256 cellar: :any_skip_relocation, catalina:      "a70905e16ed28315642ba9d0eb55a738c64c1ae5b19796235a5944eee2f401e5"
-    sha256 cellar: :any_skip_relocation, mojave:        "be43bb173daa5bec3297cb233ced8ce1f74db3bc062b1955defb3ab3f5622f46"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c595722c0dcdee6e82bbe5149b2a499636c0b8a3440a0946c02c968faed4356"
+    sha256 cellar: :any, arm64_big_sur: "0800a3c02e6807e6b6f1602ee322b7c5a0667fd9d1333e1fa274c7cdf7b14166"
+    sha256 cellar: :any, big_sur:       "afd36a3c6bb29f0c6ee5fcc7c4c41236ca9722704ff883c1ecbca66b35031520"
+    sha256 cellar: :any, catalina:      "16e75f0ac5a2bc62f52519f25918557cdcfb7033dc7a96bc92cc70b6ff194795"
+    sha256 cellar: :any, mojave:        "599db2e4dc1759a4c16735e649c3e44e524f59e21f7fd25518b7dc0231cd508b"
   end
 
   depends_on "libyaml"
@@ -64,8 +63,8 @@ class PreCommit < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/46/3d/81513f1aeab4c11c50d8c01ee041223350ddfad3d75eb05d0fce4a1d82dc/virtualenv-20.4.0.tar.gz"
-    sha256 "219ee956e38b08e32d5639289aaa5bd190cfbe7dafcb8fa65407fca08e808f9c"
+    url "https://files.pythonhosted.org/packages/79/64/203241c2e2b5abfd5edca4e28242c21bf8a9e84490873e4a8a155a9658fc/virtualenv-20.4.2.tar.gz"
+    sha256 "147b43894e51dd6bba882cf9c282447f780e2251cd35172403745fc381a0a80d"
   end
 
   def install
