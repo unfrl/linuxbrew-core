@@ -11,6 +11,7 @@ class Stgit < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "0d1c580a5b1f6c8e0019bcad1455dc7cc80dc7cf7652ecbaf8830553f5576a6e"
     sha256 cellar: :any_skip_relocation, catalina:      "c053e3cf370231d34d8f86d4976187abaf7d85005581d385aef03c6a63915257"
     sha256 cellar: :any_skip_relocation, mojave:        "655ab25a88fe3f0810affa25bee1f0e7cd7f0f96866952fa40156780f165a22b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30eda8760723230b7fccf3f45e11edf1a8bfc92bc9a29145d4b5723d7ac51442"
   end
 
   depends_on "asciidoc" => :build
