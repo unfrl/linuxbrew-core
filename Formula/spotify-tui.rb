@@ -11,6 +11,7 @@ class SpotifyTui < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "781396790a6006952bb22f17aa6b03f057c41ec6ecbb7c18156ad392c394bdb2"
     sha256 cellar: :any_skip_relocation, catalina:      "70ae2722b6dd2bb21d574117a74ecb7812899e418b2cfe9ab2fd23de2014cde5"
     sha256 cellar: :any_skip_relocation, mojave:        "544761e6ad0758c70e7e24e4b89b319776c973d2aac0bbdbedaa4fd677a2ed59"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7fd63c8216d0e276fceae4112df5089fa93cf39e6041e2f63067f3cda8c5a450"
   end
 
   depends_on "rust" => :build
