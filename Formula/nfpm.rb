@@ -11,6 +11,7 @@ class Nfpm < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "402e53dc2b7b5862650700d448d892a2871520824f1cff960c49a71024e2c2c9"
     sha256 cellar: :any_skip_relocation, catalina:      "1adb3b0950732117f0fde089b6be96688d90f2d5bc69322fa77c45559a481b8a"
     sha256 cellar: :any_skip_relocation, mojave:        "f443bac7b2f5fac7623ef365a9629c35321d83f48c374212356e847d410d3feb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1158cdecaaa3b6638b85a259df06ff09c8a1920e24b2e640b4210e34e851649f"
   end
 
   depends_on "go" => :build
