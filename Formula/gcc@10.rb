@@ -15,6 +15,7 @@ class GccAT10 < Formula
     sha256 cellar: :any, catalina:     "8dbccea194c20b1037b7e8180986e98a8ee3e37eaac12c7d223c89be3deaac6a"
     sha256 cellar: :any, mojave:       "79d2293ce912dc46af961f30927b31eb06844292927be497015496f79ac41557"
     sha256 cellar: :any, high_sierra:  "5ed870a39571614dc5d83be26d73a4164911f4356b80d9345258a4c1dc3f1b70"
+    sha256               x86_64_linux: "802bfa2c463a8e4f805d8bc1a66ffb69f73fc1970417f5c7ea48fdb208c2f470"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
