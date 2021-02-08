@@ -14,6 +14,7 @@ class SshAudit < Formula
     sha256 cellar: :any_skip_relocation, catalina:      "6898d35256e2463dc6710f06133a29c07ca9f77b3e13f01671ce9e7a98a95278"
     sha256 cellar: :any_skip_relocation, mojave:        "227e07ecf11af9dc5a1b4a1a7017c390a3caa5183327e73dba8a2607c648a01d"
     sha256 cellar: :any_skip_relocation, high_sierra:   "cb1337c15074044b1dd7aa3a7026c7226bab0469dcee1ec0ed4eb960bc50dd4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db3c843baf682e0ead0f9d2648ef3aa2ae122663495bb3e7947b14c287df0c33"
   end
 
   depends_on "python@3.9"
