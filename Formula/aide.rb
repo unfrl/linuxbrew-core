@@ -1,16 +1,15 @@
 class Aide < Formula
   desc "File and directory integrity checker"
   homepage "https://aide.github.io/"
-  url "https://github.com/aide/aide/releases/download/v0.17.1/aide-0.17.1.tar.gz"
-  sha256 "a401c951938f1169ceaec868ce3594736e89c5c881578c263d8a824a06b0002d"
+  url "https://github.com/aide/aide/releases/download/v0.17.2/aide-0.17.2.tar.gz"
+  sha256 "3cff624b1717dc19c106d4b898c37eee106bf2fae029880f005820294917bafa"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "d95d123bfb33e1d42ed6a47cda73d62a05e31a635bf4b35b86225c1e68daa5d6"
-    sha256 cellar: :any,                 big_sur:       "f405f1835d4baebec9ab71892154f8be7e49b3675a72a253bac0362001bec6df"
-    sha256 cellar: :any,                 catalina:      "c3e7c313d1fa123f7c141bb49e9570325ecc161e867c5af6660660640fa2b568"
-    sha256 cellar: :any,                 mojave:        "d6a35681437639f1334c52bb96cf2b9ce14c82f8cacbea393f1cb4e098a88473"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ce7fea697e07b90994e5d5040f43c89677fe66af571bf42df0a6b8a33ddfca7"
+    sha256 cellar: :any, arm64_big_sur: "2a468e922032499a269dad94fa2a0829a21162eb940878f9a89d42050c3b6bac"
+    sha256 cellar: :any, big_sur:       "efbbed870a2a86334ddc446e011f9ad8a14bae9993c3997b9f4422ac5f186c79"
+    sha256 cellar: :any, catalina:      "39786e317a4c34c485b8d7612043f22c8885aa7590231fa0b625359decb46e29"
+    sha256 cellar: :any, mojave:        "15f55f6bf54d6c03e714bb8db81d25f482b6f3eb8b8a0613992e06a328434fb7"
   end
 
   head do

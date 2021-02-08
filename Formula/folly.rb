@@ -1,16 +1,16 @@
 class Folly < Formula
   desc "Collection of reusable C++ library artifacts developed at Facebook"
   homepage "https://github.com/facebook/folly"
-  url "https://github.com/facebook/folly/archive/v2021.02.01.00.tar.gz"
-  sha256 "4b05328957e8cbf6bc4b676d0e69514492d75807075162351202d577f641880f"
+  url "https://github.com/facebook/folly/archive/v2021.02.08.00.tar.gz"
+  sha256 "69c69c596f4aebb692be8d7243a6ca3c3bf667956a23666bca5a8aeb1f536a76"
   license "Apache-2.0"
   head "https://github.com/facebook/folly.git"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "9e5fece6464945a124d135f03fa89e779d8a57058d842d9271c387afecdde549"
-    sha256 cellar: :any, big_sur:       "a26f2a6e5ade404bf38e197e7212be0cc37e7f5b33fcff01d536444f9ff2a047"
-    sha256 cellar: :any, catalina:      "b114cc3f76d8c5b15168ad198e7ae7cc6c9b741bbac4288ddba0fca5df9b236e"
-    sha256 cellar: :any, mojave:        "b506385c73cdc2a083c123fa93c9f28fa270e5fbebaa8d8d8237c1700c08e00d"
+    sha256 cellar: :any, arm64_big_sur: "4db414c05d3a70c7ececc3413624c5caa39b1464ba0118889c63db2d49b5004c"
+    sha256 cellar: :any, big_sur:       "890fbbdb45e54d36545fa81e73f283122bbd119ed7b9aebf7c683cc5a4bdbe0f"
+    sha256 cellar: :any, catalina:      "9d83b210e73a16c0502a431466f386b7953737f7557234a26d147883f7b515f3"
+    sha256 cellar: :any, mojave:        "de539f8ec3f85bccc1b4b9faf9cd886c452553ee063551441eccd3e5393aa34e"
   end
 
   depends_on "cmake" => :build
