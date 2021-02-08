@@ -17,6 +17,7 @@ class Zbar < Formula
     sha256 big_sur:       "f331d1b54eeabaa2fac58568eb5eb75dbc1958cfa30898cf2270ea4847c1e96b"
     sha256 catalina:      "b55d61b6b252c0591ca14881ea2cd8d2e008fdd1be0822be2c18a9d7c537230b"
     sha256 mojave:        "60a4c4fe9de4b65381c4a69e7bbf469ebc8a5c13f0581ba8dbbe2262218b235f"
+    sha256 x86_64_linux:  "40e60fe980fb875a3487ff579bc30d2325c2a1c1272a0218a98d8bf17a20ebf5"
   end
 
   depends_on "autoconf" => :build
