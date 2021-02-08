@@ -10,6 +10,7 @@ class Rain < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "55f486e76dc98d428be0c746d8dff11e337911fb97236a09a41b9e25d6dfc0b7"
     sha256 cellar: :any_skip_relocation, catalina:      "f3ef06e12e92b1e196bdd77d9b1de8c9568494883ba1c6a24d3201151576920c"
     sha256 cellar: :any_skip_relocation, mojave:        "f9ecd6ae894e0f4d8ce92c017fd17c7d6bc1346e9142c34b81bf4ac3b04d54fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf1c825edea2aefec4794eb3a07b4a9c4c05428c7e58d98358a03a8cea64dede"
   end
 
   depends_on "go" => :build
