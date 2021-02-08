@@ -16,7 +16,7 @@ class SpotifyTui < Formula
 
   depends_on "rust" => :build
 
-  unless OS.mac?
+  on_linux do
     depends_on "pkg-config" => :build
     depends_on "libxcb"
     depends_on "openssl@1.1"

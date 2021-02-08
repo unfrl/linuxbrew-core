@@ -29,6 +29,8 @@ class Augustus < Formula
     depends_on "zlib"
   end
 
+  uses_from_macos "zlib"
+
   def install
     # Avoid "fatal error: 'sam.h' file not found" by not building bam2wig
     inreplace "auxprogs/Makefile", "cd bam2wig; make;", "#cd bam2wig; make;"

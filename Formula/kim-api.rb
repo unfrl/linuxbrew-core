@@ -4,6 +4,7 @@ class KimApi < Formula
   url "https://s3.openkim.org/kim-api/kim-api-2.2.1.txz"
   sha256 "1d5a12928f7e885ebe74759222091e48a7e46f77e98d9147e26638c955efbc8e"
   license "CDDL-1.0"
+  revision 1
 
   livecheck do
     url "https://openkim.org/kim-api/previous-versions/"
@@ -11,9 +12,9 @@ class KimApi < Formula
   end
 
   bottle do
-    sha256 cellar: :any, big_sur:  "5dd5843a46622bc3371a60fd99968e5a94890d72ee5461c72b0a81983d2d447d"
-    sha256 cellar: :any, catalina: "ef2fca76455a7b3511664b32451fe1fcde637735de43797b5179c55d26405cac"
-    sha256 cellar: :any, mojave:   "5d892bfae5488c6a0e019235dac4eee23f918f5f4d63da117a92eaea46ba5ab8"
+    sha256 cellar: :any, big_sur:  "00b02a276ca2df5eb4b6b72aa310573bedbab3905999aa49591bcd7e2f1a4703"
+    sha256 cellar: :any, catalina: "2da803d1ea94fa5dcc07fc0fc5afbe511e37c644b419623416ff443ef497dfaa"
+    sha256 cellar: :any, mojave:   "ab1c2d8867c00ce7c4c3d5220c45fa84f8fe43e26e56d7be67718ba4da9c2cf1"
   end
 
   depends_on "cmake" => :build
@@ -21,10 +22,16 @@ class KimApi < Formula
   depends_on "gcc" # for gfortran
 
   def install
+    # change file(COPY) to configure_file() to avoid symlink issue; will be fixed in 2.2.2
+    inreplace "cmake/items-macros.cmake.in" do |s|
+      s.gsub! /file\(COPY ([^ ]+) DESTINATION ([^ ]*)\)/, 'configure_file(\1 \2 COPYONLY)'
+    end
     args = std_cmake_args
     # adjust compiler settings for package
     args << "-DKIM_API_CMAKE_C_COMPILER=/usr/bin/clang"
     args << "-DKIM_API_CMAKE_CXX_COMPILER=/usr/bin/clang++"
+    # adjust libexec dir
+    args << "-DCMAKE_INSTALL_LIBEXECDIR=lib"
     # adjust directories for system collection
     args << "-DKIM_API_SYSTEM_MODEL_DRIVERS_DIR=:#{HOMEBREW_PREFIX}/lib/openkim-models/model-drivers"
     args << "-DKIM_API_SYSTEM_PORTABLE_MODELS_DIR=:#{HOMEBREW_PREFIX}/lib/openkim-models/portable-models"
