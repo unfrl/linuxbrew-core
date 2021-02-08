@@ -12,6 +12,7 @@ class Tile38 < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "675b17af3d429dca6462194f62007c1544c0a4782fd22d54440f11e13f24c825"
     sha256 cellar: :any_skip_relocation, catalina:      "9972d32b249e738605729640cd449e998a7de599685887d41277b913eaa14d3f"
     sha256 cellar: :any_skip_relocation, mojave:        "711814efd1b7a8f0ec7673910e6ecb37b6a6f5dadff3e2b88468e0f8def8a7aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a28dede0ed7f4343d08c42afa6d19f667babffc513ce5b017ea5625d76ff7ad1"
   end
 
   depends_on "go" => :build
