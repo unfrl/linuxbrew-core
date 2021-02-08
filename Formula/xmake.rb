@@ -21,7 +21,7 @@ class Xmake < Formula
 
   def install
     on_linux do
-      ENV["XMAKE_ROOT"] = "y" if ENV["CI"]
+      ENV["XMAKE_ROOT"] = "y" if ENV["HOMEBREW_GITHUB_ACTIONS"]
     end
 
     system "make"
@@ -30,7 +30,7 @@ class Xmake < Formula
 
   test do
     on_linux do
-      ENV["XMAKE_ROOT"] = "y" if ENV["CI"]
+      ENV["XMAKE_ROOT"] = "y" if ENV["HOMEBREW_GITHUB_ACTIONS"]
     end
     system bin/"xmake", "create", "test"
     cd "test" do
