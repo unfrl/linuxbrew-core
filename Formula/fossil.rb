@@ -12,10 +12,11 @@ class Fossil < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "d0ac7394862b01c94118282bc7fe014ecc004818d0bdb5d7ad62ead3a4f8c789"
-    sha256 cellar: :any, big_sur:       "47b62a05daf6fc12735cc10ac3d661a058df73c918c0d425c8a06b5d33ceae40"
-    sha256 cellar: :any, catalina:      "514265081557287157fad22327aed27e937229caa445a5ea363c7edee0ada162"
-    sha256 cellar: :any, mojave:        "a2c6c8c85d54a253ac499ea88402b397562db29e4f1d21d6103728921ff50335"
+    sha256 cellar: :any,                 arm64_big_sur: "d0ac7394862b01c94118282bc7fe014ecc004818d0bdb5d7ad62ead3a4f8c789"
+    sha256 cellar: :any,                 big_sur:       "47b62a05daf6fc12735cc10ac3d661a058df73c918c0d425c8a06b5d33ceae40"
+    sha256 cellar: :any,                 catalina:      "514265081557287157fad22327aed27e937229caa445a5ea363c7edee0ada162"
+    sha256 cellar: :any,                 mojave:        "a2c6c8c85d54a253ac499ea88402b397562db29e4f1d21d6103728921ff50335"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "522229bfefe37d233e93891f7d462408a7286f7e2f7fb4168a0d319320cf50a5"
   end
 
   depends_on "openssl@1.1"
