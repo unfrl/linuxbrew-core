@@ -12,6 +12,7 @@ class Mpv < Formula
     sha256 big_sur:       "58a1f5371def7e860246dfbff2f065070838bb70a766a5601fc1b275be183170"
     sha256 catalina:      "f990b241e40cb6c2b1a2cda146e6e51dfd613f450a94b637fcdbeddb2ef2eb77"
     sha256 mojave:        "40262c2fe5cf5676ae4f18715ba9eaac2ded398a484a447f7732e37201fe1d90"
+    sha256 x86_64_linux:  "0a43f49aea375cecc6a3ff13290f9cf4b262d2433536165ccdd92cefb0f133ce"
   end
 
   depends_on "docutils" => :build
