@@ -1,17 +1,16 @@
 class HtRust < Formula
   desc "Yet another HTTPie clone"
   homepage "https://github.com/ducaale/ht"
-  url "https://github.com/ducaale/ht/archive/v0.4.0.tar.gz"
-  sha256 "5c7e6ff620b3206b395b9b839950dd5ccd62820855eb6b1e4d401ac32b42aa4e"
+  url "https://github.com/ducaale/ht/archive/v0.5.0.tar.gz"
+  sha256 "ca478874440df533530577d8dc0867208bbf6d5400b34008726b75303a87f36c"
   license "MIT"
   head "https://github.com/ducaale/ht.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "3d5a821858a26bcd63b8d7d3dd13a03696eaa62426d573f54e441af6dec2c495"
-    sha256 cellar: :any_skip_relocation, big_sur:       "e5273e5b99f250e9cff4643678f46a4383e5c07a9b5ca3e7f55d7abb24e3e97c"
-    sha256 cellar: :any_skip_relocation, catalina:      "2a9205e969a23615ae1951e98d7f9fe59955f89eba380f1ccbad82bfbb6f3e21"
-    sha256 cellar: :any_skip_relocation, mojave:        "3ef31bc091ac3c0bb4d6dba576383c4d2d1acd5fa37f3e9194ea5603bb064ee0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b25f886d011b6b73f3edd93ddac1b261e9af7cc43b4a9f6ab97b50e18d543865"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "89da38044281fe03f6870429d66ad499a1c94e30293fda5ed833cb5590bb0617"
+    sha256 cellar: :any_skip_relocation, big_sur:       "a2c87c59ef867068f56acf7c9391ce1517b28a5245ed4e25720574568a230b86"
+    sha256 cellar: :any_skip_relocation, catalina:      "113ba41bd6f22cd7b0962eb7906004c4189fee5ddacddb62c1c24e56b98f0e0a"
+    sha256 cellar: :any_skip_relocation, mojave:        "af09c8b2723fd151effb7050fc767db573ce43d730f6935506a7868c2c27249e"
   end
 
   depends_on "rust" => :build

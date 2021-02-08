@@ -2,16 +2,15 @@ class Ksync < Formula
   desc "Sync files between your local system and a kubernetes cluster"
   homepage "https://ksync.github.io/ksync/"
   url "https://github.com/ksync/ksync.git",
-      tag:      "0.4.5",
-      revision: "9f40bf134329814a57e1a58d73b84761a2b06c73"
+      tag:      "0.4.6",
+      revision: "a63f23dba397a540cca9cbde5001afa5cbd8b2ae"
   license "Apache-2.0"
   head "https://github.com/ksync/ksync.git"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, big_sur:  "f850734883bcc35c446bf4da3793300fbd7f7c22f66343e789f0c371759049ff"
-    sha256 cellar: :any_skip_relocation, catalina: "b755147d4a3e89ef301de525a88e225e5f2057f8f8a6fdf05d33594bcb48dfe5"
-    sha256 cellar: :any_skip_relocation, mojave:   "2268e729463a231c1c61db6a76361628b8c04dc747ce9974ca66e8338db2938a"
+    sha256 cellar: :any_skip_relocation, big_sur:  "e0e5dce990e687f5d19f30eff1dddf44430bfdcaa63da2389183436f6426833f"
+    sha256 cellar: :any_skip_relocation, catalina: "3d5ec6bf44c875d29d501b8ca96f7ca49aab9d749a8bad3a3cb967eea6883487"
+    sha256 cellar: :any_skip_relocation, mojave:   "03b1cda4ab1cb87932e019a009e8a46f06cfc180ecefd6cb574aa1d8e11ab751"
   end
 
   depends_on "go" => :build
