@@ -1,18 +1,16 @@
 class Binutils < Formula
   desc "GNU binary tools for native development"
   homepage "https://www.gnu.org/software/binutils/binutils.html"
-  url "https://ftp.gnu.org/gnu/binutils/binutils-2.36.tar.xz"
-  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.36.tar.xz"
-  sha256 "5788292cc5bbcca0848545af05986f6b17058b105be59e99ba7d0f9eb5336fb8"
+  url "https://ftp.gnu.org/gnu/binutils/binutils-2.36.1.tar.xz"
+  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.36.1.tar.xz"
+  sha256 "e81d9edf373f193af428a0f256674aea62a9d74dfe93f65192d4eae030b0f3b0"
   license all_of: ["GPL-2.0-or-later", "GPL-3.0-or-later", "LGPL-2.0-or-later", "LGPL-3.0-only"]
 
-  # binutils is portable.
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "5227a5695421c8471b43801b12e2935a7bbaffbad405552d7473f0c1c36c8d3e"
-    sha256 cellar: :any, big_sur:       "464fb5fcf20ca249899299a48a210b3be8e9d72b02d62e9b325e8a2638a50b79"
-    sha256 cellar: :any, catalina:      "c0124975e7089a2f6620325f31833de7c9e85f02aebbb415000ed36262025a55"
-    sha256 cellar: :any, mojave:        "c9c2f5b15ad2dbb6028a7b4e803cee330dc6803bc670684935b20ff5f8d11e7d"
-    sha256 cellar: :any, x86_64_linux:  "fc8afeb58297ee9b18f410c2a849da9c6b2c912183543e5adfb8d71091a8e1b1"
+    sha256 arm64_big_sur: "f0c23d8672a107f94bb46eec9cae654b1a9abf663e6d25ec82467f0dfa45dff1"
+    sha256 big_sur:       "993ab1e0149a47224c4e7063be178ff5d551b2ea6d2a79805f03ca40cd5f1279"
+    sha256 catalina:      "d3112607a4820d58df8d1fc0fd3ac998ba9ba8563245e72c9e197c50b333748c"
+    sha256 mojave:        "06de25d200fd389ee4157a278abe261e20c18f8f6ad28d9519a4a4001b5b027e"
   end
 
   keg_only :shadowed_by_macos, "Apple's CLT provides the same tools"
