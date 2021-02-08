@@ -11,6 +11,7 @@ class HtRust < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "a2c87c59ef867068f56acf7c9391ce1517b28a5245ed4e25720574568a230b86"
     sha256 cellar: :any_skip_relocation, catalina:      "113ba41bd6f22cd7b0962eb7906004c4189fee5ddacddb62c1c24e56b98f0e0a"
     sha256 cellar: :any_skip_relocation, mojave:        "af09c8b2723fd151effb7050fc767db573ce43d730f6935506a7868c2c27249e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4d59e3db83a277aacc744bb0d32e62184b87cc0fa41779717620389c031a1ff"
   end
 
   depends_on "rust" => :build
