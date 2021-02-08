@@ -1,8 +1,8 @@
 class Gtk4 < Formula
   desc "Toolkit for creating graphical user interfaces"
   homepage "https://gtk.org/"
-  url "https://download.gnome.org/sources/gtk/4.0/gtk-4.0.2.tar.xz"
-  sha256 "626707ac6751426ed76fed49c5b2d052dfee45757ce3827088ba87ca7f1dbc84"
+  url "https://download.gnome.org/sources/gtk/4.0/gtk-4.0.3.tar.xz"
+  sha256 "d7c9893725790b50bd9a3bb278856d9d543b44b6b9b951d7b60e7bdecc131890"
   license "LGPL-2.0-or-later"
 
   livecheck do
@@ -11,10 +11,10 @@ class Gtk4 < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "1159bfb49111f3507fbab1220a90d1cbb01ca8a2529c4db0ea3d511e6a731f41"
-    sha256 big_sur:       "b6abf6800954f62aec5a7247a3e9770b369a928e1218fdd38f4032fc7c010859"
-    sha256 catalina:      "3a910d30c4e69c6cbfc8e205843567a14fe9627b359b7414e9eba310d87cf87e"
-    sha256 mojave:        "5f8c723029b787a4d579eebd225b9e26d97e7b81b6f88e945693fe68dd836a97"
+    sha256 arm64_big_sur: "355d0744ea0f23fe28068f6455e85ff7638b5fcbd9bc7599b0901f4f74ca483e"
+    sha256 big_sur:       "634d06cf2b4a579017ba9a572d95e49012bf5bec58130f44b3aaafed735bcbd8"
+    sha256 catalina:      "e89dde1466f1ddf189162386f4a229d2090952bd7c0d3bf64ada47627e77106d"
+    sha256 mojave:        "3c190aed81cee08d13fdfd25e5f0ff27cef0fbe48b1617c0b4abca88d4b6cc53"
   end
 
   depends_on "docbook" => :build
@@ -62,7 +62,7 @@ class Gtk4 < Formula
   def post_install
     system "#{Formula["glib"].opt_bin}/glib-compile-schemas", "#{HOMEBREW_PREFIX}/share/glib-2.0/schemas"
     system bin/"gtk4-update-icon-cache", "-f", "-t", "#{HOMEBREW_PREFIX}/share/icons/hicolor"
-    system "#{Formula["glib"].opt_bin}/gio-querymodules #{HOMEBREW_PREFIX}/lib/gtk-4.0/4.0.0/immodules.cache"
+    system "#{Formula["glib"].opt_bin}/gio-querymodules #{HOMEBREW_PREFIX}/lib/gtk-4.0/4.0.0/printbackends"
   end
 
   test do
