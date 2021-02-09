@@ -18,6 +18,7 @@ class Juju < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "f3acd40ef4b5822f2aa84893383d1d4c6459eee98fd8889ab262d78fe88f9f04"
     sha256 cellar: :any_skip_relocation, catalina:      "26065d4e5b2dbe5e74f295a9d6bb458102422bd2f05fb89ceaf2b5de8f085f02"
     sha256 cellar: :any_skip_relocation, mojave:        "3ee10ae581a92d8a6c687d03eb7c09b8458e3585692fe5c81b3b5bfbc30bfa50"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42f450cdbc8b85d718674713ccfb6936c2a18336da7740630dca43d38e882ae6"
   end
 
   depends_on "go" => :build
