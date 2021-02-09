@@ -11,6 +11,7 @@ class Cassowary < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "66460d5be2e3a3ef3f8b27c6f6bec1f3414d1617a05ab7750f51a57e8ba79e5e"
     sha256 cellar: :any_skip_relocation, catalina:      "8a4c292f05f1ca219faf9a0547200736883859a7148c8b91a775cce26929cdc4"
     sha256 cellar: :any_skip_relocation, mojave:        "3bf88505d1a199c29ed4453d394027939803d1a31116af5b1f4917493c8c6401"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c6067c28950dece08b1f58c94f1ea4d425c7a9e6ad59aa680f068663864213d"
   end
 
   depends_on "go" => :build
