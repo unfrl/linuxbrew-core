@@ -15,6 +15,7 @@ class Libmd < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0e5f0a6b8136618e552c2b9a088ebc68c052f5bb650ffc0f621fb5b1eb77f0d0"
   end
 
   test do
