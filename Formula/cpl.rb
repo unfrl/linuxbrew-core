@@ -14,9 +14,10 @@ class Cpl < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, big_sur:  "740461b2b2bde934347eec401daa1322bd54d726c7ec9902561a629042bfa16f"
-    sha256 cellar: :any, catalina: "458b9de38a1e292da0e9d70b453dc7ca8bc199b253c2a1120bb61d608595497c"
-    sha256 cellar: :any, mojave:   "dcaa92d135d443432230d2ac087f73f87e515959d42950eeb19419aebe926158"
+    sha256 cellar: :any,                 big_sur:      "740461b2b2bde934347eec401daa1322bd54d726c7ec9902561a629042bfa16f"
+    sha256 cellar: :any,                 catalina:     "458b9de38a1e292da0e9d70b453dc7ca8bc199b253c2a1120bb61d608595497c"
+    sha256 cellar: :any,                 mojave:       "dcaa92d135d443432230d2ac087f73f87e515959d42950eeb19419aebe926158"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "bb5aab39da210c4d9e156cb8b82acbf95c9124b8ef5a5b287a1e7bb00601c681"
   end
 
   depends_on "cfitsio"
