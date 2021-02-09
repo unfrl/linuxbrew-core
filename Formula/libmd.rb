@@ -14,6 +14,9 @@ class Libmd < Formula
     system "make", "install"
   end
 
+  bottle do
+  end
+
   test do
     (testpath/"test.c").write <<~EOS
       #include <stdlib.h>
