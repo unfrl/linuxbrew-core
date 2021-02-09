@@ -4,16 +4,15 @@ class Checkov < Formula
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
   # checkov should only be updated every 15 releases on multiples of 15
-  url "https://files.pythonhosted.org/packages/4a/b6/ef9e1c82c3d170e9a7ec12c39f29fe3903aafd0df62947e936b86fb21ee4/checkov-1.0.735.tar.gz"
-  sha256 "91d004114b78217c5f1999a70965ee28145e2b05f4d4ff879359943a8a8c7aad"
+  url "https://files.pythonhosted.org/packages/a8/31/6f0a8e6628725121de7eddc1239a911f0653498d24dc782a8bd1246d1079/checkov-1.0.765.tar.gz"
+  sha256 "6c54d0a1de548c0ff16f7f39f05663e12a703577b84d01fdb860ef855df8a6b1"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "e9cced0eb4d5dbfe7451a41eeaf44b4c9d4b21158304582c26e0754cc2503eec"
-    sha256 cellar: :any_skip_relocation, big_sur:       "33a3dec943fce8526ce4450b9fc4847f67bd2c8a5acbc38e207ce9ffa3a2a22e"
-    sha256 cellar: :any_skip_relocation, catalina:      "8fda2855f2a15e48dc178f58b6a27a950e3d70a59b4dd4f751ef372080f9e6a8"
-    sha256 cellar: :any_skip_relocation, mojave:        "8f1dff7758e0bc36a259bc6c8bd88fb9b2b4e30d560c923c8342abd6b7a82512"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36e0b68a933c5356d68cf268e6fb2d6c1f98bd04a5a400b8690eb2ce81fea794"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "6311e736be479077789bb79f57062a1f8e9dbc71576fbae1a218a878ffb40ba0"
+    sha256 cellar: :any_skip_relocation, big_sur:       "e534d273fbd4bff08097daecfe6fd795f75f5fbd8830367f35af4943f9e65236"
+    sha256 cellar: :any_skip_relocation, catalina:      "6fff573d29328925e5ecca5b9c5ff2960413ce41dcd6ce9b0fcca94b5a83377d"
+    sha256 cellar: :any_skip_relocation, mojave:        "df06cba0e9591824c5795375db02d18d5d6db6d6b73efe9b42cdd4903163f937"
   end
 
   depends_on "python@3.9"
@@ -24,13 +23,13 @@ class Checkov < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/0f/25/52f70ebf35b0ce7423df7aacbf111577e3d252bc3d9c2c60b46662a7ead9/boto3-1.17.1.tar.gz"
-    sha256 "58a440f4c96a1f2f076577c7085237854ba6db41a7c91e4a33fb30068f8d4692"
+    url "https://files.pythonhosted.org/packages/a0/fd/2363c1f527c30ec14922f55f1cd65694f92100ba9546c4522c7cd5fed609/boto3-1.17.3.tar.gz"
+    sha256 "9f132c34e20110dea019293c89cede49b0a56be615b3e1debf98390ed9f1f7b9"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/7f/3a/cff91113a66d556864682e7dd72bd2d9b0ff13e0f2204875a045fa91d826/botocore-1.20.1.tar.gz"
-    sha256 "9488ba35e2d4d17375f67b8fd300df5ec2f8317a2924032901009c999d563b59"
+    url "https://files.pythonhosted.org/packages/10/37/91ef27d73f4611ea2c0d3c1cafb33a7fa4d6b5ccdf46c6e135d1fa6c8fc0/botocore-1.20.3.tar.gz"
+    sha256 "a0fdded1c9636899ab273f50bf123f79b91439a8c282b5face8b5f4a48b493cb"
   end
 
   resource "certifi" do

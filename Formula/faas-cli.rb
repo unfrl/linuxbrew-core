@@ -2,8 +2,8 @@ class FaasCli < Formula
   desc "CLI for templating and/or deploying FaaS functions"
   homepage "https://www.openfaas.com/"
   url "https://github.com/openfaas/faas-cli.git",
-      tag:      "0.13.0",
-      revision: "693bc31f1dda07eed484bf9635a8b2e2f4a838d8"
+      tag:      "0.13.2",
+      revision: "eecaee04d59238c4b969b830f39c6f0c30a8868d"
   license "MIT"
   head "https://github.com/openfaas/faas-cli.git"
 
@@ -13,11 +13,10 @@ class FaasCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "65b9db3d39329f4595cdcbd405404d922b7c1ce5ce0e9f386e30e32855c4aac4"
-    sha256 cellar: :any_skip_relocation, big_sur:       "89e9ce8efca26a75c561134c48d3c74fd9171fca3fa93d3dd58c380e5defaa3a"
-    sha256 cellar: :any_skip_relocation, catalina:      "12817b376b182bb12b51731615beb7e39b831d6217bff294dfdf1ab968bb4f8a"
-    sha256 cellar: :any_skip_relocation, mojave:        "6ca1c7f2d37ac19befb416ce012b0a1a4830593bed1ed60370bf992a6939f6b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d486ace834cda6d69b41709d94415d434b907efa0481cc310807f1104333b89"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "99bb26cf8f3baeb777e4a9a92926b3471f50280816ad58b10e0233311aa91ec9"
+    sha256 cellar: :any_skip_relocation, big_sur:       "03901063de5bf6eaafee338a30ea09c75a300d2eabeff2a0d79579c43b74b92f"
+    sha256 cellar: :any_skip_relocation, catalina:      "648b8bf3e94c86b4032817f3c94f6195c7f5652e97ed3597444febda1e64aa9c"
+    sha256 cellar: :any_skip_relocation, mojave:        "061ba739f8ed9f887eb114ff2f120ef456f37fcc7343d16cd58686ca3149dfd2"
   end
 
   depends_on "go" => :build

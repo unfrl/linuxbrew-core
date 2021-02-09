@@ -1,17 +1,16 @@
 class Help2man < Formula
   desc "Automatically generate simple man pages"
   homepage "https://www.gnu.org/software/help2man/"
-  url "https://ftp.gnu.org/gnu/help2man/help2man-1.47.17.tar.xz"
-  mirror "https://ftpmirror.gnu.org/help2man/help2man-1.47.17.tar.xz"
-  sha256 "da3a35c50b1e1f8c8fa322d69fa47c9011ce443a8fb8d1d671b1f01b8b0008eb"
+  url "https://ftp.gnu.org/gnu/help2man/help2man-1.48.1.tar.xz"
+  mirror "https://ftpmirror.gnu.org/help2man/help2man-1.48.1.tar.xz"
+  sha256 "de8a74740bd058646567b92ab4ecdeb9da9f1a07cc7c4f607a3c14dd38d10799"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "7bc46236d8916519b432020f2d51df5c6006c7000b67835ff7e1276c58ec208c"
-    sha256 cellar: :any_skip_relocation, big_sur:       "ee60622e70903c293171ea78097544d796a5454b29e8c1494529aa537901e460"
-    sha256 cellar: :any_skip_relocation, catalina:      "603b604aaf17770dd4f4a0f9b45c266848d8c005228c64773fdec2d94e3d45dd"
-    sha256 cellar: :any_skip_relocation, mojave:        "f57b3269934c79434b70ac7807ea364af47ae8a3b6096364c0615b2789d4a0a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee254c07a107d8da4a088af1f8c63842e4c3863d5044c18c63e4854b289b4861"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "fc9c571dfe3bb9a6bd50d79ac0a72eac8381646d7cabe52965a12c1b5314ee57"
+    sha256 cellar: :any,                 big_sur:       "5b2c195f1db08cefabfa6a7abf2f4c023331b0fd236859994e2cffb8491dc3af"
+    sha256 cellar: :any,                 catalina:      "494671eb1d653e331675a27c4bdae7def258522ade3faf17d5ebf5e8676650b6"
+    sha256 cellar: :any,                 mojave:        "c970589ff2925de795ffae0f2964dde865da1e09cb32fb3ef7d0086abd57d8de"
   end
 
   depends_on "gettext" if Hardware::CPU.intel?
