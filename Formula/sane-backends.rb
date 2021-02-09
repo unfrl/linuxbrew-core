@@ -4,7 +4,6 @@ class SaneBackends < Formula
   url "https://gitlab.com/sane-project/backends/uploads/8bf1cae2e1803aefab9e5331550e5d5d/sane-backends-1.0.31.tar.gz"
   sha256 "4a3b10fcb398ed854777d979498645edfe66fcac2f2fd2b9117a79ff45e2a5aa"
   license "GPL-2.0-or-later"
-  head "https://gitlab.com/sane-project/backends.git"
 
   livecheck do
     url :head
@@ -20,6 +19,16 @@ class SaneBackends < Formula
     sha256 x86_64_linux:  "c475acb98d0676af20daa995edc4d826f053c851da699eb02c2b264314de2213"
   end
 
+  head do
+    url "https://gitlab.com/sane-project/backends.git"
+
+    depends_on "autoconf" => :build
+    depends_on "autoconf-archive" => :build
+    depends_on "automake" => :build
+    depends_on "gettext" => :build
+    depends_on "libtool" => :build
+  end
+
   depends_on "pkg-config" => :build
   depends_on "jpeg"
   depends_on "libpng"
@@ -27,14 +36,6 @@ class SaneBackends < Formula
   depends_on "libusb"
   depends_on "net-snmp"
   depends_on "openssl@1.1"
-
-  if build.head?
-    depends_on "autoconf" => :build
-    depends_on "autoconf-archive" => :build
-    depends_on "automake" => :build
-    depends_on "gettext" => :build
-    depends_on "libtool" => :build
-  end
 
   uses_from_macos "libxml2"
 
