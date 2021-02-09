@@ -15,6 +15,7 @@ class K3d < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "5078ce5f2a29156907c573544266c8af47fb85e3a6391136364b16f29c79e475"
     sha256 cellar: :any_skip_relocation, catalina:      "681d8a3512601fb6ea82e391c19a7efd2a84a24449a8045237a444eb0ccdc670"
     sha256 cellar: :any_skip_relocation, mojave:        "0e2d81ce69d5d8bed36bfa3753f11be404297db46f11a4cfaf95a048958047ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "20867d5ac019ce175517b7eadc796fbedfde9aec3a4231c1f92f99e3a53b6bc8"
   end
 
   depends_on "go" => :build
