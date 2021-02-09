@@ -2,24 +2,24 @@ class GitGui < Formula
   desc "Tcl/Tk UI for the git revision control system"
   homepage "https://git-scm.com"
   # NOTE: Please keep these values in sync with git.rb when updating.
-  url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.30.0.tar.xz"
-  sha256 "55735021109565721af805af382c45cce73c3cfaa59daad22443d1477d334d19"
+  url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.30.1.tar.xz"
+  sha256 "f988a8a095089978dab2932af4edb22b4d7d67d67b81aaa1986fa29ef45d9467"
   license "GPL-2.0"
-  revision 1
   head "https://github.com/git/git.git", shallow: false
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "045a1afff977d4973f123b1088567fe15b4d4f9c70beff602c4101aa1816e499"
-    sha256 cellar: :any_skip_relocation, big_sur:       "27a0f42ff0d90bdfe57eff9a5077049303722c7ca25be401dd5dafbe1eff3cfe"
-    sha256 cellar: :any_skip_relocation, catalina:      "39ac88d194e39f15648b2c0a5667e04666b40c003d3d64dc21ed6e46db56437f"
-    sha256 cellar: :any_skip_relocation, mojave:        "9ec9d216c68fe11fa2f36c0f62e5f995836745d373a3521f6d87f418610c75dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab53c0ec42da101542ac64b5471b755f9a7e94fa5e6bd20fb46d4227257fc692"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "077cfab7fc2855565f2151934ff0aad1ddc6706781416339337f69220af775fd"
+    sha256 cellar: :any_skip_relocation, big_sur:       "b595a7d9d3ec8943e3b1d5d4fdc6d9dd595906627b579cc1bfb93bab4a2c6592"
+    sha256 cellar: :any_skip_relocation, catalina:      "832b657d86d8ebe0e84629a1a077585edeab05965600acf011f9fa2497c6ea50"
+    sha256 cellar: :any_skip_relocation, mojave:        "7048eb17bd7ef63637234749a6e60d8c7fb7d275ffa7be88a29dacda866d7333"
   end
 
   depends_on "tcl-tk"
 
   # Patch to fix Homebrew/homebrew-core#68798.
-  # Remove at version bump
+  # Remove when the following PR has been merged
+  # and included in a release:
+  # https://github.com/git/git/pull/944
   patch do
     url "https://github.com/git/git/commit/1db62e44b7ec93b6654271ef34065b31496cd02e.patch?full_index=1"
     sha256 "0c7816ee9c8ddd7aa38aa29541c9138997650713bce67bdef501b1de0b50f539"
