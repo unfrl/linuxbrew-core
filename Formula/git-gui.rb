@@ -12,6 +12,7 @@ class GitGui < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "b595a7d9d3ec8943e3b1d5d4fdc6d9dd595906627b579cc1bfb93bab4a2c6592"
     sha256 cellar: :any_skip_relocation, catalina:      "832b657d86d8ebe0e84629a1a077585edeab05965600acf011f9fa2497c6ea50"
     sha256 cellar: :any_skip_relocation, mojave:        "7048eb17bd7ef63637234749a6e60d8c7fb7d275ffa7be88a29dacda866d7333"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c2942ade525c2300482f93668e2d39f4d99ac929c49c8155a68aa52d9f2d0ff9"
   end
 
   depends_on "tcl-tk"
