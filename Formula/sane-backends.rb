@@ -16,6 +16,7 @@ class SaneBackends < Formula
     sha256 big_sur:       "14dff0d10d2763cea28bf86e5ada50bc6d966ce94ece64dd4026bc88815d2885"
     sha256 catalina:      "4343d5c9db23d58387e2646d73a5d9b07f2dcebb90fb142fd5d21d802a358c16"
     sha256 mojave:        "206176cb89375cedd1b93bf07b4611186c358604bbce31bbbf43637b2e225e1f"
+    sha256 x86_64_linux:  "8fc5e428b5f7ce23abafc1de37cd4b088afc142edb9087ba9f62c1c67fe06301"
   end
 
   head do
