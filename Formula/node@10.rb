@@ -1,8 +1,8 @@
 class NodeAT10 < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v10.23.2/node-v10.23.2.tar.xz"
-  sha256 "05a5e00e5e4342840f73ea40176416161ce9eeab6a4e936fc57bffd24dd1dbc7"
+  url "https://nodejs.org/dist/v10.23.3/node-v10.23.3.tar.xz"
+  sha256 "515bd7f2a1c3653c4f45eb0823479e812a24050da467dfd90b679ef09701ea8f"
   license "MIT"
 
   livecheck do
@@ -11,9 +11,9 @@ class NodeAT10 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, big_sur:  "681a8be7fd1bb8f44b6da4dbed4936900f23b7fe7c5dec79a46f5d93985cd55b"
-    sha256 cellar: :any, catalina: "96f3e574446807638022256453d8e7ea992cccf718a07d293e520c91a603d067"
-    sha256 cellar: :any, mojave:   "c7e39bc78e08037f55a4da8d17b21e9594a97308f7f19ff210bf6875d0e559c2"
+    sha256 cellar: :any, big_sur:  "63fb11acb5b7029a67154da6d98204c57da349f18b0e446a6d24db9376c147ec"
+    sha256 cellar: :any, catalina: "276b1b426578e8f4209bd4f4459f21e55c86335bd68b0237d790752508affb2f"
+    sha256 cellar: :any, mojave:   "9f4c50f293d565507ff375d1eb5c02a187b110de654afc82fcf100ad30c133f8"
   end
 
   keg_only :versioned_formula

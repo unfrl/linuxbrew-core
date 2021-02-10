@@ -33,9 +33,11 @@ class Lv < Formula
   patch :DATA
 
   def install
-    # zcat doesn't handle gzip'd data on OSX.
-    # Reported upstream to nrt@ff.iij4u.or.jp
-    inreplace "src/stream.c", 'gz_filter = "zcat"', 'gz_filter = "gzcat"' if OS.mac?
+    on_macos do
+      # zcat doesn't handle gzip'd data on OSX.
+      # Reported upstream to nrt@ff.iij4u.or.jp
+      inreplace "src/stream.c", 'gz_filter = "zcat"', 'gz_filter = "gzcat"'
+    end
 
     cd "build" do
       system "../src/configure", "--prefix=#{prefix}"
