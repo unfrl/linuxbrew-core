@@ -13,6 +13,7 @@ class Atomicparsley < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "470db93186b6c976ca728327ea33934436953150b57f63ac906c8dd20b6b41f5"
     sha256 cellar: :any_skip_relocation, catalina:      "55ac0fe11e2d88b0a4f1168e31b303c7da596504ce81c22cc9c734666cf50a9e"
     sha256 cellar: :any_skip_relocation, mojave:        "6636633b195ddb728a805a00dff40e99691857dc41e89ada45fc8506b4ecaa29"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "71e407699f01167a0c500212e910fcad683a9f87018983c19290d6d6436f9875"
   end
 
   depends_on "cmake" => :build
