@@ -1,8 +1,8 @@
 class NodeAT14 < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v14.15.4/node-v14.15.4.tar.gz"
-  sha256 "8610d81b2d4afc3a79afbe6209d510125131c45cae22cac63bb767dcfec1cbf0"
+  url "https://nodejs.org/dist/v14.15.5/node-v14.15.5.tar.gz"
+  sha256 "043f39bb43ecaca699a21a8bd65d064ef53b48bf2cc6acaddb5ee0f4227e4d2a"
   license "MIT"
 
   livecheck do
@@ -11,10 +11,10 @@ class NodeAT14 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "7692419a90f930e258d15e8a2935c39c09468a874b4b125527044c926dae03cf"
-    sha256 cellar: :any, big_sur:       "8ea277e44a9caf1ec786e6d587a1f354800a7701ec36a013a677e67dcbbf1ffd"
-    sha256 cellar: :any, catalina:      "c7dad357f47ccca70b7f7e389df005409859bdc382421bae08672a5f07913308"
-    sha256 cellar: :any, mojave:        "719ddeee6070d1afdac6d04c1e4977e175cc1dfec3e19db5c8c75cacfc13de6b"
+    sha256 cellar: :any, arm64_big_sur: "62e94d497386538a0f9049a2e2d948ce1977f98f28996ba8f0e4eb144006948d"
+    sha256 cellar: :any, big_sur:       "261eab7db595782cb862e30619acfb2ee667bd80c9e06e9fc4396c8f15e64d68"
+    sha256 cellar: :any, catalina:      "6d79ad373f452f41ef8694e94790bb4a4b36c1ab5749f33c667d723a78d8f919"
+    sha256 cellar: :any, mojave:        "2cafb654c182909beacd97693b68aa6f2eac8b07d8deac13d59d86decc1cc5ea"
   end
 
   keg_only :versioned_formula
