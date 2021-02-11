@@ -12,10 +12,11 @@ class Sslscan < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "f1170706f834f5b2e4a39f242cb6ab4128039ec5d7e6f0a9d232549558549795"
-    sha256 cellar: :any, big_sur:       "d670583c1d9601c07683d3220a6823e47b981783b596cb09f05923cf10aa3ab6"
-    sha256 cellar: :any, catalina:      "2a770856849153a648f7f94eb54a841982be5115575ceec4bcab56c245f4fc0a"
-    sha256 cellar: :any, mojave:        "d13dfa1b044e9d3be2f1d4508f5db0d6e1fa4fa35e4afb01ee18a9267e11534a"
+    sha256 cellar: :any,                 arm64_big_sur: "f1170706f834f5b2e4a39f242cb6ab4128039ec5d7e6f0a9d232549558549795"
+    sha256 cellar: :any,                 big_sur:       "d670583c1d9601c07683d3220a6823e47b981783b596cb09f05923cf10aa3ab6"
+    sha256 cellar: :any,                 catalina:      "2a770856849153a648f7f94eb54a841982be5115575ceec4bcab56c245f4fc0a"
+    sha256 cellar: :any,                 mojave:        "d13dfa1b044e9d3be2f1d4508f5db0d6e1fa4fa35e4afb01ee18a9267e11534a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50793b0ecbd4df46f9011520f4845d6a9b1fee3826ba5ee7ede49754685ea22e"
   end
 
   depends_on "openssl@1.1"
