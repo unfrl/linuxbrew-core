@@ -12,6 +12,7 @@ class GnuTar < Formula
     sha256 big_sur:       "ae7e03fc22f5e216f8dfb1aae1822595e5c11f9c78b06e1623577a8d76bc8d75"
     sha256 catalina:      "906c7a5265feb825505d1fe0ca563fe03f941f8d9d5487c83a90c0eade960d2b"
     sha256 mojave:        "057667a5bc2671beb8371b4da25b576167de95538c2a2e5cea9c16c76e14a20d"
+    sha256 x86_64_linux:  "7ef6578828d9651c3558c1e7b0f9b72f1545f8386339f8d3f2516f864e7dbc19"
   end
 
   head do
