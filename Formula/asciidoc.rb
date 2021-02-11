@@ -18,6 +18,7 @@ class Asciidoc < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "4a13fb6be824ba6a60ccd646aa8d64535c41fb2a2bdf6cf242b5bd4e94a8d75b"
     sha256 cellar: :any_skip_relocation, catalina:      "e7dd75c43dd2370426f3383ee7975f5acbb2b9d4499ebd8404aa63d215b7d4f9"
     sha256 cellar: :any_skip_relocation, mojave:        "64d87ef7c0ba34bee18612d2fdfd623ad045cf9580cc88c9073a63a067d3e76f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9709eca9b4fe96f88c4e95a791843acf83b2e12aec673bf6bf420261dd468cbd"
   end
 
   depends_on "autoconf" => :build
