@@ -3,16 +3,16 @@ class Ptpython < Formula
 
   desc "Advanced Python REPL"
   homepage "https://github.com/prompt-toolkit/ptpython"
-  url "https://files.pythonhosted.org/packages/59/7a/df458e3d610810205ba2b201ce1dd53115279c1e3492c121bce443846798/ptpython-3.0.13.tar.gz"
-  sha256 "78a8b9bc9c07f2e1c3724d19fb0cf2c98ed0cd4ea11e087108d9056d75e650f3"
+  url "https://files.pythonhosted.org/packages/18/cb/937b3981ee13eb5745e5b13ebee35c8d514378aaaeec645342502c0c8f99/ptpython-3.0.14.tar.gz"
+  sha256 "56d4a0905caddf3e26fb14b16a9cbfca3fbf23b73a6452de237937a69e9386b8"
   license "BSD-3-Clause"
   head "https://github.com/prompt-toolkit/ptpython.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "9a2bae02e0ecdedb3e33576572a0b2986dba389fcc2dc728747df803fd29c6bf"
-    sha256 cellar: :any_skip_relocation, big_sur:       "4da3d185816cb1c85748327d897cc3e5affba7f9674819af4ec0fa884162abf1"
-    sha256 cellar: :any_skip_relocation, catalina:      "f2f00da37325b90f50fa643a6d2a27c4d9a2492f8f0b28a2228e9a751cbe2af8"
-    sha256 cellar: :any_skip_relocation, mojave:        "63a79d636ea468e75493303fe49e139b05b90669f3631112e9391f1c143f92ad"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "bd8d8148b5665ac3c264adcbb3b92f6f69929486b3a1f1b147f13b074a12769d"
+    sha256 cellar: :any_skip_relocation, big_sur:       "ea7546cd4088749497a82ef67862d86dc5d5707e19b9fee3a1c885ab28eef332"
+    sha256 cellar: :any_skip_relocation, catalina:      "d20d9130a9365538af47930be4cac3e93b8f81a05852cb7790564b865020ad49"
+    sha256 cellar: :any_skip_relocation, mojave:        "93824e58ebd542f2639838765fb3c44f0e945c1f2c1e8affd7c78bea8acda7f5"
   end
 
   depends_on "python@3.9"
@@ -53,8 +53,8 @@ class Ptpython < Formula
   end
 
   resource "prompt-toolkit" do
-    url "https://files.pythonhosted.org/packages/b1/46/4eb242362c43cf033b4ec4d7205612c46c9f904a8984cdfdb64d35476175/prompt_toolkit-3.0.14.tar.gz"
-    sha256 "7e966747c18ececaec785699626b771c1ba8344c8d31759a1915d6b12fad6525"
+    url "https://files.pythonhosted.org/packages/d1/0a/86396cca748a604096d0aa37a5ec0565efe3fb1da0f7fafb9b617cf07172/prompt_toolkit-3.0.15.tar.gz"
+    sha256 "1411dc3c26dfbfb55b88d8239484b2f2a9df4e69e67965711b187c8917bff872"
   end
 
   resource "Pygments" do

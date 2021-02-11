@@ -1,14 +1,16 @@
 class Qwt < Formula
   desc "Qt Widgets for Technical Applications"
   homepage "https://qwt.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/qwt/qwt/6.1.5/qwt-6.1.5.tar.bz2"
-  sha256 "4076de63ec2b5e84379ddfebf27c7b29b8dc9074f3db7e2ca61d11a1d8adc041"
+  url "https://downloads.sourceforge.net/project/qwt/qwt/6.1.6/qwt-6.1.6.tar.bz2"
+  sha256 "99460d31c115ee4117b0175d885f47c2c590d784206f09815dc058fbe5ede1f6"
+
+  license "LGPL-2.1-only" => { with: "Qwt-exception-1.0" }
 
   bottle do
-    sha256 big_sur:     "1abf218dc1a4cd47873267d984c71cc6aac3830d19cd6dea6de7d67ee00aec40"
-    sha256 catalina:    "1890f28117b4bc819d39359bfe70af5993d735a9bf4e8b5121992e3681287801"
-    sha256 mojave:      "79dfcceaa6ad17084d8997201d22de70a19b8228e626094ed1d4a6787c3324f7"
-    sha256 high_sierra: "22baeaa7b5cbaade938f80ab01845e8fb8516389b82cfd2ca8180aeeb676289f"
+    sha256 arm64_big_sur: "a3ebfd4004fec1a451a9af3764b92932ac03f9c0f62ecf2d2c38087a8968aaa3"
+    sha256 big_sur:       "b703690ba90cdecc05cbbe3681d00d4c5138a341fb67e5d6c3586a0f3fa91ae4"
+    sha256 catalina:      "e54a2c2582412a4ac2730dfc9d59b00a98ffce155c1f2fefac78abd266fcdb84"
+    sha256 mojave:        "6dffaa9d451b82e5bdd78ae6dea239b3f0e5338677085babe3b2185724b46580"
   end
 
   depends_on "qt"
@@ -27,11 +29,13 @@ class Qwt < Formula
     end
 
     args = ["-config", "release", "-spec"]
-    if ENV.compiler == :clang
-      args << "macx-clang"
-    elsif OS.mac?
-      args << "macx-g++"
+    spec = if ENV.compiler == :clang
+      "macx-clang"
+    else
+      "macx-g++"
     end
+    spec << "-arm64" if Hardware::CPU.arm?
+    args << spec
 
     system "qmake", *args
     system "make"

@@ -15,10 +15,10 @@ class Dpkg < Formula
   end
 
   bottle do
-    sha256 big_sur:      "98559763f10864c5abc70a89c611c02fa96388096d273fbb70082a74dd5dcea5"
-    sha256 catalina:     "ed00b85c2d82dbe87ceb6c61d1af774544186d7d46a6b4229c234ce53984fcc4"
-    sha256 mojave:       "0ba7f0d1822ecd02c8f334cbe9c43fb9ebc0df6ee701641fcb0155ad7b093559"
-    sha256 x86_64_linux: "4fddc5c99a3c341aaf144384687f20998fd0ae22eff68297c218816ba9b68904"
+    rebuild 1
+    sha256 big_sur:  "d0c2d11dbc25d90112003e893d7ecd64cf32844e909cce3acc06e4ac5fa67142"
+    sha256 catalina: "e17f3fe5bb1e8791707fffbf6e7adf86dd4c0835fb01ae7c127ffc1997288055"
+    sha256 mojave:   "86ea4117acc21ff9e0d64ca131d4e84f9113e385ed12156a81368e48888f6da5"
   end
 
   depends_on "pkg-config" => :build
@@ -37,7 +37,12 @@ class Dpkg < Formula
   def install
     # We need to specify a recent gnutar, otherwise various dpkg C programs will
     # use the system "tar", which will fail because it lacks certain switches.
-    ENV["TAR"] = Formula["gnu-tar"].opt_bin/(OS.mac? ? "gtar" : "tar")
+    on_macos do
+      ENV["TAR"] = Formula["gnu-tar"].opt_bin/"gtar"
+    end
+    on_linux do
+      ENV["TAR"] = Formula["gnu-tar"].opt_bin/"tar"
+    end
 
     # Since 1.18.24 dpkg mandates the use of GNU patch to prevent occurrences
     # of the CVE-2017-8283 vulnerability.
