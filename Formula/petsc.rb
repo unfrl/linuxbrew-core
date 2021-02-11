@@ -15,6 +15,7 @@ class Petsc < Formula
     sha256 big_sur:       "759dc30e93ccfdfa83fbfd799b7a880c077bb073dbd6d615cb18b7d032694609"
     sha256 catalina:      "290ac64b9704477ff27f20b3f9a7b1f58e5331c565e7eaa245fb1a35c7b985cd"
     sha256 mojave:        "b90aaa362215e8b3e00af3b2ba6abb247212fc2888c40c18411e85f9248d7434"
+    sha256 x86_64_linux:  "5dd063e97535fd1c6e884f61e4dac546742134c59bc322a1f9499dfd9e185b92"
   end
 
   depends_on "hdf5"
