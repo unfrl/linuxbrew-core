@@ -15,6 +15,7 @@ class Squid < Formula
     sha256 big_sur:       "8e0aaa487fd37fa2da664d23bfd1a199f3b774908f1b35ec9efc842ff4ac3574"
     sha256 catalina:      "858bb9791ae9e3a6d6bb7fadb46ac8fa6cfc16f946a1d6cbe6ecce4cdc8077b5"
     sha256 mojave:        "1c726f0f574c9b5a0d74afa54b4436d0f97486ad7bddb426fad5235fdda16396"
+    sha256 x86_64_linux:  "fb64781e7749492222e48bb2eadb804d5f7caaf818d0144c18d0bea26264624f"
   end
 
   head do
