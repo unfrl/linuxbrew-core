@@ -2,24 +2,19 @@ class Packetbeat < Formula
   desc "Lightweight Shipper for Network Data"
   homepage "https://www.elastic.co/products/beats/packetbeat"
   url "https://github.com/elastic/beats.git",
-      tag:      "v7.10.2",
-      revision: "aacf9ecd9c494aa0908f61fbca82c906b16562a8"
+      tag:      "v7.11.0",
+      revision: "84c4d4c4034fcb49c1a318ccdc7311d70adee15b"
   license "Apache-2.0"
   head "https://github.com/elastic/beats.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:  "8bd73d32bee241d6f4f43be3eb69c1c0e06ee50ce5d5a5a2d2282330ca9316c4"
-    sha256 cellar: :any_skip_relocation, catalina: "c2bc84e64b6d9a7af55b33b0fa7acdd9f866ad5f61af51bbf7bc90c598bf1b63"
-    sha256 cellar: :any_skip_relocation, mojave:   "b53b4d74d544f5a20b2c750e74d7d64da875c8d75a3bd7a0f1b336e2c1240dc4"
+    sha256 cellar: :any_skip_relocation, big_sur:  "b0c63b939f8792c0ae2f8fca789be433813d101a35b8bea95ebb45e3c12a4aaa"
+    sha256 cellar: :any_skip_relocation, catalina: "39e3deb877a970b9f06e81de762a1da851f2ba7e476e479a51ce1df929cb9d68"
+    sha256 cellar: :any_skip_relocation, mojave:   "de9d09d0d368a63b5e9bcd9b7390f73fa9d88911d554b12b8b1f2df021d755d9"
   end
 
   depends_on "go" => :build
-  depends_on "python@3.8" => :build
-
-  resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/b1/72/2d70c5a1de409ceb3a27ff2ec007ecdd5cc52239e7c74990e32af57affe9/virtualenv-15.2.0.tar.gz"
-    sha256 "1d7e241b431e7afce47e77f8843a276f652699d1fa4f93b9d8ce0076fd7b0b54"
-  end
+  depends_on "python@3.9" => :build
 
   def install
     # remove non open source files
@@ -27,15 +22,6 @@ class Packetbeat < Formula
 
     ENV["GOPATH"] = buildpath
     (buildpath/"src/github.com/elastic/beats").install buildpath.children
-
-    xy = Language::Python.major_minor_version "python3"
-    ENV.prepend_create_path "PYTHONPATH", buildpath/"vendor/lib/python#{xy}/site-packages"
-
-    resource("virtualenv").stage do
-      system Formula["python@3.8"].opt_bin/"python3", *Language::Python.setup_install_args(buildpath/"vendor")
-    end
-
-    ENV.prepend_path "PATH", buildpath/"vendor/bin" # for virtualenv
     ENV.prepend_path "PATH", buildpath/"bin" # for mage (build tool)
 
     cd "src/github.com/elastic/beats/packetbeat" do

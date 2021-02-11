@@ -6,14 +6,13 @@ class Poetry < Formula
   url "https://files.pythonhosted.org/packages/94/89/92040eafbb76dcbb2b3ee185499b89281f712b34faa7673850778b0ddda4/poetry-1.1.4.tar.gz"
   sha256 "946a5a1173be607c7c5c593358a0fb0c0d6af4400c978929ecdb19c3a37b53a8"
   license "MIT"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "27c76026e47e0a8fc572fdaea9cde45b0dab4613bdf4d583b91c1561e640ee3f"
-    sha256 cellar: :any_skip_relocation, big_sur:       "5bed2df1069a4af8088e65aac9ed18ad6fb3887a2bf5c1681d40ab84ff3bf3ab"
-    sha256 cellar: :any_skip_relocation, catalina:      "8266e0c42f1da8180bc22fa150eb9a31b2d776d594ebbc6f9095c54f7beb0f51"
-    sha256 cellar: :any_skip_relocation, mojave:        "fcd488237a0e10f9d661f26bf22e69b90f179d380970b8aed333b73dc98c2608"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84b38f779363bf0167cbffc83c8d6977b5501185be81e5123ae7bd5e14b3e15f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "88339bd33aefac99d6efb795a8a7a3a3596b5d02985523950d98e2a16207e085"
+    sha256 cellar: :any_skip_relocation, big_sur:       "844ff17a687f18081080999f8ff09e7636a7bc41d3f44e70ceb96f37fb410b08"
+    sha256 cellar: :any_skip_relocation, catalina:      "b6e56413cb47ca7c6f972fd9429ba2d2daed2bb1fe1f4c726b8f0d600fea5108"
+    sha256 cellar: :any_skip_relocation, mojave:        "737ae3040efc4130cad9043f2d59f14ad2980e283f7532623e1a5ae8850b5355"
   end
 
   depends_on "python@3.9"
@@ -189,8 +188,10 @@ class Poetry < Formula
     ENV.prepend_create_path "PYTHONPATH", site_packages
     system Formula["python@3.9"].opt_bin/"python3", *Language::Python.setup_install_args(libexec)
 
+    # We don't hardcode Homebrew Python here on purpose. See
+    # https://github.com/Homebrew/homebrew-core/issues/62910
     (bin/"poetry").write <<~PYTHON
-      #!#{Formula["python@3.9"].opt_bin/"python3"}
+      #!/usr/bin/env python3
       import sys
 
       sys.path.insert(0, "#{site_packages}")
