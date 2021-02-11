@@ -13,6 +13,7 @@ class Poetry < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "844ff17a687f18081080999f8ff09e7636a7bc41d3f44e70ceb96f37fb410b08"
     sha256 cellar: :any_skip_relocation, catalina:      "b6e56413cb47ca7c6f972fd9429ba2d2daed2bb1fe1f4c726b8f0d600fea5108"
     sha256 cellar: :any_skip_relocation, mojave:        "737ae3040efc4130cad9043f2d59f14ad2980e283f7532623e1a5ae8850b5355"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3b4f5bbe35aa275a15c143ef929c98c19243a24d8aea9dd4bf352ce2f62e6fb"
   end
 
   depends_on "python@3.9"
