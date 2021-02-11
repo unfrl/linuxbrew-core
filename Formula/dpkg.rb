@@ -16,9 +16,10 @@ class Dpkg < Formula
 
   bottle do
     rebuild 1
-    sha256 big_sur:  "d0c2d11dbc25d90112003e893d7ecd64cf32844e909cce3acc06e4ac5fa67142"
-    sha256 catalina: "e17f3fe5bb1e8791707fffbf6e7adf86dd4c0835fb01ae7c127ffc1997288055"
-    sha256 mojave:   "86ea4117acc21ff9e0d64ca131d4e84f9113e385ed12156a81368e48888f6da5"
+    sha256 big_sur:      "d0c2d11dbc25d90112003e893d7ecd64cf32844e909cce3acc06e4ac5fa67142"
+    sha256 catalina:     "e17f3fe5bb1e8791707fffbf6e7adf86dd4c0835fb01ae7c127ffc1997288055"
+    sha256 mojave:       "86ea4117acc21ff9e0d64ca131d4e84f9113e385ed12156a81368e48888f6da5"
+    sha256 x86_64_linux: "5d5dae9c08f190297c3c0ddb76c0c29b597c334fe1e45d0d444ae7a37a70b32c"
   end
 
   depends_on "pkg-config" => :build
