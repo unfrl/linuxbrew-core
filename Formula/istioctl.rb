@@ -24,15 +24,18 @@ class Istioctl < Formula
     ENV["HUB"] = "docker.io/istio"
     ENV["BUILD_WITH_CONTAINER"] = "0"
 
-    srcpath = buildpath/"src/istio.io/istio"
-    outpath = OS.mac? ? srcpath/"out/darwin_amd64" : srcpath/"out/linux_amd64"
-    srcpath.install buildpath.children
-
-    cd srcpath do
-      system "make", "gen-charts", "istioctl", "istioctl.completion"
-      bin.install outpath/"istioctl"
-      bash_completion.install outpath/"release/istioctl.bash"
-      zsh_completion.install outpath/"release/_istioctl"
+    system "make", "gen-charts", "istioctl", "istioctl.completion"
+    dirpath = nil
+    on_macos do
+      dirpath = "darwin_amd64"
+    end
+    on_linux do
+      dirpath = "linux_amd64"
+    end
+    cd "out/#{dirpath}" do
+      bin.install "istioctl"
+      bash_completion.install "release/istioctl.bash"
+      zsh_completion.install "release/_istioctl"
     end
   end
 

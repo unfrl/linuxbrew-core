@@ -34,9 +34,15 @@ class Libass < Formula
 
   def install
     system "autoreconf", "-i" if build.head?
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          *("--disable-fontconfig" if OS.mac?)
+    args = %W[
+      --disable-dependency-tracking
+      --prefix=#{prefix}
+    ]
+    on_macos do
+      # libass uses coretext on macOS, fontconfig on Linux
+      args << "--disable-fontconfig"
+    end
+    system "./configure", *args
     system "make", "install"
   end
 

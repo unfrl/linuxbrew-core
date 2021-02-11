@@ -1,16 +1,16 @@
 class Simdjson < Formula
   desc "SIMD-accelerated C++ JSON parser"
   homepage "https://simdjson.org"
-  url "https://github.com/simdjson/simdjson/archive/v0.8.1.tar.gz"
-  sha256 "761c137d1e85cdd68ca259f9554ad51d3cc9784f6b2d4f6dbaeb999dd11947b8"
+  url "https://github.com/simdjson/simdjson/archive/v0.8.2.tar.gz"
+  sha256 "6540b7fe5d7cb37afdf8be487b2c6abf31a503fe6709c581d2b198b0016cc5fc"
   license "Apache-2.0"
   head "https://github.com/simdjson/simdjson.git"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "57ea9f705070a10bd95ea9916153c50468a40d8802abda87ea55846f8cb13c05"
-    sha256 cellar: :any, big_sur:       "54512855b5401c9195931c8aaee8af225efac53c776efc25584683e070a0eaa8"
-    sha256 cellar: :any, catalina:      "6bfe4056f1fafb715a290cb194b0daad8164ed5fee6c75f274bf4d62228b83c3"
-    sha256 cellar: :any, mojave:        "ea39bdc1c8a07cd37e0fa04dd11f33705c96389b55f61de5a1e262ccb2a2abfd"
+    sha256 cellar: :any, arm64_big_sur: "0bf2e02831f96172f2f296ee716bd5f076c3707a878a5c5f153e9979695fb7e3"
+    sha256 cellar: :any, big_sur:       "438559939a752abcc531079b71bbbad220e6ea57eab9dbdf6c4083e71040f2da"
+    sha256 cellar: :any, catalina:      "4206f37add8bb6db8bf1fcfa033a2b37d2993e49737b308410b24e7d35e85d38"
+    sha256 cellar: :any, mojave:        "3beef6f598473965d3a281c9db53a262f95d189360d8d25bbdcb9df5686783cd"
   end
 
   depends_on "cmake" => :build

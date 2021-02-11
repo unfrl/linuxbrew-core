@@ -4,7 +4,7 @@ class MingwW64 < Formula
   url "https://downloads.sourceforge.net/project/mingw-w64/mingw-w64/mingw-w64-release/mingw-w64-v8.0.0.tar.bz2"
   sha256 "44c740ea6ab3924bc3aa169bad11ad3c5766c5c8459e3126d44eabb8735a5762"
   license "ZPL-2.1"
-  revision 2
+  revision 3
 
   livecheck do
     url :stable
@@ -12,10 +12,9 @@ class MingwW64 < Formula
   end
 
   bottle do
-    sha256 big_sur:      "2689865c40877aece3eca9bf928a19593385fba67e93a2af567bf2d345916664"
-    sha256 catalina:     "7b5538da9090d822f9a64f01a7bb15ccf1ac4e4f8d0ccd77684c7a737bb74854"
-    sha256 mojave:       "22ee93e8d918ee378b205d891edc32a0beb885f0c79e320d186381bafb78b004"
-    sha256 x86_64_linux: "a22d115133b759743757cb2e4ef40f9e8b8ba61f7ecae84a80ac806a71d17845"
+    sha256 big_sur:  "cf32456b5f1f3e16079a9ef8767d48fc1ec3423c7f447bb6744c0fe4777e1751"
+    sha256 catalina: "15aa7c6ff216ed6c48da13a37ab6aa865e1d9af86ad75cf0445bf8624bd4e382"
+    sha256 mojave:   "cd3990827011083e2c8decd8f33f409f010bd42257b5d3b67ac1df0686d18d73"
   end
 
   # Apple's makeinfo is old and has bugs
@@ -27,9 +26,9 @@ class MingwW64 < Formula
   depends_on "mpfr"
 
   resource "binutils" do
-    url "https://ftp.gnu.org/gnu/binutils/binutils-2.36.tar.xz"
-    mirror "https://ftpmirror.gnu.org/binutils/binutils-2.36.tar.xz"
-    sha256 "5788292cc5bbcca0848545af05986f6b17058b105be59e99ba7d0f9eb5336fb8"
+    url "https://ftp.gnu.org/gnu/binutils/binutils-2.36.1.tar.xz"
+    mirror "https://ftpmirror.gnu.org/binutils/binutils-2.36.1.tar.xz"
+    sha256 "e81d9edf373f193af428a0f256674aea62a9d74dfe93f65192d4eae030b0f3b0"
   end
 
   resource "gcc" do
@@ -89,6 +88,7 @@ class MingwW64 < Formula
         --with-mpfr=#{Formula["mpfr"].opt_prefix}
         --with-mpc=#{Formula["libmpc"].opt_prefix}
         --with-isl=#{Formula["isl"].opt_prefix}
+        --with-zstd=no
         --disable-multilib
         --disable-nls
         --enable-threads=posix
