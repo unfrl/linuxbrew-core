@@ -45,7 +45,7 @@ class Coreutils < Formula
 
   def install
     # Fix configure: error: you should not run configure as root
-    ENV["FORCE_UNSAFE_CONFIGURE"] = "1" if ENV["CI"]
+    ENV["FORCE_UNSAFE_CONFIGURE"] = "1" if ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     system "./bootstrap" if build.head?
 
