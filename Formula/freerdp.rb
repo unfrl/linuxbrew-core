@@ -53,7 +53,7 @@ class Freerdp < Formula
 
   test do
     # failed to open display
-    return if ENV["CI"]
+    return if ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     success = `#{bin}/xfreerdp --version` # not using system as expected non-zero exit code
     details = $CHILD_STATUS
