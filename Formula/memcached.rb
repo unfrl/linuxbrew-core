@@ -56,7 +56,7 @@ class Memcached < Formula
   test do
     pidfile = testpath/"memcached.pid"
     # Assumes port 11211 is not already taken
-    if !OS.mac? && ENV["CI"]
+    if !OS.mac? && ENV["HOMEBREW_GITHUB_ACTIONS"]
       system bin/"memcached", "-u", ENV["USER"], "--listen=localhost:#{free_port}", "--daemon", "--pidfile=#{pidfile}"
     else
       system bin/"memcached", "--listen=localhost:#{free_port}", "--daemon", "--pidfile=#{pidfile}"
