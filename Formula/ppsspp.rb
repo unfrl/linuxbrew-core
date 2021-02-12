@@ -8,10 +8,11 @@ class Ppsspp < Formula
   head "https://github.com/hrydgard/ppsspp.git"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "3c526abf34de1401baa178f9dc92ea8ca3dd6e93e1cd03d8c6c6a05762e0f436"
-    sha256 cellar: :any, big_sur:       "3bc377a5ece3958d48f1ac896d0a948d8832c72d7d2a7f06a24c4ae503f57d09"
-    sha256 cellar: :any, catalina:      "1fe321b840b818b92c2a494bb8b97d299bfa71b8355919f74e06a7b236c78e07"
-    sha256 cellar: :any, mojave:        "4e7814cd39e2089e2fc18b0509557c032dbcf7ff6369f49190d31e3c4cbe46f4"
+    sha256 cellar: :any,                 arm64_big_sur: "3c526abf34de1401baa178f9dc92ea8ca3dd6e93e1cd03d8c6c6a05762e0f436"
+    sha256 cellar: :any,                 big_sur:       "3bc377a5ece3958d48f1ac896d0a948d8832c72d7d2a7f06a24c4ae503f57d09"
+    sha256 cellar: :any,                 catalina:      "1fe321b840b818b92c2a494bb8b97d299bfa71b8355919f74e06a7b236c78e07"
+    sha256 cellar: :any,                 mojave:        "4e7814cd39e2089e2fc18b0509557c032dbcf7ff6369f49190d31e3c4cbe46f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c47e7f66d87dfa8600bd543717cf917dde74bf07b32dd47284fd326be589177a"
   end
 
   depends_on "cmake" => :build
