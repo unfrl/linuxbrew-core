@@ -37,7 +37,7 @@ class Mpi4py < Formula
            "-c", "import mpi4py.futures"
 
     # Somehow our Azure CI only has two CPU cores available.
-    cpu_cores = (ENV["CI"] ? 2 : 4).to_s
+    cpu_cores = (ENV["HOMEBREW_GITHUB_ACTIONS"] ? 2 : 4).to_s
 
     if Process.uid.zero?
       ENV["OMPI_ALLOW_RUN_AS_ROOT_CONFIRM"] = "1"
