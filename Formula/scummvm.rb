@@ -44,7 +44,7 @@ class Scummvm < Formula
 
   test do
     # Test fails on headless CI: Could not initialize SDL: No available video device
-    return if ENV["CI"]
+    return if ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     system "#{bin}/scummvm", "-v"
   end
