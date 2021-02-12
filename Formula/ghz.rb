@@ -10,6 +10,7 @@ class Ghz < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "c6df1f56c0fee985d71455ae95501dece15ad0b3c01ce11e6547d4ff48dc3821"
     sha256 cellar: :any_skip_relocation, catalina:      "b2ab72209c5fb74323cbcbe4e77a2c0e22f562ea6523feaaafdb06e21604b719"
     sha256 cellar: :any_skip_relocation, mojave:        "f0ab40089ddcc24fd3537b6c156fbda7ded501aa1e835f10ccf85f760d56caf4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d2009e0c6799b54a6314e95cb1062e817ae6c1e6e1029516efd1a0e8a36f1593"
   end
 
   depends_on "go" => :build
