@@ -82,7 +82,7 @@ class Qt < Formula
   def install
     # Workaround for disk space issues on github actions
     # https://github.com/Homebrew/linuxbrew-core/pull/19595
-    system "/home/linuxbrew/.linuxbrew/bin/brew", "cleanup", "--prune=0" if ENV["CI"]
+    system "/home/linuxbrew/.linuxbrew/bin/brew", "cleanup", "--prune=0" if ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     args = %W[
       -verbose
