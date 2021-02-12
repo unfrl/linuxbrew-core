@@ -22,6 +22,7 @@ class E2fsprogs < Formula
     sha256 big_sur:       "59bf8ad4be4b70fecf03d38e8de4a0623aacc8e9730b07cb973cbc069b0760b3"
     sha256 catalina:      "09d3f58b3e0018a3293ae3274407143e016c7197b11896a4a3d1545e211c4627"
     sha256 mojave:        "35273b86257cb93032ba6d57293c0c7a1c5d658c12b26c52da5c8324e075f9ba"
+    sha256 x86_64_linux:  "2ca874c7eb6eee58df71bcdf3d3f670c3bb5685080dbaf4bc26238ed46e1e535"
   end
 
   keg_only "this installs several executables which shadow macOS system commands"
