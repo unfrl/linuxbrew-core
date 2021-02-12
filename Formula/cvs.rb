@@ -30,7 +30,7 @@ class Cvs < Formula
   end
 
   unless OS.mac?
-    depends_on VimRequirement unless ENV["CI"]
+    depends_on VimRequirement unless ENV["HOMEBREW_GITHUB_ACTIONS"]
     depends_on "vim" unless which "vim"
     depends_on "linux-pam"
     depends_on "zlib"
