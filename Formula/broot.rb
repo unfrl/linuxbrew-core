@@ -25,7 +25,7 @@ class Broot < Formula
   test do
     assert_match "A tree explorer and a customizable launcher", shell_output("#{bin}/broot --help 2>&1")
 
-    return if !OS.mac? && ENV["CI"]
+    return if !OS.mac? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     require "pty"
     require "io/console"
