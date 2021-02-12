@@ -26,7 +26,7 @@ class Inspectrum < Formula
   end
 
   test do
-    return if ENV["CI"]
+    return if ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     # This test requires X11.
     assert_match "-r, --rate <Hz>     Set sample rate.", shell_output("#{bin}/inspectrum -h").strip
