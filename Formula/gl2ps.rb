@@ -75,7 +75,7 @@ class Gl2ps < Formula
     else
       system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-lgl2ps", "-lglut", "-lGL"
       # Fails without an X11 display: freeglut (./test): failed to open display ''
-      return if ENV["CI"]
+      return if ENV["HOMEBREW_GITHUB_ACTIONS"]
     end
     system "./test"
     assert_predicate testpath/"test.eps", :exist?
