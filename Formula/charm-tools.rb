@@ -9,9 +9,10 @@ class CharmTools < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, big_sur:  "1ea561e744d112c45f4f8d311a9ad6c55b0ec59f3d105dad6278554001471804"
-    sha256 cellar: :any, catalina: "5960e644e568c361491cfaed14eaa308f17bfcea6dd675cb4a39b5874b569c94"
-    sha256 cellar: :any, mojave:   "280e8b310117359a2d873b04a8758cd2c4191872897f37e851aaaf3d0d6009ea"
+    sha256 cellar: :any,                 big_sur:      "1ea561e744d112c45f4f8d311a9ad6c55b0ec59f3d105dad6278554001471804"
+    sha256 cellar: :any,                 catalina:     "5960e644e568c361491cfaed14eaa308f17bfcea6dd675cb4a39b5874b569c94"
+    sha256 cellar: :any,                 mojave:       "280e8b310117359a2d873b04a8758cd2c4191872897f37e851aaaf3d0d6009ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "600043567e5662a097912241be23b2cd912b84f5554c28264ce11637030af683"
   end
 
   depends_on "charm"
