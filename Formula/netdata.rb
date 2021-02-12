@@ -16,6 +16,7 @@ class Netdata < Formula
     sha256 big_sur:       "826efd87526bbfd7b917352c4b228965e5b468e7b31159f4a7a2066f851518d5"
     sha256 catalina:      "176a20a034f3f6e0b51ab1eac3cea4f68c30966fe517eb1f721a8b91cab4f66a"
     sha256 mojave:        "f566c2aadea647bd1c485463b71efa992b7ee18b85b4143a8b0e6146e0a458dc"
+    sha256 x86_64_linux:  "7f7fbb8b5fbc8b8aa28dece3becff20dae8d411e6a3b95affae61c9bfbfe2166"
   end
 
   depends_on "autoconf" => :build
