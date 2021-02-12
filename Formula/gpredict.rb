@@ -42,7 +42,7 @@ class Gpredict < Formula
   end
 
   test do
-    return if !OS.mac? && ENV["CI"]
+    return if !OS.mac? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     assert_match "real-time", shell_output("#{bin}/gpredict -h")
   end
