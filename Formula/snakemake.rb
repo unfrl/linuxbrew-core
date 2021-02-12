@@ -3,17 +3,16 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/4b/c6/44a4ede22c827c23ec956061985a5a3b1d5bc66ec13909eae675148c9690/snakemake-5.32.1.tar.gz"
-  sha256 "63ed06bb3738f574f69a1f7ced486c3606850a8e307ff0551aed4ac46ba9ca3f"
+  url "https://files.pythonhosted.org/packages/d3/c9/d99121a040f9984495367cdc47d75305fc4993f2411d7fb5becd696a1b3d/snakemake-5.32.2.tar.gz"
+  sha256 "ff35f3c5d283c5b38a926b943f18aa732cc8af4bd1f59471907ef3adda1b018c"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "70c557b4ba93eeb3ae9e32b157fb8c7f4a78693124e8c03d5d58c16f306e3a16"
-    sha256 cellar: :any_skip_relocation, big_sur:       "4a5426af24d966d6a00a14741be99230768e6948adc4739cb960dc86dc714545"
-    sha256 cellar: :any_skip_relocation, catalina:      "22e7df33cf32e3cfe19e7ef8123f3fb9640ddcd63d82af86a72ec8e5071c6e71"
-    sha256 cellar: :any_skip_relocation, mojave:        "fc840e3a36f349ce1b5d345748bced3a1bd6bb99f573197c33a268035ea47092"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f1d7400ed310139b0f1e192849722f5346ad805837af77cf5d69a52a51b0a20"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "9ec19b3e4cb65671836f1bedc85c587a887ddef95c5e81469513267884fb7c9c"
+    sha256 cellar: :any_skip_relocation, big_sur:       "aef328eecd57a05bc0bd7824f4bfc985c93bd837710a56f53d62287cf4143986"
+    sha256 cellar: :any_skip_relocation, catalina:      "6cf35b41c071b1e37d8dbc7ee3a66dc62b3a58c51f223cb640e9a36d7b5903ca"
+    sha256 cellar: :any_skip_relocation, mojave:        "0c022349ba6a23b147d45e33b54f1cdc7b81db36141f608a34b2c2bcfdc0f4e3"
   end
 
   depends_on "cbc"
@@ -65,8 +64,8 @@ class Snakemake < Formula
   end
 
   resource "GitPython" do
-    url "https://files.pythonhosted.org/packages/ec/4d/e6553122c85ec7c4c3e702142cc0f5ed02e5cf1b4d7ecea86a07e45725a0/GitPython-3.1.12.tar.gz"
-    sha256 "42dbefd8d9e2576c496ed0059f3103dcef7125b9ce16f9d5f9c834aed44a1dac"
+    url "https://files.pythonhosted.org/packages/d4/a9/60a66a0e8b452726cfc5939242ffa7158c1a9a78ff628bd4540b49156240/GitPython-3.1.13.tar.gz"
+    sha256 "8621a7e777e276a5ec838b59280ba5272dd144a18169c36c903d8b38b99f750a"
   end
 
   resource "idna" do
