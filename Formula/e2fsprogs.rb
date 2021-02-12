@@ -1,8 +1,8 @@
 class E2fsprogs < Formula
   desc "Utilities for the ext2, ext3, and ext4 file systems"
   homepage "https://e2fsprogs.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v1.46.0/e2fsprogs-1.46.0.tar.gz"
-  sha256 "388195cbfd7733061b8c87454caec29ebf4c6892312e1a145ee58eb268abea92"
+  url "https://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v1.46.1/e2fsprogs-1.46.1.tar.gz"
+  sha256 "49630dc777a808dc67312fa289dca65b9d2dbad80c8267f3b9d437b7167774e4"
   license all_of: [
     "GPL-2.0-or-later",
     "LGPL-2.0-or-later", # lib/ex2fs
@@ -18,11 +18,10 @@ class E2fsprogs < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "9b51f61594b7f0ec90ce782a45453b598de4b0d3bfecea4468387b2f02321a2b"
-    sha256 big_sur:       "833d32db7dfe72ed9edb9bdb330d8b6bcda429bd27f0e6182f3f0276f953e393"
-    sha256 catalina:      "4fab548ad74c747095625b6087ab4d59c3efc2fd4bd89f16f24b606ef7b81146"
-    sha256 mojave:        "9758f94dc796739e26a1866cf4bea8ae57dcc42eb868072818a52c38b49536a5"
-    sha256 x86_64_linux:  "4075f1a742ef3f275d4122cc66a0d2ae169b5bd3a4cede54f67f1ac583047282"
+    sha256 arm64_big_sur: "56c580421ac3e50f75ee5474d30e49bdc1cded6e27ff0fab37bb37012bb55375"
+    sha256 big_sur:       "59bf8ad4be4b70fecf03d38e8de4a0623aacc8e9730b07cb973cbc069b0760b3"
+    sha256 catalina:      "09d3f58b3e0018a3293ae3274407143e016c7197b11896a4a3d1545e211c4627"
+    sha256 mojave:        "35273b86257cb93032ba6d57293c0c7a1c5d658c12b26c52da5c8324e075f9ba"
   end
 
   keg_only "this installs several executables which shadow macOS system commands"

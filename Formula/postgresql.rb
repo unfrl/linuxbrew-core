@@ -1,8 +1,8 @@
 class Postgresql < Formula
   desc "Object-relational database system"
   homepage "https://www.postgresql.org/"
-  url "https://ftp.postgresql.org/pub/source/v13.1/postgresql-13.1.tar.bz2"
-  sha256 "12345c83b89aa29808568977f5200d6da00f88a035517f925293355432ffe61f"
+  url "https://ftp.postgresql.org/pub/source/v13.2/postgresql-13.2.tar.bz2"
+  sha256 "5fd7fcd08db86f5b2aed28fcfaf9ae0aca8e9428561ac547764c2a2b0f41adfc"
   license "PostgreSQL"
   head "https://github.com/postgres/postgres.git"
 
@@ -12,11 +12,10 @@ class Postgresql < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "6939bfae5047a585985ef45d71a04b88ef8ccbced5d35a3ccce4a9aa452087aa"
-    sha256 big_sur:       "e4d523c7171f265b340df22a88ff78e6fba4aed46afcf3f4e5bd4ac4b94e8a16"
-    sha256 catalina:      "13939e578f0a48c78966c2527dc48391b19650b51f7489767b5237e3bab16793"
-    sha256 mojave:        "1826c98f6d117bd040fbb307c1c95dfa2dee6ff8647ec8010e1b79386aa59eb0"
-    sha256 x86_64_linux:  "f38526b09a0c1d3974681833fdb78c1e405e6aeead77c329fa226793d03ebb93"
+    sha256 arm64_big_sur: "25ef0f5a646460926edfd9784476e39515930e70b18dca97e8d494854a33623f"
+    sha256 big_sur:       "06c23afef614cae22f493d211abc57d4583ffe603e90d67cb127923151b5df27"
+    sha256 catalina:      "74187bccafb703b20326afa608542493620a86502d061fdea84415a048dcda5b"
+    sha256 mojave:        "1adff398048e085acbb4d2a7fa1c6fac09f1f874df142db983e4a6c16072f223"
   end
 
   depends_on "pkg-config" => :build

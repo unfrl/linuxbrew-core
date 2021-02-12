@@ -5,14 +5,13 @@ class CharmTools < Formula
   homepage "https://github.com/juju/charm-tools"
   url "https://files.pythonhosted.org/packages/1a/77/552dbd44cfc28daa6db06436cce906bbdf452ba6de0059b58b5d892b3317/charm-tools-2.7.8.tar.gz"
   sha256 "f16b3f8b1033451cc6503f2a2eca83e746dac548506ecf547c495cd83784f9f2"
-  license "GPL-3.0"
+  license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any, big_sur:      "6404dbae2164f20d435899289d4c65b798edf7f11feb8329dfb442fc596f6e6a"
-    sha256 cellar: :any, catalina:     "5ee8a00243ad9490a3506ed4719f832940ec5ddd49f1527722da1953d6a6f112"
-    sha256 cellar: :any, mojave:       "dccb09db98760f93a0c1435ef3d9b9edcc5668a329af79f1fba95b3f5a45febd"
-    sha256 cellar: :any, high_sierra:  "f67bdbf421144cc493491682afae38d4b5f136fbc5c2b21dfe41c2a971f6d5c0"
-    sha256 cellar: :any, x86_64_linux: "2c34e7c20311b138aa1ec6f2f091fabc51d6e2ef43d511ade8742089c1d42527"
+    rebuild 1
+    sha256 cellar: :any, big_sur:  "1ea561e744d112c45f4f8d311a9ad6c55b0ec59f3d105dad6278554001471804"
+    sha256 cellar: :any, catalina: "5960e644e568c361491cfaed14eaa308f17bfcea6dd675cb4a39b5874b569c94"
+    sha256 cellar: :any, mojave:   "280e8b310117359a2d873b04a8758cd2c4191872897f37e851aaaf3d0d6009ea"
   end
 
   depends_on "charm"
@@ -100,6 +99,11 @@ class CharmTools < Formula
   resource "iso8601" do
     url "https://files.pythonhosted.org/packages/45/13/3db24895497345fb44c4248c08b16da34a9eb02643cea2754b21b5ed08b0/iso8601-0.1.12.tar.gz"
     sha256 "49c4b20e1f38aa5cf109ddcd39647ac419f928512c869dc01d5c7098eddede82"
+  end
+
+  resource "wheel" do
+    url "https://files.pythonhosted.org/packages/ed/46/e298a50dde405e1c202e316fa6a3015ff9288423661d7ea5e8f22f589071/wheel-0.36.2.tar.gz"
+    sha256 "e11eefd162658ea59a60a0f6c7d493a7190ea4b9a85e335b33489d9f17e0245e"
   end
 
   resource "jsonschema" do
