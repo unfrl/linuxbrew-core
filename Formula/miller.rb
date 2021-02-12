@@ -29,7 +29,7 @@ class Miller < Formula
                           "--disable-dependency-tracking"
     system "make"
     # Time zone related tests fail. Reported upstream https://github.com/johnkerl/miller/issues/237
-    system "make", "check" if !OS.mac? && ENV["CI"]
+    system "make", "check" if !OS.mac? && ENV["HOMEBREW_GITHUB_ACTIONS"]
     system "make", "install"
   end
 
