@@ -11,6 +11,7 @@ class Gopass < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "19afe4d3420e63828d826f7e94e9f26c5443dcced190eb2686c4069f4482fd59"
     sha256 cellar: :any_skip_relocation, catalina:      "6c35471aa4ef7184ba97f04823cf93be21e9de80516a45dfadf31f2d54d65ca9"
     sha256 cellar: :any_skip_relocation, mojave:        "9434fa19e3b85cb63c9a3391e51baf351d1cc8196b583ee3896df5084d762709"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5844b0cf8ba8eae45234f7da154856c4b729a1daf7394e7cc993d6ded5b0e578"
   end
 
   depends_on "go" => :build
