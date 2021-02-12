@@ -40,7 +40,7 @@ class Emacs < Formula
     depends_on "texinfo" => :build
   end
 
-  disable! date: "2020-06-09", because: "cannot currently build under GitHub Actions CI" if ENV["CI"]
+  disable! date: "2020-06-09", because: "cannot currently build under GitHub Actions CI" if ENV["HOMEBREW_GITHUB_ACTIONS"]
 
   depends_on "pkg-config" => :build
   depends_on "gnutls"
