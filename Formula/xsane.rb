@@ -36,7 +36,7 @@ class Xsane < Formula
 
   test do
     # (xsane:27015): Gtk-WARNING **: 12:58:53.105: cannot open display
-    return if !OS.mac? && ENV["CI"]
+    return if !OS.mac? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     system "#{bin}/xsane", "--version"
   end
