@@ -13,6 +13,7 @@ class Dash < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "62ab16e52b3e756798263305a6912bfef23887fce354dd5322b4a41d2c76edd2"
     sha256 cellar: :any_skip_relocation, catalina:      "fb00c85446d5884bf836ee3dd2c0756d8291820f2c8098e2ad0674ddc17d22f2"
     sha256 cellar: :any_skip_relocation, mojave:        "1046e39d35af2b4a0a1b21ca8455015e0a3d61a79374db2079b072ab4e560ac7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4882f34f114499441557e021c4f6958a4e5915e2d60bf1619159911f606e28fb"
   end
 
   depends_on "autoconf" => :build
