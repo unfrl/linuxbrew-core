@@ -10,6 +10,7 @@ class Tig < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "7182cb61a5f767710e6ad1d62abdd95454396e1dabcf77c6a1eb2fb87352b66a"
     sha256 cellar: :any_skip_relocation, catalina:      "0f63ed7e08ee5099695a7868057ce70903f411bedbf95939bd1161c24b42ccef"
     sha256 cellar: :any,                 mojave:        "64c2c022ceb003be21ca97d84a288cd5796c571972735331029af6dab110c57f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce5d48966f47869aa4cbde584e47b02c7f043b61a9610132a0207fbe04ae995e"
   end
 
   head do
