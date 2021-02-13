@@ -10,6 +10,7 @@ class Cointop < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "e37d627fb16cc38a99d995602ab0ca4e58c6582df9603f217dee2bfffc663825"
     sha256 cellar: :any_skip_relocation, catalina:      "3a026ea42ce37e066475fc4602cfd68b919a1fc824f4a00189c79e6386f2c250"
     sha256 cellar: :any_skip_relocation, mojave:        "a834cc71a076e48c8a9986487d20bc100bbc9fe260cf10bf7656c92c95e4fb40"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bcd8f38f33b2cf15bcf5bcbc4551381d7adf92ee5acdc6a1db6c48dbf33ef9ba"
   end
 
   depends_on "go" => :build
