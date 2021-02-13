@@ -7,10 +7,11 @@ class Thrift < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "3eb24126da5db23fd34bfd466de7fc1ac5007aad0b733d0382024bfee13bd3ad"
-    sha256 cellar: :any, big_sur:       "04f6c25fd0d50182ba07a301af0e1665a6dde9088e9b0c9021850d3371ff80cb"
-    sha256 cellar: :any, catalina:      "7d38c3d24b260bbba6908132fb65a75083f8395881b56d64510972cb9edae513"
-    sha256 cellar: :any, mojave:        "09f0659c65f5ef81ca8d9787ce2defb877eb324528d4841991c78adc82b09f59"
+    sha256 cellar: :any,                 arm64_big_sur: "3eb24126da5db23fd34bfd466de7fc1ac5007aad0b733d0382024bfee13bd3ad"
+    sha256 cellar: :any,                 big_sur:       "04f6c25fd0d50182ba07a301af0e1665a6dde9088e9b0c9021850d3371ff80cb"
+    sha256 cellar: :any,                 catalina:      "7d38c3d24b260bbba6908132fb65a75083f8395881b56d64510972cb9edae513"
+    sha256 cellar: :any,                 mojave:        "09f0659c65f5ef81ca8d9787ce2defb877eb324528d4841991c78adc82b09f59"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8592a9283baf3e9aa6bb50d8fe7310e37d1d5f15596f69f8fda81506f2b23c1"
   end
 
   head do
