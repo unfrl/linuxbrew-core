@@ -10,6 +10,7 @@ class Glances < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "27690378cfd22dfb6b7ace07409abfb0d0ec1ef452492aad352eee852b005258"
     sha256 cellar: :any_skip_relocation, catalina:      "9b5c8bf188496b2b74ca32b66402cc423dfcd9ce193b9c9c4b3b1bc0246c1275"
     sha256 cellar: :any_skip_relocation, mojave:        "abc3f5bece445731db56508950a3c841631f835c712fe0c8afed8223b73d4387"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5cdc167a5c11a0b7b0a8867296e009f94222a6debf192af254f81166f1fdfcb4"
   end
 
   depends_on "python@3.9"
