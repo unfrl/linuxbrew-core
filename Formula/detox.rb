@@ -10,6 +10,7 @@ class Detox < Formula
     sha256 big_sur:       "3238d5e066a6caa95aa195f33076013557808c93d0d8580361e3e7f7ef14c2e4"
     sha256 catalina:      "baacd18dacb6d6f7e860be0d09f16a1a2b3d88da595eaa26707ed6ecac874173"
     sha256 mojave:        "26e7f19c4266c7365dc07dbdda15311cccfc44cd3d4fad9244c495dcf54a0948"
+    sha256 x86_64_linux:  "2d32f801ca5bf16d98454937c66142fd9e77cc51373326ecbb8006c97476e3d9"
   end
 
   depends_on "autoconf" => :build
