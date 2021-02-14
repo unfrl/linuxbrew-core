@@ -1,15 +1,14 @@
 class Gjs < Formula
   desc "JavaScript Bindings for GNOME"
   homepage "https://gitlab.gnome.org/GNOME/gjs/wikis/Home"
-  url "https://download.gnome.org/sources/gjs/1.66/gjs-1.66.1.tar.xz"
-  sha256 "8d4240455eff642c8bf6d9805077e33e0a60cb2ea13f77a55f7f30c29668344c"
+  url "https://download.gnome.org/sources/gjs/1.66/gjs-1.66.2.tar.xz"
+  sha256 "bd7f5f8b171277cc0bb9ee1754b0240b62f06a76b8b18c968cf471b34ab34e59"
   license all_of: ["LGPL-2.0-or-later", "MIT"]
 
   bottle do
-    sha256 big_sur:     "1d10fa86fecf3d354dc595db175548427f112943f84a5076222b978c9aff9cf7"
-    sha256 catalina:    "819aaf721030c22a9f479fca06f52490a2df2b9d2731377d35bf017509723a17"
-    sha256 mojave:      "bc1a84cd054dc1b0918f956b9c88601edf95af714a3a41e08ec3c6c310d4d2c3"
-    sha256 high_sierra: "2289aed2c52497f646b73861b4d7f6291a860abf332c5cab65f3581c441b2ad9"
+    sha256 big_sur:  "ed18080951a9b2cb2d3ff96e3bf17c91f488cd7499049c244957ae659ce9ab8d"
+    sha256 catalina: "7bceef6e1b571940c226637d87d1e16eedfa3f575cdea33721a5a44cf78e6235"
+    sha256 mojave:   "e343d4c00eb3de60ef83b019a5df16769f64e79a26b3c72898a5cae91559a8ce"
   end
 
   depends_on "meson" => :build
@@ -35,8 +34,8 @@ class Gjs < Formula
   end
 
   resource "mozjs78" do
-    url "https://archive.mozilla.org/pub/firefox/releases/78.2.0esr/source/firefox-78.2.0esr.source.tar.xz"
-    sha256 "965ccfcbb8c0aa97639911997c54be0fcf896fd388b03138952089af675ea918"
+    url "https://archive.mozilla.org/pub/firefox/releases/78.7.1esr/source/firefox-78.7.1esr.source.tar.xz"
+    sha256 "5042783e2cf94d21dd990d2083800f05bc32f8ba65532a715c7be3cb7716b837"
   end
 
   def install
@@ -59,11 +58,17 @@ class Gjs < Formula
     resource("mozjs78").stage do
       inreplace "build/moz.configure/toolchain.configure",
                 "sdk_max_version = Version('10.15.4')",
-                "sdk_max_version = Version('11.0')"
+                "sdk_max_version = Version('11.99')"
       inreplace "config/rules.mk",
                 "-install_name $(_LOADER_PATH)/$(SHARED_LIBRARY) ",
                 "-install_name #{lib}/$(SHARED_LIBRARY) "
       inreplace "old-configure", "-Wl,-executable_path,${DIST}/bin", ""
+
+      # Fix Big Sur build
+      # Backport of https://hg.mozilla.org/mozilla-central/rev/c991b4d04c08d6fdd8228d9cf98c1f9d3c24f9ac
+      inreplace "python/mozbuild/mozbuild/virtualenv.py",
+                "os.environ['MACOSX_DEPLOYMENT_TARGET'] = sysconfig_target",
+                "os.environ['MACOSX_DEPLOYMENT_TARGET'] = str(sysconfig_target)"
 
       mkdir("build") do
         xy = Language::Python.major_minor_version "python3"

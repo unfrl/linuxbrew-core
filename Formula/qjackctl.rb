@@ -1,8 +1,8 @@
 class Qjackctl < Formula
   desc "Simple Qt application to control the JACK sound server daemon"
   homepage "https://qjackctl.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/qjackctl/qjackctl/0.9.0/qjackctl-0.9.0.tar.gz"
-  sha256 "5196c5c01b7948c1a8ca37cd3198a7f0fe095a99a34a67086abd3466855b4abd"
+  url "https://downloads.sourceforge.net/project/qjackctl/qjackctl/0.9.1/qjackctl-0.9.1.tar.gz"
+  sha256 "4fbe4c98ec5ce45efdd6a1088e2f5b208f5bcce994a8697b0bc96ecee99be254"
   license "GPL-2.0-or-later"
   head "https://git.code.sf.net/p/qjackctl/code.git"
 
@@ -12,9 +12,9 @@ class Qjackctl < Formula
   end
 
   bottle do
-    sha256 big_sur:  "2b1d7e384d27c5a4a0efebeaf17c4d537bd0b54e3a559858974fc202e2bc74eb"
-    sha256 catalina: "5a5eebb3680306820a64891b9eaf06fdb9fc0f7769ed7f870fd682ab41de718e"
-    sha256 mojave:   "96b34130264ef5bd30bd1c8cc4ac4bb149041df187daacf6fa687f5221bdb103"
+    sha256 big_sur:  "27f1483fa8d07de09612aa321728bddc11cd67fabb16ec19ee95aac1a1e037b6"
+    sha256 catalina: "93a7cc8b1101d27345e0a35c198453178c8a7384d43fb22303117acff8fec90c"
+    sha256 mojave:   "369a21fffa390380d0b9d3c16507c4626436d0367a7bbc073c0ec4eb0689dad7"
   end
 
   depends_on "pkg-config" => :build

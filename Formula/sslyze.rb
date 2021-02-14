@@ -6,8 +6,8 @@ class Sslyze < Formula
   license "AGPL-3.0-only"
 
   stable do
-    url "https://files.pythonhosted.org/packages/0b/85/a3a05d338c1860caf491dfa92517c93088f7e9c852600735c83f31375b6a/sslyze-4.0.1.tar.gz"
-    sha256 "c5b64a3c13b7a5e9f23ee04158bdcc408822834adb711cfcc98dfcd587eb86dc"
+    url "https://files.pythonhosted.org/packages/ca/3a/2d895ec7b0ce619dda1e05f3a6dd901c64be09f18c3007479f34316ac0c8/sslyze-4.0.2.tar.gz"
+    sha256 "3c5a8fa377e33b5c9d49536175e815a6ae94c0959c1f7c7751ec269178a83a7e"
 
     resource "nassl" do
       url "https://github.com/nabla-c0d3/nassl/archive/4.0.0.tar.gz"
@@ -16,10 +16,9 @@ class Sslyze < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 big_sur:      "803e170a2e6371f96887741e51ae8cca487ebfdf7b864d1c871fd00c14a3ec1c"
-    sha256 cellar: :any,                 catalina:     "59f008974fe6cf172d5dd1ec69e144f76208d63688569683980cda09b709d899"
-    sha256 cellar: :any,                 mojave:       "80662343bef03f1da2339aa77942455e265e16cd13f2c1e367abcbaf19dd9d1c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e472eea6816248d8c6669513e0288a0dd48a85c51cd0e7a4a3186d55bc055616"
+    sha256 cellar: :any, big_sur:  "9dc44847b5e2bbf4ca3fb2582470161d4d10edc6ffb86efdcad215617bc5a20c"
+    sha256 cellar: :any, catalina: "cc7af9d762696aeafd91455d7852e5ed5b2186c5fe68eadec957bee4b993123c"
+    sha256 cellar: :any, mojave:   "b14cdf4a1b9236db58cc707cb408dab14add2ca81daf9410942099151687a318"
   end
 
   head do
@@ -36,13 +35,13 @@ class Sslyze < Formula
   depends_on "python@3.9"
 
   resource "cffi" do
-    url "https://files.pythonhosted.org/packages/66/6a/98e023b3d11537a5521902ac6b50db470c826c682be6a8c661549cb7717a/cffi-1.14.4.tar.gz"
-    sha256 "1a465cbe98a7fd391d47dce4b8f7e5b921e6cd805ef421d04f5f66ba8f06086c"
+    url "https://files.pythonhosted.org/packages/a8/20/025f59f929bbcaa579704f443a438135918484fffaacfaddba776b374563/cffi-1.14.5.tar.gz"
+    sha256 "fd78e5fee591709f32ef6edb9a015b4aa1a5022598e36227500c8f4e02328d9c"
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/b7/82/f7a4ddc1af185936c1e4fa000942ffa8fb2d98cff26b75afa7b3c63391c4/cryptography-3.3.1.tar.gz"
-    sha256 "7e177e4bea2de937a584b13645cab32f25e3d96fc0bc4a4cf99c27dc77682be6"
+    url "https://files.pythonhosted.org/packages/d4/85/38715448253404186029c575d559879912eb8a1c5d16ad9f25d35f7c4f4c/cryptography-3.3.2.tar.gz"
+    sha256 "5a60d3780149e13b7a6ff7ad6526b38846354d11a15e21068e57073e29e19bed"
   end
 
   resource "pycparser" do
