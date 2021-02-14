@@ -11,6 +11,7 @@ class Inetutils < Formula
     sha256 cellar: :any, big_sur:       "31f0fdd6e2bdc5ed3e25d46aa8c47c2e0d6c9fe13011fe4c388388eead919676"
     sha256 cellar: :any, catalina:      "8fd3005c6e2914ee9d3d2f513bfa903827a94a74a232f1553d9a113aba1eddc2"
     sha256 cellar: :any, mojave:        "85a50b1e624497625bea4c836be1005dfd60c11814778e09153acf256a9e3992"
+    sha256               x86_64_linux:  "06a921eedb9bd9d64fd90e30ed86c38e8066d408cfce9be20c2464fe3da84c58"
   end
 
   depends_on "libidn"
