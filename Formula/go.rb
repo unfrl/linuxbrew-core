@@ -2,17 +2,16 @@ class Go < Formula
   desc "Open source programming language to build simple/reliable/efficient software"
   homepage "https://golang.org"
   license "BSD-3-Clause"
-  revision 1
 
   stable do
     if Hardware::CPU.arm?
       url "https://golang.org/dl/go1.16rc1.src.tar.gz"
       sha256 "6a33569f9d0d21db31614086cc2a4f0fbc683b41c1c53fb512a1341ce5763ff5"
-      version "1.15.7"
+      version "1.15.8"
     else
-      url "https://golang.org/dl/go1.15.7.src.tar.gz"
-      mirror "https://fossies.org/linux/misc/go1.15.7.src.tar.gz"
-      sha256 "8631b3aafd8ecb9244ec2ffb8a2a8b4983cf4ad15572b9801f7c5b167c1a2abc"
+      url "https://golang.org/dl/go1.15.8.src.tar.gz"
+      mirror "https://fossies.org/linux/misc/go1.15.8.src.tar.gz"
+      sha256 "540c0ab7781084d124991321ed1458e479982de94454a98afab6acadf38497c2"
     end
 
     go_version = version.major_minor
@@ -28,11 +27,10 @@ class Go < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "142cd5c1aaec872347771022567305de891bcfd3d5563bc66860f35f2416a1a0"
-    sha256 big_sur:       "f9fafcc83029a1f568e586a8acbd95834d35b03153d6de8f9b52db97313c65d0"
-    sha256 catalina:      "591f8cb8670af19adffa3917416c36d0222f0010f078851f452f8ac0305f4558"
-    sha256 mojave:        "61e4f758c48b7b6cf5d302328bf34d72be2316606d1f93f4152934b874319c84"
-    sha256 x86_64_linux:  "6225874716c6d724ff19c1513c455b3cccc8e697210bf2627e2a39b64b80e7cf"
+    sha256 arm64_big_sur: "5075e91f2c7fe5496d9fe50267b090d7372dd6b305eedd3424193c265fc268b8"
+    sha256 big_sur:       "96827fc4e223eaaffe52876ee6828c54f6f264cfeb42ca2335064fb1b708e62f"
+    sha256 catalina:      "61a70ed89335dc8819b278670bf2919a69fa3909a316a3acc6aa2d2ac07a1374"
+    sha256 mojave:        "3500c34a8659c2c1f0fe4f0e41dc0a64d77841f31bde38e0c94139698a1e02b1"
   end
 
   head do
