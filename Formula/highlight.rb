@@ -11,6 +11,7 @@ class Highlight < Formula
     sha256 big_sur:       "9a7c7481b761f6e679d1d23fa43096ed0f7634e4fd8d6819212cb16d5c92da99"
     sha256 catalina:      "574afc4567ba334842f54e3b1383f887b85787acdfd7ed00236d4226ea7ea239"
     sha256 mojave:        "8700ff1859f02d5453d3ceac994424f531d76f21f965557b043cecc1d07bf9e4"
+    sha256 x86_64_linux:  "7b3dbba81920b4c70b0eb745f4a2b58300ef842028183533e70c8e4c514c48cd"
   end
 
   depends_on "boost" => :build
