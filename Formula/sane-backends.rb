@@ -1,8 +1,8 @@
 class SaneBackends < Formula
   desc "Backends for scanner access"
   homepage "http://www.sane-project.org/"
-  url "https://gitlab.com/sane-project/backends/uploads/8bf1cae2e1803aefab9e5331550e5d5d/sane-backends-1.0.31.tar.gz"
-  sha256 "4a3b10fcb398ed854777d979498645edfe66fcac2f2fd2b9117a79ff45e2a5aa"
+  url "https://gitlab.com/sane-project/backends/uploads/104f09c07d35519cc8e72e604f11643f/sane-backends-1.0.32.tar.gz"
+  sha256 "3a28c237c0a72767086202379f6dc92dbb63ec08dfbab22312cba80e238bb114"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,12 +11,10 @@ class SaneBackends < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_big_sur: "8f2a4b8bc690ef88a070e474e014b36ff9237fc90e7e888c549d0bb391d51129"
-    sha256 big_sur:       "14dff0d10d2763cea28bf86e5ada50bc6d966ce94ece64dd4026bc88815d2885"
-    sha256 catalina:      "4343d5c9db23d58387e2646d73a5d9b07f2dcebb90fb142fd5d21d802a358c16"
-    sha256 mojave:        "206176cb89375cedd1b93bf07b4611186c358604bbce31bbbf43637b2e225e1f"
-    sha256 x86_64_linux:  "8fc5e428b5f7ce23abafc1de37cd4b088afc142edb9087ba9f62c1c67fe06301"
+    sha256 arm64_big_sur: "1ebc21e81f57ecb00c64799e448dff7606c8bea5a66123169af37bed634083ac"
+    sha256 big_sur:       "bcdbaa5208359537721be14fbf2420ff07c573d62a480cb0fbafd5cb0be4334b"
+    sha256 catalina:      "077644bb297e1e9e232d67ade77ef46bb8df7745a48444129e0b996d8fa2bec9"
+    sha256 mojave:        "d7a6d9cb0ef356bef081454e6ee551d0975be4444ce77d048b625b9f44460ed2"
   end
 
   head do
