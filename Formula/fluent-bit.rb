@@ -22,7 +22,7 @@ class FluentBit < Formula
   depends_on "cmake" => :build
   depends_on "flex" => :build
 
-  on_linux do
+  unless OS.mac?
     depends_on "openssl@1.1"
 
     # Don't install service files
