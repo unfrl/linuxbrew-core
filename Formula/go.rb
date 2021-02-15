@@ -31,6 +31,7 @@ class Go < Formula
     sha256 big_sur:       "96827fc4e223eaaffe52876ee6828c54f6f264cfeb42ca2335064fb1b708e62f"
     sha256 catalina:      "61a70ed89335dc8819b278670bf2919a69fa3909a316a3acc6aa2d2ac07a1374"
     sha256 mojave:        "3500c34a8659c2c1f0fe4f0e41dc0a64d77841f31bde38e0c94139698a1e02b1"
+    sha256 x86_64_linux:  "7f957958448de12b3d462df5adc2c7edd90288f372636e04782e1fb44add55de"
   end
 
   head do
