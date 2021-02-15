@@ -38,7 +38,7 @@ __END__
 --- pokerstove-1.0/CMakeLists.txt.ORIG	2021-02-14 19:26:14.000000000 +0000
 +++ pokerstove-1.0/CMakeLists.txt	2021-02-14 19:26:29.000000000 +0000
 @@ -14,8 +14,8 @@
-
+ 
  # Set up gtest. This must be set up before any subdirectories are
  # added which will use gtest.
 -add_subdirectory(src/ext/googletest)
