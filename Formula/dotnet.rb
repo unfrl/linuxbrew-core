@@ -2,8 +2,8 @@ class Dotnet < Formula
   desc ".NET Core"
   homepage "https://dotnet.microsoft.com/"
   url "https://github.com/dotnet/source-build.git",
-      tag:      "v5.0.102-SDK",
-      revision: "de79212ef1b49ee853e09d079445cdeb5db56348"
+      tag:      "v5.0.103-SDK",
+      revision: "ccff33e9e87656ab8349dba6779363b15d53d56a"
   license "MIT"
 
   livecheck do
@@ -12,9 +12,9 @@ class Dotnet < Formula
   end
 
   bottle do
-    sha256 cellar: :any, big_sur:  "68a93a15aa4db08f45dd3dd505a5103b8305586657b4b94ae4cbf1323462f51c"
-    sha256 cellar: :any, catalina: "1ba952b990bbd7b89d3a4da62714fac9efcffcd047af1d6a038a22dcb6ec30ba"
-    sha256 cellar: :any, mojave:   "f51ec76312e0001a4bf0ad14dec2c1f3fe642e6d8f807ea8d6b2e7d7beb7d962"
+    sha256 cellar: :any, big_sur:  "5c84f114b503fb06056fbb92ff9ef62a577200e24b9db5d38805527010d301e3"
+    sha256 cellar: :any, catalina: "dccd1ebb58287b14a845f9c6cde98f449bfd3bbc94ea532f03917e486efb1e3f"
+    sha256 cellar: :any, mojave:   "f9bd9adff1ec683b00f63d6349bd50a22a8cf51fed9c7dd0c5a55b9aa6ddfe62"
   end
 
   depends_on "cmake" => :build
@@ -23,11 +23,6 @@ class Dotnet < Formula
   depends_on "curl"
   depends_on "icu4c"
   depends_on "openssl@1.1"
-
-  # Fix the find command used for logger
-  # Use TargetOverrideRid (osx-x64) instead of TargetRid (osx.10.13-x64)
-  # https://github.com/dotnet/source-build/pull/1962
-  patch :DATA
 
   def install
     # Arguments needed to not artificially time-limit downloads from Azure.
@@ -89,30 +84,3 @@ class Dotnet < Formula
                  shell_output("#{bin}/dotnet run --framework #{target_framework} #{testpath}/test.dll a b c")
   end
 end
-__END__
-diff --git a/repos/Directory.Build.targets b/repos/Directory.Build.targets
-index 1aafae1ef4e9f9fc5b8cb1dedca940a038545c8a..91b00d04598c979ba2ab042d23f645c6fc97062e 100644
---- a/repos/Directory.Build.targets
-+++ b/repos/Directory.Build.targets
-@@ -97,7 +97,7 @@
-          See https://github.com/dotnet/source-build/issues/1914 for details. -->
-     <ReplaceTextInFile InputFile="$(EngCommonToolsShFile)"
-                        OldText="local logger_path=&quot;$toolset_dir/$_InitializeBuildToolFramework/Microsoft.DotNet.Arcade.Sdk.dll&quot;"
--                       NewText="logger_path=&quot;%24toolset_dir&quot;/%24%28cd &quot;$toolset_dir&quot; &amp;&amp; find -name Microsoft.DotNet.Arcade.Sdk.dll -regex &apos;.*netcoreapp2.1.*\|.*net5.0.*&apos;)" />
-+                       NewText="logger_path=&quot;%24toolset_dir&quot;/%24%28cd &quot;$toolset_dir&quot; &amp;&amp; find . -name Microsoft.DotNet.Arcade.Sdk.dll \( -regex &apos;.*netcoreapp2.1.*&apos; -or -regex &apos;.*net5.0.*&apos; \) )" />
- 
-     <WriteLinesToFile File="$(RepoCompletedSemaphorePath)UpdateBuildToolFramework.complete" Overwrite="true" />
-   </Target>
-diff --git a/repos/runtime.proj b/repos/runtime.proj
-index 6cb3e80ab1808704973ee1ef6a7f2f5171752877..74d9064f711f3cbb8ec02fd392113766d4603884 100644
---- a/repos/runtime.proj
-+++ b/repos/runtime.proj
-@@ -15,7 +15,7 @@
-     <!-- Additional Targets -->
-   <Target Name="InstallJustBuiltRuntime" AfterTargets="RemoveBuiltPackagesFromCache">
-     <!-- Install the runtime that was just built to be used by downstream repos, namely, aspnetcore -->
--    <Exec Command="tar -xvf $(SourceBuiltAssetsDir)dotnet-runtime-$(runtimeOutputPackageVersion)-$(TargetRid).tar.gz -C $(DotNetCliToolDir)" />
-+    <Exec Command="tar -xvf $(SourceBuiltAssetsDir)dotnet-runtime-$(runtimeOutputPackageVersion)-$(OverrideTargetRid).tar.gz -C $(DotNetCliToolDir)" />
-   </Target>
- 
- 

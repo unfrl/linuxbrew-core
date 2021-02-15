@@ -3,16 +3,16 @@ class GalleryDl < Formula
 
   desc "Command-line downloader for image-hosting site galleries and collections"
   homepage "https://github.com/mikf/gallery-dl"
-  url "https://files.pythonhosted.org/packages/a1/29/43cabfe6b683885c14c477a9735cd4895fc2f96d6227d220a4775d9aeeaa/gallery_dl-1.16.4.tar.gz"
-  sha256 "744deddf22fdbc51d1d89776c41b0f1127d2b4d212bd092718fad2c0dc7f160f"
+  url "https://files.pythonhosted.org/packages/f8/93/f761d13840c8b93bd79b097ab44145c0ea03faf063b94c6fda2fdf36901c/gallery_dl-1.16.5.tar.gz"
+  sha256 "fb8c927630b292abf5052f8f75c3eebccbdffa609566768d4dc4d9665df91e68"
   license "GPL-2.0-only"
   head "https://github.com/mikf/gallery-dl.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "fd14829617fb6934a7a57ab75561dd28c9489728c2030c0c95333899cf16bbd3"
-    sha256 cellar: :any_skip_relocation, big_sur:       "bf144bfc7a489c35e9dc30dc75896b3e1974f6476aa3783d1edef343f3fdc124"
-    sha256 cellar: :any_skip_relocation, catalina:      "c4bc1aa0d3a46f1e69b88ced437423f4c1f8c2e5616353cb1444c16742d90032"
-    sha256 cellar: :any_skip_relocation, mojave:        "42763978fe0efa75fc35b0e19d700452b969cc5752921c286c6f14ef1bcc0bf5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "d30ac6a9911bf26b388f4dc6d0a20412be5f4d993f3839b4d6eda1327192b6e4"
+    sha256 cellar: :any_skip_relocation, big_sur:       "46f2173d979f6dfe69ba7338122a14348334706ef6161376dc07982252df2433"
+    sha256 cellar: :any_skip_relocation, catalina:      "285699bb04b95bd24a73add942fd1ebeeaaac87de87a32ee0f71a0c26a3d303b"
+    sha256 cellar: :any_skip_relocation, mojave:        "d91eac4e85cfc99832e3376cef732b57c88245acf1c085c35602729b3141652c"
   end
 
   depends_on "python@3.9"
@@ -38,8 +38,8 @@ class GalleryDl < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/29/e6/d1a1d78c439cad688757b70f26c50a53332167c364edb0134cadd280e234/urllib3-1.26.2.tar.gz"
-    sha256 "19188f96923873c92ccb987120ec4acaa12f0461fa9ce5d3d0772bc965a39e08"
+    url "https://files.pythonhosted.org/packages/d7/8d/7ee68c6b48e1ec8d41198f694ecdc15f7596356f2ff8e6b1420300cf5db3/urllib3-1.26.3.tar.gz"
+    sha256 "de3eedaad74a2683334e282005cd8d7f22f4d55fa690a2a1020a416cb0a47e73"
   end
 
   def install

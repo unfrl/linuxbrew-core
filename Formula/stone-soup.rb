@@ -1,9 +1,9 @@
 class StoneSoup < Formula
   desc "Dungeon Crawl Stone Soup: a roguelike game"
   homepage "https://crawl.develz.org/"
-  url "https://github.com/crawl/crawl/archive/0.26.0.tar.gz"
-  sha256 "6306c835246057bf91b6690fde14c2c3433ebe1d526876f96c46fab6dc109d45"
-  license "GPL-2.0"
+  url "https://github.com/crawl/crawl/archive/0.26.1.tar.gz"
+  sha256 "c8c6abbefa7f21383ea77cd017033050471e06c60ea4deebd033f5198bc39596"
+  license "GPL-2.0-or-later"
 
   livecheck do
     url "https://crawl.develz.org/download.htm"
@@ -11,10 +11,10 @@ class StoneSoup < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "0985f51f3dec4da7085b6b8c4c28ad650f0abfcca0ff93b2f30b15b8bb408cba"
-    sha256 big_sur:       "0023d33f5c5205df2d97ed298dc40155d90db29f986bf58825e1f8c33a4f5375"
-    sha256 catalina:      "b1f22b829dd8fd185559988b5f77519b388b9bb928ee4c8ab43b904898d3e07c"
-    sha256 mojave:        "73e93b52661b35d99cde73d7b9ce3ed655cd4da4389b2bed582f2c791745b9ed"
+    sha256 arm64_big_sur: "d136c116fe8948a031660fbe114cf7bf808312179d99f90d7edae96a82b5a503"
+    sha256 big_sur:       "e9dc79251315b89b4c9b1fdc4f3a0b33cf3e386c7258f849b6ba4961aa668e61"
+    sha256 catalina:      "620b9518a611c1496206fbf76a428ad41c471fb1d22d38430245a33e3036206e"
+    sha256 mojave:        "b8b7913385df4b0930bd3dc4c046b1b8ed59c4ebad8cdc2a4dcbb9e2546d9565"
   end
 
   depends_on "pkg-config" => :build
@@ -24,8 +24,8 @@ class StoneSoup < Formula
   depends_on "sqlite"
 
   resource "PyYAML" do
-    url "https://files.pythonhosted.org/packages/64/c2/b80047c7ac2478f9501676c988a5411ed5572f35d1beff9cae07d321512c/PyYAML-5.3.1.tar.gz"
-    sha256 "b8eac752c5e14d3eca0e6dd9199cd627518cb5ec06add0de9d32baeee6fe645d"
+    url "https://files.pythonhosted.org/packages/a0/a4/d63f2d7597e1a4b55aa3b4d6c5b029991d3b824b5bd331af8d4ab1ed687d/PyYAML-5.4.1.tar.gz"
+    sha256 "607774cbba28732bfa802b54baa7484215f530991055bb562efbed5b2f20a45e"
   end
 
   def install
