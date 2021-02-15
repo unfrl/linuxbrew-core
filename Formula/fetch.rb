@@ -11,6 +11,7 @@ class Fetch < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "af283a1ba60884d6677b139940fa0b4c2e172c52b8e7661963dfd99cd775db46"
     sha256 cellar: :any_skip_relocation, catalina:      "731906b2e52f0b4fbb8a8929ae6821be11b0194b794e716a6747d869eca3203d"
     sha256 cellar: :any_skip_relocation, mojave:        "e52be0f1be40f3e6e67a431b367cb2080cd9ffbe9be7f59d15aaea9d286ac5ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "609326ce5af485c8e802d06edc19513293e5472ef45f3e7a7b5bf661bf8bf2b5"
   end
 
   depends_on "go" => :build
