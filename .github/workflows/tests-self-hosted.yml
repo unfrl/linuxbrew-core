@@ -11,6 +11,7 @@ env:
   GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED: 1
 jobs:
   tests-self-hosted:
+    if: github.repository == 'Homebrew/linuxbrew-core' && contains(github.event.pull_request.labels.*.name, 'self-hosted-ci')
     runs-on: self-hosted
     timeout-minutes: 4320
     container:
