@@ -4,6 +4,8 @@ on:
     paths-ignore:
       - "Formula/patchelf.rb"
       - "Formula/binutils.rb"
+env:
+  GCE_INSTANCE_ZONE: europe-west1-b
 jobs:
   start_vm:
     if: github.repository == 'Homebrew/linuxbrew-core' && contains(github.event.pull_request.labels.*.name, 'self-hosted-ci')

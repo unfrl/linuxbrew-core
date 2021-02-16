@@ -1,9 +1,11 @@
-name: Start VM
+name: Stop VM
 on:
   workflow_run:
     workflows: ["GitHub Actions CI (self-hosted)"]
     types:
       - completed
+env:
+  GCE_INSTANCE_ZONE: europe-west1-b
 jobs:
   stop_vm:
     runs-on: ubuntu-latest
