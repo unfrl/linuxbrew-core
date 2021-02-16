@@ -1,14 +1,14 @@
 class Arturo < Formula
   desc "Simple, modern and portable programming language for efficient scripting"
-  homepage "https://arturo-lang.io"
-  url "https://github.com/arturo-lang/arturo/archive/v0.9.6.tar.gz"
-  sha256 "b9028b97537a81f4bb7dff6c036ed84d951292e858653dbb2012b0ae069cd509"
+  homepage "https://github.com/arturo-lang/arturo"
+  url "https://github.com/arturo-lang/arturo/archive/v0.9.7.tar.gz"
+  sha256 "6c592598a454a1354d711e2ad6ee950cc51741726433a0b3395b488ebe3f52a4"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, big_sur:  "cd975a138c834193d32c9f76514153f38841ed3c9e8c37000dd045017124d2fe"
-    sha256 cellar: :any, catalina: "65a4a6052d7e932286165074d4faf3b4a81993c11ed769e0587d5854028babaa"
-    sha256 cellar: :any, mojave:   "2b6040141a9b688b998b64e099f85f99ad2002972541df8384c204eb444f7da5"
+    sha256 cellar: :any, big_sur:  "41839323ddd7df3ebd285753b585e80b8cdd8aa12398c979e5510c415fcd3ee7"
+    sha256 cellar: :any, catalina: "62eafe349de67ca3c97ecdc2487dde8700c9295155ee829957fe6d2421ef14dc"
+    sha256 cellar: :any, mojave:   "183fe6c792e94ffc9c50bc9ab138e6e11622284720798c0f0b01bb12b73b1373"
   end
 
   depends_on "nim" => :build
@@ -16,8 +16,8 @@ class Arturo < Formula
   depends_on "mysql"
 
   def install
-    system "./build.sh"
-    bin.install "bin/arturo"
+    inreplace "install", "ROOT_DIR=\"$HOME/.arturo\"", "ROOT_DIR=\"#{prefix}\""
+    system "./install"
   end
 
   test do

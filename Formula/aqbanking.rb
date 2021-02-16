@@ -1,10 +1,9 @@
 class Aqbanking < Formula
   desc "Generic online banking interface"
   homepage "https://www.aquamaniac.de/sites/aqbanking/"
-  url "https://www.aquamaniac.de/rdm/attachments/download/342/aqbanking-6.2.5.tar.gz"
-  sha256 "cf5b060e3ec7e3fc925687caf044d4df3dbf9595f23c4fe8ffad78f44af0d6df"
+  url "https://www.aquamaniac.de/rdm/attachments/download/354/aqbanking-6.2.6.tar.gz"
+  sha256 "47e2b2610792470300f31e6a8bf9d5b7568d1cf438679911c983939564129dd5"
   license "GPL-2.0-or-later"
-  revision 1
 
   livecheck do
     url "https://www.aquamaniac.de/rdm/projects/aqbanking/files"
@@ -12,9 +11,9 @@ class Aqbanking < Formula
   end
 
   bottle do
-    sha256 big_sur:  "c6a46d166e92a4960a233a8c0d5102b0cdfb2e65572626ffecb25181514041b3"
-    sha256 catalina: "f7ce647d390df601204701a43d7dc8e1db3368c554402eb5a400fc90843fd73d"
-    sha256 mojave:   "fccff67a872073b80829f72cfa5174e0da023fdb252bf8586899f338917b14d0"
+    sha256 big_sur:  "8b13d743e9da91d920529f19863e4f5802fd644bc80e7a9c273845ccc401b250"
+    sha256 catalina: "927f33fe980274424c76779969741859f04d0fc57462a801abe21c2a6c4b5af8"
+    sha256 mojave:   "8799ba10d558a50e2a377680855eedb79e34bbe6612d4cedee9f6a1cf6807aaa"
   end
 
   head do
@@ -33,11 +32,6 @@ class Aqbanking < Formula
   depends_on "libxmlsec1"
   depends_on "libxslt"
   depends_on "pkg-config" # aqbanking-config needs pkg-config for execution
-
-  patch do
-    url "https://github.com/aqbanking/aqbanking/commit/661fe19ceb351e86d3c684c304be1cd602cc37de.patch?full_index=1"
-    sha256 "c34185b16fa8b261f760e0b7ff38b6d21b6a4ee5593b8362fc0c1f030f0bb1d2"
-  end
 
   def install
     ENV.deparallelize
