@@ -4,8 +4,6 @@ on:
     paths-ignore:
       - "Formula/patchelf.rb"
       - "Formula/binutils.rb"
-env:
-  GCE_INSTANCE_ZONE: europe-west1-b
 jobs:
   start_vm:
     if: github.repository == 'Homebrew/linuxbrew-core' && contains(github.event.pull_request.labels.*.name, 'self-hosted-ci')
@@ -18,4 +16,4 @@ jobs:
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           export_default_credentials: true
       - name: Start VM
-        run: gcloud compute instances start linuxbrew-core1
+        run: gcloud compute instances start --zone=europe-west1-b linuxbrew-core1
