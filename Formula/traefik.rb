@@ -11,6 +11,7 @@ class Traefik < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "22511bd5adc2617fed1312b5af915b0f37b3427feed5613c01635525309b1582"
     sha256 cellar: :any_skip_relocation, catalina:      "a7ddd0876e6c99c7a0746beb71bf22c481195e59059825cb116793bd1cc3ca6e"
     sha256 cellar: :any_skip_relocation, mojave:        "98c7e41b68f2894ec058e11b6207d781098ca78738a9931a632d8269d03b092a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0a093dcef5bc06c306af494e3135f72e447b1e85c206c3eff442b95cce03f82"
   end
 
   depends_on "go" => :build
