@@ -3,38 +3,55 @@ require "language/node"
 class TreeSitter < Formula
   desc "Parser generator tool and incremental parsing library"
   homepage "https://tree-sitter.github.io/"
-  url "https://github.com/tree-sitter/tree-sitter/archive/0.18.0.tar.gz"
-  sha256 "574458dbc8b6761027d3090bc2fd474f17ea77d875d4713ed9260d0def125bce"
+  url "https://github.com/tree-sitter/tree-sitter/archive/v0.18.1.tar.gz"
+  sha256 "1d679ae60434938ca8fb874776da579064a25adf26deec91ed8587dded17bc7d"
   license "MIT"
   head "https://github.com/tree-sitter/tree-sitter.git"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any, arm64_big_sur: "bcb908e01eb052b68fb3780f12d9cf74da9b36967f9cd6be1f37ffcce5a65805"
-    sha256 cellar: :any, big_sur:       "99f761f4f254e03c4a1340389f0997e168695764f448984b691b4c2ed636a228"
-    sha256 cellar: :any, catalina:      "6acc385bf4be8cbbc3199a57c918346fc724f4da7afbdd3bc7612595b04d27c2"
-    sha256 cellar: :any, mojave:        "d15a8f3640166e717d4dd1f805b19aa48272c72d414bde3838d66a6a6d8c2197"
+    sha256 cellar: :any, arm64_big_sur: "09ccaf41f94622f3e76cc955b020dde931701655df0f69984127fb241db54c6c"
+    sha256 cellar: :any, big_sur:       "56771272b9191a093cf87383289115cedf0377556292367e647b6da536ac2e63"
+    sha256 cellar: :any, catalina:      "7dedbbe44434bcff54d9a4a1733833ab8a1a5cdf2f9e2de36f3ab941b7d5c590"
+    sha256 cellar: :any, mojave:        "67b1d17c842134054119843e0c931bc99d68ba7af94235755c6df7c64adff400"
   end
 
-  depends_on "emscripten" => [:build, :test]
   depends_on "node" => [:build, :test]
   depends_on "rust" => :build
 
-  def install
-    cd "lib/binding_web" do
-      system "npm", "install", *Language::Node.local_npm_install_args
-    end
-    system "script/build-wasm"
+  # emscripten does not currently work on Linux or ARM,
+  # so we skip building the wasm module there.
+  on_macos do
+    depends_on "emscripten" => [:build, :test] unless Hardware::CPU.arm?
+  end
 
+  def install
     system "make"
     system "make", "install", "PREFIX=#{prefix}"
+
+    # Build wasm module only on Intel macOS, since
+    # emscripten does not currently work on ARM or Linux
+    # NOTE: This step needs to be done *before* `cargo install`
+    on_macos do
+      unless Hardware::CPU.arm?
+        cd "lib/binding_web" do
+          system "npm", "install", *Language::Node.local_npm_install_args
+        end
+        system "script/build-wasm"
+      end
+    end
 
     cd "cli" do
       system "cargo", "install", *std_cargo_args
     end
 
-    %w[tree-sitter.js tree-sitter-web.d.ts tree-sitter.wasm package.json].each do |file|
-      (lib/"binding_web").install "lib/binding_web/#{file}"
+    # Install the wasm module into the prefix.
+    # NOTE: This step needs to be done *after* `cargo install`.
+    on_macos do
+      unless Hardware::CPU.arm?
+        %w[tree-sitter.js tree-sitter-web.d.ts tree-sitter.wasm package.json].each do |file|
+          (lib/"binding_web").install "lib/binding_web/#{file}"
+        end
+      end
     end
   end
 
@@ -100,13 +117,10 @@ class TreeSitter < Formula
     system ENV.cc, "test_program.c", "-L#{lib}", "-ltree-sitter", "-o", "test_program"
     assert_equal "tree creation failed", shell_output("./test_program")
 
-    # test `tree-sitter web-ui`
-    ENV.delete "CPATH"
-    system bin/"tree-sitter", "build-wasm"
-    fork do
-      exec bin/"tree-sitter", "web-ui"
+    on_macos do
+      # test `tree-sitter web-ui`
+      ENV.delete "CPATH"
+      system bin/"tree-sitter", "build-wasm" unless Hardware::CPU.arm?
     end
-    sleep 10
-    system "killall", "tree-sitter"
   end
 end
