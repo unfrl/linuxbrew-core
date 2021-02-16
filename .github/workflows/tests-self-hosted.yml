@@ -1,4 +1,4 @@
-name: GitHub Actions CI (self-hosted)
+name: SelfHosted
 on:
   pull_request:
     paths-ignore:

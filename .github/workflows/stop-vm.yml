@@ -1,7 +1,8 @@
 name: Stop VM
 on:
   workflow_run:
-    workflows: ["GitHub Actions CI (self-hosted)"]
+    workflows:
+      - SelfHosted
     types:
       - completed
 jobs:
