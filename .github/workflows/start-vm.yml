@@ -1,4 +1,4 @@
-name: VM Manager
+name: Start VM
 on:
   pull_request_target:
     paths-ignore:
@@ -17,17 +17,3 @@ jobs:
           export_default_credentials: true
       - name: Start VM
         run: gcloud compute instances start linuxbrew-core1
-  
-  stop_vm:
-    needs: tests-self-hosted
-    if: github.repository == 'Homebrew/linuxbrew-core' && contains(github.event.pull_request.labels.*.name, 'self-hosted-ci')
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up Google Cloud SDK
-        uses: google-github-actions/setup-gcloud@master
-        with:
-          project_id: ${{ secrets.GCP_PROJECT_ID }}
-          service_account_key: ${{ secrets.GCP_SA_KEY }}
-          export_default_credentials: true
-      - name: Stop VM
-        run: gcloud compute instances stop linuxbrew-core1
