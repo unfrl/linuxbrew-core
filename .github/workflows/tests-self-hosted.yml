@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.repository == 'Homebrew/linuxbrew-core' && contains(github.event.pull_request.labels.*.name, 'self-hosted-ci')
     outputs:
-      runner: ${{ steps.runner-from-label.outputs.runner }}
+      runner: ${{ steps.runner-from-label.outputs.result }}
     steps:
       - name: Get self hosted runner name from label
         id: runner-from-label
