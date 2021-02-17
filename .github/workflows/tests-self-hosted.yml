@@ -34,14 +34,13 @@ jobs:
               const regex = /linux-self-hosted-([0-9]+)/;
               var runner = labels.filter(item => item.name.match(regex))[0].name;
               console.log('Found self-hosted runner: ' + runner);
-              return `::set-output name=runner::${runner}`;
+              return `{\"os\":\"${runner}\"}`;
             }
   tests-self-hosted:
     needs: [get-runner-name-from-label]
-    runs-on: [self-hosted, '${{ matrix.os }}']
     strategy:
-      matrix:
-        os: needs.get-runner-name-from-label.outputs.runner
+      matrix: ${{fromJson(needs.get-runner-name-from-label.outputs.runner)}}
+    runs-on: [self-hosted, '${{ matrix.os }}']
     timeout-minutes: 4320
     container:
       image: homebrew/ubuntu16.04:master
