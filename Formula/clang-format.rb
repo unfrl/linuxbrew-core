@@ -7,12 +7,12 @@ class ClangFormat < Formula
   head "https://github.com/llvm/llvm-project.git"
 
   stable do
-    url "https://github.com/llvm/llvm-project/releases/download/llvmorg-11.0.1/llvm-11.0.1.src.tar.xz"
-    sha256 "ccd87c254b6aebc5077e4e6977d08d4be888e7eb672c6630a26a15d58b59b528"
+    url "https://github.com/llvm/llvm-project/releases/download/llvmorg-11.1.0/llvm-11.1.0.src.tar.xz"
+    sha256 "ce8508e318a01a63d4e8b3090ab2ded3c598a50258cc49e2625b9120d4c03ea5"
 
     resource "clang" do
-      url "https://github.com/llvm/llvm-project/releases/download/llvmorg-11.0.1/clang-11.0.1.src.tar.xz"
-      sha256 "73f572c2eefc5a155e01bcd84815751d722a4d3925f53c144acfb93eeb274b4d"
+      url "https://github.com/llvm/llvm-project/releases/download/llvmorg-11.1.0/clang-11.1.0.src.tar.xz"
+      sha256 "0a8288f065d1f57cb6d96da4d2965cbea32edc572aa972e466e954d17148558b"
     end
   end
 
@@ -23,12 +23,10 @@ class ClangFormat < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "bc823d2b0fe175abfecaf85f913035a4a27cec9054a2f094608f295f1a040069"
-    sha256 cellar: :any_skip_relocation, big_sur:       "a2a124fe20d721ad490731dad173da4c7a57d635792739680a45c40cecd48409"
-    sha256 cellar: :any_skip_relocation, catalina:      "c2a08aaf48ea39e832f9460c42c75b87f1296dc5c9360888a9eb297e3fd1ce28"
-    sha256 cellar: :any_skip_relocation, mojave:        "37a27e538177b4d9b44eeb6d7749301eba4422763994189cc50f1e2c6cc21344"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8537054186aa59e03e30dc556c9707993f94b95b23432ccfe5b3b6e09b8e5965"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "75d8d02db3431c770474fb5249e4ab051f0127084192a73e130d57a12b71c71b"
+    sha256 cellar: :any_skip_relocation, big_sur:       "9a8d102c310fa5f6eb4be1680ba85a69c0ebd9c14790df346ba9ed2656d63a2f"
+    sha256 cellar: :any_skip_relocation, catalina:      "3b0bf3e57d6347cc38913ab55be827c54d236cce927af06ef2cf55811a9926db"
+    sha256 cellar: :any_skip_relocation, mojave:        "c5a0b53844fd9dd4b29e2de30e41c6d92bc39638003ca565af1d057253a6d634"
   end
 
   depends_on "cmake" => :build

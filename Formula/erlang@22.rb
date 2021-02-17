@@ -2,8 +2,8 @@ class ErlangAT22 < Formula
   desc "Programming language for highly scalable real-time systems"
   homepage "https://www.erlang.org/"
   # Download tarball from GitHub; it is served faster than the official tarball.
-  url "https://github.com/erlang/otp/archive/OTP-22.3.4.14.tar.gz"
-  sha256 "0d1e1f1acf542a98248e388b877d34eba92f367fdcc5ee3ebde557dee60ef551"
+  url "https://github.com/erlang/otp/archive/OTP-22.3.4.15.tar.gz"
+  sha256 "05d388ee252fd04a8e9e62f3ea7be3b45a19f698d978452933a21138a383e80d"
   license "Apache-2.0"
 
   livecheck do
@@ -12,8 +12,9 @@ class ErlangAT22 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, catalina: "0a0f9f41d9d4b545788f4e1381e9931bbf309efcb6257159886746208f51666c"
-    sha256 cellar: :any, mojave:   "d3cdb633119399d67b8637284e5647bf0ac13c873cae657c14b840fbc118159b"
+    sha256 cellar: :any, big_sur:  "6c9e84e03872d58eb3a28fa15a3f5fae07ccb5c551d54fc1a14686968ad82682"
+    sha256 cellar: :any, catalina: "2f8c8823db04950966b563b6e354fc3927ebb65f5038c73eaf9a3b6df6243657"
+    sha256 cellar: :any, mojave:   "01c6bfa4e9d5898a1fcc151b3374059a089ceb15a17a66d4bd76a489ccca9d6a"
   end
 
   keg_only :versioned_formula
@@ -43,6 +44,13 @@ class ErlangAT22 < Formula
   patch do
     url "https://github.com/erlang/otp/commit/388622e9b626039c1e403b4952c2c905af364a96.patch?full_index=1"
     sha256 "85d3611fc071f06d421b9c7fae00b656fde054586bf69551aec38930d4086780"
+  end
+
+  # Fix build on Big Sur
+  # https://github.com/erlang/otp/pull/4523
+  patch do
+    url "https://github.com/erlang/otp/commit/a0883306c4716dee0808aa80e60228f171de1317.patch?full_index=1"
+    sha256 "6d93477766c4903a68fde686965f00092f31b182499da61713bbf448f5f1fabc"
   end
 
   def install

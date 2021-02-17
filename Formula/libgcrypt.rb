@@ -1,8 +1,8 @@
 class Libgcrypt < Formula
   desc "Cryptographic library based on the code from GnuPG"
   homepage "https://gnupg.org/related_software/libgcrypt/"
-  url "https://gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.9.1.tar.bz2"
-  sha256 "c5a67a8b9b2bd370fb415ed1ee31c7172e5683076493cf4a3678a0fbdf0265d9"
+  url "https://gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.9.2.tar.bz2"
+  sha256 "b2c10d091513b271e47177274607b1ffba3d95b188bbfa8797f948aec9053c5a"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,11 +11,10 @@ class Libgcrypt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "7849af82fef5359891b5422fd91bd2d91c348885b948d05a9979997d9c7b0e91"
-    sha256 cellar: :any,                 big_sur:       "702bf84a3cbeda128a0464af1c6bab4f6a6259912438e4695f141dbf42d602df"
-    sha256 cellar: :any,                 catalina:      "1da2db400fcf05296ada3218a18370f1a704301d68b664c583306fd755047c0a"
-    sha256 cellar: :any,                 mojave:        "efe02ce4db5308f3973ae8ed25b87741420e083cc8d325dc40ffac51e3cb185e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b383dce9accbda6ede071b95660340820f452b669a1222b83a23e7339e5b1e52"
+    sha256 cellar: :any, arm64_big_sur: "5b078ce8004306b1430b6764ba1ba7fb7d19a1e3aee058a6d714ad42d7a8af15"
+    sha256 cellar: :any, big_sur:       "3de65930f6d96b90ef2d945b34dbebfc889f91f3408f05d66a40dc105222eedb"
+    sha256 cellar: :any, catalina:      "ed1eb018869cee6a5475422a05e75019181b8b52b8b9c1b73a7341eac6d96455"
+    sha256 cellar: :any, mojave:        "b6bf2638ebce192d39f2362f947928d5397c4c3283ef7232158bcc0e4c4eb645"
   end
 
   depends_on "libgpg-error"
