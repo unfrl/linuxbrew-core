@@ -12,12 +12,12 @@ env:
 jobs:
    waitForSelfHostedLabel:
     runs-on: ubuntu-latest
-    if: github.repository == 'Homebrew/linuxbrew-core' && contains(github.event.pull_request.labels.*.name, 'self-hosted-ci') && startsWith(github.event.pull_request.labels.*.name, 'linuxbrew-core')
+    if: github.repository == 'Homebrew/linuxbrew-core' && contains(github.event.pull_request.labels.*.name, 'self-hosted-ci') && startsWith(github.event.pull_request.labels.*.name, 'linux-self-hosted')
     steps:
       - run: echo {{ github.event.pull_request.labels.*.name }}
   tests-self-hosted:
     needs: [waitForSelfHostedLabel]
-    runs-on: [self-hosted, github.event.pull_request.labels.linuxbrew-core*]
+    runs-on: [self-hosted, github.event.pull_request.labels.linux-self-hosted-*]
     timeout-minutes: 4320
     container:
       image: homebrew/ubuntu16.04:master
