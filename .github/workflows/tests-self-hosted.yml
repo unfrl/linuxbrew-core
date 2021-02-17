@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.repository == 'Homebrew/linuxbrew-core' && contains(github.event.pull_request.labels.*.name, 'self-hosted-ci')
     steps:
-      - run: echo {{ github.event.pull_request.labels.*.name }}
+      - run: echo ${{ github.event.pull_request.labels.*.name }}
   tests-self-hosted:
     needs: [waitForSelfHostedLabel]
     runs-on: [self-hosted, linux-self-hosted-1]
