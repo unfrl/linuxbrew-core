@@ -1,6 +1,8 @@
 name: Start VM
 on:
   pull_request_target:
+    paths:
+      - "Formula/**"
     paths-ignore:
       - "Formula/patchelf.rb"
       - "Formula/binutils.rb"
@@ -26,7 +28,6 @@ jobs:
             [
                 {
                     "label": "linux-self-hosted-1",
-                    "status": "added",
                     "path": "Formula/.+"
                 }
             ]
