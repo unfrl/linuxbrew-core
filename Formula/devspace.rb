@@ -13,9 +13,10 @@ class Devspace < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:  "d2f3ad4454cb6bd687ce9b4a553022d2c9fb6fc3e6466edc5f79b6e88af8f980"
-    sha256 cellar: :any_skip_relocation, catalina: "87c3c00bafd05ff29df4011d4e9667c0e9a3b2a96198edef19b01b0b3a25830c"
-    sha256 cellar: :any_skip_relocation, mojave:   "16236439f153e2e8dfb6534a4d8c198c1d7fd38427a5d64aa6a144ab6b4a5080"
+    sha256 cellar: :any_skip_relocation, big_sur:      "d2f3ad4454cb6bd687ce9b4a553022d2c9fb6fc3e6466edc5f79b6e88af8f980"
+    sha256 cellar: :any_skip_relocation, catalina:     "87c3c00bafd05ff29df4011d4e9667c0e9a3b2a96198edef19b01b0b3a25830c"
+    sha256 cellar: :any_skip_relocation, mojave:       "16236439f153e2e8dfb6534a4d8c198c1d7fd38427a5d64aa6a144ab6b4a5080"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "92db3dd4a5a6fb2843d1c2d1f6138cc87a3a0ac04836bd91dad68ff83971c8a3"
   end
 
   depends_on "go" => :build
