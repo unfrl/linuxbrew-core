@@ -13,14 +13,32 @@ env:
   HOMEBREW_NO_AUTO_UPDATE: 1
   GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED: 1
 jobs:
-  waitForSelfHostedLabel:
+  get-runner-name-from-label:
     runs-on: ubuntu-latest
     if: github.repository == 'Homebrew/linuxbrew-core' && contains(github.event.pull_request.labels.*.name, 'self-hosted-ci')
+    outputs:
+      runner-from-label: ${{ steps.runner-from-label.outputs.result }}
     steps:
-      - run: echo "${{github.event.pull_request.labels}}"
+      - name: Get self hosted runner name from label
+        id: runner-from-label
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { data: { labels: labels } } = await github.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.issue.number
+            })
+            if (!labels.map(label => label.name).includes('linux-self-hosted')) {
+              const regex = /linux-self-hosted-([0-9]+)/;
+              var runner = labels.filter(item => item.name.match(regex))[0].name;
+              console.log('Found self-hosted runner: ' + runner);
+              return runner;
+            }
   tests-self-hosted:
-    needs: [waitForSelfHostedLabel]
-    runs-on: [self-hosted, linux-self-hosted-1]
+    needs: [get-runner-name-from-label]
+    runs-on: [self-hosted, needs.get-runner-name-from-label.outputs.runner-from-label]
     timeout-minutes: 4320
     container:
       image: homebrew/ubuntu16.04:master
