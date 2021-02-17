@@ -1,6 +1,6 @@
 name: SelfHosted
 
-on: issue_comment
+on: issues
   types: [labeled]
 
 env:
