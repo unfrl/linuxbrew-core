@@ -17,6 +17,7 @@ class Nushell < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "9d8d601e2adff7f01cb2aff4ec5a5e2cc001ea7e8d22110e5d4824fa21fcf908"
     sha256 cellar: :any_skip_relocation, catalina:      "028b569621cd90e2d992a75cfbca9895b9eaf1b56dbcd6c848ac18323823b56a"
     sha256 cellar: :any_skip_relocation, mojave:        "85045d773521abba3965e8c1747dc4d10ae0e7c1a8a4c968d996c974ca0d4204"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a078472e19b642b28b2a310839862867fa5551eebd367aafea7200c0d7a63ed"
   end
 
   depends_on "rust" => :build
