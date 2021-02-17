@@ -41,7 +41,7 @@ jobs:
     strategy:
       matrix:
         os: ${{fromJson(needs.get-runner-name-from-label.outputs.runner)}}
-    runs-on: [self-hosted, '${{ matrix.os }}']
+    runs-on: [self-hosted, ${{matrix.os}}]
     timeout-minutes: 4320
     container:
       image: homebrew/ubuntu16.04:master
