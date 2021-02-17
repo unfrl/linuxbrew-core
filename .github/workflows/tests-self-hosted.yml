@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.repository == 'Homebrew/linuxbrew-core' && contains(github.event.pull_request.labels.*.name, 'self-hosted-ci')
     outputs:
-      runner: ${{ steps.runner-from-label.outputs.result }}
+      runner: ${{steps.runner-from-label.outputs.result}}
     steps:
       - name: Get self hosted runner name from label
         id: runner-from-label
@@ -41,7 +41,7 @@ jobs:
     runs-on: [self-hosted, '${{ matrix.os }}']
     strategy:
       matrix:
-        os: ${{fromJson(needs.get-runner-name-from-label.outputs.runner)}}
+        os: needs.get-runner-name-from-label.outputs.runner
     timeout-minutes: 4320
     container:
       image: homebrew/ubuntu16.04:master
