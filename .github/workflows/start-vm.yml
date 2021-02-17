@@ -17,3 +17,15 @@ jobs:
           export_default_credentials: true
       - name: Start VM
         run: gcloud compute instances start --zone=europe-west1-b linuxbrew-core1
+      - name: Label pull request
+        uses: Homebrew/actions/label-pull-requests@master
+        if: always()
+        with:
+          token: ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}
+          def: |
+            [
+                {
+                    "label": "linuxbrew-core1",
+                    "status": "added",
+                }
+            ]
