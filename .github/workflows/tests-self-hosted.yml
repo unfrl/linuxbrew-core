@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.repository == 'Homebrew/linuxbrew-core' && contains(github.event.pull_request.labels.*.name, 'self-hosted-ci')
     outputs:
-      runner-from-label: ${{ steps.runner-from-label.outputs.result }}
+      runner: ${{ steps.runner-from-label.outputs.runner }}
     steps:
       - name: Get self hosted runner name from label
         id: runner-from-label
@@ -34,11 +34,14 @@ jobs:
               const regex = /linux-self-hosted-([0-9]+)/;
               var runner = labels.filter(item => item.name.match(regex))[0].name;
               console.log('Found self-hosted runner: ' + runner);
-              return runner;
+              return "::set-output name=runner::${runner}";
             }
   tests-self-hosted:
     needs: [get-runner-name-from-label]
-    runs-on: [self-hosted, needs.get-runner-name-from-label.outputs.runner-from-label]
+    runs-on: [self-hosted, ${{matrix.runner}}]
+    strategy:
+      matrix:
+        runner: ${{fromJson(needs.get-runner-name-from-label.outputs.runner)}}
     timeout-minutes: 4320
     container:
       image: homebrew/ubuntu16.04:master
