@@ -34,5 +34,66 @@ jobs:
               const regex = /linux-self-hosted-([0-9]+)/;
               var runner = labels.filter(item => item.name.match(regex))[0].name;
               console.log('Found self-hosted runner: ' + runner);
-              return "::set-output name=runner::${runner}";
+              return `::set-output name=runner::${runner}`;
             }
+  tests-self-hosted:
+    needs: [get-runner-name-from-label]
+    runs-on: [self-hosted, '${{ matrix.os }}']
+    strategy:
+      matrix:
+        os: ${{fromJson(needs.get-runner-name-from-label.outputs.runner)}}
+    timeout-minutes: 4320
+    container:
+      image: homebrew/ubuntu16.04:master
+    steps:
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - run: brew test-bot --only-cleanup-before
+
+      - run: rm steps_output.txt
+
+      - run: brew test-bot --only-setup
+
+      - name: Run brew test-bot --only-formulae
+        run: |
+          mkdir ~/bottles
+          cd ~/bottles
+          brew test-bot --only-formulae --keep-old
+
+      - name: Upload logs
+        if: failure()
+        uses: actions/upload-artifact@main
+        with:
+          name: logs (Linux)
+          path: ~/bottles/logs
+
+      - name: Delete logs and home
+        if: always()
+        run: |
+          rm -rvf ~/bottles/logs
+          rm -rvf ~/bottles/home
+
+      - name: Count bottles
+        id: bottles
+        if: always()
+        run: |
+          cd ~/bottles
+          count=$(ls *.json | wc -l | xargs echo -n)
+          echo "$count bottles"
+          echo "::set-output name=count::$count"
+
+      - name: Upload bottles
+        if: always() && steps.bottles.outputs.count > 0
+        uses: actions/upload-artifact@main
+        with:
+          name: bottles
+          path: ~/bottles
+
+      - run: brew test-bot --only-cleanup-after
+        if: always()
+
+      - name: Post Cleanup
+        if: always()
+        run: rm -rvf ~/bottles
