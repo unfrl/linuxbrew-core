@@ -1,21 +1,16 @@
 name: SelfHosted
-on:
-  label:
-    types: [created]
+
+on: issue_comment
+
 env:
   HOMEBREW_DEVELOPER: 1
   HOMEBREW_GITHUB_ACTIONS: 1
   HOMEBREW_NO_AUTO_UPDATE: 1
   GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED: 1
 jobs:
-   jobthatdoesnothing:
-    runs-on: ubuntu-latest
-    if: github.repository == 'Homebrew/linuxbrew-core' && contains(github.event.pull_request.labels.*.name, 'self-hosted-ci')
-    steps:
-      - run: echo "do nothing"
    waitForSelfHostedLabel:
     runs-on: ubuntu-latest
-    if: github.repository == 'Homebrew/linuxbrew-core' && contains(github.event.pull_request.labels.*.name, 'self-hosted-ci')
+    if: github.repository == 'Homebrew/linuxbrew-core' && ${{ github.event.issue.pull_request }} && ${{ github.event.issue.labeled }} && contains(github.event.pull_request.labels.*.name, 'self-hosted-ci')
     steps:
       - run: echo {{ github.event.pull_request.labels.*.name }}
   tests-self-hosted:
