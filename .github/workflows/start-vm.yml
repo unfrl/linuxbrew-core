@@ -26,6 +26,6 @@ jobs:
             [
                 {
                     "label": "linuxbrew-core1",
-                    "status": "added",
+                    "status": "added"
                 }
             ]
