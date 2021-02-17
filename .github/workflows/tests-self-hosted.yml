@@ -1,10 +1,11 @@
 name: SelfHosted
 
-on: pull_request
-  types:
-    - labeled
-  paths:
-    - "Formula/**"
+on:
+  pull_request:
+    types:
+      - labeled
+    paths:
+      - "Formula/**"
 
 env:
   HOMEBREW_DEVELOPER: 1
@@ -12,7 +13,7 @@ env:
   HOMEBREW_NO_AUTO_UPDATE: 1
   GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED: 1
 jobs:
-   waitForSelfHostedLabel:
+  waitForSelfHostedLabel:
     runs-on: ubuntu-latest
     if: github.repository == 'Homebrew/linuxbrew-core' && contains(github.event.pull_request.labels.*.name, 'self-hosted-ci')
     steps:
