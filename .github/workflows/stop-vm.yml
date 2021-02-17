@@ -9,6 +9,23 @@ jobs:
   stop_vm:
     runs-on: ubuntu-latest
     steps:
+      - name: Get self hosted runner name from label
+        id: runner-from-label
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { data: { labels: labels } } = await github.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.issue.number
+            })
+            if (!labels.map(label => label.name).includes('linux-self-hosted')) {
+              const regex = /linux-self-hosted-([0-9]+)/;
+              var runner = labels.filter(item => item.name.match(regex))[0].name;
+              console.log('Found self-hosted runner: ' + runner);
+              return runner;
+            }
       - name: Set up Google Cloud SDK
         uses: google-github-actions/setup-gcloud@master
         with:
@@ -16,4 +33,4 @@ jobs:
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           export_default_credentials: true
       - name: Stop VM
-        run: gcloud compute instances stop --zone=europe-west1-b linuxbrew-core1
+        run: gcloud compute instances stop --zone=europe-west1-b ${{steps.runner-from-label.outputs.result}}
