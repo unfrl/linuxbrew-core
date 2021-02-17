@@ -8,9 +8,14 @@ env:
   HOMEBREW_NO_AUTO_UPDATE: 1
   GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED: 1
 jobs:
+   jobthatdoesnothing:
+    runs-on: ubuntu-latest
+    if: github.repository == 'Homebrew/linuxbrew-core' && contains(github.event.pull_request.labels.*.name, 'self-hosted-ci')
+    steps:
+      - run: echo "do nothing"
    waitForSelfHostedLabel:
     runs-on: ubuntu-latest
-    if: github.repository == 'Homebrew/linuxbrew-core' && contains(github.event.pull_request.labels.*.name, 'self-hosted-ci') && startsWith(github.event.pull_request.labels.*.name, 'linux-self-hosted')
+    if: github.repository == 'Homebrew/linuxbrew-core' && contains(github.event.pull_request.labels.*.name, 'self-hosted-ci')
     steps:
       - run: echo {{ github.event.pull_request.labels.*.name }}
   tests-self-hosted:
