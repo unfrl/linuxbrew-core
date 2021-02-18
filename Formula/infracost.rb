@@ -1,17 +1,16 @@
 class Infracost < Formula
   desc "Cost estimates for Terraform"
   homepage "https://www.infracost.io/docs/"
-  url "https://github.com/infracost/infracost/archive/v0.7.19.tar.gz"
-  sha256 "dc9c1fc665685068bd917df32605d9cadee4fd3ef863cb882ec4fa845d2995ae"
+  url "https://github.com/infracost/infracost/archive/v0.7.20.tar.gz"
+  sha256 "bd9a6a48e8b20957360a101948be6960aac9b4e28136a3c1d45203f442025d42"
   license "Apache-2.0"
   head "https://github.com/infracost/infracost.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "6afcbf830e222e7da395ccf1fb339b81da91afec0d8ffe5a2ac742dad2034f92"
-    sha256 cellar: :any_skip_relocation, big_sur:       "936ff0cc40aabaf9f48026bf5be971e4a1ed1f4da62751f7a66ce4db0c60f300"
-    sha256 cellar: :any_skip_relocation, catalina:      "6fcc4666cdcdf231ffd70a7a01e6a70bc55e49b6e9c165c19e77226c6c25b938"
-    sha256 cellar: :any_skip_relocation, mojave:        "8129c6b4aa22f9732a7ba98eeb903b571fcbc2ca44d0a8adad82cd490e48fbd6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c565c5a1e0cf906fa3b40484b92b7002c9c6cf6c6d3f3ab30dcbd558bc99dbd"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "4524b07becd6454baf7d8a091f85a568f1ab99b78a3d3a7e98829447ce2d22cb"
+    sha256 cellar: :any_skip_relocation, big_sur:       "bad0d940d04b9fac2166ad3ff97460c54003227574dcdd5a47f623909d967e30"
+    sha256 cellar: :any_skip_relocation, catalina:      "a0c77d74b8988968ff061be4ad7d9fc0a6d14824ac53aeddc98ef55b15b92d43"
+    sha256 cellar: :any_skip_relocation, mojave:        "096b39e90d4eed6f1fc03cad8753f0f15b3f3a9133c44978289755b8f981e84b"
   end
 
   depends_on "go" => :build
