@@ -11,18 +11,31 @@ jobs:
   stop_vm:
     runs-on: ubuntu-latest
     steps:
-      - name: Download artifact from SelfHosted workflow
+      - name: Download RUNNER from SelfHosted workflow
         uses: dawidd6/action-download-artifact@v2
         with:
           github_token: ${{secrets.GITHUB_TOKEN}}
-          workflow: test-self-hosted.yml
+          workflow: ${{ github.event.workflow_run.workflow_id }}
           run_id: ${{ github.event.workflow_run.id }}
           name: runner
-          path: runner.txt
+      - name: Download PR_NUMBER from SelfHosted workflow
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          workflow: ${{ github.event.workflow_run.workflow_id }}
+          run_id: ${{ github.event.workflow_run.id }}
+          name: pull-request-number
+      - name: Download PR_SHA from SelfHosted workflow
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          workflow: ${{ github.event.workflow_run.workflow_id }}
+          run_id: ${{ github.event.workflow_run.id }}
+          name: pull-request-sha
 
-      - name: Download artifact from SelfHosted workflow
+      - name: Set runner variable from RUNNER file
         id: runner
-        run: echo "::set-output name=runner::$(cat runner.txt)"
+        run: echo "::set-output name=runner::$(cat "RUNNER")"
 
       - name: Set up Google Cloud SDK
         uses: google-github-actions/setup-gcloud@master

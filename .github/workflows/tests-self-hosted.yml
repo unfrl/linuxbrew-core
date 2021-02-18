@@ -34,17 +34,30 @@ jobs:
             var runner = labels.filter(item => item.name.match(regex))[0].name;
             console.log('Found self-hosted runner: ' + runner);
             return runner;
-      - name: Store runner name in file
+      - name: Store PR info
         if: always()
         run: |
-          echo ${{steps.runner-from-label.outputs.result}}
-          echo ${{steps.runner-from-label.outputs.result}} > runner.txt
-      - name: Upload runner name for stop-vm workflow
+          echo "${{steps.runner-from-label.outputs.result}}"" > RUNNER
+          echo "${{github.event.number}}" > PR_NUMBER
+          echo "${{github.event.pull_request.head.sha}}" > PR_SHA
+      - name: Store RUNNER
         if: always()
         uses: actions/upload-artifact@v2
         with:
           name: runner
-          path: runner.txt
+          path: RUNNER
+      - name: Store PR_NUMBER
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: pull-request-number
+          path: PR_NUMBER
+      - name: Store PR_SHA
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: pull-request-sha
+          path: PR_SHA
   tests-self-hosted:
     needs: [get-runner-name-from-label]
     strategy:
