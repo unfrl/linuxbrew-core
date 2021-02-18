@@ -57,7 +57,7 @@ jobs:
             const { data: { labels: labels } } = await github.pulls.get({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              pull_number: '${{steps.pull-request-number.outputs.pull-request-number}}'
+              pull_number: ${{steps.pull-request-number.outputs.pull-request-number}}
             })
             github.issues.removeLabel({
               issue_number: context.issue.number,
