@@ -34,6 +34,15 @@ jobs:
             var runner = labels.filter(item => item.name.match(regex))[0].name;
             console.log('Found self-hosted runner: ' + runner);
             return runner;
+      - name: Store runner name in file
+        if: always()
+        run: echo ${{fromJson(needs.get-runner-name-from-label.outputs.runner)}} > runner.txt
+      - name: Upload runner name for stop-vm workflow
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: runner
+          path: runner.txt
   tests-self-hosted:
     needs: [get-runner-name-from-label]
     strategy:
@@ -95,14 +104,3 @@ jobs:
       - name: Post Cleanup
         if: always()
         run: rm -rvf ~/bottles
-
-      - name: Store runner name in file
-        if: always()
-        run: echo ${{fromJson(needs.get-runner-name-from-label.outputs.runner)}} > runner.txt
-
-      - name: Upload runner name for stop-vm workflow
-        if: always()
-        uses: actions/upload-artifact@v2
-        with:
-          name: runner
-          path: runner.txt
