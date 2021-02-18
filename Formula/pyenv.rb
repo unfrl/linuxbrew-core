@@ -1,11 +1,10 @@
 class Pyenv < Formula
   desc "Python version management"
   homepage "https://github.com/pyenv/pyenv"
-  url "https://github.com/pyenv/pyenv/archive/v1.2.22.tar.gz"
-  sha256 "a1f5d8db3c80c1abda06b5a051f37e9a4898a43b3feb60ee82da7f23e4a3b75f"
+  url "https://github.com/pyenv/pyenv/archive/v1.2.23.tar.gz"
+  sha256 "805058aa5ce257157fb4769543e6a43bac45a88c723ff3c4fcf5b4f759056bf5"
   license "MIT"
   version_scheme 1
-  revision 1 unless OS.mac?
   head "https://github.com/pyenv/pyenv.git"
 
   livecheck do
@@ -14,11 +13,10 @@ class Pyenv < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "21cd3cc25153de842b519606d689824bddc55912b9021cbfedd80d25fa09d4d3"
-    sha256 cellar: :any, big_sur:       "a322edd9999aee4027116f4ff65034c8bfd1bc1af8fbef136544330f62d003d6"
-    sha256 cellar: :any, catalina:      "b4f3038e29acde1d99579104ae100777621b9716fe797e7917dad1e9795d3473"
-    sha256 cellar: :any, mojave:        "525b4cc06fb46fd1e86d2272b4b692585679c5bb5c6a7b543cbdedd6f0096cf9"
-    sha256 cellar: :any, x86_64_linux:  "a385816f450a40e7c0eab66ac572e9e136f314950fc597f5aa97834c4123d721"
+    sha256 cellar: :any, arm64_big_sur: "5d6f1dbfd29aa76435b3a5aeb69289472ba6bc54bc3ac2e6659a11bab3b7d441"
+    sha256 cellar: :any, big_sur:       "bc22faf3875668a018ad240d1752f9523fd138972c113eae115940296d715cfd"
+    sha256 cellar: :any, catalina:      "55e898fae5d4802e00b2523363f60da2490a09b98e533e17b8e6f4a8b2ff3f00"
+    sha256 cellar: :any, mojave:        "cf8bb5e03596da23b2fa516d81e60afe8159003ef65957fc5bac17f2de1f0b44"
   end
 
   depends_on "autoconf"

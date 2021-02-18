@@ -8,8 +8,8 @@ class Llvm < Formula
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
   stable do
-    url "https://github.com/llvm/llvm-project/releases/download/llvmorg-11.0.1/llvm-project-11.0.1.src.tar.xz"
-    sha256 "af95d00f833dd67114b21c3cfe72dff2e1cdab627651f977b087a837136d653b"
+    url "https://github.com/llvm/llvm-project/releases/download/llvmorg-11.1.0/llvm-project-11.1.0.src.tar.xz"
+    sha256 "74d2529159fd118c3eac6f90107b5611bccc6f647fdea104024183e8d5e25831"
 
     patch do
       url "https://github.com/llvm/llvm-project/commit/c86f56e32e724c6018e579bb2bc11e667c96fc96.patch?full_index=1"
@@ -38,13 +38,6 @@ class Llvm < Formula
       url "https://raw.githubusercontent.com/Homebrew/formula-patches/6166a68c/llvm/openmp_arm.patch"
       sha256 "70fe3836b423e593688cd1cc7a3d76ee6406e64b9909f1a2f780c6f018f89b1e"
     end
-
-    # Regression in LLDB by D89156 on MacOS, fixed by D95683.
-    # https://reviews.llvm.org/D95683
-    patch do
-      url "https://raw.githubusercontent.com/Homebrew/formula-patches/698a42e95e2c982c1d11f1b7d3293ba3aac677ee/llvm/lldb.patch"
-      sha256 "b0dd8153370de8333dc57f950976bc87413c0b053bd30d9b8b10540094923b88"
-    end
   end
 
   livecheck do
@@ -53,11 +46,10 @@ class Llvm < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "644ff14be8dc41dceacda9b7c5a34a009e54cab1940ebcadf7dda4930cbe7150"
-    sha256 cellar: :any,                 big_sur:       "15e243c9ff162f36d481f44f05862b95552d53020a6363d3a56fc73083348ca5"
-    sha256 cellar: :any,                 catalina:      "5021a582f220802886c6029ed173e3bed4466c1151d6ef3ef6de377a7396371f"
-    sha256 cellar: :any,                 mojave:        "ae3bb00ea8d53f0594a8e174c9f327eecb531a3846287b80d6f3933e2b47ff07"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8481ffddb4dacee515d2491c203fbb0c435ce40fa0368349d8ed877491efdf1"
+    sha256 cellar: :any, arm64_big_sur: "6024181e8252d3300a44d989f0716cec5a6d92b66a439290232c7dbeed3a50dc"
+    sha256 cellar: :any, big_sur:       "0f26bad97402fd22555367e8d6f20511b24912dcc56d202b7960b41a8462d6b2"
+    sha256 cellar: :any, catalina:      "c1260c9b53f3bd098650f0bafea11d284b8c48c812dca34c50828239f559737b"
+    sha256 cellar: :any, mojave:        "2f9f6bb43e7743a71426358d2666647e6ff563c00cc14c1404ea43c3f504041d"
   end
 
   # Clang cannot find system headers if Xcode CLT is not installed
