@@ -37,8 +37,8 @@ jobs:
       - name: Store runner name in file
         if: always()
         run: |
-          echo ${{needs.get-runner-name-from-label.outputs.runner}}
-          echo ${{needs.get-runner-name-from-label.outputs.runner}} > runner.txt
+          echo ${{steps.runner-from-label.outputs.result}}
+          echo ${{steps.runner-from-label.outputs.result}} > runner.txt
       - name: Upload runner name for stop-vm workflow
         if: always()
         uses: actions/upload-artifact@v2
