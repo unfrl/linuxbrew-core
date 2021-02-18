@@ -2,7 +2,8 @@ name: Stop VM
 
 on:
   workflow_run:
-    workflows: ["SelfHosted"]
+    workflows:
+      - SelfHosted
     types:
       - completed
 
