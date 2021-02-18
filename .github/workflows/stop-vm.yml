@@ -9,6 +9,11 @@ jobs:
   stop_vm:
     runs-on: ubuntu-latest
     steps:
+      - name: Inspect contexts
+        run: |
+          echo "The github context is:"
+          echo "${{ toJson(github) }}"
+          echo ""
       - name: Get self hosted runner name from label
         id: runner-from-label
         uses: actions/github-script@v3
