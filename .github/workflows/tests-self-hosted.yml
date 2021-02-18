@@ -37,7 +37,7 @@ jobs:
       - name: Store PR info
         if: always()
         run: |
-          echo "${{steps.runner-from-label.outputs.result}}"" > RUNNER
+          echo "${{steps.runner-from-label.outputs.result}}" > RUNNER
           echo "${{github.event.number}}" > PR_NUMBER
           echo "${{github.event.pull_request.head.sha}}" > PR_SHA
       - name: Store RUNNER
