@@ -1,8 +1,8 @@
 class UserspaceRcu < Formula
   desc "Library for userspace RCU (read-copy-update)"
   homepage "https://liburcu.org"
-  url "https://lttng.org/files/urcu/userspace-rcu-0.12.1.tar.bz2"
-  sha256 "bbfaead0345642b97e0de90f889dfbab4b2643a6a5e5c6bb59cd0d26fc0bcd0e"
+  url "https://lttng.org/files/urcu/userspace-rcu-0.12.2.tar.bz2"
+  sha256 "4eefc11e4f6c212fc7d84d871e1cc139da0669a46ff3fda557a6fdd4d74ca67b"
 
   livecheck do
     url "https://www.lttng.org/files/urcu/"
@@ -10,12 +10,10 @@ class UserspaceRcu < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "8d45763c520497f2a3062f4d4c7c9a291c956462e79fad11fc2f6bafc63ede75"
-    sha256 cellar: :any_skip_relocation, big_sur:       "16786f80939cc886441f4be7850c1ffc3cad092aaedcfb9a5d3f4bc08aa17edf"
-    sha256 cellar: :any_skip_relocation, catalina:      "87815b2af972d7e3596e639cec95b6da61436108dcb7380629c5f5b56785d513"
-    sha256 cellar: :any_skip_relocation, mojave:        "a5fc1494e06f10ab0aa2743dea422d94206248cc72ea504cc48dd0fb1837c780"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07d2c823504e7a10c30acbe6503e888ea57b59aaf00659feb9d8718e7f742dfa"
+    sha256 cellar: :any, arm64_big_sur: "f4fc590ca3038ba37ae1f93f96799139bf99fa4c4ddcf3d1924759385d310203"
+    sha256 cellar: :any, big_sur:       "2eaf6d663b24932de82d80effcd6bf77fe7307a301296094809495eb4f6c5597"
+    sha256 cellar: :any, catalina:      "4066d1afdd9ab1bd126c933bcf53bff3d74179195443f272841d9ac5da0b4b05"
+    sha256 cellar: :any, mojave:        "63d30f6d0d0f00b5eae317aa0cff21f28cfed4a75fd460ba7c6651cc3d3dea79"
   end
 
   def install

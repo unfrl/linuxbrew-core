@@ -5,14 +5,13 @@ class Krew < Formula
       tag:      "v0.4.0",
       revision: "8bebb56d7295f361db3780fa18bd9f2f995ed48f"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/kubernetes-sigs/krew.git"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, big_sur:      "805ecc421849656067f79bb29078044ef16f4e7666bb3733754efddd5d541849"
-    sha256 cellar: :any_skip_relocation, catalina:     "ab1fd5afe499a31d731cc9b4395d3ae71eb4774682b5295e8376611c52f8a262"
-    sha256 cellar: :any_skip_relocation, mojave:       "316b12ecb167df6a8cff3521d9ab093f874f1d49379ffd639a0bc1c77a9c8e01"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "93a5fac86319f8273740dd52529ad1f3c4537afc5035b5974377dc9afbc93c66"
+    sha256 cellar: :any_skip_relocation, big_sur:  "6c2551cb0590797ea25e065d28d6c49e0c30fdf38e09f68093d9c65d66669079"
+    sha256 cellar: :any_skip_relocation, catalina: "cd3da7ea5cfb37a67d86b5c2777c5e07b99a9c8d93a64a370c69e1138313c60d"
+    sha256 cellar: :any_skip_relocation, mojave:   "e0b871ee1e6d5b93113f5a27cc7a09afed17134ad873e3b664be544503aa9108"
   end
 
   depends_on "go" => :build
@@ -26,8 +25,8 @@ class Krew < Formula
 
     ldflags = %W[
       -w
-      -X sigs.k8s.io/krew/pkg/version.gitCommit=#{Utils.git_short_head(length: 8)}
-      -X sigs.k8s.io/krew/pkg/version.gitTag=v#{version}
+      -X sigs.k8s.io/krew/internal/version.gitCommit=#{Utils.git_short_head(length: 8)}
+      -X sigs.k8s.io/krew/internal/version.gitTag=v#{version}
     ]
 
     system "go", "build", "-o", "build", "-tags", "netgo",
@@ -42,6 +41,7 @@ class Krew < Formula
     system "#{bin}/kubectl-krew", "version"
     system "#{bin}/kubectl-krew", "update"
     system "#{bin}/kubectl-krew", "install", "ctx"
+    assert_match "v#{version}", shell_output("#{bin}/kubectl-krew version")
     assert_predicate testpath/"bin/kubectl-ctx", :exist?
   end
 end

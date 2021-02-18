@@ -3,8 +3,8 @@ require "language/node"
 class Emscripten < Formula
   desc "LLVM bytecode to JavaScript compiler"
   homepage "https://emscripten.org/"
-  url "https://github.com/emscripten-core/emscripten/archive/2.0.12.tar.gz"
-  sha256 "d9419c9ea6df4c9582a3a09fdeafec16f5f3c64866f6faf86989ea1ef99f54ea"
+  url "https://github.com/emscripten-core/emscripten/archive/2.0.14.tar.gz"
+  sha256 "8faf0ccb5a72cf7e6516b9f9461d763783c7b8ef877d403f957b9c9b36f4c075"
   # Emscripten is available under 2 licenses, the MIT license and the
   # University of Illinois/NCSA Open Source License.
   license all_of: [
@@ -20,10 +20,10 @@ class Emscripten < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "43c7fe5e4aa3f2301b21f8946b3ee787a563118d216f4ad7783e57107b2feaad"
-    sha256 cellar: :any, big_sur:       "48800d0fa4e87506b21bd9bd770f701260e38a38db5e70ea1ea01235974e5817"
-    sha256 cellar: :any, catalina:      "ffa23a77ca9960849cd6a21dacec13d25daf03b638e54a08365ac5970c5790ed"
-    sha256 cellar: :any, mojave:        "986de7621ea1965fdc7c20cb54e864da4039c477b2700bfdaf34e4ad83ae3c30"
+    sha256 cellar: :any, arm64_big_sur: "92359f957c80f52fd8cb477a5ce0f4b68e5d5d05ae6aa5ee95f9605460135dfb"
+    sha256 cellar: :any, big_sur:       "92ee5db54d289ca44c95c834cfb5102872bec8389826f143f435f10be2661ae2"
+    sha256 cellar: :any, catalina:      "d0c15dccbbf9c5a4d02a399cd5a13b11e30b13f8c8f9b2465b39abbbdb1f6155"
+    sha256 cellar: :any, mojave:        "285f68f73a7ce563864184dc6812a0b37dadafc2b93235b86e1015899a6c82d6"
   end
 
   depends_on "cmake" => :build
@@ -35,7 +35,7 @@ class Emscripten < Formula
   # See llvm resource below for instructions on how to update this.
   resource "binaryen" do
     url "https://github.com/WebAssembly/binaryen.git",
-        revision: "d7e9150e38f14c7ca083fe48bf1f49ab77cfc794"
+        revision: "c12cc3f50c0ef798b218739fc3de06237ea2c5d5"
   end
 
   # emscripten needs argument '-fignore-exceptions', which is only available in llvm >= 12
@@ -46,7 +46,7 @@ class Emscripten < Formula
   # Then use the listed llvm_project_revision for the resource below.
   resource "llvm" do
     url "https://github.com/llvm/llvm-project.git",
-        revision: "52e240a0721e4120a7143f6f5bab4760d28d48e8"
+        revision: "5f3c99085d4c2ebf57fd0586b013b02e32a8e20b"
   end
 
   def install
