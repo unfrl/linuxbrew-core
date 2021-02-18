@@ -11,6 +11,7 @@ class Igraph < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "b9d9cbcfc223d72bc33add33264d8bf6f4eb677107f1e72984114f083336fe59"
     sha256 cellar: :any_skip_relocation, catalina:      "c02bb0b1563dfcc3e5511be93d1d20d0f38a34a588919112299b0be4780dd8f6"
     sha256 cellar: :any_skip_relocation, mojave:        "990acbc314d5fec00ccc08bf76f3b436ac297abf3c5c303364315f41961d0aba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77fc1502c15655c594cd727ff1b87cd1095c5edc9995a82cfbae808fe28290dd"
   end
 
   depends_on "cmake" => :build
