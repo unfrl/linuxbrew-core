@@ -7,9 +7,10 @@ class Flow < Formula
   head "https://github.com/facebook/flow.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:  "60e370175816a336c126477a016bd93e9e60e25d5609ad22cae873ab82dc347d"
-    sha256 cellar: :any_skip_relocation, catalina: "f6f8094396dff60a63e69fbe033e645956f5a717684e44076c03ae641a85c273"
-    sha256 cellar: :any_skip_relocation, mojave:   "9423f65bd794d27704cfadc93ee81d6b9a0bb4a9c993645fb9c6bd229d0395cf"
+    sha256 cellar: :any_skip_relocation, big_sur:      "60e370175816a336c126477a016bd93e9e60e25d5609ad22cae873ab82dc347d"
+    sha256 cellar: :any_skip_relocation, catalina:     "f6f8094396dff60a63e69fbe033e645956f5a717684e44076c03ae641a85c273"
+    sha256 cellar: :any_skip_relocation, mojave:       "9423f65bd794d27704cfadc93ee81d6b9a0bb4a9c993645fb9c6bd229d0395cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "17f41d783ba764c7d59923873129901f0c4e9ebe802c77c01425ad616724a015"
   end
 
   depends_on "ocaml" => :build
