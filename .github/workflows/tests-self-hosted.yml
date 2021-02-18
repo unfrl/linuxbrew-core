@@ -96,10 +96,10 @@ jobs:
         if: always()
         run: rm -rvf ~/bottles
 
-      - name: "Store runner name in file"
-         run: echo ${{fromJson(needs.get-runner-name-from-label.outputs.runner)}} > runner.txt
+      - name: Store runner name in file
+        run: echo ${{fromJson(needs.get-runner-name-from-label.outputs.runner)}} > runner.txt
 
-      - name: "Upload runner name for stop-vm workflow"
+      - name: Upload runner name for stop-vm workflow
         uses: actions/upload-artifact@v2
         with:
           name: runner
