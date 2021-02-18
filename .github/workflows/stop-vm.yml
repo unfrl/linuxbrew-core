@@ -10,12 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Wait on SelfHosted test to be done
-        uses: lewagon/wait-on-check-action@master
+        uses: lewagon/wait-on-check-action@v0.2
         with:
           ref: ${{github.event.pull_request.head.sha}}
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           wait-interval: 60
-          check-name: SelfHosted
+          check-name: tests-self-hosted
       - name: Get self hosted runner name from label
         id: runner-from-label
         uses: actions/github-script@v3
