@@ -37,6 +37,10 @@ jobs:
         id: runner
         run: echo "::set-output name=runner::$(cat "RUNNER")"
 
+     - name: Set pull request variable from PR_NUMBER file
+        id: pull-request-number
+        run: echo "::set-output name=pull-request-number::$(cat "PR_NUMBER")"
+
       - name: Set up Google Cloud SDK
         uses: google-github-actions/setup-gcloud@master
         with:
@@ -45,3 +49,19 @@ jobs:
           export_default_credentials: true
       - name: Stop VM
         run: gcloud compute instances stop --zone=europe-west1-b ${{steps.runner.outputs.runner}}
+      - name: Remove runner label
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { data: { labels: labels } } = await github.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: '${{steps.pull-request-number.outputs.pull-request-number}}'
+            })
+            github.issues.removeLabel({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              name: ['${{steps.runner.outputs.runner}}']
+            })
