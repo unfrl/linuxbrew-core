@@ -20,8 +20,8 @@ jobs:
           path: runner.txt
 
       - name: Download artifact from SelfHosted workflow
-          id: runner
-         run: echo "::set-output name=runner::$(cat runner.txt)"
+        id: runner
+        run: echo "::set-output name=runner::$(cat runner.txt)"
 
       - name: Set up Google Cloud SDK
         uses: google-github-actions/setup-gcloud@master
