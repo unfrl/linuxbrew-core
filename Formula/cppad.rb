@@ -14,10 +14,11 @@ class Cppad < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "78279a237084171dc4bb3174c756500d8358ed7ee4517982c6d5ccdfe4cd6f5a"
-    sha256 cellar: :any, big_sur:       "c5dbf3cf929d2b4b00dd3b90a0144e254c73915ae9aef011d0264d4d0e29abda"
-    sha256 cellar: :any, catalina:      "5e6f6199cf6778be3d0927e6d743db7778532645825d9b5c3bca5aebb981644f"
-    sha256 cellar: :any, mojave:        "75e178894842f7f2811cd084b301d2210be5c390536cd028c5764add869de88a"
+    sha256 cellar: :any,                 arm64_big_sur: "78279a237084171dc4bb3174c756500d8358ed7ee4517982c6d5ccdfe4cd6f5a"
+    sha256 cellar: :any,                 big_sur:       "c5dbf3cf929d2b4b00dd3b90a0144e254c73915ae9aef011d0264d4d0e29abda"
+    sha256 cellar: :any,                 catalina:      "5e6f6199cf6778be3d0927e6d743db7778532645825d9b5c3bca5aebb981644f"
+    sha256 cellar: :any,                 mojave:        "75e178894842f7f2811cd084b301d2210be5c390536cd028c5764add869de88a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "157e943faad56428f302d5a56a48cc5c98f043d19e057217fe75b671fca57795"
   end
 
   depends_on "cmake" => :build
