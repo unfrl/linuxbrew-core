@@ -25,6 +25,6 @@ class Btpd < Formula
   end
 
   test do
-    assert_match /Torrents can be specified/, pipe_output("#{bin}/btcli --help 2>&1")
+    assert_match "Torrents can be specified", pipe_output("#{bin}/btcli --help 2>&1")
   end
 end

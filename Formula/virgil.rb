@@ -24,6 +24,6 @@ class Virgil < Formula
 
   test do
     result = shell_output "#{bin}/virgil purekit keygen"
-    assert_match /SK.1./, result
+    assert_match "SK.1.", result
   end
 end

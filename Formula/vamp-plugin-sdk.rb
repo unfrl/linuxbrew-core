@@ -41,10 +41,10 @@ class VampPluginSdk < Formula
     else
       system ENV.cxx, "test.cpp", "-I#{include}", "-shared", "-fPIC", "-o", shared_library("test")
     end
-    assert_match /Usage:/, shell_output("#{bin}/vamp-rdf-template-generator 2>&1", 2)
+    assert_match "Usage:", shell_output("#{bin}/vamp-rdf-template-generator 2>&1", 2)
 
     cp "#{lib}/vamp/vamp-example-plugins.so", testpath/shared_library("vamp-example-plugins")
     ENV["VAMP_PATH"]=testpath
-    assert_match /amplitudefollower/, shell_output("#{bin}/vamp-simple-host -l")
+    assert_match "amplitudefollower", shell_output("#{bin}/vamp-simple-host -l")
   end
 end

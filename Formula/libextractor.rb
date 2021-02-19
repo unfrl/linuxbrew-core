@@ -33,6 +33,6 @@ class Libextractor < Formula
 
   test do
     fixture = test_fixtures("test.png")
-    assert_match /Keywords for file/, shell_output("#{bin}/extract #{fixture}")
+    assert_match "Keywords for file", shell_output("#{bin}/extract #{fixture}")
   end
 end

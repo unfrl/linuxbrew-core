@@ -38,6 +38,6 @@ class Nanomsg < Formula
     sleep 2
 
     output = shell_output("#{bin}/nanocat --req --connect #{bind} --format ascii --data brew")
-    assert_match /home/, output
+    assert_match "home", output
   end
 end

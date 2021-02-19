@@ -44,6 +44,6 @@ class Confuse < Formula
       }
     EOS
     system ENV.cc, "test.c", "-L#{lib}", "-lconfuse", "-o", "test"
-    assert_match /world/, shell_output("./test")
+    assert_match "world", shell_output("./test")
   end
 end

@@ -88,6 +88,6 @@ class Apcupsd < Formula
 
   test do
     system "#{sbin}/apcupsd", "--version"
-    assert_match /usage/, shell_output("#{sbin}/apctest --help", 1)
+    assert_match "usage", shell_output("#{sbin}/apctest --help", 1)
   end
 end

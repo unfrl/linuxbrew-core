@@ -34,11 +34,11 @@ class Stella < Formula
       inreplace "stella.xcodeproj/project.pbxproj" do |s|
         s.gsub! %r{(\w{24} /\* SDL2\.framework)}, '//\1'
         s.gsub! %r{(\w{24} /\* png)}, '//\1'
-        s.gsub! /(HEADER_SEARCH_PATHS) = \(/,
-                "\\1 = (#{sdl2.opt_include}/SDL2, #{libpng.opt_include},"
-        s.gsub! /(LIBRARY_SEARCH_PATHS) = ("\$\(LIBRARY_SEARCH_PATHS\)");/,
-                "\\1 = (#{sdl2.opt_lib}, #{libpng.opt_lib}, \\2);"
-        s.gsub! /(OTHER_LDFLAGS) = "((-\w+)*)"/, '\1 = "-lSDL2 -lpng \2"'
+        s.gsub!(/(HEADER_SEARCH_PATHS) = \(/,
+                "\\1 = (#{sdl2.opt_include}/SDL2, #{libpng.opt_include},")
+        s.gsub!(/(LIBRARY_SEARCH_PATHS) = ("\$\(LIBRARY_SEARCH_PATHS\)");/,
+                "\\1 = (#{sdl2.opt_lib}, #{libpng.opt_lib}, \\2);")
+        s.gsub!(/(OTHER_LDFLAGS) = "((-\w+)*)"/, '\1 = "-lSDL2 -lpng \2"')
       end
     end
     system "./configure", "--prefix=#{prefix}",
@@ -50,11 +50,11 @@ class Stella < Formula
   end
 
   test do
-    assert_match /Stella version #{version}/, shell_output("#{bin}/Stella -help").strip if OS.mac?
     # Test is disabled for Linux, as it is failing with:
     # ERROR: Couldn't load settings file
     # ERROR: Couldn't initialize SDL: No available video device
     # ERROR: Couldn't create OSystem
     # ERROR: Couldn't save settings file
+    assert_match "Stella version #{version}", shell_output("#{bin}/Stella -help").strip if OS.mac?
   end
 end

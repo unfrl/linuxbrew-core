@@ -33,6 +33,7 @@ class Afuse < Formula
   end
 
   test do
-    assert_match (OS.mac? ? /OSXFUSE/ : /FUSE library version/), pipe_output("#{bin}/afuse --version 2>&1")
+    comp = OS.mac? ? /OSXFUSE/ : /FUSE library version/
+    assert_match comp, pipe_output("#{bin}/afuse --version 2>&1")
   end
 end

@@ -31,6 +31,6 @@ class SourceHighlight < Formula
   end
 
   test do
-    assert_match /GNU Source-highlight #{version}/, shell_output("#{bin}/source-highlight -V")
+    assert_match "GNU Source-highlight #{version}", shell_output("#{bin}/source-highlight -V")
   end
 end
