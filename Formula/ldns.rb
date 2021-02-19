@@ -46,7 +46,7 @@ class Ldns < Formula
     if OS.mac?
       inreplace "Makefile" do |s|
         s.change_make_var! "PYTHON_LDFLAGS", "-undefined dynamic_lookup"
-        s.gsub! /(\$\(PYTHON_LDFLAGS\).*) -no-undefined/, "\\1"
+        s.gsub!(/(\$\(PYTHON_LDFLAGS\).*) -no-undefined/, "\\1")
       end
     end
 

@@ -25,6 +25,6 @@ class Triton < Formula
 
   test do
     output = shell_output("#{bin}/triton profile ls")
-    assert_match /\ANAME  CURR  ACCOUNT  USER  URL$/, output
+    assert_match(/\ANAME  CURR  ACCOUNT  USER  URL$/, output)
   end
 end

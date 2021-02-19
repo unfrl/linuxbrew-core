@@ -24,6 +24,6 @@ class Frobtads < Formula
   end
 
   test do
-    assert_match /FrobTADS #{version}$/, shell_output("#{bin}/frob --version")
+    assert_match(/FrobTADS #{version}$/, shell_output("#{bin}/frob --version"))
   end
 end

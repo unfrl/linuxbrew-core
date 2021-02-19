@@ -68,7 +68,7 @@ class MitScheme < Formula
       s.gsub! "/usr/local", prefix
       # Fixes "configure: error: No MacOSX SDK for version: 10.10"
       # Reported 23rd Apr 2016: https://savannah.gnu.org/bugs/index.php?47769
-      s.gsub! /SDK=MacOSX\$\{MACOS\}$/, "SDK=MacOSX#{MacOS.sdk.version}" if OS.mac?
+      s.gsub!(/SDK=MacOSX\$\{MACOS\}$/, "SDK=MacOSX#{MacOS.sdk.version}") if OS.mac?
     end
 
     inreplace "edwin/compile.sh" do |s|

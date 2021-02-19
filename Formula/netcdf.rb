@@ -156,7 +156,7 @@ class Netcdf < Formula
     system ENV.cc, "test.c", "-L#{lib}", "-I#{include}", "-lnetcdf",
                    "-o", "test"
     if head?
-      assert_match /^\d+(?:\.\d+)+/, `./test`
+      assert_match(/^\d+(?:\.\d+)+/, `./test`)
     else
       assert_equal version.to_s, `./test`
     end
