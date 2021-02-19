@@ -17,7 +17,18 @@ jobs:
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           export_default_credentials: true
       - name: Start VM
-        run: gcloud compute instances start --zone=europe-west1-b linux-self-hosted-1
+        id: runner
+        run: |
+          retries=10000
+          for ((i=0; i<retries; i++)); do
+              echo "Checking for available VM"
+              runner=$(gcloud compute instances list --filter=TERMINATED --format="value(name)" | head -n 1)
+              [[ ! -z "$runner" ]] && break
+
+              echo "No instance found, waiting 60 seconds"
+              sleep 60
+          done
+          echo "::set-output name=runner::$runner"
       - name: Label pull request
         uses: Homebrew/actions/label-pull-requests@master
         if: always()
@@ -26,7 +37,7 @@ jobs:
           def: |
             [
                 {
-                    "label": "linux-self-hosted-1",
+                    "label": "${{steps.runner.outputs.runner}}",
                     "path": "Formula/.+"
                 }
             ]
