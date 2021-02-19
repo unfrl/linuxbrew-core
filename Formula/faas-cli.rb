@@ -17,6 +17,7 @@ class FaasCli < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "f5dd4d98f576b674af0c01f6fd3f0e3f739e24e688706dc15ad4532736fe889b"
     sha256 cellar: :any_skip_relocation, catalina:      "372b82d0ae920d5770945b17d87d507d2de761197ebf4af031c209f9c62aae92"
     sha256 cellar: :any_skip_relocation, mojave:        "e925ff25277e07ed684932a23917892814cace6c48f0f9f8f4ca04deece2c772"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a97a6688a24c30df087bf93700e9f2d5be88f5f4fd404d57a2e8e21a256e70a"
   end
 
   depends_on "go" => :build
