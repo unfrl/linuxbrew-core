@@ -1,10 +1,9 @@
 class PythonAT37 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.7.9/Python-3.7.9.tar.xz"
-  sha256 "91923007b05005b5f9bd46f3b9172248aea5abc1543e8a636d59e629c3331b01"
+  url "https://www.python.org/ftp/python/3.7.10/Python-3.7.10.tar.xz"
+  sha256 "f8d82e7572c86ec9d55c8627aae5040124fd2203af400c383c821b980306ee6b"
   license "Python-2.0"
-  revision 3
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -12,10 +11,9 @@ class PythonAT37 < Formula
   end
 
   bottle do
-    sha256 big_sur:      "2d9215895a5e535cf257e1e0a8c95473ab8e67711022962e362270e0e204d919"
-    sha256 catalina:     "4cc6c6f6fd0e26a3a652481f94a3d9e2c14de1085a11aeb20b0bd752b92df57c"
-    sha256 mojave:       "fb4a30c8314cb99cf8022bbb992593256ab2c3eb630b13866d85844f65edaf4f"
-    sha256 x86_64_linux: "5a8a5cfd00f9778c7313e3d39b9203f2c4be3cdf3411ada84b3d2bd8e8d4015b"
+    sha256 big_sur:  "10dd1820dc45fae55a5a34f3deb38b3f1992c7faf4ad6ca346f408fe510736c1"
+    sha256 catalina: "1b466069fcdb0cd3b2b2894ebfbfcad169bcae6f391f3847e8da1d74430de6ee"
+    sha256 mojave:   "0cd4463ec57f2f602cc3b82dd4a8908a33e75bcde82faee0b8f4c75595c50738"
   end
 
   # setuptools remembers the build flags python is built with and uses them to

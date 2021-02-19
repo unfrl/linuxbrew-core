@@ -3,17 +3,16 @@ class DockerCompose < Formula
 
   desc "Isolated development environments using Docker"
   homepage "https://docs.docker.com/compose/"
-  url "https://files.pythonhosted.org/packages/1f/ce/5b133b6569c5acd66f541254220e616ca61628e905d7872be6323b1db1e1/docker-compose-1.28.3.tar.gz"
-  sha256 "78a48ef8ff4fed092261ecb1a60d9b28b7776e72ed6df591a900008039308b0f"
+  url "https://files.pythonhosted.org/packages/bd/28/98a4cdb3ddfab3c356996a80f72e36a1c6d2e61f59dc503806d86b00780e/docker-compose-1.28.4.tar.gz"
+  sha256 "681aca74e70e238ae43c810a62f471b645942f0ce97b6a0ca375fcb64f3aca85"
   license "Apache-2.0"
   head "https://github.com/docker/compose.git"
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "0876bf56295633d8d02b4547ed63d638af140e01a3386a5da2a8c6ade7d62943"
-    sha256 cellar: :any,                 big_sur:       "0eb8e8638cd60f56841e84a7355697a6f0cda565aaa75fb67e6591560483057d"
-    sha256 cellar: :any,                 catalina:      "f6ae1b6f22122b27a33faec6ae928a34cf499edd73f778d75f6e69e4f0eba36d"
-    sha256 cellar: :any,                 mojave:        "f0493bee263dcdfb64f148072787f842a463799c972c0b01d12741849df875e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "489dc5b3c595722b3e19272cef6fe3faf3474514f3c697e62f45ea216e91c3d5"
+    sha256 cellar: :any, arm64_big_sur: "403a8c562cd2a9795b426602951a65076e75a93b4b38d69ee90cf036f889bc2c"
+    sha256 cellar: :any, big_sur:       "7ce78bfe6c5ad7865592e147929ed98f59538ad026a6da497fb4f9856ca9aba7"
+    sha256 cellar: :any, catalina:      "f6c2bedcc7d1c5966df7755f9df5b84f403dabb414c762b8c8209048e50cda8b"
+    sha256 cellar: :any, mojave:        "7a70c69e013372a6ba2fc2b604e99dd80333ed3a38cbced99b47fc68f37b2397"
   end
 
   depends_on "rust" => :build
@@ -64,8 +63,8 @@ class DockerCompose < Formula
   end
 
   resource "docker" do
-    url "https://files.pythonhosted.org/packages/40/e4/452bd7c8ed133b00429d14a5b2729485380a12255bc6b6cbb3ad76440b4d/docker-4.4.2.tar.gz"
-    sha256 "67f33d4cf95182db631a17eef7d666d2c91f624c1d3fbc4df6009cb2f2a4c604"
+    url "https://files.pythonhosted.org/packages/fb/21/459639c32d19ee5bc3e49c066e8f90969e6aca38779df590b9555cb1d1fe/docker-4.4.3.tar.gz"
+    sha256 "de5753b7f6486dd541a98393e423e387579b8974a5068748b83f852cc76a89d6"
   end
 
   resource "dockerpty" do
