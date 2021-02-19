@@ -8,9 +8,10 @@ class Idris2 < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, big_sur:  "2b30ef3cc0b899f187296f6b796cfb7d895bff9e69ee498c816a43382ad00608"
-    sha256 cellar: :any, catalina: "dcae9a5929edd6c7e358fb6c7050df0f07b068ec943cf9cf7e9853b83f07f8cd"
-    sha256 cellar: :any, mojave:   "ab173b9e9ef6083e6ae2fe22f8a55892e80c064ec9b9838afa5b6488ae9a8529"
+    sha256 cellar: :any,                 big_sur:      "2b30ef3cc0b899f187296f6b796cfb7d895bff9e69ee498c816a43382ad00608"
+    sha256 cellar: :any,                 catalina:     "dcae9a5929edd6c7e358fb6c7050df0f07b068ec943cf9cf7e9853b83f07f8cd"
+    sha256 cellar: :any,                 mojave:       "ab173b9e9ef6083e6ae2fe22f8a55892e80c064ec9b9838afa5b6488ae9a8529"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "5a8a2d238fc7a3aeb666d94dd787c675e4739133b7b30b98a3e888e7d854bfcd"
   end
 
   depends_on "coreutils" => :build
