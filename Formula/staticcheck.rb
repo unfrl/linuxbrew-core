@@ -11,6 +11,7 @@ class Staticcheck < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "bac9edcf563533c769e51ef5f0e57fde02cbaf1971e83abd4496013279cea909"
     sha256 cellar: :any_skip_relocation, catalina:      "b29dc5550502b8f28464aad8d968304c9989fd63b4da499d7d8355320f82d31d"
     sha256 cellar: :any_skip_relocation, mojave:        "debe36229bdb50d14cdd32f1727544bf82cd29f8fd269cdc59520bc78fca47d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7bceea6f49d33a8c6228795636a3fd047f40ecfec5d2b5eeae2c09e55e26d11e"
   end
 
   depends_on "go"
