@@ -7,9 +7,10 @@ class Akamai < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, big_sur:  "6ce7c1b2b58e3225295f90b5d83f4d3a7df4530b769ea44c716aaeec35b498d2"
-    sha256 cellar: :any_skip_relocation, catalina: "e8c599f32b5f7a489cee4723d378661c8aa12fa7ed3f1bef5e15c27f39a8cf87"
-    sha256 cellar: :any_skip_relocation, mojave:   "1d96850b0c979f5f351877977b7d06e5b26a78701a8993ad6366b229c15cae97"
+    sha256 cellar: :any_skip_relocation, big_sur:      "6ce7c1b2b58e3225295f90b5d83f4d3a7df4530b769ea44c716aaeec35b498d2"
+    sha256 cellar: :any_skip_relocation, catalina:     "e8c599f32b5f7a489cee4723d378661c8aa12fa7ed3f1bef5e15c27f39a8cf87"
+    sha256 cellar: :any_skip_relocation, mojave:       "1d96850b0c979f5f351877977b7d06e5b26a78701a8993ad6366b229c15cae97"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7d69e22d7439511185ac8c8994cac9aaa9ee5f19f5680c0cc9335dbb1d05f656"
   end
 
   depends_on "dep" => :build
