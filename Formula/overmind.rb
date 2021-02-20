@@ -11,6 +11,7 @@ class Overmind < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "da6500e570b06929b27d353231742e8fe7f1f4c810be0a68636b9c5d7dbaf1b4"
     sha256 cellar: :any_skip_relocation, catalina:      "4dafd6967b24d5d11861f665724a642b38f4c03039af3ae57bdb563144ecff7c"
     sha256 cellar: :any_skip_relocation, mojave:        "67280f3226318b61b7185dc0156dab62539a541bdc99a5c91196f6c3da1af05e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08774e3e167a2da4832f79146de332b0a3dd3dc1338cf707ae67108feb811def"
   end
 
   depends_on "go" => :build
