@@ -15,6 +15,7 @@ class DockerGen < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:   "42d2757b01271ef6c14de5441b3c65507538388db1e00e69f322272a5ba5b59c"
     sha256 cellar: :any_skip_relocation, sierra:        "222a5586670fec7643e9e7651f0b1fa82ff012048bd29b959ac720743f1a1a4f"
     sha256 cellar: :any_skip_relocation, el_capitan:    "c274701a545e5a4885995718f5f01ca6df2f9c6b9a143d4ffcf46b1771ac4cbc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c5b758ab172bccc2ff8c911334e91ba4fcd0fe1eb53eae51cdf19e7cf8908eb"
   end
 
   depends_on "go" => :build
