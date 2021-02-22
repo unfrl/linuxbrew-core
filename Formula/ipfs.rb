@@ -16,9 +16,10 @@ class Ipfs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:  "26b96618554fa924bf04a04b0f3c68714b92b1493f9391c973b7eb7b3409a744"
-    sha256 cellar: :any_skip_relocation, catalina: "f75c5837fecebbeeb36be86091e719d85b0922654d406753bfe3c4f7f4a2e1a9"
-    sha256 cellar: :any_skip_relocation, mojave:   "868371961578f442159865ff5111d778dbc730cda71058f942cbb354e6a46029"
+    sha256 cellar: :any_skip_relocation, big_sur:      "26b96618554fa924bf04a04b0f3c68714b92b1493f9391c973b7eb7b3409a744"
+    sha256 cellar: :any_skip_relocation, catalina:     "f75c5837fecebbeeb36be86091e719d85b0922654d406753bfe3c4f7f4a2e1a9"
+    sha256 cellar: :any_skip_relocation, mojave:       "868371961578f442159865ff5111d778dbc730cda71058f942cbb354e6a46029"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d0e0787ea04badd41ee9f03e96386847f168a9df73ba343056b0074650a0eaff"
   end
 
   depends_on "go@1.14" => :build
