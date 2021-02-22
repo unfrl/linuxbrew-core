@@ -11,6 +11,7 @@ class Octave < Formula
     sha256 big_sur:       "d612c400c445c0ef82d8b4c6cfafe7ad8e75e38656a822f73afb20e9068d0fe4"
     sha256 catalina:      "0efb1eb9ad8ecc20a6faf14061802ffbbe0f0849c07b275713586905c56ff400"
     sha256 mojave:        "9877bff61c9a68bd97998f2134bed1ad3f12d1ffb1108c4aeff8f0093e56c246"
+    sha256 x86_64_linux:  "fef0a834c43fad0b0187e3ab7d96c7eac0914995b54735ae605f0ee55e8403e1"
   end
 
   head do
