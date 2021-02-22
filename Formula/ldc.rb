@@ -19,18 +19,20 @@ class Ldc < Formula
 
   depends_on "cmake" => :build
   depends_on "libconfig" => :build
+  depends_on "pkg-config" => :build
   depends_on "llvm"
 
   uses_from_macos "libxml2" => :build
 
-  on_linux do
-    depends_on "pkg-config" => :build
-  end
-
   resource "ldc-bootstrap" do
     on_macos do
-      url "https://github.com/ldc-developers/ldc/releases/download/v1.25.0/ldc2-1.25.0-osx-x86_64.tar.xz"
-      sha256 "ea22a76d2fa86a52ca9b24bca980ffc12db56fbf8ef9582c586da24f83eb58f5"
+      if Hardware::CPU.intel?
+        url "https://github.com/ldc-developers/ldc/releases/download/v1.25.0/ldc2-1.25.0-osx-x86_64.tar.xz"
+        sha256 "ea22a76d2fa86a52ca9b24bca980ffc12db56fbf8ef9582c586da24f83eb58f5"
+      else
+        url "https://github.com/ldc-developers/ldc/releases/download/v1.25.0/ldc2-1.25.0-osx-arm64.tar.xz"
+        sha256 "3bfc74bf2d30c1015a0dce2e59278c871f9c8492aa6d06fa7b940d61ffbb0c2c"
+      end
     end
 
     on_linux do
