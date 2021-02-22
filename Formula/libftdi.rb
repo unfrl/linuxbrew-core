@@ -12,10 +12,11 @@ class Libftdi < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "998ea9ac5c02fdad06ad304dc36ccd0b010267271e7d68ff3f3cfbf407339067"
-    sha256 cellar: :any, big_sur:       "26dfaad8173c39d9aa57354256ae4885ea4154a5c3f539c0cb8929e627cafd72"
-    sha256 cellar: :any, catalina:      "8f20fb63150135151bac6d385c5c8fac07ccdc97c5d4a17d1d9aaf62737a606c"
-    sha256 cellar: :any, mojave:        "52fd8c98d57a09972db3db70a405c32c17dc7ea60663c058b8cfa17d51fc1951"
+    sha256 cellar: :any,                 arm64_big_sur: "998ea9ac5c02fdad06ad304dc36ccd0b010267271e7d68ff3f3cfbf407339067"
+    sha256 cellar: :any,                 big_sur:       "26dfaad8173c39d9aa57354256ae4885ea4154a5c3f539c0cb8929e627cafd72"
+    sha256 cellar: :any,                 catalina:      "8f20fb63150135151bac6d385c5c8fac07ccdc97c5d4a17d1d9aaf62737a606c"
+    sha256 cellar: :any,                 mojave:        "52fd8c98d57a09972db3db70a405c32c17dc7ea60663c058b8cfa17d51fc1951"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6a1bb4044d47ae5669f8ac9e993bddb62aa6d95d284ad642d38937d2d8007c4"
   end
 
   depends_on "cmake" => :build
