@@ -10,6 +10,7 @@ class Devdash < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "ed3cdf57da86291e75676b7b612c455a76a103a5ccba69a59bf5a2ab4ccdab2b"
     sha256 cellar: :any_skip_relocation, catalina:      "b52acde2aef763abf398625151e9291b14a65e440e6be766b641fbd2a8e08b1c"
     sha256 cellar: :any_skip_relocation, mojave:        "e8957a8a3223f928218c5b4fd37b6c8c9a6b37c9c68be2689ad4ec569259d6b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a09c198528f92adc933d5e4c87b9df5f30986bc57c515b6aeeb7bdfc20eec1a3"
   end
 
   depends_on "go" => :build
