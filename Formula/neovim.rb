@@ -19,6 +19,7 @@ class Neovim < Formula
     sha256 big_sur:       "3a958561859b4f526a729d0efd7030eb57580ba7dc97decff586de6b2c48f804"
     sha256 catalina:      "c5f97d4a2740a93137452feba2640a401f3bea83bc3b5b5fc2235a043f05cce8"
     sha256 mojave:        "3646015b633d5c5044f3a27ee64c0a10c11a6554f0de2f0989e7e77b11d11c2c"
+    sha256 x86_64_linux:  "cb3b866ba81ff239823b9abda63e991d02d913b244f7aa917c66f3a8237a5b92"
   end
 
   head do
