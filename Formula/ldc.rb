@@ -16,6 +16,7 @@ class Ldc < Formula
     sha256 big_sur:       "2f55c8a8f0a3c3c9a46d3d56792b539d663cbf889274ae0bc21a57002c6344c9"
     sha256 catalina:      "c55b6dad0e09b8422d0544be364514489a1a0dea9aff57c72f769bf8d1c0ad61"
     sha256 mojave:        "831e1e40027197d94e97670073d7a08fef68e464c5b5165d68ae670964d2e2be"
+    sha256 x86_64_linux:  "0daa2eae58d36f6d88dfa1dae1d7b49b8cf19a1e8f112f65c0ee7f457cdb437f"
   end
 
   depends_on "cmake" => :build
