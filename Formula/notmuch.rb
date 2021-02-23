@@ -12,10 +12,11 @@ class Notmuch < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "1586671b82d5034834e193d2567df96bc5a22126c21f129d217970fc828df867"
-    sha256 cellar: :any, big_sur:       "6a4e93016764cd241fd6fcfe7de3c1fad5f7c974059e6e0eae26acbaa1ad3135"
-    sha256 cellar: :any, catalina:      "8e44512a3da374635e4c8a1c64e616b194aab6c44f801ebe8b597a24b62523de"
-    sha256 cellar: :any, mojave:        "665555b527990f222c945e630d7fd8e9a1b97e0c9fb996932f53a35c426b4a13"
+    sha256 cellar: :any,                 arm64_big_sur: "1586671b82d5034834e193d2567df96bc5a22126c21f129d217970fc828df867"
+    sha256 cellar: :any,                 big_sur:       "6a4e93016764cd241fd6fcfe7de3c1fad5f7c974059e6e0eae26acbaa1ad3135"
+    sha256 cellar: :any,                 catalina:      "8e44512a3da374635e4c8a1c64e616b194aab6c44f801ebe8b597a24b62523de"
+    sha256 cellar: :any,                 mojave:        "665555b527990f222c945e630d7fd8e9a1b97e0c9fb996932f53a35c426b4a13"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1615967f61f087fcbc342bd2e49cbfc7d8a98d6e18b7c4764177c760ca6c1185"
   end
 
   depends_on "doxygen" => :build
