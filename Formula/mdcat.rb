@@ -10,6 +10,7 @@ class Mdcat < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "61f9b5935ff6b02edf87e25de955c3457d11a9d163b3ae893c116056ca8d0a47"
     sha256 cellar: :any_skip_relocation, catalina:      "e70449d7eb7d3965c90bad8892d2654f56ed0bea0aae0b729ffafeb2bc0a7476"
     sha256 cellar: :any_skip_relocation, mojave:        "665de148b7183a9c84f48e0b2f95e34f92280e46cfc2ed9c8c6fce9f6a8960e4"
+    sha256                               x86_64_linux:  "6c9bd9143773fa728639214c9c60d3bab9982093e16b8b6e033295f798787ba7"
   end
 
   depends_on "cmake" => :build
