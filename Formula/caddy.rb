@@ -12,6 +12,7 @@ class Caddy < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "9564b852006d1a2bbad34dffce96a225b26e258fb9bc34a2202fe2b9dceee397"
     sha256 cellar: :any_skip_relocation, catalina:      "e3426aa235903fb0d6d25674114e16f05974f719119bec81b443136f8cc1b347"
     sha256 cellar: :any_skip_relocation, mojave:        "182ffcf9b7bb81f4299897a225848e690605f47126f1a2dd97b69ca5a7f869ee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9e47e306a1dbe45059abe36b4ebe74e6a005868be9d2f4e0c3c26aa265bc3e1"
   end
 
   depends_on "go" => :build
