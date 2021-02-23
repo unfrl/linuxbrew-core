@@ -23,10 +23,11 @@ class Cvs < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "d254eab8b61ddab83920f40ee1981b0f63ea9fd7bc02e570837bc61551dfdd32"
-    sha256 cellar: :any, big_sur:       "6d6120ae3bf1d373e769370cd6ef8621cb462fb592cb337ad4057e10c4ee07ec"
-    sha256 cellar: :any, catalina:      "4844c8cc28ae86ca8adc34d149f9d78c94195b8ccb88af24a85a3112e53246f0"
-    sha256 cellar: :any, mojave:        "735fd1cc0b3e954123e93bb3565622e57a833863aaa95475c719d908a74fa1df"
+    sha256 cellar: :any,                 arm64_big_sur: "d254eab8b61ddab83920f40ee1981b0f63ea9fd7bc02e570837bc61551dfdd32"
+    sha256 cellar: :any,                 big_sur:       "6d6120ae3bf1d373e769370cd6ef8621cb462fb592cb337ad4057e10c4ee07ec"
+    sha256 cellar: :any,                 catalina:      "4844c8cc28ae86ca8adc34d149f9d78c94195b8ccb88af24a85a3112e53246f0"
+    sha256 cellar: :any,                 mojave:        "735fd1cc0b3e954123e93bb3565622e57a833863aaa95475c719d908a74fa1df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c1997c20b9ba268688aa085c98ae95f1bc04f5b81a5326014aaa45ee8baa010"
   end
 
   depends_on "autoconf" => :build
