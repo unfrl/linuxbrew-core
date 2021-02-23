@@ -12,9 +12,10 @@ class Picat < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:  "0b46597446fbf2a89bcf167c1074130adbcd78224c0abf730549dd1276294e06"
-    sha256 cellar: :any_skip_relocation, catalina: "9333c71b38ab368a6cf59aff288a941309f464922323066f060ebdc9767def27"
-    sha256 cellar: :any_skip_relocation, mojave:   "45f854d102acb4e041f176049552072b8a34f7b586af655cc28053688b151670"
+    sha256 cellar: :any_skip_relocation, big_sur:      "0b46597446fbf2a89bcf167c1074130adbcd78224c0abf730549dd1276294e06"
+    sha256 cellar: :any_skip_relocation, catalina:     "9333c71b38ab368a6cf59aff288a941309f464922323066f060ebdc9767def27"
+    sha256 cellar: :any_skip_relocation, mojave:       "45f854d102acb4e041f176049552072b8a34f7b586af655cc28053688b151670"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "33e91b4b277dc24abbc153243b2d84ab4c4127a640ab819b208b20e51ed9a2a4"
   end
 
   def install
