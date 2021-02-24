@@ -10,6 +10,7 @@ class Gdu < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "5df7197faf23c86ab0fd1093cfd2ce78f127f10c2415abb063bce32670d13808"
     sha256 cellar: :any_skip_relocation, catalina:      "763fd9756ff4e16d015b1d9468bbbc4391cf5348551fe40999ed679c8a00b404"
     sha256 cellar: :any_skip_relocation, mojave:        "a80db214f2511c5a472fb4ec58f1a61b035f227239867dedd753a8a83d30dd94"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81b458cbd3ff4287a114c09f3e062795b75dcfafe52577ccbb35fc4ddb36f4fc"
   end
 
   depends_on "go" => :build
