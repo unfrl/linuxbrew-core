@@ -17,6 +17,7 @@ class Linkerd < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "c7febb2775499447608d28e889060b2de09aa55be6ad252343c2af485f54fcf4"
     sha256 cellar: :any_skip_relocation, catalina:      "edf4fe6c38dd321d0fc79d719463097454cb7c99cbf915d51a2ab4d21d79e53d"
     sha256 cellar: :any_skip_relocation, mojave:        "5fbc42faf0ffd0e33caf915c030b222cad0c8c5a4d717983a6cb9ab8a498996b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "039249760a10713fd3c9122ab3585155c4dd37cb12830da130044157a63791ea"
   end
 
   depends_on "go" => :build
