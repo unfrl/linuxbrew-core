@@ -11,6 +11,7 @@ class Cmake < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "2b57a88a40946e2340fdec37572b8aad7cea22b4c92459e92359a83fd66d6455"
     sha256 cellar: :any_skip_relocation, catalina:      "1ae520ac59a80a7f3dda92ea33ec447ae22047b07eb69197d69da0c9f0ae6083"
     sha256 cellar: :any_skip_relocation, mojave:        "989874119fc4876068106b5dd7948eac4144a11a2ec6712acb8404bcdd2cf3ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "91325f3fea66879f6bf6be29eb0e4ea332c06c9760ea58b5967521f37d830c2b"
   end
 
   depends_on "sphinx-doc" => :build
