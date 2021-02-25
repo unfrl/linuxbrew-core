@@ -10,6 +10,7 @@ class Xorgproto < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "ec193775c03e4473b3d84ef717d2b31904700c8f57db45b37a53c85d01af2392"
     sha256 cellar: :any_skip_relocation, catalina:      "c63919a404e17200e73d19c4f2ab130bb64843bb575d0c542a78a68a60ec88fa"
     sha256 cellar: :any_skip_relocation, mojave:        "7cc2ab60ba641d3e471d50ef6c3e1534179c9d0767cd180c26bccc2493e9cd6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f1448a4b19505bb9148f4f8ab1edf6d20fd336ecc1a0a0c922edb820c0f9eff"
   end
 
   depends_on "pkg-config" => [:build, :test]
