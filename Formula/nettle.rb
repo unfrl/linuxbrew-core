@@ -7,10 +7,11 @@ class Nettle < Formula
   license any_of: ["GPL-2.0-or-later", "LGPL-3.0-or-later"]
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "3efe8eae1e8f9c3d2e05ae28eb1b1b2cb6d31fe1ed0116979e5df6fda01a60b0"
-    sha256 cellar: :any, big_sur:       "902f1d7ccbb934172e0274d46ac98b38a528bfc3d810da05e6eb5f1d5a13a0b1"
-    sha256 cellar: :any, catalina:      "9504cb3a8dc7a70dc118635d5af2b79bd1dbda75db8ecc17ef6988b50933d633"
-    sha256 cellar: :any, mojave:        "a7fb32b7bbc8b6c010f850ac9f2a7016a32ed7f645b2d4887e30a8cd7b2b2fe4"
+    sha256 cellar: :any,                 arm64_big_sur: "3efe8eae1e8f9c3d2e05ae28eb1b1b2cb6d31fe1ed0116979e5df6fda01a60b0"
+    sha256 cellar: :any,                 big_sur:       "902f1d7ccbb934172e0274d46ac98b38a528bfc3d810da05e6eb5f1d5a13a0b1"
+    sha256 cellar: :any,                 catalina:      "9504cb3a8dc7a70dc118635d5af2b79bd1dbda75db8ecc17ef6988b50933d633"
+    sha256 cellar: :any,                 mojave:        "a7fb32b7bbc8b6c010f850ac9f2a7016a32ed7f645b2d4887e30a8cd7b2b2fe4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "371a21725b73924965bb182f8737cea8d238ce1fc2150ea84cfcc64011d7d485"
   end
 
   depends_on "gmp"
