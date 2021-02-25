@@ -10,6 +10,7 @@ class Fn < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "ae3a6489a19b83c1486e369dcbe812392f4d38e50bd4034ea30caccafe327d29"
     sha256 cellar: :any_skip_relocation, catalina:      "18244079c335e570523670439efc0ee9b9b35c700c327d1e561171d38abba680"
     sha256 cellar: :any_skip_relocation, mojave:        "f9f20203e958f01f23f1e9a510a9b35863e35f8cf2c68ff89edb122d29aea57e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e81d5beed311827169408d5ba4d9dcbf11c5adf6e04eb67b3cf5ec977171b8f"
   end
 
   depends_on "go" => :build
