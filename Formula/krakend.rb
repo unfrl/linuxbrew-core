@@ -10,6 +10,7 @@ class Krakend < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "b970739f920f5b23b39552ffbe827b1f53ba8f5861f61f9ab3295f71e707787a"
     sha256 cellar: :any_skip_relocation, catalina:      "c5af19b1068385c961df0c88005f41fd0cb59c9ee28771ea7ca7ee43e38ddfad"
     sha256 cellar: :any_skip_relocation, mojave:        "42ecca58ac93e1918a8e36e54be022b46313308c4f76d0eaf1621f5e76debab1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b5cae3f6867de0524a6b9a384a292b31d165768d2db1ba45f7c35a7cfdf6186"
   end
 
   depends_on "go" => :build
