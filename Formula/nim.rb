@@ -10,6 +10,7 @@ class Nim < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "91d277b8e9cc51f55a82e7b2e6abd48623d0ef8e5e82fcb46f72407f5aaf1de8"
     sha256 cellar: :any_skip_relocation, catalina:      "037d54470df4c702cfa6054c0fd731d437472fa4cc2e547e0a48b49b687d2227"
     sha256 cellar: :any_skip_relocation, mojave:        "4688d98b7f3819d9f3f994630f676c80873a7e8356bb858a0edf67d13b1bd7fd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba8bf981a13ab57561246dbf446d282a1b65e18b9443cb9ff3a662bca5729286"
   end
 
   head do
