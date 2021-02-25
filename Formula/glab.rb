@@ -12,6 +12,7 @@ class Glab < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "4d2287ebe64e3c776c88aef4cb4f1b1276345f8ffa4c2f68325a424314606833"
     sha256 cellar: :any_skip_relocation, catalina:      "ff37b590f989cd2392d70c38c667a6affed2823a24e863a7d1ab16e36b4958ca"
     sha256 cellar: :any_skip_relocation, mojave:        "bd27068df5007c6d1b6a7edda3b06b031df65c9f59fdffe8e1b6f14051d452f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7237e5671dd4f5a82289f40ad5fa740f91ef415f92f16c2e4d1da3465fbc1fb"
   end
 
   depends_on "go" => :build
