@@ -17,6 +17,7 @@ class Buildkit < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "f0136996daa0dba57602f1cd2a662c21e24927feb758b3269c2be81533b87453"
     sha256 cellar: :any_skip_relocation, catalina:      "b425bf61e8799358958db28a875f16069f5278d066f934c624bec1ace320a24e"
     sha256 cellar: :any_skip_relocation, mojave:        "04805349df94e16f5cb3e59e14c2bdd29d8b72b266ee11119934a677b521e068"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05cd64a03a87f681fb3aa77bbcc57c6b6336e1a2d6b2c6f1de48582feaf716ae"
   end
 
   depends_on "go" => :build
