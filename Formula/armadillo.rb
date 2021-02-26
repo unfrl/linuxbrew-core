@@ -11,10 +11,11 @@ class Armadillo < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "f0c1b6aa5583da65cf939b736c374ace47170d64fdba5fc848709b95c3cf708d"
-    sha256 cellar: :any, big_sur:       "7e8666013161c64c061b9e21dd2a0e7776a563e7d2fcac7c5e22d33399b25f2c"
-    sha256 cellar: :any, catalina:      "e8f231d4cb41621885d9024e6ac0621d1e5553506932bc9bda8a222822a6ca97"
-    sha256 cellar: :any, mojave:        "b433dfaa5d5af7a5efa540d009ed1c2ba8609b1ecc85eb44e871739c574b235e"
+    sha256 cellar: :any,                 arm64_big_sur: "f0c1b6aa5583da65cf939b736c374ace47170d64fdba5fc848709b95c3cf708d"
+    sha256 cellar: :any,                 big_sur:       "7e8666013161c64c061b9e21dd2a0e7776a563e7d2fcac7c5e22d33399b25f2c"
+    sha256 cellar: :any,                 catalina:      "e8f231d4cb41621885d9024e6ac0621d1e5553506932bc9bda8a222822a6ca97"
+    sha256 cellar: :any,                 mojave:        "b433dfaa5d5af7a5efa540d009ed1c2ba8609b1ecc85eb44e871739c574b235e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05d6bb86853652601ccca52c00ffe3811eed4a2852ab7ffa1b1bb85504bdbba2"
   end
 
   depends_on "cmake" => :build
