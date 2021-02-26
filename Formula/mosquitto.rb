@@ -17,6 +17,7 @@ class Mosquitto < Formula
     sha256 big_sur:       "77cc5148716a9ae22d6a5b19f92beef6d33cd777c020f2444200368097699b71"
     sha256 catalina:      "0b450c6694c6940368bf150693dbc2e04f3bbda608c691f91fa84509d26d2510"
     sha256 mojave:        "fb1679f4855964d8ed60af4f42903aad617550c9ada5c0e8e3a31c2aa204f2df"
+    sha256 x86_64_linux:  "5268e73e717c6d3e7868eed61c3a5e8a39f21d9d6b92c2dc800610416f487b32"
   end
 
   depends_on "cmake" => :build
