@@ -7,9 +7,10 @@ class CabalInstall < Formula
   head "https://github.com/haskell/cabal.git", branch: "3.4"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:  "2c0c5cc90d4739515721557f8e9c02783b3b5f106033c5c09241657b4418b21f"
-    sha256 cellar: :any_skip_relocation, catalina: "14be4fa563d51c78f570a4d58746fea563e33f94fdd288f907d4892b2a763eec"
-    sha256 cellar: :any_skip_relocation, mojave:   "7b0fdd86bd545b19defa1b89e98f31aff6d3b7519b98cd76f52c1641b50a92ad"
+    sha256 cellar: :any_skip_relocation, big_sur:      "2c0c5cc90d4739515721557f8e9c02783b3b5f106033c5c09241657b4418b21f"
+    sha256 cellar: :any_skip_relocation, catalina:     "14be4fa563d51c78f570a4d58746fea563e33f94fdd288f907d4892b2a763eec"
+    sha256 cellar: :any_skip_relocation, mojave:       "7b0fdd86bd545b19defa1b89e98f31aff6d3b7519b98cd76f52c1641b50a92ad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c539204c002a3d100970d878c9743690afd4a1d69997acea337fcfac38628de7"
   end
 
   depends_on "ghc"
