@@ -1,27 +1,19 @@
 class P7zip < Formula
   desc "7-Zip (high compression file archiver) implementation"
-  homepage "https://p7zip.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/p7zip/p7zip/16.02/p7zip_16.02_src_all.tar.bz2"
-  sha256 "5eb20ac0e2944f6cb9c2d51dd6c4518941c185347d4089ea89087ffdd6e2341f"
+  homepage "https://github.com/jinfeihan57/p7zip"
+  url "https://github.com/jinfeihan57/p7zip/archive/v17.03.tar.gz"
+  sha256 "bb4b9b21584c0e076e0b4b2705af0dbe7ac19d378aa7f09a79da33a5b3293187"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
-  revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "672dff61eba151f9c1117a1486ef2908dc0d834c355ca31f359ac56dafc75e3d"
-    sha256 cellar: :any_skip_relocation, big_sur:       "910811e37db23bbe76d169211d31d36156403f503654d04ed612d7863ea907f8"
-    sha256 cellar: :any_skip_relocation, catalina:      "82e0e2a437f8f2e58e82d4823bfaeb479e89d325af3bd4300ab349a5b09fa132"
-    sha256 cellar: :any_skip_relocation, mojave:        "971a247c66fae4b54fdf169fdea79b79a85af6a8d6dc01a3119df014aa4316fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39ddcba6f90f8612f0e0ddb9550def098578456b556be3b6ced319cccd3bfc03"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "f6cf223081d11458e4367c049596ac1cfa5b24f8905e6b837544a22e9b77c588"
+    sha256 cellar: :any_skip_relocation, big_sur:       "103ceafc69d49fcbf29574d8b433b995ad8a392a2264e46c08f81fb745ade728"
+    sha256 cellar: :any_skip_relocation, catalina:      "86e612c906985b6725236d8ed26d1242f870ee2d8f51d425c5ec6cebaec65dc5"
+    sha256 cellar: :any_skip_relocation, mojave:        "89bdd3bdb3aaacb8bd7a86a8fdde1de160cf5111e8f05323f92735f37ba4aef9"
   end
 
-  # Fix security bugs and remove non-free RAR sources
-  patch do
-    url "https://deb.debian.org/debian/pool/main/p/p7zip/p7zip_16.02+dfsg-8.debian.tar.xz"
-    sha256 "01217dca1667af0de48935a51dc46aad442e6ebcac799d714101b7edf9651eb5"
-    apply "patches/01-makefile.patch",
-          "patches/12-CVE-2016-9296.patch",
-          "patches/13-CVE-2017-17969.patch"
-  end
+  # Remove non-free RAR sources
+  patch :DATA
 
   # Fix AES security bugs
   patch :p4 do
