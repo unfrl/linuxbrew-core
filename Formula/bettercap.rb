@@ -4,15 +4,15 @@ class Bettercap < Formula
   url "https://github.com/bettercap/bettercap/archive/v2.29.tar.gz"
   sha256 "c414be98a48d9f279460b325dddaef8479132a1470c6f305790d79e04dac1297"
   license "GPL-3.0-only"
+  head "https://github.com/bettercap/bettercap.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:      "6de77638b77e9b826cd2085147a5c312156d578f3376f2e0cc3397be9a48e7bd"
-    sha256 cellar: :any_skip_relocation, catalina:     "8e7ccb9e8da1c79916eec5b77c2c55141bd13943d022ffee7cdbf13ee1e9640f"
-    sha256 cellar: :any_skip_relocation, mojave:       "4b59d7b9b41bcd5ee77ca8dc5ecb00c4ba158910dc30c2083c5e4dee6b994e1d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "235e22d8f385a0128754e73e7c9ceaceb5895f8311168e51c57d1ad3fd7e8792"
+    sha256 cellar: :any, arm64_big_sur: "38484bdccaad4736811059665dd5bca170daaf2572ed2d512c6062eb9d31bb90"
+    sha256 cellar: :any, big_sur:       "6de77638b77e9b826cd2085147a5c312156d578f3376f2e0cc3397be9a48e7bd"
+    sha256 cellar: :any, catalina:      "8e7ccb9e8da1c79916eec5b77c2c55141bd13943d022ffee7cdbf13ee1e9640f"
+    sha256 cellar: :any, mojave:        "4b59d7b9b41bcd5ee77ca8dc5ecb00c4ba158910dc30c2083c5e4dee6b994e1d"
   end
 
-  depends_on "dep" => :build
   depends_on "go" => :build
   depends_on "pkg-config" => :build
   depends_on "libusb"

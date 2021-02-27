@@ -1,8 +1,8 @@
 class Verilator < Formula
   desc "Verilog simulator"
   homepage "https://www.veripool.org/wiki/verilator"
-  url "https://www.veripool.org/ftp/verilator-4.108.tgz"
-  sha256 "8e8ec1de0bf200b6206035214f9071a5acc64bd2e7134361d564271e48552702"
+  url "https://www.veripool.org/ftp/verilator-4.110.tgz"
+  sha256 "4716fe0058661a29d6b59caf8e7471b2eddbded6ed44ede78dc1c65094ecfecc"
   license any_of: ["LGPL-3.0-only", "Artistic-2.0"]
 
   livecheck do
@@ -11,10 +11,10 @@ class Verilator < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "54cb01cc42dcbb937393cb3359459b18c4cc29c424d19065b09f1095fdee685b"
-    sha256 big_sur:       "45d7504fefb899372cd2ee8876e8a82d56b59f14972309b9dbeed83b580029b3"
-    sha256 catalina:      "8e616f827d635b2659f454a3f5dc302fced30bad4b26930ccd392944f71dbfd9"
-    sha256 mojave:        "97797a992b626adf8ae83c8ee22d881ec26bf12f390c6a807e0635bc67d6e09b"
+    sha256 arm64_big_sur: "21fca68551c495dfb52540ebf1aec6f6b43d7e9af6e41cf3407aa9c350083f69"
+    sha256 big_sur:       "65503e49d92c3be042c5cdf51a020d512f26c089a5fd3d68930fefbfa39a938f"
+    sha256 catalina:      "348d8bce800188559ff7e1e01cfc58345c30438ea3b00c6c4d1eb386851c64b9"
+    sha256 mojave:        "3fe387a52d1ae9763bf681dfd4f0fe3e43a39f2ffa93f3dc9a30a4b2bad8d9ec"
   end
 
   head do
