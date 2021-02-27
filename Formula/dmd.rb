@@ -4,30 +4,29 @@ class Dmd < Formula
   license "BSL-1.0"
 
   stable do
-    url "https://github.com/dlang/dmd/archive/v2.095.0.tar.gz"
-    sha256 "d8b54cdd885b86e2cc30ccb4ccc6923940b3bd79183b499889b86d34dd22621b"
+    url "https://github.com/dlang/dmd/archive/v2.095.1.tar.gz"
+    sha256 "ccffae555faf97ccc0c4dbedc338e2121135fe57fc51cfe95ba10c95c8743cc3"
 
     resource "druntime" do
-      url "https://github.com/dlang/druntime/archive/v2.095.0.tar.gz"
-      sha256 "f8d6346aa13bdc6ff893eb9d9e5aa5e8ff5efe97dbfd92f7ecd8db8172d0c04a"
+      url "https://github.com/dlang/druntime/archive/v2.095.1.tar.gz"
+      sha256 "f5e4ff5d98f875595c039cbb3d1886cb5f1ab835b98e5a28704995b8c82a24cd"
     end
 
     resource "phobos" do
-      url "https://github.com/dlang/phobos/archive/v2.095.0.tar.gz"
-      sha256 "f5c9606a988917a38b3b9a495c6da0d4e36b60beac8e805f6dea719d042d50d4"
+      url "https://github.com/dlang/phobos/archive/v2.095.1.tar.gz"
+      sha256 "7abc1ed3b014d68f24fe0fb2550654ca65ca7db171402d063c0ba119d1567369"
     end
 
     resource "tools" do
-      url "https://github.com/dlang/tools/archive/v2.095.0.tar.gz"
-      sha256 "7688c56285e098b91ec81a3efaaec6d236aa1a1736fe21797d3335175f8fea8c"
+      url "https://github.com/dlang/tools/archive/v2.095.1.tar.gz"
+      sha256 "227deb424b82d11eb65a27800df377dc5e9f1b8b496a23df4c28a85a24580d77"
     end
   end
 
   bottle do
-    sha256 big_sur:      "0acb383286c9386439af8be1e6c577918f7cd2b378d88e3925ab78bec454bb36"
-    sha256 catalina:     "c3a4d16a248a6f098d34a72ae0d53308862674bc6fab72fd94f79c38a1745450"
-    sha256 mojave:       "3b6c0164045fc0846426d0a433ccbe2fb3eb39652488ae222158dad276bd9db1"
-    sha256 x86_64_linux: "73d4b0ab0626657675f49922db1b0143df75cb478a5ce8e500047f4b39d3bb94"
+    sha256 big_sur:  "35b1c5bbd6e60e59cd468071d48b9d75a9de1734c3b1090a4cd0d9b1eb59d984"
+    sha256 catalina: "e3f00a4729cf637eac841cf9d7c6905d758392b1b23c953e9d3fdb388dbedc77"
+    sha256 mojave:   "83134d266a7a69b996c9c2aa6096d42abbc3c38dc0ef21e1fc6e80faff5f3676"
   end
 
   head do

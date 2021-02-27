@@ -3,15 +3,15 @@ class Richmd < Formula
 
   desc "Format Markdown in the terminal with Rich"
   homepage "https://github.com/willmcgugan/rich"
-  url "https://files.pythonhosted.org/packages/0c/52/10c143eab4648e6eff50f3080614489b6bfed76ad212800623596b74435c/rich-9.12.1.tar.gz"
-  sha256 "594940d0d0386c28d6e95290a5df7e3871fe9e52af6b72d1062edc90d6068c35"
+  url "https://files.pythonhosted.org/packages/23/4d/85d622a12208a1fb09540554f812e867db983d4aa7fddf763cf26d9407f5/rich-9.12.2.tar.gz"
+  sha256 "493b4288273aa46475230733358696457e5df9215c898b164a324b7d9d694e88"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "c2867f5ec2999de4fae86a1daaa8ab8f7baf64ae59e3bdeb367dda86120e2745"
-    sha256 cellar: :any_skip_relocation, big_sur:       "3eadb8c1bb63190e2be5c0337a6666e7eca10ab5f0fac9ff54005823c9e72901"
-    sha256 cellar: :any_skip_relocation, catalina:      "6b68e86f260e0128558ec50295427c7ac928f5ed7099cbc571cc4b3a3956eaad"
-    sha256 cellar: :any_skip_relocation, mojave:        "d63df4d8d9ce75a0db5279b7e5e2ddec13a7b5046b01a3aa84fb3ddc26bc0b7a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "bdc1f7a9b5bef6b1b5fdb90b718d94184820ed8279386d5962fdcc76017da3f3"
+    sha256 cellar: :any_skip_relocation, big_sur:       "4b4eb860374f3260daa35ede9683246bfee7acef4936beae1e18abf81bfe8ca4"
+    sha256 cellar: :any_skip_relocation, catalina:      "df2f3fb04861b77ae822f8ab160e8bb226d2493218e0bb8ea907572877817bbe"
+    sha256 cellar: :any_skip_relocation, mojave:        "f0ecb594bf101d0f91b8932699e133d86054f69941186d0f4070a4765f83800c"
   end
 
   depends_on "python@3.9"
