@@ -11,6 +11,7 @@ class P7zip < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "696fae5d82319db27d8460c09bfcaa238b2af1f3741575317b4bb010d93cc90d"
     sha256 cellar: :any_skip_relocation, catalina:      "f6b8e20d8f659449c9ee8b9793c78a6bfbf5e1eb990865721b91fd7a2e7e21cc"
     sha256 cellar: :any_skip_relocation, mojave:        "b5d486a4b47f49eae90b1255a002219fc5f5e8236202333dc84d99a4529cc104"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e57be8dbbf66afe4b66c5528f6d0d57b570f317cb5efb1163ca61d73202bc08f"
   end
 
   # Remove non-free RAR sources
