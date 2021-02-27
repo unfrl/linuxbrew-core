@@ -6,20 +6,21 @@ class P7zip < Formula
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "f6cf223081d11458e4367c049596ac1cfa5b24f8905e6b837544a22e9b77c588"
-    sha256 cellar: :any_skip_relocation, big_sur:       "103ceafc69d49fcbf29574d8b433b995ad8a392a2264e46c08f81fb745ade728"
-    sha256 cellar: :any_skip_relocation, catalina:      "86e612c906985b6725236d8ed26d1242f870ee2d8f51d425c5ec6cebaec65dc5"
-    sha256 cellar: :any_skip_relocation, mojave:        "89bdd3bdb3aaacb8bd7a86a8fdde1de160cf5111e8f05323f92735f37ba4aef9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "70e5692d478ef12fd492d3759d6c226c2fdf90ef9522048bb86c3c460eb44071"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "d14cc7a098606e902b3bfcb908d71a658e6b78c64adccdc93ae87a0c9f1bfd87"
+    sha256 cellar: :any_skip_relocation, big_sur:       "696fae5d82319db27d8460c09bfcaa238b2af1f3741575317b4bb010d93cc90d"
+    sha256 cellar: :any_skip_relocation, catalina:      "f6b8e20d8f659449c9ee8b9793c78a6bfbf5e1eb990865721b91fd7a2e7e21cc"
+    sha256 cellar: :any_skip_relocation, mojave:        "b5d486a4b47f49eae90b1255a002219fc5f5e8236202333dc84d99a4529cc104"
   end
 
   # Remove non-free RAR sources
   patch :DATA
 
   # Fix AES security bugs
-  patch :p4 do
-    url "https://github.com/aonez/Keka/files/2940620/15-Enhanced-encryption-strength.patch.zip"
-    sha256 "838dd2175c3112dc34193e99b8414d1dc1b2b20b861bdde0df2b32dbf59d1ce4"
+  # https://github.com/jinfeihan57/p7zip/pull/117
+  patch do
+    url "https://github.com/jinfeihan57/p7zip/commit/6106df26ff64fa8147bfc9abdc0a14908b5d3871.patch?full_index=1"
+    sha256 "5fcce7293ba017b4aa3ba5afbe6f2a847d60a785ea0966c31ac33da4bdf3ef6e"
   end
 
   def install
@@ -43,32 +44,3 @@ class P7zip < Formula
     assert_equal "hello world!\n", File.read(testpath/"out/foo.txt")
   end
 end
-
-__END__
-diff -u -r a/makefile b/makefile
---- a/makefile	2021-02-21 14:27:14.000000000 +0800
-+++ b/makefile	2021-02-21 14:27:31.000000000 +0800
-@@ -31,7 +31,6 @@
- 	$(MAKE) -C CPP/7zip/UI/Client7z           depend
- 	$(MAKE) -C CPP/7zip/UI/Console            depend
- 	$(MAKE) -C CPP/7zip/Bundles/Format7zFree  depend
--	$(MAKE) -C CPP/7zip/Compress/Rar          depend
- 	$(MAKE) -C CPP/7zip/UI/GUI                depend
- 	$(MAKE) -C CPP/7zip/UI/FileManager        depend
- 
-@@ -42,7 +41,6 @@
- common7z:common
- 	$(MKDIR) bin/Codecs
- 	$(MAKE) -C CPP/7zip/Bundles/Format7zFree all
--	$(MAKE) -C CPP/7zip/Compress/Rar         all
- 
- lzham:common
- 	$(MKDIR) bin/Codecs
-@@ -67,7 +65,6 @@
- 	$(MAKE) -C CPP/7zip/UI/FileManager       clean
- 	$(MAKE) -C CPP/7zip/UI/GUI               clean
- 	$(MAKE) -C CPP/7zip/Bundles/Format7zFree clean
--	$(MAKE) -C CPP/7zip/Compress/Rar         clean
- 	$(MAKE) -C CPP/7zip/Compress/Lzham       clean
- 	$(MAKE) -C CPP/7zip/Bundles/LzmaCon      clean2
- 	$(MAKE) -C CPP/7zip/Bundles/AloneGCOV    clean
