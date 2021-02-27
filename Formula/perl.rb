@@ -17,6 +17,7 @@ class Perl < Formula
     sha256 big_sur:       "5178a634bfb37437ee40d836c3bacb1adb89516a553ef6a8c2d40cee9eea608b"
     sha256 catalina:      "7ac87157d98223abcc2b25e35811c9dfd016f807454ec8fc219a910b4a9cdacc"
     sha256 mojave:        "2663e8ce52b4fb4fab170e19fff638e0b65688a933a3cddd86696403323be88d"
+    sha256 x86_64_linux:  "141572cbbe109dec63cee8b9b84fc97f07a41027c6b8f4fad404120e95719f6e"
   end
 
   depends_on "berkeley-db"
