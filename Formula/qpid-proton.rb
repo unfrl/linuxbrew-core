@@ -9,10 +9,11 @@ class QpidProton < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_big_sur: "a24a18a5d17a1f4d221676d8fa7e7bfff6fdc598708d4b07010ffa2ecefdf5b0"
-    sha256 cellar: :any, big_sur:       "37ac24b89b4a23abff75e11dda46d71403e39abc148906a2f77a65cf61f63804"
-    sha256 cellar: :any, catalina:      "5bb29532d0ac3ea61cc1c58b2bf3975f76d9cb7ff8e53b7a692558279a7ddcaf"
-    sha256 cellar: :any, mojave:        "9718338d5d938b7264df5a0312ff36a9060c5bd41c8b7bd439e6821238f10010"
+    sha256 cellar: :any,                 arm64_big_sur: "a24a18a5d17a1f4d221676d8fa7e7bfff6fdc598708d4b07010ffa2ecefdf5b0"
+    sha256 cellar: :any,                 big_sur:       "37ac24b89b4a23abff75e11dda46d71403e39abc148906a2f77a65cf61f63804"
+    sha256 cellar: :any,                 catalina:      "5bb29532d0ac3ea61cc1c58b2bf3975f76d9cb7ff8e53b7a692558279a7ddcaf"
+    sha256 cellar: :any,                 mojave:        "9718338d5d938b7264df5a0312ff36a9060c5bd41c8b7bd439e6821238f10010"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9619b2ee124885c47c9972a61a64aabf3335a4858409223110461aaaeb78df4c"
   end
 
   depends_on "cmake" => :build
