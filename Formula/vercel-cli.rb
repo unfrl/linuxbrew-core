@@ -12,6 +12,7 @@ class VercelCli < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "fcf591ef18f9d21100f3ac3ee391daa58658801aea3079c34570c38e2831cd18"
     sha256 cellar: :any_skip_relocation, catalina:      "96a5e011cb21b1b6c582d00bcaac1b9939de8bfd656ea33c06af25653456dee5"
     sha256 cellar: :any_skip_relocation, mojave:        "e7c7fafa34aebf8489157edc8d20eb02d76b239a61b95101262892932ba7a5e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbcf4ba73ad3d1c8ee6ac59d8e270fd16bcf123de95741eb62333dcf4655d54d"
   end
 
   depends_on "node"
