@@ -12,6 +12,7 @@ class Ghq < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "1c10e27ea29c0c826277a547516ed8fc2e764b165656ee64271ae4279c93a5ef"
     sha256 cellar: :any_skip_relocation, catalina:      "ba1e0aa00eca4fb0861473eb7ae100c69ed3491fb4844f469944763a2aaae99c"
     sha256 cellar: :any_skip_relocation, mojave:        "c4811a44a52b77365872099ab762a93ef1088686de096ffa1093be1b597b262a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "67e4c7ecfc24e16fda7aa8671f88204472dff60ac19a9213ea43914dc2075286"
   end
 
   depends_on "go" => :build
