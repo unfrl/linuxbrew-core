@@ -6,18 +6,17 @@ class PhpAT72 < Formula
   mirror "https://fossies.org/linux/www/php-7.2.34.tar.xz"
   sha256 "409e11bc6a2c18707dfc44bc61c820ddfd81e17481470f3405ee7822d8379903"
   license "PHP-3.01"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 big_sur:      "e39495f5389c97e3e3e1c2b0ea47832cdff5e5db25e671da0f918d0fc74a7137"
-    sha256 catalina:     "0069df02b747f6e26b3e3ec5550cc83b96abd7858a6f53c6ff37f839d145fb71"
-    sha256 mojave:       "37be2c076029d9e1884c38166d3120be4ac93bd1db22cb3175d1894b830b73d1"
-    sha256 x86_64_linux: "7e83767fd1546f3eee8e895bdcf80a8c0708a7a67bd9341dba42f0ebcbd8d07a"
+    sha256 big_sur:  "ddc97a43c92647e196e878e299a4815f3a9b6c39e0f3d8cced98b789ec1727aa"
+    sha256 catalina: "1d565dbd54f4a42d633bd0079d20f48fa6c37600d6b265fedfaba3a9942b95c6"
+    sha256 mojave:   "f5048312f1a67b88e9bbc0553ab5c6e9f679df0ee30c04f9101e89541543a486"
   end
 
   keg_only :versioned_formula
 
-  deprecate! date: "2020-11-30", because: :versioned_formula
+  disable! date: "2021-11-30", because: :deprecated_upstream
 
   depends_on "httpd" => [:build, :test]
   depends_on "pkg-config" => :build
@@ -64,6 +63,10 @@ class PhpAT72 < Formula
     # Work around configure issues with Xcode 12
     # See https://bugs.php.net/bug.php?id=80171
     ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+
+    # Workaround for https://bugs.php.net/80310
+    ENV.append "CFLAGS", "-DU_DEFINE_FALSE_AND_TRUE=1"
+    ENV.append "CXXFLAGS", "-DU_DEFINE_FALSE_AND_TRUE=1"
 
     # buildconf required due to system library linking bug patch
     system "./buildconf", "--force"
