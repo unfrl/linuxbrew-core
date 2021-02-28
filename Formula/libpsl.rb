@@ -7,10 +7,11 @@ class Libpsl < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "7664e28a09fde07abd9982785b7662f71d4a7005238059cd207d03f089860c98"
-    sha256 cellar: :any, big_sur:       "cca68ebcc18f7c0d993154ec58ceabec6a48ff006e58ec6973c292c81fe2b8f4"
-    sha256 cellar: :any, catalina:      "8c383425335b5c19caa8098abb045cedf06bd8ac8be7c67e9f96ee5c0625af80"
-    sha256 cellar: :any, mojave:        "f8c81b7c252abaf169f768923703d9b1eeb9b8c9e89e3a48f4383670b16c8503"
+    sha256 cellar: :any,                 arm64_big_sur: "7664e28a09fde07abd9982785b7662f71d4a7005238059cd207d03f089860c98"
+    sha256 cellar: :any,                 big_sur:       "cca68ebcc18f7c0d993154ec58ceabec6a48ff006e58ec6973c292c81fe2b8f4"
+    sha256 cellar: :any,                 catalina:      "8c383425335b5c19caa8098abb045cedf06bd8ac8be7c67e9f96ee5c0625af80"
+    sha256 cellar: :any,                 mojave:        "f8c81b7c252abaf169f768923703d9b1eeb9b8c9e89e3a48f4383670b16c8503"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "54ba99a4c9e50ca313ad6ef95d8a809795d19dc46e3b3185704c428e9b395455"
   end
 
   depends_on "meson" => :build
