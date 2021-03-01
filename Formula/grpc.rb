@@ -15,10 +15,11 @@ class Grpc < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "97f7e92fb5f93f9bad3492e9ce45d6352474299101f10cbcf7e29e1c9579c4ef"
-    sha256 big_sur:       "c7436a8932ffa15452044626efe70cedd7d5767757085db52697319e88f26620"
-    sha256 catalina:      "54b03077201bc405839da0988076df6c5537fe6ae67c342b52c705a9e1f88588"
-    sha256 mojave:        "957a614406efdfb26a91f37204bc5d9385648e0308f09e5578b43a29e000f4bd"
+    sha256                               arm64_big_sur: "97f7e92fb5f93f9bad3492e9ce45d6352474299101f10cbcf7e29e1c9579c4ef"
+    sha256                               big_sur:       "c7436a8932ffa15452044626efe70cedd7d5767757085db52697319e88f26620"
+    sha256                               catalina:      "54b03077201bc405839da0988076df6c5537fe6ae67c342b52c705a9e1f88588"
+    sha256                               mojave:        "957a614406efdfb26a91f37204bc5d9385648e0308f09e5578b43a29e000f4bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7b5b14bdaf4e5058b1652d698435a70427199c8bde135e904bb4253b08ed9b9"
   end
 
   depends_on "autoconf" => :build
