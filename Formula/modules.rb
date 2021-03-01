@@ -10,9 +10,10 @@ class Modules < Formula
   end
 
   bottle do
-    sha256               big_sur:  "5c46c04b6cef3416d7fd895b11c1e63be6df785995462f483321f8d279ee347c"
-    sha256 cellar: :any, catalina: "23c23e1e940dc42109b08ce5e0ea0f32f2cdf4875cc276f19d5602a9d976d644"
-    sha256 cellar: :any, mojave:   "aa32c14b7dd52792cbe7272aa4951745a80ad44e441bf0a85e4aab9f4643a9f4"
+    sha256                               big_sur:      "5c46c04b6cef3416d7fd895b11c1e63be6df785995462f483321f8d279ee347c"
+    sha256 cellar: :any,                 catalina:     "23c23e1e940dc42109b08ce5e0ea0f32f2cdf4875cc276f19d5602a9d976d644"
+    sha256 cellar: :any,                 mojave:       "aa32c14b7dd52792cbe7272aa4951745a80ad44e441bf0a85e4aab9f4643a9f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ce01d8ab6943a3b27a5eaeea258d68c45590e0d838ab253e47da3fa3e0a09063"
   end
 
   on_linux do
