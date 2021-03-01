@@ -6,10 +6,11 @@ class Celero < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "908150104140b55b3c826df16e6463b69176e77a8a4f9c82440e3cbd9ac6500a"
-    sha256 cellar: :any, big_sur:       "2229a4bc8f706b71c3ae4a1558127cccd63eea1920cc4cb7f5c619915adb70b5"
-    sha256 cellar: :any, catalina:      "dca2529b3a0e1aaf3c1dbb4239d2d34d04a9f2b1eb5395b05dbed54e99c013aa"
-    sha256 cellar: :any, mojave:        "7d6bd55420330e44c238d8a14cc3b5e95ecac82a1dde6d20e7c9f6ce3f95ab72"
+    sha256 cellar: :any,                 arm64_big_sur: "908150104140b55b3c826df16e6463b69176e77a8a4f9c82440e3cbd9ac6500a"
+    sha256 cellar: :any,                 big_sur:       "2229a4bc8f706b71c3ae4a1558127cccd63eea1920cc4cb7f5c619915adb70b5"
+    sha256 cellar: :any,                 catalina:      "dca2529b3a0e1aaf3c1dbb4239d2d34d04a9f2b1eb5395b05dbed54e99c013aa"
+    sha256 cellar: :any,                 mojave:        "7d6bd55420330e44c238d8a14cc3b5e95ecac82a1dde6d20e7c9f6ce3f95ab72"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "80a7a6070775f79b14c5d2e39156a36aedaa403afeff898b9e8b73a92b5fb7d4"
   end
 
   depends_on "cmake" => :build
