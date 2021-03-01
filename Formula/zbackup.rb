@@ -6,10 +6,11 @@ class Zbackup < Formula
   revision 17
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "0d2ef11f65f24be482b5623e78e2bd71dba7b9a6eb924045958f5a2fbc069771"
-    sha256 cellar: :any, big_sur:       "a5a538598ebe43bbcac80ef3adfdef9215fd014221e7c9f5cb606bbc430ef413"
-    sha256 cellar: :any, catalina:      "6d28a5f41c26b55c3bc20a66bcc83c6d3b411e8ecd07fc26554e322f979c9fc6"
-    sha256 cellar: :any, mojave:        "8f43a2de1c40ae178b6653575e3a334ed2eeabd5118742a9feb80164658dd64e"
+    sha256 cellar: :any,                 arm64_big_sur: "0d2ef11f65f24be482b5623e78e2bd71dba7b9a6eb924045958f5a2fbc069771"
+    sha256 cellar: :any,                 big_sur:       "a5a538598ebe43bbcac80ef3adfdef9215fd014221e7c9f5cb606bbc430ef413"
+    sha256 cellar: :any,                 catalina:      "6d28a5f41c26b55c3bc20a66bcc83c6d3b411e8ecd07fc26554e322f979c9fc6"
+    sha256 cellar: :any,                 mojave:        "8f43a2de1c40ae178b6653575e3a334ed2eeabd5118742a9feb80164658dd64e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc05bf62d38829834e9d3bcc03e3cde38e2d8a788cd93fb5978acbaa19be239c"
   end
 
   depends_on "cmake" => :build
