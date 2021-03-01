@@ -7,10 +7,11 @@ class ProtobufC < Formula
   revision 4
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "dc8643143d2aba5a8c36031dcec16a1d74a20d0eb3c2b9bf23f0aefd2d691482"
-    sha256 cellar: :any, big_sur:       "fd79bd37ab642c297fd3b7b79cc272a0ae5bc59543fb5ffb946a4f794ca0febd"
-    sha256 cellar: :any, catalina:      "1adba896481ebe75d7808cd3102a923663a5d7e7e1967fb0b3b43e0675ce352c"
-    sha256 cellar: :any, mojave:        "64b299388306d438f2d0fd2699e1b256849bf0ed6935da383abffa0afa0b193a"
+    sha256 cellar: :any,                 arm64_big_sur: "dc8643143d2aba5a8c36031dcec16a1d74a20d0eb3c2b9bf23f0aefd2d691482"
+    sha256 cellar: :any,                 big_sur:       "fd79bd37ab642c297fd3b7b79cc272a0ae5bc59543fb5ffb946a4f794ca0febd"
+    sha256 cellar: :any,                 catalina:      "1adba896481ebe75d7808cd3102a923663a5d7e7e1967fb0b3b43e0675ce352c"
+    sha256 cellar: :any,                 mojave:        "64b299388306d438f2d0fd2699e1b256849bf0ed6935da383abffa0afa0b193a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd9770e121c6f10b10b646eb188c4c2992fde089b5bac4b22922884e4ed6834a"
   end
 
   depends_on "pkg-config" => :build
