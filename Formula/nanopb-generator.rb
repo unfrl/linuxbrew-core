@@ -16,6 +16,7 @@ class NanopbGenerator < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "ee9dd36ebeaaec92ff043fdf57f5ef380da93b7dfac6295c5d37b600da5f314d"
     sha256 cellar: :any_skip_relocation, catalina:      "9ad5efdcf92dde1e8fd3b1757b404840daada3eaed6dc1eb73be2de253542c7b"
     sha256 cellar: :any_skip_relocation, mojave:        "4df510967a8882043092a084a019f27ef3b3c5730ad677ff777b0afdd86cace6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9736555d88f3d33d2e49434b45e66a44364b3815c2c938eaa9685fa51160a475"
   end
 
   depends_on "protobuf"
