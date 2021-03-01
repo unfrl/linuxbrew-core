@@ -4,11 +4,12 @@ class Torchvision < Formula
   url "https://github.com/pytorch/vision/archive/v0.8.2.tar.gz"
   sha256 "9a866c3c8feb23b3221ce261e6153fc65a98ce9ceaa71ccad017016945c178bf"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    sha256 big_sur:  "0100b617cbf2d6558152c7c6b749dca9c040b77eb78e7b3fb6e05f24c87bb5c0"
-    sha256 catalina: "d66bb7cbe8121343ddeb88c1f52e01460cb130a062524f8ab073ad71da95498a"
-    sha256 mojave:   "6280671d16b1e72e75994dd9028dd69102176c7c5809ccbb2be16c90a2b602e8"
+    sha256 big_sur:  "ba517b17bc4e826b96bf22200bff8c3f3f25f282d7298166a0c9dccf10f18910"
+    sha256 catalina: "7d6ff7d9f4c68ef7818d32e3d5b5ddb30f721beb57fa6cff37fe52939da7d1cf"
+    sha256 mojave:   "d5e0eeb3f858cc1683d80ea5724c984a7b613706bd0ae1562524e58b2720307a"
   end
 
   depends_on "cmake" => :build
