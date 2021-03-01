@@ -42,7 +42,7 @@ class Llvm < Formula
 
   livecheck do
     url :homepage
-    regex(/LLVM (\d+.\d+.\d+)/i)
+    regex(/LLVM (\d+\.\d+\.\d+)/i)
   end
 
   bottle do

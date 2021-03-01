@@ -3,16 +3,16 @@ class NameThatHash < Formula
 
   desc "Modern hash identification system"
   homepage "https://nth.skerritt.blog/"
-  url "https://files.pythonhosted.org/packages/52/54/cd43ce29282559715a8fb55b048d8afe4c186783f452fd615fcc2e2b510e/name-that-hash-1.1.5.tar.gz"
-  sha256 "0591588d954b2805e83d1cbf0c0218b43ff5468bcd3146d03e7af1a98d7bddf6"
+  url "https://files.pythonhosted.org/packages/0c/6c/5a63e2d3450fd78679262769cf47a3820ed09f1eaa444b1d7a6367f480db/name-that-hash-1.1.6.tar.gz"
+  sha256 "a78136dded9aceb87da405b68570c6c000f6858a8c4e79490f48318a5b901c1d"
   license "GPL-3.0-or-later"
   head "https://github.com/HashPals/Name-That-Hash.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "eed43d2466dbc92ef401b9ef8ea81b7cac4b0c2f04956026d7fbbbf3ebe99275"
-    sha256 cellar: :any_skip_relocation, big_sur:       "0e86be6f5336f35fd60f30f1590736003d82874e9c218ae5b97ef12ba4e28b7e"
-    sha256 cellar: :any_skip_relocation, catalina:      "82a6a1649a12e15a4be8efc439984bb522a1ae8667f0148044cb1d5fc644f666"
-    sha256 cellar: :any_skip_relocation, mojave:        "bde8f18e62f4bf32cb4c42921fba6630b575f859e491f3eb01f385622ebfad49"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "1c7f04c88c14648f7233b7df512f0010e5f8c2e2384c944067255ad6ca8398ce"
+    sha256 cellar: :any_skip_relocation, big_sur:       "f18b38a20cac8265d6c4c84decc7ec42c7ae3216b0aaa15031c4aa1e70c8af8b"
+    sha256 cellar: :any_skip_relocation, catalina:      "8f15c980296559c3ab4f5c3895c8e90e6f1db4a3f21d054b3b49fc402866c5c7"
+    sha256 cellar: :any_skip_relocation, mojave:        "8483ed8781861ab6fe0c363ed55c0b4b2be8d982299a2f53d3bed16053a5330a"
   end
 
   depends_on "python@3.9"
@@ -43,8 +43,8 @@ class NameThatHash < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/55/d0/bbb5c4ce2345173badac1415881b33d0253f07b8c3c7edf92c53b9e7cbde/rich-9.12.0.tar.gz"
-    sha256 "27e3deb24555d7dad554afa871c7e77f16a0336a625ed78dd10de21193b4ec11"
+    url "https://files.pythonhosted.org/packages/23/4d/85d622a12208a1fb09540554f812e867db983d4aa7fddf763cf26d9407f5/rich-9.12.2.tar.gz"
+    sha256 "493b4288273aa46475230733358696457e5df9215c898b164a324b7d9d694e88"
   end
 
   resource "typing-extensions" do

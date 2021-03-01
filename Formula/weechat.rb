@@ -21,7 +21,6 @@ class Weechat < Formula
   depends_on "gettext"
   depends_on "gnutls"
   depends_on "libgcrypt"
-  depends_on "libiconv" if OS.mac?
   depends_on "lua"
   depends_on "ncurses"
   depends_on "perl"
@@ -30,6 +29,10 @@ class Weechat < Formula
 
   uses_from_macos "curl"
   uses_from_macos "tcl-tk"
+
+  on_macos do
+    depends_on "libiconv"
+  end
 
   def install
     args = std_cmake_args + %W[
