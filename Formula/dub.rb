@@ -13,9 +13,10 @@ class Dub < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:  "d79d4b4e6b2ed53f6908798ca24c178fe6f8eeaa67fc4f0d1fb5a3433051abce"
-    sha256 cellar: :any_skip_relocation, catalina: "5a6fa5e698960fcdb23b66cd43f105bae80e1cb7488e3a496836dbd0987fd7dd"
-    sha256 cellar: :any_skip_relocation, mojave:   "55fd6eeaff82c03155343f219d1afdc9ac5c1f0e49f0d1a94fa563576a6f4906"
+    sha256 cellar: :any_skip_relocation, big_sur:      "d79d4b4e6b2ed53f6908798ca24c178fe6f8eeaa67fc4f0d1fb5a3433051abce"
+    sha256 cellar: :any_skip_relocation, catalina:     "5a6fa5e698960fcdb23b66cd43f105bae80e1cb7488e3a496836dbd0987fd7dd"
+    sha256 cellar: :any_skip_relocation, mojave:       "55fd6eeaff82c03155343f219d1afdc9ac5c1f0e49f0d1a94fa563576a6f4906"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9cfa81b452f6452174d4b4fc3004f4005a18f811d4d31479eb633ce18f8a2d7b"
   end
 
   depends_on "dmd" => :build
