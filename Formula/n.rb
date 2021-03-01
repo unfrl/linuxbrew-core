@@ -11,6 +11,7 @@ class N < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "9b7ce84aed98a1ad38a48f93f428dc83a0982ff3fde005a03fff2cea8f68b7f7"
     sha256 cellar: :any_skip_relocation, catalina:      "9a1155dee1c102d31b873fe16144c2e99f1982bce1d7dbce541d6baf83eba489"
     sha256 cellar: :any_skip_relocation, mojave:        "2632bd7c032c9fd7c019380c5f0266970b315e4e7b95b6c8c7963c7237c7ac30"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84861f8ee85499d2573e30c9483e7cba44b2a4a60726ad085c10bb9dba33ba7f"
   end
 
   def install
