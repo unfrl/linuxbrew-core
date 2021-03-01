@@ -7,10 +7,11 @@ class OsmPbf < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "763bb8ccfd0bb15d17a767e6d97c3b362a2a76fb714c60f09886b9ba5fb97203"
-    sha256 cellar: :any, big_sur:       "9e337cfcc57c6ed65e610402020949bb6196aac9302fa8a57ce1cb73e9cef8bd"
-    sha256 cellar: :any, catalina:      "fc5fd1938b21d5c3bdc547e2797596b3e794e184a18c1b5e26fe99b91723fb04"
-    sha256 cellar: :any, mojave:        "5cae6c5d1003d205fad343e3a8272f4b1432519a1d8d66117edd25cd3980cefe"
+    sha256 cellar: :any,                 arm64_big_sur: "763bb8ccfd0bb15d17a767e6d97c3b362a2a76fb714c60f09886b9ba5fb97203"
+    sha256 cellar: :any,                 big_sur:       "9e337cfcc57c6ed65e610402020949bb6196aac9302fa8a57ce1cb73e9cef8bd"
+    sha256 cellar: :any,                 catalina:      "fc5fd1938b21d5c3bdc547e2797596b3e794e184a18c1b5e26fe99b91723fb04"
+    sha256 cellar: :any,                 mojave:        "5cae6c5d1003d205fad343e3a8272f4b1432519a1d8d66117edd25cd3980cefe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c154be9d285b26c71273142bd00bd8743373a338317e416f0091634fae370a15"
   end
 
   depends_on "cmake" => :build
