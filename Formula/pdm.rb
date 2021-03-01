@@ -3,16 +3,16 @@ class Pdm < Formula
 
   desc "Modern Python package manager with PEP 582 support"
   homepage "https://pdm.fming.dev"
-  url "https://files.pythonhosted.org/packages/f6/e0/c24119e7dd297289c3eb9b18db0201e9941286b7f430a5447869ee2d0b17/pdm-1.3.3.tar.gz"
-  sha256 "cfe98130b78662608eed046c526005e1b4f076381864caa2798ea58f01c4e24d"
+  url "https://files.pythonhosted.org/packages/ca/5c/5a5a5ab7dab598af3f3f3e56c0cc045a9279511aa1e52ec698244c4ad300/pdm-1.3.4.tar.gz"
+  sha256 "d90596dfe73c5585db927da340f2743afc104da3c1b1ca52116196f2ce707be6"
   license "MIT"
   head "https://github.com/frostming/pdm.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "e3ab41d3c016868e078bff1e4fdc4b1e8860c7225818c5430d137044071e228d"
-    sha256 cellar: :any_skip_relocation, big_sur:       "1283d041fdcacb2e601b9130deeb812ecc6290c1a810d63c1ad1cc1bf054f604"
-    sha256 cellar: :any_skip_relocation, catalina:      "90c9af26acaff1e14448f9e887f7960673ca178c98779e09e7cb6643ee8abb12"
-    sha256 cellar: :any_skip_relocation, mojave:        "5622d27589daf68e8fdaf7faaf8f3711418c12f73f8b23b0727aeb62f6379324"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "ee559cc12673c934d88f53217fcaf3925a2b18f900c79cbee8c6915853adb134"
+    sha256 cellar: :any_skip_relocation, big_sur:       "a0c5b465ce4944e47357abeaf740dea866c61d7d210eb7643e5029bea13cab8a"
+    sha256 cellar: :any_skip_relocation, catalina:      "0507f76a291ca01f1cf81cee7040bdcfd1969c9557257783069734961f5369b1"
+    sha256 cellar: :any_skip_relocation, mojave:        "eda707a56185ec624247ba7d7e246626515c6c6cda5771ae99f8412a4897f047"
   end
 
   depends_on "python@3.9"
@@ -48,8 +48,8 @@ class Pdm < Formula
   end
 
   resource "keyring" do
-    url "https://files.pythonhosted.org/packages/70/a6/3a9a92e4a82b5b40eee4ab22a23c2b0d39a1f5844136880523e3e9c9938c/keyring-22.2.0.tar.gz"
-    sha256 "c73c66c4ca89bee6a233b1638e1d2f5bcba4da35f8713ad4f98decc46e64cccd"
+    url "https://files.pythonhosted.org/packages/bd/4f/76c58e52c08ac53ffed2f3d463cd72799adca2aba3e357c7b727baeb8ff6/keyring-22.3.0.tar.gz"
+    sha256 "16927a444b2c73f983520a48dec79ddab49fe76429ea05b8d528d778c8339522"
   end
 
   resource "packaging" do
