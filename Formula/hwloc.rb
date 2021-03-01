@@ -6,10 +6,11 @@ class Hwloc < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "c9fee522e4e68aef27a0f89e4eaacc1040571d53d784109821ccfbc492666b3d"
-    sha256 cellar: :any, big_sur:       "2128d93734fe007235ae4dc6222d02c4d3f7e1faf06529cbf2a7926d6819f64a"
-    sha256 cellar: :any, catalina:      "472c55e16e5ad6b615f41eb323565533a31e7c8cc05add78106a856be31cf3cf"
-    sha256 cellar: :any, mojave:        "747f91410adfd6735acc68a230088b3ddb39024e508f376cc64752d6db3c8dff"
+    sha256 cellar: :any,                 arm64_big_sur: "c9fee522e4e68aef27a0f89e4eaacc1040571d53d784109821ccfbc492666b3d"
+    sha256 cellar: :any,                 big_sur:       "2128d93734fe007235ae4dc6222d02c4d3f7e1faf06529cbf2a7926d6819f64a"
+    sha256 cellar: :any,                 catalina:      "472c55e16e5ad6b615f41eb323565533a31e7c8cc05add78106a856be31cf3cf"
+    sha256 cellar: :any,                 mojave:        "747f91410adfd6735acc68a230088b3ddb39024e508f376cc64752d6db3c8dff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cdd5288c3518089be5ce603f45683d8b83268df9b46398c82f9f6cf4e2faf208"
   end
 
   head do
