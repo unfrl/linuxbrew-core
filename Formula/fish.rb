@@ -1,9 +1,9 @@
 class Fish < Formula
   desc "User-friendly command-line shell for UNIX-like operating systems"
   homepage "https://fishshell.com"
-  url "https://github.com/fish-shell/fish-shell/releases/download/3.1.2/fish-3.1.2.tar.gz"
-  sha256 "d5b927203b5ca95da16f514969e2a91a537b2f75bec9b21a584c4cd1c7aa74ed"
-  license "GPL-2.0"
+  url "https://github.com/fish-shell/fish-shell/releases/download/3.2.0/fish-3.2.0.tar.xz"
+  sha256 "4f0293ed9f6a6b77e47d41efabe62f3319e86efc8bf83cc58733044fbc6f9211"
+  license "GPL-2.0-only"
 
   livecheck do
     url :stable
@@ -11,12 +11,10 @@ class Fish < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "b1257836de799a5204be8289bde8008b616c2fc070b22fec914e044f0a4bd8f2"
-    sha256 cellar: :any_skip_relocation, big_sur:       "ef7f5a2fd69ba2baed78d02ee162cc8fb85644161dd765d47b570b56db9569cf"
-    sha256 cellar: :any_skip_relocation, catalina:      "b158b7f8640feb7c622ff3ca92b1bd88565f274f3e761499f5926bb124eeff7d"
-    sha256 cellar: :any_skip_relocation, mojave:        "6797636eaba364d0cbbc0459103a8767598e985f01846cca6cb57c986dfee7b8"
-    sha256 cellar: :any_skip_relocation, high_sierra:   "2609577a0d9f6b661331adccf5d1d8e010662ffe128869757e0af9a6760e26fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a16a290b3de72d04400f5471e5d4912e0415efcf792b4315e0221d5dc61e08b"
+    sha256 cellar: :any, arm64_big_sur: "7071739f327b442f6d1bec65332c33d29cb0833fd601a215d4d3492dbf188614"
+    sha256 cellar: :any, big_sur:       "9891254ae3507ac79a050fc5ef5a837820ab78f06ad7ab5495a61a3e83bfb970"
+    sha256 cellar: :any, catalina:      "dffc718a031961c893db21b189b2ae81a4ed65b7f1d1ae77ac7a83fd6a62038a"
+    sha256 cellar: :any, mojave:        "274a7590ffb5f2252ed2fc1ca97164c8ec77808312e48a2a0d794987e692767b"
   end
 
   head do
@@ -31,12 +29,6 @@ class Fish < Formula
   uses_from_macos "ncurses"
 
   def install
-    # Disable code signing in cmake, so we can codesign ourselves in brew
-    # Backport of https://github.com/fish-shell/fish-shell/issues/6952
-    # See https://github.com/fish-shell/fish-shell/issues/7467
-    # Remove in 3.2.0
-    inreplace "CMakeLists.txt", "CODESIGN_ON_MAC(${target})", "" if build.stable?
-
     # In Homebrew's 'superenv' sed's path will be incompatible, so
     # the correct path is passed into configure here.
     args = %W[
