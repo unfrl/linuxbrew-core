@@ -16,6 +16,7 @@ class Openvpn < Formula
     sha256 big_sur:       "fd6e1e6ba3af7d36b07c57d7f9d81ef6a349d3127a1191775b23f2e9b87b38ce"
     sha256 catalina:      "f6210b51996581a5fe4e4264c4e57c47fea91456b2bf33982c159189c58f50bd"
     sha256 mojave:        "20f274f259542da33069a9436e68048b0a377900ebac72aaac13d13845a701e1"
+    sha256 x86_64_linux:  "51eb20d94f2aa8f5a87a97b897d0cb4cf9e7284616f4ccfbfe3adfd2c2c3fda2"
   end
 
   depends_on "pkg-config" => :build
