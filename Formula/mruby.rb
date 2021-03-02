@@ -12,6 +12,7 @@ class Mruby < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "a37241df0d1f4a5a6b2d7a52c1bdf3b9487484b3fce1f90ff49994f6e7095c89"
     sha256 cellar: :any_skip_relocation, catalina:      "13b1277f194b5b75b49d14b8ad814dc3ca0b261edf5d3c741bd99236348b47d3"
     sha256 cellar: :any_skip_relocation, mojave:        "f6bee79071bec85f97704d8b3b7f535a8003d07bf8bb0e0ef556f82fdcb3cb81"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b81b4c4fc19b0e2ba2f78e63bd8f7b6b829d1e8b241f42b44ec533429ad9c56"
   end
 
   depends_on "bison" => :build
