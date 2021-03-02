@@ -4,7 +4,7 @@ class VtkAT82 < Formula
   url "https://www.vtk.org/files/release/8.2/VTK-8.2.0.tar.gz"
   sha256 "34c3dc775261be5e45a8049155f7228b6bd668106c72a3c435d95730d17d57bb"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
 
   bottle do
     sha256 arm64_big_sur: "8dd6077679c9a51dc7f874f421bf1cfbe9792e6232bf03675ca79c0e7472045b"
@@ -27,8 +27,9 @@ class VtkAT82 < Formula
   depends_on "netcdf"
   depends_on "pyqt"
   depends_on "python@3.9"
-  depends_on "qt"
+  depends_on "qt@5"
 
+  # TODO: use diff
   # Fix compile issues on Mojave and later
   patch do
     url "https://gitlab.kitware.com/vtk/vtk/commit/ca3b5a50d945b6e65f0e764b3138cad17bd7eb8d.patch"
