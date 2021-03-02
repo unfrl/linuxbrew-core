@@ -7,9 +7,10 @@ class PinboardNotesBackup < Formula
   head "https://github.com/bdesham/pinboard-notes-backup.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:  "b14513ed43c8bf9176111e913154b6c9351da0fd40b0d2b6889237f2cb2e7f1e"
-    sha256 cellar: :any_skip_relocation, catalina: "91b6d42a2b460055184537d40b745babcfd6b9eac2f9bbe4c0a02b2efb6d3a17"
-    sha256 cellar: :any_skip_relocation, mojave:   "55ec30fc54c829a928f7b5878c5288bc4a800a41e42d5ef3676a3c44c6ef343e"
+    sha256 cellar: :any_skip_relocation, big_sur:      "b14513ed43c8bf9176111e913154b6c9351da0fd40b0d2b6889237f2cb2e7f1e"
+    sha256 cellar: :any_skip_relocation, catalina:     "91b6d42a2b460055184537d40b745babcfd6b9eac2f9bbe4c0a02b2efb6d3a17"
+    sha256 cellar: :any_skip_relocation, mojave:       "55ec30fc54c829a928f7b5878c5288bc4a800a41e42d5ef3676a3c44c6ef343e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d09eb660164cc4ae807111817b4e287386a547badafd99f42bb94ad7685dd8df"
   end
 
   depends_on "cabal-install" => :build
