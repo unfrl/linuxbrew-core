@@ -75,12 +75,9 @@ class Ykman < Formula
   end
 
   def install
-    unless OS.mac?
-      ENV.prepend "CPPFLAGS", "-I#{Formula["libffi"].lib}/libffi-#{Formula["libffi"].version}/include"
-
-      resource("pyscard").stage do
-        ENV.append "CFLAGS", "-I#{Formula["pcsc-lite"].opt_include}/PCSC"
-      end
+    on_linux do
+      # Fixes: smartcard/scard/helpers.c:28:22: fatal error: winscard.h: No such file or directory
+      ENV.append "CFLAGS", "-I#{Formula["pcsc-lite"].opt_include}/PCSC"
     end
     virtualenv_install_with_resources
   end
