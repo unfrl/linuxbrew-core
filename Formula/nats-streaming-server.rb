@@ -11,6 +11,7 @@ class NatsStreamingServer < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "7b566296fd02004932643b2155b5ce5942d099ae1313297b785edbb36c43e3e0"
     sha256 cellar: :any_skip_relocation, catalina:      "b8751cfead6041112c3dc550a21b0accdab3c3e605c100a34c5c99c45350fbae"
     sha256 cellar: :any_skip_relocation, mojave:        "e4366b1b27a50eeda6027513248897b406d6ae266e7da66e7872dec422ec1177"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a25ffb2bdff00882c0c249054f69c98ab4727829543b2d1fa8ee57fc1c560637"
   end
 
   depends_on "go" => :build
