@@ -3,16 +3,15 @@ require "language/node"
 class MarkdownlintCli < Formula
   desc "CLI for Node.js style checker and lint tool for Markdown files"
   homepage "https://github.com/igorshubovych/markdownlint-cli"
-  url "https://registry.npmjs.org/markdownlint-cli/-/markdownlint-cli-0.26.0.tgz"
-  sha256 "4e17cf1e576d2538a64997d43017a4a4a3b8f691cb20694cffc3e710ff868d87"
+  url "https://registry.npmjs.org/markdownlint-cli/-/markdownlint-cli-0.27.0.tgz"
+  sha256 "ca26cea17d987191e8b504da834729af79670d141e6d693b2c07cc2a0cb8a442"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "b32c7699f2129d7728a4ab63846d1611becfc4cc4f01e3c2f752d7da209c1f19"
-    sha256 cellar: :any_skip_relocation, big_sur:       "64694b55b90f8d406f4eb1d622de12a887b87307f324e3cc6ce6c0e96092aaf3"
-    sha256 cellar: :any_skip_relocation, catalina:      "a5e680650b4a1f8b1cbb56cda18bd8853c5a9dde962a018b4ccdd682c1b0847c"
-    sha256 cellar: :any_skip_relocation, mojave:        "61a7787aad97d225fad9e8258f4535fefdc75e8bc38e7a621e6aa1f2606633ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca63158e8d4263dab5a6e08b647adc0001087383d05785f5af59f89e778e11dd"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "4c0083fd913cded2f954f9d334530b916e9f239e999f74f9686f371e2c81cb10"
+    sha256 cellar: :any_skip_relocation, big_sur:       "bc3e0ac3404144533dfb3637d783f63cfc77415c8f922b389417806a0d58cf33"
+    sha256 cellar: :any_skip_relocation, catalina:      "2ad2030d4e550a99d8227bed3943fe85042b136fdfa1328cb25ae444d8eb0458"
+    sha256 cellar: :any_skip_relocation, mojave:        "e6d45fc77924cf614b7516f2771f9111e75a56ea778cf9b378d2a849488466cb"
   end
 
   depends_on "node"
