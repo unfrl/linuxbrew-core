@@ -12,6 +12,7 @@ class MarkdownlintCli < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "bc3e0ac3404144533dfb3637d783f63cfc77415c8f922b389417806a0d58cf33"
     sha256 cellar: :any_skip_relocation, catalina:      "2ad2030d4e550a99d8227bed3943fe85042b136fdfa1328cb25ae444d8eb0458"
     sha256 cellar: :any_skip_relocation, mojave:        "e6d45fc77924cf614b7516f2771f9111e75a56ea778cf9b378d2a849488466cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "027b69737a82b76e508dba5cd27c41495e840ec4b07e4b6aa5479474e2361eb1"
   end
 
   depends_on "node"
