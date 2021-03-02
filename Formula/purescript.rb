@@ -6,8 +6,9 @@ class Purescript < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, catalina: "acc7ee0fc127b4d7e7fdcd4bccb83461b4c09e03236c43217d120dcc83275920"
-    sha256 cellar: :any_skip_relocation, mojave:   "a8e180565f3214a371f552b4e83420182710040fa7c8fcf85a62f007799dc45a"
+    sha256 cellar: :any_skip_relocation, catalina:     "acc7ee0fc127b4d7e7fdcd4bccb83461b4c09e03236c43217d120dcc83275920"
+    sha256 cellar: :any_skip_relocation, mojave:       "a8e180565f3214a371f552b4e83420182710040fa7c8fcf85a62f007799dc45a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ed604ae651deb13812a5739a5e9be6de3f521523b22baa3bf938ebec0185f24d"
   end
 
   head do
