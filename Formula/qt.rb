@@ -8,7 +8,6 @@ class Qt < Formula
   mirror "https://mirrors.ocf.berkeley.edu/qt/official_releases/qt/6.0/6.0.1/single/qt-everywhere-src-6.0.1.tar.xz"
   sha256 "d13cfac103cd80b216cd2f73d0211dd6b1a1de2516911c89ce9c5ed14d9631a8"
   license all_of: ["GFDL-1.3-only", "GPL-2.0-only", "GPL-3.0-only", "LGPL-2.1-only", "LGPL-3.0-only"]
-  revision 6 unless OS.mac?
 
   head "https://code.qt.io/qt/qt5.git", branch: "dev", shallow: false
 
@@ -30,6 +29,29 @@ class Qt < Formula
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on xcode: :build
+
+  depends_on "assimp"
+  depends_on "dbus"
+  depends_on "double-conversion"
+  depends_on "freetype"
+  depends_on "glib"
+  depends_on "icu4c"
+  depends_on "jasper"
+  depends_on "jpeg"
+  depends_on "libb2"
+  depends_on "libpng"
+  depends_on "libproxy"
+  depends_on "libtiff"
+  depends_on "pcre2"
+  depends_on "python@3.9"
+  depends_on "webp"
+  depends_on "zstd"
+
+  uses_from_macos "cups"
+  uses_from_macos "krb5"
+  uses_from_macos "perl"
+  uses_from_macos "sqlite"
+  uses_from_macos "zlib"
 
   unless OS.mac?
     depends_on "at-spi2-core"
@@ -55,29 +77,6 @@ class Qt < Formula
     depends_on "zstd"
     depends_on "wayland"
   end
-
-  depends_on "assimp"
-  depends_on "dbus"
-  depends_on "double-conversion"
-  depends_on "freetype"
-  depends_on "glib"
-  depends_on "icu4c"
-  depends_on "jasper"
-  depends_on "jpeg"
-  depends_on "libb2"
-  depends_on "libpng"
-  depends_on "libproxy"
-  depends_on "libtiff"
-  depends_on "pcre2"
-  depends_on "python@3.9"
-  depends_on "webp"
-  depends_on "zstd"
-
-  uses_from_macos "cups"
-  uses_from_macos "krb5"
-  uses_from_macos "perl"
-  uses_from_macos "sqlite"
-  uses_from_macos "zlib"
 
   resource "qtimageformats" do
     url "https://download.qt.io/official_releases/additional_libraries/qtimageformats/6.0/6.0.1/qtimageformats-everywhere-src-6.0.1.tar.xz"
