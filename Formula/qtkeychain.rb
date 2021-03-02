@@ -4,6 +4,7 @@ class Qtkeychain < Formula
   url "https://github.com/frankosterfeld/qtkeychain/archive/v0.12.0.tar.gz"
   sha256 "cc547d58c1402f6724d3ff89e4ca83389d9e2bdcfd9ae3d695fcdffa50a625a8"
   license "BSD-2-Clause"
+  revision 1
 
   bottle do
     sha256 cellar: :any, arm64_big_sur: "61f29925d6d5e1bf782025c65973a2ee5f9fcb05d5a9d6dc72c5bb409a335d10"
@@ -13,7 +14,7 @@ class Qtkeychain < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "qt"
+  depends_on "qt@5"
 
   def install
     system "cmake", ".", "-DBUILD_TRANSLATIONS=OFF", *std_cmake_args
@@ -28,19 +29,10 @@ class Qtkeychain < Formula
         return 0;
       }
     EOS
-    args = ["test.cpp", "-o", "test", "-std=c++11", "-I#{include}",
-            "-L#{lib}", "-lqt5keychain",
-            "-I#{Formula["qt"].opt_include}"]
-    if OS.mac?
-      args += ["-F#{Formula["qt"].opt_lib}", "-framework", "QtCore"]
-    else
-      # Fix error: You must build your code with position independent code if Qt was built with -reduce-relocations.
-      args += [
-        "-fPIC", "-L#{Formula["qt"].opt_lib}",
-        "-lQt5Core", "-Wl,-rpath=#{lib}/x86_64-linux-gnu:#{Formula["qt"].lib}"
-      ]
-    end
-    system ENV.cxx, *args
+    system ENV.cxx, "test.cpp", "-o", "test", "-std=c++11", "-I#{include}",
+                    "-L#{lib}", "-lqt5keychain",
+                    "-I#{Formula["qt@5"].opt_include}",
+                    "-F#{Formula["qt@5"].opt_lib}", "-framework", "QtCore"
     system "./test"
   end
 end
