@@ -4,6 +4,7 @@ class Poppler < Formula
   url "https://poppler.freedesktop.org/poppler-21.03.0.tar.xz"
   sha256 "fd51ead4aac1d2f4684fa6e7b0ec06f0233ed21667e720a4e817e4455dd63d27"
   license "GPL-2.0-only"
+  revision 1
   head "https://gitlab.freedesktop.org/poppler/poppler.git"
 
   livecheck do
@@ -12,10 +13,10 @@ class Poppler < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "feb860033134e7b786dd1d84778c50e69949470b4c66bae67186a57b0933d2db"
-    sha256 big_sur:       "ba94c273baf87fc5e4cb93325c9b4d2ca87b7fe89d1054f1cf523335fa83fd4d"
-    sha256 catalina:      "138f60536435cbc3afb3c70047a459b89c01b8b5a6a303d3ca3b4088dfa8129a"
-    sha256 mojave:        "6049a3dc128de2e745a448f38a187187cf244ea6a6f45fea1ad142b093886dea"
+    sha256 arm64_big_sur: "90b6ef0d795977a282db75c4a5caed550d16f88ef41d6e290b3ede2d10e25d0e"
+    sha256 big_sur:       "437360eb64c1bbbe8b403f9a89d8bbbb46daeb5c9e3e94315efbc74605c0eac0"
+    sha256 catalina:      "551f5398999e8de473adaf26e9cba9a07871cfe3f488778cae3cdaffd25ba7db"
+    sha256 mojave:        "d672b3810ad4f8ef2fef83ac3ab9b28e6ea9487090a0f5796579c90aba5ee156"
   end
 
   depends_on "cmake" => :build
@@ -32,7 +33,7 @@ class Poppler < Formula
   depends_on "little-cms2"
   depends_on "nss"
   depends_on "openjpeg"
-  depends_on "qt"
+  depends_on "qt@5"
 
   uses_from_macos "gperf" => :build
   uses_from_macos "curl"
@@ -52,8 +53,8 @@ class Poppler < Formula
       -DBUILD_GTK_TESTS=OFF
       -DENABLE_CMS=lcms2
       -DENABLE_GLIB=ON
-      -DENABLE_QT5=OFF
-      -DENABLE_QT6=ON
+      -DENABLE_QT5=ON
+      -DENABLE_QT6=OFF
       -DENABLE_UNSTABLE_API_ABI_HEADERS=ON
       -DWITH_GObjectIntrospection=ON
     ]
@@ -75,7 +76,7 @@ class Poppler < Formula
       [
         "#{lib}/libpoppler-cpp.dylib",
         "#{lib}/libpoppler-glib.dylib",
-        "#{lib}/libpoppler-qt6.dylib",
+        "#{lib}/libpoppler-qt5.dylib",
         *Dir["#{bin}/*"],
       ].each do |f|
         macho = MachO.open(f)
