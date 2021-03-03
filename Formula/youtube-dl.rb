@@ -12,6 +12,7 @@ class YoutubeDl < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "326f2a0caa1c1abaa383c33b1b9d1c018089facd706c590f35c594b790501c99"
     sha256 cellar: :any_skip_relocation, catalina:      "872aae1eae8ac261c90307c18f62448e3ad6649577d9dfdb661789be41e28e98"
     sha256 cellar: :any_skip_relocation, mojave:        "3b7f6e505dfe070aae9f537955aa3d8e0f4473a327b9570f4b14a4f2ce39a975"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b51297b086533daa1be5750f471412e3c78048794e4bafe63e1236f57f646878"
   end
 
   depends_on "python@3.9"
