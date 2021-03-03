@@ -12,9 +12,10 @@ class Djview4 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, big_sur:  "e649d68385bba4e58504c3fb4576367125dfff5717b4f6405bca35086ba9bed7"
-    sha256 cellar: :any, catalina: "0a01bfd959f758987d9c4dd25e01e57532dd11279fa0d562876fc0927138e788"
-    sha256 cellar: :any, mojave:   "a1f4b788b946b22bbc4c9c3811dbb1db1827c78188dbbd79563cfd5d415ac01b"
+    sha256 cellar: :any,                 big_sur:      "e649d68385bba4e58504c3fb4576367125dfff5717b4f6405bca35086ba9bed7"
+    sha256 cellar: :any,                 catalina:     "0a01bfd959f758987d9c4dd25e01e57532dd11279fa0d562876fc0927138e788"
+    sha256 cellar: :any,                 mojave:       "a1f4b788b946b22bbc4c9c3811dbb1db1827c78188dbbd79563cfd5d415ac01b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "46719434e0b25413c7fba59f56f7ec86e50254df447c0e2c6b5a4540c7556647"
   end
 
   depends_on "autoconf" => :build
