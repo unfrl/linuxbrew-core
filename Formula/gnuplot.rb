@@ -11,6 +11,7 @@ class Gnuplot < Formula
     sha256 big_sur:       "71b95705ec9b7a5e03668d6491b75e66dbee794b4c7a02f20d54e4dfcbf4fa4e"
     sha256 catalina:      "88f18dff95d0609b0cbf6eb53446869b1639998c69180b34a18c45c8a6bae520"
     sha256 mojave:        "906aa3c73c481c21e252ace7653703f815ed15c71717baa1ff299f4004624368"
+    sha256 x86_64_linux:  "80d934a16a475a82d02839d4426999b06f2706196a2ff7e9bd6f3d63a73acbd1"
   end
 
   head do
