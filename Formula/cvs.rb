@@ -15,7 +15,7 @@ class Cvs < Formula
   url "https://ftp.gnu.org/non-gnu/cvs/source/feature/1.12.13/cvs-1.12.13.tar.bz2"
   sha256 "78853613b9a6873a30e1cc2417f738c330e75f887afdaf7b3d0800cb19ca515e"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.0-or-later"]
-  revision OS.mac? ? 3 : 4
+  revision OS.mac? ? 3 : 5
 
   livecheck do
     url "https://ftp.gnu.org/non-gnu/cvs/source/feature/"
@@ -39,6 +39,12 @@ class Cvs < Formula
     depends_on "vim" unless which "vim"
     depends_on "linux-pam"
     depends_on "zlib"
+
+    # Fixes error: %n in writable segment detected
+    patch do
+      url "https://gitweb.gentoo.org/repo/gentoo.git/plain/dev-vcs/cvs/files/cvs-1.12.13.1-fix-gnulib-SEGV-vasnprintf.patch?id=6c49fbac47ddb2c42ee285130afea56f349a2d40"
+      sha256 "4f4b820ca39405348895d43e0d0f75bab1def93fb7a43519f6c10229a7c64952"
+    end
   end
 
   patch :p0 do
@@ -59,11 +65,13 @@ class Cvs < Formula
     apply(*patches.compact)
   end
 
-  # Fixes error: 'Illegal instruction: 4'; '%n used in a non-immutable format string' on 10.13
-  # Patches the upstream-provided gnulib on all platforms as is recommended
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/24118ec737c7d008420d4683a07129ed80a759eb/cvs/vasnprintf-high-sierra-fix.diff"
-    sha256 "affa485332f66bb182963680f90552937bf1455b855388f7c06ef6a3a25286e2"
+  if OS.mac?
+    # Fixes error: 'Illegal instruction: 4'; '%n used in a non-immutable format string' on 10.13
+    # Patches the upstream-provided gnulib on all platforms as is recommended
+    patch do
+      url "https://raw.githubusercontent.com/Homebrew/formula-patches/24118ec737c7d008420d4683a07129ed80a759eb/cvs/vasnprintf-high-sierra-fix.diff"
+      sha256 "affa485332f66bb182963680f90552937bf1455b855388f7c06ef6a3a25286e2"
+    end
   end
 
   # Fixes "cvs [init aborted]: cannot get working directory: No such file or directory" on Catalina.
