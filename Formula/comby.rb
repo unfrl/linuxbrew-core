@@ -10,6 +10,7 @@ class Comby < Formula
     sha256 cellar: :any, big_sur:       "39b679a2e0bd88cb8e9d5daab0266d3315ea232f8113cbf7c2e61b94e0b7a2c5"
     sha256 cellar: :any, catalina:      "883fe43536080c4bfc202948dbcb8d9d667c1ed58931d48f37f331d4886388fb"
     sha256 cellar: :any, mojave:        "f0c55be9ecc4559b6a0c95fa8550f9c7c065130411d3fcca9504f38a81230d19"
+    sha256               x86_64_linux:  "90c3dc4ba7cfb30ce7e1578aa0521b5108736fea7bfc2e056b0b804c5e5979ea"
   end
 
   depends_on "autoconf" => :build
