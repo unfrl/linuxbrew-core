@@ -11,6 +11,7 @@ class Cgal < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "6b2bc9f1ff6c12c35578717211ed65c727d87362a1b5fdd94324bba7c52b7a78"
     sha256 cellar: :any_skip_relocation, catalina:      "7c0402790a66c241c80cbc2288a4860afbdb9c3b33c1e800c3563565ba0f337f"
     sha256 cellar: :any_skip_relocation, mojave:        "1794cb845b902e25ea590b1334fe1384c28985d21a5e181141c786c94361e153"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8075fa431aff310640d74de98de6d1b54f0d24056a253fec193e60a212ce8b96"
   end
 
   depends_on "cmake" => [:build, :test]
