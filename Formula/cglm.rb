@@ -6,10 +6,11 @@ class Cglm < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "604f60a1ae63f364201fd851b613b7cc38ae34a4a08bfbacd22f209635e5be5a"
-    sha256 cellar: :any, big_sur:       "5b427daca93de19752cc90b81b2e412aa162fac6e9d847bb9c259fb549833d1a"
-    sha256 cellar: :any, catalina:      "d1b50baf51dbc8febd26b5881d83aa47e7106190adfccf6fb6339a8124b93496"
-    sha256 cellar: :any, mojave:        "d7ae7bd965545a2818742d4ea1452eb3c9204c1665cc2951114ac319eda96c65"
+    sha256 cellar: :any,                 arm64_big_sur: "604f60a1ae63f364201fd851b613b7cc38ae34a4a08bfbacd22f209635e5be5a"
+    sha256 cellar: :any,                 big_sur:       "5b427daca93de19752cc90b81b2e412aa162fac6e9d847bb9c259fb549833d1a"
+    sha256 cellar: :any,                 catalina:      "d1b50baf51dbc8febd26b5881d83aa47e7106190adfccf6fb6339a8124b93496"
+    sha256 cellar: :any,                 mojave:        "d7ae7bd965545a2818742d4ea1452eb3c9204c1665cc2951114ac319eda96c65"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e48d98c5e17cd45940679645654807e2927f280faa2c17b3bf8dc5bb2bd7f1a"
   end
 
   depends_on "autoconf" => :build
