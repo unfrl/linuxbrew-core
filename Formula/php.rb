@@ -69,8 +69,10 @@ class Php < Formula
   end
 
   def install
-    # Ensure that libxml2 will be detected correctly in older MacOS
-    ENV["SDKROOT"] = MacOS.sdk_path if OS.mac? && (MacOS.version == :el_capitan || MacOS.version == :sierra)
+    on_macos do
+      # Ensure that libxml2 will be detected correctly in older MacOS
+      ENV["SDKROOT"] = MacOS.sdk_path if MacOS.version == :el_capitan || MacOS.version == :sierra
+    end
 
     # buildconf required due to system library linking bug patch
     system "./buildconf", "--force"
@@ -106,10 +108,11 @@ class Php < Formula
 
     # system pkg-config missing
     ENV["KERBEROS_CFLAGS"] = " "
-    if OS.mac?
+    on_macos do
       ENV["SASL_CFLAGS"] = "-I#{MacOS.sdk_path_if_needed}/usr/include/sasl"
       ENV["SASL_LIBS"] = "-lsasl2"
-    else
+    end
+    on_linux do
       ENV["SQLITE_CFLAGS"] = "-I#{Formula["sqlite"].opt_include}"
       ENV["SQLITE_LIBS"] = "-lsqlite3"
       ENV["BZIP_DIR"] = Formula["bzip2"].opt_prefix
@@ -117,10 +120,9 @@ class Php < Formula
 
     # Each extension that is built on Mojave needs a direct reference to the
     # sdk path or it won't find the headers
-    headers_path = if OS.mac?
-      "=#{MacOS.sdk_path_if_needed}/usr"
-    else
-      ""
+    headers_path = ""
+    on_macos do
+      headers_path = "=#{MacOS.sdk_path_if_needed}/usr"
     end
 
     args = %W[
@@ -191,15 +193,16 @@ class Php < Formula
       --with-zlib
     ]
 
-    if OS.mac?
+    on_macos do
       args << "--enable-dtrace"
       args << "--with-ldap-sasl"
       args << "--with-os-sdkpath=#{MacOS.sdk_path_if_needed}"
-    else
+    end
+    on_linux do
       args << "--disable-dtrace"
+      args << "--without-ldap-sasl"
       args << "--without-ndbm"
       args << "--without-gdbm"
-      args << "--without-ldap-sasl"
     end
 
     system "./configure", *args
@@ -352,10 +355,11 @@ class Php < Formula
       "Zend OPCache extension not loaded")
     # Test related to libxml2 and
     # https://github.com/Homebrew/homebrew-core/issues/28398
-    if OS.mac?
+    on_macos do
       assert_includes MachO::Tools.dylibs("#{bin}/php"),
         "#{Formula["libpq"].opt_lib}/libpq.5.dylib"
     end
+
     system "#{sbin}/php-fpm", "-t"
     system "#{bin}/phpdbg", "-V"
     system "#{bin}/php-cgi", "-m"

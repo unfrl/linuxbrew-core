@@ -52,13 +52,17 @@ class PhpAT73 < Formula
   uses_from_macos "libxslt"
   uses_from_macos "zlib"
 
-  # PHP build system incorrectly links system libraries
-  # see https://github.com/php/php-src/pull/3472
-  patch :DATA if OS.mac?
+  on_macos do
+    # PHP build system incorrectly links system libraries
+    # see https://github.com/php/php-src/pull/3472
+    patch :DATA
+  end
 
   def install
-    # Ensure that libxml2 will be detected correctly in older MacOS
-    ENV["SDKROOT"] = MacOS.sdk_path if MacOS.version == :el_capitan || MacOS.version == :sierra
+    on_macos do
+      # Ensure that libxml2 will be detected correctly in older MacOS
+      ENV["SDKROOT"] = MacOS.sdk_path if MacOS.version == :el_capitan || MacOS.version == :sierra
+    end
 
     # buildconf required due to system library linking bug patch
     system "./buildconf", "--force"
@@ -101,10 +105,9 @@ class PhpAT73 < Formula
 
     # Each extension that is built on Mojave needs a direct reference to the
     # sdk path or it won't find the headers
-    headers_path = if OS.mac?
-      "=#{MacOS.sdk_path_if_needed}/usr"
-    else
-      ""
+    headers_path = ""
+    on_macos do
+      headers_path = "=#{MacOS.sdk_path_if_needed}/usr"
     end
 
     args = %W[
@@ -174,15 +177,17 @@ class PhpAT73 < Formula
       --with-xmlrpc
     ]
 
-    if OS.mac?
+    on_macos do
       args << "--enable-dtrace"
+      args << "--with-ldap-sasl#{headers_path}"
       args << "--with-zlib#{headers_path}"
       args << "--with-bz2#{headers_path}"
       args << "--with-ndbm#{headers_path}"
       args << "--with-libedit#{headers_path}"
       args << "--with-libxml-dir#{headers_path}"
       args << "--with-xsl#{headers_path}"
-    else
+    end
+    on_linux do
       args << "--disable-dtrace"
       args << "--with-zlib=#{Formula["zlib"].opt_prefix}"
       args << "--with-bz2=#{Formula["bzip2"].opt_prefix}"
@@ -349,10 +354,11 @@ class PhpAT73 < Formula
       "Zend OPCache extension not loaded")
     # Test related to libxml2 and
     # https://github.com/Homebrew/homebrew-core/issues/28398
-    if OS.mac?
+    on_macos do
       assert_includes MachO::Tools.dylibs("#{bin}/php"),
         "#{Formula["libpq"].opt_lib}/libpq.5.dylib"
     end
+
     system "#{sbin}/php-fpm", "-t"
     system "#{bin}/phpdbg", "-V"
     system "#{bin}/php-cgi", "-m"
