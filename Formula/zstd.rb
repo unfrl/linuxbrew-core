@@ -6,10 +6,11 @@ class Zstd < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "beddf3a858da5063f7a407e5c78c0c83a2efd2595354acb750118da7d87f0974"
-    sha256 cellar: :any, big_sur:       "34a6c2cc25d1a7bca6e2294ec3d024f359a2aaf705798b9cbdd71bccdd5c08bd"
-    sha256 cellar: :any, catalina:      "d3f7b4d61e213d3fae27317d496251768ad8cfe03a4aa1ab11479c632a7e4050"
-    sha256 cellar: :any, mojave:        "685d57a5577f21f89d5ee20aa986c447adf315bcf4daf96d22cb5cf170e4a5ce"
+    sha256 cellar: :any,                 arm64_big_sur: "beddf3a858da5063f7a407e5c78c0c83a2efd2595354acb750118da7d87f0974"
+    sha256 cellar: :any,                 big_sur:       "34a6c2cc25d1a7bca6e2294ec3d024f359a2aaf705798b9cbdd71bccdd5c08bd"
+    sha256 cellar: :any,                 catalina:      "d3f7b4d61e213d3fae27317d496251768ad8cfe03a4aa1ab11479c632a7e4050"
+    sha256 cellar: :any,                 mojave:        "685d57a5577f21f89d5ee20aa986c447adf315bcf4daf96d22cb5cf170e4a5ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e8e642234bc16e45affce1285523098101a2ec5bccbccfc6d2cf7fa34d6abeb"
   end
 
   depends_on "cmake" => :build
