@@ -12,9 +12,10 @@ class Irrlicht < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any_skip_relocation, big_sur:  "a4e6536fe5a6e4e497585e5155b909878adc3005ef39f46ce4a5e5fdf4e6b9fd"
-    sha256 cellar: :any_skip_relocation, catalina: "da9222c61d7baf0d863ab4cad94c48342d99fb24cb636a88137d049ec8454c7b"
-    sha256 cellar: :any_skip_relocation, mojave:   "c2cb5b842490ab803c3faaaf4ddd28662ccc67fa72d1af73f95981b0d3371769"
+    sha256 cellar: :any_skip_relocation, big_sur:      "a4e6536fe5a6e4e497585e5155b909878adc3005ef39f46ce4a5e5fdf4e6b9fd"
+    sha256 cellar: :any_skip_relocation, catalina:     "da9222c61d7baf0d863ab4cad94c48342d99fb24cb636a88137d049ec8454c7b"
+    sha256 cellar: :any_skip_relocation, mojave:       "c2cb5b842490ab803c3faaaf4ddd28662ccc67fa72d1af73f95981b0d3371769"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1b1752bb88893e78a68049da9324623e9c9544a642874d99e851faf8300f7ca5"
   end
 
   depends_on xcode: :build
