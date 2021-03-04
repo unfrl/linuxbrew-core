@@ -17,6 +17,7 @@ class ManDb < Formula
     sha256 big_sur:       "767c60fc61f4af286f60753ffca8297baaad41696e38eac2c9e12dc442ffb822"
     sha256 catalina:      "b7f2d5cebcfe7727be74347a05d8d95da9759710f8f25703dd753f4c44af4158"
     sha256 mojave:        "fb26c658449765651d30d47d08f60bd647195e35ff7afbe1bbcc48c1ec2748dd"
+    sha256 x86_64_linux:  "9a9c0f2b74135afd2ed3e50883eaa95d4f4c163be77a90d7ad636c6e54b01c86"
   end
 
   depends_on "pkg-config" => :build
