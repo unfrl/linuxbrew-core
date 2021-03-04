@@ -15,6 +15,7 @@ class Protobuf < Formula
     sha256 cellar: :any, big_sur:       "ab11bb136d278e129d649211265e0b96b6833fd1829fb0eb9b42fbe07d3be568"
     sha256 cellar: :any, catalina:      "438c6713e682c34664ed1e16fa8583ab7d46d9f5db06eccb356552b6c0aa9f3d"
     sha256 cellar: :any, mojave:        "a48ade575e2a1e1d63e8a9109528594d0eee34a44a72cd45f39c72f9a8fb4368"
+    sha256               x86_64_linux:  "0c26da111032e8a965d5d57290f0f7767c4a6c5aefad850255a1cd66f0b97e7d"
   end
 
   head do
