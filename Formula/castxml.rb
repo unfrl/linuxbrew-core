@@ -12,10 +12,11 @@ class Castxml < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "491a35b5d5f447a622b0a1a4d030831ac260835f48821fda9dab19c1093fb177"
-    sha256 cellar: :any, big_sur:       "4b2c5ff139602b7519205387709e386878f773cca651d690a78062decf4f2df0"
-    sha256 cellar: :any, catalina:      "3fff50f3bcc6d6b3087e305a5ad891921b713d28421f9ce44b59b95ad2433461"
-    sha256 cellar: :any, mojave:        "7aab32dadf0f6ba727cda4c187e4fde21d7d1c48156b3e1e607846bad1908c3a"
+    sha256 cellar: :any,                 arm64_big_sur: "491a35b5d5f447a622b0a1a4d030831ac260835f48821fda9dab19c1093fb177"
+    sha256 cellar: :any,                 big_sur:       "4b2c5ff139602b7519205387709e386878f773cca651d690a78062decf4f2df0"
+    sha256 cellar: :any,                 catalina:      "3fff50f3bcc6d6b3087e305a5ad891921b713d28421f9ce44b59b95ad2433461"
+    sha256 cellar: :any,                 mojave:        "7aab32dadf0f6ba727cda4c187e4fde21d7d1c48156b3e1e607846bad1908c3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d8d75f46deff4467d62da18a5775ab144a4b04fa7f942431f388d57a3c80a03"
   end
 
   depends_on "cmake" => :build
