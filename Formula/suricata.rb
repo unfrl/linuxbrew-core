@@ -15,6 +15,7 @@ class Suricata < Formula
     sha256 big_sur:       "5751c86e66e385b9922f3e4eb0761df733ab00d1603c62e4534786e53e266634"
     sha256 catalina:      "5fdfcd49565c97630df59a4c02f2f5c93ee0a65265d04024f2db9d265539c164"
     sha256 mojave:        "a4c47459e160033762a12c8d613b70c3028e089e6e12db4cf3b03a10008b88f2"
+    sha256 x86_64_linux:  "455777d6ad6cc49441f22414450fc13745946581a1bafb60643047a76c7b7643"
   end
 
   depends_on "pkg-config" => :build
