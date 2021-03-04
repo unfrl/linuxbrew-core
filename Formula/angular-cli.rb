@@ -12,6 +12,7 @@ class AngularCli < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "99f5a5341b8089dc0a38568ae4c63b5d2f272054e7cb9aba26b1b3b594e83595"
     sha256 cellar: :any_skip_relocation, catalina:      "808fcec69d0f8bccad9651844e28577dc75109d2980550ebf36f5b6616e27f99"
     sha256 cellar: :any_skip_relocation, mojave:        "daa08e5ca2e2c9e20c10c502b15e8ca81a2b582592fb00ded6697bbecaa33f3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9115d2032c497fc48132176942f7e86dbe7bdc75c7250a46b9a057bc53dd34b2"
   end
 
   depends_on "node"
