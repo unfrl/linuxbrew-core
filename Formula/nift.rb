@@ -6,9 +6,10 @@ class Nift < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:  "58e136b7ecd542408cf98c5891ae1bf48f519b4abdd9c9695ebd4d21903a9ef2"
-    sha256 cellar: :any_skip_relocation, catalina: "b941f64a90996e4b6e98bd379fe30584a0a415210d9c68eb8fbd09d9ddc2c859"
-    sha256 cellar: :any_skip_relocation, mojave:   "3de44044421e8976553478f90db826b778134f3e5f08425af169a3dc67df9fe9"
+    sha256 cellar: :any_skip_relocation, big_sur:      "58e136b7ecd542408cf98c5891ae1bf48f519b4abdd9c9695ebd4d21903a9ef2"
+    sha256 cellar: :any_skip_relocation, catalina:     "b941f64a90996e4b6e98bd379fe30584a0a415210d9c68eb8fbd09d9ddc2c859"
+    sha256 cellar: :any_skip_relocation, mojave:       "3de44044421e8976553478f90db826b778134f3e5f08425af169a3dc67df9fe9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ceb4498de646a9c1d829ba041b3206e2f5c6eaad0ec62f46476427d595a40428"
   end
 
   depends_on "luajit" unless OS.mac?
