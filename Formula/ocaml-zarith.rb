@@ -6,10 +6,11 @@ class OcamlZarith < Formula
   license "LGPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "e7889e5af493114347ecb79b2055497248c79b8feabb40ce94334c97df66999e"
-    sha256 cellar: :any, big_sur:       "44f2142166493aa89d13d042e76238c4aada07b461c71f6e2c0558a9ef16ba15"
-    sha256 cellar: :any, catalina:      "3e5a15ac5d4739779053dccc3d32a6db4d8a3e2f0dd907e1b522a07d9f40ecf2"
-    sha256 cellar: :any, mojave:        "eb1c4799beaf503ca9f29eb92ba9d6e84a01ee38c164f8e60aa4a4f6921ec153"
+    sha256 cellar: :any,                 arm64_big_sur: "e7889e5af493114347ecb79b2055497248c79b8feabb40ce94334c97df66999e"
+    sha256 cellar: :any,                 big_sur:       "44f2142166493aa89d13d042e76238c4aada07b461c71f6e2c0558a9ef16ba15"
+    sha256 cellar: :any,                 catalina:      "3e5a15ac5d4739779053dccc3d32a6db4d8a3e2f0dd907e1b522a07d9f40ecf2"
+    sha256 cellar: :any,                 mojave:        "eb1c4799beaf503ca9f29eb92ba9d6e84a01ee38c164f8e60aa4a4f6921ec153"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "263c999a084c99a931879a2b81ee47ea7da58bc770684adbe471dc3429b838ce"
   end
 
   depends_on "ocaml-findlib" => :build
