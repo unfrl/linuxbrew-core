@@ -12,10 +12,11 @@ class Onnxruntime < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "66a6e15cfb53c88797492f936e07dacbb5236a4ced576d05b4e6b80b784dadaa"
-    sha256 cellar: :any, big_sur:       "156c92b0dbe1a9bd525f52f953930a7a38aeaf43a7bb8c68f0f6463922918586"
-    sha256 cellar: :any, catalina:      "fea226f84a61d74cfc5787056cbac1a2371450ba8ddff73e81d8b7a15d50a563"
-    sha256 cellar: :any, mojave:        "6b8d1a27a5303e58e6a81bd5efd997725784676d4fbc773fa8a764a3d23564a9"
+    sha256 cellar: :any,                 arm64_big_sur: "66a6e15cfb53c88797492f936e07dacbb5236a4ced576d05b4e6b80b784dadaa"
+    sha256 cellar: :any,                 big_sur:       "156c92b0dbe1a9bd525f52f953930a7a38aeaf43a7bb8c68f0f6463922918586"
+    sha256 cellar: :any,                 catalina:      "fea226f84a61d74cfc5787056cbac1a2371450ba8ddff73e81d8b7a15d50a563"
+    sha256 cellar: :any,                 mojave:        "6b8d1a27a5303e58e6a81bd5efd997725784676d4fbc773fa8a764a3d23564a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "98af39ddcf43fce8ad2f7c41fb7820d1b993fa310fea7bca52a91e396411d5fb"
   end
 
   depends_on "cmake" => :build
