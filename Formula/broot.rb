@@ -11,6 +11,7 @@ class Broot < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "e04da40ae606779a659ef31fd13c193ec623c9c252d62cc9f928fe94f14adc79"
     sha256 cellar: :any_skip_relocation, catalina:      "5be93a088ac57dfab3d3765c35025a43938a292f2c353510030568ea8221e6a5"
     sha256 cellar: :any_skip_relocation, mojave:        "71b8b1391b86e3c2829ff245e1799a8b7964db71377bf53a24e1f39c3a407509"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "901664d0fdc8636c13fb8f5db5d0e4ed870582881a4a981f4748218680f6d4f4"
   end
 
   depends_on "rust" => :build
