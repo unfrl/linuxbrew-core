@@ -12,9 +12,10 @@ class FluentBit < Formula
   end
 
   bottle do
-    sha256 cellar: :any, big_sur:  "603cb62859535f526ebc25bd79feeec2dffd80c4034bf5233b37ef4154446a69"
-    sha256 cellar: :any, catalina: "3eef292b1db3805d2dae6a9190147682f9e6428f7e136cbff6623edb746df367"
-    sha256 cellar: :any, mojave:   "8f16be3826e994e684094d549a5142f328daa422c2d0da50e36085e32da9f029"
+    sha256 cellar: :any,                 big_sur:      "603cb62859535f526ebc25bd79feeec2dffd80c4034bf5233b37ef4154446a69"
+    sha256 cellar: :any,                 catalina:     "3eef292b1db3805d2dae6a9190147682f9e6428f7e136cbff6623edb746df367"
+    sha256 cellar: :any,                 mojave:       "8f16be3826e994e684094d549a5142f328daa422c2d0da50e36085e32da9f029"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "338348f8c5c0c3227a47dc8e4c7d68890c2e8725e2a8949fbb301e8b8f562a4e"
   end
 
   depends_on "bison" => :build
