@@ -6,11 +6,12 @@ class Kahip < Formula
   revision OS.mac? ? 1 : 2
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "2a3a941d05e8ac41cec5522f11fd835159ffb370452cf788adbcfe0d8c68d654"
-    sha256 cellar: :any, big_sur:       "5e9b5722965b55d3cfe41c64138da7d508f3677948783d10fa8bdc6cb14fd899"
-    sha256 cellar: :any, catalina:      "a05c9bfbd38225e3730e10756f1515d833f09f61eccd7745c55dd8b78690b790"
-    sha256 cellar: :any, mojave:        "57e35f0a81e0d22f9d8d4438994efcc30295e54865525ba89236f58647f66174"
-    sha256 cellar: :any, high_sierra:   "78fda0b177b22dc65d0d9b5116dc842aa023cb027afccd4c2f968f42ac55fada"
+    sha256 cellar: :any,                 arm64_big_sur: "2a3a941d05e8ac41cec5522f11fd835159ffb370452cf788adbcfe0d8c68d654"
+    sha256 cellar: :any,                 big_sur:       "5e9b5722965b55d3cfe41c64138da7d508f3677948783d10fa8bdc6cb14fd899"
+    sha256 cellar: :any,                 catalina:      "a05c9bfbd38225e3730e10756f1515d833f09f61eccd7745c55dd8b78690b790"
+    sha256 cellar: :any,                 mojave:        "57e35f0a81e0d22f9d8d4438994efcc30295e54865525ba89236f58647f66174"
+    sha256 cellar: :any,                 high_sierra:   "78fda0b177b22dc65d0d9b5116dc842aa023cb027afccd4c2f968f42ac55fada"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e89411e3c2cfca0f7d48228797a9fd87c78bcd878c8d6294b23dad181dad3550"
   end
 
   depends_on "cmake" => :build
