@@ -13,11 +13,12 @@ class Augustus < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "03665ee18df08813482e9ad6b91ff670ea332f828f6a0873ceef68dc0d574048"
-    sha256 cellar: :any, big_sur:       "95ce85b389842f3b394dad647c2917ca16609acfdbb6e9b1f949250ac7beb84a"
-    sha256 cellar: :any, catalina:      "9e6fc1d57f48cf314fa418059a9d619a8451d7e65ed8234225e52f311673cf6d"
-    sha256 cellar: :any, mojave:        "476eeca3de3f98c4e539cee89078a3f37f667ae7f47ef375115439154bc23e3c"
-    sha256 cellar: :any, high_sierra:   "b5077e94d1ee68864ed0d89bfc892ad80dcd37b89e149b23733bd9280d54771b"
+    sha256 cellar: :any,                 arm64_big_sur: "03665ee18df08813482e9ad6b91ff670ea332f828f6a0873ceef68dc0d574048"
+    sha256 cellar: :any,                 big_sur:       "95ce85b389842f3b394dad647c2917ca16609acfdbb6e9b1f949250ac7beb84a"
+    sha256 cellar: :any,                 catalina:      "9e6fc1d57f48cf314fa418059a9d619a8451d7e65ed8234225e52f311673cf6d"
+    sha256 cellar: :any,                 mojave:        "476eeca3de3f98c4e539cee89078a3f37f667ae7f47ef375115439154bc23e3c"
+    sha256 cellar: :any,                 high_sierra:   "b5077e94d1ee68864ed0d89bfc892ad80dcd37b89e149b23733bd9280d54771b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18b02a106d91dbf854d296a7f7329f4983b971950ea0c7ac885b59144ca751cf"
   end
 
   depends_on "boost" => :build
