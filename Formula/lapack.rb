@@ -13,6 +13,7 @@ class Lapack < Formula
     sha256 cellar: :any_skip_relocation, catalina:      "be00d33447ab0bb47a05f89517640c984cafb7723fd6fff9749de773c304f2df"
     sha256 cellar: :any_skip_relocation, mojave:        "ad84de82af78dc5ee4b305c76a79a3fc18420beeac2be72d1c262936d5a9110e"
     sha256 cellar: :any_skip_relocation, high_sierra:   "fd360d9073e8a483e88a0bca6c8dc96a8159488fa3a6009bb8cbe03747f20f4f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3552f6622f22a35a9ba8686668ff5bba2a85b1fe59555571fe2fd7b4e569cfb7"
   end
 
   keg_only :shadowed_by_macos, "macOS provides LAPACK in Accelerate.framework"
