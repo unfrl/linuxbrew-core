@@ -13,9 +13,10 @@ class Hdf5AT18 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, big_sur:  "3c096b8675616ada699dbed4166448607ee962d9be0d204b4bfee7bed9a79dcc"
-    sha256 cellar: :any, catalina: "9e89965d4c4a107868f480a8ec339cd8e73e49bd919eb07e377f375a40558bef"
-    sha256 cellar: :any, mojave:   "5510c91c49d43e1b3f1b60a7792449f5133816ea9384c652c2120e489a975c65"
+    sha256 cellar: :any,                 big_sur:      "3c096b8675616ada699dbed4166448607ee962d9be0d204b4bfee7bed9a79dcc"
+    sha256 cellar: :any,                 catalina:     "9e89965d4c4a107868f480a8ec339cd8e73e49bd919eb07e377f375a40558bef"
+    sha256 cellar: :any,                 mojave:       "5510c91c49d43e1b3f1b60a7792449f5133816ea9384c652c2120e489a975c65"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "af4a12304ab00133bb97b23ba6bd78ca2b4c280c7abec5dc256220da362550b4"
   end
 
   keg_only :versioned_formula
