@@ -31,11 +31,7 @@ class Numpy < Formula
   def install
     openblas = Formula["openblas"].opt_prefix
     ENV["ATLAS"] = "None" # avoid linking against Accelerate.framework
-    if OS.mac?
-      ENV["BLAS"] = ENV["LAPACK"] = "#{openblas}/lib/libopenblas.dylib"
-    else
-      ENV["BLAS"] = ENV["LAPACK"] = "#{openblas}/lib/libopenblas.so"
-    end
+    ENV["BLAS"] = ENV["LAPACK"] = "#{openblas}/lib/#{shared_library("libopenblas")}"
 
     config = <<~EOS
       [openblas]
