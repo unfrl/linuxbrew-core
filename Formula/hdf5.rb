@@ -18,6 +18,7 @@ class Hdf5 < Formula
     sha256 cellar: :any_skip_relocation, catalina:      "ff70299b918490134fb3e883110f0092d591885db3fc798f2cc0f48cd9472f36"
     sha256 cellar: :any_skip_relocation, mojave:        "450afa0c0e0783b416e67df0d2a56c5f12518df65ba0326884e06f3388c5c445"
     sha256 cellar: :any_skip_relocation, high_sierra:   "541d0b241a81248d8b6c3d3b205fb3f319e5cefe751d7750aa2749b9696ff749"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "883e6c23607e2f720b8c727fa870bb4beaf48a68a23b6142043b4508df3c5134"
   end
 
   depends_on "autoconf" => :build
