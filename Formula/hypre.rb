@@ -18,6 +18,7 @@ class Hypre < Formula
     sha256 cellar: :any_skip_relocation, catalina:      "9d732247f823113d50fd5d5e144541ad92dfab1f8df05298426bea24743e693b"
     sha256 cellar: :any_skip_relocation, mojave:        "ecba86de35962ede83358e77986f65ac66e3632c8b255b91fde2b986c10d8c80"
     sha256 cellar: :any_skip_relocation, high_sierra:   "0c88309a25471939828ac8e9f8851b0a83bb9b2a11103837a12291a59351a520"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4e029e97a3d944397fcdf5d932253e49957791aada4fb02002da17e44ab0b54"
   end
 
   depends_on "gcc" # for gfortran
