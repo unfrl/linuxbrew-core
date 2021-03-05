@@ -11,11 +11,11 @@ class Protobuf < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "21acf145d1aa939c5c7890be8fd77ad93003f43783c0766f78b12327852ee6ac"
-    sha256 cellar: :any, big_sur:       "ab11bb136d278e129d649211265e0b96b6833fd1829fb0eb9b42fbe07d3be568"
-    sha256 cellar: :any, catalina:      "438c6713e682c34664ed1e16fa8583ab7d46d9f5db06eccb356552b6c0aa9f3d"
-    sha256 cellar: :any, mojave:        "a48ade575e2a1e1d63e8a9109528594d0eee34a44a72cd45f39c72f9a8fb4368"
-    sha256               x86_64_linux:  "0c26da111032e8a965d5d57290f0f7767c4a6c5aefad850255a1cd66f0b97e7d"
+    rebuild 1
+    sha256 cellar: :any, arm64_big_sur: "01e45795e3f4301c633c628916d677efbd1f90942b9f0374c91fd9d9c63dec64"
+    sha256 cellar: :any, big_sur:       "6a2f8b88814a5875a3c446994eb9de64b243ffe65bec398ba1f02044b4d116a8"
+    sha256 cellar: :any, catalina:      "d8f7e6385e5c099babb830ec3a08230e9e6eb8fa76f68bb65ce2c6e7590bef99"
+    sha256 cellar: :any, mojave:        "804aa5d192d7f8432000df4078142de62a2f169f51bead331d0f624a225759e6"
   end
 
   head do
@@ -27,9 +27,6 @@ class Protobuf < Formula
   end
 
   depends_on "python@3.9" => [:build, :test]
-
-  conflicts_with "percona-server", "percona-xtrabackup",
-    because: "both install libprotobuf(-lite) libraries"
 
   resource "six" do
     url "https://files.pythonhosted.org/packages/6b/34/415834bfdafca3c5f451532e8a8d9ba89a21c9743a0c59fbd0205c7f9426/six-1.15.0.tar.gz"
