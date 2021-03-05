@@ -34,6 +34,7 @@ class OpenMpi < Formula
     sha256 catalina:      "fd21d8d449c7fee6126f11994b6e0d12178b1eab55cbb17f99056d535cb1ace4"
     sha256 mojave:        "f3a7dca683792a4fe866b62004351b1dae6acf2376609cf36bdc771d9e9104ef"
     sha256 high_sierra:   "33d3cd119f7f7d7d3154d758cc0ad68ad513624c9a648c9b87d732ea6a8e6068"
+    sha256 x86_64_linux:  "214b0e8a50e481ca85de5d4fb1e24597e9e743741e84aabf1ee6775c24db5adc"
   end
 
   head do
