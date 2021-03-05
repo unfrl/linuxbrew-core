@@ -16,6 +16,7 @@ class R < Formula
     sha256 big_sur:       "d3859bfc06a1cac65a60a43f105aec2b3c2ebdb465b69eb6988a4686eefd0819"
     sha256 catalina:      "057a9e1fafd85ec2f65ecbfb651f6299cbbaab630158d6cf6d1057b43f7b9f29"
     sha256 mojave:        "ffffeb9ad7f2892187d26fde97bc8f47ba4b27bf95ea8bcc1ce43a09771f7d51"
+    sha256 x86_64_linux:  "498482b69f0b95339ca7846bfd51aeb13958ea8d453c3e3e6afb2ac6d86fc6cc"
   end
 
   depends_on "pkg-config" => :build
