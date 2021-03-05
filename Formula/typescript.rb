@@ -13,6 +13,7 @@ class Typescript < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "078b4cb670e85250dc836613944d1e9a683b11ad9ef3af12919d673c7bf73174"
     sha256 cellar: :any_skip_relocation, catalina:      "707eea072f0475ecf05dd914793373a95ca313732b3ef78327c728f94f8cabc6"
     sha256 cellar: :any_skip_relocation, mojave:        "5b017e91762fbfe6a50749f3a10ad7f268dde78f8e1365d6a83ce1fc0f5d22bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "306c4473faff344529cb8e5ce8822968a897c2a1ea3b83494eedcadda3183104"
   end
 
   depends_on "node"
