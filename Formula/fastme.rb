@@ -6,11 +6,12 @@ class Fastme < Formula
   revision OS.mac? ? 2 : 3
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "833dd8f14112444ba2131ea4d2213a4ebff23842882460139ae46e75ce6ce778"
-    sha256 cellar: :any, big_sur:       "ce3fa9ef0eac119aebbdb0feb8f588c54ff423f1a0cdc1e0c0d489f19a86e745"
-    sha256 cellar: :any, catalina:      "ef8226e09481486fa3e047ee5145cfc0dc370fceaa702095b835ad701eebf9fe"
-    sha256 cellar: :any, mojave:        "517b3f8d0fe9b403b9de35ebca8af530f859a66ae788ee779e21b9d62e9c5c6f"
-    sha256 cellar: :any, high_sierra:   "25cf8eb54ef7416842036f83c99eebb5a5881267d642f4a2c84c94fb5892a511"
+    sha256 cellar: :any,                 arm64_big_sur: "833dd8f14112444ba2131ea4d2213a4ebff23842882460139ae46e75ce6ce778"
+    sha256 cellar: :any,                 big_sur:       "ce3fa9ef0eac119aebbdb0feb8f588c54ff423f1a0cdc1e0c0d489f19a86e745"
+    sha256 cellar: :any,                 catalina:      "ef8226e09481486fa3e047ee5145cfc0dc370fceaa702095b835ad701eebf9fe"
+    sha256 cellar: :any,                 mojave:        "517b3f8d0fe9b403b9de35ebca8af530f859a66ae788ee779e21b9d62e9c5c6f"
+    sha256 cellar: :any,                 high_sierra:   "25cf8eb54ef7416842036f83c99eebb5a5881267d642f4a2c84c94fb5892a511"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5422da4b7cfaab143576b91fd36032f49774c287a6d71efca89d29fbb34e624d"
   end
 
   depends_on "gcc" if OS.mac?
