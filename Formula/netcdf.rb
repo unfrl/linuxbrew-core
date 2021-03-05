@@ -18,6 +18,7 @@ class Netcdf < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "55caff29df9b25ee906d2dcce6c78e02b6e9ac163b42e06f53c45aa0f6ade645"
     sha256 cellar: :any_skip_relocation, catalina:      "b3aeca909a91b47e8e0d3fdc9d209dd13ecfb2b1879bab5ea49d3dcfd6404ddd"
     sha256 cellar: :any_skip_relocation, mojave:        "9504a25d84dd6afb80553576474420cc074c64821aa346a58271dad26982b187"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "91680c4afcb32d8c2afd67f50eb41a3a0a6adac7173aeb3c4f79b64a336ab453"
   end
 
   depends_on "cmake" => :build
