@@ -11,6 +11,7 @@ class Reprepro < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "9f87049de8d9c70a38429e5fc56173cf41e598621a6de661fdc1465bf28b8819"
     sha256 cellar: :any_skip_relocation, catalina:      "ce81080f227223229a9cc85126c5189d7bb8a0b12f928e5a1b71c48a0f0e4f88"
     sha256 cellar: :any_skip_relocation, mojave:        "4c69c6b440e77633069009ec48bb72739402052e4b4fff03504ab09bfcb88a56"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0adde4a9cfeee960fb157de75c62493d09984b3187b2ae95e40ae15d036bdc56"
   end
 
   depends_on "berkeley-db@4"
