@@ -8,10 +8,11 @@ class Arpack < Formula
   head "https://github.com/opencollab/arpack-ng.git"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "123a2f392aeb681a26fc0b918882ba8a02b5995b3bd8d0b929c254d8e1222c1c"
-    sha256 cellar: :any, big_sur:       "70435f04200e15435d5441ff19ba648bc10e56a7287593a4ab06e756469a8717"
-    sha256 cellar: :any, catalina:      "b0ff545b53f2300baa9f9ba1f13c5c45c376b8968dae71d870b9b7b0a9c753d7"
-    sha256 cellar: :any, mojave:        "7cc29abdc6d90601ff9182120c2e1cf24e298338e15ec33cf205d10e7d76bcff"
+    sha256 cellar: :any,                 arm64_big_sur: "123a2f392aeb681a26fc0b918882ba8a02b5995b3bd8d0b929c254d8e1222c1c"
+    sha256 cellar: :any,                 big_sur:       "70435f04200e15435d5441ff19ba648bc10e56a7287593a4ab06e756469a8717"
+    sha256 cellar: :any,                 catalina:      "b0ff545b53f2300baa9f9ba1f13c5c45c376b8968dae71d870b9b7b0a9c753d7"
+    sha256 cellar: :any,                 mojave:        "7cc29abdc6d90601ff9182120c2e1cf24e298338e15ec33cf205d10e7d76bcff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f193e97202affd722715d024511bab597081f8b134df628505e67fda4cd5c859"
   end
 
   depends_on "autoconf" => :build
