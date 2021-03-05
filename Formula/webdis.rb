@@ -6,10 +6,11 @@ class Webdis < Formula
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "398144fc87be02ce44d2f3efb3d4db38aec4998897b12afb3d1ae8aadbedcc57"
-    sha256 cellar: :any, big_sur:       "f5e12ff6ce0798c1e455e17588eabd16cb5a8cfebdcac6e3aa9d3ebd9111b5d2"
-    sha256 cellar: :any, catalina:      "c05a90047556fb2c297313a7e8011d8fceba2e4689d5003d38793ae9fa59134f"
-    sha256 cellar: :any, mojave:        "1de4b6e173b3a38abfb47045defec45b93e463a923d6441faf7158086dedd547"
+    sha256 cellar: :any,                 arm64_big_sur: "398144fc87be02ce44d2f3efb3d4db38aec4998897b12afb3d1ae8aadbedcc57"
+    sha256 cellar: :any,                 big_sur:       "f5e12ff6ce0798c1e455e17588eabd16cb5a8cfebdcac6e3aa9d3ebd9111b5d2"
+    sha256 cellar: :any,                 catalina:      "c05a90047556fb2c297313a7e8011d8fceba2e4689d5003d38793ae9fa59134f"
+    sha256 cellar: :any,                 mojave:        "1de4b6e173b3a38abfb47045defec45b93e463a923d6441faf7158086dedd547"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68f9cf6d6e9ec6fb3b22a60a5e21b4304da41680818301401725c499d1e16421"
   end
 
   depends_on "libevent"
