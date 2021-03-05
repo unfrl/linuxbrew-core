@@ -16,6 +16,7 @@ class Sundials < Formula
     sha256                               big_sur:       "eca818ac9876c5f784483f49eaeb6b8bb2a4a7950520f13e7dd99f43ad06d223"
     sha256                               catalina:      "bacddf8c38b9c1236cd0aa2dc85273f7ffff6726418781f5a0e223bf132e3e07"
     sha256                               mojave:        "9ad76e3dbc09c9d9cb4af9e600376fcae287c63128a100959871ddfe8dba438e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebff27705f1915a27dd3c3b54001a12701f9b290be7d385d960c70b4107e5b55"
   end
 
   depends_on "cmake" => :build
