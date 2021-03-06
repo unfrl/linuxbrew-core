@@ -60,8 +60,8 @@ class Go < Formula
     system bin/"go", "install", "-race", "std"
 
     # Remove useless files.
-    # Breaks patchelf because it contains weird debug/test files
-    rm_rf Dir[libexec/"src/debug/elf/testdata"] unless OS.mac?
+    # Breaks patchelf because folder contains weird debug/test files
+    rm_rf Dir[libexec/"src/debug/elf/testdata"]
   end
 
   test do
