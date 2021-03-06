@@ -44,11 +44,6 @@ class Apr < Formula
     # The internal libtool throws an enormous strop if we don't do...
     ENV.deparallelize
 
-    if OS.linux? && build.bottle?
-      # Prevent hardcoded /usr/bin/gcc-4.8 compiler
-      ENV["CC"] = "cc"
-    end
-
     # Needed to apply the patch.
     system "autoconf"
 
