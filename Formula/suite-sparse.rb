@@ -10,10 +10,11 @@ class SuiteSparse < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "ad13471adbc81500b37605fad72f94cc4a41312b55f6af3794e1d2d91b162bd7"
-    sha256 big_sur:       "f1f5e535b5abffaa3a6c9eae800a21068fb5c865e5fd5012ba760287cfa8c7f5"
-    sha256 catalina:      "d52f50fbd23d137afed31f0da7145df08a4256ba486597c021e4d55990f497a4"
-    sha256 mojave:        "975ce6b0517e9f03a97acb96d83617ee44c94d503b598003a3a1c937f97cac33"
+    sha256                               arm64_big_sur: "ad13471adbc81500b37605fad72f94cc4a41312b55f6af3794e1d2d91b162bd7"
+    sha256                               big_sur:       "f1f5e535b5abffaa3a6c9eae800a21068fb5c865e5fd5012ba760287cfa8c7f5"
+    sha256                               catalina:      "d52f50fbd23d137afed31f0da7145df08a4256ba486597c021e4d55990f497a4"
+    sha256                               mojave:        "975ce6b0517e9f03a97acb96d83617ee44c94d503b598003a3a1c937f97cac33"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b450d56b91b1b9d2f9de992fed169860d5d98170ee5ad621b312c9b5c206b91e"
   end
 
   depends_on "cmake" => :build
