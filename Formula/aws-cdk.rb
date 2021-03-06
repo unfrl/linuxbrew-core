@@ -12,6 +12,7 @@ class AwsCdk < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "7e66f4a98a6a178812aac079a32107d593c32a5dbd249bd5e2ff5d5d7cd8d6b9"
     sha256 cellar: :any_skip_relocation, catalina:      "d9ba3c863f51d3985eca1589812d336dc786c79dae411262e05ac333495749a6"
     sha256 cellar: :any_skip_relocation, mojave:        "2edefc35b9d643302fae9faee48f29a97a1766ca201c190b57016c5152b5dfae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c9091f63cae753705e697d44ecdea8846dd2a867a7a7a97a249ea3c03e39cb0"
   end
 
   depends_on "node"
