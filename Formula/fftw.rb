@@ -19,8 +19,11 @@ class Fftw < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "521f9a9c9355a66cc68e8fbaf9e29e04bbaf58ec23fa09ee647050c321674dd7"
   end
 
-  depends_on "gcc" if OS.mac?
   depends_on "open-mpi"
+
+  on_macos do
+    depends_on "gcc"
+  end
 
   fails_with :clang
 
