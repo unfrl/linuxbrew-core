@@ -7,10 +7,11 @@ class Kahip < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_big_sur: "251a9daa84641cace789ee3a35512f139de3ff076690aba9a4b1f1518ec46307"
-    sha256 cellar: :any, big_sur:       "2b70b966c1677ebd261ee0de5a25a1db63ebc2d565fc8cda7935ba5f09dc2dcf"
-    sha256 cellar: :any, catalina:      "17060cfbab50579d52bfc82e71543ffc3832c1ffca61d03fe12e72ea238fcc3b"
-    sha256 cellar: :any, mojave:        "43c9497861fdd75caf95132fbcb8af3e58aff877ac6e9cbd5ca2f307e96396ae"
+    sha256 cellar: :any,                 arm64_big_sur: "251a9daa84641cace789ee3a35512f139de3ff076690aba9a4b1f1518ec46307"
+    sha256 cellar: :any,                 big_sur:       "2b70b966c1677ebd261ee0de5a25a1db63ebc2d565fc8cda7935ba5f09dc2dcf"
+    sha256 cellar: :any,                 catalina:      "17060cfbab50579d52bfc82e71543ffc3832c1ffca61d03fe12e72ea238fcc3b"
+    sha256 cellar: :any,                 mojave:        "43c9497861fdd75caf95132fbcb8af3e58aff877ac6e9cbd5ca2f307e96396ae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9cf84b19c6a917f8c39f970d7e4d7cdc9e7e76118ec6c42cb018dca052b4b2b"
   end
 
   depends_on "cmake" => :build
