@@ -7,10 +7,11 @@ class Fastme < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_big_sur: "100b27d15fd1bda9a876fd56185caed235f2f20f31a5a670ab02fd6a8252839d"
-    sha256 cellar: :any, big_sur:       "10a92caf705c888801b6346013c04751ed19ae70b10ffd6894017c6856f56c7c"
-    sha256 cellar: :any, catalina:      "0a6e916f7b223adef5ce24a90cf7e351a5839a47b345c328efcaacba5887bbee"
-    sha256 cellar: :any, mojave:        "fa7cad5f28e354eaa64c312c20afdcb786fd7b52b5c5f3fa010df6003e7b388f"
+    sha256 cellar: :any,                 arm64_big_sur: "100b27d15fd1bda9a876fd56185caed235f2f20f31a5a670ab02fd6a8252839d"
+    sha256 cellar: :any,                 big_sur:       "10a92caf705c888801b6346013c04751ed19ae70b10ffd6894017c6856f56c7c"
+    sha256 cellar: :any,                 catalina:      "0a6e916f7b223adef5ce24a90cf7e351a5839a47b345c328efcaacba5887bbee"
+    sha256 cellar: :any,                 mojave:        "fa7cad5f28e354eaa64c312c20afdcb786fd7b52b5c5f3fa010df6003e7b388f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "91a3d4148ba81eedf2a0224a4c33bea2220f8db49e6b9285d5de1b2c768f63ac"
   end
 
   on_macos do
