@@ -14,10 +14,11 @@ class Augustus < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_big_sur: "84b334a9bcb3b3fe938616771ea4c845b930f25250c562601f2b2101f35323d8"
-    sha256 cellar: :any, big_sur:       "913e41174da9fae9e1103e74f0afec17f5c6b142a9eeae02062e92b01a7cc244"
-    sha256 cellar: :any, catalina:      "06d0cd1799273e82170582c51f164f7766e56b7110056a9daec94a988de5866d"
-    sha256 cellar: :any, mojave:        "fcc26d38b47776cab3c03193fff49df975d1de141743503753926b861abdea80"
+    sha256 cellar: :any,                 arm64_big_sur: "84b334a9bcb3b3fe938616771ea4c845b930f25250c562601f2b2101f35323d8"
+    sha256 cellar: :any,                 big_sur:       "913e41174da9fae9e1103e74f0afec17f5c6b142a9eeae02062e92b01a7cc244"
+    sha256 cellar: :any,                 catalina:      "06d0cd1799273e82170582c51f164f7766e56b7110056a9daec94a988de5866d"
+    sha256 cellar: :any,                 mojave:        "fcc26d38b47776cab3c03193fff49df975d1de141743503753926b861abdea80"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41db6f6eb0a9e9ec780e0aeab13aa9b416f2efc42734c4db38e5a627a6420654"
   end
 
   depends_on "boost" => :build
