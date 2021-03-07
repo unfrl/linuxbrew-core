@@ -30,8 +30,11 @@ class Abyss < Formula
 
   depends_on "boost" => :build
   depends_on "google-sparsehash" => :build
-  depends_on "gcc" if OS.mac?
   depends_on "open-mpi"
+
+  on_macos do
+    depends_on "gcc"
+  end
 
   fails_with :clang # no OpenMP support
 
@@ -55,7 +58,7 @@ class Abyss < Formula
 
   test do
     testpath.install resource("testdata")
-    if OS.mac? || which("column")
+    if which("column")
       system "#{bin}/abyss-pe", "k=25", "name=ts", "in=reads1.fastq reads2.fastq"
     else
       # Fix error: abyss-tabtomd: column: not found

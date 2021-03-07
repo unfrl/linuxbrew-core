@@ -6,13 +6,13 @@ class Gnuradio < Formula
   url "https://github.com/gnuradio/gnuradio/releases/download/v3.9.0.0/gnuradio-3.9.0.0.tar.xz"
   sha256 "0a2622933c96a4b22405c7656b8af0db32762834317ec2b90bff0a0a5a4f75cb"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/gnuradio/gnuradio.git"
 
   bottle do
-    sha256 big_sur:  "4a1926aef8486d592cc29e3b935004eea361b973c4576be0c1b6a9e63ffd0305"
-    sha256 catalina: "642acfb1da4f27c09613f31d66a16677afa67ea66454e286da6e5a6e08392eaf"
-    sha256 mojave:   "445d59b2fc7603dc6edc30e9a27bff386ff37a51fe09bb59a801c10fe308e401"
+    sha256 big_sur:  "32adf2e33733c8b046ceeedeadd0afb8fc0943987325569e8899f90b66ab6648"
+    sha256 catalina: "a52f7e2c034b691ed03e9d370f1991305c9bb1c31faeb792ec8e9e7501f30275"
+    sha256 mojave:   "4d89331a0cce48b523b9517227742bfc26aa9051bd9b47f6d1bb7bc0e9aa17b0"
   end
 
   depends_on "cmake" => :build
@@ -25,6 +25,7 @@ class Gnuradio < Formula
   depends_on "gmp"
   depends_on "gsl"
   depends_on "gtk+3"
+  depends_on "jack"
   depends_on "log4cpp"
   depends_on "numpy"
   depends_on "portaudio"
@@ -81,7 +82,6 @@ class Gnuradio < Formula
 
   def install
     ENV.cxx11
-    ENV.prepend_path "PATH", Formula["qt"].opt_bin.to_s
 
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
 
@@ -110,8 +110,8 @@ class Gnuradio < Formula
       -DPYTHON_VERSION_MAJOR=3
       -DQWT_LIBRARIES=#{Formula["qwt"].lib}/qwt.framework/qwt
       -DQWT_INCLUDE_DIRS=#{Formula["qwt"].lib}/qwt.framework/Headers
-      -DCMAKE_PREFIX_PATH=#{Formula["qt"].opt_lib}
-      -DQT_BINARY_DIR=#{Formula["qt"].opt_bin}
+      -DCMAKE_PREFIX_PATH=#{Formula["qt@5"].opt_lib}
+      -DQT_BINARY_DIR=#{Formula["qt@5"].opt_bin}
       -DENABLE_TESTING=OFF
       -DENABLE_INTERNAL_VOLK=OFF
     ]
