@@ -86,6 +86,7 @@ class PythonAT38 < Formula
     end
   end
 
+  # Link against libmpdec.so.3, update for mpdecimal.h symbol cleanup.
   patch do
     url "https://www.bytereef.org/contrib/decimal-3.8.diff"
     sha256 "104083617f086375974908f619369cd64005d5ffc314038c31b8b49032280148"
@@ -130,11 +131,6 @@ class PythonAT38 < Formula
       --with-openssl=#{Formula["openssl@1.1"].opt_prefix}
       --with-system-libmpdec
     ]
-    args << "--with-dtrace" if OS.mac?
-
-    # Required for the _ctypes module
-    # see https://github.com/Linuxbrew/homebrew-core/pull/1007#issuecomment-252421573
-    args << "--with-system-ffi" unless OS.mac?
 
     on_macos do
       args << "--enable-framework=#{frameworks}"
@@ -160,7 +156,7 @@ class PythonAT38 < Formula
     ldflags_nodist = ["-L#{HOMEBREW_PREFIX}/lib"]
     cppflags       = ["-I#{HOMEBREW_PREFIX}/include"]
 
-    if OS.mac? && MacOS.sdk_path_if_needed
+    if MacOS.sdk_path_if_needed
       # Help Python's build system (setuptools/pip) to build things on SDK-based systems
       # The setup.py looks at "-isysroot" to get the sysroot (and not at --sysroot)
       cflags  << "-isysroot #{MacOS.sdk_path}"
@@ -169,18 +165,6 @@ class PythonAT38 < Formula
     # Avoid linking to libgcc https://mail.python.org/pipermail/python-dev/2012-February/116205.html
     args << "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
 
-    # Python's setup.py parses CPPFLAGS and LDFLAGS to learn search
-    # paths for the dependencies of the compiled extension modules.
-    # See Linuxbrew/linuxbrew#420, Linuxbrew/linuxbrew#460, and Linuxbrew/linuxbrew#875
-    unless OS.mac?
-      if build.bottle?
-        # Configure Python to use cc and c++ to build extension modules.
-        ENV["CC"] = "cc"
-        ENV["CXX"] = "c++"
-      end
-      cppflags << ENV.cppflags << " -I#{HOMEBREW_PREFIX}/include"
-      ldflags << ENV.ldflags << " -L#{HOMEBREW_PREFIX}/lib"
-    end
     args << "--with-tcltk-includes=-I#{Formula["tcl-tk"].opt_include}"
     args << "--with-tcltk-libs=-L#{Formula["tcl-tk"].opt_lib} -ltcl8.6 -ltk8.6"
 
@@ -241,12 +225,6 @@ class PythonAT38 < Formula
       inreplace Dir[lib_cellar/"**/_sysconfigdata__darwin_darwin.py"],
                 %r{('LINKFORSHARED': .*?)'(Python.framework/Versions/3.\d+/Python)'}m,
                 "\\1'#{opt_prefix}/Frameworks/\\2'"
-
-      # A fix, because python and python3 both want to install Python.framework
-      # and therefore we can't link both into HOMEBREW_PREFIX/Frameworks
-      # https://github.com/Homebrew/homebrew/issues/15943
-      ["Headers", "Python", "Resources"].each { |f| rm(prefix/"Frameworks/Python.framework/#{f}") }
-      rm prefix/"Frameworks/Python.framework/Versions/Current"
     end
 
     on_linux do
@@ -285,14 +263,6 @@ class PythonAT38 < Formula
       "python-config" => "python3-config",
     }.each do |unversioned_name, versioned_name|
       (libexec/"bin").install_symlink (bin/versioned_name).realpath => unversioned_name
-    end
-  end
-
-  def xy
-    if OS.mac? && prefix.exist?
-      (prefix/"Frameworks/Python.framework/Versions").children.min.basename.to_s
-    else
-      version.to_s[/^\d\.\d/]
     end
   end
 
