@@ -13,6 +13,7 @@ class Pygments < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "fa0453988908f7898bcb6cba2983f0f741c119466a52ce475d3509c21b273029"
     sha256 cellar: :any_skip_relocation, catalina:      "bbf8057e41df8d871afc02c4dce7904e1e21da7c67b52c03b4e8a8dc39b0b83e"
     sha256 cellar: :any_skip_relocation, mojave:        "1328dcbfbdd825c547c6bc4e181587afd6a05a8d5e10c11d2c3169d9d452a29a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5cfd78ad6de89f6ce6c7b388e31bfcff9d5995726e11a36c40ec8c229ee168f1"
   end
 
   depends_on "python@3.9"
