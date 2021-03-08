@@ -11,6 +11,7 @@ class Gdbm < Formula
     sha256 cellar: :any, big_sur:       "3581501b051db1c0d1acccc710fe04453b61777e4d67110485ceca69f30d6d1a"
     sha256 cellar: :any, catalina:      "a3e43170a1d8413e6817e57b7218828af22a20b2221d804ad529a68248840a51"
     sha256 cellar: :any, mojave:        "996020d1bc3e8a8060a9fe49b992cd66e7404346a339ae98ef92090724f36fda"
+    sha256               x86_64_linux:  "4a7a9202e5be9030b1cba354b3f595e892be916090d9559d97740bb4dfa5481f"
   end
 
   fails_with gcc: "10" do
