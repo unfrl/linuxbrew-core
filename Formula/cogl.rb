@@ -23,6 +23,14 @@ class Cogl < Formula
   depends_on "glib"
   depends_on "pango"
 
+  unless OS.mac?
+    depends_on "libxfixes"
+    depends_on "libxdamage"
+    depends_on "libxcomposite"
+    depends_on "libxrandr"
+    depends_on "mesa"
+  end
+
   def install
     # Don't dump files in $HOME.
     ENV["GI_SCANNER_DISABLE_CACHE"] = "yes"
@@ -33,9 +41,14 @@ class Cogl < Formula
       --prefix=#{prefix}
       --enable-cogl-pango=yes
       --enable-introspection=yes
-      --disable-glx
-      --without-x
     ]
+
+    if OS.mac?
+      args << "--disable-glx"
+      args << "--without-x"
+    else
+      args << "--enable-xlib-egl-platform=yes"
+    end
 
     system "./configure", *args
     system "make", "install"
