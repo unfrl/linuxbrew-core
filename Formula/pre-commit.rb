@@ -3,16 +3,15 @@ class PreCommit < Formula
 
   desc "Framework for managing multi-language pre-commit hooks"
   homepage "https://pre-commit.com/"
-  url "https://files.pythonhosted.org/packages/31/c1/5dfe39aa1d94471b4c6afe4c9aba7fedfa5fe0d1b727a6e6d7a59bd53231/pre_commit-2.10.1.tar.gz"
-  sha256 "399baf78f13f4de82a29b649afd74bef2c4e28eb4f021661fc7f29246e8c7a3a"
+  url "https://files.pythonhosted.org/packages/21/9a/5ac44a0e4f8f9444a4ce9aff9ebc2c4e14da5224432bb489154da9eddfa0/pre_commit-2.11.0.tar.gz"
+  sha256 "06f8cb95e29e56788fb5dc98d7ca7a714969dc96633e1ba654ccd5953b64c195"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "0800a3c02e6807e6b6f1602ee322b7c5a0667fd9d1333e1fa274c7cdf7b14166"
-    sha256 cellar: :any,                 big_sur:       "afd36a3c6bb29f0c6ee5fcc7c4c41236ca9722704ff883c1ecbca66b35031520"
-    sha256 cellar: :any,                 catalina:      "16e75f0ac5a2bc62f52519f25918557cdcfb7033dc7a96bc92cc70b6ff194795"
-    sha256 cellar: :any,                 mojave:        "599db2e4dc1759a4c16735e649c3e44e524f59e21f7fd25518b7dc0231cd508b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dcb321a8a57815fb8a6f780100b9a9af4b02efba52ac5c023424a2824302fded"
+    sha256 cellar: :any, arm64_big_sur: "51b95a42c809305cecab47eff7f8164d5b0391f67f36df8f00844c361bf020f6"
+    sha256 cellar: :any, big_sur:       "cab6ac0186b3c6c41b8a7695364c3173b89a3cc1b1a6c805edb87f28a18fb1e6"
+    sha256 cellar: :any, catalina:      "3b73bae0f1b262f2d62f5c3d68c8ada7337aef080ea8becea27b148868ab4293"
+    sha256 cellar: :any, mojave:        "978f99eaa6eb34a488708f9bf6f418800e8b1f7837a0c3a91df41a16ee4ce8c5"
   end
 
   depends_on "libyaml"
@@ -39,8 +38,8 @@ class PreCommit < Formula
   end
 
   resource "identify" do
-    url "https://files.pythonhosted.org/packages/2c/c2/cd5e7807dc0d9f76ce6a4016e7adc15d7745da3571db73c43ca4ea2fa02f/identify-1.5.13.tar.gz"
-    sha256 "70b638cf4743f33042bebb3b51e25261a0a10e80f978739f17e7fd4837664a66"
+    url "https://files.pythonhosted.org/packages/ad/8d/f2390cfe86e7b839bb5228f3b57d7476a64ed6fba751e67b145234786d57/identify-2.1.0.tar.gz"
+    sha256 "2179e7359471ab55729f201b3fdf7dc2778e221f868410fedcb0987b791ba552"
   end
 
   resource "nodeenv" do
