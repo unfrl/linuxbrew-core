@@ -111,8 +111,6 @@ class PythonAT37 < Formula
   end
 
   def install
-    ENV.permit_weak_imports
-
     # Unset these so that installing pip and setuptools puts them where we want
     # and not into some other Python the user has installed.
     ENV["PYTHONHOME"] = nil
@@ -133,7 +131,6 @@ class PythonAT37 < Formula
       --with-openssl=#{Formula["openssl@1.1"].opt_prefix}
       --with-system-libmpdec
     ]
-    args << "--with-dtrace" unless OS.linux?
 
     args << "--without-gcc" if ENV.compiler == :clang
 
@@ -154,7 +151,7 @@ class PythonAT37 < Formula
     ldflags  = []
     cppflags = []
 
-    if OS.mac? && MacOS.sdk_path_if_needed
+    if MacOS.sdk_path_if_needed
       # Help Python's build system (setuptools/pip) to build things on SDK-based systems
       # The setup.py looks at "-isysroot" to get the sysroot (and not at --sysroot)
       cflags  << "-isysroot #{MacOS.sdk_path}"
@@ -242,9 +239,6 @@ class PythonAT37 < Formula
     # Symlink the pkgconfig files into HOMEBREW_PREFIX so they're accessible.
     (lib/"pkgconfig").install_symlink Dir["#{frameworks}/Python.framework/Versions/#{version.major_minor}/lib/pkgconfig/*"]
 
-    # Remove 2to3 because python2 also installs it
-    rm bin/"2to3"
-
     # Remove the site-packages that Python created in its Cellar.
     site_packages_cellar.rmtree
 
@@ -265,14 +259,6 @@ class PythonAT37 < Formula
       "python-config" => "python3-config",
     }.each do |unversioned_name, versioned_name|
       (libexec/"bin").install_symlink (bin/versioned_name).realpath => unversioned_name
-    end
-  end
-
-  def xy
-    if OS.mac? && prefix.exist?
-      (prefix/"Frameworks/Python.framework/Versions").children.min.basename.to_s
-    else
-      version.to_s[/^\d\.\d/]
     end
   end
 
