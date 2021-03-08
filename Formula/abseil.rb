@@ -11,6 +11,7 @@ class Abseil < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "e16d12f4d5eb788fc774d1cc6d328a659bfc56f0cef74244396f2453890bb9ed"
     sha256 cellar: :any_skip_relocation, catalina:      "648a6091da13e90637b3579249ae8821292ca96efb95cd1d4a5a649d553c6ef6"
     sha256 cellar: :any_skip_relocation, mojave:        "0879e0af3745923b219e99af5355100a4a8e4c944167414e038633a6779736d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88064d579870c7f43f69af3a06111deb95f57777978768d9159977ca863d02e9"
   end
 
   depends_on "cmake" => :build
