@@ -3,16 +3,16 @@ class NameThatHash < Formula
 
   desc "Modern hash identification system"
   homepage "https://nth.skerritt.blog/"
-  url "https://files.pythonhosted.org/packages/0c/6c/5a63e2d3450fd78679262769cf47a3820ed09f1eaa444b1d7a6367f480db/name-that-hash-1.1.6.tar.gz"
-  sha256 "a78136dded9aceb87da405b68570c6c000f6858a8c4e79490f48318a5b901c1d"
+  url "https://files.pythonhosted.org/packages/97/d1/1d976501dc1cb4cd98d94ab7424b07fdd5291370fdfa805387bcb5da1b80/name-that-hash-1.2.0.tar.gz"
+  sha256 "8cda4060ddb7d7ae0d5af2a756ce80d1feb4f0e01d5ec5352aa3e88a19d79564"
   license "GPL-3.0-or-later"
   head "https://github.com/HashPals/Name-That-Hash.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "1c7f04c88c14648f7233b7df512f0010e5f8c2e2384c944067255ad6ca8398ce"
-    sha256 cellar: :any_skip_relocation, big_sur:       "f18b38a20cac8265d6c4c84decc7ec42c7ae3216b0aaa15031c4aa1e70c8af8b"
-    sha256 cellar: :any_skip_relocation, catalina:      "8f15c980296559c3ab4f5c3895c8e90e6f1db4a3f21d054b3b49fc402866c5c7"
-    sha256 cellar: :any_skip_relocation, mojave:        "8483ed8781861ab6fe0c363ed55c0b4b2be8d982299a2f53d3bed16053a5330a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "ddf80f65319579d23ec646d7e1db577eb017d54ede42ed2fd63a425421898117"
+    sha256 cellar: :any_skip_relocation, big_sur:       "8c81ee6b04430a040a5ddd36f7160227675f0ae9ed171b1ae93c7f873872958f"
+    sha256 cellar: :any_skip_relocation, catalina:      "aefc867861b99703a9a762ef1442e5a26107627680381a58080266347c6ad8e6"
+    sha256 cellar: :any_skip_relocation, mojave:        "0784842afd4e2349f835c12f021877d4d62d7852bd9a253015fa7c8f8d490479"
   end
 
   depends_on "python@3.9"
@@ -38,13 +38,13 @@ class NameThatHash < Formula
   end
 
   resource "Pygments" do
-    url "https://files.pythonhosted.org/packages/19/d0/dec5604a275b19b0ebd2b9c43730ce39549c8cd8602043eaf40c541a7256/Pygments-2.8.0.tar.gz"
-    sha256 "37a13ba168a02ac54cc5891a42b1caec333e59b66addb7fa633ea8a6d73445c0"
+    url "https://files.pythonhosted.org/packages/15/9d/bc9047ca1eee944cc245f3649feea6eecde3f38011ee9b8a6a64fb7088cd/Pygments-2.8.1.tar.gz"
+    sha256 "2656e1a6edcdabf4275f9a3640db59fd5de107d88e8663c5d4e9a0fa62f77f94"
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/23/4d/85d622a12208a1fb09540554f812e867db983d4aa7fddf763cf26d9407f5/rich-9.12.2.tar.gz"
-    sha256 "493b4288273aa46475230733358696457e5df9215c898b164a324b7d9d694e88"
+    url "https://files.pythonhosted.org/packages/ae/f6/6ffb46f6cf0bb584e44279accd3321cb838b78b324031feb8fd9adf63ed2/rich-9.13.0.tar.gz"
+    sha256 "d59e94a0e3e686f0d268fe5c7060baa1bd6744abca71b45351f5850a3aaa6764"
   end
 
   resource "typing-extensions" do
