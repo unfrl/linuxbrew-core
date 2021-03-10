@@ -15,6 +15,7 @@ class RakudoStar < Formula
     sha256 big_sur:       "d75aee60ff1ad43d4136597cc397479b9e92c03ffe604d6f317fd9d5636a9205"
     sha256 catalina:      "540c25480053a98c4551ed7313693d27852f5492698400caa4369563dd8f9363"
     sha256 mojave:        "26c6eda9839e94506bcd19894e52b5067e1f22e7457db05e3952e59e79f7ddf4"
+    sha256 x86_64_linux:  "be059d1efe3c20966087b0c9a129ded7b61ed6b31e76486b0857a7370dc05922"
   end
 
   depends_on "bash" => :build
