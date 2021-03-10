@@ -10,6 +10,7 @@ class AwsConsole < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "da663b2695974e4c2d07c45c3656903c081301d4d484bef5714cb0f95ad7e9e1"
     sha256 cellar: :any_skip_relocation, catalina:      "7b5ba2731bd9e64960698f24323fb44afc1c25311946c90129b23b6c65f858cd"
     sha256 cellar: :any_skip_relocation, mojave:        "45ec4111bb96442156a645731f9e5c8cdc0f6896192d8c858bb55adb30b7e0ee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2654bdafab91b2c98eb0fc5c8ff086803fdbf82b5499e9350ff898844ccc495c"
   end
 
   depends_on "go" => :build
