@@ -10,6 +10,7 @@ class Ooniprobe < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "722f55422e32fe5105948df1b67bce7aae7d369b88b2bcd120c19349d50f5bf1"
     sha256 cellar: :any_skip_relocation, catalina:      "1ba7f6ceb6f0562caa62a219e2304037a94971fd3e7296121ef8364cd70d1820"
     sha256 cellar: :any_skip_relocation, mojave:        "493b512097b808920858bcf052302d7c8d57b021d484a527cfd001b4bad94a79"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0107b565d64e95df675defeabc797ec1af34f587d17eae8d157d6c0c983bde2b"
   end
 
   depends_on "go" => :build
