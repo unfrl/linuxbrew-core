@@ -18,7 +18,7 @@ class Libproxy < Formula
   depends_on "cmake" => :build
   depends_on "python@3.9"
 
-  unless OS.mac?
+  on_linux do
     depends_on "dbus"
     depends_on "glib"
   end

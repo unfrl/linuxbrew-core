@@ -22,7 +22,9 @@ class Libsecret < Formula
   depends_on "glib"
   depends_on "libgcrypt"
 
-  depends_on "libxslt" => :build unless OS.mac?
+  on_linux do
+    depends_on "libxslt" => :build
+  end
 
   def install
     # Needed by intltool (xml::parser)
