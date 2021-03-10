@@ -11,6 +11,7 @@ class Inframap < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "176bf36699a35ecb998ff7fe944f053dc29b3847e230954a55991b5de55d1975"
     sha256 cellar: :any_skip_relocation, catalina:      "c3c4b891931578b2e018d9798e668d19a7ffe6a54785a4c2971abe7e37f6e5c3"
     sha256 cellar: :any_skip_relocation, mojave:        "e25f036729cab0024327b2004da922d2b102ece21e2724e40df08698f84aae9c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2bf3077bb85be509c37c8ec261fd1fe8601010ecb15f3fc503c7c234ba3162c3"
   end
 
   depends_on "go" => :build
