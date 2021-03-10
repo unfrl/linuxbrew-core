@@ -10,6 +10,7 @@ class Scw < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "8399d6e3b238847990e7def0479c510d1b2ebd26888acce38a4ae2fd550804f5"
     sha256 cellar: :any_skip_relocation, catalina:      "54baa872f088126ae8e2abf80cb69e3a239abac0e7dd20514d61d24c029a5693"
     sha256 cellar: :any_skip_relocation, mojave:        "9597e867e6732d017a2def430c5e6081705f6b58ea43981a46e95db331a9b061"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5ffc7122df066dccabcbda3de15285ab8a44ccd1e659ec2866e9b137078e901"
   end
 
   depends_on "go" => :build
