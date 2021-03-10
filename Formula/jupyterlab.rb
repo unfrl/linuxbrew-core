@@ -8,9 +8,10 @@ class Jupyterlab < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, big_sur:  "f118e73bf6e60717eabcc613bdebe88b373a1b1e2e50c47c245be7d2f7543848"
-    sha256 cellar: :any, catalina: "cdfc7fcab2d2ac28f5075f9cf70f227cab33c330e5cc076b65c9a771c1f67ba5"
-    sha256 cellar: :any, mojave:   "e14f8efdfda03480c7853d37d22ccecfc096ddfc12f35b0f92f5a1fc2c612307"
+    sha256 cellar: :any,                 big_sur:      "f118e73bf6e60717eabcc613bdebe88b373a1b1e2e50c47c245be7d2f7543848"
+    sha256 cellar: :any,                 catalina:     "cdfc7fcab2d2ac28f5075f9cf70f227cab33c330e5cc076b65c9a771c1f67ba5"
+    sha256 cellar: :any,                 mojave:       "e14f8efdfda03480c7853d37d22ccecfc096ddfc12f35b0f92f5a1fc2c612307"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1106c301cfbcc48d10b8fc245546e817c827b1136882ec176a1f65bff7803ca5"
   end
 
   depends_on "ipython"
