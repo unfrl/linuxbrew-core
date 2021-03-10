@@ -13,6 +13,8 @@ class CyrusSasl < Formula
     sha256 x86_64_linux:  "fae192324262bcea23dca7af340d5545bb28533767757a836cf20f63e3bab640"
   end
 
+  keg_only :provided_by_macos
+
   depends_on "openssl@1.1"
 
   def install
