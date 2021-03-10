@@ -11,6 +11,7 @@ class Muffet < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "349a736d1c3528138eac03f04eeed91656c1613a011e8db893d8080c85358ed4"
     sha256 cellar: :any_skip_relocation, catalina:      "9b2bd1e154add9821456d420105c25eabdf8cdd198224fc8172755569d5792fd"
     sha256 cellar: :any_skip_relocation, mojave:        "830431b0955693be071638c3990f4b5a5e04110cb2ff69d6084dab9d7dbd4ca8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb56ee6af652b6cd1a2db1cd924db04ae09b9a0ce01e9d27c1e5d89d9afd346f"
   end
 
   depends_on "go" => :build
