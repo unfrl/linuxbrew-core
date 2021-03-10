@@ -10,10 +10,11 @@ class AwsGoogleAuth < Formula
   head "https://github.com/cevoaustralia/aws-google-auth.git"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "8918c50c8e591f42b1a1fb0e941c531bcda1066420bbaa0809ea25382813c17d"
-    sha256 cellar: :any, big_sur:       "e188f97fd6a29f327951b32ebfd67e369e88343d601fd8f97d6c0ad7e2e1b2a2"
-    sha256 cellar: :any, catalina:      "758d857031ff550cacb3fabeecea7d417eb0211d846ad771c809bb0dcb1b1e6d"
-    sha256 cellar: :any, mojave:        "ae52982f6a6feba48846321484581d3c2959b05f2e95e886cb0ff8620adf3f52"
+    sha256 cellar: :any,                 arm64_big_sur: "8918c50c8e591f42b1a1fb0e941c531bcda1066420bbaa0809ea25382813c17d"
+    sha256 cellar: :any,                 big_sur:       "e188f97fd6a29f327951b32ebfd67e369e88343d601fd8f97d6c0ad7e2e1b2a2"
+    sha256 cellar: :any,                 catalina:      "758d857031ff550cacb3fabeecea7d417eb0211d846ad771c809bb0dcb1b1e6d"
+    sha256 cellar: :any,                 mojave:        "ae52982f6a6feba48846321484581d3c2959b05f2e95e886cb0ff8620adf3f52"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0dabbd14a565655e51249156d476f45cb8b4d13465e312a886392be91e8f556"
   end
 
   depends_on "rust" => :build
