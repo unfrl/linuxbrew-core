@@ -17,6 +17,7 @@ class RxvtUnicode < Formula
     sha256 big_sur:       "deebaec714d6b276ef8e7c0bdb89f1872b8dd0eab82b97139e1000fc55098ed9"
     sha256 catalina:      "6dbe84073a435ced0c6be3646121374155c2b47df89e76e84d0ebd06ea78a59b"
     sha256 mojave:        "b606c0cc0daa70dc43fad2997af3d11cae5f07d6b5acdd7de0666ce646361876"
+    sha256 x86_64_linux:  "41ecd955a3f8e34a0f49d67b5d23123502876b1ea5ac6bc56ecc7607c6b58ba5"
   end
 
   depends_on "pkg-config" => :build
