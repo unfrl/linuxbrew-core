@@ -21,7 +21,7 @@ class Libsecret < Formula
   depends_on "vala" => :build
   depends_on "glib"
   depends_on "libgcrypt"
-  
+
   depends_on "libxslt" => :build unless OS.mac?
 
   def install
