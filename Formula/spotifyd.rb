@@ -12,9 +12,10 @@ class Spotifyd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:  "c8f63e37af5e61c265e6843f91244dee84cddd37b4c311145f7b8d1c14e429fe"
-    sha256 cellar: :any_skip_relocation, catalina: "777337567077e1ca16cffc7784fed7bfea77ea4f58fc42852584ed181ade6ea5"
-    sha256 cellar: :any_skip_relocation, mojave:   "eeb3feaaebc725fc35f27d71c9070089a9dc9d042a845d5d4e6ca4c86aeb58ff"
+    sha256 cellar: :any_skip_relocation, big_sur:      "c8f63e37af5e61c265e6843f91244dee84cddd37b4c311145f7b8d1c14e429fe"
+    sha256 cellar: :any_skip_relocation, catalina:     "777337567077e1ca16cffc7784fed7bfea77ea4f58fc42852584ed181ade6ea5"
+    sha256 cellar: :any_skip_relocation, mojave:       "eeb3feaaebc725fc35f27d71c9070089a9dc9d042a845d5d4e6ca4c86aeb58ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "5a165c594741ff8897b9ea79e1d483e783893850d431d74f80651e005eebaf01"
   end
 
   depends_on "pkg-config" => :build
