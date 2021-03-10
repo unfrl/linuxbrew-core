@@ -10,6 +10,7 @@ class Lego < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "2871b27fe3a4d1fc400825cfa337e68f456df2d0ad0dd5319b3037e81460ad46"
     sha256 cellar: :any_skip_relocation, catalina:      "8d68c52daaa52e31b9558484470c797994f262fd4434ab46791f4adbfddbdf3b"
     sha256 cellar: :any_skip_relocation, mojave:        "54edb4620e4c9a8035e46382056e95dc2f06c2d500967880e0b2da5c4e3bf9a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f575d5847aae4545f4b272e3155999b7b423ae4efe08aa63f296101090d51507"
   end
 
   depends_on "go" => :build
