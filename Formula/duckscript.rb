@@ -11,6 +11,7 @@ class Duckscript < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "2ec1cd3b275985be201979fd4392523e279c13e6543e1fbd246766da8e04a57f"
     sha256 cellar: :any_skip_relocation, catalina:      "2edd02358821010a840afe0cd3d65419840d0cd1737abf3214c56d5ab4248028"
     sha256 cellar: :any_skip_relocation, mojave:        "42fa3a52dc5be789deea08c481d3a4bb7d3d06343687e5a9617e55638d881060"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebeadd9db3ef1396f520bb0ee99e7ae0834a628a34b0d83fcc23dd2741c88975"
   end
 
   depends_on "rust" => :build
