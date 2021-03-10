@@ -10,6 +10,7 @@ class Gofumpt < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "85b2788203df32191b839d607d908e43a250d7cd687ad11705afc76f80e0c0d7"
     sha256 cellar: :any_skip_relocation, catalina:      "b69839b084e95f9339b776d979ebffc1382d93917aeabc6c1e1880fb6a9056c7"
     sha256 cellar: :any_skip_relocation, mojave:        "b254aafd541d63d411ec6a034cf88c926b5354cf59bbc37fbaf6eb051fe3a14e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "edf0cff147cba3d6f693373f4938905805ffd25edc69ce0bd78a118e8b95f02f"
   end
 
   depends_on "go"
