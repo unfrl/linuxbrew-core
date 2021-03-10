@@ -16,6 +16,7 @@ class Cadence < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "b3dbda524a438ff5db8bf40c585c05d8ff29a43df6c36e696cc01b2e966ce9c8"
     sha256 cellar: :any_skip_relocation, catalina:      "0cd3c4071b3e287cd03226d66da03f93e020800ce07f125c14257108c75226dc"
     sha256 cellar: :any_skip_relocation, mojave:        "cb034c8a34c2d63bf699e906fb82d0d5dae4314723d3d99444200a8a32f9fb5f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "466220c9bc4364ef32ddea0933ffd14da206fce0b343ec03f6006b64eb73b2f6"
   end
 
   depends_on "go" => :build
