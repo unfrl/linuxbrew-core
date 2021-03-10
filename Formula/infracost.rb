@@ -1,17 +1,16 @@
 class Infracost < Formula
   desc "Cost estimates for Terraform"
   homepage "https://www.infracost.io/docs/"
-  url "https://github.com/infracost/infracost/archive/v0.7.20.tar.gz"
-  sha256 "bd9a6a48e8b20957360a101948be6960aac9b4e28136a3c1d45203f442025d42"
+  url "https://github.com/infracost/infracost/archive/v0.8.0.tar.gz"
+  sha256 "a37a3e8fa23ebd31a5c63e67bf6d3b581fad544b743aa198c0da2f521bcfd7c8"
   license "Apache-2.0"
   head "https://github.com/infracost/infracost.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "4524b07becd6454baf7d8a091f85a568f1ab99b78a3d3a7e98829447ce2d22cb"
-    sha256 cellar: :any_skip_relocation, big_sur:       "bad0d940d04b9fac2166ad3ff97460c54003227574dcdd5a47f623909d967e30"
-    sha256 cellar: :any_skip_relocation, catalina:      "a0c77d74b8988968ff061be4ad7d9fc0a6d14824ac53aeddc98ef55b15b92d43"
-    sha256 cellar: :any_skip_relocation, mojave:        "096b39e90d4eed6f1fc03cad8753f0f15b3f3a9133c44978289755b8f981e84b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab37717a9d9addc3c2273adcae3f8a2a4cb7415438517431bb2153deae4cba07"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "dbeb62fd0f65d5ada69e59ef7e93664fc6afe02a28bbf9d552d55918297acea1"
+    sha256 cellar: :any_skip_relocation, big_sur:       "830b2eea0d31e59256b1824516e4f43b99a487fa5f049f438c154e4f470df324"
+    sha256 cellar: :any_skip_relocation, catalina:      "21f3b05be09a63377b4a390914da314dd09811931337dc06c6abbd51adc2224e"
+    sha256 cellar: :any_skip_relocation, mojave:        "d4abe384c7622c3351849ceb8e2ed14ff4971f3b997cbcdfcb533e5a998ebc4a"
   end
 
   depends_on "go" => :build
@@ -24,9 +23,9 @@ class Infracost < Formula
   end
 
   test do
-    assert_match "v#{version}", shell_output("#{bin}/infracost --help 2>&1")
+    assert_match "v#{version}", shell_output("#{bin}/infracost --version 2>&1")
 
-    output = shell_output("#{bin}/infracost --no-color 2>&1", 1)
+    output = shell_output("#{bin}/infracost breakdown --no-color 2>&1", 1)
     assert_match "No INFRACOST_API_KEY environment variable is set.", output
   end
 end

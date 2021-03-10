@@ -6,6 +6,11 @@ class Highlight < Formula
   license "GPL-3.0-or-later"
   head "https://gitlab.com/saalen/highlight.git"
 
+  livecheck do
+    url "http://www.andre-simon.de/zip/download.php"
+    regex(/href=.*?highlight[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     sha256 big_sur:      "08a0614af10fb3eb50aab917c324f774b1950cbc0d54d1d0b9336bb2c2e4cdfd"
     sha256 catalina:     "a9a76900789073a37db131c03c4907eb8f2087bba08ac37fe39dfc4e48fd6224"
