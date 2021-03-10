@@ -8,10 +8,11 @@ class GimmeAwsCreds < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "ee8b67ca3ed6752f88fa2dfdc60670042b5246d9604a56e66edce55ec7c28b3e"
-    sha256 cellar: :any, big_sur:       "32e55adf07ef7b2ba8d0282bd837e307830fa87bd0e25400d2a940dbd96c5a89"
-    sha256 cellar: :any, catalina:      "c23d69692fe8745b276e352478ebfd6b1ca20328ac5c0f5b88780447bf076e9e"
-    sha256 cellar: :any, mojave:        "1450d91e26517fe463c61c98e874b992253c4846c04909fbb0b6f2ee2e90d230"
+    sha256 cellar: :any,                 arm64_big_sur: "ee8b67ca3ed6752f88fa2dfdc60670042b5246d9604a56e66edce55ec7c28b3e"
+    sha256 cellar: :any,                 big_sur:       "32e55adf07ef7b2ba8d0282bd837e307830fa87bd0e25400d2a940dbd96c5a89"
+    sha256 cellar: :any,                 catalina:      "c23d69692fe8745b276e352478ebfd6b1ca20328ac5c0f5b88780447bf076e9e"
+    sha256 cellar: :any,                 mojave:        "1450d91e26517fe463c61c98e874b992253c4846c04909fbb0b6f2ee2e90d230"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d273dfa0fb8b4e5874c0f545a2c42cd372aad19fbfd57b20e1baed35d42b88a"
   end
 
   depends_on "python@3.9"
