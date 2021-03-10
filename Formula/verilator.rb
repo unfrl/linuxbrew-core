@@ -16,6 +16,7 @@ class Verilator < Formula
     sha256 big_sur:       "88161464bfe85fa5e711272374a7ff363d56b577ca490eac61165bde531c5543"
     sha256 catalina:      "a89df25c889c4e7c8333c4ac2072c7e309dd43d93c1405242644cee644041de3"
     sha256 mojave:        "a2ce7f0df7764dd771586ca7c0ebdb360e1834147c2d7737a5d7ec7adb3a0095"
+    sha256 x86_64_linux:  "d15af0102596b8eab865332a0439116a04eeaaaff644ff30ff2ef88c1273d30a"
   end
 
   head do
