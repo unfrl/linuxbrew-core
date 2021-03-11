@@ -10,6 +10,7 @@ class Step < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "0ad85a0f05c4b11aa2832101a2e4260fcaba0ea2cf1caa39c6b237a908a77c7c"
     sha256 cellar: :any_skip_relocation, catalina:      "a12071e617e7cde551ccf3a4cab122d28b09c4ef790d699d1b4bb0e3c8510172"
     sha256 cellar: :any_skip_relocation, mojave:        "c83602ae9c56d7d064b4589e44b9f1d2aa8180bc1a36ce049009feb405a37782"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1b1e1d6cfd74e2e2e10dee55defe6fd4355f0543688006bdefa752869f9ee0b"
   end
 
   depends_on "go" => :build
