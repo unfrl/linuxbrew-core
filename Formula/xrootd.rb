@@ -12,10 +12,11 @@ class Xrootd < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "805f3c09b8a549c90bf143ab879a00a45566c199c9c9d90faff51b9ade6db21d"
-    sha256 big_sur:       "47e2ef9a7acfa8bafe7818a55c762d2bc3ca07303e61a2ac8924efcccdaa8ef6"
-    sha256 catalina:      "c8b0263052a469dac59ac2d35dc94c5ecb92daae1695af20aab120a79ce74c84"
-    sha256 mojave:        "4ca621cc2d357d7a31f03883687aa1b8a56f7b7111a616a5bb9747342982b0c5"
+    sha256                               arm64_big_sur: "805f3c09b8a549c90bf143ab879a00a45566c199c9c9d90faff51b9ade6db21d"
+    sha256                               big_sur:       "47e2ef9a7acfa8bafe7818a55c762d2bc3ca07303e61a2ac8924efcccdaa8ef6"
+    sha256                               catalina:      "c8b0263052a469dac59ac2d35dc94c5ecb92daae1695af20aab120a79ce74c84"
+    sha256                               mojave:        "4ca621cc2d357d7a31f03883687aa1b8a56f7b7111a616a5bb9747342982b0c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "21cbe8fa03c04ea53a1dacf155e33e8fbce596553690a59f110b35de6788af72"
   end
 
   depends_on "cmake" => :build
