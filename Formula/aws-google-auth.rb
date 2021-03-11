@@ -194,17 +194,17 @@ class AwsGoogleAuth < Formula
 
     resource("Pillow").stage do
       inreplace "setup.py" do |s|
-        if OS.mac?
-          sdkprefix = MacOS.sdk_path_if_needed ? MacOS.sdk_path : ""
+        free_pre = Formula["freetype"].opt_prefix
+        s.gsub! "openjpeg.h",
+          "probably_not_a_header_called_this_eh.h"
+        on_macos do
+          s.gsub! "ZLIB_ROOT = None",
+            "ZLIB_ROOT = ('#{MacOS.sdk_path_if_needed}/usr/lib', '#{MacOS.sdk_path_if_needed}/usr/include')"
         end
-        s.gsub! "openjpeg.h", "probably_not_a_header_called_this_eh.h"
-        if OS.mac?
-          s.gsub! "ZLIB_ROOT = None", "ZLIB_ROOT = ('#{sdkprefix}/usr/lib', '#{sdkprefix}/usr/include')"
-        else
+        on_linux do
           s.gsub! "ZLIB_ROOT = None",
                   "ZLIB_ROOT = ('#{Formula["zlib"].opt_prefix}/lib', '#{Formula["zlib"].opt_prefix}/include')"
         end
-        free_pre = Formula["freetype"].opt_prefix
         s.gsub! "JPEG_ROOT = None",
                 "JPEG_ROOT = ('#{Formula["jpeg"].opt_prefix}/lib', '#{Formula["jpeg"].opt_prefix}/include')"
         s.gsub! "FREETYPE_ROOT = None",
