@@ -24,10 +24,8 @@ class Gromacs < Formula
   depends_on "gsl" # for OpenMP
   depends_on "openblas"
 
-  unless OS.mac?
-    fails_with gcc: "5"
-    fails_with gcc: "6"
-  end
+  fails_with gcc: "5"
+  fails_with gcc: "6"
 
   def install
     # Non-executable GMXRC files should be installed in DATADIR
