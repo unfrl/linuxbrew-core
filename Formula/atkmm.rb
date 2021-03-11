@@ -7,10 +7,11 @@ class Atkmm < Formula
   revision 1 unless OS.mac?
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "1b1aabce33bb159b047e9a7f39164f0969832fda522d79b3a2b70c642323869e"
-    sha256 cellar: :any, big_sur:       "5089524e732962aac25fb780a671bdb8736cde11dd8565adeeab2f23fcfe9d8b"
-    sha256 cellar: :any, catalina:      "5a92889fa4d5326f5a750d076f02b9b352da60896328f2e20f16da813f442c98"
-    sha256 cellar: :any, mojave:        "169e793e210a156583b3bf6126fb4f1e049f7ca0113ba2a6a4c37efb0d38a458"
+    sha256 cellar: :any,                 arm64_big_sur: "1b1aabce33bb159b047e9a7f39164f0969832fda522d79b3a2b70c642323869e"
+    sha256 cellar: :any,                 big_sur:       "5089524e732962aac25fb780a671bdb8736cde11dd8565adeeab2f23fcfe9d8b"
+    sha256 cellar: :any,                 catalina:      "5a92889fa4d5326f5a750d076f02b9b352da60896328f2e20f16da813f442c98"
+    sha256 cellar: :any,                 mojave:        "169e793e210a156583b3bf6126fb4f1e049f7ca0113ba2a6a4c37efb0d38a458"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9404a9fdac60c5cf77724f440709d5c55837e7d78bdedf2fdd68b36fdad3fedf"
   end
 
   depends_on "meson" => :build
