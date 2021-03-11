@@ -25,9 +25,11 @@ class Bear < Formula
   depends_on "spdlog"
   depends_on "sqlite"
 
-  depends_on "gcc" unless OS.mac?
-
   uses_from_macos "llvm" => :test
+
+  on_linux do
+    depends_on "gcc"
+  end
 
   fails_with gcc: "5" # needs C++17
 
