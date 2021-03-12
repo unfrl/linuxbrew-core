@@ -10,6 +10,7 @@ class K6 < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "04b202b8ddcf6d8f9c3fbd690f4afdd9fe2f93d42e9b638a4d6362b43e4bfba5"
     sha256 cellar: :any_skip_relocation, catalina:      "35f8b9f837e3e1aea7a8e5df0a2fb21e1ba1888f55dde659989f70a6e0d7ec2a"
     sha256 cellar: :any_skip_relocation, mojave:        "cb169f9a2012619aec625cbcdea9b654da0fb98c50e926f027598be0eb776de4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e18be8c1ab74037fcac9aaa78e92122334b134234343912f804f3fe5b198a684"
   end
 
   depends_on "go" => :build
