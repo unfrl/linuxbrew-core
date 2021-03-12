@@ -18,6 +18,7 @@ class Wireshark < Formula
     sha256 big_sur:       "8016d9dd512fa62164ce443a5c6ec48306d71f0cbb52f169d05387934fd9f88e"
     sha256 catalina:      "81866d46a905d6d7f7a01a74ecea18bbc6e4876e61275d603cfeba6cfb21e1a0"
     sha256 mojave:        "a461e71826dc959d047b3a26a0e414b12d0b0708e02e44d1c0dab07982831dcd"
+    sha256 x86_64_linux:  "e3a18c8b1aa81edbfb4fae5a28976124086c5a6ef42ca4b13dd604efe1a8062d"
   end
 
   depends_on "cmake" => :build
