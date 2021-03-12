@@ -10,6 +10,7 @@ class Loki < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "5ba71a02fd746445c0d2fb9029e276d9d891d62535f3284951409ac0998c93d7"
     sha256 cellar: :any_skip_relocation, catalina:      "56ec75827407729fa6559f782a7ad66b965c65141614ff4ab987a0578a7ae508"
     sha256 cellar: :any_skip_relocation, mojave:        "d672ab0003e81f13c73425e29aa49a7c02e4cf72db4729d4dbd4188eab34c720"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41579943d47fca9f06a3297287c6771860f6f515e57f510d4aea2ced92806c75"
   end
 
   depends_on "go" => :build
