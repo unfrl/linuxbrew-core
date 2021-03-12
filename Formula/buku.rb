@@ -212,6 +212,11 @@ class Buku < Formula
     ENV["PYTHONIOENCODING"] = "utf-8" unless OS.mac?
     expect = OS.mac? ? "/usr/bin/expect" : "#{Formula["expect"].opt_bin}/expect"
 
+    expect = "/usr/bin/expect"
+    on_linux do
+      expect = Formula["expect"].opt_bin/"expect"
+    end
+
     # Firefox exported bookmarks file
     (testpath/"bookmarks.html").write <<~EOS
       <!DOCTYPE NETSCAPE-Bookmark-file-1>
