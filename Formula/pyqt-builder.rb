@@ -13,6 +13,7 @@ class PyqtBuilder < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "2e4e6416089103fa34a8b8f2f9934d5e24b07c068030c1a3b309c4de8b2289c0"
     sha256 cellar: :any_skip_relocation, catalina:      "7ef4841d49af35ec25619d17bc728cc6b88cc4d2730138d279953222c1b97f95"
     sha256 cellar: :any_skip_relocation, mojave:        "58acbbd35bf0895d23a96be136d3b40cae25d2ef0f90324f65babcaca5f99e71"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e80864d25a72428d89cff204f11b7eaa44ac517e3362d52424e0e4266d730e74"
   end
 
   depends_on "python@3.9"
