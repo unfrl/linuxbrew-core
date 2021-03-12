@@ -1,11 +1,10 @@
 class Mpich < Formula
   desc "Implementation of the MPI Message Passing Interface standard"
   homepage "https://www.mpich.org/"
-  url "https://www.mpich.org/static/downloads/3.3.2/mpich-3.3.2.tar.gz"
-  mirror "https://fossies.org/linux/misc/mpich-3.3.2.tar.gz"
-  sha256 "4bfaf8837a54771d3e4922c84071ef80ffebddbb6971a006038d91ee7ef959b9"
+  url "https://www.mpich.org/static/downloads/3.4.1/mpich-3.4.1.tar.gz"
+  mirror "https://fossies.org/linux/misc/mpich-3.4.1.tar.gz"
+  sha256 "8836939804ef6d492bcee7d54abafd6477d2beca247157d92688654d13779727"
   license "mpich2"
-  revision 1
 
   livecheck do
     url "https://www.mpich.org/static/downloads/"
@@ -13,10 +12,10 @@ class Mpich < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 catalina:     "3927047d7322310cef941a5e790c43b858a29716bea54d493bd1901b8d0bcb3d"
-    sha256 cellar: :any,                 mojave:       "44511bb2ad213ccc7e47a505895cf6aa4dbdd1a7dbba468095a130e83ca7bff3"
-    sha256 cellar: :any,                 high_sierra:  "0498e1ee125ed94a3822179663e552ecf29bdca1ae3837520284fadae3782cef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "41ed61398cbcc1f9f0259cea26c9dbbf81205565e081b87b9f8d91f277097f65"
+    sha256 cellar: :any, arm64_big_sur: "c01c39f63b3bbf29ac0c917abdbb8e7ae327d6c7d0d37ed3157f7d52c0e1ea5d"
+    sha256 cellar: :any, big_sur:       "1654a8962a263a630133226f983cacca8aceb026acfb08f8110058aa572658d3"
+    sha256 cellar: :any, catalina:      "6ef2fb36371b7ec0a7639977ac6f3faa73a5a2a93020ec51679a2a3cd2463349"
+    sha256 cellar: :any, mojave:        "a441178f63a3dc94ca9a587014884b4b655e68a6a1d48601ee5841c4cfffb20f"
   end
 
   head do
@@ -36,6 +35,15 @@ class Mpich < Formula
     fails_with gcc: "9"
   end
 
+  if Hardware::CPU.arm?
+    # gfortran from 10.2.0 on arm64 does not seem to know about real128 and complex128
+    # the recommended solution by upstream is to comment out the declaration of
+    # real128 and complex128 in the source code as they do not have the resources
+    # to update the f08 binding generation script at the moment
+    # https://lists.mpich.org/pipermail/discuss/2021-March/006167.html
+    patch :DATA
+  end
+
   def install
     if build.head?
       # ensure that the consistent set of autotools built by homebrew is used to
@@ -45,15 +53,26 @@ class Mpich < Formula
     end
 
     system "./configure", "--disable-dependency-tracking",
+                          "--enable-fast=all,O3",
+                          "--enable-g=dbg",
+                          "--enable-romio",
+                          "--enable-shared",
+                          "--enable-sharedlibs=gcc-osx",
+                          "--with-pm=hydra",
+                          "CC=gcc-#{Formula["gcc"].any_installed_version.major}",
+                          "CXX=g++-#{Formula["gcc"].any_installed_version.major}",
+                          "FC=gfortran-#{Formula["gcc"].any_installed_version.major}",
+                          "F77=gfortran-#{Formula["gcc"].any_installed_version.major}",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
                           "--mandir=#{man}",
                           # Flag for compatibility with GCC 10
                           # https://lists.mpich.org/pipermail/discuss/2020-January/005863.html
-                          "FFLAGS=-fallow-argument-mismatch"
+                          "FFLAGS=-fallow-argument-mismatch",
+                          "CXXFLAGS=-Wno-deprecated",
+                          "CFLAGS=-fgnu89-inline -Wno-deprecated"
 
     system "make"
-    system "make", "check"
     system "make", "install"
   end
 
