@@ -16,10 +16,11 @@ class MinimalRacket < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "ebded509b746d866e7df7a0749732587115a1155f90fd136c84eff7ef10bbc7e"
-    sha256 cellar: :any, big_sur:       "24ceebf759aa24fdff45b5da67b338f4f206e26377db203588963659e971b518"
-    sha256 cellar: :any, catalina:      "d663a36957a4b6b758d56e105e84916450481c7abe184610eea961959557349b"
-    sha256 cellar: :any, mojave:        "47bce359437efea949842a2f4a38cd3f2cd9c143e91e11735ed6084bf0cf0f7d"
+    sha256 cellar: :any,                 arm64_big_sur: "ebded509b746d866e7df7a0749732587115a1155f90fd136c84eff7ef10bbc7e"
+    sha256 cellar: :any,                 big_sur:       "24ceebf759aa24fdff45b5da67b338f4f206e26377db203588963659e971b518"
+    sha256 cellar: :any,                 catalina:      "d663a36957a4b6b758d56e105e84916450481c7abe184610eea961959557349b"
+    sha256 cellar: :any,                 mojave:        "47bce359437efea949842a2f4a38cd3f2cd9c143e91e11735ed6084bf0cf0f7d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ceafe7b2e30e04d4dca46a2b9cd6cad50ea0fd38e48bb9fc8c1a0092cbe94510"
   end
 
   uses_from_macos "libffi"
