@@ -1,16 +1,16 @@
 class Bettercap < Formula
   desc "Swiss army knife for network attacks and monitoring"
   homepage "https://www.bettercap.org/"
-  url "https://github.com/bettercap/bettercap/archive/v2.29.tar.gz"
-  sha256 "c414be98a48d9f279460b325dddaef8479132a1470c6f305790d79e04dac1297"
+  url "https://github.com/bettercap/bettercap/archive/v2.30.tar.gz"
+  sha256 "44e6e99aa4b7568d7cc328532cfc50a9cfd1d5b11ee4f05fdf18ded0202e2018"
   license "GPL-3.0-only"
   head "https://github.com/bettercap/bettercap.git"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "38484bdccaad4736811059665dd5bca170daaf2572ed2d512c6062eb9d31bb90"
-    sha256 cellar: :any, big_sur:       "6de77638b77e9b826cd2085147a5c312156d578f3376f2e0cc3397be9a48e7bd"
-    sha256 cellar: :any, catalina:      "8e7ccb9e8da1c79916eec5b77c2c55141bd13943d022ffee7cdbf13ee1e9640f"
-    sha256 cellar: :any, mojave:        "4b59d7b9b41bcd5ee77ca8dc5ecb00c4ba158910dc30c2083c5e4dee6b994e1d"
+    sha256 cellar: :any, arm64_big_sur: "2ccb9f57d8efc0504ff5886ad2606ab75efad31d19f274ce53bed21b8fe6a157"
+    sha256 cellar: :any, big_sur:       "c6aadac876f016df2517cf1eef176dd4fccf7d6a0b6db07591d7661c85be4651"
+    sha256 cellar: :any, catalina:      "7b6acc979cb84d9c0ac51a9698506c9fd4e46afd7148c02e26613a8b46646765"
+    sha256 cellar: :any, mojave:        "e01b8343216a89d198f176b241211a360462303ccb3259c867e17cfdd3e9f438"
   end
 
   depends_on "go" => :build
