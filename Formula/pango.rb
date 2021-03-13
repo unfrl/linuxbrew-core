@@ -7,10 +7,11 @@ class Pango < Formula
   head "https://gitlab.gnome.org/GNOME/pango.git"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "20091e0fe46e049c727c5f7818df5d0609310730acf8ebc85b540f48cbf170d9"
-    sha256 cellar: :any, big_sur:       "42679f27c5f6169f80ed166ad1387357a0e03d1b1820eb9bfc4bd2f12d25e6a8"
-    sha256 cellar: :any, catalina:      "8ad5fdf765e95aa0453f0034d223be492c6253d8a000507395d40bcaf597b808"
-    sha256 cellar: :any, mojave:        "f991944e3be2b4bb510aaa5500e61504470350284cfbb63208a98fc92201b97b"
+    sha256 cellar: :any,                 arm64_big_sur: "20091e0fe46e049c727c5f7818df5d0609310730acf8ebc85b540f48cbf170d9"
+    sha256 cellar: :any,                 big_sur:       "42679f27c5f6169f80ed166ad1387357a0e03d1b1820eb9bfc4bd2f12d25e6a8"
+    sha256 cellar: :any,                 catalina:      "8ad5fdf765e95aa0453f0034d223be492c6253d8a000507395d40bcaf597b808"
+    sha256 cellar: :any,                 mojave:        "f991944e3be2b4bb510aaa5500e61504470350284cfbb63208a98fc92201b97b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e4af8f6c27e0e0bba90472394d65099efd2d4b5e175a44baf17562a30082abf"
   end
 
   depends_on "gobject-introspection" => :build
