@@ -11,6 +11,7 @@ class Fzf < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "b711f6a7672111cfe55bdf2ff56182eece3362a34745700bf37082e6fdc43e46"
     sha256 cellar: :any_skip_relocation, catalina:      "99d6ed82769c08f345b286a676d6354b5a983699773b3c0878726291d093ceb3"
     sha256 cellar: :any_skip_relocation, mojave:        "ed36a1cfa7de25cbeb08b9fa37c1d6663dfa22218e65843dd1530605ba37d04b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c60dba0ca974e93c068d9785ce8d48607503340d8af00cb89a4c61f45963e91"
   end
 
   depends_on "go" => :build
