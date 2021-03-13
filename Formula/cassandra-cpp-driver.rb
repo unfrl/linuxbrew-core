@@ -7,9 +7,10 @@ class CassandraCppDriver < Formula
   head "https://github.com/datastax/cpp-driver.git"
 
   bottle do
-    sha256 cellar: :any, big_sur:  "e60d94c96a1f877a589541e417b7dfb05ffb25c07360a00b8d04787a55661b26"
-    sha256 cellar: :any, catalina: "aa9d2e9a4e192c1616e83a59b190938806a5b2ad976370ade86e060bb55d834c"
-    sha256 cellar: :any, mojave:   "24526301bf8168625de7688cc8ccad8a420be76b4b9395349f77e39495c72788"
+    sha256 cellar: :any,                 big_sur:      "e60d94c96a1f877a589541e417b7dfb05ffb25c07360a00b8d04787a55661b26"
+    sha256 cellar: :any,                 catalina:     "aa9d2e9a4e192c1616e83a59b190938806a5b2ad976370ade86e060bb55d834c"
+    sha256 cellar: :any,                 mojave:       "24526301bf8168625de7688cc8ccad8a420be76b4b9395349f77e39495c72788"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1643e9106476d708f692bf6a54772dd35d05a2412d5f81df2563f7839d8759f9"
   end
 
   depends_on "cmake" => :build
