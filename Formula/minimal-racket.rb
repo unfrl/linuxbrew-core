@@ -16,10 +16,11 @@ class MinimalRacket < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "d25a57fc13b6174372f6fef049e7412188a9b9c2ae6dfa69bf00ddb7db209caf"
-    sha256 big_sur:       "94e7424a7f400a5af5fe569002b6a4a8fd731759a75748efbdc9a490af466175"
-    sha256 catalina:      "b4fe16faf4e0892db92b33963e31c48656e261f0a0ef299451713ff09a23c1d5"
-    sha256 mojave:        "f4e8d5367d0a2d8a33ad2f72e3e84e829a6306a3883c86ba7b5e51686b3bd36f"
+    sha256                               arm64_big_sur: "d25a57fc13b6174372f6fef049e7412188a9b9c2ae6dfa69bf00ddb7db209caf"
+    sha256                               big_sur:       "94e7424a7f400a5af5fe569002b6a4a8fd731759a75748efbdc9a490af466175"
+    sha256                               catalina:      "b4fe16faf4e0892db92b33963e31c48656e261f0a0ef299451713ff09a23c1d5"
+    sha256                               mojave:        "f4e8d5367d0a2d8a33ad2f72e3e84e829a6306a3883c86ba7b5e51686b3bd36f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9b1f54535bc91279ac2bb92fd416f7682ac297061d8ade12d0781e1a5b8ea6c"
   end
 
   depends_on "openssl@1.1"
