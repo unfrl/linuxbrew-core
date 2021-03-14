@@ -10,10 +10,11 @@ class Pwntools < Formula
   head "https://github.com/Gallopsled/pwntools.git"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "33b3cda9b3033d9d909c1e48de13304b4a08930ef7370e071635d2a8b69f41b3"
-    sha256 cellar: :any, big_sur:       "79045cd4ec44b119ee7199d3e4329d1bb3b73729b84e9a5e1dc096985f2011ad"
-    sha256 cellar: :any, catalina:      "2b974c7adfbf4231b55b42e60ba6d65de1f581b75e1e3965a8dfc1787967701a"
-    sha256 cellar: :any, mojave:        "e47791e35c8168da1a982b8a294362fca834ec532faffc8ad38093f8ab05ce57"
+    sha256 cellar: :any,                 arm64_big_sur: "33b3cda9b3033d9d909c1e48de13304b4a08930ef7370e071635d2a8b69f41b3"
+    sha256 cellar: :any,                 big_sur:       "79045cd4ec44b119ee7199d3e4329d1bb3b73729b84e9a5e1dc096985f2011ad"
+    sha256 cellar: :any,                 catalina:      "2b974c7adfbf4231b55b42e60ba6d65de1f581b75e1e3965a8dfc1787967701a"
+    sha256 cellar: :any,                 mojave:        "e47791e35c8168da1a982b8a294362fca834ec532faffc8ad38093f8ab05ce57"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "373f6aad6566a0c7894fcbd564d286866a1fe49b280c129a462b5823138201f2"
   end
 
   depends_on "rust" => :build
