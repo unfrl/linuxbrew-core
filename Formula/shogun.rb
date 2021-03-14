@@ -8,10 +8,11 @@ class Shogun < Formula
   revision 10
 
   bottle do
-    sha256 arm64_big_sur: "5a0e23d0ee48e9ad54760f3f83b9980bec62cd6d2b7752ec7c2cd8331e67a200"
-    sha256 big_sur:       "6307409dfab1fda485a8c7cfe58ac690acc78d56359d0619bbc1d6f9b65508f2"
-    sha256 catalina:      "89a99681f02d2d0321ce18dc0e674fa22306d3e5e4b128deae49a45283da7ef4"
-    sha256 mojave:        "a618a67fa589fdca307b3765e4880db232825f0d3e15f9834096c6162c31af32"
+    sha256                               arm64_big_sur: "5a0e23d0ee48e9ad54760f3f83b9980bec62cd6d2b7752ec7c2cd8331e67a200"
+    sha256                               big_sur:       "6307409dfab1fda485a8c7cfe58ac690acc78d56359d0619bbc1d6f9b65508f2"
+    sha256                               catalina:      "89a99681f02d2d0321ce18dc0e674fa22306d3e5e4b128deae49a45283da7ef4"
+    sha256                               mojave:        "a618a67fa589fdca307b3765e4880db232825f0d3e15f9834096c6162c31af32"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a46c6bf9597c0cfaaa4faf2d71cf711b5db76e31bf3854f579fa9a183c6a7baf"
   end
 
   depends_on "cmake" => :build
