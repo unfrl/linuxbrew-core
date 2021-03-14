@@ -10,6 +10,7 @@ class Glow < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "c379ca5e4ac4a0e5e4fce06b5615e11a349d891cad0c6b1d7c3084fca4da2082"
     sha256 cellar: :any_skip_relocation, catalina:      "bd1c7fe06a82180bc34e136ca27ae1681555d5fb7b0bc9f4e374bfe6fd0ff0c9"
     sha256 cellar: :any_skip_relocation, mojave:        "4c3069a7e719ab28a236df5fedc2a7f57a9e6429d9c6c1d606f3a827e44e0a7f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e47799141531a33e45b2e37877aff510000d7392ebbe5f75ee14a511af0f72fe"
   end
 
   depends_on "go" => :build
