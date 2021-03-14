@@ -15,6 +15,7 @@ class Solidity < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "79caffe640b66a9a86cb4c4e588b1abb2bc3981bd5b4e596a8519d32fe8d1518"
     sha256 cellar: :any_skip_relocation, catalina:      "06a8ab0f0a011c34c00ba14e9e6ef720e59506b3ab61bf33d9875af5b78a037f"
     sha256 cellar: :any_skip_relocation, mojave:        "2c50dfed7fd42ad2a87969effb02687671fd58e930d7dc0ad4944cb23601f738"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff97d196783a2f3523a9e3bf50776eea39b2af966e85d901caca2050237a4240"
   end
 
   depends_on "cmake" => :build
