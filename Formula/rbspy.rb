@@ -6,9 +6,10 @@ class Rbspy < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:  "215df3cc59e386f95ba3b44cf713bbbbd3d6e2684df9832f391aad32ef5e375d"
-    sha256 cellar: :any_skip_relocation, catalina: "651ac4f3e6e2d595cf1d1543b7bec4050b573008dd511de12206013122934aaf"
-    sha256 cellar: :any_skip_relocation, mojave:   "9844ce8b23eb75f3ae6076fe7d207feb0fa59dbbab9e9f1b8b378e2e1dc36096"
+    sha256 cellar: :any_skip_relocation, big_sur:      "215df3cc59e386f95ba3b44cf713bbbbd3d6e2684df9832f391aad32ef5e375d"
+    sha256 cellar: :any_skip_relocation, catalina:     "651ac4f3e6e2d595cf1d1543b7bec4050b573008dd511de12206013122934aaf"
+    sha256 cellar: :any_skip_relocation, mojave:       "9844ce8b23eb75f3ae6076fe7d207feb0fa59dbbab9e9f1b8b378e2e1dc36096"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b96f5ca0219498401c86836b85e5d990158f3e7b518dbc9ae797bbeae2b429d1"
   end
 
   depends_on "rust" => :build
