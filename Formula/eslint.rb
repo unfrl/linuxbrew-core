@@ -12,6 +12,7 @@ class Eslint < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "a554e0b8b8ba515425a87298ec942bff2dca6ecbde84a986f04671ba1ebc5419"
     sha256 cellar: :any_skip_relocation, catalina:      "4f51b1896ec9b882f119794a451f4f0efafc5587e3a55b96c14f58a0e6d9cbbb"
     sha256 cellar: :any_skip_relocation, mojave:        "244ed207ea838793369aa8f442a48020df32f4237f80a188c1a18a729bcaf3cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8c86463e4c0129355df7cbaa79ab309a7d801e3a9eef627ea6ace8e1487e7fa"
   end
 
   depends_on "node"
