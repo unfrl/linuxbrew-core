@@ -12,10 +12,11 @@ class GstLibav < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "f5a635d58ea18362c44dc87e551eb56bfcb4efcd2ce69b32106195e030925a02"
-    sha256 cellar: :any, big_sur:       "2824b4c1998b68774cffceb17354178f1959e615505eac53637a227e78492b2c"
-    sha256 cellar: :any, catalina:      "bf46288c33d59607e167f02490448593c56d1875583c66774605dcc2941f10aa"
-    sha256 cellar: :any, mojave:        "5ecbcf85f03499e057ddb9b2b8a4364ac68918d3da6df74a51f883bc6b48e9a4"
+    sha256 cellar: :any,                 arm64_big_sur: "f5a635d58ea18362c44dc87e551eb56bfcb4efcd2ce69b32106195e030925a02"
+    sha256 cellar: :any,                 big_sur:       "2824b4c1998b68774cffceb17354178f1959e615505eac53637a227e78492b2c"
+    sha256 cellar: :any,                 catalina:      "bf46288c33d59607e167f02490448593c56d1875583c66774605dcc2941f10aa"
+    sha256 cellar: :any,                 mojave:        "5ecbcf85f03499e057ddb9b2b8a4364ac68918d3da6df74a51f883bc6b48e9a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18d322e1cbf9b2fd9ef5bdc7415709730e09444f6e713a7ad1e52cf4d5998e16"
   end
 
   depends_on "meson" => :build
