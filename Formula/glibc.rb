@@ -89,6 +89,10 @@ class Glibc < Formula
   sha256 "2bd08abb24811cda62e17e61e9972f091f02a697df550e2e44ddcfb2255269d2"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
 
+  livecheck do
+    skip "glibc is pinned to the version present in Homebrew CI"
+  end
+
   bottle do
     sha256 x86_64_linux: "654794e9e18c2401f1101a3fcf0a85eda448b4b969e9a99782a3f4f4659feda4"
   end
