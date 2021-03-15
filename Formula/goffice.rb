@@ -10,6 +10,7 @@ class Goffice < Formula
     sha256 big_sur:       "8dc23cf6bcd6c6e7bd4212cbd4439607b1d85d8b47a965194405cd7f15871db3"
     sha256 catalina:      "981b6edf6a358e135af47aa28a1ebb9d77ca4bb73b4adf088daf4b827030ecc7"
     sha256 mojave:        "ab69693898a7bec07c1e3ffdf480aea5f4112810c060c6e935aff775c476676e"
+    sha256 x86_64_linux:  "39b8c75fb5bddc7f036dcde19106b121d955ddfb191ebf2da206d553fc961f18"
   end
 
   head do
