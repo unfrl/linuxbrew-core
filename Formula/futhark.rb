@@ -7,9 +7,10 @@ class Futhark < Formula
   head "https://github.com/diku-dk/futhark.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:  "45ad54cf277690e96eea9515b489b16aea5be2c381a99d0972b01a1d24ae5324"
-    sha256 cellar: :any_skip_relocation, catalina: "dd1328e591e512df8686d5a91ab95e20e6f12218a3167f10937a369a328cf6a5"
-    sha256 cellar: :any_skip_relocation, mojave:   "c0a4fd62db0fa66329996b3aa46a76a38a22db3294ea476aa50b078ccee85eac"
+    sha256 cellar: :any_skip_relocation, big_sur:      "45ad54cf277690e96eea9515b489b16aea5be2c381a99d0972b01a1d24ae5324"
+    sha256 cellar: :any_skip_relocation, catalina:     "dd1328e591e512df8686d5a91ab95e20e6f12218a3167f10937a369a328cf6a5"
+    sha256 cellar: :any_skip_relocation, mojave:       "c0a4fd62db0fa66329996b3aa46a76a38a22db3294ea476aa50b078ccee85eac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d1553ab52338a87b5097a0a42b438a53125de531ddf5cec6b18363d9e94c224b"
   end
 
   depends_on "cabal-install" => :build
