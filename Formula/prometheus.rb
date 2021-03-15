@@ -11,9 +11,10 @@ class Prometheus < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:  "e0f12127a75b0523f6eb15c4de4ccb976feeb48a72f40d44f8dedf45662efdaf"
-    sha256 cellar: :any_skip_relocation, catalina: "913627efb16a937102ea73c4e3a7e488b6dca4ccd6766af1db8c451f1d9ee4e4"
-    sha256 cellar: :any_skip_relocation, mojave:   "ba77529303699a05042ec532b564aa1609f1d478cd411081911f8832085600bd"
+    sha256 cellar: :any_skip_relocation, big_sur:      "e0f12127a75b0523f6eb15c4de4ccb976feeb48a72f40d44f8dedf45662efdaf"
+    sha256 cellar: :any_skip_relocation, catalina:     "913627efb16a937102ea73c4e3a7e488b6dca4ccd6766af1db8c451f1d9ee4e4"
+    sha256 cellar: :any_skip_relocation, mojave:       "ba77529303699a05042ec532b564aa1609f1d478cd411081911f8832085600bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a7a5465161ca500a153e2c47ee4f12165a5ed8afdd01f4f55aca0ffc1df6cfcf"
   end
 
   depends_on "go" => :build
