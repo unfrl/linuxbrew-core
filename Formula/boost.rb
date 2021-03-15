@@ -14,10 +14,11 @@ class Boost < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "a6ca6c43f67270378ae0400e66095c329ebe90a1989a4a9c4606f1b8e72a692f"
-    sha256 cellar: :any, big_sur:       "be8564844a1e5bb58c26287453617458db6e886f85197c8ce35c21cfa74b1bc0"
-    sha256 cellar: :any, catalina:      "aef0fade9e8159b572907189bb8dfd828dab94c44e036cdd782c2b3834d218f3"
-    sha256 cellar: :any, mojave:        "e24d396d90a8db75738cba4543b678c79ef720a96bf2f93688bd2f35fef66d3a"
+    sha256 cellar: :any,                 arm64_big_sur: "a6ca6c43f67270378ae0400e66095c329ebe90a1989a4a9c4606f1b8e72a692f"
+    sha256 cellar: :any,                 big_sur:       "be8564844a1e5bb58c26287453617458db6e886f85197c8ce35c21cfa74b1bc0"
+    sha256 cellar: :any,                 catalina:      "aef0fade9e8159b572907189bb8dfd828dab94c44e036cdd782c2b3834d218f3"
+    sha256 cellar: :any,                 mojave:        "e24d396d90a8db75738cba4543b678c79ef720a96bf2f93688bd2f35fef66d3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa60d98f6d96bf69e9a954501f51ffbc3b74c846562b57015b55712b9e6c09f9"
   end
 
   depends_on "icu4c"
