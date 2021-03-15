@@ -8,9 +8,10 @@ class Shellcheck < Formula
   head "https://github.com/koalaman/shellcheck.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:  "5ba3cfe883216a700c133e35c3f1612ab70eaca07cfb43bf6ed427b72dd7d552"
-    sha256 cellar: :any_skip_relocation, catalina: "bd66df0992ced04f98883eada3f14e620f6c76f268cae2adb182b52d3bba1858"
-    sha256 cellar: :any_skip_relocation, mojave:   "bcb393cf5a259c69fdf7ef1725243b48c5653b9db17d2cd51ad140ab2d7de9c1"
+    sha256 cellar: :any_skip_relocation, big_sur:      "5ba3cfe883216a700c133e35c3f1612ab70eaca07cfb43bf6ed427b72dd7d552"
+    sha256 cellar: :any_skip_relocation, catalina:     "bd66df0992ced04f98883eada3f14e620f6c76f268cae2adb182b52d3bba1858"
+    sha256 cellar: :any_skip_relocation, mojave:       "bcb393cf5a259c69fdf7ef1725243b48c5653b9db17d2cd51ad140ab2d7de9c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b87dd0e10dd862619dfd9a8eec630dfc7b1839ac944f780ea72130d576d0dbc7"
   end
 
   depends_on "cabal-install" => :build
