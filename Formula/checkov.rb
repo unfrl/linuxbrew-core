@@ -13,6 +13,7 @@ class Checkov < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "625cacdde637cef61c190657e77c3f5921ff9f5d9fccdc14b1f95aabb8239be6"
     sha256 cellar: :any_skip_relocation, catalina:      "fa5ec7ba3a10f03396acba3ef370d3a3a08ad00eb8b5b210ef81ce33270f8bab"
     sha256 cellar: :any_skip_relocation, mojave:        "6f18977f74649798f8ea61415599cfa84965e5ddec43cdfa21953c823ea19992"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a14da2ef7451a120805d44705f299c53b956591edd8bb1d600d79090817e00e"
   end
 
   depends_on "python@3.9"
