@@ -7,9 +7,10 @@ class Hlint < Formula
   head "https://github.com/ndmitchell/hlint.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:  "824195c4e13ef2cf8f9a95a791ca7159bb1a576fe4e28768dff7db7e5d1e5986"
-    sha256 cellar: :any_skip_relocation, catalina: "af3671cbbd2a989cc6fe386e1040c6284acfdffbbf474bd5063ad9f5b9984895"
-    sha256 cellar: :any_skip_relocation, mojave:   "dadf6ed60bdcf3837ebd280bd7a06b95f1e58de6c2f896923eab17f6599c847c"
+    sha256 cellar: :any_skip_relocation, big_sur:      "824195c4e13ef2cf8f9a95a791ca7159bb1a576fe4e28768dff7db7e5d1e5986"
+    sha256 cellar: :any_skip_relocation, catalina:     "af3671cbbd2a989cc6fe386e1040c6284acfdffbbf474bd5063ad9f5b9984895"
+    sha256 cellar: :any_skip_relocation, mojave:       "dadf6ed60bdcf3837ebd280bd7a06b95f1e58de6c2f896923eab17f6599c847c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "463b81ebebc876885734ad7e0baee4be8e2ce49a336ce6a5e91ce416c1892b3b"
   end
 
   depends_on "cabal-install" => :build
