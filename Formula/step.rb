@@ -1,16 +1,15 @@
 class Step < Formula
   desc "Crypto and x509 Swiss-Army-Knife"
   homepage "https://smallstep.com"
-  url "https://github.com/smallstep/cli/releases/download/v0.15.12/step_0.15.12.tar.gz"
-  sha256 "84f913664519835d204034a4ae47261eda0a651316e663f58fb3af5ca6c997ed"
+  url "https://github.com/smallstep/cli/releases/download/v0.15.13/step_0.15.13.tar.gz"
+  sha256 "d7ab06dc7e6c5703294add4e40f9702de5c63708888c5dd76654028fefe1a608"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "c6003a16ae69f881ea1e50517dc5863af7bc1faec275a73824a901fa0754fe49"
-    sha256 cellar: :any_skip_relocation, big_sur:       "0ad85a0f05c4b11aa2832101a2e4260fcaba0ea2cf1caa39c6b237a908a77c7c"
-    sha256 cellar: :any_skip_relocation, catalina:      "a12071e617e7cde551ccf3a4cab122d28b09c4ef790d699d1b4bb0e3c8510172"
-    sha256 cellar: :any_skip_relocation, mojave:        "c83602ae9c56d7d064b4589e44b9f1d2aa8180bc1a36ce049009feb405a37782"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1b1e1d6cfd74e2e2e10dee55defe6fd4355f0543688006bdefa752869f9ee0b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "94e638b4da270f453f7f090c34168a6d84ae11479b2256f2a29b42c9c57a3590"
+    sha256 cellar: :any_skip_relocation, big_sur:       "a6f515e0940facec86c5e1d77661cd2c998156403d3c7de074a79738659e7403"
+    sha256 cellar: :any_skip_relocation, catalina:      "013d1629f6ccea5e106ecc735e0ed8795579fd61aa7d36eb4f73ad57ac343a07"
+    sha256 cellar: :any_skip_relocation, mojave:        "4045e9869a54a0359370ce365bfe6f6a877aaae9f29faeb1abd7f128b3cedeaa"
   end
 
   depends_on "go" => :build
@@ -21,17 +20,12 @@ class Step < Formula
   end
 
   def install
-    ENV["GOPATH"] = buildpath
-    (buildpath/"src/github.com/smallstep/cli").install buildpath.children
-    cd "src/github.com/smallstep/cli" do
-      system "make", "build"
-      bin.install "bin/step" => "step"
-      bash_completion.install "autocomplete/bash_autocomplete" => "step"
-      zsh_completion.install "autocomplete/zsh_autocomplete" => "_step"
-    end
+    system "make", "build"
+    bin.install "bin/step" => "step"
+    bash_completion.install "autocomplete/bash_autocomplete" => "step"
+    zsh_completion.install "autocomplete/zsh_autocomplete" => "_step"
 
-    resource("certificates").stage "#{buildpath}/src/github.com/smallstep/certificates"
-    cd "#{buildpath}/src/github.com/smallstep/certificates" do
+    resource("certificates").stage do
       system "make", "build"
       bin.install "bin/step-ca" => "step-ca"
     end

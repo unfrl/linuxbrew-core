@@ -4,15 +4,17 @@ class QtPerconaServer < Formula
   url "https://download.qt.io/official_releases/qt/6.0/6.0.2/submodules/qtbase-everywhere-src-6.0.2.tar.xz"
   sha256 "991a0e4e123104e76563067fcfa58602050c03aba8c8bb0c6198347c707817f1"
   license all_of: ["LGPL-2.1-only", "LGPL-3.0-only"]
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "e8cac96be21c551591beaf0f0b3db9d236c4d92620ca90566583c415224624e0"
-    sha256 cellar: :any, big_sur:       "7d2301593bfe0133b93feadb819afef0befc687976c15f663b02742f60b7cfa4"
-    sha256 cellar: :any, catalina:      "b31d93758c4e70cb3ddb523b17fce5845cd95f74f516fd29aff083c7e1dcca2d"
-    sha256 cellar: :any, mojave:        "5fd16d09479331b60eaf9de75e34639b00dc2fc3b03d4ae08ce68d1e6ef25ceb"
+    sha256 cellar: :any, arm64_big_sur: "48be34d2a450bfb7e10cf1ae2538b8305cc5dea1be0e85514a1b3b05155bb143"
+    sha256 cellar: :any, big_sur:       "67f8445d8208957d04bd26cfef81ee92654176f15a9c08991d14679cb733f934"
+    sha256 cellar: :any, catalina:      "3fb67b8e2b22c8ec55b7a26b6ef58fb3aec381658e09d5c0ddd92312ce078e80"
+    sha256 cellar: :any, mojave:        "0aaa102db1d6d4df3bd5a50b0ae42dbd8ff56e8e10c96365cefcb0557fbac8fd"
   end
 
   depends_on "cmake" => [:build, :test]
+  depends_on "pkg-config" => :build
 
   depends_on "percona-server"
   depends_on "qt"
@@ -21,13 +23,23 @@ class QtPerconaServer < Formula
     because: "qt-mysql, qt-mariadb, and qt-percona-server install the same binaries"
 
   def install
+    args = std_cmake_args + %W[
+      -DCMAKE_STAGING_PREFIX=#{prefix}
+
+      -DFEATURE_sql_ibase=OFF
+      -DFEATURE_sql_mysql=ON
+      -DFEATURE_sql_oci=OFF
+      -DFEATURE_sql_odbc=OFF
+      -DFEATURE_sql_psql=OFF
+      -DFEATURE_sql_sqlite=OFF
+
+      -DMySQL_LIBRARIES=#{Formula["percona-server"].opt_lib}/#{shared_library("libperconaserverclient")}
+    ]
+
     cd "src/plugins/sqldrivers" do
-      system "qmake"
-      system "make", "sub-mysql"
-      (share/"qt").install "plugins/"
-    end
-    Pathname.glob(share/"qt/plugins/sqldrivers/#{shared_library("*")}") do |plugin|
-      system "strip", "-S", "-x", plugin
+      system "cmake", "-S", ".", "-B", "build", *args
+      system "cmake", "--build", "build"
+      system "cmake", "--install", "build"
     end
   end
 
