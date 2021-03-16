@@ -14,6 +14,7 @@ class Todoman < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "ea144b7e1a329ef8fd6ac43440f800c3ffcb1874a5aa1e18f98ab24c2e724e4f"
     sha256 cellar: :any_skip_relocation, catalina:      "281ee05aec4e119f290513ac67a8b14308492fe4137fa29d721d1288023387c8"
     sha256 cellar: :any_skip_relocation, mojave:        "ff931185da31a9467fec4d823001da45264e33ead3e2235e10d59fb72cbcbc12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c59fb177476170e71091a06acb32165ba877fd29a6026084b60faaf8c985bda"
   end
 
   depends_on "python-tabulate"
