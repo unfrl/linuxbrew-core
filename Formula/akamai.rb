@@ -6,9 +6,10 @@ class Akamai < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:  "9a8b19117c51afdf3a6ca606ef9adb6d71c0d051b1457ae31ab2869ff60466a3"
-    sha256 cellar: :any_skip_relocation, catalina: "8a2d42ab13b46ecda7be4ce08e2e38d2783089e29077815055e7554a20b987bd"
-    sha256 cellar: :any_skip_relocation, mojave:   "fa326b6b7869e46f087edc41ff1308896dd224dad1f09ba895f3ce459853a5b7"
+    sha256 cellar: :any_skip_relocation, big_sur:      "9a8b19117c51afdf3a6ca606ef9adb6d71c0d051b1457ae31ab2869ff60466a3"
+    sha256 cellar: :any_skip_relocation, catalina:     "8a2d42ab13b46ecda7be4ce08e2e38d2783089e29077815055e7554a20b987bd"
+    sha256 cellar: :any_skip_relocation, mojave:       "fa326b6b7869e46f087edc41ff1308896dd224dad1f09ba895f3ce459853a5b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "38103aa88859ef208eedc632fdc356f331bc76ad41531ed0596157f724b13510"
   end
 
   depends_on "go" => :build
