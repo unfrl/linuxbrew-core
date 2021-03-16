@@ -17,6 +17,7 @@ class Git < Formula
     sha256 big_sur:       "074d8a4e3355018281e0ffd3eaff484d4b26bd39e0771f740eede3042872b46e"
     sha256 catalina:      "4070268c3d4b22a48a35b40c6d55c5d31bc29a41f19794189b7f4edf147dd9f2"
     sha256 mojave:        "a1aab277df069962a738aa5ff354043d84bdcef3472e65d9e9e59b932b06b19f"
+    sha256 x86_64_linux:  "50e3851f2ac88e22da829c646bd73250b2ba0155e324b5adf89b3160cf2dcca0"
   end
 
   depends_on "gettext"
