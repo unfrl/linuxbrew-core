@@ -9,9 +9,10 @@ class VowpalWabbit < Formula
   head "https://github.com/VowpalWabbit/vowpal_wabbit.git"
 
   bottle do
-    sha256 cellar: :any, big_sur:  "8752e51cfdfadcc0c5249d31083dbef30e359ca2157ef0c3f847aaf477fbaa17"
-    sha256 cellar: :any, catalina: "584593be63000b4c0a506ad56e1eeb65f6c4ccc614c9d77383c47d1930048bb9"
-    sha256 cellar: :any, mojave:   "a1dcb3bc58bde9e00fb6968c5e3cb72542aa109bdd4f94eeb3a37254ab5142c6"
+    sha256 cellar: :any,                 big_sur:      "8752e51cfdfadcc0c5249d31083dbef30e359ca2157ef0c3f847aaf477fbaa17"
+    sha256 cellar: :any,                 catalina:     "584593be63000b4c0a506ad56e1eeb65f6c4ccc614c9d77383c47d1930048bb9"
+    sha256 cellar: :any,                 mojave:       "a1dcb3bc58bde9e00fb6968c5e3cb72542aa109bdd4f94eeb3a37254ab5142c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "caaa2f34269ebe25ce7b1831a18d8c39e8c0c2b7caa23750225beac45c6b7781"
   end
 
   depends_on "cmake" => :build
