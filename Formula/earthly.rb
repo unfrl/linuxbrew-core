@@ -1,8 +1,8 @@
 class Earthly < Formula
   desc "Build automation tool for the container era"
   homepage "https://earthly.dev/"
-  url "https://github.com/earthly/earthly/archive/v0.5.6.tar.gz"
-  sha256 "666ce1f3235aab343e09a9d977828181453048a8ac589fea888af4a64a768e82"
+  url "https://github.com/earthly/earthly/archive/v0.5.7.tar.gz"
+  sha256 "7af5932634560339a02160e875ff8086070ab13845b86a024cb363c081b80cbc"
   license "BUSL-1.1"
   head "https://github.com/earthly/earthly.git"
 
@@ -12,18 +12,17 @@ class Earthly < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "4ce971c828e454660b53f94c2f81bd08f83c57bb584be909af4b6e89c8ae107b"
-    sha256 cellar: :any_skip_relocation, big_sur:       "38810651d404977929a24c6c492df87f67ce61d6163ad2227d915e37983b1b92"
-    sha256 cellar: :any_skip_relocation, catalina:      "eeeed6077f46d5d8a6cf4e00ea21ee67fa6a17adb10e9d12213d581a9db8b8bc"
-    sha256 cellar: :any_skip_relocation, mojave:        "62a4985eb4b8704977d88d9a569ee8005e4cd26559901c756f9d0e0266d3e8f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec4aca1d8b40187b26d86d9d2d1227fe00de5625f560b423f055a1cef1afe171"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "e2fe31d951bb55ce0620aef79fbcff2f5eeb878b1760676049ef4d3ef0a4311a"
+    sha256 cellar: :any_skip_relocation, big_sur:       "a520a5b1387918313025ed0644a6ce71eca81a86cd857208f408ab089bf86d21"
+    sha256 cellar: :any_skip_relocation, catalina:      "f96a3975cfd7c9f9a286aeebbfdea9e282e1de88dd37dded04bf4d33b46f2dd8"
+    sha256 cellar: :any_skip_relocation, mojave:        "6cf6686ddd864fb35c4db0d2d75867037b6d56755fe950f48f8e5ba5418dcc6d"
   end
 
   depends_on "go" => :build
 
   def install
     ldflags = "-X main.DefaultBuildkitdImage=earthly/buildkitd:v#{version} -X main.Version=v#{version} -X" \
-              " main.GitSha=42b5954b13f50dcf9683905012ec26dfc222b500 "
+              " main.GitSha=a594127c65663967f5fd6b5215e8292ba372c1b1 "
     tags = "dfrunmount dfrunsecurity dfsecrets dfssh dfrunnetwork"
     system "go", "build",
         "-tags", tags,
