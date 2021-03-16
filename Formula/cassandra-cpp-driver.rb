@@ -8,10 +8,11 @@ class CassandraCppDriver < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_big_sur: "dffbd12b312992799953020da8bca5dc5c94f2ad5ed43e2c4e25272ef8fdf960"
-    sha256 cellar: :any, big_sur:       "e9fc8a0a6d868e206b46897bc8d832ac4b061e59de28a4c7187dc41e8700886d"
-    sha256 cellar: :any, catalina:      "c7f2bc1a273c6501ab8ee167824187f806cb78d82be37db0396d78d10d57675b"
-    sha256 cellar: :any, mojave:        "2c0c5813a8ca8e2e8b900b494479c90f27bd71f2124ee9dd55ffb95aa517cbf5"
+    sha256 cellar: :any,                 arm64_big_sur: "dffbd12b312992799953020da8bca5dc5c94f2ad5ed43e2c4e25272ef8fdf960"
+    sha256 cellar: :any,                 big_sur:       "e9fc8a0a6d868e206b46897bc8d832ac4b061e59de28a4c7187dc41e8700886d"
+    sha256 cellar: :any,                 catalina:      "c7f2bc1a273c6501ab8ee167824187f806cb78d82be37db0396d78d10d57675b"
+    sha256 cellar: :any,                 mojave:        "2c0c5813a8ca8e2e8b900b494479c90f27bd71f2124ee9dd55ffb95aa517cbf5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a6827b818959421043b1c9c0ea4ac910b1d69d8aa53559775b36f83bd9598b1"
   end
 
   depends_on "cmake" => :build
