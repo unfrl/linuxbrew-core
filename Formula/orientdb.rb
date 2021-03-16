@@ -15,6 +15,7 @@ class Orientdb < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "fff6a6252f2ab3d00dc21c7c0f8b7e1ab42a14bbd243ed091c906e683c929621"
     sha256 cellar: :any_skip_relocation, catalina:      "3049e947d195bc00cd6ec2f6f6054ec27db4d8a35161a1be712c3cfa358dfe7f"
     sha256 cellar: :any_skip_relocation, mojave:        "55bb33a1c52cdc859a34c90fc1c690fec0dd897f99881e9a1932f314a81644f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1bf9ae0ebe762b6ce76a03b9311bb9c47d8ccce53cb9502ab25e6e1da742c8c2"
   end
 
   depends_on "maven" => :build
