@@ -15,6 +15,7 @@ class GstEditingServices < Formula
     sha256 big_sur:       "ed53b867be2572ec44bc8fd01995ed827203b78d4fb18864d7ae8248106a790c"
     sha256 catalina:      "5d86ceb3e5cc751f88b06cc2e784adb700999721cae2056f3ec3d08abca33783"
     sha256 mojave:        "550f8a907c10cf7318bb5f4dbd486d3a34a1838bb0d7b5e2bc02f03025432b89"
+    sha256 x86_64_linux:  "276ee20bc40bccd363471f506de77481eda2d78a0da627717cf58efcdacf98ba"
   end
 
   depends_on "gobject-introspection" => :build
