@@ -17,7 +17,8 @@ class Helm < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "mod", "tidy"
+    # See https://github.com/helm/helm/pull/9486, remove with next release (3.5.4)
+    system "go", "mod", "tidy" unless OS.mac?
     system "make", "build"
     bin.install "bin/helm"
 
