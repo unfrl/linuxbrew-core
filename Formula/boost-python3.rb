@@ -9,10 +9,11 @@ class BoostPython3 < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any, arm64_big_sur: "a2c3334993fd0d0b32365afb3b07608e1716a5c558a9e54309d6d96c6a5cea24"
-    sha256 cellar: :any, big_sur:       "5a7b9abda6b57a79fbc3c0a0d1ad92e1955adee6cd88e4ec81a23e8be95d5f8a"
-    sha256 cellar: :any, catalina:      "0e6d214e6a1ca416d64d1d098e767a9429a90323aaaaaadf1ff58f77f1ac22c5"
-    sha256 cellar: :any, mojave:        "a14c587cfc74d561150bfca4884e3b179595dd7f113a2d39a5cb55b9ca7d8d0c"
+    sha256 cellar: :any,                 arm64_big_sur: "a2c3334993fd0d0b32365afb3b07608e1716a5c558a9e54309d6d96c6a5cea24"
+    sha256 cellar: :any,                 big_sur:       "5a7b9abda6b57a79fbc3c0a0d1ad92e1955adee6cd88e4ec81a23e8be95d5f8a"
+    sha256 cellar: :any,                 catalina:      "0e6d214e6a1ca416d64d1d098e767a9429a90323aaaaaadf1ff58f77f1ac22c5"
+    sha256 cellar: :any,                 mojave:        "a14c587cfc74d561150bfca4884e3b179595dd7f113a2d39a5cb55b9ca7d8d0c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da9e61eae1d90a1ba45cb6a17ad6708ec0076532f79999ec6b01a2b7c71fad36"
   end
 
   depends_on "numpy" => :build
