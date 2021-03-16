@@ -19,6 +19,7 @@ class KdeExtraCmakeModules < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "fc8d6944b8c8900f3fb464cc8f4589bec834d6b7ab9adbce8b380dcf8d7bc00b"
     sha256 cellar: :any_skip_relocation, catalina:      "6461611d4f810ef660c4554eadb4f708fe1f952458d2cd374a8200e36895f1cc"
     sha256 cellar: :any_skip_relocation, mojave:        "daccf07232ea1f687e2f20b0f86823f7ebf421da92f1f4e7608c5197f556ead4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f298e516505cba1026697085ae03d7cda289d0f8df8131bb2e9e892aa14ea07"
   end
 
   depends_on "cmake" => [:build, :test]
