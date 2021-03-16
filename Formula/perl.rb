@@ -65,8 +65,9 @@ class Perl < Formula
   end
 
   def post_install
-    unless OS.mac?
-      perl_core = Pathname.new(`#{bin/"perl"} -MConfig -e 'print $Config{archlib}'`)+"CORE"
+    on_linux do
+      perl_archlib = Utils.safe_popen_read("perl", "-MConfig", "-e", "print $Config{archlib}")
+      perl_core = Pathname.new(perl_archlib)/"CORE"
       if File.readlines("#{perl_core}/perl.h").grep(/include <xlocale.h>/).any? &&
          (OS::Linux::Glibc.system_version >= "2.26" ||
          (Formula["glibc"].any_version_installed? && Formula["glibc"].version >= "2.26"))
