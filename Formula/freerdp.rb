@@ -1,17 +1,15 @@
 class Freerdp < Formula
   desc "X11 implementation of the Remote Desktop Protocol (RDP)"
   homepage "https://www.freerdp.com/"
-  url "https://github.com/FreeRDP/FreeRDP/archive/2.3.1.tar.gz"
-  sha256 "3ad38d4bdd9cf97bd5425ea280961397129b28660743ab2f90eab88e8342459b"
+  url "https://github.com/FreeRDP/FreeRDP/archive/2.3.2.tar.gz"
+  sha256 "a1f52f0d9569b418a555ffe4d15a3782712198be47308e9514d20ca5af41a1b1"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 arm64_big_sur: "4ec216d0970f8275a53edfa8677ee49ab5634905f9610fe0329a9cbec21ae740"
-    sha256 big_sur:       "13cb35f3a63d3ded009eea19ec6ee8fcfd875c5b9296eae6f5f2cb1093fce6ae"
-    sha256 catalina:      "d8e6886ff2809e3192a39f38803378c398a64e3aa6f9f614e60447864aff05e3"
-    sha256 mojave:        "0d9d9e131f4083303afb26ff40a0f90b1a502c4cdfeb49d69506952d5b50dbef"
-    sha256 x86_64_linux:  "37df07e442565be357d5208461d346c43b7bfb6233051ab0141074bf11e9ed7b"
+    sha256 arm64_big_sur: "1f42bf8b45b7e1a776b844e7b8b1c72bd83e635f8ffdf477789dc5d1f6aa0f3d"
+    sha256 big_sur:       "8851fccd1933c8ec16d40938a72effaf07eade70759cf71665b8a5fdf44fad29"
+    sha256 catalina:      "47096a60290cbcefa2a22268011bb1acb2ea8265973ba861542697856b55ba3f"
+    sha256 mojave:        "f9c50b97f50cd29509e67d5d3c2ecc28e89612ffa7d1e3adaa15e6b6aa4556cd"
   end
 
   head do
