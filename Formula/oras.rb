@@ -10,6 +10,7 @@ class Oras < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "26d9a53ff1b82bd49c685b50632129c82a65ab60b0f41a8405d3f0c12695f839"
     sha256 cellar: :any_skip_relocation, catalina:      "9b96c43f4b1696bd2db1bea8c5f686baf3ad747c42a0b130c76d8fa3b3a3a8b4"
     sha256 cellar: :any_skip_relocation, mojave:        "d3e49aff7b26c7d7517deb77618a86a092a07c5db9d5874ae25ea6f466f88217"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb3d59cd7eef955a202dd8462c08e29097b5b2e11ef83848401b639aad755d23"
   end
 
   depends_on "go" => :build
