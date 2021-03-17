@@ -10,6 +10,7 @@ class LttngUst < Formula
   depends_on "userspace-rcu"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "714e02826081339a18562517fa6280dbfe6ae774f29af3b2faedee1122c116e7"
   end
 
   def install
