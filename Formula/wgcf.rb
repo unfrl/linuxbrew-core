@@ -11,6 +11,7 @@ class Wgcf < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "81f7ea6554ebc5cd72909103ffeb23b080b4268a7fa5875b50caa5eb2386a6fd"
     sha256 cellar: :any_skip_relocation, catalina:      "dbef942387e118d4d9e6c17e5b2a2a6f6978bb68df697d3afc1f44aecc8c6b5e"
     sha256 cellar: :any_skip_relocation, mojave:        "d4f87a6e7f6af82f22a52bd01f44167641c2090ca7ebde2a86557b9b02880f86"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c60abadaaf87b2cdb6ede5d68a29204fab1cca4a02eaedfabe4d759b8f94ba2"
   end
 
   depends_on "go" => :build
