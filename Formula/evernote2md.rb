@@ -10,6 +10,7 @@ class Evernote2md < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "f4b2f93ca3a8d6ab5821a8da025d48c97c6f1ea88a7e18274c31a1dbd516fa7c"
     sha256 cellar: :any_skip_relocation, catalina:      "0bf0d3d24a59ec90f717c6b36c6fcfc6a8874b47ac45b603c533520b9a833f9a"
     sha256 cellar: :any_skip_relocation, mojave:        "6ade81031fc09a19e69d42d25325dd3489f0353aafd66dc8163030ee1d153157"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17e32f25d60dc408c93e8d34bdfa7f3336b4722fc44171e6b27871f5264289c7"
   end
 
   depends_on "go" => :build
