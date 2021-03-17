@@ -5,13 +5,13 @@ class LttngUst < Formula
   sha256 "48a3948b168195123a749d22818809bd25127bb5f1a66458c3c012b210d2a051"
   license all_of: ["LGPL-2.1-only", "MIT", "GPL-2.0-only", "BSD-3-Clause", "BSD-2-Clause", "GPL-3.0-or-later"]
 
-  depends_on :linux
-  depends_on "numactl"
-  depends_on "userspace-rcu"
-
   bottle do
     sha256 cellar: :any_skip_relocation, x86_64_linux: "714e02826081339a18562517fa6280dbfe6ae774f29af3b2faedee1122c116e7"
   end
+
+  depends_on :linux
+  depends_on "numactl"
+  depends_on "userspace-rcu"
 
   def install
     system "./configure", *std_configure_args, "--disable-silent-rules"
