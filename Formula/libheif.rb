@@ -7,10 +7,11 @@ class Libheif < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "0cace1e7df98284e212181d14cc4537e59b67f296703516f4fedce8424647c2f"
-    sha256 cellar: :any, big_sur:       "68c4c76e85e0e09d12c23ff09ed7016d7755db92f5cdc05896ffd04717bffc78"
-    sha256 cellar: :any, catalina:      "2d817cd7e3d244cf7d076ac2978105d08694f067a158a3de4c53834583097509"
-    sha256 cellar: :any, mojave:        "139518ff3ffb704d73d41560470ac11e025816310c1a800e64f2eaaeb2df9a47"
+    sha256 cellar: :any,                 arm64_big_sur: "0cace1e7df98284e212181d14cc4537e59b67f296703516f4fedce8424647c2f"
+    sha256 cellar: :any,                 big_sur:       "68c4c76e85e0e09d12c23ff09ed7016d7755db92f5cdc05896ffd04717bffc78"
+    sha256 cellar: :any,                 catalina:      "2d817cd7e3d244cf7d076ac2978105d08694f067a158a3de4c53834583097509"
+    sha256 cellar: :any,                 mojave:        "139518ff3ffb704d73d41560470ac11e025816310c1a800e64f2eaaeb2df9a47"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0f75551a465eb1f06fdb56adf5fc061e6ab26c7db4518f10f83e64c00855ec0"
   end
 
   depends_on "pkg-config" => :build
