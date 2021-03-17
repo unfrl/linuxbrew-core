@@ -15,6 +15,7 @@ class OcamlFindlib < Formula
     sha256 big_sur:       "15951d7142caf7b8287312c22761faaba781c2e5bd12a02c1af1679520a0db29"
     sha256 catalina:      "5d0337fda51924cbad0f68c6b39a2ba7dc082a29b34121de6de80f13d6421311"
     sha256 mojave:        "78bcc5df2366f5046b90384e6bde8f81e038041354a3daae361c09a6cad29228"
+    sha256 x86_64_linux:  "8a7a457fef7ccaa4ee029553c19767608c131f9d7b5f4cbb145bdfd8baf65b0f"
   end
 
   depends_on "ocaml"
