@@ -9,6 +9,9 @@ class LttngUst < Formula
   depends_on "numactl"
   depends_on "userspace-rcu"
 
+  bottle do
+  end
+
   def install
     system "./configure", *std_configure_args, "--disable-silent-rules"
     system "make", "install"
