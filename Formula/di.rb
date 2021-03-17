@@ -15,6 +15,7 @@ class Di < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "50ce1db9a6fcc59b37e873b62750c82a1bc8ed36af64342afa533f39a52046d7"
     sha256 cellar: :any_skip_relocation, catalina:      "2ad832b9d2eba7c3c197e67828d41b4ff112dca9af8db7fe71b2fd745f983b74"
     sha256 cellar: :any_skip_relocation, mojave:        "7381006ae44f23fab65ddb4da6aad65e1aca43180cc212a3bf12e51bbc808503"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "974e41345f16cced4a3a103b3c01d70b4ee4fb5b1aac437c626dddcfe6a1fb7d"
   end
 
   def install
