@@ -12,6 +12,7 @@ class B2Tools < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "34fa612aab4c5a4a49dd9181f91809bfce0ad488ad4ab29b5803c24eea002845"
     sha256 cellar: :any_skip_relocation, catalina:      "009ec8478c59bb75b6cdfe0bbe257b7dfc6bb64561dac173e047852bd461adb6"
     sha256 cellar: :any_skip_relocation, mojave:        "be14ecfaf6ae68715d5b8144c0afae419c486ff72495c2f3f17d685d79b35ce2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e51bdcac6b15e665a96a5683fa1afc735446a3fda7c9534a4b77acada567b29"
   end
 
   depends_on "python@3.9"
