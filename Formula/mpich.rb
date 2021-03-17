@@ -13,10 +13,11 @@ class Mpich < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "d57992c74140b8bc0d410bc86a6e67febeb0e6e9805b2ab5608f41f5f26b121b"
-    sha256 cellar: :any, big_sur:       "7f970d15db426859aadea466f17549bd4add967ad1082d34fc5844b332b4099e"
-    sha256 cellar: :any, catalina:      "823585ee5005dd4c5298524ff8b6950296f3cbcc6a9c6cc53b3e93252185344f"
-    sha256 cellar: :any, mojave:        "30ff98a7f4bded67dc55b08ab72a01cac22b747d7b91389d72577a60c4815187"
+    sha256 cellar: :any,                 arm64_big_sur: "d57992c74140b8bc0d410bc86a6e67febeb0e6e9805b2ab5608f41f5f26b121b"
+    sha256 cellar: :any,                 big_sur:       "7f970d15db426859aadea466f17549bd4add967ad1082d34fc5844b332b4099e"
+    sha256 cellar: :any,                 catalina:      "823585ee5005dd4c5298524ff8b6950296f3cbcc6a9c6cc53b3e93252185344f"
+    sha256 cellar: :any,                 mojave:        "30ff98a7f4bded67dc55b08ab72a01cac22b747d7b91389d72577a60c4815187"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b7acb3d38fa39d9d2dd94c9fe61a17ad7ecbe2efbbb73b8d5e0c16191cc11e1"
   end
 
   head do
