@@ -4,7 +4,7 @@ class PostgresqlAT12 < Formula
   url "https://ftp.postgresql.org/pub/source/v12.6/postgresql-12.6.tar.bz2"
   sha256 "df7dd98d5ccaf1f693c7e1d0d084e9fed7017ee248bba5be0167c42ad2d70a09"
   license "PostgreSQL"
-  revision 1
+  revision OS.mac? ? 1 : 2
 
   livecheck do
     url "https://ftp.postgresql.org/pub/source/"
@@ -17,7 +17,6 @@ class PostgresqlAT12 < Formula
     sha256 big_sur:       "2f64555e8a25c33ecb45859b745b65d2944019b9a2cf470cf6658bf6d96f4a12"
     sha256 catalina:      "27c3eb917fea4cddd42981063686576d9b454b28e33489c796ebe723fa239de8"
     sha256 mojave:        "a677103e6e5e6977dd7ddee6cc3f64d6a75aa38fcf2910b33819f86f76ecdfe5"
-    sha256 x86_64_linux:  "4d4d2f22a9867722b06c5058646f61ed3f0a14b9cecead2154c20d0cd1e91b63"
   end
 
   keg_only :versioned_formula
@@ -33,6 +32,11 @@ class PostgresqlAT12 < Formula
   depends_on "krb5"
   depends_on "openssl@1.1"
   depends_on "readline"
+
+  unless OS.mac?
+    depends_on "linux-pam"
+    depends_on "openldap"
+  end
 
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
@@ -55,19 +59,19 @@ class PostgresqlAT12 < Formula
       --sysconfdir=#{etc}
       --docdir=#{doc}
       --enable-thread-safety
+      --with-gssapi
       --with-icu
+      --with-ldap
       --with-libxml
       --with-libxslt
       --with-openssl
+      --with-pam
       --with-perl
       --with-uuid=e2fs
     ]
     if OS.mac?
       args += %w[
         --with-bonjour
-        --with-gssapi
-        --with-ldap
-        --with-pam
         --with-tcl
       ]
     end
