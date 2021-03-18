@@ -11,6 +11,7 @@ class Frpc < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "d028990451b035549cd8de84ac2fab083c3de6ac2f3d1e6be96a73357d5faaee"
     sha256 cellar: :any_skip_relocation, catalina:      "4dea3ae8024529b505d17b538a5b180b40bd7bdfb55f4e1244ff37e3e84bfb8d"
     sha256 cellar: :any_skip_relocation, mojave:        "473e8c17e487b7c8a62a5f21ada622965bfe599763a35c6765e07f501b1e0216"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "337557c506521a5c7e59aecda2fc32ec74a5ee68ca71ee6258806cb3a7e57ab0"
   end
 
   depends_on "go" => :build
