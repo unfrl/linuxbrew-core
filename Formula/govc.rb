@@ -10,6 +10,7 @@ class Govc < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "dc7b9d9c5cd68eac0eb9602be6856505dfb0511b1f98a1e5fa7e99e419e7c75b"
     sha256 cellar: :any_skip_relocation, catalina:      "8412e1a81912ca4d719fdfb57b3ee15ca67db2f3f97cf8a9e5510c66f36b6f08"
     sha256 cellar: :any_skip_relocation, mojave:        "9352809253843cb8520e62b4c683489df0b884debfcba534980c8d50549c0c24"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ea4b092b870d0e951060978bf27dea8b56d2924d4deb97c99c13773d4c4f975"
   end
 
   depends_on "go" => :build
