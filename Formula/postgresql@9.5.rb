@@ -4,6 +4,7 @@ class PostgresqlAT95 < Formula
   url "https://ftp.postgresql.org/pub/source/v9.5.25/postgresql-9.5.25.tar.bz2"
   sha256 "7628c55eb23768a2c799c018988d8f2ab48ee3d80f5e11259938f7a935f0d603"
   license "PostgreSQL"
+  revision 1 unless OS.mac?
 
   bottle do
     rebuild 1
@@ -11,7 +12,6 @@ class PostgresqlAT95 < Formula
     sha256 big_sur:       "072df838f2bffda7ebd83ebef615fd39b2dab0c01724a7750a9286c7fce5c99f"
     sha256 catalina:      "d02c0da57a7e2ca6419f72d3feee3c80feff11d3a63e58ae96cf37fb73ad4d47"
     sha256 mojave:        "ffa3da3b26c1591dd5a18d28c0393584513fdeaca3670357b6f0e5225155e512"
-    sha256 x86_64_linux:  "d4f7fe495f87465c2280677a32ee36512a5d9a687d25270a2fc5e7d5ff056c9c"
   end
 
   keg_only :versioned_formula
@@ -21,6 +21,12 @@ class PostgresqlAT95 < Formula
 
   depends_on "openssl@1.1"
   depends_on "readline"
+
+  unless OS.mac?
+    depends_on "krb5"
+    depends_on "linux-pam"
+    depends_on "openldap"
+  end
 
   uses_from_macos "libxslt"
   uses_from_macos "perl"
@@ -44,18 +50,18 @@ class PostgresqlAT95 < Formula
       --sysconfdir=#{prefix}/etc
       --docdir=#{doc}
       --enable-thread-safety
+      --with-gssapi
+      --with-ldap
       --with-libxml
       --with-libxslt
       --with-openssl
+      --with-pam
       --with-perl
       --with-uuid=e2fs
     ]
     if OS.mac?
       args += %w[
         --with-bonjour
-        --with-gssapi
-        --with-ldap
-        --with-pam
         --with-tcl
       ]
     end
