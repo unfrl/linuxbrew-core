@@ -4,7 +4,7 @@ class PostgresqlAT10 < Formula
   url "https://ftp.postgresql.org/pub/source/v10.16/postgresql-10.16.tar.bz2"
   sha256 "a35c718b1b6690e01c69626d467edb933784f8d1d6741e21fe6cce0738467bb3"
   license "PostgreSQL"
-  revision 1
+  revision OS.mac? ? 1 : 2
 
   livecheck do
     url "https://ftp.postgresql.org/pub/source/"
@@ -16,7 +16,6 @@ class PostgresqlAT10 < Formula
     sha256 big_sur:       "569467a10dc757df4379d04c9cd04faa7c8e410a8b8235a2fc4e35e5dfe5df36"
     sha256 catalina:      "4514036606239ca6ee8f80f732883507450b0b39412c3d4c0fc0f00826650263"
     sha256 mojave:        "79b03ea9605950cbc9fd2495669d4745557f532dd3f98b8f3956f2b8786d1a15"
-    sha256 x86_64_linux:  "057214f5a48d38c21628729648dc713c8bed466a3f2a3ff4b9db6eb3c0d19bf9"
   end
 
   keg_only :versioned_formula
@@ -28,6 +27,12 @@ class PostgresqlAT10 < Formula
   depends_on "icu4c"
   depends_on "openssl@1.1"
   depends_on "readline"
+
+  unless OS.mac?
+    depends_on "krb5"
+    depends_on "linux-pam"
+    depends_on "openldap"
+  end
 
   uses_from_macos "libxslt"
   uses_from_macos "perl"
@@ -56,19 +61,19 @@ class PostgresqlAT10 < Formula
       --sysconfdir=#{etc}
       --docdir=#{doc}
       --enable-thread-safety
+      --with-gssapi
       --with-icu
+      --with-ldap
       --with-libxml
       --with-libxslt
       --with-openssl
+      --with-pam
       --with-perl
       --with-uuid=e2fs
     ]
     if OS.mac?
       args += %w[
         --with-bonjour
-        --with-gssapi
-        --with-ldap
-        --with-pam
         --with-tcl
       ]
     end
