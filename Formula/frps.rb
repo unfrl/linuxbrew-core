@@ -11,6 +11,7 @@ class Frps < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "755a34950ae94d0684e9b23af4768bc0862beb23423802330034bfe050fa8567"
     sha256 cellar: :any_skip_relocation, catalina:      "7e16c2480a4dc1312c64700e298a48e9c7d87469c65d7106d991864158609402"
     sha256 cellar: :any_skip_relocation, mojave:        "a7a09b7b5cfafc0a43190c1b3ff12bbdaecff7697eb99ec56f6e09d52c943672"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae59e8ddd1a6870f4f540055c4d7e0cba3cefb861391fb10835773e0e5ed1ba5"
   end
 
   depends_on "go" => :build
