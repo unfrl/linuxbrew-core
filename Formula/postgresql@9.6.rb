@@ -4,6 +4,7 @@ class PostgresqlAT96 < Formula
   url "https://ftp.postgresql.org/pub/source/v9.6.21/postgresql-9.6.21.tar.bz2"
   sha256 "930feaef28885c97ec40c26ab6221903751eeb625de92b22602706d7d47d1634"
   license "PostgreSQL"
+  revision 1 unless OS.mac?
 
   livecheck do
     url "https://ftp.postgresql.org/pub/source/"
@@ -16,7 +17,6 @@ class PostgresqlAT96 < Formula
     sha256 big_sur:       "ab1af8b44d2de91b7f39441d224e0f4cca582be0e7cf37bc845e86ec660b2ece"
     sha256 catalina:      "17ff71424cfaf686d2a83fb2c36ae509012b773c40f92420a31250214ee5ffe8"
     sha256 mojave:        "4374f31f6e7ea4d531ece7419cfd857bafca0bddef9336c518800b30d689def7"
-    sha256 x86_64_linux:  "b27c347e8c22e3bf93d31a0237075fb142428c57b04e5791cbe86db081163706"
   end
 
   keg_only :versioned_formula
@@ -26,6 +26,12 @@ class PostgresqlAT96 < Formula
 
   depends_on "openssl@1.1"
   depends_on "readline"
+
+  unless OS.mac?
+    depends_on "krb5"
+    depends_on "linux-pam"
+    depends_on "openldap"
+  end
 
   uses_from_macos "libxslt"
   uses_from_macos "perl"
@@ -49,7 +55,10 @@ class PostgresqlAT96 < Formula
       --sysconfdir=#{prefix}/etc
       --docdir=#{doc}
       --enable-thread-safety
+      --with-gssapi
+      --with-ldap
       --with-openssl
+      --with-pam
       --with-libxml
       --with-libxslt
       --with-perl
@@ -58,9 +67,6 @@ class PostgresqlAT96 < Formula
     if OS.mac?
       args += %w[
         --with-bonjour
-        --with-gssapi
-        --with-ldap
-        --with-pam
         --with-tcl
       ]
     end
