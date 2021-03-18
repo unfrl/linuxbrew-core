@@ -4,7 +4,7 @@ class Postgresql < Formula
   url "https://ftp.postgresql.org/pub/source/v13.2/postgresql-13.2.tar.bz2"
   sha256 "5fd7fcd08db86f5b2aed28fcfaf9ae0aca8e9428561ac547764c2a2b0f41adfc"
   license "PostgreSQL"
-  revision 1
+  revision OS.mac? ? 1 : 2
   head "https://github.com/postgres/postgres.git"
 
   livecheck do
@@ -17,7 +17,6 @@ class Postgresql < Formula
     sha256 big_sur:       "67a547842ae49911d301d490e70b5fff1ee27a65cea403abeff3a25d1806e8d6"
     sha256 catalina:      "02af915cc2b5291c5a15b59a74dff255e918e7a6af34dbef53cf6ad264627628"
     sha256 mojave:        "37f0b76c0f034d8a6837805eb27da3787c39cf895516a193ad298ea96f68e98a"
-    sha256 x86_64_linux:  "752fda665689cab5dd4bbd7019a4ebdaf16e879de313e9be2d261e9e0440ef95"
   end
 
   depends_on "pkg-config" => :build
@@ -27,6 +26,11 @@ class Postgresql < Formula
   depends_on "krb5"
   depends_on "openssl@1.1"
   depends_on "readline"
+
+  unless OS.mac?
+    depends_on "linux-pam"
+    depends_on "openldap"
+  end
 
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
@@ -49,19 +53,19 @@ class Postgresql < Formula
       --sysconfdir=#{etc}
       --docdir=#{doc}
       --enable-thread-safety
+      --with-gssapi
       --with-icu
+      --with-ldap
       --with-libxml
       --with-libxslt
       --with-openssl
+      --with-pam
       --with-perl
       --with-uuid=e2fs
     ]
     if OS.mac?
       args += %w[
         --with-bonjour
-        --with-gssapi
-        --with-ldap
-        --with-pam
         --with-tcl
       ]
     end
