@@ -11,10 +11,11 @@ class Fish < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "10789988100d68aba59a0b2a77c8e081e6603a99e685a4e4bc793402f750e76b"
-    sha256 cellar: :any, big_sur:       "a1fff416cb486056960c941fa366f817de8dbb020bcd5467f2c63bfc6189b9c5"
-    sha256 cellar: :any, catalina:      "cffa526865c495b8647caab5b24f84641f509e0048d67b57da97b4968ac05b6d"
-    sha256 cellar: :any, mojave:        "8f8e193e965064a81c1da63fcce32cc950d5c3d54c319eda252b2b30289c612e"
+    sha256 cellar: :any,                 arm64_big_sur: "10789988100d68aba59a0b2a77c8e081e6603a99e685a4e4bc793402f750e76b"
+    sha256 cellar: :any,                 big_sur:       "a1fff416cb486056960c941fa366f817de8dbb020bcd5467f2c63bfc6189b9c5"
+    sha256 cellar: :any,                 catalina:      "cffa526865c495b8647caab5b24f84641f509e0048d67b57da97b4968ac05b6d"
+    sha256 cellar: :any,                 mojave:        "8f8e193e965064a81c1da63fcce32cc950d5c3d54c319eda252b2b30289c612e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a3fe004fabfe9b812cfc370563f07013dd02cb143f670d67c4a3047c90a7de1"
   end
 
   head do
