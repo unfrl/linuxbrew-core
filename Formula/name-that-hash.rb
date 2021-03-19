@@ -3,16 +3,16 @@ class NameThatHash < Formula
 
   desc "Modern hash identification system"
   homepage "https://nth.skerritt.blog/"
-  url "https://files.pythonhosted.org/packages/fc/55/bee2efcd3f44b0dd7d6bb155f19e29e9cb9d7ac4a92ba74e5f7b15c3c72e/name-that-hash-1.4.0.tar.gz"
-  sha256 "ebe1595978fe1b8ada053225541c23fb90e7c4e78255549ded0799e6eae03e01"
+  url "https://files.pythonhosted.org/packages/3b/4f/bc009cb4f008a0f8a7d42f7b3cbb5a3a66a49c558b6ff745c94539b0fff1/name-that-hash-1.5.0.tar.gz"
+  sha256 "3466b0e618b1b7577de3eb57b6b87f55f07b592be378dc127b3ef0f01482fd46"
   license "GPL-3.0-or-later"
   head "https://github.com/HashPals/Name-That-Hash.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "35845d8a066580258423197371767f2419acd8684d7015f735d4db6cc0c3fede"
-    sha256 cellar: :any_skip_relocation, big_sur:       "8d295031d86551a3d9dc8ddef2c67198fa3d5841b139dbed39d4de6ea2b1bee6"
-    sha256 cellar: :any_skip_relocation, catalina:      "66d206ee9301339de952b78e439c63a7a785b2e5c6e72e3170f9cc4a4a81822a"
-    sha256 cellar: :any_skip_relocation, mojave:        "765350747b6e759fed4ca5d9408cd64a2a0cc7e957284df9f61eea9f09186b4c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "23b2eac23dcd73a54d142d389d3988e6e036bffbae17911f88b33d17745c2e66"
+    sha256 cellar: :any_skip_relocation, big_sur:       "5976178e2aab38168a7dec1611f15cb1a3e594f9ed43be1c101422349a2e449f"
+    sha256 cellar: :any_skip_relocation, catalina:      "99627523f00942e59a0fdba1a422cb53447734971b2af3fc0f892e9a6e737d08"
+    sha256 cellar: :any_skip_relocation, mojave:        "a7295f107d14bcbfcabd85575015ca3d88aa58402f9c479469631aa028031f57"
   end
 
   depends_on "python@3.9"
