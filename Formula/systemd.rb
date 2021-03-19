@@ -31,14 +31,6 @@ class Systemd < Formula
   uses_from_macos "expat"
 
   def install
-    ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
-
-    # Needed by intltool (xml::parser)
-    ENV.prepend_path "PERL5LIB", "#{Formula["intltool"].libexec}/lib/perl5"
-
-    # Fix compilation error: file ./man/custom-html.xsl line 24 element import
-    ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
-
     args = %W[
       --prefix=#{prefix}
       --libdir=lib
