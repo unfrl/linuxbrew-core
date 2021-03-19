@@ -7,10 +7,11 @@ class Uriparser < Formula
   head "https://github.com/uriparser/uriparser.git"
 
   bottle do
-    sha256 arm64_big_sur: "a232c7c90f40e4d6bfe8b3c40a95ae3e1a94d6708aa760069e4b1342e2a381ea"
-    sha256 big_sur:       "767b99054e0df214d405118c1e89f8389160796417dfb4e8c90ea0201bb8c05a"
-    sha256 catalina:      "cbe548d6a30819a907fc66b3de6ef90e8329e6c7a000a72bf392c7ca127817f8"
-    sha256 mojave:        "9a8730ce5324d0e846cb7176b04856efadf5ba490638834a9a46502fc0dba715"
+    sha256                               arm64_big_sur: "a232c7c90f40e4d6bfe8b3c40a95ae3e1a94d6708aa760069e4b1342e2a381ea"
+    sha256                               big_sur:       "767b99054e0df214d405118c1e89f8389160796417dfb4e8c90ea0201bb8c05a"
+    sha256                               catalina:      "cbe548d6a30819a907fc66b3de6ef90e8329e6c7a000a72bf392c7ca127817f8"
+    sha256                               mojave:        "9a8730ce5324d0e846cb7176b04856efadf5ba490638834a9a46502fc0dba715"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "71e68374d65baa8da4de41242293afa567818fd97b27aaacf515fa99e4b534a3"
   end
 
   depends_on "cmake" => :build
