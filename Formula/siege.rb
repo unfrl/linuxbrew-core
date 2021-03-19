@@ -15,6 +15,7 @@ class Siege < Formula
     sha256 big_sur:       "997b04a9f4df46949d94083e7fac44a5afa5438fb859d628616aef63b512c4bc"
     sha256 catalina:      "c169a9b9736160b844b4b387077574a83187a7cc1760d940e405a08ee75a279b"
     sha256 mojave:        "5a73790fcc3737011e48c621266d7d29be8327983ea5aae4b8763d64e68b72dc"
+    sha256 x86_64_linux:  "75dc357da41520b8cd0fdcf467d5ed59796bddf494c5ada0ce76acdf641a0ad5"
   end
 
   depends_on "openssl@1.1"
