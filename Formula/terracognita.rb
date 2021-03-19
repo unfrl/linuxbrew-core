@@ -11,6 +11,7 @@ class Terracognita < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "248a9f4ff82c9d71b42de68ae5a7992b24b547c917193a13c2cac9dc3a001910"
     sha256 cellar: :any_skip_relocation, catalina:      "d99e0fdb6574512b75d359969466672c67ce5d10cb34e5471a6c33357975c8c2"
     sha256 cellar: :any_skip_relocation, mojave:        "c0f566e26c52a835e0f4eb4c58d9a18a02d67dd4a02552c0a0c0c12e4491e0d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a43b3e4f69a3eb2f94e6ef1136662a967a7d42ba05790342adb4fb904296712"
   end
 
   depends_on "go" => :build
