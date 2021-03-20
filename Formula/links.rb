@@ -11,10 +11,11 @@ class Links < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "240394fc7d383abd1dc92b09eef316444b9143d3c1f5ecfe4ec6d9aabffbb879"
-    sha256 cellar: :any, big_sur:       "7244e77024332dc3c3564cc12afa15a4ab0a3fb95cbb053f85f7816e48e19c45"
-    sha256 cellar: :any, catalina:      "fd1264189ca279e0d73395410babcbe53ca75820a6ba25c97d85da856e515fdf"
-    sha256 cellar: :any, mojave:        "3a54b72901034d1e251059266041854c030429622418e61768c9b8a20486e5cb"
+    sha256 cellar: :any,                 arm64_big_sur: "240394fc7d383abd1dc92b09eef316444b9143d3c1f5ecfe4ec6d9aabffbb879"
+    sha256 cellar: :any,                 big_sur:       "7244e77024332dc3c3564cc12afa15a4ab0a3fb95cbb053f85f7816e48e19c45"
+    sha256 cellar: :any,                 catalina:      "fd1264189ca279e0d73395410babcbe53ca75820a6ba25c97d85da856e515fdf"
+    sha256 cellar: :any,                 mojave:        "3a54b72901034d1e251059266041854c030429622418e61768c9b8a20486e5cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c62739adc2034980e007f5c83d524d4fc2eb9c2406b1902d586408c300dccf7b"
   end
 
   depends_on "pkg-config" => :build
