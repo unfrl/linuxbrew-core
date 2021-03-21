@@ -1,17 +1,16 @@
 class Gopass < Formula
   desc "Slightly more awesome Standard Unix Password Manager for Teams"
   homepage "https://github.com/gopasspw/gopass"
-  url "https://github.com/gopasspw/gopass/releases/download/v1.12.2/gopass-1.12.2.tar.gz"
-  sha256 "b4254ecbc14b62a68e1e98c99d08d53c50a5b5b15b8b5b592266a6d581c93f13"
+  url "https://github.com/gopasspw/gopass/releases/download/v1.12.3/gopass-1.12.3.tar.gz"
+  sha256 "3b38ef45df8caed208cd1d34cbf69fa640cd44908f60042b8d3f0e318d1dd62d"
   license "MIT"
-  revision 2
   head "https://github.com/gopasspw/gopass.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "a21d4f0ea78429dfe7350ba849add31cd0bbff1f26d569206924d1f705870b5f"
-    sha256 cellar: :any_skip_relocation, big_sur:       "d18b4ff21f9de549a49d7baad298184706aecf4d0ab228a15c4a46a92ce0faf1"
-    sha256 cellar: :any_skip_relocation, catalina:      "4df56d76be3ef1d54a5244205b545351a64af8dfca2fc6c832be94a2b205fcee"
-    sha256 cellar: :any_skip_relocation, mojave:        "5bc755a971461724f3ee6b1c15854b88b1bfde61ae80d51f6a1c58676f539317"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "1c2b02bffd63fb5008ca569a24aa86cdc12ef5366f2c46633d3c7b7632f9bf5f"
+    sha256 cellar: :any_skip_relocation, big_sur:       "04394dc68f5c568040cc8229109ce3cf713d2c90cb935b680e4d27af6aa1aa93"
+    sha256 cellar: :any_skip_relocation, catalina:      "056573c87af5913fddd64aad1e92c862abc3a2f13573b2c224524e63b9282238"
+    sha256 cellar: :any_skip_relocation, mojave:        "99bc5fff2572a669e924e1130bdfa7142e8f2ecff38b70ac3ccfb95fd4855d4e"
   end
 
   depends_on "go" => :build
@@ -19,6 +18,14 @@ class Gopass < Formula
 
   on_macos do
     depends_on "terminal-notifier"
+  end
+
+  # Patch to fix build failure with BSD install
+  # Remove at next release
+  # https://github.com/gopasspw/gopass/pull/1859
+  patch do
+    url "https://github.com/gopasspw/gopass/commit/39c4c31e155ea3df0c5a538db56afca9c6f61525.patch?full_index=1"
+    sha256 "e73bd361f1f63dca46340145663ea7c3704554001bda14827a047701afcfe331"
   end
 
   def install
