@@ -31,6 +31,7 @@ class Unison < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "37c7719d8dba2927cf8b2a9159e430a6e1f54a71bb0238f471d5ed78ca903c80"
     sha256 cellar: :any_skip_relocation, catalina:      "e441bbd34b0931b31d12080d16ef301429b79621fc3e81edfd4fa04352894dc0"
     sha256 cellar: :any_skip_relocation, mojave:        "2ef33d3de8fec085d1349178f7efae7e37837b72cd84442bf7fbf491cfdedb22"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8400f0fbafc79441eed5ecb6c3cb897e3da562c8c4cad5cd29db00bf4d99fc99"
   end
 
   depends_on "ocaml" => :build
