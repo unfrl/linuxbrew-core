@@ -18,6 +18,7 @@ class Gnutls < Formula
     sha256 big_sur:       "72bc4290e20b342e85f6cc0e02f2d780eeff11bb1a9c40a4eb4473512ff09d9b"
     sha256 catalina:      "774fe85d6dfd00e5882258eeaf5edc81e98bf4d074b7fe49a52bcf116e50bc8a"
     sha256 mojave:        "0add13d231debe9e8a941f0295c09b87446127ca69bb2c67a069ac17cf6da858"
+    sha256 x86_64_linux:  "b2e4acbf5a062f3688bbee333592a563aaed639de9bbace805db62a985efbbab"
   end
 
   depends_on "autoconf" => :build
