@@ -11,6 +11,7 @@ class Cppcheck < Formula
     sha256 big_sur:       "755d0e70d7541cbfea47ca5792499e3f140d3c7a0d2796430829210497057bed"
     sha256 catalina:      "8f677e37fa53f6432cd763370375781986a6d97706d3a3c50561e465b70a0287"
     sha256 mojave:        "316ad7e3082e78e9316b943c7adcce849cd02b0e0b0096e0ea8faf4b8eccf6aa"
+    sha256 x86_64_linux:  "6c3a0e4f014e992e2c8f0ccd257a0087136d842cfae2fd7baa35b185c12c67bf"
   end
 
   depends_on "python@3.9" => :test
