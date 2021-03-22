@@ -7,10 +7,11 @@ class Qwt < Formula
   revision 1
 
   bottle do
-    sha256 arm64_big_sur: "61c473a8981af59dad4690620287f6386da12998020b7f869e23336bd1255c77"
-    sha256 big_sur:       "01d43fecf51f4177df97f93b868e93b916ef679955e9db5b7b6725113b25e139"
-    sha256 catalina:      "1d98e9f3c8df57fe0d1659afe81cb6d89b71145d0ba3247d08dc00cc1092dbb0"
-    sha256 mojave:        "05217eda2947313edf1946215b32b7f8bfbfc2d8ac69bb05c5bb8fbc1e5fc68b"
+    sha256                               arm64_big_sur: "61c473a8981af59dad4690620287f6386da12998020b7f869e23336bd1255c77"
+    sha256                               big_sur:       "01d43fecf51f4177df97f93b868e93b916ef679955e9db5b7b6725113b25e139"
+    sha256                               catalina:      "1d98e9f3c8df57fe0d1659afe81cb6d89b71145d0ba3247d08dc00cc1092dbb0"
+    sha256                               mojave:        "05217eda2947313edf1946215b32b7f8bfbfc2d8ac69bb05c5bb8fbc1e5fc68b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07c272a237d285d4bf5073da7b77bfd5f82968a9638b6064294a6f7eebc7b3d4"
   end
 
   depends_on "qt@5"
