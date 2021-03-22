@@ -13,12 +13,11 @@ class Gnutls < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "c17d19750e8de06d56d80c49c7e31fb7f334f345bcb1aa2489827f575c82cdbd"
-    sha256 big_sur:       "6f523e8ce74c567d17a4a5b69794e897074a016b895a5d8ef7122ac006b770fc"
-    sha256 catalina:      "513407ec28ac63623dbc05ac6880d59cf7c082827687dfda7d0f065232151878"
-    sha256 mojave:        "cd25205fbf27599b4186f8549324a50f045fa680b8c02a98230dcf910dff0941"
-    sha256 high_sierra:   "5a1c108c598159c9d3dc203bed684cf70ca5dae5ee875166b35420fd2415a61e"
-    sha256 x86_64_linux:  "a1378c9909a53fa4a65a12ebeb75fdbf1c0160ad0f3ac6e2da3aa87ac553489d"
+    rebuild 1
+    sha256 arm64_big_sur: "2be786f86b84f77ce5d9c15d4f059a240b4284039109a383b3a1d47f32ace17f"
+    sha256 big_sur:       "72bc4290e20b342e85f6cc0e02f2d780eeff11bb1a9c40a4eb4473512ff09d9b"
+    sha256 catalina:      "774fe85d6dfd00e5882258eeaf5edc81e98bf4d074b7fe49a52bcf116e50bc8a"
+    sha256 mojave:        "0add13d231debe9e8a941f0295c09b87446127ca69bb2c67a069ac17cf6da858"
   end
 
   depends_on "autoconf" => :build
@@ -69,15 +68,21 @@ class Gnutls < Formula
   def post_install
     return unless OS.mac?
 
+    ohai "Regenerating CA certificate bundle from keychain, this may take a while..."
+
     keychains = %w[
+      /Library/Keychains/System.keychain
       /System/Library/Keychains/SystemRootCertificates.keychain
     ]
 
     certs_list = `security find-certificate -a -p #{keychains.join(" ")}`
-    certs = certs_list.scan(/-----BEGIN CERTIFICATE-----.*?-----END CERTIFICATE-----/m)
+    certs = certs_list.scan(
+      /-----BEGIN CERTIFICATE-----.*?-----END CERTIFICATE-----/m,
+    )
 
+    # Check that the certificate has not expired
     valid_certs = certs.select do |cert|
-      IO.popen("openssl x509 -inform pem -checkend 0 -noout", "w") do |openssl_io|
+      IO.popen("openssl x509 -inform pem -checkend 0 -noout &>/dev/null", "w") do |openssl_io|
         openssl_io.write(cert)
         openssl_io.close_write
       end
@@ -85,8 +90,25 @@ class Gnutls < Formula
       $CHILD_STATUS.success?
     end
 
+    # Check that the certificate is trusted in keychain
+    trusted_certs = begin
+      tmpfile = Tempfile.new
+
+      valid_certs.select do |cert|
+        tmpfile.rewind
+        tmpfile.write cert
+        tmpfile.truncate cert.size
+        tmpfile.flush
+        IO.popen("/usr/bin/security verify-cert -l -L -R offline -c #{tmpfile.path} &>/dev/null")
+
+        $CHILD_STATUS.success?
+      end
+    ensure
+      tmpfile&.close!
+    end
+
     pkgetc.mkpath
-    (pkgetc/"cert.pem").atomic_write(valid_certs.join("\n"))
+    (pkgetc/"cert.pem").atomic_write(trusted_certs.join("\n") << "\n")
 
     # Touch gnutls.go to avoid Guile recompilation.
     # See https://github.com/Homebrew/homebrew-core/pull/60307#discussion_r478917491

@@ -1,16 +1,16 @@
 class Gopass < Formula
   desc "Slightly more awesome Standard Unix Password Manager for Teams"
   homepage "https://github.com/gopasspw/gopass"
-  url "https://github.com/gopasspw/gopass/releases/download/v1.12.3/gopass-1.12.3.tar.gz"
-  sha256 "3b38ef45df8caed208cd1d34cbf69fa640cd44908f60042b8d3f0e318d1dd62d"
+  url "https://github.com/gopasspw/gopass/releases/download/v1.12.4/gopass-1.12.4.tar.gz"
+  sha256 "779f2ce5e85e5366200c488b506adf5bfefa955d28bcc81e14c4a5758e7625f8"
   license "MIT"
   head "https://github.com/gopasspw/gopass.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "1c2b02bffd63fb5008ca569a24aa86cdc12ef5366f2c46633d3c7b7632f9bf5f"
-    sha256 cellar: :any_skip_relocation, big_sur:       "04394dc68f5c568040cc8229109ce3cf713d2c90cb935b680e4d27af6aa1aa93"
-    sha256 cellar: :any_skip_relocation, catalina:      "056573c87af5913fddd64aad1e92c862abc3a2f13573b2c224524e63b9282238"
-    sha256 cellar: :any_skip_relocation, mojave:        "99bc5fff2572a669e924e1130bdfa7142e8f2ecff38b70ac3ccfb95fd4855d4e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "394e0609baf7392eb37206e662d7ad06c126e12c6b500e7b791ad5649d76446a"
+    sha256 cellar: :any_skip_relocation, big_sur:       "c6a1e5fddf989795ce7620b979dbb05489650f51e2cd38e664425557057c9f6d"
+    sha256 cellar: :any_skip_relocation, catalina:      "b1382266a2616e7294d905d5a55b2996eea1b86c479cb369590af4895d47c53f"
+    sha256 cellar: :any_skip_relocation, mojave:        "352982b80a0e184d61911ed9e4fc5023e327757bee8228a3cdf6c9d8cba4f8e4"
   end
 
   depends_on "go" => :build
@@ -18,14 +18,6 @@ class Gopass < Formula
 
   on_macos do
     depends_on "terminal-notifier"
-  end
-
-  # Patch to fix build failure with BSD install
-  # Remove at next release
-  # https://github.com/gopasspw/gopass/pull/1859
-  patch do
-    url "https://github.com/gopasspw/gopass/commit/39c4c31e155ea3df0c5a538db56afca9c6f61525.patch?full_index=1"
-    sha256 "e73bd361f1f63dca46340145663ea7c3704554001bda14827a047701afcfe331"
   end
 
   def install
