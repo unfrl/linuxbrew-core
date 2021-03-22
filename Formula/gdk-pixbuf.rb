@@ -10,6 +10,7 @@ class GdkPixbuf < Formula
     sha256 big_sur:       "e322f11d0196713acd20b5bf4e14857de05a0cdd37499efc1cb4b6896b1c8026"
     sha256 catalina:      "c465612de5e4ffec59a0d78f793d5a701fff51a35a2bb73fb1b18410a3433dfd"
     sha256 mojave:        "2a37cb607621f83d20cd091723bdcd400040e5d3a726761b22a043699bd0b9aa"
+    sha256 x86_64_linux:  "8e193cf9c5bb7660e38a608963a0fe45b2c32e1cbea950bb5549e04a680cd4c7"
   end
 
   depends_on "gobject-introspection" => :build
