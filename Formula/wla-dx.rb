@@ -16,6 +16,7 @@ class WlaDx < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "a729e8e4d469169c6fc95061319c2ec671559ed4be526e2d18e86294f76e6baa"
     sha256 cellar: :any_skip_relocation, catalina:      "4946b7b021ec97dde39a00d445d4d9a0aecec69f6b7b7f69495a9e00ab99130a"
     sha256 cellar: :any_skip_relocation, mojave:        "b77b237add5437bb0f4ee190fa07f267d46837bf1ffa924bc1c5f2cdc536d747"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3fbf674da8f43cfb4ba6f51b9314f0f7ab71bb4b628639c69faa3e5ba2cd87b"
   end
 
   depends_on "cmake" => :build
