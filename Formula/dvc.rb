@@ -3,15 +3,15 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/be/f7/0c11247eaf3d55f8c6466276e2504f02e6e79f8dce1be7b360da2266705e/dvc-2.0.6.tar.gz"
-  sha256 "e2a3e7a6767587d16e8999ce6d2717bcec10245edee30164a39a3f663944884b"
+  url "https://files.pythonhosted.org/packages/0f/2f/5bdef7a43dc5210f5d9549bd25769d4bf729c0e8594ef5ff90e151440276/dvc-2.0.7.tar.gz"
+  sha256 "e1c230c4fb367ce30f10e1f2c7c03fa7e4b10c086f872fe27b66c35d74cd92a2"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "a41726713b23ec946346b5b8b597b0a1a8fca32f2be5aaf626619b54a7459733"
-    sha256 cellar: :any, big_sur:       "db30d6a05b02d4f9319df0d445a5d088e2bd522ff6b9723ec9ebe4472b55a358"
-    sha256 cellar: :any, catalina:      "51ba74c16b2c9022592ba4ee313016420cf4a440e70dc9b3040497431e05b50e"
-    sha256 cellar: :any, mojave:        "faae20d19975c87b6138ca49d1dae30c45081b5c592be5c2f6448162d310d856"
+    sha256 cellar: :any, arm64_big_sur: "7c4208e7945815591ed5d705038231868d0a223cea37ce38d09694c03945f28c"
+    sha256 cellar: :any, big_sur:       "1d754bb2a054ca9bd20ba1854a5a2beee0aa1507e5781fa11a5eae8b27becda4"
+    sha256 cellar: :any, catalina:      "64e0a5cf9444fea3684ac6b9f5123f7e7ed3b257478806972c90c4ff72a84d7f"
+    sha256 cellar: :any, mojave:        "d88d23fbea5dd5f61297da470c2acaa8728a674e140f912ddcfaeed6f69fb285"
   end
 
   depends_on "pkg-config" => :build
@@ -153,8 +153,8 @@ class Dvc < Formula
   end
 
   resource "mailchecker" do
-    url "https://files.pythonhosted.org/packages/5a/0d/513e57bf531843ea4613fec8b6843c3b44d57307c9e4d815875f79329d9c/mailchecker-4.0.3.tar.gz"
-    sha256 "00dbe9739c754366233eb3887c5deef987672482a26e814314c3e749fc7b1d1f"
+    url "https://files.pythonhosted.org/packages/8d/5c/37779c9bad98af5542138cc25a0a08ff0989e31d2449f54a9bc766f564e6/mailchecker-4.0.6.tar.gz"
+    sha256 "ab99a8d0933ca9deef130869825142e552d6b037f293a5ffa620132653fb03e7"
   end
 
   resource "nanotime" do
@@ -183,8 +183,8 @@ class Dvc < Formula
   end
 
   resource "phonenumbers" do
-    url "https://files.pythonhosted.org/packages/7e/42/4d54cb5316d5c1a816615eec8da51459292f0dfcacae27efd2ef07e55868/phonenumbers-8.12.19.tar.gz"
-    sha256 "0f597b602e64af90c06b14c8223e94fdb0ed20f203e1c9785a8bbe4de00c45e8"
+    url "https://files.pythonhosted.org/packages/ac/8b/695f6490dede7a8021fac4b5c964f6c4e4e76a61aa7ed478caf4a85eacb7/phonenumbers-8.12.20.tar.gz"
+    sha256 "ee5a8508c4a414262abad92ec33f050347f681973ed0fb36e98b52bfe159f6b8"
   end
 
   resource "ply" do
