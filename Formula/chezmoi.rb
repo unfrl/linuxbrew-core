@@ -12,6 +12,7 @@ class Chezmoi < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "322778ca009136099d020dd71c27d74f73b2be5aa1dbf2b8207263442cb5d9e5"
     sha256 cellar: :any_skip_relocation, catalina:      "ceb46db12e8b18dd34b1498e0dd99fe0f948ca25d48142733a4cdb1254f21505"
     sha256 cellar: :any_skip_relocation, mojave:        "b7785bcfc46186690d36a2cfa545506b60b1d35b4f1663ca824d783f00fce189"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a7f7f2a8057d74fb085502c42464346dbb6bde65db0ab02253f972859ac5042"
   end
 
   depends_on "go" => :build
