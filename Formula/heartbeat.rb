@@ -2,31 +2,27 @@ class Heartbeat < Formula
   desc "Lightweight Shipper for Uptime Monitoring"
   homepage "https://www.elastic.co/beats/heartbeat"
   url "https://github.com/elastic/beats.git",
-      tag:      "v7.11.1",
-      revision: "9b2fecb327a29fe8d0477074d8a2e42a3fabbc4b"
+      tag:      "v7.11.2",
+      revision: "1d9cced55410003f5d0b4594ff5471d15a4e2900"
   license "Apache-2.0"
   head "https://github.com/elastic/beats.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "55d57eca6546a9ba730a2fedc4d4d185d4784636d655ce7f383c2550747fb9d6"
-    sha256 cellar: :any_skip_relocation, big_sur:       "81b40e925a83d74512a8a73eb4cd6c9ca951396172d5fb9dac80c6bdf54bc1aa"
-    sha256 cellar: :any_skip_relocation, catalina:      "5bb02b948c3af4012c1fb1ff2ab644964ae0cb49283a9dc3a63d20c95b8a2584"
-    sha256 cellar: :any_skip_relocation, mojave:        "80a35b1215c4b8818e447ed3c02b491afdc0e06d83de2fbfdd38b06f43585816"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "05bb95e26ac845955e728a9a8b3872c387ba1dd674fcd2d8ebf682237de0fc7e"
+    sha256 cellar: :any_skip_relocation, big_sur:       "b215ed7baeb66996d4d9b2087241c9adf75d35ad388ec315ea09c7fe41ee6792"
+    sha256 cellar: :any_skip_relocation, catalina:      "8db4723c4f5673fb3777a57411b7f7e826aa09e03aa7c3815b703b1bc4a85bf3"
+    sha256 cellar: :any_skip_relocation, mojave:        "7de90c1cdd6af676dcf2c0fbce9a2b732734df0410c573f97a628d3e10ba9c01"
   end
 
   depends_on "go" => :build
+  depends_on "mage" => :build
   depends_on "python@3.9" => :build
 
   def install
     # remove non open source files
     rm_rf "x-pack"
 
-    ENV["GOPATH"] = buildpath
-    (buildpath/"src/github.com/elastic/beats").install buildpath.children
-    ENV.prepend_path "PATH", buildpath/"bin" # for mage (build tool)
-
-    cd "src/github.com/elastic/beats/heartbeat" do
-      system "make", "mage"
+    cd "heartbeat" do
       # prevent downloading binary wheels during python setup
       system "make", "PIP_INSTALL_PARAMS=--no-binary :all", "python-env"
       system "mage", "-v", "build"
@@ -36,8 +32,6 @@ class Heartbeat < Formula
       (etc/"heartbeat").install Dir["heartbeat.*", "fields.yml"]
       (libexec/"bin").install "heartbeat"
     end
-
-    prefix.install_metafiles buildpath/"src/github.com/elastic/beats"
 
     (bin/"heartbeat").write <<~EOS
       #!/bin/sh
