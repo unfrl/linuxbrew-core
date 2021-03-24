@@ -22,7 +22,9 @@ class FluentBit < Formula
   depends_on "cmake" => :build
   depends_on "flex" => :build
 
-  depends_on "openssl@1.1" unless OS.mac?
+  on_linux do
+    depends_on "openssl@1.1"
+  end
 
   def install
     # Per https://luajit.org/install.html: If MACOSX_DEPLOYMENT_TARGET
