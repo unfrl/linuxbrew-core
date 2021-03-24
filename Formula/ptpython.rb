@@ -13,6 +13,7 @@ class Ptpython < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "dd604371be0bf62e0485cc9fe7ec8e2ab53cf1059bd0146e5895d10969ec356d"
     sha256 cellar: :any_skip_relocation, catalina:      "212009d12a4ea37f77ca930b11f619b8b1d784323a746701356bee9efa9bbf14"
     sha256 cellar: :any_skip_relocation, mojave:        "dca5a5d745e0b3ba65589149183fa67d354462b0bcf6ce4fe654a887aa85df06"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4d568a07302216a06bf30143f75a9904d64f6bd4d8ca99e8d9ed7411d9ee3e4"
   end
 
   depends_on "python@3.9"
