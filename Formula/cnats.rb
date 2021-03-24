@@ -6,10 +6,11 @@ class Cnats < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "569dd4476c1151631a317cd5505b283108903dd208b570cd3f489df99a927ed0"
-    sha256 cellar: :any, big_sur:       "84513761d57db3c3dd87a7a587b39fe47f49186c4fa430f5bb87ed4896cc0b2e"
-    sha256 cellar: :any, catalina:      "a6e9c60644c9aaa3b2f5c250137947a2a5d27ac19db21a1cc444d2be5d6fe8dc"
-    sha256 cellar: :any, mojave:        "7db8f44385b323aa0fd2ee4efcd1e4939b89ffb93d96288e5d5d978f77f65473"
+    sha256 cellar: :any,                 arm64_big_sur: "569dd4476c1151631a317cd5505b283108903dd208b570cd3f489df99a927ed0"
+    sha256 cellar: :any,                 big_sur:       "84513761d57db3c3dd87a7a587b39fe47f49186c4fa430f5bb87ed4896cc0b2e"
+    sha256 cellar: :any,                 catalina:      "a6e9c60644c9aaa3b2f5c250137947a2a5d27ac19db21a1cc444d2be5d6fe8dc"
+    sha256 cellar: :any,                 mojave:        "7db8f44385b323aa0fd2ee4efcd1e4939b89ffb93d96288e5d5d978f77f65473"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "93b3836118712effb2a35f46b5d46e10d06a9509f6e65ef82b401e3056ed50ff"
   end
 
   depends_on "cmake" => :build
