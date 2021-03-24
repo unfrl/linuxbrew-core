@@ -16,6 +16,7 @@ class Lemon < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "4ce45a0aa918930d58d30cf6a4c729aecb403ee11016449c95f869eafc5acccc"
     sha256 cellar: :any_skip_relocation, catalina:      "0ce20136a56424d8cc07162171d4a46701a713bcead271d241db135b274d53d3"
     sha256 cellar: :any_skip_relocation, mojave:        "21b0c4309efc6b7c2be0b580806b403034e8c978081f2340a5d887d095f1963d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a1cd944208dc02d3e17ca0ef73c57951d348bee552500a72c18e992f7d39f4e"
   end
 
   def install
