@@ -8,6 +8,7 @@ class LinuxPam < Formula
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "aa25f92bd3b37f0413f0d372d789c3bc4f611ec04b03a666ed9beb1aea9b2bc4"
+    sha256                               x86_64_linux:  "465098b7da72f978dfece7fa8a12168b4730be8427d3cd9e6f55beafd66fa1dc"
   end
 
   depends_on "pkg-config" => :build
