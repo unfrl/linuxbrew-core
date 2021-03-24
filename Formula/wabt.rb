@@ -16,6 +16,7 @@ class Wabt < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "12a054364d20466125b3a44837e61cea381e338ab52f39fec39fd1620821aa4d"
     sha256 cellar: :any_skip_relocation, catalina:      "194483f64d7cbc55867fe2a28a212b68d178ef54ee71f3aed821f3fed4ec2f6c"
     sha256 cellar: :any_skip_relocation, mojave:        "3357aeea2079d849c26feaef863a5ffa527aa2c054cf813ad25d6afc116cf118"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb580542929cf4b7113b3af3e7ed21f553635d3371818162c0e1e58696cbacb0"
   end
 
   depends_on "cmake" => :build
