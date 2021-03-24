@@ -6,10 +6,11 @@ class Libmatio < Formula
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "3782a120f0b6f6f7a4ed927623eb131720745c838fde6825e2c3af242b62638d"
-    sha256 cellar: :any, big_sur:       "69052f804c792632ed2e29c4061015bb3c3270cbb6a6146f0959b5aa8f0133b8"
-    sha256 cellar: :any, catalina:      "3be0157dbe335338b1adedb1a0dcd8ffca7695f6f4ecf09a84fcbc36662e0535"
-    sha256 cellar: :any, mojave:        "ff7ed32d83439cd0e274468f44962509577146f511c0ac27eb9515cfc3a4b8c1"
+    sha256 cellar: :any,                 arm64_big_sur: "3782a120f0b6f6f7a4ed927623eb131720745c838fde6825e2c3af242b62638d"
+    sha256 cellar: :any,                 big_sur:       "69052f804c792632ed2e29c4061015bb3c3270cbb6a6146f0959b5aa8f0133b8"
+    sha256 cellar: :any,                 catalina:      "3be0157dbe335338b1adedb1a0dcd8ffca7695f6f4ecf09a84fcbc36662e0535"
+    sha256 cellar: :any,                 mojave:        "ff7ed32d83439cd0e274468f44962509577146f511c0ac27eb9515cfc3a4b8c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30e59ae5244094bbde1d157529f171039c42c61ae548134b7a0f9f79245e9d69"
   end
 
   depends_on "hdf5"
