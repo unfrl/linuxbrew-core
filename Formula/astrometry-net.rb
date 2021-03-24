@@ -13,10 +13,11 @@ class AstrometryNet < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "1424fac61426e18c1ee28c528b21b60b8b32c464c4102b82cc082850e9db7d41"
-    sha256 cellar: :any, big_sur:       "2cb514958572c469dfbc648b06c1f6c2471a038dcd6c92e9ef74f6342c42c445"
-    sha256 cellar: :any, catalina:      "5fcba0d1c13e2058800d50f7e36d660e0c7a135b5d381a81b7cdb580b2f6d886"
-    sha256 cellar: :any, mojave:        "569f2581812d7249ff3171e0dca14bfeac6a19dce50414c32f20fa25acee330c"
+    sha256 cellar: :any,                 arm64_big_sur: "1424fac61426e18c1ee28c528b21b60b8b32c464c4102b82cc082850e9db7d41"
+    sha256 cellar: :any,                 big_sur:       "2cb514958572c469dfbc648b06c1f6c2471a038dcd6c92e9ef74f6342c42c445"
+    sha256 cellar: :any,                 catalina:      "5fcba0d1c13e2058800d50f7e36d660e0c7a135b5d381a81b7cdb580b2f6d886"
+    sha256 cellar: :any,                 mojave:        "569f2581812d7249ff3171e0dca14bfeac6a19dce50414c32f20fa25acee330c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea99c284df1fc65abd39847c39229696e84e1bebc9ee875497035b46553854dc"
   end
 
   depends_on "pkg-config" => :build
