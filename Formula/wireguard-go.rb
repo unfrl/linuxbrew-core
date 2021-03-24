@@ -16,6 +16,7 @@ class WireguardGo < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "131da2ebc99a2ffd47bbb72a785eb9652dabb5b060c359d8bdfac5f4c16cbe89"
     sha256 cellar: :any_skip_relocation, catalina:      "23993db691d81f3b0ff8013f3f8c73d16e28e33a3dd80f3ddd7a297514e5ad6f"
     sha256 cellar: :any_skip_relocation, mojave:        "c3add9aa99b757e456d941a59bd49845bc888de70bc630eb52504682a0498aea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bcd0dce20c8842c8dfea52e8064479de79955827123a9b7e25f3c1153a500175"
   end
 
   depends_on "go" => :build
