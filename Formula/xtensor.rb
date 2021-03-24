@@ -10,6 +10,7 @@ class Xtensor < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "2efff1531132e26e1c90e8f4045fb00f309b2c76e0f1eaef3f2ed4653e15421b"
     sha256 cellar: :any_skip_relocation, catalina:      "8d262e5167037efa8f018225a9cd8bf57c2c9cfa3fd10338ff2aaf8813217eff"
     sha256 cellar: :any_skip_relocation, mojave:        "16150b10735944a9da90e827ebfebb41ed31633cdd95cf1514966b342600dafe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f35995357085cb24c86f6356e4c364fa01fbe0b06abbd85fcc23af42069298f9"
   end
 
   depends_on "cmake" => :build
