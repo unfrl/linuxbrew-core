@@ -26,6 +26,10 @@ jobs:
           echo issue=${{github.event.client_payload.issue}}
           echo "::set-output name=repo::$(brew --repo ${{github.repository}})"
 
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
       - name: Setup git
         uses: Homebrew/actions/git-user-config@master
 
@@ -35,8 +39,6 @@ jobs:
         run: |
           mkdir ~/bottles
           cd ~/bottles
-          brew update-reset
-          brew tap linuxbrew/xorg
           brew test-bot \
             --only-formulae \
             --keep-old \
