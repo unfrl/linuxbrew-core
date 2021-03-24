@@ -11,6 +11,7 @@ class CartridgeCli < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "4e1ce39892c0fd886d6eef83a7cfd3b0d3d1da7053163d89eb74d2fae51e106c"
     sha256 cellar: :any_skip_relocation, catalina:      "8d4133786be94cbfe6a2b036c17751461c5d97fc4991dcdc0055dd3d42deeda6"
     sha256 cellar: :any_skip_relocation, mojave:        "6e86c4eb3020be61d23a3f68d35f50d35fb95e38b30d2389fde6d0371bbab5a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1aaf91fedd6d2b76cc9ddd5b47b798cb7354089dbc4fb5a078d1cc18c5536de8"
   end
 
   depends_on "go" => :build
