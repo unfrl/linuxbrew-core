@@ -83,8 +83,10 @@ class OsmGpsMap < Formula
     ]
     system ENV.cc, "test.c", "-o", "test", *flags
 
-    # (test:40601): Gtk-WARNING **: 23:06:24.466: cannot open display
-    return if !OS.mac? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+    on_linux do
+      # (test:40601): Gtk-WARNING **: 23:06:24.466: cannot open display
+      return if ENV["HOMEBREW_GITHUB_ACTIONS"]
+    end
 
     system "./test"
   end
