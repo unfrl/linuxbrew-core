@@ -3,17 +3,16 @@ class Streamlink < Formula
 
   desc "CLI for extracting streams from various websites to a video player"
   homepage "https://streamlink.github.io/"
-  url "https://files.pythonhosted.org/packages/95/53/dfe1c1379677d0333bce40fcd10a42fbe5439fb561b61b8b8af47bd81bcf/streamlink-2.1.0.tar.gz"
-  sha256 "931383cefe385548ed9d371452741272512b6c75d6a6563935873d0efdf65a21"
+  url "https://files.pythonhosted.org/packages/05/da/5f25244ae3fbfdc712fea9bb4d3a158b365a8d8240f2949b2b0bf411cddb/streamlink-2.1.1.tar.gz"
+  sha256 "59c56540a137e2544b93c685e36e2fc005bffd0395293b05e7110c1e8b52545e"
   license "BSD-2-Clause"
   head "https://github.com/streamlink/streamlink.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "a8526e84f9253b832e0d492ea06753154158280368300fbfea09c3c56cacb434"
-    sha256 cellar: :any_skip_relocation, big_sur:       "0778ce009052e9794cb2358311d581838263f1428ee1b9fe4d7d57b622eaf799"
-    sha256 cellar: :any_skip_relocation, catalina:      "e9dd952122b054f853723125d2e1f709eceabdb7c372df10a53acaadff3b2850"
-    sha256 cellar: :any_skip_relocation, mojave:        "9d28758a0128d507c6ef7b0c00ead0a7fa3b8b7b875db18b65838bf856101bd2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d77a02c1217bf5afeae9195cd55fb5505edfbd951ede867d9903f9fcd72ef5f4"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "34490553a64507813bfe99f63cc131bd1ec77f6cc749e17c6018e20d59a640da"
+    sha256 cellar: :any_skip_relocation, big_sur:       "8080b7207dfc83bbbee4b1a838c85b8c54ddccb0d216b01c71cf78fed54e78ca"
+    sha256 cellar: :any_skip_relocation, catalina:      "c2a92e7c8f46ab22539720815a0d56f80859644e0d3e9c35fb517834eb427c03"
+    sha256 cellar: :any_skip_relocation, mojave:        "7e6001675b7bf52099e8bc56d9f76c50cb2487486fea4826742dbf57c90eece5"
   end
 
   depends_on "python@3.9"
