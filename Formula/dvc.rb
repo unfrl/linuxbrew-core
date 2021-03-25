@@ -3,15 +3,15 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/16/7a/3692e5836132d1d751b969b55774cb5f595eb7f49fd46f8ba48865448425/dvc-2.0.8.tar.gz"
-  sha256 "d554abc1cddcc3835f6846f5c2a48d5ead31ee0e24eb3b617a72f11b2e65f5f7"
+  url "https://files.pythonhosted.org/packages/1b/63/fc6a467b7789ce03cc439a47f738aa927962a48048e75d36bc365f512413/dvc-2.0.9.tar.gz"
+  sha256 "a750e8467fe0ca0336456aa5a61c3c677cb97e40037e0b698e51778540f8950d"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "c2422cac0dadd3df0cae00bd22d05ab1d3df4d45cf7176d3bfb0ac622c5c5bed"
-    sha256 cellar: :any, big_sur:       "b95418beda24847c35a80827b9879ccf4f2ecdfe5bdf99155cec26c6bfa9952e"
-    sha256 cellar: :any, catalina:      "7d0a3e5336a9cb87f756b5746021933b482135631b48d40a277f1fc623fb3942"
-    sha256 cellar: :any, mojave:        "9b0f55452a818ee0741af6c13789e25698095792820e6f194c7e3f2e1a6c0e5a"
+    sha256 cellar: :any, arm64_big_sur: "822d7fbcdb2a7ba86dd3fbadb7f55cde377ca5fec9a156c8166bc4e1a2980f11"
+    sha256 cellar: :any, big_sur:       "df2724220ce19c863d0e31f88f187659b18f140290c02d4da2d721db9f6e7710"
+    sha256 cellar: :any, catalina:      "1d2ab3f0c9757d09a18361728a56970cd6c6c13cda54ff14ead6e24167db2874"
+    sha256 cellar: :any, mojave:        "0ba4af223a3e3bbaf766d54c32f3ec32f7c2aad1a5823972f8e96999d5b092dc"
   end
 
   depends_on "pkg-config" => :build
