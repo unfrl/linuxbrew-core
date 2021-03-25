@@ -30,6 +30,7 @@ class Emacs < Formula
     sha256 big_sur:       "c4d216163623ccb65f21964df378f1c96871657cbc8ffa702dd3812e7d0e76d8"
     sha256 catalina:      "86274cfc78b97cf6b5e2e942b9283c2da926b8fa4a9a0400515661a9dccc7c24"
     sha256 mojave:        "8ed16db6ab57f13c9ec1104caf06388829118c8e94b13974f39d4c59d0faf612"
+    sha256 x86_64_linux:  "f8ad95a987d6bc3ba15c1410c7307f92321bd6a9553dff79a446caf000eb94b4"
   end
 
   head do
