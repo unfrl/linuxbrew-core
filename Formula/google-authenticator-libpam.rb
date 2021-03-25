@@ -20,6 +20,10 @@ class GoogleAuthenticatorLibpam < Formula
   depends_on "qrencode"
   depends_on "linux-pam" unless OS.mac?
 
+  on_linux do
+    depends_on "linux-pam"
+  end
+
   def install
     system "./bootstrap.sh"
     system "./configure", "--disable-dependency-tracking",
