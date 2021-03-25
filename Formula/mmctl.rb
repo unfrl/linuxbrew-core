@@ -17,6 +17,7 @@ class Mmctl < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "82f7363723083cef6467caf79263513f8d18538747e6de925c91e3181853a55a"
     sha256 cellar: :any_skip_relocation, catalina:      "ab27c7693893647e0ba7bf409d4b9802f8d5721ac28c20542aede98a283b16e0"
     sha256 cellar: :any_skip_relocation, mojave:        "ac0777f72eeaf8e48dc2f76b111df4745f9155f7f038d937aca43f89c69609ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "606e5bb2e87f25b9c5fbc39c7b6b3db73545efa4cb49374f4eac355803766d38"
   end
 
   depends_on "go" => :build
