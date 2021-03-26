@@ -8,9 +8,10 @@ class Istioctl < Formula
   head "https://github.com/istio/istio.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:  "f67083353bafc8108225fa4a3bbcaefef5bc1997bd9a57c6e8cf7f5cea9f3a48"
-    sha256 cellar: :any_skip_relocation, catalina: "a6787f565c6ed4df34810fdd244aaadee684ae372c5ec30688fcddf6fa20e1b4"
-    sha256 cellar: :any_skip_relocation, mojave:   "5346a08a81bfc74c2a40aee19de605f10ededcb4e05f8c23c7ddca408f27bd38"
+    sha256 cellar: :any_skip_relocation, big_sur:      "f67083353bafc8108225fa4a3bbcaefef5bc1997bd9a57c6e8cf7f5cea9f3a48"
+    sha256 cellar: :any_skip_relocation, catalina:     "a6787f565c6ed4df34810fdd244aaadee684ae372c5ec30688fcddf6fa20e1b4"
+    sha256 cellar: :any_skip_relocation, mojave:       "5346a08a81bfc74c2a40aee19de605f10ededcb4e05f8c23c7ddca408f27bd38"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1d34839e261f7a8b97bfe83e088cf84b41df552a92c11cce6b2f88af51e4d584"
   end
 
   depends_on "go" => :build
