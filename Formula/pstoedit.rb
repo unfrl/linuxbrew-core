@@ -19,11 +19,13 @@ class Pstoedit < Formula
   depends_on "imagemagick"
   depends_on "plotutils"
 
-  # "You need a C++ compiler, e.g., g++ (newer than 6.0) to compile pstoedit."
-  unless OS.mac?
-    fails_with gcc: "5"
+  on_linux do
     depends_on "gcc" => :build
   end
+
+  # "You need a C++ compiler, e.g., g++ (newer than 6.0) to compile pstoedit."
+  fails_with gcc: "5"
+  fails_with gcc: "6"
 
   def install
     ENV.append "CXXFLAGS", "-std=c++17"
