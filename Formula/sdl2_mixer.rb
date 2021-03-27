@@ -13,10 +13,11 @@ class Sdl2Mixer < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "0c30ec331d3f53fd97f7bac6a6107d49d07e5804e2830c1d2ee536caeaa532e6"
-    sha256 cellar: :any, big_sur:       "2fdc878fe345af8ab210786b42bfd998db006b990becd8f7f1bae1f2b2ab1b73"
-    sha256 cellar: :any, catalina:      "3533275c4351a77010b161b24f195fd00ede8780e940a477773367eb97cb5008"
-    sha256 cellar: :any, mojave:        "6d797207e602091ecee25168556e27f03665f5a9cb5d759152689b62e114f58b"
+    sha256 cellar: :any,                 arm64_big_sur: "0c30ec331d3f53fd97f7bac6a6107d49d07e5804e2830c1d2ee536caeaa532e6"
+    sha256 cellar: :any,                 big_sur:       "2fdc878fe345af8ab210786b42bfd998db006b990becd8f7f1bae1f2b2ab1b73"
+    sha256 cellar: :any,                 catalina:      "3533275c4351a77010b161b24f195fd00ede8780e940a477773367eb97cb5008"
+    sha256 cellar: :any,                 mojave:        "6d797207e602091ecee25168556e27f03665f5a9cb5d759152689b62e114f58b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d70cbd83404b632a8a908a0686f17f34a3f966d716c12b0512ac180ef8d4e861"
   end
 
   depends_on "pkg-config" => :build
