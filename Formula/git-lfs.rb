@@ -10,6 +10,7 @@ class GitLfs < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "153252f96cb3d77c2980f18c5eab591f237b011f4426f1faf918ecdc51969a33"
     sha256 cellar: :any_skip_relocation, catalina:      "c99996a1fbfee4c5d4d0ac3cd38d42d884224ab3f305566ed13309b6bc63b9b4"
     sha256 cellar: :any_skip_relocation, mojave:        "69d6da76ac82d66f0cf36352f7c65af24918241241fbda5fe4ab74030094e597"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3019b423ac060ef6c0a8d0f5a8a6fbeed7286eb60c9ee4dd0422e30a784f07d"
   end
 
   depends_on "go" => :build
