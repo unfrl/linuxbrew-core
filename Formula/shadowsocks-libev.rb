@@ -7,10 +7,11 @@ class ShadowsocksLibev < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "4fb1d6c97502780f2d6462e630f8bbfa0b56e3974954353ea9a14dad3ac783a6"
-    sha256 cellar: :any, big_sur:       "1a2381a03550ecdef8c098747e96707aa99317bbcc7b8595f1b26a27a9267fb8"
-    sha256 cellar: :any, catalina:      "7e2e484607287b95e8572fd902da733cb9ec93b3f6ebe7de365d5b729e133fa0"
-    sha256 cellar: :any, mojave:        "711ae7d8be8df5607abcf7e04090d272184dae68e3771db15973e92cc1712382"
+    sha256 cellar: :any,                 arm64_big_sur: "4fb1d6c97502780f2d6462e630f8bbfa0b56e3974954353ea9a14dad3ac783a6"
+    sha256 cellar: :any,                 big_sur:       "1a2381a03550ecdef8c098747e96707aa99317bbcc7b8595f1b26a27a9267fb8"
+    sha256 cellar: :any,                 catalina:      "7e2e484607287b95e8572fd902da733cb9ec93b3f6ebe7de365d5b729e133fa0"
+    sha256 cellar: :any,                 mojave:        "711ae7d8be8df5607abcf7e04090d272184dae68e3771db15973e92cc1712382"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4639eb0a58de8f7cb4268e6fb6dbee7b060785ebc686f900b0cd1350980ac17"
   end
 
   head do
