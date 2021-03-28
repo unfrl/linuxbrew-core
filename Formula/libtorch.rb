@@ -4,8 +4,8 @@ class Libtorch < Formula
   desc "Tensors and dynamic neural networks"
   homepage "https://pytorch.org/"
   url "https://github.com/pytorch/pytorch.git",
-      tag:      "v1.8.0",
-      revision: "37c1f4a7fef115d719104e871d0cf39434aa9d56"
+      tag:      "v1.8.1",
+      revision: "56b43f4fec1f76953f15a627694d4bba34588969"
   license "BSD-3-Clause"
 
   livecheck do
@@ -14,9 +14,9 @@ class Libtorch < Formula
   end
 
   bottle do
-    sha256 cellar: :any, big_sur:  "08759cfe3f5c0ab60f1d74332703d67c9ca54bafe6be60afab7a210518af7920"
-    sha256 cellar: :any, catalina: "4f5ccf4bc4b19c2eca0ef12fd06d820b181cb9b7b3187e6259a7ecc352372c27"
-    sha256 cellar: :any, mojave:   "8975867c5c88ed33c6db76dda75b65bb650c31a60eadcbb12c7fe1b7eab74e70"
+    sha256 cellar: :any, big_sur:  "a54d2d66fbe9ae20d674d9d784cba3d216d39282a928abdc4bdc1e8bf3df2be4"
+    sha256 cellar: :any, catalina: "477823228ada7f2292e27ffbe22af9916851b77a0ac001203a7a3a347ba5bfba"
+    sha256 cellar: :any, mojave:   "21049d9645216ee9ce2ae98876fef743b3a99f3882d2ff326fe659da3116714f"
   end
 
   depends_on "cmake" => :build

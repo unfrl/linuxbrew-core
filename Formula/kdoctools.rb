@@ -1,22 +1,21 @@
 class Kdoctools < Formula
   desc "Create documentation from DocBook"
   homepage "https://api.kde.org/frameworks/kdoctools/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.79/kdoctools-5.79.0.tar.xz"
-  sha256 "ebc37ba10261fc05808ae332260eabfc86705b1d0cf906b529ca7099df907b0d"
+  url "https://download.kde.org/stable/frameworks/5.80/kdoctools-5.80.0.tar.xz"
+  sha256 "1eae100e641206ef01275d3577c286f73523a516854fe146121ceb302fc0ac83"
   license all_of: [
     "BSD-3-Clause",
     "GPL-2.0-or-later",
     "LGPL-2.1-or-later",
     any_of: ["LGPL-2.1-only", "LGPL-3.0-only"],
   ]
-  revision 1
   head "https://invent.kde.org/frameworks/kdoctools.git"
 
   bottle do
-    sha256 arm64_big_sur: "c2495fefca3981cc0a77d78057a9084fc76e5fcf1ff491d2287ecd43fbe85822"
-    sha256 big_sur:       "2f905aa2df6b6035a7379cf4d907b2ed013a8b2f1d06fa7698484372660114b6"
-    sha256 catalina:      "dccc858a4d796bc7e6cf25ef7904c95525728527d4a369992ad48d8c587fcabf"
-    sha256 mojave:        "5152d9d4b82dd95a4f871e81afa8a8fd2617cd59f718bbd3ac1d3901f08dd23f"
+    sha256 arm64_big_sur: "0ae15708d6dc13c5c6dcdf69700c29b09734205119444f396a3fa77c7a0b7ce4"
+    sha256 big_sur:       "d42665a9b006c821f8e71f39c48fc25d9563167bebdd6902884e4df2d64464fb"
+    sha256 catalina:      "12a1b64864af6bfdaed18c7157d1a2fbd9dcd5f59ffd70ce7df2be0b4c1a8202"
+    sha256 mojave:        "05aad2aff1561a4a73a2e9f7060e4f00035dfa59ae1f880c6ab9bc9542fa29d5"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -33,8 +32,8 @@ class Kdoctools < Formula
   uses_from_macos "perl"
 
   resource "URI::Escape" do
-    url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-1.76.tar.gz"
-    sha256 "b2c98e1d50d6f572483ee538a6f4ccc8d9185f91f0073fd8af7390898254413e"
+    url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-5.09.tar.gz"
+    sha256 "03e63ada499d2645c435a57551f041f3943970492baa3b3338246dab6f1fae0a"
   end
 
   def install
