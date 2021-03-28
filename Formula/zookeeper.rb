@@ -8,9 +8,10 @@ class Zookeeper < Formula
   head "https://gitbox.apache.org/repos/asf/zookeeper.git"
 
   bottle do
-    sha256 cellar: :any, big_sur:  "7dbe1fb25e88aa574a0772d60f5e6cac74c9d6973d2a6fd985ed57bb8ba04064"
-    sha256 cellar: :any, catalina: "8ee9ba9ef8f089b3b1e5c399e8240b1c53582f7232be43f86e9d1f4db9b33c05"
-    sha256 cellar: :any, mojave:   "89e29710ba842ed9f5ea5dd4a88cadc356e9216e6bad238a6774b7da8ab90ac2"
+    sha256 cellar: :any,                 big_sur:      "7dbe1fb25e88aa574a0772d60f5e6cac74c9d6973d2a6fd985ed57bb8ba04064"
+    sha256 cellar: :any,                 catalina:     "8ee9ba9ef8f089b3b1e5c399e8240b1c53582f7232be43f86e9d1f4db9b33c05"
+    sha256 cellar: :any,                 mojave:       "89e29710ba842ed9f5ea5dd4a88cadc356e9216e6bad238a6774b7da8ab90ac2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ab6e6e55f4917c567de34d50fcb902e54dd7b2d44ea37b0bdbaf1dcf95ac0abf"
   end
 
   depends_on "autoconf" => :build
