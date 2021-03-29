@@ -10,6 +10,7 @@ class Just < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "4ba638cbf677306d133c40306467bbca28cac9885491877bd11aba87a1c93ea4"
     sha256 cellar: :any_skip_relocation, catalina:      "a36550958769b325b8edb7463e038d6ef4f2abdfed66381f544469293bb97c9e"
     sha256 cellar: :any_skip_relocation, mojave:        "9694353cd6f0aa8570fb65cfecb9a18bc8b55d3bca738794f672f2da9a27e554"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59859099e923bed16c74dc8031baaa7947224f294731c84e1742957b5c34f8c6"
   end
 
   depends_on "rust" => :build
