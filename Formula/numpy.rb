@@ -20,14 +20,7 @@ class Numpy < Formula
   depends_on "openblas"
   depends_on "python@3.9"
 
-  unless OS.mac?
-    depends_on "gcc" # Fix error with avx512, use gcc10
-    fails_with gcc: "5"
-    fails_with gcc: "6"
-    fails_with gcc: "7"
-    fails_with gcc: "8"
-    fails_with gcc: "9"
-  end
+  fails_with gcc: "5"
 
   def install
     openblas = Formula["openblas"].opt_prefix
@@ -46,8 +39,9 @@ class Numpy < Formula
     xy = Language::Python.major_minor_version Formula["python@3.9"].opt_bin/"python3"
     ENV.prepend_create_path "PYTHONPATH", Formula["cython"].opt_libexec/"lib/python#{xy}/site-packages"
 
-    system Formula["python@3.9"].opt_bin/"python3", *Language::Python.setup_install_args(prefix),
-      "build", "--fcompiler=gnu95", "--parallel=#{ENV.make_jobs}"
+    system Formula["python@3.9"].opt_bin/"python3", "setup.py", "build",
+        "--fcompiler=gfortran", "--parallel=#{ENV.make_jobs}"
+    system Formula["python@3.9"].opt_bin/"python3", *Language::Python.setup_install_args(prefix)
   end
 
   test do
