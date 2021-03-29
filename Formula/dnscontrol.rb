@@ -16,6 +16,7 @@ class Dnscontrol < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "82dd7f8359359110162127a6434b88188a8d83a53053f68a154ff2cf16ca6b58"
     sha256 cellar: :any_skip_relocation, catalina:      "f53e918934f4346dba2d50adf7f1d310fb752e9e9ba387716e6629a1b3919636"
     sha256 cellar: :any_skip_relocation, mojave:        "2ff5b255b9d4bd3d067f0cbfdf77e4c42ad2023f64abc0da88db29e0d86facb0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "63f1b17b793d65c871e86dbebbabf768f57f3ea328c84419a2d0c3e27fa42c89"
   end
 
   depends_on "go" => :build
