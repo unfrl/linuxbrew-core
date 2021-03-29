@@ -11,6 +11,7 @@ class Miniserve < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "ed00b5ecac34f86ff0cdcd6ee5ee700e2b57b548cad57fccf2131ad767550c95"
     sha256 cellar: :any_skip_relocation, catalina:      "fe8dd08807a8dc19e4d524cdd679edc0bc040c02760675b5a6cb4e1d2f653777"
     sha256 cellar: :any_skip_relocation, mojave:        "3d8675c010f0951211d779953c0f8e9cb832a0bcbb62950c270401858c4f1fa6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a7ee1fd6b880882dc9c717f54963bc5d01687580b87ede52c06035055ba27ef"
   end
 
   depends_on "rust" => :build
