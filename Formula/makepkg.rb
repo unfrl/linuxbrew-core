@@ -15,6 +15,8 @@ class Makepkg < Formula
     sha256 x86_64_linux: "89db5edb447a533a4f754a0e716e37977b8427aecab14f4ac0649afee17b783c"
   end
 
+  disable! date: "2022-03-28", because: "depends on fakeroot which does not build"
+
   depends_on "asciidoc" => :build
   depends_on "autoconf" => :build
   depends_on "automake" => :build

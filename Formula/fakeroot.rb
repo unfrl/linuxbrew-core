@@ -17,6 +17,11 @@ class Fakeroot < Formula
     sha256 cellar: :any, x86_64_linux: "418aeb02f20803d77d5bbbdaaea068b8ffc2a89cc2ab7b824845bc82d1a68cb8"
   end
 
+  # Does not build. Mac support looks abandoned since 2013
+  # Initial mac support: https://github.com/mackyle/fakeroot
+  # https://salsa.debian.org/clint/fakeroot/-/blob/master/README_MACOSX.txt
+  disable! date: "2022-03-28", because: :does_not_build
+
   on_linux do
     depends_on "libcap"
   end
