@@ -3,16 +3,15 @@ class Localstack < Formula
 
   desc "Fully functional local AWS cloud stack"
   homepage "https://github.com/localstack/localstack"
-  url "https://files.pythonhosted.org/packages/15/5e/eda186199d8033caf286599d40fa04a7939c07b2c1bd0426ad1887429dc6/localstack-0.12.8.tar.gz"
-  sha256 "8a038785f6a9d0743ba5bd1a80de8adf8b81b5de0d6ee8b6d7672fb3c201f470"
+  url "https://files.pythonhosted.org/packages/99/43/a18a93a746940067067301ef99c71b2c34e65d2d1cf1aac190b93b79a48e/localstack-0.12.9.tar.gz"
+  sha256 "6bd6b94cf29158ebbd02a58096e9dc42bf0dec8a36f81d77635ac5c5f4ad1408"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "8b30f23ebe971bfe1be3d241d575ab59da50a4429fbe62f3dc010ab6be16e560"
-    sha256 cellar: :any_skip_relocation, big_sur:       "e05722d188594aebcb1e20a41cf97a6b75ef45736d78eb07c24a267f84c341d7"
-    sha256 cellar: :any_skip_relocation, catalina:      "46a292fc378b7d79f51f5e15df00f17bac2a4ac0a57513d66fc7bbcdc8fdbabe"
-    sha256 cellar: :any_skip_relocation, mojave:        "ac867927a9dee61759f6adf61d43cb80e3b6cd846e9ab14c426f8706b7c40f74"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4dbaeb2276aa782e8ad8abe0766624035c022a046bcb5488ae1617b8f176e600"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "e17fe54a393069e72d53f84c16f762bfe53dfe5597529afa40ea0586470a84f0"
+    sha256 cellar: :any_skip_relocation, big_sur:       "39a44bef5e40bce5bb3147f3f76e463b757775c6fc48e7d2f26c72afe8386967"
+    sha256 cellar: :any_skip_relocation, catalina:      "f0929b72baed48033e265ff6187e0034800e748e11619b76d6829103cb8cb905"
+    sha256 cellar: :any_skip_relocation, mojave:        "3c377a6dfa76a3da40522726efe4053b5e15f480c81a7b0fe8ba72f5ee4ea205"
   end
 
   depends_on "docker" => :test
@@ -86,6 +85,11 @@ class Localstack < Formula
   resource "python-dateutil" do
     url "https://files.pythonhosted.org/packages/be/ed/5bbc91f03fa4c839c4c7360375da77f9659af5f7086b7a7bdda65771c8e0/python-dateutil-2.8.1.tar.gz"
     sha256 "73ebfe9dbf22e832286dafa60473e4cd239f8592f699aa5adaf10050e6e1823c"
+  end
+
+  resource "PyYAML" do
+    url "https://files.pythonhosted.org/packages/9f/2c/9417b5c774792634834e730932745bc09a7d36754ca00acf1ccd1ac2594d/PyYAML-5.1.tar.gz"
+    sha256 "436bc774ecf7c103814098159fbb84c2715d25980175292c648f2da143909f95"
   end
 
   resource "requests" do
