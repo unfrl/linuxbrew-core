@@ -7,10 +7,11 @@ class TomcatNative < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "d5b0732197c5cb2725a782c00ade437b56437902877a1ee9a9243aa082837872"
-    sha256 cellar: :any, big_sur:       "b7927a1b378281e8c318d19cc6cadeb3abedd39b1d2dce0b021ca54082bd714f"
-    sha256 cellar: :any, catalina:      "7ca15193dda017ea444ca92da0a7789844731cd3d4594970e84c5a399daccac6"
-    sha256 cellar: :any, mojave:        "4530aff033f5dc75a273f0f09bc0b70aa83949b9caa741288068f99ccbe47828"
+    sha256 cellar: :any,                 arm64_big_sur: "d5b0732197c5cb2725a782c00ade437b56437902877a1ee9a9243aa082837872"
+    sha256 cellar: :any,                 big_sur:       "b7927a1b378281e8c318d19cc6cadeb3abedd39b1d2dce0b021ca54082bd714f"
+    sha256 cellar: :any,                 catalina:      "7ca15193dda017ea444ca92da0a7789844731cd3d4594970e84c5a399daccac6"
+    sha256 cellar: :any,                 mojave:        "4530aff033f5dc75a273f0f09bc0b70aa83949b9caa741288068f99ccbe47828"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "382b6effa0fe6d2e4e7e40ddcb628d3c23d4c67402f0a005abdb0cc344a4ad15"
   end
 
   depends_on "libtool" => :build
