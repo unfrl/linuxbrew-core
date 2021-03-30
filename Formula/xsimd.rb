@@ -10,6 +10,7 @@ class Xsimd < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "fa6998d360357803e3eb73aa4140d2610f0c0aacd0f88468ae8c8956c44106c2"
     sha256 cellar: :any_skip_relocation, catalina:      "332df0f1f0266c305be2d776a617bb0a6594c641c85b2ff96f9223acd8487f9f"
     sha256 cellar: :any_skip_relocation, mojave:        "ae39c2f9ab6c9107917a3da3b3a30ab15e51e77d4758255301d2c787d8650bd3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b4033f0ea2c744cce56e8e961282e8561a4cd1d69ca23aadcf3f8a94d31d13c"
   end
 
   depends_on "cmake" => :build
