@@ -2,16 +2,16 @@ class Salt < Formula
   include Language::Python::Virtualenv
 
   desc "Dynamic infrastructure communication bus"
-  homepage "https://s.saltstack.com/community/"
-  url "https://files.pythonhosted.org/packages/b4/e4/2a5e35c1613dd7aeec2c338344640af4b31c6f05f39eac8fa0ad7cb63211/salt-3002.5.tar.gz"
-  sha256 "c8ab404335104351066ec1bcc42278aa77e24aaacc308603939d75aba05519af"
+  homepage "https://saltproject.io/"
+  url "https://files.pythonhosted.org/packages/c7/5d/5e4913197397fe0a8da43a93afa0981dda72c016710deb458d5c0e963c77/salt-3002.6.tar.gz"
+  sha256 "ffc478569363e1d17b6a3a0c421eaae9c079bbeabc4c7725a222d0fbf903a0a5"
   license "Apache-2.0"
   head "https://github.com/saltstack/salt.git", branch: "develop", shallow: false
 
   bottle do
-    sha256 cellar: :any, big_sur:  "13f0e941e53bf2a481be69867aeab6f5809c19daa6fb18ce53add4f97b7913ab"
-    sha256 cellar: :any, catalina: "8010cac3181773d09776753e9ab953e791c0807daac9dd116cfc0b4a37cdd263"
-    sha256 cellar: :any, mojave:   "e35ae2359164320aa801e2a7f8f5d10b877f9a1e56380ba5580e4196cfd69651"
+    sha256 cellar: :any, big_sur:  "5b34dd2ac430f9945887586fe783b6ccafede5561e00848437570e48878fd3b8"
+    sha256 cellar: :any, catalina: "9dfb520da58dc85e2dbe23bce4c6dcb5fba574ffe8114cac36895b7c21a3993b"
+    sha256 cellar: :any, mojave:   "6fdc0409e980bf9a01ba379b08952d032b84826e0347d1d0c1be6bd3816c3673"
   end
 
   depends_on "swig" => :build
@@ -57,7 +57,7 @@ class Salt < Formula
     sha256 "033be54514a03e255df75c5aee8f9e672f663f93abb723444caec8fe43437bde"
   end
 
-  # Homebrew installs optional dependencies: M2Crypto, pygit2
+  # Homebrew installs optional dependencies: pycryptodome, pygit2
   #
   # Plase do not add PyObjC (pyobjc* resources) since it causes broken linkage
   # https://github.com/Homebrew/homebrew-core/pull/52835#issuecomment-617502578
@@ -147,11 +147,6 @@ class Salt < Formula
     sha256 "5078aae54a5f6f325ac8cd47c3baa2582546d51b7060a0f9f6ad851027817bc0"
   end
 
-  resource "M2Crypto" do
-    url "https://files.pythonhosted.org/packages/aa/36/9fef97358e378c1d3bd567c4e8f8ca0428a8d7e869852cef445ee6da91fd/M2Crypto-0.37.1.tar.gz"
-    sha256 "e4e42f068b78ccbf113e5d0a72ae5f480f6c3ace4940b91e4fff5598cfff6fb3"
-  end
-
   resource "Mako" do
     url "https://files.pythonhosted.org/packages/eb/f3/67579bb486517c0d49547f9697e36582cd19dafb5df9e687ed8e22de57fa/Mako-1.0.7.tar.gz"
     sha256 "4e02fde57bd4abb5ec400181e4c314f56ac3e49ba4fb8b0d50bba18cb27d25ae"
@@ -172,11 +167,6 @@ class Salt < Formula
     sha256 "9534d5cc480d4aff720233411a1f765be90885750b07df772380b34c10ecb5c0"
   end
 
-  resource "parameterized" do
-    url "https://files.pythonhosted.org/packages/c6/23/2288f308d238b4f261c039cafcd650435d624de97c6ffc903f06ea8af50f/parameterized-0.8.1.tar.gz"
-    sha256 "41bbff37d6186430f77f900d777e5bb6a24928a1c46fb1de692f8b52b8833b5c"
-  end
-
   resource "portend" do
     url "https://files.pythonhosted.org/packages/04/98/997f8668b11292f13d3e69fc626232c497228306c764523c5a3a3b59c775/portend-2.6.tar.gz"
     sha256 "600dd54175e17e9347e5f3d4217aa8bcf4bf4fa5ffbc4df034e5ec1ba7cdaff5"
@@ -195,6 +185,11 @@ class Salt < Formula
   resource "pycparser" do
     url "https://files.pythonhosted.org/packages/68/9e/49196946aee219aead1290e00d1e7fdeab8567783e83e1b9ab5585e6206a/pycparser-2.19.tar.gz"
     sha256 "a988718abfad80b6b157acce7bf130a30876d27603738ac39f140993246b25b3"
+  end
+
+  resource "pycryptodome" do
+    url "https://files.pythonhosted.org/packages/88/7f/740b99ffb8173ba9d20eb890cc05187677df90219649645aca7e44eb8ff4/pycryptodome-3.10.1.tar.gz"
+    sha256 "3e2e3a06580c5f190df843cdb90ea28d61099cf4924334d5297a995de68e4673"
   end
 
   resource "pycryptodomex" do
@@ -306,6 +301,10 @@ class Salt < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/salt --version")
+    output = shell_output("#{bin}/salt --config-dir=#{testpath} --log-file=/dev/null --versions")
+    assert_match "Salt: #{version}", output
+    assert_match "Python: #{Formula["python@3.9"].version}", output
+    assert_match "libgit2: #{Formula["libgit2"].version}", output
+    assert_match "M2Crypto: Not Installed", output
   end
 end

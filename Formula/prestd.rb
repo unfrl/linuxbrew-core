@@ -1,17 +1,16 @@
 class Prestd < Formula
   desc "Simplify and accelerate development on any Postgres application, existing or new"
   homepage "https://github.com/prest/prest"
-  url "https://github.com/prest/prest/archive/v1.0.5.tar.gz"
-  sha256 "a11aad345212e12d461fbe5410e25be0e1c934f6c7afec50307f6520adb33240"
+  url "https://github.com/prest/prest/archive/v1.0.6.tar.gz"
+  sha256 "70da3ca11365ca30711d12d15e2d2fafc9fe885a8fafc520c4506b54a30518f6"
   license "MIT"
   head "https://github.com/prest/prest.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "9ced6ca37e5bb761ce0a9c9193cb708256c562cdd40a61175c0baa15fa8eaaf9"
-    sha256 cellar: :any_skip_relocation, big_sur:       "c101c96f4fd8d3b06e0cfc54a69bdc0642edfe332798c405a03d3e2e31f1b070"
-    sha256 cellar: :any_skip_relocation, catalina:      "928c4bedf740e8175a043f897127f91e6d2dd05ce2db6082a17d08e860cebe22"
-    sha256 cellar: :any_skip_relocation, mojave:        "71dbc89a3c45c6a900f66683150e10b9d8e989d34abfa49d5f9ced013b227e36"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b23231fe718b48095074e2fb99e0984b6499fa4765498d1b7f0b4de31917d619"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "e320adf08e40dcedf77c47cdcf49cfdd323602ed26b14f00cf482dcb6fb0db39"
+    sha256 cellar: :any_skip_relocation, big_sur:       "55607f36399575f2cfd7714cf519c5cdac435944ecbd61cc415d6876b195d1a6"
+    sha256 cellar: :any_skip_relocation, catalina:      "e006dabbaa0ba8c86a51ef0c4441519bfc099ff04719c89abde91a433b16cee1"
+    sha256 cellar: :any_skip_relocation, mojave:        "f2c5b3cb1e143efd66fd1c89056ce78d69f5e961afa88076075d971a8ec07f06"
   end
 
   depends_on "go" => :build
