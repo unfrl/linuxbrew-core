@@ -13,10 +13,11 @@ class Lua < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_big_sur: "e48d1536762f0d3dae3247586c3315aea3aacf249a0142303a92809a95ed1247"
-    sha256 cellar: :any, big_sur:       "e59dc980047218242a11cd735216b5ec881c45c60f50fffd5edd68450c281b94"
-    sha256 cellar: :any, catalina:      "e79726810bfb57b4803ddba7f83a6e1b231724a3d19d8bfc63ba6a003f2fe886"
-    sha256 cellar: :any, mojave:        "862243ef1193911dc07afcafcfbcbda1b6834d528dbdbfdd5558a27ef902d044"
+    sha256 cellar: :any,                 arm64_big_sur: "e48d1536762f0d3dae3247586c3315aea3aacf249a0142303a92809a95ed1247"
+    sha256 cellar: :any,                 big_sur:       "e59dc980047218242a11cd735216b5ec881c45c60f50fffd5edd68450c281b94"
+    sha256 cellar: :any,                 catalina:      "e79726810bfb57b4803ddba7f83a6e1b231724a3d19d8bfc63ba6a003f2fe886"
+    sha256 cellar: :any,                 mojave:        "862243ef1193911dc07afcafcfbcbda1b6834d528dbdbfdd5558a27ef902d044"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1465450038e1e18b964533e18b2213f851d90430b756c21e462df0dc71926527"
   end
 
   uses_from_macos "unzip" => :build
