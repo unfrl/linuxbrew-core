@@ -17,6 +17,7 @@ class Gh < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "e2c1698ed62087998541b45b4758f0bb6c025be2ccef3d7b5df008aa29ea5587"
     sha256 cellar: :any_skip_relocation, catalina:      "7744996aa942cde9f3585a1ea322cacde82f123cd8d484d14948665c55845d07"
     sha256 cellar: :any_skip_relocation, mojave:        "8fcab6998821e19696c0c27670b7a1873c9bd6a2220a8668f25df05e112feb50"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec6cd4e1b179362145bcf0a5768087f0c43b8b4df470edf580db061b3fe329c8"
   end
 
   depends_on "go" => :build
