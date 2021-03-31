@@ -3,7 +3,7 @@ class Intltool < Formula
   homepage "https://wiki.freedesktop.org/www/Software/intltool"
   url "https://launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.tar.gz"
   sha256 "67c74d94196b153b774ab9f89b2fa6c6ba79352407037c8c14d5aeb334e959cd"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
   revision 2 unless OS.mac?
 
   bottle do
@@ -19,7 +19,7 @@ class Intltool < Formula
     sha256 cellar: :any_skip_relocation, mavericks:     "5deeef3625d52f71d633e7510396d0028ec7b7ccf40c78b5d254bdf4214e6363"
   end
 
-  unless OS.mac?
+  on_linux do
     depends_on "expat"
     depends_on "perl"
 
@@ -30,9 +30,8 @@ class Intltool < Formula
   end
 
   def install
-    ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
-
-    unless OS.mac?
+    on_linux do
+      ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
       resources.each do |res|
         res.stage do
           system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}"
