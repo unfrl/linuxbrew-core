@@ -10,6 +10,7 @@ class TektoncdCli < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "108cae7a645a8e18a08a2152ecfe853b0df1a1f635b13209f190c45484da198d"
     sha256 cellar: :any_skip_relocation, catalina:      "628597d1784087456f98f3aaa5dc8bdeb763b24d7579e3cd58154904f5fadcd0"
     sha256 cellar: :any_skip_relocation, mojave:        "7e6589646e8a24d63e07a0218dc83ed0fff2541e49fadf4d40e47a01aaa453ad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c6c4d298e57cee151748ddeed7b7e7501336e4bf0955617a56c71d2be98faec"
   end
 
   depends_on "go" => :build
