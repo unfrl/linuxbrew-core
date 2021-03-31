@@ -11,6 +11,7 @@ class Luarocks < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "cc1a0cf24af052f5f0c05c2a3a3ce928b193f6fb7c67c82ef458a25338f07254"
     sha256 cellar: :any_skip_relocation, catalina:      "0e976588a495ed84e45d0b76b8622148d6b401ab94e262b604d8759d1cdcec2d"
     sha256 cellar: :any_skip_relocation, mojave:        "8fd471acf58802ac4237674d499d295720171008eaa4bdcbaa3cf02633ddeacf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65196aec02ddc60ce0416db325c3b40781936146e5ffb6a382b230126cda62a0"
   end
 
   depends_on "lua@5.1" => :test
