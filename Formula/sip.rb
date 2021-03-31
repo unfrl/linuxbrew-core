@@ -6,14 +6,14 @@ class Sip < Formula
   url "https://files.pythonhosted.org/packages/76/d9/5e1048d2f2fa6714e0d76382810b0fa81400c40e25b1f4f46c1a82e48364/sip-6.0.3.tar.gz"
   sha256 "929e3515428ea962003ccf6795244a5fe4fa6e2c94dc9ab8cb2c58fcd368c34c"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
+  revision 1
   head "https://www.riverbankcomputing.com/hg/sip", using: :hg
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "128a69e2ff44621829a057172e11ef461f0f2f8dc1aba8df83e7d6ab395c78fd"
-    sha256 cellar: :any_skip_relocation, big_sur:       "18d190cbeb993b540375051525a6e0dee8e1bdd835b6eff6222a29543b1e6407"
-    sha256 cellar: :any_skip_relocation, catalina:      "03fe5d7975493dbbcda97fe6b9ab809701685ff5f7cc911d03d3bebb67ed5b08"
-    sha256 cellar: :any_skip_relocation, mojave:        "c951ba79d94171362eb346f70847e36c97876ffede598b253ca70f357e39b27b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d23d2ce2769a110c5f7ef2ff67850e6718f0fcb0724c7f503f009d249fbed065"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "7d014c77da8de72d9e329e3c1128a8f0efa031eabe8c4b8cb921935e35d724de"
+    sha256 cellar: :any_skip_relocation, big_sur:       "a837368bc4d0e64107acb61b064bc27c1635beadd2cc2ddd12c0802624a81fb2"
+    sha256 cellar: :any_skip_relocation, catalina:      "dcad44f2a371e168ea960b42e91b745afb2f36a7199644830e37d128af4fecfc"
+    sha256 cellar: :any_skip_relocation, mojave:        "8a9516100d8af37bae956d3e3c5495b66504f1098acefa7906aa75662b5ace89"
   end
 
   depends_on "python@3.9"
@@ -33,18 +33,30 @@ class Sip < Formula
     sha256 "b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"
   end
 
+  # TODO: remove them after sip 6.1.0
+  # These patch provide the option `--scripts-dir`
+  patch do
+    url "https://www.riverbankcomputing.com/hg/sip/raw-diff/ffd0551c32cc/sipbuild/builder.py"
+    sha256 "2c969dfba2e4b0553d06999a3aa07a93ea4b7ca2cce62635d1418ecdc74a6df2"
+  end
+
+  patch do
+    url "https://www.riverbankcomputing.com/hg/sip/raw-diff/ffd0551c32cc/sipbuild/project.py"
+    sha256 "ea99834ab404583a1a49a05997950758fe95ba473129438117ffa5647028d99a"
+  end
+
   def install
-    xy = Language::Python.major_minor_version Formula["python@3.9"].opt_bin/"python3"
-    venv = virtualenv_create(libexec, Formula["python@3.9"].opt_bin/"python3")
-    %w[packaging pyparsing toml].each do |r|
-      venv.pip_install resource(r)
+    python = Formula["python@3.9"]
+    venv = virtualenv_create(libexec, python.bin/"python3")
+    resources.each do |r|
+      venv.pip_install r
     end
 
-    system Formula["python@3.9"].opt_bin/"python3", *Language::Python.setup_install_args(prefix)
+    system python.bin/"python3", *Language::Python.setup_install_args(prefix)
 
-    site_packages = libexec/"lib/python#{xy}/site-packages"
-    pth_contents = "import site; site.addsitedir('#{site_packages}')\n"
-    (lib/"python#{xy}/site-packages/homebrew-sip.pth").write pth_contents
+    site_packages = Language::Python.site_packages(python)
+    pth_contents = "import site; site.addsitedir('#{libexec/site_packages}')\n"
+    (prefix/site_packages/"homebrew-sip.pth").write pth_contents
   end
 
   test do
