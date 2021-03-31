@@ -10,6 +10,7 @@ class Rke < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "c0702e4fac931ca4e24475db287e7e21419ad6ac9acb63b8f836b0fcd4dc7e25"
     sha256 cellar: :any_skip_relocation, catalina:      "f20e08e222fbc795443fd5d7f4dffb932ab6053632bddd8c05c004632a93b738"
     sha256 cellar: :any_skip_relocation, mojave:        "65c10d74dd05ac34fe5cd6f371a30e15308eccd85a054e49d46665b413b4aaca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d0cfcd616a5a98e37575ff2ac429c2766081963f6fa12b743d02b3899d8f6f5"
   end
 
   depends_on "go" => :build
