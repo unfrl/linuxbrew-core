@@ -12,10 +12,11 @@ class Node < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "7e72cf49435ed91c717e7220c936b31017b7c2c0d1b30f12ea56465d6e27e8e3"
-    sha256 cellar: :any, big_sur:       "06667c0d276b75169da31f54eb0306eb5c041383911d27b6c190c96f7044056f"
-    sha256 cellar: :any, catalina:      "56e0aef90c9e3efcc5d450e11303ca6f5fc8c670e88826f7a5db14ee318e5409"
-    sha256 cellar: :any, mojave:        "b8d2166e222edd33cc26114bd76b2fc77c7d00af3a2efe243d468dfe67e4c915"
+    sha256 cellar: :any,                 arm64_big_sur: "7e72cf49435ed91c717e7220c936b31017b7c2c0d1b30f12ea56465d6e27e8e3"
+    sha256 cellar: :any,                 big_sur:       "06667c0d276b75169da31f54eb0306eb5c041383911d27b6c190c96f7044056f"
+    sha256 cellar: :any,                 catalina:      "56e0aef90c9e3efcc5d450e11303ca6f5fc8c670e88826f7a5db14ee318e5409"
+    sha256 cellar: :any,                 mojave:        "b8d2166e222edd33cc26114bd76b2fc77c7d00af3a2efe243d468dfe67e4c915"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb91d86241d79b1bdb48706ba0640cfb05f1b0e5aee39bc9540492ca022ec2df"
   end
 
   depends_on "pkg-config" => :build
