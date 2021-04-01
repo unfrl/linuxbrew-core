@@ -1,15 +1,14 @@
 class Bitrise < Formula
   desc "Command-line automation tool"
   homepage "https://github.com/bitrise-io/bitrise"
-  url "https://github.com/bitrise-io/bitrise/archive/1.45.1.tar.gz"
-  sha256 "ce42200fdafe8257b01d08737545e86b3fb64c8462d08bf2a1d6b392b2b432ce"
+  url "https://github.com/bitrise-io/bitrise/archive/1.46.0.tar.gz"
+  sha256 "019ae87f0a758c4ba592841fff34226fa3b20c96b6ec983a3c1ffc9da8e20315"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:      "94677482e08cf0f6315344f2e00f2b9c1e0ea5877792953839b59476d564a748"
-    sha256 cellar: :any_skip_relocation, catalina:     "b2596a0246cc263573752ba45819a6f19c6093e6a9cb2c997bde69549616df53"
-    sha256 cellar: :any_skip_relocation, mojave:       "48303d2f3b5a46d4eae1a1a7770c4cbbf41bc9de69c4bd82f17960230e3b231a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "171356cbe36d091ba1dc9b9897e0bd6b268bbb845f543b8d11c55dd956e17d79"
+    sha256 cellar: :any_skip_relocation, big_sur:  "60c88f3e8c3e8d1502a3077dfbc6e7a7c6cc4aa4de40232d5806e35cc7ed7a66"
+    sha256 cellar: :any_skip_relocation, catalina: "97d8a8b544b3745bea17eb5df862e0b2b552a43df6b1febb5c57b4655af2d42c"
+    sha256 cellar: :any_skip_relocation, mojave:   "fe7e57492b270aa54cd10b78e141d4620905ce82dcc48f2cdffdf73455f1af81"
   end
 
   depends_on "go" => :build
