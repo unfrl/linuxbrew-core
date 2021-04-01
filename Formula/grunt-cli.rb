@@ -12,6 +12,7 @@ class GruntCli < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "5fd66895cf0e4cbc5bc53904c7cad3e8ab85498f1834b6065ab1bf07c8551ea4"
     sha256 cellar: :any_skip_relocation, catalina:      "bcc8bd3dbb63bf1b50a13f450870149914de04298968c823ee93b5bd291c68ec"
     sha256 cellar: :any_skip_relocation, mojave:        "ecff0744062e64d29a44fa13904abf32cda16688c19e8ca39ea542b21e1c2b61"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a42a3f88fdfe5294a66ada311c0fca8ef2aa9357bcd075201e35f1c0630a4382"
   end
 
   depends_on "node"
