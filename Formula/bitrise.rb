@@ -6,9 +6,10 @@ class Bitrise < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:  "60c88f3e8c3e8d1502a3077dfbc6e7a7c6cc4aa4de40232d5806e35cc7ed7a66"
-    sha256 cellar: :any_skip_relocation, catalina: "97d8a8b544b3745bea17eb5df862e0b2b552a43df6b1febb5c57b4655af2d42c"
-    sha256 cellar: :any_skip_relocation, mojave:   "fe7e57492b270aa54cd10b78e141d4620905ce82dcc48f2cdffdf73455f1af81"
+    sha256 cellar: :any_skip_relocation, big_sur:      "60c88f3e8c3e8d1502a3077dfbc6e7a7c6cc4aa4de40232d5806e35cc7ed7a66"
+    sha256 cellar: :any_skip_relocation, catalina:     "97d8a8b544b3745bea17eb5df862e0b2b552a43df6b1febb5c57b4655af2d42c"
+    sha256 cellar: :any_skip_relocation, mojave:       "fe7e57492b270aa54cd10b78e141d4620905ce82dcc48f2cdffdf73455f1af81"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b413df2b3c7f66ad15ddd7829eac3fbe6849909b2eeff61f7e9bfabcf5d8e85c"
   end
 
   depends_on "go" => :build
