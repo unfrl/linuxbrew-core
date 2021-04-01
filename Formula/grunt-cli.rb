@@ -3,18 +3,15 @@ require "language/node"
 class GruntCli < Formula
   desc "JavaScript Task Runner"
   homepage "https://gruntjs.com/"
-  url "https://registry.npmjs.org/grunt-cli/-/grunt-cli-1.3.2.tgz"
-  sha256 "3b0a3c2aee71f1cb92984afd3fffa7882cbd40958825313946aa7f2938f67e93"
+  url "https://registry.npmjs.org/grunt-cli/-/grunt-cli-1.4.1.tgz"
+  sha256 "8fd8d2f880025da726adfdff427805c55a43c06e86121223818a1485e1d02a4b"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "ea4040e8260f2a36645ed0e0ecbc11fe8f4ae96eba63d91ebb0e6f9ba9352ead"
-    sha256 cellar: :any_skip_relocation, big_sur:       "044de33bfbb3c9a65eeddf1658a027576151bb62db96e22b659cd3dab1e78cbc"
-    sha256 cellar: :any_skip_relocation, catalina:      "374df04d2a7da96b2995552308258e637edebd304d09ca2cba49f9106b8324f3"
-    sha256 cellar: :any_skip_relocation, mojave:        "738d87cf6f7eb5a0b554980f1e77dc349fa092d34ef20b2f41583442d9249348"
-    sha256 cellar: :any_skip_relocation, high_sierra:   "7df2a65c82959d478c0d384ad5e51046186750e0f744beea06916c663c4ca4eb"
-    sha256 cellar: :any_skip_relocation, sierra:        "677a92a25a3f7d1a8e6ceeb6b869e4f4d784bbd10a32e37d7f32aa122c1176a4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "572ea977195137ed0dd300a1be859f3499b07a82b0ac3c2c43b5efab20d140b1"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "aacdc763fcbe5c7279fdbadff41424722b18ad64c41bd9f478f0b660e9aa9f4e"
+    sha256 cellar: :any_skip_relocation, big_sur:       "5fd66895cf0e4cbc5bc53904c7cad3e8ab85498f1834b6065ab1bf07c8551ea4"
+    sha256 cellar: :any_skip_relocation, catalina:      "bcc8bd3dbb63bf1b50a13f450870149914de04298968c823ee93b5bd291c68ec"
+    sha256 cellar: :any_skip_relocation, mojave:        "ecff0744062e64d29a44fa13904abf32cda16688c19e8ca39ea542b21e1c2b61"
   end
 
   depends_on "node"
