@@ -13,6 +13,7 @@ class Babel < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "bbcb12cfb38a94909b83d9c16aeffedde08f3dadd9c189a3bc26cbaf986c5a0c"
     sha256 cellar: :any_skip_relocation, catalina:      "b7a0a0ef11eb7536b96d09ffb320baac23921174ab1d3ef36713ac29b44fbfc4"
     sha256 cellar: :any_skip_relocation, mojave:        "4d407989c892dbea48bd2c18d7ac3b5187f5f896e1017fbc9edf93b47bb02bf5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "16b3f8907669bf735ccbc0e5f4b8728ac2ad2f7e19e86357efd3e1a268943da7"
   end
 
   depends_on "node"
