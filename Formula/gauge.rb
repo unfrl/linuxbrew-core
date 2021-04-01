@@ -11,6 +11,7 @@ class Gauge < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "2e8521b5b97bc35acd028f2a7fcc432975e1db1d8f7afeeaf2b7bd1d2a24a36b"
     sha256 cellar: :any_skip_relocation, catalina:      "1555013193fb810920986aa9ac6897526a6a88ff29dc2ad9130b61d00aceee4a"
     sha256 cellar: :any_skip_relocation, mojave:        "78b8dc7847cbdd69081f3cf7456ddc0a156fc9b5a6166510f3a6e351165ca6d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "644ce3125f9d362a13e30413cf1d2ae7bf8cffd31845413aeba550c5e0471733"
   end
 
   depends_on "go" => :build
