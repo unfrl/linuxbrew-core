@@ -5,7 +5,7 @@ class Llvm < Formula
   homepage "https://llvm.org/"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
-  revision 2 unless OS.mac?
+  revision OS.mac? ? 1 : 2
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
   stable do
@@ -47,11 +47,10 @@ class Llvm < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "644ff14be8dc41dceacda9b7c5a34a009e54cab1940ebcadf7dda4930cbe7150"
-    sha256 cellar: :any,                 big_sur:       "15e243c9ff162f36d481f44f05862b95552d53020a6363d3a56fc73083348ca5"
-    sha256 cellar: :any,                 catalina:      "5021a582f220802886c6029ed173e3bed4466c1151d6ef3ef6de377a7396371f"
-    sha256 cellar: :any,                 mojave:        "ae3bb00ea8d53f0594a8e174c9f327eecb531a3846287b80d6f3933e2b47ff07"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4f0b6034699ee1a12aa5fa68be68b47cea7a32cb54628aa2c9f0113f00fdcc1"
+    sha256 cellar: :any, arm64_big_sur: "89c49726e4f90bae088ee3b1e323c36cf7b74778810d35a54c99061f51e5f492"
+    sha256 cellar: :any, big_sur:       "6e6dac1f068982588f6bd2d0fe05d2bc5b664ef55489df46b20e46807ab1e049"
+    sha256 cellar: :any, catalina:      "45f145b60eab557f2079bb1f5ac4bfc4333387fad5a12330a581ea5398c74402"
+    sha256 cellar: :any, mojave:        "f7c4af43940fb0e2f5f3964c74e3b71ed5edf45c078df9599f68b6a4a9ff2a61"
   end
 
   # Clang cannot find system headers if Xcode CLT is not installed
@@ -68,8 +67,9 @@ class Llvm < Formula
   # We intentionally use Make instead of Ninja.
   # See: Homebrew/homebrew-core/issues/35513
   depends_on "cmake" => :build
-  depends_on "python@3.9" => :build
+  depends_on "swig" => :build
   depends_on "libffi"
+  depends_on "python@3.9"
 
   uses_from_macos "libedit"
   uses_from_macos "libxml2"
@@ -102,7 +102,9 @@ class Llvm < Formula
     ]
     args << "libcxx" if OS.mac?
 
-    py_ver = "3.9"
+    python = Formula["python@3.9"]
+    py_ver = Language::Python.major_minor_version(python)
+    site_packages = Language::Python.site_packages(python).delete_prefix("lib/")
 
     # Apple's libstdc++ is too old to build LLVM
     ENV.libcxx if ENV.compiler == :clang
@@ -114,6 +116,9 @@ class Llvm < Formula
     # can almost be treated as an entirely different build from llvm.
     ENV.permit_arch_flags
 
+    # we install the lldb Python module into libexec to prevent users from
+    # accidentally importing it with a non-Homebrew Python or a Homebrew Python
+    # in a non-default prefix
     args = %W[
       -DLLVM_ENABLE_PROJECTS=#{projects.join(";")}
       -DLLVM_ENABLE_RUNTIMES=#{runtimes.join(";")}
@@ -132,9 +137,10 @@ class Llvm < Formula
       -DFFI_INCLUDE_DIR=#{Formula["libffi"].opt_lib}/libffi-#{Formula["libffi"].version}/include
       -DFFI_LIBRARY_DIR=#{Formula["libffi"].opt_lib}
       -DLLDB_USE_SYSTEM_DEBUGSERVER=ON
-      -DLLDB_ENABLE_PYTHON=OFF
+      -DLLDB_ENABLE_PYTHON=ON
       -DLLDB_ENABLE_LUA=OFF
-      -DLLDB_ENABLE_LZMA=OFF
+      -DLLDB_ENABLE_LZMA=ON
+      -DLLDB_PYTHON_RELATIVE_PATH=libexec/#{site_packages}
       -DLIBOMP_INSTALL_ALIASES=OFF
       -DCLANG_PYTHON_BINDINGS_VERSIONS=#{py_ver}
     ]
@@ -179,7 +185,7 @@ class Llvm < Formula
 
     # Install LLVM Python bindings
     # Clang Python bindings are installed by CMake
-    (lib/"python#{py_ver}/site-packages").install llvmpath/"bindings/python/llvm"
+    (lib/site_packages).install llvmpath/"bindings/python/llvm"
 
     # Install Emacs modes
     elisp.install Dir[llvmpath/"utils/emacs/*.el"] + Dir[share/"clang/*.el"]
