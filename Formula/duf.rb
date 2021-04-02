@@ -11,6 +11,7 @@ class Duf < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "ecb3b0d979a756c9e3551b7052a1d16a9d46fdf8310fa0472fde2400452abba8"
     sha256 cellar: :any_skip_relocation, catalina:      "afc2b4a8a42ab1d1f59f3cac6b77522e5c2ac66366a1121aa32b75f6ddfd99be"
     sha256 cellar: :any_skip_relocation, mojave:        "1412849b86eddeff3f933ce283eceaf07f9916a41a6b772cfc34b3fcf0bb339e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b23159fa7a3715872b02707071bd684f3b436b0974b7dc947bffb61be0d61de5"
   end
 
   depends_on "go" => :build
