@@ -25,9 +25,12 @@ class Pumba < Formula
 
   test do
     output = pipe_output("#{bin}/pumba rm test-container 2>&1")
-    if OS.mac?
+
+    on_macos do
       assert_match "Is the docker daemon running?", output
-    else
+    end
+
+    on_linux do
       assert_match "no containers to remove", output
     end
   end
