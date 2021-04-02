@@ -41,7 +41,7 @@ class Icu4c < Formula
   end
 
   test do
-    if File.readable? "/usr/share/dict/words"
+    if File.exist? "/usr/share/dict/words"
       system "#{bin}/gendict", "--uchars", "/usr/share/dict/words", "dict"
     else
       (testpath/"hello").write "hello\nworld\n"
