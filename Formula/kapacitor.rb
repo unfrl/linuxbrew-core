@@ -17,6 +17,7 @@ class Kapacitor < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "8e0bd768594327baa91874afc5aeaf9eebe310e50554a2c9a02f486312a278f1"
     sha256 cellar: :any_skip_relocation, catalina:      "4551fac2fe167dacce08c19c4bec7649697cb2a5736b2c6b9bcdff81218d8f53"
     sha256 cellar: :any_skip_relocation, mojave:        "9f08dac43c3173f7a1847ce86e12d39461df159f0f5f97f21815758cfb785aba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8f7c9fff919106b1c7c7cd184315e412e2aaf99e4cffc36e3244367b9f0e430"
   end
 
   depends_on "go" => :build
