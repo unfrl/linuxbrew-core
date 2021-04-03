@@ -36,8 +36,9 @@ class GccAT7 < Formula
   depends_on "libmpc"
   depends_on "mpfr"
 
-  unless OS.mac?
-    depends_on "zlib"
+  uses_from_macos "zlib"
+
+  on_linux do
     depends_on "binutils"
   end
 

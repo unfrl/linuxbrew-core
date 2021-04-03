@@ -21,38 +21,21 @@ class UtilLinux < Formula
     sha256 x86_64_linux:  "6d6c7762034555ede98d771f7aa4d57c49f142d82605a1971f75e00a21ade1d3"
   end
 
-  keg_only "macOS provides the uuid.h header" if OS.mac?
-
-  if OS.mac?
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-    depends_on "pkg-config" => :build
-  end
+  keg_only :shadowed_by_macos, "macOS provides the uuid.h header"
 
   depends_on "gettext"
 
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
-  # These binaries are already available in macOS
-  def system_bins
-    %w[
-      cal col colcrt colrm
-      getopt
-      hexdump
-      logger look
-      mesg more
-      nologin
-      renice rev
-      ul
-      whereis
-    ]
-  end
+  on_macos do
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
+    depends_on "pkg-config" => :build
 
-  if OS.mac?
     # Fix build for MacOS
-    # Remove in the next release
+    # Remove in >2.36.2
     # Also remove autoconf/automake/libtool/pkg-config dependencies and autogen.sh call
     patch do
       url "https://github.com/karelzak/util-linux/commit/71ba2792ab3f96b5f5d5d3b0a68d35ecfd0f93a2.patch?full_index=1"
@@ -61,7 +44,9 @@ class UtilLinux < Formula
   end
 
   def install
-    system "./autogen.sh" if OS.mac?
+    on_macos do
+      system "./autogen.sh"
+    end
 
     args = [
       "--disable-dependency-tracking",
@@ -69,14 +54,15 @@ class UtilLinux < Formula
       "--prefix=#{prefix}",
     ]
 
-    if OS.mac?
+    on_macos do
       args << "--disable-ipcs" # does not build on macOS
       args << "--disable-ipcrm" # does not build on macOS
       args << "--disable-wall" # already comes with macOS
       args << "--disable-libmount" # does not build on macOS
       args << "--enable-libuuid" # conflicts with ossp-uuid
       args << "--disable-wall" # already comes with macOS
-    else
+    end
+    on_linux do
       args << "--disable-use-tty-group" # Fix chgrp: changing group of 'wall': Operation not permitted
       args << "--disable-kill" # Conflicts with coreutils.
       args << "--disable-cal" # Conflicts with bsdmainutils
@@ -93,21 +79,6 @@ class UtilLinux < Formula
 
     system "./configure", *args
     system "make", "install"
-
-    if OS.mac?
-      # Remove binaries already shipped by macOS
-      system_bins.each do |prog|
-        rm_f bin/prog
-        rm_f sbin/prog
-        rm_f man1/"#{prog}.1"
-        rm_f man8/"#{prog}.8"
-      end
-    else
-      # these conflict with bash-completion-1.3
-      %w[chsh mount rfkill rtcwake].each do |prog|
-        rm_f bash_completion/prog
-      end
-    end
 
     # install completions only for installed programs
     Pathname.glob("bash-completion/*") do |prog|
@@ -146,8 +117,6 @@ class UtilLinux < Formula
       <<~EOS
         The following tools are not supported for macOS, and are therefore not included:
         #{Formatter.columns(linux_only_bins)}
-        The following tools are shipped by macOS, and are therefore not included:
-        #{Formatter.columns(system_bins)}
       EOS
     end
   end
