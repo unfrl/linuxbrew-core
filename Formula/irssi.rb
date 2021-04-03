@@ -38,6 +38,7 @@ class Irssi < Formula
     sha256 big_sur:       "4b3a1a552013ec99c97142d07b596d6dd2bdec87b52190179e5a3bdc9fd99f59"
     sha256 catalina:      "6962eb1f607332ce8319c55febe94c419376878b1fc30738f3e05aaa24355ea4"
     sha256 mojave:        "1da2e8798d530cbc6c7f901651df3f9a24168b61b856fc8b8100796fd66e239f"
+    sha256 x86_64_linux:  "7902f28764492acd94b03721305343fedeb4f875f3cad6d654577c794756283b"
   end
 
   head do
