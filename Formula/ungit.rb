@@ -12,6 +12,7 @@ class Ungit < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "6e3e0fd6828013a2e0272afc3dea998b3eab5ddde221258f853f4e83154e4e5c"
     sha256 cellar: :any_skip_relocation, catalina:      "a55f27ee7e3542e3dacd6430894a5bf289ef239dbcfa51209d74e12c570ea05c"
     sha256 cellar: :any_skip_relocation, mojave:        "688f997931bb17fdba0ab96c010a46c0bfa6a8434ee04c07bd3c82b323f98bf2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ece4457418789bd372836a713ea954a14eb4efe39c862aca8c49df24ecc6f8eb"
   end
 
   depends_on "node"
