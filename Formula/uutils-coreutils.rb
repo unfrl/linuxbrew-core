@@ -11,6 +11,7 @@ class UutilsCoreutils < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "01751ad48c70657fdee130bfe04b05f2befa8b327d8c9805257c5d7523cc65a9"
     sha256 cellar: :any_skip_relocation, catalina:      "1d0169d8fa538d03040b6d7f8dd5ec5bc33eb6a01587652cbaaf3364d92bee8b"
     sha256 cellar: :any_skip_relocation, mojave:        "5755f1412d3f842824d1f12b72dde10f937e049c6a1309a1a720f364a7ca388b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf8492c745bd52f5800247760a3c414fda90cdc1260744e5de243c4c04e3236c"
   end
 
   depends_on "make" => :build
