@@ -11,6 +11,7 @@ class NatsServer < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "19664865780ce13e55a1167963b0c27c33bdc98528402cf588c35ef1a4c6beb3"
     sha256 cellar: :any_skip_relocation, catalina:      "1854a03534a74f73f62aeac6ef5b7a658c62e8cc63f1d2125547ba02114cff56"
     sha256 cellar: :any_skip_relocation, mojave:        "0dbfceb6efdf1610fb9045e1fb48be1a20757417765f6638a9221b1c5929c16d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bce7e2a135598a1e3e3329c95acc9a1567c8e6961f8525d1ca8df4e3c57541fc"
   end
 
   depends_on "go" => :build
