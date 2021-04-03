@@ -10,6 +10,7 @@ class Libgr < Formula
     sha256 big_sur:       "81a5949b3311556a9c25b9796a1a83dcb37ef457c31bf7b3ca95a7e2347c3713"
     sha256 catalina:      "ecccdef19fc49b13b05dbae285d3767ebab9ee9dfd09a51c3335d1d1ae0a2242"
     sha256 mojave:        "9938b54c1452e30c0dc9f346afb2a1e49516407d09a7861c928b303edfa5d8f4"
+    sha256 x86_64_linux:  "beda2ef47526ad4c7f9cb78c8c56f67a7ccbb47f3d04c1a5127fcca52b96ec49"
   end
 
   depends_on "cmake" => :build
