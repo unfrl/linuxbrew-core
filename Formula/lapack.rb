@@ -7,10 +7,11 @@ class Lapack < Formula
   head "https://github.com/Reference-LAPACK/lapack.git"
 
   bottle do
-    sha256 arm64_big_sur: "d9cb8ec5b3323036392af942ca33f408648fd8c08965653a599d918f5f2790a7"
-    sha256 big_sur:       "b030a88ee8fa327ecdd5b33ba31a5ceaf5137e5f6c1ebb861911cca6d5bd23f3"
-    sha256 catalina:      "6c5f2f1fd02df12472fa05eb39dd7bfd0c8f1a7e367afebef9848c2c4503a97b"
-    sha256 mojave:        "6d637980e356e094bb6f35bc171cdac72ef73d94fe3dc50d3a6ecc1af7eb14a2"
+    sha256                               arm64_big_sur: "d9cb8ec5b3323036392af942ca33f408648fd8c08965653a599d918f5f2790a7"
+    sha256                               big_sur:       "b030a88ee8fa327ecdd5b33ba31a5ceaf5137e5f6c1ebb861911cca6d5bd23f3"
+    sha256                               catalina:      "6c5f2f1fd02df12472fa05eb39dd7bfd0c8f1a7e367afebef9848c2c4503a97b"
+    sha256                               mojave:        "6d637980e356e094bb6f35bc171cdac72ef73d94fe3dc50d3a6ecc1af7eb14a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd82e9668bf80179202831a6d1d173341d8f85310134b5dc4a5b46c98f56d9c1"
   end
 
   keg_only :shadowed_by_macos, "macOS provides LAPACK in Accelerate.framework"
