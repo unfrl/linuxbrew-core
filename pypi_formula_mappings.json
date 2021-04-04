@@ -33,14 +33,16 @@
     "extra_packages": ["wheel"]
   },
   "checkov": {
-    "exclude_packages": ["tabulate"]
+    "exclude_packages": ["tabulate", "junit-xml"],
+    "extra_packages": ["junit-xml-2"]
   },
   "diffoscope": "diffoscope[cmdline]",
   "dvc": {
     "extra_packages": [
         "gcsfs", "pydrive", "six", "boto3", "adlfs", "azure-identity", "knack",
         "oss2", "pycryptodome", "paramiko[invoke]", "webdavclient3"
-    ]
+    ],
+    "exclude_packages": ["tabulate", "protobuf"]
   },
   "ipython": {
     "extra_packages": ["ipykernel"]
