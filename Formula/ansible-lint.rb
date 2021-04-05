@@ -6,12 +6,13 @@ class AnsibleLint < Formula
   url "https://files.pythonhosted.org/packages/98/e8/0e399e023de25053b7d2fc17a65ad1850dbcb0a9e6ee855c94d6549ee5dc/ansible-lint-5.0.6.tar.gz"
   sha256 "e5104cb11c437aec7f51e05a07f8c68d7f9b7c4cc36afc52edd8b0f71d84d63a"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "62a92636a51a4ee03d14d617d101ce848e41d04ab820da4ffbf7d52152a6a5f7"
-    sha256 cellar: :any, big_sur:       "be73403fab6a433811cb8a177128f9a4a14507672f7177bc7ea80d68b1be835c"
-    sha256 cellar: :any, catalina:      "737674b443badbd711f4c327cff2f94077231f4437c004b2de99a1fe275d83d8"
-    sha256 cellar: :any, mojave:        "1358a82563914b0a88c328af4de5afb0462e445461b6979887c32950809baa2f"
+    sha256 cellar: :any, arm64_big_sur: "a0c0afa37e884cf6e64916946ec3ad8559d1db441e7e638ca7f9c289037cd9e6"
+    sha256 cellar: :any, big_sur:       "23dfd97c961d7cbb726d2d50b831f37d86a73e5de6f252bd087cb5735afd4a87"
+    sha256 cellar: :any, catalina:      "5a569d6e83a9bd4ff2351cc49cb814c255ca7291e2a4ee48a3d0174ab5dd26af"
+    sha256 cellar: :any, mojave:        "0940945f30b158ba4a7cedcc9bb24de48b1536b1f6b35cb3849dd6969da7fd92"
   end
 
   depends_on "pkg-config" => :build
@@ -60,13 +61,13 @@ class AnsibleLint < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/ae/f6/6ffb46f6cf0bb584e44279accd3321cb838b78b324031feb8fd9adf63ed2/rich-9.13.0.tar.gz"
-    sha256 "d59e94a0e3e686f0d268fe5c7060baa1bd6744abca71b45351f5850a3aaa6764"
+    url "https://files.pythonhosted.org/packages/12/3c/e4e2b356057f3ce557fcda8a2b9bf114b06f71ade88dac8a0883ae800e28/rich-10.1.0.tar.gz"
+    sha256 "8f05431091601888c50341697cfc421dc398ce37b12bca0237388ef9c7e2c9e9"
   end
 
   resource "ruamel.yaml" do
-    url "https://files.pythonhosted.org/packages/1d/2f/40abf6501e051df8af970bfa6d81a90fcd62dc536f82ceec80a2694a3123/ruamel.yaml-0.16.13.tar.gz"
-    sha256 "bb48c514222702878759a05af96f4b7ecdba9b33cd4efcf25c86b882cef3a942"
+    url "https://files.pythonhosted.org/packages/88/4d/ec3d9d9eca7903c9746976a0157b352c1b1dcb8d9de4590a95f671d44790/ruamel.yaml-0.17.2.tar.gz"
+    sha256 "8f1e15421668b9edf30ed02899f5f81aff9808a4271935776f61a99a569a13da"
   end
 
   resource "ruamel.yaml.clib" do
