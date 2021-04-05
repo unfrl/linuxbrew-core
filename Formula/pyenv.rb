@@ -13,10 +13,11 @@ class Pyenv < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "38eb9ebf6ba630e5291a1c4c50943278858553bb70bc7302c163f35d289789bf"
-    sha256 cellar: :any, big_sur:       "e97e845395083a8dd1261cbcae543f9707d3948180763e5dd96bd4f2b48f6f82"
-    sha256 cellar: :any, catalina:      "03d0687354f87759cda216809cb7d3888936279a09002e47eaa6237d6245408a"
-    sha256 cellar: :any, mojave:        "6347e3e5e40c312ba0ee7a0e1f6bc250f5386db981edcc354b8d102844344794"
+    sha256 cellar: :any,                 arm64_big_sur: "38eb9ebf6ba630e5291a1c4c50943278858553bb70bc7302c163f35d289789bf"
+    sha256 cellar: :any,                 big_sur:       "e97e845395083a8dd1261cbcae543f9707d3948180763e5dd96bd4f2b48f6f82"
+    sha256 cellar: :any,                 catalina:      "03d0687354f87759cda216809cb7d3888936279a09002e47eaa6237d6245408a"
+    sha256 cellar: :any,                 mojave:        "6347e3e5e40c312ba0ee7a0e1f6bc250f5386db981edcc354b8d102844344794"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4deb133a06b9948380464c33d077b4655cb475d268afc653f31f28f1bf41c833"
   end
 
   depends_on "autoconf"
