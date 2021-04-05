@@ -25,7 +25,6 @@ class FseventsTools < Formula
     depends_on "pkg-config" => :build
   end
 
-  # The FSEvents API is macOS-exclusive
   depends_on :macos
 
   def install

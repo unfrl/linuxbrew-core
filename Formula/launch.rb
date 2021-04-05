@@ -22,7 +22,6 @@ class Launch < Formula
   end
 
   depends_on xcode: :build
-  # hard dependency on macOS API's
   depends_on :macos
 
   def install

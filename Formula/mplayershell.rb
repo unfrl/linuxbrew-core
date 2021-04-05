@@ -18,7 +18,6 @@ class Mplayershell < Formula
   end
 
   depends_on xcode: :build
-
   depends_on :macos
   depends_on "mplayer"
 
