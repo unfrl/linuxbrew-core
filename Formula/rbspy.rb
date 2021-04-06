@@ -1,15 +1,15 @@
 class Rbspy < Formula
   desc "Sampling profiler for Ruby"
   homepage "https://rbspy.github.io/"
-  url "https://github.com/rbspy/rbspy/archive/v0.4.2.tar.gz"
-  sha256 "4bd76a63db015401124031929ea7138a2625cb6da6300df45dea491e96046cdc"
+  url "https://github.com/rbspy/rbspy/archive/v0.4.3.tar.gz"
+  sha256 "12296d3ce2c404b40333e0b4ff54718ac62cd4f2ef196a86a2b81e1f5a563049"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:      "8a5b6c32bcd7340e1d1cada7aa7ecda6b79d084b7cecb473d56c4c60678bfcf5"
-    sha256 cellar: :any_skip_relocation, catalina:     "8be3974da66bc9da1f688164253f3340373083140dce9c4f7364dad2ea2e6263"
-    sha256 cellar: :any_skip_relocation, mojave:       "e750469b16a14b6a3cd666c9f051ac1aaf10221c9dfa54a70d6d3177b299da97"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "308fb3f4d161a32fb9bd98f068eaa06b41ef7da134379193c1d31a7024dec0ed"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "83720cdcb9b4c5b4a8214869f133e49689e376b49c8f36ea367d113855d9fbb9"
+    sha256 cellar: :any_skip_relocation, big_sur:       "197d0a96d53dad0c4b4995a243024b0b776542fb3dfee235702dce8f32c7d594"
+    sha256 cellar: :any_skip_relocation, catalina:      "23967c3fcd8d1607115c727209ee3ffb5bdb309f57f25c69a3e42adbc74a4604"
+    sha256 cellar: :any_skip_relocation, mojave:        "ab19b1c5e47bb7d3a8a4de9cf5cafa6ac788ca6299d4f41261f5caeb6dcc98fa"
   end
 
   depends_on "rust" => :build
@@ -30,7 +30,14 @@ class Rbspy < Formula
     system "#{bin}/rbspy", "report", "-f", "summary", "-i", "recording.gz",
                            "-o", "result"
 
-    expected_result = "100.00   100.00  aaa - short_program.rb"
+    expected_result = <<~EOS
+      % self  % total  name
+      100.00   100.00  <c function> - unknown
+        0.00   100.00  ccc - sample_program.rb
+        0.00   100.00  bbb - sample_program.rb
+        0.00   100.00  aaa - short_program.rb
+        0.00   100.00  <main> - sample_program.rb
+    EOS
     assert_includes File.read("result"), expected_result
   end
 end

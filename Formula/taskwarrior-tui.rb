@@ -1,8 +1,8 @@
 class TaskwarriorTui < Formula
   desc "Terminal user interface for taskwarrior"
   homepage "https://github.com/kdheepak/taskwarrior-tui"
-  url "https://github.com/kdheepak/taskwarrior-tui/archive/v0.13.6.tar.gz"
-  sha256 "0bf5cbccc5192f0c1dc3824e9634024a9123e346c1f5b45231c81745328b38f4"
+  url "https://github.com/kdheepak/taskwarrior-tui/archive/v0.13.7.tar.gz"
+  sha256 "e69dd7dc1b185fd6c51fc6c787a7ddae3ca55409c829de2e742a4ed93bce08a6"
   license "MIT"
   head "https://github.com/kdheepak/taskwarrior-tui.git"
 
@@ -12,11 +12,10 @@ class TaskwarriorTui < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "5fac07d1d2d55bbe5b47c30125e99230a2cf699d6d427971da9e76cd322b5207"
-    sha256 cellar: :any_skip_relocation, big_sur:       "2e56eb136905487868c1eeb0e275668ff53404e8d33cf930f3b9473d52cd49fc"
-    sha256 cellar: :any_skip_relocation, catalina:      "f7c45f38be108b5acdf63f2ae36e3a74376e7775b479427390272d3a92e3def3"
-    sha256 cellar: :any_skip_relocation, mojave:        "1dab7f0e996332eed5c67b75461bd1e2e52afd28642b4a2da9fcb76179310015"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f89f401acc4cb02d06aebbb2f5b37754f64f9bab6e676a0e478fd5e98f38f540"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "474030f582a0bea589fb71395c9c95542b21bd4ace5863f613d16250d3e8ea41"
+    sha256 cellar: :any_skip_relocation, big_sur:       "b87fb1558bbe7515ab0fb0d5bc49642fb622cd0022cba2c475010ab05612a836"
+    sha256 cellar: :any_skip_relocation, catalina:      "86242d7d4ee2c4cb78852edc68a2e9c96d87fa46978102efe7cd0889cf8e0677"
+    sha256 cellar: :any_skip_relocation, mojave:        "daccdedbf86a29dde353bb1a9397451ba8bc00c39a721dd28b26d6ab3b77a3be"
   end
 
   depends_on "pandoc" => :build unless Hardware::CPU.arm?
