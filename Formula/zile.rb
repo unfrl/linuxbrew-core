@@ -11,10 +11,11 @@ class Zile < Formula
   version_scheme 1
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "2e077bc929d8ad6f54297ca6fa9f8d0e32b2166c619376faa871a93409ae7231"
-    sha256 cellar: :any, big_sur:       "ddc19628311876015e1bd06b3c4caece27ab8ac3422f5cf0b01dd64bc5260049"
-    sha256 cellar: :any, catalina:      "1d684c5d64bc4e3d01a5f6accc8fc6b74f2f703eefb06a41668a2e3a2c27be56"
-    sha256 cellar: :any, mojave:        "bf159c4da03f13e6db8cfba823b774495489bfa15480ecaa3428c4cd4909b468"
+    sha256 cellar: :any,                 arm64_big_sur: "2e077bc929d8ad6f54297ca6fa9f8d0e32b2166c619376faa871a93409ae7231"
+    sha256 cellar: :any,                 big_sur:       "ddc19628311876015e1bd06b3c4caece27ab8ac3422f5cf0b01dd64bc5260049"
+    sha256 cellar: :any,                 catalina:      "1d684c5d64bc4e3d01a5f6accc8fc6b74f2f703eefb06a41668a2e3a2c27be56"
+    sha256 cellar: :any,                 mojave:        "bf159c4da03f13e6db8cfba823b774495489bfa15480ecaa3428c4cd4909b468"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5ee6b0af8142acdc27c6bd3ee512da9929283cc727e7a84a46da22eabef8fa6"
   end
 
   depends_on "help2man" => :build
