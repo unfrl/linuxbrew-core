@@ -50,6 +50,7 @@ class Ntl < Formula
       -L#{lib}
       -lntl
       -lgmp
+      -lpthread
     ]
     flags << "-lpthread" unless OS.mac?
     system ENV.cxx, "square.cc", "-o", "square", *flags

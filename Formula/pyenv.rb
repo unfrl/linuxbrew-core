@@ -1,8 +1,8 @@
 class Pyenv < Formula
   desc "Python version management"
   homepage "https://github.com/pyenv/pyenv"
-  url "https://github.com/pyenv/pyenv/archive/1.2.25.tar.gz"
-  sha256 "ecb34d3eeb4042cdeb2db8fb14db387af486e49ec41bbdcec7b9c95d65a44151"
+  url "https://github.com/pyenv/pyenv/archive/1.2.26.tar.gz"
+  sha256 "004a47be4919ca717bee546d3062543d166c24678a21a9a5aa75f3bd0653c5d2"
   license "MIT"
   version_scheme 1
   head "https://github.com/pyenv/pyenv.git"
@@ -13,11 +13,10 @@ class Pyenv < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "38eb9ebf6ba630e5291a1c4c50943278858553bb70bc7302c163f35d289789bf"
-    sha256 cellar: :any,                 big_sur:       "e97e845395083a8dd1261cbcae543f9707d3948180763e5dd96bd4f2b48f6f82"
-    sha256 cellar: :any,                 catalina:      "03d0687354f87759cda216809cb7d3888936279a09002e47eaa6237d6245408a"
-    sha256 cellar: :any,                 mojave:        "6347e3e5e40c312ba0ee7a0e1f6bc250f5386db981edcc354b8d102844344794"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4deb133a06b9948380464c33d077b4655cb475d268afc653f31f28f1bf41c833"
+    sha256 cellar: :any, arm64_big_sur: "ecef415150807040a663a2303de95243c9da49f746cdc7208ab7314edb9d3d75"
+    sha256 cellar: :any, big_sur:       "5c2c4b253c069c7461f9f657fdf8a526a6aedac5fed2263c65bb9aaf66efd805"
+    sha256 cellar: :any, catalina:      "6a5736817f87bfbf97f355975a71ce99c72cff0afb8f5e29920c8eaac003f0ca"
+    sha256 cellar: :any, mojave:        "8da46fc892af22ed501f9ff4fd96a06e9fa185653ada1a0887847e61787980e0"
   end
 
   depends_on "autoconf"

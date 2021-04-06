@@ -29,6 +29,11 @@ class Pup < Formula
     dir.install buildpath.children
     os = OS.mac? ? "darwin" : "linux"
 
+    os = "darwin"
+    on_linux do
+      os = "linux"
+    end
+
     cd dir do
       system "gox", "-arch", "amd64", "-os", os, "./..."
       bin.install "pup_#{os}_amd64" => "pup"
