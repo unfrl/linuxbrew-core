@@ -11,10 +11,11 @@ class Forge < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "f3a2101af773f47ef9da29e1468f6af7f9a81c418111930e2f88362581249d57"
-    sha256 cellar: :any, big_sur:       "a013b723b0118001a054cb6f0d3d917f90e9823c376718a3057bf9a1ba250ed1"
-    sha256 cellar: :any, catalina:      "5321a0dd20592b5450308b4f527d75c1547b964fb1a7e1eaba9c6facdc46fe1c"
-    sha256 cellar: :any, mojave:        "17d114d5023f66c30cf3378d43031d5847cb85ac4e529cba849752333bad8cbb"
+    sha256 cellar: :any,                 arm64_big_sur: "f3a2101af773f47ef9da29e1468f6af7f9a81c418111930e2f88362581249d57"
+    sha256 cellar: :any,                 big_sur:       "a013b723b0118001a054cb6f0d3d917f90e9823c376718a3057bf9a1ba250ed1"
+    sha256 cellar: :any,                 catalina:      "5321a0dd20592b5450308b4f527d75c1547b964fb1a7e1eaba9c6facdc46fe1c"
+    sha256 cellar: :any,                 mojave:        "17d114d5023f66c30cf3378d43031d5847cb85ac4e529cba849752333bad8cbb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37d6d891d583e032a038cf6469639f1462a951173cef05e040d114532ed1dfc7"
   end
 
   depends_on "boost" => :build
