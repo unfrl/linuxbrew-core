@@ -64,7 +64,8 @@ class Pueue < Formula
     sleep 2
 
     begin
-      mkdir OS.mac? ? testpath/"Library/Preferences" : testpath/".config"
+      mkdir testpath/"Library/Preferences" # For macOS
+      mkdir testpath/".config" # For Linux
 
       output = shell_output("#{bin}/pueue status")
       assert_match "Task list is empty. Add tasks with `pueue add -- [cmd]`", output
