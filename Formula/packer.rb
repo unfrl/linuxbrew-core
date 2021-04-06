@@ -13,9 +13,10 @@ class Packer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:  "174622d9c8704b7c2ae0bcfb9c4a60ea5ad93be19f4a475d5a09bf1497380e73"
-    sha256 cellar: :any_skip_relocation, catalina: "c34469ec8c3131098adff53e3b592eb81873fbd62a1108249101a44715ed0c6d"
-    sha256 cellar: :any_skip_relocation, mojave:   "d3d538a52c087d74e4124886f9ccbba3efa4698322d65a1e2c3df79fd8680130"
+    sha256 cellar: :any_skip_relocation, big_sur:      "174622d9c8704b7c2ae0bcfb9c4a60ea5ad93be19f4a475d5a09bf1497380e73"
+    sha256 cellar: :any_skip_relocation, catalina:     "c34469ec8c3131098adff53e3b592eb81873fbd62a1108249101a44715ed0c6d"
+    sha256 cellar: :any_skip_relocation, mojave:       "d3d538a52c087d74e4124886f9ccbba3efa4698322d65a1e2c3df79fd8680130"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "dc91b84c26cd9328bb58f71b50a1751b00bcf56ed607f8826386fcc37bb06993"
   end
 
   depends_on "go" => :build
