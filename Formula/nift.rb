@@ -1,15 +1,14 @@
 class Nift < Formula
   desc "Cross-platform open source framework for managing and generating websites"
   homepage "https://nift.dev/"
-  url "https://github.com/nifty-site-manager/nsm/archive/v2.4.9.tar.gz"
-  sha256 "a9da5c60828a2c0f309b553ab8720001e5a4068a5a5ff47f19f1c1449ea525db"
+  url "https://github.com/nifty-site-manager/nsm/archive/v2.4.10.tar.gz"
+  sha256 "3a7292d82471ed19ef6d723f40e4319ca9108275d49f13a583f61f21ff6dbb20"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:      "04b46551d7a1e0ae9adb2e1af9a768d119543490aca901287d9dbb96c03bfd9d"
-    sha256 cellar: :any_skip_relocation, catalina:     "82824e8885876faacc066c28a4a79092202effbf7f8eb41d0ec881308bbb25e1"
-    sha256 cellar: :any_skip_relocation, mojave:       "69d14f5ba918e3b828998e898b58dbd4239482fe5ea9520363c5f784eb62b5a4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "9347a798b79ce86178cc095a7c139f618bc82b4104968ffe3db0d2c85120a9d4"
+    sha256 cellar: :any_skip_relocation, big_sur:  "fb6510a7d3eef37e3274009abe1062585c07294c2453d563b70b9501fa70f719"
+    sha256 cellar: :any_skip_relocation, catalina: "613a21f5107f0e099cd32b67779587807686faf7666366ce4cb1f218855a2d4f"
+    sha256 cellar: :any_skip_relocation, mojave:   "62b96189d61ca0c360aa7c00718f0995fde9d20ad81c5a700836083800093aef"
   end
 
   depends_on "luajit" unless OS.mac?
