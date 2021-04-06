@@ -10,12 +10,12 @@ jobs:
       options: --user=linuxbrew
     env:
       HOMEBREW_GIT_NAME: BrewTestBot
-      HOMEBREW_GIT_EMAIL: 'homebrew-test-bot@lists.sfconservancy.org'
+      HOMEBREW_GIT_EMAIL: "homebrew-test-bot@lists.sfconservancy.org"
       HOMEBREW_DEVELOPER: 1
       HOMEBREW_NO_ANALYTICS: 1
       HOMEBREW_NO_AUTO_UPDATE: 1
     steps:
-        # Printing these details should always be the first step listed.
+      # Printing these details should always be the first step listed.
       - name: ${{github.event.client_payload.formula}}
         id: print_details
         run: |
@@ -71,6 +71,14 @@ jobs:
             --verbose \
             --debug
 
+      - name: Upload bottles to GitHub Packages
+        env:
+          HOMEBREW_GITHUB_PACKAGES_USER: brewtestbot
+          HOMEBREW_GITHUB_PACKAGES_TOKEN: ${{secrets.HOMEBREW_CORE_GITHUB_PACKAGES_TOKEN}}
+        run: |
+          cd ~/bottles
+          brew pr-upload --verbose --keep-old --no-commit --root-url="https://ghcr.io/v2/Homebrew/linuxbrew-core"
+
       - name: Push commits
         uses: Homebrew/actions/git-try-push@master
         if: success() || github.event.client_payload.ignore_errors
@@ -88,6 +96,6 @@ jobs:
         with:
           token: ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}
           issue: ${{github.event.client_payload.issue}}
-          body: ':warning: @${{github.actor}} bottle request for ${{github.event.client_payload.formula}} [failed](${{github.event.repository.html_url}}/actions/runs/${{github.run_id}}).'
-          bot_body: ':warning: Bottle request for ${{github.event.client_payload.formula}} [failed](${{github.event.repository.html_url}}/actions/runs/${{github.run_id}}).'
+          body: ":warning: @${{github.actor}} bottle request for ${{github.event.client_payload.formula}} [failed](${{github.event.repository.html_url}}/actions/runs/${{github.run_id}})."
+          bot_body: ":warning: Bottle request for ${{github.event.client_payload.formula}} [failed](${{github.event.repository.html_url}}/actions/runs/${{github.run_id}})."
           bot: BrewTestBot
