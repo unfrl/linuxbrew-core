@@ -13,6 +13,7 @@ class Bear < Formula
     sha256 arm64_big_sur: "204910b47dcf3593f6b3506b7ca816ce5b266909053548fb235e76c32602fd6e"
     sha256 big_sur:       "ed81e4fa503f8468e6667e971ce813ef0184ba9419a5780fe408563e4c80d805"
     sha256 catalina:      "1dff63613fdda968e35c8e1b40cefaaa56b505891f4335112b12cdc85b6b7ac5"
+    sha256 x86_64_linux:  "0334e113f2022068d0038e02e7664c6db7734e8298c3b1b7b9a30e15c55d476f"
   end
 
   depends_on "cmake" => :build
