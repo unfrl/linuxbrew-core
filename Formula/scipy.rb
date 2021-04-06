@@ -11,6 +11,7 @@ class Scipy < Formula
     sha256 cellar: :any, big_sur:       "66b4d9e02d62584d06db10df8f774705ad98604a16b1b0f2f2c20d16ed751f43"
     sha256 cellar: :any, catalina:      "c31feca2fe5c4f88b142e4afbcf84c8fd8e7e590edeb14da5700cc4a3099b604"
     sha256 cellar: :any, mojave:        "0ee946c47ba5f056ec8d430cb4f5c88d9afe3ee72522c2ec43d5661e3470d7e6"
+    sha256               x86_64_linux:  "4b2b81961d5a56037909b07e3ce3f5a906a5de4325a20987b16f49f3f0151618"
   end
 
   depends_on "swig" => :build
