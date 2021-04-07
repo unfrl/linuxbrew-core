@@ -3,17 +3,16 @@ class HomeassistantCli < Formula
 
   desc "Command-line utility for Home Assistant"
   homepage "https://github.com/home-assistant/home-assistant-cli"
-  url "https://files.pythonhosted.org/packages/7d/2c/17453eda0e2799d735bfbb654fdf25fd4faae724dc8d7f47c8aa877338d3/homeassistant-cli-0.9.2.tar.gz"
-  sha256 "99118e62b6a251b306932cbf902f438f5e1ae419d4ee599b79c062b2c6f80d47"
+  url "https://files.pythonhosted.org/packages/f0/f5/a90000b810751a6094761ed5fed3a6cb746c3c8be3bd1c5ed525e77be69a/homeassistant-cli-0.9.3.tar.gz"
+  sha256 "daf9c2a256cd2e63fc173c7c96b3462211f045a66639778302eb4f9d125b06a2"
   license "Apache-2.0"
   head "https://github.com/home-assistant/home-assistant-cli.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "8ed17e134b719015152b816c69b91ce073ebaba2a008c253255bce97dedd3d6b"
-    sha256 cellar: :any_skip_relocation, big_sur:       "71a6c08dcf8892fc3427b531e7ec246103d131dab61a69e0916251a6feefada1"
-    sha256 cellar: :any_skip_relocation, catalina:      "cb3825ec501fbc9ccfe058dbc4f922caffe850289d6ec5d96092281c56d166f0"
-    sha256 cellar: :any_skip_relocation, mojave:        "6841e17d34261b3762860b81fb2c34c747881d379234ceb53061c610cbf61cf2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f567d30657408566dbe66549ce1b1f9097b7e7c9c9d10a832a54f911bd0326a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "49b6cbed6efc6519e46174ca5995cdec46de5a5befd2aaf1a00189ce38ea7825"
+    sha256 cellar: :any_skip_relocation, big_sur:       "abed34f4e38b3e9e73eacf758d0b9f5eb796d35fa3a494b73f1d5d5797ebf228"
+    sha256 cellar: :any_skip_relocation, catalina:      "fd4ea47f108cb6af299188af230dda775c1888ae25835f030cdac86970c2ed97"
+    sha256 cellar: :any_skip_relocation, mojave:        "c6374c6c62160c99c8e889b96286b6f65382dca2b06e5f6f328c1ffdbcb85918"
   end
 
   depends_on "python-tabulate"
