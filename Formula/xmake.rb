@@ -11,6 +11,7 @@ class Xmake < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "56f270578493cd53be4f1bb37ecd6b030036934b6400a9c75ca46f785f9f543d"
     sha256 cellar: :any_skip_relocation, catalina:      "c4625a7aa1b407e59947dab90b540430c3064794a9ccc37ba0668715c6909cc2"
     sha256 cellar: :any_skip_relocation, mojave:        "204c820e69cdde9cf5ec6168b3fc1a4f3f58bc07d5f8d709b6a213de6bd3f43b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68a84caa1bda262a59b8ebafd542a92511c2c984160b87be66493193f26fea16"
   end
 
   on_linux do
