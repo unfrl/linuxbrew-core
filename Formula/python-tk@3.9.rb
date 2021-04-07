@@ -16,6 +16,7 @@ class PythonTkAT39 < Formula
     sha256 cellar: :any, big_sur:       "435fa1443fa13908afdbdba0f9ba89ad7255be81dc77e0ef0de4ff8ff27df5e7"
     sha256 cellar: :any, catalina:      "98d863ff3f3906fd5c05980848fd1dd4d33d4fad56f653c9d91f6492777dc968"
     sha256 cellar: :any, mojave:        "d16ee86c9b5720b80916880d22bea007af2765b2624a1fd0207a3bc4ec4adbc4"
+    sha256               x86_64_linux:  "466e93142697f2279973d824d7923e618d61c5b13eed8d5b8ddf0a0e7a5525f8"
   end
 
   depends_on "python@3.9"
