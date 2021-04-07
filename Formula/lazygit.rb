@@ -10,6 +10,7 @@ class Lazygit < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "b93aa10aa75e2edf38615dbd546fc1ced689970f0407dd53c37072ce9c0958b1"
     sha256 cellar: :any_skip_relocation, catalina:      "b2f0b012d85fc00d45af6dd1b55e83d145670b36971779d11071692277d41557"
     sha256 cellar: :any_skip_relocation, mojave:        "263907c1723d682d5aff3432efc639a5a9291d5bf7a9abc609d51350ffb625de"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e31d9ebe2ee6a98391f0806cc76f8486a247df883def9579359c9deedbb1195f"
   end
 
   depends_on "go" => :build
