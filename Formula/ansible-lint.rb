@@ -3,16 +3,15 @@ class AnsibleLint < Formula
 
   desc "Checks ansible playbooks for practices and behaviour"
   homepage "https://github.com/ansible/ansible-lint/"
-  url "https://files.pythonhosted.org/packages/98/e8/0e399e023de25053b7d2fc17a65ad1850dbcb0a9e6ee855c94d6549ee5dc/ansible-lint-5.0.6.tar.gz"
-  sha256 "e5104cb11c437aec7f51e05a07f8c68d7f9b7c4cc36afc52edd8b0f71d84d63a"
+  url "https://files.pythonhosted.org/packages/d2/46/a8065d3a89e5136430fc63922455ceafe712d6c05cfe2ee635a8d93f3d47/ansible-lint-5.0.7.tar.gz"
+  sha256 "d63b72df37000c72378cb1ae0f48a5ba6410ce650717d81d818e528208eecf91"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "a0c0afa37e884cf6e64916946ec3ad8559d1db441e7e638ca7f9c289037cd9e6"
-    sha256 cellar: :any, big_sur:       "23dfd97c961d7cbb726d2d50b831f37d86a73e5de6f252bd087cb5735afd4a87"
-    sha256 cellar: :any, catalina:      "5a569d6e83a9bd4ff2351cc49cb814c255ca7291e2a4ee48a3d0174ab5dd26af"
-    sha256 cellar: :any, mojave:        "0940945f30b158ba4a7cedcc9bb24de48b1536b1f6b35cb3849dd6969da7fd92"
+    sha256 cellar: :any, arm64_big_sur: "20238822ae304c5c3f2969ece4bf91426e3fbd9415cd8ff621d5be2cf9b13a36"
+    sha256 cellar: :any, big_sur:       "abc31e23851db5273b5d72acc22b1beb22fd903be02e14380ab4128c64de3175"
+    sha256 cellar: :any, catalina:      "ecc5b6c656c1640ef93055e4161e43c4f1beeb21da2ab0ebff2481efe31fec1e"
+    sha256 cellar: :any, mojave:        "c1b983e0c06c48a3db7addd2e2ea0381d186f1b456b51e3897c2f7fa64256738"
   end
 
   depends_on "pkg-config" => :build
@@ -73,6 +72,16 @@ class AnsibleLint < Formula
   resource "ruamel.yaml.clib" do
     url "https://files.pythonhosted.org/packages/fa/a1/f9c009a633fce3609e314294c7963abe64934d972abea257dce16a15666f/ruamel.yaml.clib-0.2.2.tar.gz"
     sha256 "2d24bd98af676f4990c4d715bcdc2a60b19c56a3fb3a763164d2d8ca0e806ba7"
+  end
+
+  resource "six" do
+    url "https://files.pythonhosted.org/packages/6b/34/415834bfdafca3c5f451532e8a8d9ba89a21c9743a0c59fbd0205c7f9426/six-1.15.0.tar.gz"
+    sha256 "30639c035cdb23534cd4aa2dd52c3bf48f06e5f4a941509c8bafd8ce11080259"
+  end
+
+  resource "tenacity" do
+    url "https://files.pythonhosted.org/packages/9e/ff/65d44f70e9a5273b6185ccbff194bb649e4fa6bd328113feda964f277f2d/tenacity-7.0.0.tar.gz"
+    sha256 "5bd16ef5d3b985647fe28dfa6f695d343aa26479a04e8792b9d3c8f49e361ae1"
   end
 
   resource "typing-extensions" do
