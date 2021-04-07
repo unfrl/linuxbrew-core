@@ -76,7 +76,7 @@ jobs:
         if: success() || github.event.client_payload.ignore_errors
         with:
           directory: ${{ steps.print_details.outputs.repo }}
-          token: ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}
+          token: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
         env:
           GIT_COMMITTER_NAME: BrewTestBot
           GIT_COMMITTER_EMAIL: 1589480+BrewTestBot@users.noreply.github.com
@@ -86,7 +86,7 @@ jobs:
         if: ${{!success() && github.event.client_payload.issue > 0}}
         uses: Homebrew/actions/post-comment@master
         with:
-          token: ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}
+          token: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
           issue: ${{github.event.client_payload.issue}}
           body: ":warning: @${{github.actor}} bottle request for ${{github.event.client_payload.formula}} [failed](${{github.event.repository.html_url}}/actions/runs/${{github.run_id}})."
           bot_body: ":warning: Bottle request for ${{github.event.client_payload.formula}} [failed](${{github.event.repository.html_url}}/actions/runs/${{github.run_id}})."
