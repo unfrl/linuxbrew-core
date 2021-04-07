@@ -12,10 +12,11 @@ class Gmic < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "2a684946ab82b40f48894bac5628fd568555c79e412154415149c559b8855439"
-    sha256 cellar: :any, big_sur:       "fa3a9f34a4e6af5756037d3d0085cc95192fd2cf133e14985cd98314b46c0d2d"
-    sha256 cellar: :any, catalina:      "28d193071d9c956bb8002584cbd7e9439cb3b4fbbce4fb37106345dfcc3898e8"
-    sha256 cellar: :any, mojave:        "8a24235a837b3972a6f8b39b3ca219e676c7807ed83daf613576f1acb813faa2"
+    sha256 cellar: :any,                 arm64_big_sur: "2a684946ab82b40f48894bac5628fd568555c79e412154415149c559b8855439"
+    sha256 cellar: :any,                 big_sur:       "fa3a9f34a4e6af5756037d3d0085cc95192fd2cf133e14985cd98314b46c0d2d"
+    sha256 cellar: :any,                 catalina:      "28d193071d9c956bb8002584cbd7e9439cb3b4fbbce4fb37106345dfcc3898e8"
+    sha256 cellar: :any,                 mojave:        "8a24235a837b3972a6f8b39b3ca219e676c7807ed83daf613576f1acb813faa2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c660018ce294eb5b43422c8c030c9f17a1be9965952f43c2a66371d225784633"
   end
 
   depends_on "cmake" => :build
