@@ -2,10 +2,9 @@ class PythonTkAT39 < Formula
   desc "Python interface to Tcl/Tk"
   homepage "https://www.python.org/"
   # Keep in sync with python@3.9.
-  url "https://www.python.org/ftp/python/3.9.2/Python-3.9.2.tar.xz"
-  sha256 "3c2034c54f811448f516668dce09d24008a0716c3a794dd8639b5388cbde247d"
+  url "https://www.python.org/ftp/python/3.9.4/Python-3.9.4.tar.xz"
+  sha256 "4b0e6644a76f8df864ae24ac500a51bbf68bd098f6a173e27d3b61cdca9aa134"
   license "Python-2.0"
-  revision 1
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -13,11 +12,10 @@ class PythonTkAT39 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "377cd05c77225a22344719c94ebae986dcc794af9ead40d6be89501a5b816ef2"
-    sha256 cellar: :any, big_sur:       "b5505e8ee5a218e0258454892ed9d8230f1022b32af50184529d762120fd6b63"
-    sha256 cellar: :any, catalina:      "8413b1a6f7bcfcf07434925c4e5896145c2e2a1600e4b7fa1ea66c24073c84a3"
-    sha256 cellar: :any, mojave:        "24dbeb5ff963ee45302047d6fa05456b44349dd7662c633cdca240a1abc7ac3e"
-    sha256               x86_64_linux:  "704e31c2214656e0b02705b77b585ef01848245b09d3481af91c75171043b8a6"
+    sha256 cellar: :any, arm64_big_sur: "3aa77543372cbafcef98df61bb0a87758e2e709e9a0bf2a01e2008b8ae25ce05"
+    sha256 cellar: :any, big_sur:       "435fa1443fa13908afdbdba0f9ba89ad7255be81dc77e0ef0de4ff8ff27df5e7"
+    sha256 cellar: :any, catalina:      "98d863ff3f3906fd5c05980848fd1dd4d33d4fad56f653c9d91f6492777dc968"
+    sha256 cellar: :any, mojave:        "d16ee86c9b5720b80916880d22bea007af2765b2624a1fd0207a3bc4ec4adbc4"
   end
 
   depends_on "python@3.9"
