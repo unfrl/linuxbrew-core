@@ -16,6 +16,7 @@ class PythonAT39 < Formula
     sha256 big_sur:       "77ba90d10acfc70e57781aae7b8f48799bc4d521422c74fe723cb2d6f5850c5c"
     sha256 catalina:      "225b1f2e9bbc2d751abb0a539e9c231769370136649f7d94191114248bdf4d39"
     sha256 mojave:        "d99937524f1a9bb07bb01ff09f280609fdbce51e0aa3604d17e87f4ebd9bc498"
+    sha256 x86_64_linux:  "b4e94a21c7a857093277049283c7c737e230135256db3c6e8e151b2f37bc8dd6"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
