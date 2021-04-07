@@ -33,11 +33,17 @@ class Micropython < Formula
   end
 
   test do
+    lib_version = nil
+
+    on_linux do
+      lib_version = "6"
+    end
+
     # Test the FFI module
     (testpath/"ffi-hello.py").write <<~EOS
       import ffi
 
-      libc = ffi.open("libc.#{OS.mac? ? "dylib" : "so.6"}")
+      libc = ffi.open("#{shared_library("libc", lib_version)}")
       printf = libc.func("v", "printf", "s")
       printf("Hello!\\n")
     EOS
