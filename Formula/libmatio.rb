@@ -1,21 +1,20 @@
 class Libmatio < Formula
   desc "C library for reading and writing MATLAB MAT files"
   homepage "https://matio.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/matio/matio/1.5.20/matio-1.5.20.tar.gz"
-  sha256 "5d1f72a1f51abf6a9cd23eaa812fb17b861097059095f48c768c4835c5aa2598"
+  url "https://downloads.sourceforge.net/project/matio/matio/1.5.21/matio-1.5.21.tar.gz"
+  sha256 "21809177e55839e7c94dada744ee55c1dea7d757ddaab89605776d50122fb065"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "3782a120f0b6f6f7a4ed927623eb131720745c838fde6825e2c3af242b62638d"
-    sha256 cellar: :any,                 big_sur:       "69052f804c792632ed2e29c4061015bb3c3270cbb6a6146f0959b5aa8f0133b8"
-    sha256 cellar: :any,                 catalina:      "3be0157dbe335338b1adedb1a0dcd8ffca7695f6f4ecf09a84fcbc36662e0535"
-    sha256 cellar: :any,                 mojave:        "ff7ed32d83439cd0e274468f44962509577146f511c0ac27eb9515cfc3a4b8c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30e59ae5244094bbde1d157529f171039c42c61ae548134b7a0f9f79245e9d69"
+    sha256 cellar: :any, arm64_big_sur: "fb9d717a8f88e9235218c3976be38b7ed0c5cab0ca43b8e6374355a85af435ba"
+    sha256 cellar: :any, big_sur:       "98a891d294f382a85d61c8d57381e02d1ecb0139af46c08335c8f2eaf5727d7d"
+    sha256 cellar: :any, catalina:      "bcb2ae92ff978e644dcc7c1469d452a5f65a1d1587c9a2f68de4ac88d0d8dbcb"
+    sha256 cellar: :any, mojave:        "a19666b0812ccbe6b83193694677075ec678433af8cd2aa6b8f728c0dab46700"
   end
 
   depends_on "hdf5"
 
-  resource "test_mat_file" do
+  resource "homebrew-test_mat_file" do
     url "https://web.uvic.ca/~monahana/eos225/poc_data.mat.sfx"
     sha256 "a29df222605476dcfa660597a7805176d7cb6e6c60413a3e487b62b6dbf8e6fe"
   end
@@ -34,7 +33,7 @@ class Libmatio < Formula
   end
 
   test do
-    testpath.install resource("test_mat_file")
+    testpath.install resource("homebrew-test_mat_file")
     (testpath/"mat.c").write <<~'EOS'
       #include <stdlib.h>
       #include <matio.h>
