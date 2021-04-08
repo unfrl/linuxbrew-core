@@ -104,7 +104,7 @@ class Gcc < Formula
       --with-bugurl=#{tap.issues_url}
     ]
 
-    if OS.mac?
+    on_macos do
       args << "--build=#{cpu}-apple-darwin#{OS.kernel_version.major}"
       args << "--with-system-zlib"
 
