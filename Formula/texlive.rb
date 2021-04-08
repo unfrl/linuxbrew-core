@@ -8,7 +8,6 @@ class Texlive < Formula
   head "http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz"
 
   bottle do
-    cellar :any_skip_relocation
   end
 
   depends_on "wget" => :build
