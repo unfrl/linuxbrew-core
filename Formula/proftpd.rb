@@ -22,6 +22,7 @@ class Proftpd < Formula
     sha256 big_sur:       "2f410eb0a7911309e27bdf9a9af1528561f9f5f32f80967b6727a100020bd6bc"
     sha256 catalina:      "18815adf6ee8958854a6962afb377e00642eafde5b8ac1d89cd69f211914343b"
     sha256 mojave:        "d24f1a6000fb47caf68ef104770b1ed66d284439a5d8cf9c9b5688fae073b47d"
+    sha256 x86_64_linux:  "64a062e7384264edb3e73999b33a1e8c1761a250c865bb5329fced990731dc3d"
   end
 
   def install
