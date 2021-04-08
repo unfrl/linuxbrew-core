@@ -3,17 +3,11 @@ name: Build bottles from 'brew request-bottle' trigger.
 on: repository_dispatch
 
 jobs:
-  bottling:
+  bottle:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/homebrew/ubuntu16.04:master
       options: --user=linuxbrew
-    env:
-      HOMEBREW_GIT_NAME: BrewTestBot
-      HOMEBREW_GIT_EMAIL: "homebrew-test-bot@lists.sfconservancy.org"
-      HOMEBREW_DEVELOPER: 1
-      HOMEBREW_NO_ANALYTICS: 1
-      HOMEBREW_NO_AUTO_UPDATE: 1
     steps:
       # Printing these details should always be the first step listed.
       - name: ${{github.event.client_payload.formula}}
@@ -30,9 +24,6 @@ jobs:
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@master
 
-      - name: Setup git
-        uses: Homebrew/actions/git-user-config@master
-
       - name: Build bottles
         env:
           HOMEBREW_GITHUB_API_TOKEN: ${{secrets.GITHUB_TOKEN}}
@@ -45,17 +36,37 @@ jobs:
             --skip-recursive-dependents \
             ${{github.event.client_payload.formula}}
 
-      - name: Copy bottles
-        if: always()
-        run: |
-          cp -a ~/bottles $GITHUB_WORKSPACE
-
       - name: Upload bottles
         if: always()
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@main
         with:
           name: bottles
-          path: bottles
+          path: ~/bottles/
+
+      - name: Post comment on failure
+        if: ${{!success() && github.event.client_payload.issue > 0}}
+        uses: Homebrew/actions/post-comment@master
+        with:
+          token: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
+          issue: ${{github.event.client_payload.issue}}
+          body: ":warning: @${{github.actor}} bottle request for ${{github.event.client_payload.formula}} [failed](${{github.event.repository.html_url}}/actions/runs/${{github.run_id}})."
+          bot_body: ":warning: Bottle request for ${{github.event.client_payload.formula}} [failed](${{github.event.repository.html_url}}/actions/runs/${{github.run_id}})."
+          bot: BrewTestBot
+  upload:
+    runs-on: ubuntu-latest
+    needs: bottle
+    steps:
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Setup git
+        uses: Homebrew/actions/git-user-config@master
+
+      - name: Download bottles from GitHub Actions
+        uses: actions/download-artifact@main
+        with:
+          name: bottles
+          path: ~/bottles/
 
       - name: Upload bottles to Bintray
         env:
@@ -64,12 +75,7 @@ jobs:
         if: success() || github.event.client_payload.ignore_errors
         run: |
           cd ~/bottles
-          brew update-reset $(brew --repo ${{github.repository}})
-          brew pr-upload \
-            --bintray-org=linuxbrew \
-            --keep-old \
-            --verbose \
-            --debug
+          brew pr-upload --verbose --keep-old --bintray-org=linuxbrew
 
       - name: Upload bottles to GitHub Packages
         env:
@@ -81,14 +87,8 @@ jobs:
 
       - name: Push commits
         uses: Homebrew/actions/git-try-push@master
-        if: success() || github.event.client_payload.ignore_errors
         with:
-          directory: ${{ steps.print_details.outputs.repo }}
           token: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
-        env:
-          GIT_COMMITTER_NAME: BrewTestBot
-          GIT_COMMITTER_EMAIL: 1589480+BrewTestBot@users.noreply.github.com
-          HOMEBREW_GPG_PASSPHRASE: ${{ secrets.BREWTESTBOT_GPG_SIGNING_SUBKEY_PASSPHRASE }}
 
       - name: Post comment on failure
         if: ${{!success() && github.event.client_payload.issue > 0}}
