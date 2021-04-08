@@ -11,6 +11,7 @@ class Libxkbcommon < Formula
     sha256 big_sur:       "07bfb4c4d2ababedad929051d836fa8a1b86b444d061ed613e3bdf5f7448e8be"
     sha256 catalina:      "3dfcace9096eb252a09258e1754a63aad56a4c2adab793311b22ed899e3bb227"
     sha256 mojave:        "8bfd0b4896fe5295b4e4d5e1f967106078ced64f517dc31242376e0b185f86c9"
+    sha256 x86_64_linux:  "d8f5a1bb9620eee08ef54e3e43f9c3e459a32fb64cefe4075b75a0bfd0cca8af"
   end
 
   depends_on "bison" => :build
