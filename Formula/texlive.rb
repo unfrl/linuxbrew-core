@@ -7,9 +7,6 @@ class Texlive < Formula
   revision 1
   head "http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz"
 
-  bottle do
-  end
-
   depends_on "wget" => :build
   depends_on "fontconfig"
   depends_on "libice"
