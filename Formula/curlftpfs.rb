@@ -19,7 +19,7 @@ class Curlftpfs < Formula
   depends_on "pkg-config" => :build
   depends_on "glib"
 
-  # TODO: :x11 removed, depend on specific X11 formulae instead
+  # TODO: depend on specific X11 formulae instead
 
   on_macos do
     disable! date: "2021-04-08", because: "requires FUSE"

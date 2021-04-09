@@ -69,6 +69,10 @@ class Llvm < Formula
   # See: Homebrew/homebrew-core/issues/35513
   depends_on "cmake" => :build
   depends_on "swig" => :build
+  if !OS.mac? &&
+     (Formula["glibc"].any_version_installed? || OS::Linux::Glibc.system_version < Formula["glibc"].version)
+    depends_on "glibc"
+  end
   depends_on "libffi"
   depends_on "python@3.9"
 
@@ -77,12 +81,9 @@ class Llvm < Formula
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
-  unless OS.mac?
+  on_linux do
     depends_on "pkg-config" => :build
-    if Formula["glibc"].any_version_installed? || OS::Linux::Glibc.system_version < Formula["glibc"].version
-      depends_on "glibc"
-    end
-    depends_on "binutils" # needed for gold and strip
+    depends_on "binutils" # needed for gold
     depends_on "libelf" # openmp requires <gelf.h>
   end
 
@@ -103,9 +104,8 @@ class Llvm < Formula
     ]
     args << "libcxx" if OS.mac?
 
-    python = Formula["python@3.9"]
-    py_ver = Language::Python.major_minor_version(python)
-    site_packages = Language::Python.site_packages(python).delete_prefix("lib/")
+    py_ver = Language::Python.major_minor_version("python3")
+    site_packages = Language::Python.site_packages("python3").delete_prefix("lib/")
 
     # Apple's libstdc++ is too old to build LLVM
     ENV.libcxx if ENV.compiler == :clang
@@ -145,27 +145,28 @@ class Llvm < Formula
       -DLIBOMP_INSTALL_ALIASES=OFF
       -DCLANG_PYTHON_BINDINGS_VERSIONS=#{py_ver}
     ]
-    if OS.mac?
+
+    on_macos do
       args << "-DLLVM_BUILD_LLVM_C_DYLIB=ON"
       args << "-DLLVM_ENABLE_LIBCXX=ON"
       args << "-DLLVM_CREATE_XCODE_TOOLCHAIN=#{MacOS::Xcode.installed? ? "ON" : "OFF"}"
-    else
-      args << "-DLLVM_BUILD_LLVM_C_DYLIB=OFF"
+
+      sdk = MacOS.sdk_path_if_needed
+      args << "-DDEFAULT_SYSROOT=#{sdk}" if sdk
+
+      if MacOS.version == :mojave && MacOS::CLT.installed?
+        # Mojave CLT linker via software update is older than Xcode.
+        # Use it to retain compatibility.
+        args << "-DCMAKE_LINKER=/Library/Developer/CommandLineTools/usr/bin/ld"
+      end
+    end
+
+    on_linux do
       args << "-DLLVM_ENABLE_LIBCXX=OFF"
       args << "-DLLVM_CREATE_XCODE_TOOLCHAIN=OFF"
       args << "-DCLANG_DEFAULT_CXX_STDLIB=libstdc++"
-    end
-
-    sdk = MacOS.sdk_path_if_needed
-    args << "-DDEFAULT_SYSROOT=#{sdk}" if sdk
-
-    # Enable llvm gold plugin for LTO
-    args << "-DLLVM_BINUTILS_INCDIR=#{Formula["binutils"].opt_include}" unless OS.mac?
-
-    if OS.mac? & MacOS.version == :mojave && MacOS::CLT.installed?
-      # Mojave CLT linker via software update is older than Xcode.
-      # Use it to retain compatibility.
-      args << "-DCMAKE_LINKER=/Library/Developer/CommandLineTools/usr/bin/ld"
+      # Enable llvm gold plugin for LTO
+      args << "-DLLVM_BINUTILS_INCDIR=#{Formula["binutils"].opt_include}"
     end
 
     llvmpath = buildpath/"llvm"
