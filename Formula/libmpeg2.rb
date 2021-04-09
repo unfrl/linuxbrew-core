@@ -16,7 +16,6 @@ class Libmpeg2 < Formula
     sha256 cellar: :any, big_sur:       "9f2cfd80d47e975333747fdea41d336071282ae359e9a345835a70611467bd43"
     sha256 cellar: :any, catalina:      "9a8c812495f38eb0d46bff246c632c5dfd97413b2bc949defd9c5d318b9da439"
     sha256 cellar: :any, mojave:        "81161223100cfa38704d3194519be5651f4fcb47765b7e99f1d53ce05e433142"
-    sha256 cellar: :any, x86_64_linux:  "38ea8d58877cb8e7fa0e9465ec78aa10abf5159b349ae9c5c939fb7d3d292a6a"
   end
 
   depends_on "autoconf" => :build
