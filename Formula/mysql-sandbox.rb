@@ -17,7 +17,6 @@ class MysqlSandbox < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "effaa2803c9302f19a2ed000d7fc6e07a718186102877822338a90c850b0ba69"
     sha256 cellar: :any_skip_relocation, catalina:      "0b01929ca2d5a53f9ea2c18dfcef7f4468b5d625ba75dcfcafe5f74ab8954bf6"
     sha256 cellar: :any_skip_relocation, mojave:        "dc52de83d9b8f7d85273c64665a80165a8d13e8e4654a0655017d3453fac97ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1770bcbb706b2c1601b7a30731758af6a7b085be37f64c429ad4fda481733a44"
   end
 
   uses_from_macos "perl"
