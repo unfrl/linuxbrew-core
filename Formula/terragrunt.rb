@@ -10,6 +10,7 @@ class Terragrunt < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "edc9c4437684e82b5c9e82c670c39f4edb29c7fbe9fc4d41c10fbef1db33e235"
     sha256 cellar: :any_skip_relocation, catalina:      "cdddabf9f50c5ddec825383eebacbcdc7df80d4bc1ad386c6d72a8e419291495"
     sha256 cellar: :any_skip_relocation, mojave:        "94d280c39f10ce86de9b10ab4afd0ce2e34c518853d1e20cfe70a43f7e38c8a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "897c2a47dad0b7613710b64cc52872fcc1b3d0d5203625dd5af62adbf54ea2ee"
   end
 
   depends_on "go" => :build
