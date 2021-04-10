@@ -75,7 +75,7 @@ jobs:
         if: success() || github.event.client_payload.ignore_errors
         run: |
           cd ~/bottles
-          brew pr-upload --verbose --keep-old --bintray-org=linuxbrew
+          brew pr-upload --verbose --keep-old --bintray-org=linuxbrew --root-url="https://homebrew.bintray.com/bottles"
 
       - name: Upload and publish bottles on Bintray
         env:
