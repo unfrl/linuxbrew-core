@@ -1,16 +1,15 @@
 class Lazygit < Formula
   desc "Simple terminal UI for git commands"
   homepage "https://github.com/jesseduffield/lazygit/"
-  url "https://github.com/jesseduffield/lazygit/archive/v0.27.1.tar.gz"
-  sha256 "f95831324f2ee890f83f8bf67d88b1d4464646f188a64ecaf6487af861e84200"
+  url "https://github.com/jesseduffield/lazygit/archive/v0.27.2.tar.gz"
+  sha256 "0e3322540095cd4fbde546f23bf89c7db288800cc4a142a8dbcb1d34b31b7a15"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "c064c16b83ace3e7aeef910783905a0d493a589d710425fa32035c7c1300632d"
-    sha256 cellar: :any_skip_relocation, big_sur:       "b93aa10aa75e2edf38615dbd546fc1ced689970f0407dd53c37072ce9c0958b1"
-    sha256 cellar: :any_skip_relocation, catalina:      "b2f0b012d85fc00d45af6dd1b55e83d145670b36971779d11071692277d41557"
-    sha256 cellar: :any_skip_relocation, mojave:        "263907c1723d682d5aff3432efc639a5a9291d5bf7a9abc609d51350ffb625de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e31d9ebe2ee6a98391f0806cc76f8486a247df883def9579359c9deedbb1195f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "57b612f1e76754ebcd459b1f8b477a621af82df9c14ee94cc792f091a83f3393"
+    sha256 cellar: :any_skip_relocation, big_sur:       "9d9cd26d2a1909de53a9afa6bc06c9277bf02181216f2476021f505d22262c16"
+    sha256 cellar: :any_skip_relocation, catalina:      "e66dbef10c732cf088cb7a2b3038a8344fc1739f9b8cd550cad39eb3d9ee41d3"
+    sha256 cellar: :any_skip_relocation, mojave:        "0e7420a3005699a711919c322e814b81afb57f81645ada5edcdd46fa932a1dd7"
   end
 
   depends_on "go" => :build
