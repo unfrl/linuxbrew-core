@@ -21,7 +21,6 @@ class Normalize < Formula
     sha256 cellar: :any, el_capitan:    "052ab2e8b1f6a2aa1e634a30749612d927b5cee5cc9302e057bd02c599a1c256"
     sha256 cellar: :any, yosemite:      "dcb42f107b9674e50d8994215f6d125e0fb9523b1d99b393fd00ee2b827be5e0"
     sha256               x86_64_linux:  "ac25497f08b39d5ec724876fff9dd41a16ac469c388864d58ea710e307d577b9"
-    sha256 cellar: :any, mavericks:     "9c12615d384a706feb8ddb693dadacfc5bfc48827e5722dd6476325bbe5e90b9"
   end
 
   depends_on "mad"
