@@ -11,6 +11,7 @@ class Kubevela < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "4610fde53315e961b80df7f6aac1e42a30bdefcb565c29e9c6d12a0ae28f230c"
     sha256 cellar: :any_skip_relocation, catalina:      "f50f99008e1648e088bb4b67cd9dd1bfa58c31f47664d6b24c433e4bf4fd076f"
     sha256 cellar: :any_skip_relocation, mojave:        "d4553e87e0128475549eebaa3d90805c81184492d001811d8388cdb4d58307c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13d21d4017cbeeba62e84ae8c3a24e139fe33b1dd97bb72fadc61847617ed40e"
   end
 
   depends_on "go" => :build
