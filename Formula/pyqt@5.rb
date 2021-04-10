@@ -7,10 +7,11 @@ class PyqtAT5 < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "def5e1c4db90419439be7ac44ff3d11e6042590e3ef2e2f0586db5870b1b68fb"
-    sha256 cellar: :any, big_sur:       "4346a1891f5a34b2a1b6e426609e44c05f1b892de539ac5eadf0d0deff5e93d1"
-    sha256 cellar: :any, catalina:      "04e2f9b7627b65824026e005a4471d5179ec869d92ee87456e2afdeeead18a1d"
-    sha256 cellar: :any, mojave:        "e0e324b2b9cca6dff32fa0cf68b353b3a2a85957ef8c8a0fb686f8f6cbcdffc1"
+    sha256 cellar: :any,                 arm64_big_sur: "def5e1c4db90419439be7ac44ff3d11e6042590e3ef2e2f0586db5870b1b68fb"
+    sha256 cellar: :any,                 big_sur:       "4346a1891f5a34b2a1b6e426609e44c05f1b892de539ac5eadf0d0deff5e93d1"
+    sha256 cellar: :any,                 catalina:      "04e2f9b7627b65824026e005a4471d5179ec869d92ee87456e2afdeeead18a1d"
+    sha256 cellar: :any,                 mojave:        "e0e324b2b9cca6dff32fa0cf68b353b3a2a85957ef8c8a0fb686f8f6cbcdffc1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94434a59d6b1a54e45ab3c584efca2b81595e9860823483c82e7205bd6af0607"
   end
 
   depends_on "pyqt-builder" => :build
