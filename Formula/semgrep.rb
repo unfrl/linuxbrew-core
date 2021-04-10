@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https://semgrep.dev"
   url "https://github.com/returntocorp/semgrep.git",
-      tag:      "v0.45.0",
-      revision: "972ac1d2391ceeb19d71913b37f0570ad421b9fc"
+      tag:      "v0.46.0",
+      revision: "6a5868db83f4fbafb576eb7f6af2dc16f7b62932"
   license "LGPL-2.1-only"
   head "https://github.com/returntocorp/semgrep.git", branch: "develop"
 
@@ -15,10 +15,10 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "2dcc43e141ae7362e7739e666b1b2ac539b75f0b480fac9f75ba9fb0a6646c69"
-    sha256 cellar: :any, big_sur:       "92f22e700261df9aa84c87e08357e334cbe385c9050a7916a97a624a602540fd"
-    sha256 cellar: :any, catalina:      "64e6c71fc4b8d5d7b0d1dfb227a48c4061cb4bfcb82c8e644e2a5618f9020b2f"
-    sha256 cellar: :any, mojave:        "b0214124353fc1254019b33dc28e193442b6287854fb07f57cfd290626e28745"
+    sha256 cellar: :any, arm64_big_sur: "d7083d007bd668b4095704f46d1b32aa035c37e547ecfeb47d5d774081cb38f7"
+    sha256 cellar: :any, big_sur:       "dcab1a53f26b8819112a1e78d0705a189c0abf6f4f1a207df6d5a67d87d92594"
+    sha256 cellar: :any, catalina:      "8f0d5039ff82195979fe85135ed3a6b709df81c8164c27b579acc9b0cfc3f4b4"
+    sha256 cellar: :any, mojave:        "a3c3a19f32ba7d6cc5f3fe45b77c58a5025d941631d7e1080d880156d05bcc57"
   end
 
   depends_on "cmake" => :build
@@ -60,12 +60,6 @@ class Semgrep < Formula
     sha256 "c8a85b28d377cc7737e46e2d9f2b4f44ee3c0e1deac6bf46ddefc7187d30797a"
   end
 
-  # only doing this because junit-xml source is not available in PyPI for v1.9
-  resource "junit-xml" do
-    url "https://github.com/kyrus/python-junit-xml.git",
-        revision: "4bd08a272f059998cedf9b7779f944d49eba13a6"
-  end
-
   resource "packaging" do
     url "https://files.pythonhosted.org/packages/86/3c/bcd09ec5df7123abcf695009221a52f90438d877a2f1499453c6938f5728/packaging-20.9.tar.gz"
     sha256 "5b327ac1320dc863dca72f4514ecc086f31186744b84a230374cc1fd776feae5"
@@ -87,8 +81,8 @@ class Semgrep < Formula
   end
 
   resource "ruamel.yaml" do
-    url "https://files.pythonhosted.org/packages/e3/be/2ccf0b81a47452fa6131232338a9d16fe3e28f25667b04ce1ab263df1be2/ruamel.yaml-0.17.0.tar.gz"
-    sha256 "3572505e63dd35b5dea62cd0386d03c4f2a53da29a3af09f428114cc85c564aa"
+    url "https://files.pythonhosted.org/packages/62/cf/148028462ab88a71046ba0a30780357ae9e07125863ea9ca7808f1ea3798/ruamel.yaml-0.17.4.tar.gz"
+    sha256 "44bc6b54fddd45e4bc0619059196679f9e8b79c027f4131bb072e6a22f4d5e28"
   end
 
   resource "ruamel.yaml.clib" do
@@ -102,8 +96,8 @@ class Semgrep < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/ef/58/60cc1e9af5714d1b86062f6dc00c5dd6973c902da6259f930b9c6e7a3430/tqdm-4.59.0.tar.gz"
-    sha256 "d666ae29164da3e517fcf125e41d4fe96e5bb375cd87ff9763f6b38b5592fe33"
+    url "https://files.pythonhosted.org/packages/35/35/bd5af89c97ad5177ed234d9e79d01a984f8b5226b8ffc8b5d3c4fc8e157d/tqdm-4.60.0.tar.gz"
+    sha256 "ebdebdb95e3477ceea267decfc0784859aa3df3e27e22d23b83e9b272bf157ae"
   end
 
   resource "urllib3" do
