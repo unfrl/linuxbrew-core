@@ -12,6 +12,7 @@ class Twarc < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "2873215bac93046a6ad0f0b3585749623c717f11cec53658c3f81c07c4172c0a"
     sha256 cellar: :any_skip_relocation, catalina:      "60b61e5a5586b647ab8628089ad982d9b2bcfef836360129e5e5df3645b7f777"
     sha256 cellar: :any_skip_relocation, mojave:        "9ecb06ef2244b2a3318377138645721880b71350df1e3c6c33ac26ab82151691"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b8a2538a48674e031151703b6c36437de99411eaf5c28e5066555e491957057"
   end
 
   depends_on "python@3.9"
