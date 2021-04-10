@@ -16,7 +16,6 @@ class Libbdplus < Formula
     sha256 cellar: :any,                 el_capitan:    "7136cdf433318efb9691d43d078eb20e9647f2ae4999b42cf791736d95047a81"
     sha256 cellar: :any,                 yosemite:      "13f271c0bb73d496cda7314d6665478c19193f0eb3b9b7a9fbc1eb4a957894c9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "88208e94aa4fe1b85c4579dd3a200236ea94a084a2a700fde50f533f128f1096"
-    sha256 cellar: :any,                 mavericks:     "e2189073d60ed520ed852355aebf1a5137fec5bead346ebc68f2b202d495db36"
   end
 
   head do
