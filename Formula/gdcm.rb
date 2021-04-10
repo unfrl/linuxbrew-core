@@ -1,10 +1,9 @@
 class Gdcm < Formula
   desc "Grassroots DICOM library and utilities for medical files"
   homepage "https://sourceforge.net/projects/gdcm/"
-  url "https://github.com/malaterre/GDCM/archive/v3.0.8.tar.gz"
-  sha256 "47b96be345b1611784f9e65fc39367c7450c9a1ef81c21f8acddfb6207098315"
+  url "https://github.com/malaterre/GDCM/archive/v3.0.9.tar.gz"
+  sha256 "fcfc50ea8809bd4a173550c7d7bb4f8722ae0781fbf17240ce84a04e90af0e9b"
   license "BSD-3-Clause"
-  revision 2
 
   livecheck do
     url :stable
@@ -12,11 +11,10 @@ class Gdcm < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "e5d409d8c7c2d3c9888b4666de72f72671a4c52e0b6e40bc28a48988221a9a64"
-    sha256 big_sur:       "9e212eede12495c23aac2e76516dec184bddf3ec3056c3128fe5b72f74f5d93a"
-    sha256 catalina:      "584352feb306fff666456a8c281292e1a73908b5eac6d78d87e3264ff87d5f62"
-    sha256 mojave:        "eb192ec65565b2045d9cf3fc7c9ab1f5ef96573489a0739aa84c25a318c89669"
-    sha256 x86_64_linux:  "87fc9b98deff00784f7e25d79656f545bb81b99735102050753fde41630cd323"
+    sha256 arm64_big_sur: "de5bc6a184d5a6b702b2c64f53dfbc01dba7001f88b19c41d0b4caf1eb204ab0"
+    sha256 big_sur:       "378001b94f05d471f2bda00ce0bb95c453c28541670b485e43048d4ac82a1db6"
+    sha256 catalina:      "f9cd528ff74597443915c745ee9703de355088b1f0fc9cc63b781f5ae71fba4c"
+    sha256 mojave:        "1848bb8978888ab810ac142636f403b3b5763954a412f770085730c7b2953894"
   end
 
   depends_on "cmake" => :build
