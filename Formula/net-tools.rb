@@ -20,6 +20,6 @@ class NetTools < Formula
   end
 
   test do
-    system bin/"netstat", "-i"
+    assert_match "Kernel Interface table", shell_output("#{bin}/netstat -i")
   end
 end
