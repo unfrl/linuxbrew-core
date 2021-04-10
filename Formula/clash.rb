@@ -10,6 +10,7 @@ class Clash < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "eceda9d279a8f8eeece5564e667bd3e4ca1f9d3494f49096afd69e6dba1f19f4"
     sha256 cellar: :any_skip_relocation, catalina:      "a9dff2fe576fee17ff9fc8b1f2d2b65acbdae08d188aaf6903b7ec87cc64c0f4"
     sha256 cellar: :any_skip_relocation, mojave:        "ae8fcb7bbecff876d782688690af627e5bca8840e92d296f355bef5f248c5f53"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a7697e3ba5cc3b38537e436aae1774ed252e02d4be2f4bcab79904a2ba56bc0"
   end
 
   depends_on "go" => :build
