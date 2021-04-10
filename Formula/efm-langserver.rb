@@ -12,6 +12,7 @@ class EfmLangserver < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "9cc00484595c15ab434744dd4680a4eb5aecbce75ec408eb4def459564fcf2d1"
     sha256 cellar: :any_skip_relocation, catalina:      "e8b58845555b6bbe9df05d42e71b6c86d5f2a904da930587876130a76b66abaa"
     sha256 cellar: :any_skip_relocation, mojave:        "b96bad4c290b752b5431e3d9e18f942b2730a8ca38ddedb09a29842556c0d5b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd35e14e22e4423aad20dfc80677ad9e583b262dd632cb920280e412dee2b811"
   end
 
   depends_on "go" => :build
