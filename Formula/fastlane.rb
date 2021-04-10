@@ -12,10 +12,11 @@ class Fastlane < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "0ebef11885e9d42706f3a7eaf67d64b4ee2dbf410f3e7cd16c37c55040c90d82"
-    sha256 cellar: :any, big_sur:       "142d0d96c909b4d5e3d72a8195409237a41e09e1b160b79f2abc47f99230e635"
-    sha256 cellar: :any, catalina:      "b80f4590f99c5e04846a922962c49552233699a8339f8c4dac6ca5f852464633"
-    sha256 cellar: :any, mojave:        "73aaa47abe9c23fe4918c4a210fa89c2e3686449d4fbf9d0fc863c40c0ff1bc2"
+    sha256 cellar: :any,                 arm64_big_sur: "0ebef11885e9d42706f3a7eaf67d64b4ee2dbf410f3e7cd16c37c55040c90d82"
+    sha256 cellar: :any,                 big_sur:       "142d0d96c909b4d5e3d72a8195409237a41e09e1b160b79f2abc47f99230e635"
+    sha256 cellar: :any,                 catalina:      "b80f4590f99c5e04846a922962c49552233699a8339f8c4dac6ca5f852464633"
+    sha256 cellar: :any,                 mojave:        "73aaa47abe9c23fe4918c4a210fa89c2e3686449d4fbf9d0fc863c40c0ff1bc2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "156ed548be0f209da05bbe6abbbbeb8730287f0316944b1207d99283701deb8a"
   end
 
   # Issue with Ruby 2.7 not finding gems correctly
