@@ -3,16 +3,15 @@ class SphinxDoc < Formula
 
   desc "Tool to create intelligent and beautiful documentation"
   homepage "https://www.sphinx-doc.org/"
-  url "https://files.pythonhosted.org/packages/47/8c/b8edf8b293613057355d45365201d9e98560a484a9c177934a6f25115826/Sphinx-3.5.3.tar.gz"
-  sha256 "ce9c228456131bab09a3d7d10ae58474de562a6f79abb3dc811ae401cf8c1abc"
+  url "https://files.pythonhosted.org/packages/ad/2b/8289bccca4ef5f2981a3182808a27e9d75e1bda4fc5fbb725abf09fcc021/Sphinx-3.5.4.tar.gz"
+  sha256 "19010b7b9fa0dc7756a6e105b2aacd3a80f798af3c25c273be64d7beeb482cb1"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "6b3639fbc3fa5261b8b19d9cac4a231069b6d9b29ba1b426c6f2936e47d91cd3"
-    sha256 cellar: :any_skip_relocation, big_sur:       "7a26249daadfe7f19e504b10a91cac994eb46ff28506f3afc2ef32cc035301c7"
-    sha256 cellar: :any_skip_relocation, catalina:      "c800247503511df400195c0add542898c0e650091d03f096b525902552eda160"
-    sha256 cellar: :any_skip_relocation, mojave:        "329955b970f77d781563ee6c2ba3d23a39def5b43a05d9bd5a67ec2ecec85873"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "86ccc380903e38cdf9bf39eeee82f3f2838a4526d44bb2b4769aa86230100229"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "dc9e744d37a4815c4ed1fa7c3b73c9d4592bc2da41960ca8a6cb0c788f8996e2"
+    sha256 cellar: :any_skip_relocation, big_sur:       "7c3e58ae83086c7772bc62b853b6bd8c4511eacebcf6e9bcf39c8af048cc01d4"
+    sha256 cellar: :any_skip_relocation, catalina:      "75fb3528085effd589c1c82de4644c7d681419e2bbdd10ecab1f98efbedaf9d4"
+    sha256 cellar: :any_skip_relocation, mojave:        "6158e8a542ddeeac45f287f47605c0a3ceac62ed3dd5f95b5376c08c003dabda"
   end
 
   keg_only <<~EOS
