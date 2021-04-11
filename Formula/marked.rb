@@ -12,6 +12,7 @@ class Marked < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "fa6d2d29bae0c1ea4d48c2be7b7ecbf71e956f0a12a714ac825198fbd79a3a4c"
     sha256 cellar: :any_skip_relocation, catalina:      "864b32fcbed0c8f4553d80ed263cb03901d6783fd273e53081b201c49685537a"
     sha256 cellar: :any_skip_relocation, mojave:        "24636afa19f402cfecf6a64f038bd0a92ca7abed7be798ca4cefae2fc90fb5ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc7bc72449b9f8ac949292d6fe49763012bbeda0ea67eb0582ec638fc9ea9228"
   end
 
   depends_on "node"
