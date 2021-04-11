@@ -8,10 +8,11 @@ class Libserdes < Formula
   head "https://github.com/confluentinc/libserdes.git"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "93737f13723933bcef81bc54dfe0c4da9a07d3d31f4450e6f4ff17784be3e51f"
-    sha256 cellar: :any, big_sur:       "62e1fba2c412a56dee9f044e3bbcd1e917858cd7a7e88e02fe49197f47f1f5e4"
-    sha256 cellar: :any, catalina:      "57027493f3315dbb0d8ef5ef041f49418447f98c344cc7735d71293483e9f875"
-    sha256 cellar: :any, mojave:        "89237b1bf673797ad2c1f837e4608c749c262ae9f10bf0621137c50319f97acb"
+    sha256 cellar: :any,                 arm64_big_sur: "93737f13723933bcef81bc54dfe0c4da9a07d3d31f4450e6f4ff17784be3e51f"
+    sha256 cellar: :any,                 big_sur:       "62e1fba2c412a56dee9f044e3bbcd1e917858cd7a7e88e02fe49197f47f1f5e4"
+    sha256 cellar: :any,                 catalina:      "57027493f3315dbb0d8ef5ef041f49418447f98c344cc7735d71293483e9f875"
+    sha256 cellar: :any,                 mojave:        "89237b1bf673797ad2c1f837e4608c749c262ae9f10bf0621137c50319f97acb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "71e15c5ad9698075a6165ab491dfaf3eab7adbe41b32c7aab886110c175daf12"
   end
 
   depends_on "avro-c"
