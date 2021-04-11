@@ -10,6 +10,7 @@ class Fennel < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "d6f6dcceb6eb8cbd5194a9cbb0a8aa7e945edf567fdbdf300aaff7a64ce31583"
     sha256 cellar: :any_skip_relocation, catalina:      "b82322722a1721123bc711a537d7588a8407112baca4299cc1f21790a1619eed"
     sha256 cellar: :any_skip_relocation, mojave:        "3aec2e7184f24ca615307c1f6cc20c9565ba303f3009ae6c5982891b0fc117c8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59a2efae348daefae1764e7a1d9c582f6fd57633efa93b7a15597a75e4d0dbec"
   end
 
   depends_on "lua"
