@@ -12,6 +12,7 @@ class SphinxDoc < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "7c3e58ae83086c7772bc62b853b6bd8c4511eacebcf6e9bcf39c8af048cc01d4"
     sha256 cellar: :any_skip_relocation, catalina:      "75fb3528085effd589c1c82de4644c7d681419e2bbdd10ecab1f98efbedaf9d4"
     sha256 cellar: :any_skip_relocation, mojave:        "6158e8a542ddeeac45f287f47605c0a3ceac62ed3dd5f95b5376c08c003dabda"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f2b8968b3e5ce18d7668e95b6e698d871c782b945856c9848b0d513f2df09f6"
   end
 
   keg_only <<~EOS
