@@ -6,19 +6,17 @@ class GccAT7 < Formula
   url "https://ftp.gnu.org/gnu/gcc/gcc-7.5.0/gcc-7.5.0.tar.xz"
   mirror "https://ftpmirror.gnu.org/gcc/gcc-7.5.0/gcc-7.5.0.tar.xz"
   sha256 "b81946e7f01f90528a1f7352ab08cc602b9ccc05d4e44da4bd501c5a189ee661"
-  revision 3
+  revision 4
 
   livecheck do
     url :stable
     regex(%r{href=.*?gcc[._-]v?(7(?:\.\d+)+)(?:/?["' >]|\.t)}i)
   end
 
-  # gcc is designed to be portable.
   bottle do
-    sha256 big_sur:      "409c5750e7ab215efe0ce92dcc9d9b5b51a629faf938e29fd9437830ae0a07f9"
-    sha256 catalina:     "180258666ecfdf71545ff5b9965d9b59bcd661769069acc6d57664b0065fabba"
-    sha256 mojave:       "f4ba3ab7fcb98d471d380076837b9f946cc188960acb231d972f10249f3c2016"
-    sha256 x86_64_linux: "7c2186c67a2f2ee62884855ef0202612525789352fffcb800d200bccfdcf0aed"
+    sha256 big_sur:  "f53816251cabd7c7cc5818af052ad0cccab189156fd63243be2b1bee21d8a0b7"
+    sha256 catalina: "359aee8f81fae1591bb685a6c38dbcace62d32d1ba7a69b01c15061ce29e61bb"
+    sha256 mojave:   "95659aa77c264356df8c2eb9d24800aba62f0d308b86d601e0d259885700aebf"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -62,8 +60,6 @@ class GccAT7 < Formula
     #  - BRIG
     languages = %w[c c++ objc obj-c++ fortran]
 
-    args = []
-
     unless OS.mac?
       # Change the default directory name for 64-bit libraries to `lib`
       # http://www.linuxfromscratch.org/lfs/view/development/chapter06/gcc.html
@@ -74,7 +70,7 @@ class GccAT7 < Formula
       ENV.prepend_path "LIBRARY_PATH", Pathname.new(Utils.safe_popen_read(ENV.cc, "-print-file-name=crti.o")).parent
     end
 
-    args += [
+    args = [
       "--prefix=#{prefix}",
       "--libdir=#{lib}/gcc/#{version_suffix}",
       "--enable-languages=#{languages.join(",")}",
@@ -90,7 +86,10 @@ class GccAT7 < Formula
       "--disable-nls",
     ]
 
-    if OS.mac?
+    on_macos do
+      args << "--build=x86_64-apple-darwin#{OS.kernel_version}"
+      args << "--with-system-zlib"
+
       # Xcode 10 dropped 32-bit support
       args << "--disable-multilib" if DevelopmentTools.clang_build_version >= 1000
 
@@ -106,8 +105,10 @@ class GccAT7 < Formula
       inreplace "libgcc/config/t-slibgcc-darwin", "@shlib_slibdir@", "#{HOMEBREW_PREFIX}/lib/gcc/#{version_suffix}"
     end
 
-    # Fix Linux error: gnu/stubs-32.h: No such file or directory.
-    args << "--disable-multilib" unless OS.mac?
+    on_linux do
+      # Fix Linux error: gnu/stubs-32.h: No such file or directory.
+      args << "--disable-multilib"
+    end
 
     mkdir "build" do
       system "../configure", *args
