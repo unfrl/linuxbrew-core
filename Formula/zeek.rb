@@ -5,14 +5,14 @@ class Zeek < Formula
       tag:      "v4.0.0",
       revision: "7b5263139e9909757c38dfca4c99abebf958df67"
   license "BSD-3-Clause"
-  revision 3
+  revision 4
   head "https://github.com/zeek/zeek.git"
 
   bottle do
-    sha256 arm64_big_sur: "2da21fcb3ca181e6d9a5eab0da9f11167670c1a48519b357a83de4d3581cedad"
-    sha256 big_sur:       "64523156d14d219b5bbcaadf53a25049543e37cf19da44d757c90f7dc8c8955b"
-    sha256 catalina:      "01db400b0f88149a80e16399ccbc8bf663a63044e2aa3218b8e602e848f64c3c"
-    sha256 mojave:        "3cea14ff2d54a633f84a33eabfd71e10a720992a49242a22ccb22130650b6733"
+    sha256 arm64_big_sur: "82cab252a51e9351931436c3d233a1f4a38c69898ca3bf656edb1bb1a741a3d6"
+    sha256 big_sur:       "7cf665f72059bc1d7f4e1ef6e03b089a467b9aafd17268df0697b4ce6345122b"
+    sha256 catalina:      "ef707a20e45c4bd913cd105d1d706111c7842ad1af2ef3fab0b3a02420ec4fed"
+    sha256 mojave:        "1ab8cfac93720a41407ab1b1f95186a48a0614516403b6aee9165cef897379bc"
   end
 
   depends_on "bison" => :build
@@ -27,6 +27,7 @@ class Zeek < Formula
 
   uses_from_macos "flex"
   uses_from_macos "libpcap"
+  uses_from_macos "zlib"
 
   resource "pcap-test" do
     url "https://raw.githubusercontent.com/zeek/zeek/59ed5c75f190d4401d30172b9297b3592dd72acf/testing/btest/Traces/http/get.trace"
@@ -34,6 +35,13 @@ class Zeek < Formula
   end
 
   def install
+    # Remove SDK paths from zeek-config. This breaks usage with other SDKs.
+    # https://github.com/corelight/zeek-community-id/issues/15
+    inreplace "zeek-config.in" do |s|
+      s.gsub! ":@ZEEK_CONFIG_PCAP_INCLUDE_DIR@", ""
+      s.gsub! ":@ZEEK_CONFIG_ZLIB_INCLUDE_DIR@", ""
+    end
+
     mkdir "build" do
       system "cmake", "..", *std_cmake_args,
                       "-DBROKER_DISABLE_TESTS=on",
@@ -54,5 +62,7 @@ class Zeek < Formula
     assert_match "ARP packet analyzer", shell_output("#{bin}/zeek --print-plugins")
     resource("pcap-test").stage testpath
     assert shell_output("#{bin}/zeek -C -r get.trace && test -s conn.log && test -s http.log")
+    # For bottling MacOS SDK paths must not be part of the public include directories, see zeek/zeek#1468.
+    refute_includes shell_output("#{bin}/zeek-config --include_dir").chomp, "MacOSX"
   end
 end

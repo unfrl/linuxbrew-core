@@ -1,8 +1,8 @@
 class Grokj2k < Formula
   desc "JPEG 2000 Library"
   homepage "https://github.com/GrokImageCompression/grok"
-  url "https://github.com/GrokImageCompression/grok/archive/v8.0.3.tar.gz"
-  sha256 "31a432810270fdd952bcb31749e6167ac62f4f1c86c56f238f0de63227671392"
+  url "https://github.com/GrokImageCompression/grok/archive/v9.0.0.tar.gz"
+  sha256 "6b953571020e33b6aa9f963e88f7f538ae2f437b7f8987c5ee3e85e801c9c0e3"
   license "AGPL-3.0-or-later"
   head "https://github.com/GrokImageCompression/grok.git"
 
@@ -12,10 +12,10 @@ class Grokj2k < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "c873fd04f1973d2c646ceda2d1bd4dfee3cf7fb20f44364c17e1721c44f995a8"
-    sha256 cellar: :any, big_sur:       "a70cbcf73d42cb2cf765f8b256314b77f4c4613201a1dfc27d8d5fd3096b667f"
-    sha256 cellar: :any, catalina:      "820946695610b3ce3b4c07cce88a553b773a16de1e9bdfeaf391497faff05e06"
-    sha256 cellar: :any, mojave:        "bf594aca0d14702150c42b9dda2e378045d77ea10fccccbeb41c6f834ed2d637"
+    sha256 cellar: :any, arm64_big_sur: "a9221d88474870a7374385d536b47d017f6176a2b906f66c41ffdf60fd1850da"
+    sha256 cellar: :any, big_sur:       "d2b7e0f587e0e8e6dad9d16b7a7435d861f66dcd88c9dcc65c86d120468a3153"
+    sha256 cellar: :any, catalina:      "058a2a3fc9297afa0179ca6c249a32283157b42d821f0c1734694408ed317af7"
+    sha256 cellar: :any, mojave:        "0b240fbe602ee2b6093314c51e350db24bc6a327c106be5eaa41c3d83fbfff98"
   end
 
   depends_on "cmake" => :build
