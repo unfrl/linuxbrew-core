@@ -12,6 +12,7 @@ class Docker < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "1928b0503d295e980a4820a9cf163ddd7539d04d9f45fe1f8036b8673dffe21a"
     sha256 cellar: :any_skip_relocation, catalina:      "749cebcf2d9bf351b02b9170a379cdb6d7b9573fdc223ddfab449e625ad9aa1d"
     sha256 cellar: :any_skip_relocation, mojave:        "e1d9fecfd09e0284e731816117aa195f73c93a98273bf309fe5fad073afc2698"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d9caf9c716c590af00e70fb0cdf6509dd825028fd28164fd9c4f6b805a90816"
   end
 
   depends_on "go" => :build
