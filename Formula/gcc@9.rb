@@ -6,7 +6,7 @@ class GccAT9 < Formula
   url "https://ftp.gnu.org/gnu/gcc/gcc-9.3.0/gcc-9.3.0.tar.xz"
   mirror "https://ftpmirror.gnu.org/gcc/gcc-9.3.0/gcc-9.3.0.tar.xz"
   sha256 "71e197867611f6054aa1119b13a0c0abac12834765fe2d81f35ac57f84f742d1"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -15,10 +15,9 @@ class GccAT9 < Formula
 
   # gcc is designed to be portable.
   bottle do
-    sha256 big_sur:      "29e25101260144bee0b09b045fce258352e0b832b269909f59d22dda16539926"
-    sha256 catalina:     "9da2446533167ddef1c7ca78d132908d6c2a2d808c7f1569a7852db6fa21b00a"
-    sha256 mojave:       "65c34910dd7d637ed17e3ba222e940d79cb1a538947adcf616977bd10e88bdbb"
-    sha256 x86_64_linux: "d03d145a38387655ffea5dcdba9e2e34bac82874ddb8e1ed8eaec748ce6393e7"
+    sha256 big_sur:  "5d22085577464257e9b1cb00bae0a9691474ad7690692afd4e2789bf512cd1a5"
+    sha256 catalina: "be32c5993e4dd28c9af70ed8a65071e1a99cf40f273f8ea66924fe30635c9a72"
+    sha256 mojave:   "4fe853726359f38c27fe4c8d0a5d62167bdad4e1f6166dd8c7944a499c77a88b"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -91,7 +90,7 @@ class GccAT9 < Formula
       --with-bugurl=#{tap.issues_url}
     ]
 
-    if OS.mac?
+    on_macos do
       args << "--build=x86_64-apple-darwin#{OS.kernel_version.major}"
       args << "--with-system-zlib"
 
@@ -110,8 +109,10 @@ class GccAT9 < Formula
       inreplace "libgcc/config/t-slibgcc-darwin", "@shlib_slibdir@", "#{HOMEBREW_PREFIX}/lib/gcc/#{version_suffix}"
     end
 
-    # Fix Linux error: gnu/stubs-32.h: No such file or directory.
-    args << "--disable-multilib" unless OS.mac?
+    on_linux do
+      # Fix Linux error: gnu/stubs-32.h: No such file or directory.
+      args << "--disable-multilib"
+    end
 
     mkdir "build" do
       system "../configure", *args

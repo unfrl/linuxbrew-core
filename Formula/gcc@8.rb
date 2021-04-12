@@ -6,7 +6,7 @@ class GccAT8 < Formula
   url "https://ftp.gnu.org/gnu/gcc/gcc-8.4.0/gcc-8.4.0.tar.xz"
   mirror "https://ftpmirror.gnu.org/gcc/gcc-8.4.0/gcc-8.4.0.tar.xz"
   sha256 "e30a6e52d10e1f27ed55104ad233c30bd1e99cfb5ff98ab022dc941edd1b2dd4"
-  revision 2
+  revision 3
 
   livecheck do
     url :stable
@@ -16,10 +16,9 @@ class GccAT8 < Formula
   # gcc is designed to be portable.
   # reminder: always add 'cellar :any'
   bottle do
-    sha256 big_sur:      "f8d2856e05a7b6e6eed981bdc4ea722a93594a6cdaa8f5529910eb11f6103d01"
-    sha256 catalina:     "adbc2af7732229438dcc29decaa1c1e25292c39ba21aaf1bd49453f1a8d7bfa9"
-    sha256 mojave:       "1be90ef0660203d2f578a6bd66fdb6f24c99e47ea1f785e738287e34f5d4a123"
-    sha256 x86_64_linux: "6284b91acccde087818a1d8539b33bc59dd09c0fb6734ba8334f7cda8ac882ae"
+    sha256 big_sur:  "a835ceb445a4b4019e14fda6fb4a984a7f633faf5ef5f9f49bddbe23cae1e7fc"
+    sha256 catalina: "4ef99da615886fab55a27d34bfa4ac88761c9cb73ebcb5ed199d6a0fe6997fd3"
+    sha256 mojave:   "6e73d66113184f35f91c285f3754cc0c67797876cf0a97c75bdce4d92d6af074"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -92,9 +91,12 @@ class GccAT8 < Formula
       --with-bugurl=#{tap.issues_url}
     ]
 
-    if OS.mac?
+    on_macos do
       args << "--build=x86_64-apple-darwin#{OS.kernel_version.major}"
       args << "--with-system-zlib"
+
+      # Xcode 10 dropped 32-bit support
+      args << "--disable-multilib" if DevelopmentTools.clang_build_version >= 1000
 
       # System headers may not be in /usr/include
       sdk = MacOS.sdk_path_if_needed
@@ -108,8 +110,10 @@ class GccAT8 < Formula
       inreplace "libgcc/config/t-slibgcc-darwin", "@shlib_slibdir@", "#{HOMEBREW_PREFIX}/lib/gcc/#{version_suffix}"
     end
 
-    # Fix Linux error: gnu/stubs-32.h: No such file or directory.
-    args << "--disable-multilib" unless OS.mac?
+    on_linux do
+      # Fix Linux error: gnu/stubs-32.h: No such file or directory.
+      args << "--disable-multilib"
+    end
 
     mkdir "build" do
       system "../configure", *args
