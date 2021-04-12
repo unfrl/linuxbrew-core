@@ -10,10 +10,11 @@ class Libcdr < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "545117f0c8104782de8fa516181b375017dcd6cfd7510d69ce214e62b0d0a7c6"
-    sha256 cellar: :any, big_sur:       "883b4d261503c2f254ad43fa409da835af6fe11ab6c19c8cc88ebedc7a11c8cc"
-    sha256 cellar: :any, catalina:      "0bc995af13d3f80bf3ace1eff3189c6ad56502d832ba7e3bdc9467187add0961"
-    sha256 cellar: :any, mojave:        "5d20493e2ed5e7ca5b967795453875e4b3b4fbf668a01287ddf5fc8ae013ed29"
+    sha256 cellar: :any,                 arm64_big_sur: "545117f0c8104782de8fa516181b375017dcd6cfd7510d69ce214e62b0d0a7c6"
+    sha256 cellar: :any,                 big_sur:       "883b4d261503c2f254ad43fa409da835af6fe11ab6c19c8cc88ebedc7a11c8cc"
+    sha256 cellar: :any,                 catalina:      "0bc995af13d3f80bf3ace1eff3189c6ad56502d832ba7e3bdc9467187add0961"
+    sha256 cellar: :any,                 mojave:        "5d20493e2ed5e7ca5b967795453875e4b3b4fbf668a01287ddf5fc8ae013ed29"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf9e10027252253532b19a951a9c8e1474c482692f5fb66a3d0f04c094e63a4a"
   end
 
   depends_on "cppunit" => :build
