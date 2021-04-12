@@ -15,6 +15,7 @@ class CvsFastExport < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "74b0b5e12bc9a958ff35fd2d57801a2836fb4f6f1678dc8f7cc0f17ba9285565"
     sha256 cellar: :any_skip_relocation, catalina:      "2258571d35114e999d5328116ef53ab16fd2d2a4ccc9954fafd544703aeb0ae5"
     sha256 cellar: :any_skip_relocation, mojave:        "ebec60a0595f07b7e363bafff0cd726030a1d4c073dd6f699293fc20defa078c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ccf54ebc5e20088984b2d5434c4ba82843aa3d9b4d401fee785c30bcba201d0"
   end
 
   head do
