@@ -13,6 +13,7 @@ class Httpd < Formula
     sha256 big_sur:       "9c6b3d19822ad929ef477fd6936c753e37477315b3011754858013f4a355f7cb"
     sha256 catalina:      "28299ea97da7c443d880865b5669fd0341e01d2891f91095ebcfd5ad30679452"
     sha256 mojave:        "d5ef11b940eda27e5fda1addb6b914b76768f3fc0fa5652aa4470d22a87de4d9"
+    sha256 x86_64_linux:  "ac55ff63106e66ee2f6c3e31236c6ab955b83eeef6707f86f3ee44bbcda20d22"
   end
 
   depends_on "apr"
