@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download RUNNER from SelfHosted workflow
-        uses: dawidd6/action-download-artifact@v2
+        uses: Homebrew/actions/download-artifact@master
         with:
           github_token: ${{secrets.GITHUB_TOKEN}}
           workflow: ${{ github.event.workflow_run.workflow_id }}
