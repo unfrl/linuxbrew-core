@@ -68,15 +68,6 @@ jobs:
           name: bottles
           path: ~/bottles/
 
-      - name: Upload bottles to Bintray
-        env:
-          HOMEBREW_BINTRAY_USER: linuxbrewtestbot
-          HOMEBREW_BINTRAY_KEY: ${{secrets.HOMEBREW_BINTRAY_KEY}}
-        if: success() || github.event.client_payload.ignore_errors
-        run: |
-          cd ~/bottles
-          brew pr-upload --verbose --keep-old --bintray-org=linuxbrew --root-url="https://linuxbrew.bintray.com/bottles"
-
       - name: Upload and publish bottles to GitHub Packages
         env:
           HOMEBREW_GITHUB_PACKAGES_USER: linuxbrewtestbot
