@@ -26,6 +26,9 @@ class GccAT49 < Formula
     end
   end
 
+  # https://gcc.gnu.org/gcc-4.9/
+  deprecate! date: "2021-04-11", because: :deprecated_upstream
+
   depends_on maximum_macos: [:high_sierra, :build]
 
   uses_from_macos "zlib"
@@ -129,9 +132,9 @@ class GccAT49 < Formula
       "--enable-multilib",
     ]
 
-    if OS.mac?
+    on_macos do
       args << "--build=x86_64-apple-darwin#{OS.kernel_version}"
-      args << "--enable-multilib"
+      args << "--with-system-zlib"
 
       # System headers may not be in /usr/include
       sdk = MacOS.sdk_path_if_needed
@@ -145,9 +148,11 @@ class GccAT49 < Formula
       inreplace "libgcc/config/t-slibgcc-darwin", "@shlib_slibdir@", "#{HOMEBREW_PREFIX}/lib/gcc/#{version_suffix}"
     end
 
-    args << "--disable-multilib" unless OS.mac?
-
     ENV["CPPFLAGS"] = "-I#{Formula["zlib"].include}" unless OS.mac?
+
+    on_linux do
+      args << "--disable-multilib"
+    end
 
     mkdir "build" do
       system "../configure", *args

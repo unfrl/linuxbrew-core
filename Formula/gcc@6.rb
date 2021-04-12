@@ -6,7 +6,7 @@ class GccAT6 < Formula
   url "https://ftp.gnu.org/gnu/gcc/gcc-6.5.0/gcc-6.5.0.tar.xz"
   mirror "https://ftpmirror.gnu.org/gcc/gcc-6.5.0/gcc-6.5.0.tar.xz"
   sha256 "7ef1796ce497e89479183702635b14bb7a46b53249209a5e0f999bebf4740945"
-  revision 6
+  revision 7
 
   livecheck do
     url :stable
@@ -16,10 +16,9 @@ class GccAT6 < Formula
   # gcc is designed to be portable.
   # reminder: always add 'cellar :any'
   bottle do
-    sha256 big_sur:      "64a10f90cc5ba048b3355e28fca2159c506e0e24489810bcb9688ba26221c928"
-    sha256 catalina:     "d82b14c535897ff2f9371481733512dbafd9701f09855e3d1ed6bb9bb3357f7e"
-    sha256 mojave:       "1279be27b958b93146217adb2073596c9504f7c6a746eea421a63769a8a76c10"
-    sha256 x86_64_linux: "9d0339a2008c3435a1086aa5489f76ff7809aa1c836690d31b057bd310622e9b"
+    sha256 big_sur:  "9fae646d3b49a384c6c524620f128ee5d7ee06811d5b2c9e67a06baa6e45201b"
+    sha256 catalina: "8b18ff45d42f712a6b384a75e0850b6c6a9a369cc186e8ec31e766742a86d4eb"
+    sha256 mojave:   "9bec2c923e6cdcefc18b4c716b1b2bd93ce18ea30e8327aff93c0aaa3465c8b5"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -102,14 +101,12 @@ class GccAT6 < Formula
       "--disable-nls",
     ]
 
-    if OS.mac?
-      args += [
-        "--build=x86_64-apple-darwin#{OS.kernel_version}",
-        "--with-system-zlib",
-      ]
+    on_macos do
+      args << "--build=x86_64-apple-darwin#{OS.kernel_version}"
+      args << "--with-system-zlib"
 
       # Xcode 10 dropped 32-bit support
-      args << "--disable-multilib" if OS.mac? && DevelopmentTools.clang_build_version >= 1000
+      args << "--disable-multilib" if DevelopmentTools.clang_build_version >= 1000
 
       # System headers may not be in /usr/include
       sdk = MacOS.sdk_path_if_needed
@@ -123,8 +120,10 @@ class GccAT6 < Formula
       inreplace "libgcc/config/t-slibgcc-darwin", "@shlib_slibdir@", "#{HOMEBREW_PREFIX}/lib/gcc/#{version_suffix}"
     end
 
-    # Fix Linux error: gnu/stubs-32.h: No such file or directory.
-    args << "--disable-multilib" unless OS.mac?
+    on_linux do
+      # Fix Linux error: gnu/stubs-32.h: No such file or directory.
+      args << "--disable-multilib"
+    end
 
     mkdir "build" do
       system "../configure", *args
