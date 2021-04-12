@@ -6,6 +6,7 @@ class Mosquitto < Formula
   # dual-licensed under EPL-1.0 and EDL-1.0 (Eclipse Distribution License v1.0),
   # EDL-1.0 is not in the SPDX list
   license "EPL-1.0"
+  revision 1
 
   livecheck do
     url "https://mosquitto.org/download/"
@@ -13,15 +14,15 @@ class Mosquitto < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "68b72bdd4c710d1ca31a9d58fa4dbada5363cd934aa7ed5fcde6c9e26ae29dc6"
-    sha256 big_sur:       "d1239e5562dbd0b5ba31a8d4622a437dac3ca5f5ac5a87a82d7829dbe428599f"
-    sha256 catalina:      "5dfc501f8ae1694fa186924cd15d3573cd3e0d97c46a695499f3bcc9cff0058e"
-    sha256 mojave:        "9d231ea43674fffa6fe6250a4554b7349571c4d73aa3ce5feb5f3216d8100a49"
-    sha256 x86_64_linux:  "0cb4491ec49a8ddbbcfa267c5ae936954222eea1cc6f78ab99c15ef4b45ec5bc"
+    sha256 arm64_big_sur: "37075e4522029d3c29a0f5f01a2765e21d7d7861b916fbc411c18aabb5eecc1d"
+    sha256 big_sur:       "b4d048a8ae02ea81048315280fdca94beb5c36f9cbf2fc5e7d572147a1d9056f"
+    sha256 catalina:      "3e75e7bf3ff9c1e75b55ceb0558341e5105714552498252a74bbfabf061c5b83"
+    sha256 mojave:        "12ea925ba276e00955710d333279aa06ecfe0038a37a9ce7c9d4ad64bb628a96"
   end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
+  depends_on "cjson"
   depends_on "libwebsockets"
   depends_on "openssl@1.1"
 
@@ -80,5 +81,9 @@ class Mosquitto < Formula
   test do
     quiet_system "#{sbin}/mosquitto", "-h"
     assert_equal 3, $CHILD_STATUS.exitstatus
+    quiet_system "#{bin}/mosquitto_ctrl", "dynsec", "help"
+    assert_equal 0, $CHILD_STATUS.exitstatus
+    quiet_system "#{bin}/mosquitto_passwd", "-c", "-b", "/tmp/mosquitto.pass", "foo", "bar"
+    assert_equal 0, $CHILD_STATUS.exitstatus
   end
 end
