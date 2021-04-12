@@ -10,6 +10,7 @@ class FileRoller < Formula
     sha256 big_sur:       "05bb1f323b1b1f095e17db22d4df0dedd8445d8b1acae02d61e5e5ea090e4d2b"
     sha256 catalina:      "39ee8ce6b01db0f4d78a39ad6f1522c39de262a8e9fd05483d64194ebcef8453"
     sha256 mojave:        "32c79439711f60b47b4d5e19ae07f74955f921061872ff4143f984f4f78ad460"
+    sha256 x86_64_linux:  "af468f17d5fdd8ea21c93dd0ee1695fe960db2f6f5e0acf302e11b6ef6ee2a2f"
   end
 
   depends_on "itstool" => :build
