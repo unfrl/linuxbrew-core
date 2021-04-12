@@ -3,16 +3,15 @@ require "language/node"
 class Marked < Formula
   desc "Markdown parser and compiler built for speed"
   homepage "https://marked.js.org/"
-  url "https://registry.npmjs.org/marked/-/marked-2.0.2.tgz"
-  sha256 "0b00b84ff33c88e515431d7900dd27f4b6988de96ee84afcce49cea0ad3dfff7"
+  url "https://registry.npmjs.org/marked/-/marked-2.0.3.tgz"
+  sha256 "1598cfb66d438120aa93e7e1cb83454e4855297217c622ac99a7c6d04ca14ddb"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "6ac264e413d3e006ea3d92bd41926d0b44faa328188fb057b881a52d55f501f1"
-    sha256 cellar: :any_skip_relocation, big_sur:       "fa6d2d29bae0c1ea4d48c2be7b7ecbf71e956f0a12a714ac825198fbd79a3a4c"
-    sha256 cellar: :any_skip_relocation, catalina:      "864b32fcbed0c8f4553d80ed263cb03901d6783fd273e53081b201c49685537a"
-    sha256 cellar: :any_skip_relocation, mojave:        "24636afa19f402cfecf6a64f038bd0a92ca7abed7be798ca4cefae2fc90fb5ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc7bc72449b9f8ac949292d6fe49763012bbeda0ea67eb0582ec638fc9ea9228"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "bf1dda034e4f93b2818575fc1e5c3af4e2a2643d2d63b9702d86343154e1c4fc"
+    sha256 cellar: :any_skip_relocation, big_sur:       "29dfc7c7de888f9e4d1e3fb93ade6a23ce2f6eb7ebfffd25c05714169d7bc3cb"
+    sha256 cellar: :any_skip_relocation, catalina:      "1d2521bb85d8a0a4daf1fa07fcc69cecdf451a3f188fd8c62df80896eb244c84"
+    sha256 cellar: :any_skip_relocation, mojave:        "21fff74f595b269276a6cee410688e36b746f1df50622d9965749abf251c6361"
   end
 
   depends_on "node"
