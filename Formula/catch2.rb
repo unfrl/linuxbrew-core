@@ -10,6 +10,7 @@ class Catch2 < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "18d1daf9fb4bc46595060bdbc562a0e147a5756bc3cc81d81b798e5b0ddc9a9c"
     sha256 cellar: :any_skip_relocation, catalina:      "f583c226f1a55f77de8431bf240dbac790a51e9cd250a565309121c79bcce716"
     sha256 cellar: :any_skip_relocation, mojave:        "e4792c34d99cf8efe70592b25fd9987f07d3aeb7fc5c3106d8115899e143427b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e28db36915d33ea602255435bd0aa0324a2330b7f30346bfe8c345ac23df408e"
   end
 
   depends_on "cmake" => :build
