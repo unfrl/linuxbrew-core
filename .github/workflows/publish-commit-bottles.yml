@@ -54,13 +54,6 @@ jobs:
       - name: Configure Git user
         uses: Homebrew/actions/git-user-config@master
 
-      - name: Pull bottles
-        env:
-          HOMEBREW_GITHUB_API_TOKEN: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
-          HOMEBREW_BINTRAY_USER: linuxbrewtestbot
-          HOMEBREW_BINTRAY_KEY: ${{secrets.HOMEBREW_BINTRAY_KEY}}
-        run: brew pr-pull --bintray-org=linuxbrew --root-url="https://linuxbrew.bintray.com/bottles" --keep-old --debug ${{github.event.inputs.args}} ${{github.event.inputs.pull_request}}
-
       - name: Pull and upload bottles to GitHub Packages
         env:
           BREWTESTBOT_NAME_EMAIL: "BrewTestBot <1589480+BrewTestBot@users.noreply.github.com>"
