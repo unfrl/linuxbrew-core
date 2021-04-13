@@ -1,12 +1,11 @@
 class Ffmpeg < Formula
   desc "Play, record, convert, and stream audio and video"
   homepage "https://ffmpeg.org/"
-  url "https://ffmpeg.org/releases/ffmpeg-4.3.2.tar.xz"
-  sha256 "46e4e64f1dd0233cbc0934b9f1c0da676008cad34725113fb7f802cfa84ccddb"
+  url "https://ffmpeg.org/releases/ffmpeg-4.4.tar.xz"
+  sha256 "06b10a183ce5371f915c6bb15b7b1fffbe046e8275099c96affc29e17645d909"
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
   license "GPL-2.0-or-later"
-  revision 4
   head "https://github.com/FFmpeg/FFmpeg.git"
 
   livecheck do
@@ -15,11 +14,10 @@ class Ffmpeg < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "549f899dadc339af7069355aa3a34591f536843efc431b2541693bc806ca5048"
-    sha256 big_sur:       "5275547e1b3dba43749ce3d91ddd92120ccc6d5f98090dd01dba2a2e615d8166"
-    sha256 catalina:      "5584b6d04f9d24a3bae17c6ebd640a7023e063b5c879b9a1cfb584dc51e6a527"
-    sha256 mojave:        "39af46559faf9aeb3aefa10c60aefd1563815518fdab86a1fa44ec11e886da1a"
-    sha256 x86_64_linux:  "e42df99d87c8a0b849efe9b16af0dbf13366339fe1f573a3029e116dbecbb961"
+    sha256 arm64_big_sur: "e335852b99ebccad912bbfa8837f288b3c896b33676c4f076aef7f5eb2923860"
+    sha256 big_sur:       "83e43e94ed5475d49fb8c65fba89e073586218811ffe5c0b54b141e03af06f2a"
+    sha256 catalina:      "82ce4be0cbb00c8ba99b79855e97d6c6bf90089cb7aa016cdac54abae26bf083"
+    sha256 mojave:        "e3fd3f329bedbea63529e74eba7a14b12dfd74fdb242471d8946f91d591b26ac"
   end
 
   depends_on "nasm" => :build
