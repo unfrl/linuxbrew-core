@@ -18,6 +18,7 @@ class Ffmpeg < Formula
     sha256 big_sur:       "83e43e94ed5475d49fb8c65fba89e073586218811ffe5c0b54b141e03af06f2a"
     sha256 catalina:      "82ce4be0cbb00c8ba99b79855e97d6c6bf90089cb7aa016cdac54abae26bf083"
     sha256 mojave:        "e3fd3f329bedbea63529e74eba7a14b12dfd74fdb242471d8946f91d591b26ac"
+    sha256 x86_64_linux:  "26b62672c71e9b4184ff48b35a176652f64dc1e56ea1358fdb9b0a48e6908566"
   end
 
   depends_on "nasm" => :build
