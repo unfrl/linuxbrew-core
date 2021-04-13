@@ -12,6 +12,7 @@ class Whistle < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "293e1983459f089ed1cf3965edc439b01b593a5ac5204aa3fcde33d3ad3a1c8e"
     sha256 cellar: :any_skip_relocation, catalina:      "85cf5906eba467a032449ad8a0675b070427045b1d1dc7d089ad05e88e065df5"
     sha256 cellar: :any_skip_relocation, mojave:        "3c991dd8a9256490df8280504757ef3ef8421593c4d5d012f496ee1216435719"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1589a7e1c7ecbcaece9c0c0b209441da7c6ff41a5b16d98e5d8a2566811db280"
   end
 
   depends_on "node"
