@@ -10,6 +10,7 @@ class Rqlite < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "e71df6cd1858c721a2eb4e98d668c16bd280d6feaa68f4a1047823fb23841495"
     sha256 cellar: :any_skip_relocation, catalina:      "fd38b634ef7e878c3b2b9a68d21afb8885731280fc5b96e0fd0c5415b5de4e3d"
     sha256 cellar: :any_skip_relocation, mojave:        "e0e43dc4463533c9193e54d3fd4344f89c728772155bb1ac99dac92d01794675"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5444dcee192303971047600643110193fc7c9bef18e2a16153b927c5533a5c90"
   end
 
   depends_on "go" => :build
