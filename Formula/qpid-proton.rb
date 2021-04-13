@@ -8,10 +8,11 @@ class QpidProton < Formula
   head "https://gitbox.apache.org/repos/asf/qpid-proton.git"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "1e1eb1a676e8b7319e885f465d9e68691aa1d6d53fd24c5c3c5968485370bb05"
-    sha256 cellar: :any, big_sur:       "fc234cc28503eb3a4cac958459d93e133b54bbb40c92e78e8ba40f80fb33e33f"
-    sha256 cellar: :any, catalina:      "1124dbec5ee262056277c368d201812a2aa5b2597f3175d7610180f58020cb80"
-    sha256 cellar: :any, mojave:        "5fc09481d98d452afb04633def8de93ab7bf7c45e93b77f4a0b403ba3ce8d6c4"
+    sha256 cellar: :any,                 arm64_big_sur: "1e1eb1a676e8b7319e885f465d9e68691aa1d6d53fd24c5c3c5968485370bb05"
+    sha256 cellar: :any,                 big_sur:       "fc234cc28503eb3a4cac958459d93e133b54bbb40c92e78e8ba40f80fb33e33f"
+    sha256 cellar: :any,                 catalina:      "1124dbec5ee262056277c368d201812a2aa5b2597f3175d7610180f58020cb80"
+    sha256 cellar: :any,                 mojave:        "5fc09481d98d452afb04633def8de93ab7bf7c45e93b77f4a0b403ba3ce8d6c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3f953a3f89cf1e2bf563bd20d92678c5f27c42fef7f7ae91a3d7dc67a682189"
   end
 
   depends_on "cmake" => :build
