@@ -1,8 +1,8 @@
 class Libupnp < Formula
   desc "Portable UPnP development kit"
   homepage "https://pupnp.sourceforge.io/"
-  url "https://github.com/pupnp/pupnp/releases/download/release-1.14.4/libupnp-1.14.4.tar.bz2"
-  sha256 "cd649ef53070e9b88680f730ed5b3f919658582d43dd315a2ed8b6105c6fbe63"
+  url "https://github.com/pupnp/pupnp/releases/download/release-1.14.5/libupnp-1.14.5.tar.bz2"
+  sha256 "227ffa407be6b91d4e42abee1dd27e4b8d7e5ba8d3d45394cca4e1eadc65149a"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,11 +11,10 @@ class Libupnp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "442183f8a3b818a78bdf61f7c8f570428222c9e29cb1c05d558995d3b6a5f2f5"
-    sha256 cellar: :any,                 big_sur:       "03342b7244d40c4c29cbee728188da749b54973b4341d5cc65e152ad28b3f7b3"
-    sha256 cellar: :any,                 catalina:      "22be8335b2cae7ea2400aedc18e8de3e97546b8fc0a6a5ce9bb3525a0edbf081"
-    sha256 cellar: :any,                 mojave:        "976d36ef89fa0f5dd45a3804841d9434a0c385aa642a8b2142f116f65c8d8a5e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5bd59b06b4c0749756dec9a798b5d6cddd142322a981c1a41e53e5e11f2e2f83"
+    sha256 cellar: :any, arm64_big_sur: "b22ef8411f7861e8d252dd700a8ecf95dd1f109b87c5b7f7decffd6f60fc8829"
+    sha256 cellar: :any, big_sur:       "49f132e42eb2dbd6da02b432b9465aa4cf72ba279aa6c28360841dc41eef2b39"
+    sha256 cellar: :any, catalina:      "3ba39a71e1a6e3592334112624defea5432bbd615cc3c2e7e533b6a908d0ed09"
+    sha256 cellar: :any, mojave:        "d7ccdaa6752f766d26dc7f67126e44c4541c625f6e90c4e5e31c7df420bfda6d"
   end
 
   def install
