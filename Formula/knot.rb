@@ -15,6 +15,7 @@ class Knot < Formula
     sha256 big_sur:       "a7615132422d57291a42d344cc1b6ec83bc9cb5721082765c346c3fd3aeb04d4"
     sha256 catalina:      "bc9130cbcf185f7672c6c51e2cc9e9d836aa1558a2a2d220cd1013b3dee804d2"
     sha256 mojave:        "fdbf823b09142dc044f5640379c9a5dbb324c93fe447cf9c9b3911b45d53bbfb"
+    sha256 x86_64_linux:  "583fdeb1cabb64717cb4be42495931168bba9f4d8cc007f5b8c20d6a9d8b4b25"
   end
 
   head do
