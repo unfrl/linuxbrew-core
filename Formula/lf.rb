@@ -10,6 +10,7 @@ class Lf < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "935d3774fe9c1178a8fcab0ac39e4f1f5c0a797b766dcdc4d8e0b03b047549e7"
     sha256 cellar: :any_skip_relocation, catalina:      "a42e53d45629dcd7dd2e750bf334e59067c367ff2b270e990472629a48f207e7"
     sha256 cellar: :any_skip_relocation, mojave:        "40d27d166e75377759a8fa09a452fd776533124cb7a2e21207d8020d999d462d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "58aa21338c1d43904c4ba6acda8286110678a244ab1ae19bfaa2f6b6a8c7ff8f"
   end
 
   depends_on "go" => :build
