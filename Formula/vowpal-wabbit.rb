@@ -9,10 +9,11 @@ class VowpalWabbit < Formula
   head "https://github.com/VowpalWabbit/vowpal_wabbit.git"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "5edbdd1e6e78252daacb66822d856c7c4268a426b7e076b3acb579fe2b8b59d1"
-    sha256 cellar: :any, big_sur:       "8f7d47864a841bd3d247813f9c0bc62d034bb34e0bd1bc5a79680d0b2bb5decf"
-    sha256 cellar: :any, catalina:      "7c0d4169175b8cede06d8b2896c27b4c5cd9f0a13d50a355d8bd9ae372afcfe4"
-    sha256 cellar: :any, mojave:        "0f7007ba2de3d476c4e77f6e1949cd11fe4dc50d8fba99d01550b1cbea610092"
+    sha256 cellar: :any,                 arm64_big_sur: "5edbdd1e6e78252daacb66822d856c7c4268a426b7e076b3acb579fe2b8b59d1"
+    sha256 cellar: :any,                 big_sur:       "8f7d47864a841bd3d247813f9c0bc62d034bb34e0bd1bc5a79680d0b2bb5decf"
+    sha256 cellar: :any,                 catalina:      "7c0d4169175b8cede06d8b2896c27b4c5cd9f0a13d50a355d8bd9ae372afcfe4"
+    sha256 cellar: :any,                 mojave:        "0f7007ba2de3d476c4e77f6e1949cd11fe4dc50d8fba99d01550b1cbea610092"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "415d48b13ab276d313463d837a683f68bb3dca8f61f2cfb59f3b9851ed3e7783"
   end
 
   depends_on "cmake" => :build
