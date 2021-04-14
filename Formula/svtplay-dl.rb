@@ -3,16 +3,15 @@ class SvtplayDl < Formula
 
   desc "Download videos from https://www.svtplay.se/"
   homepage "https://svtplay-dl.se/"
-  url "https://files.pythonhosted.org/packages/59/9f/ad5dac119070167444b3b6103bc0a42860aed74da14312a9b8d8471f6ea6/svtplay-dl-3.3.tar.gz"
-  sha256 "c51beef374410eabb205751f30cae2711d42959cced1bd733956c245ca6d422b"
+  url "https://files.pythonhosted.org/packages/83/a4/b7faa10ef0b71a2254e23397b7a8a6c07e65968128894367b21d5809f653/svtplay-dl-3.4.tar.gz"
+  sha256 "f195262d4076b2f6c7faff37f3a9cc2d79d6647a4831369c8337e02d9f868b03"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "4baacce4f6eb171f8cdbe6c82a87c6d94a1794af9cfb20f3a2c1d3f053abbeaf"
-    sha256 cellar: :any,                 big_sur:       "1e2d17f606d8b5bde54e199243b64754c032f3da08bb34b14e4e84255378b907"
-    sha256 cellar: :any,                 catalina:      "49adf26c75ff2fde63adb1e12a86f7a6bf3b120546887edc8c602e41739efdc4"
-    sha256 cellar: :any,                 mojave:        "e5ebc45ff86034a99bae7ca93507071e2db34ac9a3dccb5b6fa46ae896c1a503"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03443c31b491965e5df59dc408e3768e50d242e3d51fcddbedd03cc51f5197c9"
+    sha256 cellar: :any, arm64_big_sur: "39a0dfbfb5f5a0e788f432242abb147664e59a850bfb9a4ecf0342476bbeeff4"
+    sha256 cellar: :any, big_sur:       "77f25708a155be98e02635a8d0ed1b8da4b29b9b9a4852a7257aedc7d1e1a0e5"
+    sha256 cellar: :any, catalina:      "3a35ee0c31e111e7f9b04c94fccdf7b8138d4d22260c0e45c94e1a3b8b6ea377"
+    sha256 cellar: :any, mojave:        "00b24847e67d639afa353053c84fe3fd888ccd176b69494c3e8f612a93fa7d84"
   end
 
   depends_on "rust" => :build
@@ -35,8 +34,8 @@ class SvtplayDl < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/fa/2d/2154d8cb773064570f48ec0b60258a4522490fcb115a6c7c9423482ca993/cryptography-3.4.6.tar.gz"
-    sha256 "2d32223e5b0ee02943f32b19245b61a62db83a882f0e76cc564e1cec60d48f87"
+    url "https://files.pythonhosted.org/packages/9b/77/461087a514d2e8ece1c975d8216bc03f7048e6090c5166bc34115afdaa53/cryptography-3.4.7.tar.gz"
+    sha256 "3d10de8116d25649631977cb37da6cbdd2d6fa0e0281d014a5b7d337255ca713"
   end
 
   resource "idna" do

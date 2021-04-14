@@ -1,16 +1,15 @@
 class Velero < Formula
   desc "Disaster recovery for Kubernetes resources and persistent volumes"
   homepage "https://github.com/vmware-tanzu/velero"
-  url "https://github.com/vmware-tanzu/velero/archive/v1.5.4.tar.gz"
-  sha256 "ef798a24d345cc332dcb17f9c3de6da9aaa457c5765ea2c7a30f45768d146614"
+  url "https://github.com/vmware-tanzu/velero/archive/v1.6.0.tar.gz"
+  sha256 "68d8bf3c117b3ddfe7e8005238824e802ede83ce76dd670723663a392f779fc9"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "d04cf9ea27c5d22b4b0a3c58fcdd5402875ed170f0c02be02fd7ba55cae2f66a"
-    sha256 cellar: :any_skip_relocation, big_sur:       "584b98c46c1e6b3bfbf2a94e96f2fc207b8cc972da055bc7edc1f0b633627968"
-    sha256 cellar: :any_skip_relocation, catalina:      "e63e4913effdf88cc9159d043179db47cfd5599ce714c98e4571abbd57a61564"
-    sha256 cellar: :any_skip_relocation, mojave:        "622d2e462a17ddac1d064a16bc7f46c0c05cb5ae45be98ba025bc2067deb83fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "10c5e7069119822aacc1e2adf02f4f707cca44cf7c897083d964dc4efafb9a5e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "9ec1edc47dc7cf10e58611986e504028787921953f43a27eddf75dfa28e59f9c"
+    sha256 cellar: :any_skip_relocation, big_sur:       "3793747c07f37e2088eab787d3cdbbf9b55c9a804787efa1e8cdf854407234ff"
+    sha256 cellar: :any_skip_relocation, catalina:      "605826184cccbb5d34331dd5b410615667a921c9adf5a4ad3499f1140d62bb75"
+    sha256 cellar: :any_skip_relocation, mojave:        "3b4b493abdc403991fc85f562a0234924c5fb2e4d9633d7696c9a3a4a11b08e0"
   end
 
   depends_on "go" => :build
@@ -31,7 +30,7 @@ class Velero < Formula
   end
 
   test do
-    output = shell_output("#{bin}/velero 2>&1", 1)
+    output = shell_output("#{bin}/velero 2>&1")
     assert_match "Velero is a tool for managing disaster recovery", output
     assert_match "Version: v#{version}", shell_output("#{bin}/velero version --client-only 2>&1")
     system bin/"velero", "client", "config", "set", "TEST=value"

@@ -3,17 +3,16 @@ class VowpalWabbit < Formula
   homepage "https://github.com/VowpalWabbit/vowpal_wabbit"
   # pull from git tag to get submodules
   url "https://github.com/VowpalWabbit/vowpal_wabbit.git",
-      tag:      "8.10.0",
-      revision: "200be9132a4bfbe8fb91bce8a04c4fa15d2e590b"
+      tag:      "8.10.1",
+      revision: "3887696a19c34baaff5ebd0dd7c68a7437cd0175"
   license "BSD-3-Clause"
   head "https://github.com/VowpalWabbit/vowpal_wabbit.git"
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "3e659fe7c11089ff17657eac6595b7437360366eceac41f33a208efa2417b58c"
-    sha256 cellar: :any,                 big_sur:       "811d05788aee7d04c61fea429b12ba882ed6df0e86d1f440b8c2000c44ccd9a7"
-    sha256 cellar: :any,                 catalina:      "cba8185be2c7539d030288913a84bc4f8bddc36b167d9067c46b3e07294c6603"
-    sha256 cellar: :any,                 mojave:        "307b7bc647f468fa91b3f6fce1615eb6c9972badff7799b2e1cf86a80691347c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a50ae54188488763637048952c69b16574d5094b19b640ebfe39ad571469307"
+    sha256 cellar: :any, arm64_big_sur: "5edbdd1e6e78252daacb66822d856c7c4268a426b7e076b3acb579fe2b8b59d1"
+    sha256 cellar: :any, big_sur:       "8f7d47864a841bd3d247813f9c0bc62d034bb34e0bd1bc5a79680d0b2bb5decf"
+    sha256 cellar: :any, catalina:      "7c0d4169175b8cede06d8b2896c27b4c5cd9f0a13d50a355d8bd9ae372afcfe4"
+    sha256 cellar: :any, mojave:        "0f7007ba2de3d476c4e77f6e1949cd11fe4dc50d8fba99d01550b1cbea610092"
   end
 
   depends_on "cmake" => :build

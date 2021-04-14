@@ -3,16 +3,15 @@ class Jc < Formula
 
   desc "Serializes the output of command-line tools to structured JSON output"
   homepage "https://github.com/kellyjonbrazil/jc"
-  url "https://files.pythonhosted.org/packages/e4/ba/30b6b4e6fbc9e739fd04e8c9258f098d19bd9fa2a2ab8699a6b273aaaa98/jc-1.15.0.tar.gz"
-  sha256 "1f6085a23202a6293c88756befbb2072e5af13ff68eb1692f960aa87b6dc7691"
+  url "https://files.pythonhosted.org/packages/d8/90/0ba582183dc880d457484fbe44abf39f0d29f9bdd74733107921b4f811b6/jc-1.15.1.tar.gz"
+  sha256 "1afb297d16860f701756812148c3c98ee07a74d14eda01c74ab446e2c5a87bbe"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "26b19a9c96410bbfc4ebeb9f7bea28b034731da95a15b3259c5642c22fee3a8e"
-    sha256 cellar: :any_skip_relocation, big_sur:       "13ee49106ef1d774c382c735614e66c2d51966500ad70c92ffd9c448803b8b70"
-    sha256 cellar: :any_skip_relocation, catalina:      "76c53d3b661a66a5edbac5206803809023071e066cecf39fbe6697859dec6f93"
-    sha256 cellar: :any_skip_relocation, mojave:        "2d729e1819c7f0584b149526a9031860d6c97fee0d829bff1102d05763a7768b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed7ef62f2d9bf52e3dad6d4285d949850c3a75ba44ce7bde194efd8ea0404008"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "f7be98c538e90478cd07dbfb156083bb3419e3025fdfd9e0517ea6b25d1ab861"
+    sha256 cellar: :any_skip_relocation, big_sur:       "ed90af79616bac1430bc0d5d9f9dcbabe868b847d86b85190dc007cacbd67793"
+    sha256 cellar: :any_skip_relocation, catalina:      "c8ae079390aefbd19e660b088962f458c4c16be4da122867615569d881db90d0"
+    sha256 cellar: :any_skip_relocation, mojave:        "8ce342297442d6463b75b5fc644ca8aa3c1bcbc1df4479544b15ed03698b0fa8"
   end
 
   depends_on "python@3.9"
@@ -39,6 +38,7 @@ class Jc < Formula
 
   def install
     virtualenv_install_with_resources
+    man1.install "jc/man/jc.1.gz"
   end
 
   test do
