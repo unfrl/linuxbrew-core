@@ -2,8 +2,8 @@ class V8 < Formula
   desc "Google's JavaScript engine"
   homepage "https://github.com/v8/v8/wiki"
   # Track V8 version from Chrome stable: https://omahaproxy.appspot.com
-  url "https://github.com/v8/v8/archive/8.9.255.24.tar.gz"
-  sha256 "87259ae525a6b24ae6196e2c19544cab332bedd934dbd3bf28c14f3d44356abf"
+  url "https://github.com/v8/v8/archive/8.9.255.25.tar.gz"
+  sha256 "b6ad45e2d15691d6c9cf73d10853ac4beb43689dfe5a85aca26ae232c5d0d103"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,10 +12,10 @@ class V8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "6d642767341639e0e7cc0defe63da44c41dc64ac0504f0590adbab61cd7156ed"
-    sha256 cellar: :any, big_sur:       "e61f1ad77cde43cef37dbf5067b3afe425d62086ad910c3b71cf6a9be87dc803"
-    sha256 cellar: :any, catalina:      "3ef5a9ba9be373a783827d08f00ce6835b06f29aa32cba15ababfd60075348ee"
-    sha256 cellar: :any, mojave:        "927094b94e08694521e6ac498c09c65aceaefff4187bd921551ee959727bcfd9"
+    sha256 cellar: :any, arm64_big_sur: "b1c532b7fe2dbd27419360501c13252ddf107002f4cb18128a86a57a5a931f7d"
+    sha256 cellar: :any, big_sur:       "8f6527232588c977023e9e8af80283a48a81827be033990acc8d171bc1901b8f"
+    sha256 cellar: :any, catalina:      "a19767580e5e8e671a23060b1c759a461745c4a695156a312ee1271cd9edba5e"
+    sha256 cellar: :any, mojave:        "959f90a4d5fa23a3514fa6f8c58f4e8bc4ecc89d8e4c63bb243cea94f7bf0997"
   end
 
   depends_on "llvm" => :build
