@@ -10,6 +10,7 @@ class Kubeprod < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "3286c04ea5d7d7a198791ebb2a69ae172c6fb5cfc2c1013c1d7b7e66d3053dcd"
     sha256 cellar: :any_skip_relocation, catalina:      "e7aa12f3c6d2900563d0c9996ff6a16b235eeb3f94617b3c6cd38a1571c06f35"
     sha256 cellar: :any_skip_relocation, mojave:        "75f7896a2872579b7bc7626ad92b8e2956541fb5d217712009c2ce81e379b565"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04e30e87dbfc13a566b857fea0125cb9d320ee52c859fef22a4b1be00b614bfc"
   end
 
   depends_on "go" => :build
