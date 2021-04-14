@@ -34,6 +34,7 @@ jobs:
             --only-formulae \
             --keep-old \
             --skip-recursive-dependents \
+            --only-json-tab \
             ${{github.event.client_payload.formula}}
 
       - name: Upload bottles
