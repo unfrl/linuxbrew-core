@@ -16,9 +16,10 @@ class Asciiquarium < Formula
   end
 
   bottle do
-    sha256 cellar: :any, big_sur:  "b265b239e7c9d417614d16e8df9d000b4b5a74419fa3b9c951f89e38e2d6f2c5"
-    sha256 cellar: :any, catalina: "549e7df42d697e47ff38029b4e0d3df4404046ba52296e713b47d02aab0babe7"
-    sha256 cellar: :any, mojave:   "75d26ee7c7db2b3f8a66216224a13405288fa436123c5c80e53b2f9a9bcfdb3b"
+    sha256 cellar: :any,                 big_sur:      "b265b239e7c9d417614d16e8df9d000b4b5a74419fa3b9c951f89e38e2d6f2c5"
+    sha256 cellar: :any,                 catalina:     "549e7df42d697e47ff38029b4e0d3df4404046ba52296e713b47d02aab0babe7"
+    sha256 cellar: :any,                 mojave:       "75d26ee7c7db2b3f8a66216224a13405288fa436123c5c80e53b2f9a9bcfdb3b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c5823cf64a308316791c82b986c7f86116cd3380333ce671c4fe5221c598dc8a"
   end
 
   depends_on "ncurses"
