@@ -15,6 +15,7 @@ class Perltidy < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "60d13965fa91eb3587527c26509080f11f84afdc27db7a7e105a59e4cc9c660a"
     sha256 cellar: :any_skip_relocation, catalina:      "965bded37a52b58c544b3d98e9dd15d5b7ea06a1a1996cc91501cf466d7cabf7"
     sha256 cellar: :any_skip_relocation, mojave:        "6b4018956b07dbcdacf35920d1cc64c0a997f22ead747d64b730b26aac1a93f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9447d9f65ea5f502f5e1a5c719f7ab88522ecf9407ed58c2bf798448e0d1f3c1"
   end
 
   uses_from_macos "perl"
