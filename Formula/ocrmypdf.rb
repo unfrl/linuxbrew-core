@@ -34,7 +34,9 @@ class Ocrmypdf < Formula
   uses_from_macos "libxslt"
   uses_from_macos "zlib"
 
-  depends_on "gcc" unless OS.mac?
+  on_linux do
+    depends_on "gcc"
+  end
 
   fails_with gcc: "5"
 
@@ -118,16 +120,19 @@ class Ocrmypdf < Formula
 
     resource("Pillow").stage do
       inreplace "setup.py" do |s|
-        if OS.mac?
+        on_macos do
           sdkprefix = MacOS.sdk_path_if_needed ? MacOS.sdk_path : ""
           s.gsub! "openjpeg.h", "probably_not_a_header_called_this_eh.h"
           s.gsub! "xcb.h", "probably_not_a_header_called_this_eh.h"
           s.gsub! "ZLIB_ROOT = None",
                   "ZLIB_ROOT = ('#{sdkprefix}/usr/lib', '#{sdkprefix}/usr/include')"
-        else
+        end
+
+        on_linux do
           s.gsub! "ZLIB_ROOT = None",
                   "ZLIB_ROOT = ('#{Formula["zlib"].opt_prefix}/lib', '#{Formula["zlib"].opt_prefix}/include')"
         end
+
         s.gsub! "JPEG_ROOT = None",
                 "JPEG_ROOT = ('#{Formula["jpeg"].opt_prefix}/lib', '#{Formula["jpeg"].opt_prefix}/include')"
         s.gsub! "FREETYPE_ROOT = None",

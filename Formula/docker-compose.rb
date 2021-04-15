@@ -3,17 +3,16 @@ class DockerCompose < Formula
 
   desc "Isolated development environments using Docker"
   homepage "https://docs.docker.com/compose/"
-  url "https://files.pythonhosted.org/packages/83/fb/3a34858df94ffd206f112120d3c70c117d75a4a1bc183badd6b6ec3fa980/docker-compose-1.29.0.tar.gz"
-  sha256 "7f3ac832111b55bf1385ccae8b136dc4cbec04a00cf3191b3d0517003324bfc1"
+  url "https://files.pythonhosted.org/packages/c5/90/b9695cea5207eb858e1bd08e7882368605d2599d60072df5be09f4452e84/docker-compose-1.29.1.tar.gz"
+  sha256 "d2064934f5084db8a0c4805e226447bf1fd0c928419be95afb6bd1866838c1f1"
   license "Apache-2.0"
   head "https://github.com/docker/compose.git"
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "27cc4dd3b3ea63f108319406615b051a626da2fac7a0f146a8e558e7725e49f0"
-    sha256 cellar: :any,                 big_sur:       "175c5280e6fb2a8c55415cce7eb978994daccbec6ce8ed917e7acac04371f413"
-    sha256 cellar: :any,                 catalina:      "62a86593128d8668bf21c79fe53b51a5967374838ac6a2b909d45740579a51b2"
-    sha256 cellar: :any,                 mojave:        "0f852f2c6f113a662cec212a6f52878c5e5a26c9c44b4461a3495be21ab13222"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc0c867141f555bc24c4d0d47fcebf2cc7c87fce5cf44bfdfcd4bd44a9097367"
+    sha256 cellar: :any, arm64_big_sur: "8f62a4ec1e3ae543afc931483ea8cf015fc4eb8f394f84d6f57fb111723213b6"
+    sha256 cellar: :any, big_sur:       "14df94cf6ccb19cc0a5837b41fe56a654a8a6e3a1f339be59088976ee6b0e05b"
+    sha256 cellar: :any, catalina:      "e8691188bcc89578dce5de3ad4032c1afde7caffc436cf9fde92d1e5a4135000"
+    sha256 cellar: :any, mojave:        "95367c971090d7f01d98dcd71248c9a79106b414bbae782f3432784e5329c9e9"
   end
 
   depends_on "rust" => :build

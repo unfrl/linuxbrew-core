@@ -38,7 +38,9 @@ class Mpd < Formula
 
   uses_from_macos "curl"
 
-  depends_on "gcc" unless OS.mac?
+  on_linux do
+    depends_on "gcc"
+  end
 
   fails_with gcc: "5"
 
@@ -112,9 +114,11 @@ class Mpd < Formula
   end
 
   test do
-    # oss_output: Error opening OSS device "/dev/dsp": No such file or directory
-    # oss_output: Error opening OSS device "/dev/sound/dsp": No such file or directory
-    return if ENV["HOMEBREW_GITHUB_ACTIONS"]
+    on_linux do
+      # oss_output: Error opening OSS device "/dev/dsp": No such file or directory
+      # oss_output: Error opening OSS device "/dev/sound/dsp": No such file or directory
+      return if ENV["HOMEBREW_GITHUB_ACTIONS"]
+    end
 
     require "expect"
 
