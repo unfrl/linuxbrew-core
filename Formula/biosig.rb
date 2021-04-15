@@ -11,9 +11,10 @@ class Biosig < Formula
   end
 
   bottle do
-    sha256 cellar: :any, big_sur:  "8304675a1b5203cb2156d60acc522502234af872b9d8866481f3fda622dc39fc"
-    sha256 cellar: :any, catalina: "d22d443fe8cdf3ff28a519f5f119f0c9d040447d4fd5621715e14e7dd6205f95"
-    sha256 cellar: :any, mojave:   "f2b22655eff227fd6f3ed20fde6d87b38308637d367a4f369d67f36e884f45b2"
+    sha256 cellar: :any,                 big_sur:      "8304675a1b5203cb2156d60acc522502234af872b9d8866481f3fda622dc39fc"
+    sha256 cellar: :any,                 catalina:     "d22d443fe8cdf3ff28a519f5f119f0c9d040447d4fd5621715e14e7dd6205f95"
+    sha256 cellar: :any,                 mojave:       "f2b22655eff227fd6f3ed20fde6d87b38308637d367a4f369d67f36e884f45b2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "cc062ea7be3aa4034c571d338428d677e00a06e6fe90b7ab4762bfaac12e5aeb"
   end
 
   depends_on "gawk" => :build
