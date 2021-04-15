@@ -1,49 +1,30 @@
 class Luv < Formula
   desc "Bare libuv bindings for lua"
   homepage "https://github.com/luvit/luv"
-  version "1.36.0-0"
+  url "https://github.com/luvit/luv/archive/1.40.0-0.tar.gz"
+  version "1.40.0-0"
+  sha256 "23167a3d5dbc1e30df1f106ffae0a4c5bd50993da2066dc1f7e1842bb9fb6cd0"
   license "Apache-2.0"
-  revision 1
-
-  stable do
-    url "https://github.com/luvit/luv/archive/1.36.0-0.tar.gz"
-    sha256 "739d733d32741a9e6caa3ff3a4416dcf121f39f622ee143c7d63130ce7de27be"
-
-    resource "lua-compat-5.3" do
-      url "https://github.com/keplerproject/lua-compat-5.3/archive/v0.10.tar.gz"
-      sha256 "d1ed32f091856f6fffab06232da79c48b437afd4cd89e5c1fc85d7905b011430"
-    end
-
-    # Patch to fix shared library build failure on macOS. Remove at next release.
-    # https://github.com/luvit/luv/pull/533
-    patch do
-      url "https://github.com/luvit/luv/commit/10a27c2b58cb6c2338223b70382397be508cdc86.patch?full_index=1"
-      sha256 "793ada6b314f5c6bc308a0ff7d1713632c75d641578455a6570e7bf4a4187e4d"
-    end
-  end
+  head "https://github.com/luvit/luv.git"
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "32cdac0b774c5969f7a03904d7aee5ebdb7616d3080cc7f00eff5ce94b39a14e"
-    sha256 cellar: :any,                 big_sur:       "f6c8425adb2baa82ffa7072abd147d953de598d52217c5a809e258497f593b91"
-    sha256 cellar: :any,                 catalina:      "cc68d5c231750bfc1f559f5d6dbc2f36cd6b91d8a5b42119df0c94e3a6ae850a"
-    sha256 cellar: :any,                 mojave:        "7167d544480f6f23dee98b446549fef19c7a2ab188b637804626fdfa83a7f530"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "233c55fca4556106fd901d84eaf7e0fcfedc02cc7dd699e37577d8ad53f14d1a"
-  end
-
-  head do
-    url "https://github.com/luvit/luv.git"
-
-    resource "lua-compat-5.3" do
-      url "https://github.com/keplerproject/lua-compat-5.3.git"
-    end
+    sha256 cellar: :any, arm64_big_sur: "3a2b1d72d8a9b96f27d3f556adc604a154752e42fbbb564d90d24b30c900e0ff"
+    sha256 cellar: :any, big_sur:       "22842418ed0fbb51f839c433fa895eb1309ca8870dedefeeffd6442d702c5335"
+    sha256 cellar: :any, catalina:      "2e5b7272fc97e1217b5abc250fb8fb955aeef189f2ae551b72bf29991dafe0ba"
+    sha256 cellar: :any, mojave:        "aca7ac35af4e7a4362c05f0816923113f977b0916b63a5b6ec330fc67d450d86"
   end
 
   depends_on "cmake" => :build
   depends_on "luajit-openresty" => [:build, :test]
   depends_on "libuv"
 
+  resource "lua-compat-5.3" do
+    url "https://github.com/keplerproject/lua-compat-5.3/archive/v0.10.tar.gz"
+    sha256 "d1ed32f091856f6fffab06232da79c48b437afd4cd89e5c1fc85d7905b011430"
+  end
+
   def install
-    resource("lua-compat-5.3").stage buildpath/"deps/lua-compat-5.3"
+    resource("lua-compat-5.3").stage buildpath/"deps/lua-compat-5.3" unless build.head?
 
     args = std_cmake_args + %W[
       -DWITH_SHARED_LIBUV=ON
