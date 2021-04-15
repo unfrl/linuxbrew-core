@@ -11,6 +11,7 @@ class Croaring < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "0fb31a81cdf29a48b64c2145e22a7807fbeef260b90ebfb33b69792e600d1a91"
     sha256 cellar: :any_skip_relocation, catalina:      "876be0d01194b15d750d331d6aa3ca38600e0c027892bd665417cd8e9ae5ebf0"
     sha256 cellar: :any_skip_relocation, mojave:        "1e3f2c5daacd9fa4a9895b4cd989b5d3443884e6db0a854491759c5464a1ae1e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6393eff6ab6c100e06233f9763094c36ef336cb931140acb89c6ffca619de52"
   end
 
   depends_on "cmake" => :build
