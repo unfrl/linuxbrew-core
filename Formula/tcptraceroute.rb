@@ -26,10 +26,11 @@ class Tcptraceroute < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_big_sur: "4e2b9c6ebec4fbbe3918044164a2ea7bfff0970e06e0c720bef8143d322ab3e2"
-    sha256 cellar: :any, big_sur:       "f0e063340080998a098d428af420778bf27b0d5b772943b482152ad9e2793db2"
-    sha256 cellar: :any, catalina:      "32a7e7e680f6e481353c0ab25fbfebb1f79f48bce4d2215d4765211e3494d450"
-    sha256 cellar: :any, mojave:        "99c51ddf23c5a4c9ac6d853c39a03513b340e60aa2d57211a46ea58bbad7290d"
+    sha256 cellar: :any,                 arm64_big_sur: "4e2b9c6ebec4fbbe3918044164a2ea7bfff0970e06e0c720bef8143d322ab3e2"
+    sha256 cellar: :any,                 big_sur:       "f0e063340080998a098d428af420778bf27b0d5b772943b482152ad9e2793db2"
+    sha256 cellar: :any,                 catalina:      "32a7e7e680f6e481353c0ab25fbfebb1f79f48bce4d2215d4765211e3494d450"
+    sha256 cellar: :any,                 mojave:        "99c51ddf23c5a4c9ac6d853c39a03513b340e60aa2d57211a46ea58bbad7290d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d345755e3c32cdaed9433bc552dd54b7b55ee5aa744fed261d268bc059df479"
   end
 
   depends_on "autoconf" => :build
