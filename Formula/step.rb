@@ -1,24 +1,22 @@
 class Step < Formula
   desc "Crypto and x509 Swiss-Army-Knife"
   homepage "https://smallstep.com"
-  url "https://github.com/smallstep/cli/releases/download/v0.15.15/step_0.15.15.tar.gz"
-  sha256 "c9d1776c3cb9f7764f62d47b484306f9e3072ce8a6131d77150039059d951765"
+  url "https://github.com/smallstep/cli/releases/download/v0.15.16/step_0.15.16.tar.gz"
+  sha256 "4366c90497420ca1a51fd1ba558826d7502467e7eed40654cf7f08dbc8854c27"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "20e23488ea11296ba932b2094cf800d91d5ee0ed81e79f82e938c3f15591f50b"
-    sha256 cellar: :any_skip_relocation, big_sur:       "f8ca91e422e4cdd007189a31bda7a56328299ddeb6693513673ffd7db4e20f55"
-    sha256 cellar: :any_skip_relocation, catalina:      "05f2e702be3ee0a6da36e7c4cdaf970162cbf4e92bb250d9b24e543ab856e94c"
-    sha256 cellar: :any_skip_relocation, mojave:        "a2f647f014461963f5d3e8568a2f22a0dd9f9fcd8657e6326401a39ee0a97fd6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46996287972222c4cb925da9f6644435c5a940a2be8a517829f3466bbc04e8b2"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "b488bf4f0ce687ba91bce50f4dd37563dfb0cdc41aeef6a6fc58708309283c63"
+    sha256 cellar: :any_skip_relocation, big_sur:       "2a42a0742849f428c0f50115ea665ad3b99b1680e063b2fdf50c896eb6fe818a"
+    sha256 cellar: :any_skip_relocation, catalina:      "107841d1447a1acce30135b12c4b9f3dc490d28d8db29cd408ea00aac9e4abf8"
+    sha256 cellar: :any_skip_relocation, mojave:        "579cf95e326aa4de5fde7be9ee71bce0260da14662e451e6468991104b4386e1"
   end
 
   depends_on "go" => :build
 
   resource "certificates" do
-    url "https://github.com/smallstep/certificates/releases/download/v0.15.13/step-ca_0.15.13.tar.gz"
-    sha256 "cccd21e7bf3203aff08b0af36569715d137d7586473bc8eba19c1a7dbbe0a907"
+    url "https://github.com/smallstep/certificates/releases/download/v0.15.14/step-ca_0.15.14.tar.gz"
+    sha256 "a2e479444e362dd2045f13941353393cb79bc09eb6c24d19bb07af4bb6a4ffcc"
   end
 
   def install
