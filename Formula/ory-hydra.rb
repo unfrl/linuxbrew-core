@@ -15,6 +15,7 @@ class OryHydra < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "f2f16a3c2706db86f7ae38c8c9c1e2354d8b3da233bc18d30a9e06580453adbc"
     sha256 cellar: :any_skip_relocation, catalina:      "657c5772b5dc40dbd552803476f8818607dec5b9c9c11f8770ae532eec821ab0"
     sha256 cellar: :any_skip_relocation, mojave:        "5d9e5f21ee311afdb04ab98212d82477b7354341366c130a3c01e9f0d25a238f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "839ef5671a8a15768c8626bbb78bdde2094ccf828a40921ca29aa6c62cdf3639"
   end
 
   depends_on "go" => :build
