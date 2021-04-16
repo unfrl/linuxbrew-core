@@ -7,9 +7,10 @@ class Geoipupdate < Formula
   head "https://github.com/maxmind/geoipupdate.git"
 
   bottle do
-    sha256 big_sur:  "b5c232a0ac91e47dda58b3c306a6a2ae6fa9359175b6b7fe728c58badd9ebca2"
-    sha256 catalina: "5db41634e443ee202ccfd411505a9f0371f7e8f62d1874092638669cc086bf75"
-    sha256 mojave:   "651914c92d4db3bc5cea5c38ab93cd7fbafa290ea70d05a523dae7ae5edf1c01"
+    sha256 big_sur:      "b5c232a0ac91e47dda58b3c306a6a2ae6fa9359175b6b7fe728c58badd9ebca2"
+    sha256 catalina:     "5db41634e443ee202ccfd411505a9f0371f7e8f62d1874092638669cc086bf75"
+    sha256 mojave:       "651914c92d4db3bc5cea5c38ab93cd7fbafa290ea70d05a523dae7ae5edf1c01"
+    sha256 x86_64_linux: "b8d1338c7c49959493169dc7b198fed5b31f553d318c5e6924b890ccfaa879f7"
   end
 
   depends_on "go" => :build
