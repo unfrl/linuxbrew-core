@@ -17,6 +17,7 @@ class Kustomize < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "a09fe36547fe994531475b381515bfd4295e52e439cc1122d10d7c92810f5910"
     sha256 cellar: :any_skip_relocation, catalina:      "578e14924d8120727d5582969b3017acb368750efb1b8cfc0dc004413321dbd7"
     sha256 cellar: :any_skip_relocation, mojave:        "1c18ce5a11f0b4a4afabf6487775fa469407bfdd275b5b06167d2ee44e2acc10"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0f982550913e66384bf2268ad8edb74c1ac38f2a42a4dd7de6aaaecc681b2dc"
   end
 
   depends_on "go" => :build
