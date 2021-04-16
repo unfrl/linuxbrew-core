@@ -2,16 +2,15 @@ class Istioctl < Formula
   desc "Istio configuration command-line utility"
   homepage "https://istio.io/"
   url "https://github.com/istio/istio.git",
-      tag:      "1.9.2",
-      revision: "15c0cc2ec638bb16f39cd39972ba3c71834af878"
+      tag:      "1.9.3",
+      revision: "6e4665c22b35447ab2c4509b37b4009b319ba945"
   license "Apache-2.0"
   head "https://github.com/istio/istio.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:      "f67083353bafc8108225fa4a3bbcaefef5bc1997bd9a57c6e8cf7f5cea9f3a48"
-    sha256 cellar: :any_skip_relocation, catalina:     "a6787f565c6ed4df34810fdd244aaadee684ae372c5ec30688fcddf6fa20e1b4"
-    sha256 cellar: :any_skip_relocation, mojave:       "5346a08a81bfc74c2a40aee19de605f10ededcb4e05f8c23c7ddca408f27bd38"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "1d34839e261f7a8b97bfe83e088cf84b41df552a92c11cce6b2f88af51e4d584"
+    sha256 cellar: :any_skip_relocation, big_sur:  "0ef426cf30bfbe686b6b31687aa3b5e2f54c68dec1030b9946db0f98c15f7ba1"
+    sha256 cellar: :any_skip_relocation, catalina: "0ef426cf30bfbe686b6b31687aa3b5e2f54c68dec1030b9946db0f98c15f7ba1"
+    sha256 cellar: :any_skip_relocation, mojave:   "0ef426cf30bfbe686b6b31687aa3b5e2f54c68dec1030b9946db0f98c15f7ba1"
   end
 
   depends_on "go" => :build
