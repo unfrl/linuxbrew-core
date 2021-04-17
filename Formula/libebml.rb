@@ -13,10 +13,11 @@ class Libebml < Formula
 
   depends_on "cmake" => :build
 
-  unless OS.mac?
-    fails_with gcc: "5"
+  on_linux do
     depends_on "gcc" => :build
   end
+
+  fails_with gcc: "5"
 
   def install
     mkdir "build" do

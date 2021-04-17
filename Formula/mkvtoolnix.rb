@@ -41,10 +41,11 @@ class Mkvtoolnix < Formula
   uses_from_macos "libxslt" => :build
   uses_from_macos "ruby" => :build
 
-  unless OS.mac?
-    fails_with gcc: "5"
+  on_linux do
     depends_on "gcc" => :build
   end
+
+  fails_with gcc: "5"
 
   def install
     ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog" unless OS.mac?
