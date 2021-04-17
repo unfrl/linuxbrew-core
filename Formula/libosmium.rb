@@ -62,14 +62,7 @@ class Libosmium < Formula
       }
     EOS
 
-    system ENV.cxx,
-           "-std=c++11",
-           *("-stdlib=libc++" if OS.mac?),
-           "-o",
-           "libosmium_read",
-           "test.cpp",
-           "-lexpat",
-           *("-pthread" unless OS.mac?)
+    system ENV.cxx, "-std=c++11", "-lexpat", "-o", "libosmium_read", "-pthread", "test.cpp"
     system "./libosmium_read", "test.osm"
   end
 end

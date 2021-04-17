@@ -32,7 +32,10 @@ class TerraformAT011 < Formula
       ENV.delete "AWS_ACCESS_KEY"
       ENV.delete "AWS_SECRET_KEY"
 
-      os = OS.mac? ? "darwin" : "linux"
+      os = "darwin"
+      on_linux do
+        os = "linux"
+      end
       ENV["XC_OS"] = os
       ENV["XC_ARCH"] = "amd64"
       system "go", "mod", "vendor" # Needed for Go 1.14+
