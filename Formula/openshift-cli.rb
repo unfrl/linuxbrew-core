@@ -28,8 +28,13 @@ class OpenshiftCli < Formula
   depends_on "socat"
   depends_on "krb5" unless OS.mac?
 
+  uses_from_macos "krb5"
+
   def install
-    ENV.O0 unless OS.mac? # See https://github.com/golang/go/issues/26487
+    on_linux do
+      # See https://github.com/golang/go/issues/26487
+      ENV.O0
+    end
     ENV["GOPATH"] = buildpath
     dir = buildpath/"src/github.com/openshift/oc"
     dir.install buildpath.children - [buildpath/".brew_home"]
