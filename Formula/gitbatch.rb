@@ -10,6 +10,7 @@ class Gitbatch < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "f9e66be24dac6acb5c3bb771971ac7d8736002a51b400a5922d9e99a33868d75"
     sha256 cellar: :any_skip_relocation, catalina:      "725d490cf957518eb5e169564c77a044cb48ec64c40bf1003ff859fef9461b16"
     sha256 cellar: :any_skip_relocation, mojave:        "4fbdaf04019dc3fc925754a6401b17793aab30860227123f8df17aaa114fa531"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04f8e80acf30878752f93b268141756e48bc36fbddb62a963c5748a790e95cfe"
   end
 
   depends_on "go" => :build
