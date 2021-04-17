@@ -15,6 +15,7 @@ class Opencv < Formula
     sha256 big_sur:       "13624f806d33bc40c4b49e8b552311611f83ef5ba9af79140aa53efe40a5dcaa"
     sha256 catalina:      "8df0308f01d98ec7037164b11a0058979a3ea084ded3132d5810eb315c2bf104"
     sha256 mojave:        "5ffe038e388394e57be95ad3b187a7f8823000b7fd87484aba70128453c15475"
+    sha256 x86_64_linux:  "c8753c3d0447e98d1c6a27c7e76487d7fe0c6f3cb0a07925c61452400b258eb6"
   end
 
   depends_on "cmake" => :build
