@@ -11,9 +11,10 @@ class Clair < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:  "324ad2b7a26d5bb95edf88f23bc63cdf809305e7dbcef5f4625d226c7cc75511"
-    sha256 cellar: :any_skip_relocation, catalina: "cdc0feb3362b7bfbcebc488bd885f0827dc112ab6b9a2fd5b0c7e32a713013ac"
-    sha256 cellar: :any_skip_relocation, mojave:   "2b4d4802fd7321ab28d7fe7fe1952b9d4e2b7ea81dbb7e6faccd74da6804c643"
+    sha256 cellar: :any_skip_relocation, big_sur:      "324ad2b7a26d5bb95edf88f23bc63cdf809305e7dbcef5f4625d226c7cc75511"
+    sha256 cellar: :any_skip_relocation, catalina:     "cdc0feb3362b7bfbcebc488bd885f0827dc112ab6b9a2fd5b0c7e32a713013ac"
+    sha256 cellar: :any_skip_relocation, mojave:       "2b4d4802fd7321ab28d7fe7fe1952b9d4e2b7ea81dbb7e6faccd74da6804c643"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "2e03b24039da6679db0f9d41eeec0f6880ea09d850e27fa5a38a7c9b4b5fca12"
   end
 
   depends_on "go" => :build
