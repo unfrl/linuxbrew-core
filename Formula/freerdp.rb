@@ -53,8 +53,10 @@ class Freerdp < Formula
   end
 
   test do
-    # failed to open display
-    return if ENV["HOMEBREW_GITHUB_ACTIONS"]
+    on_linux do
+      # failed to open display
+      return if ENV["HOMEBREW_GITHUB_ACTIONS"]
+    end
 
     success = `#{bin}/xfreerdp --version` # not using system as expected non-zero exit code
     details = $CHILD_STATUS
