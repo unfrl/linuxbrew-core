@@ -10,6 +10,7 @@ class AdwaitaIconTheme < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "a6a70379a4b6229960f08e4116b95c9b4ed6c21be10cadb22d9196600a04bc4b"
     sha256 cellar: :any_skip_relocation, catalina:      "a6a70379a4b6229960f08e4116b95c9b4ed6c21be10cadb22d9196600a04bc4b"
     sha256 cellar: :any_skip_relocation, mojave:        "538d43c64f03df2f26be1b5634a8f2411687d83fc8ff06942d3ced624970c91d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4743c88dfdfc36f479b8c6a1d4e8b6e168258d608d2ddb31068a1d1c53ddbbed"
   end
 
   depends_on "gettext" => :build
