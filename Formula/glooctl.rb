@@ -12,6 +12,7 @@ class Glooctl < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "edd878ffd2e2b91c8402cc29700e7b8630972a22785f3992ca1cddb66c031825"
     sha256 cellar: :any_skip_relocation, catalina:      "bc6c18977049b4c1c8a1e0a514fc988c3a1dac80d29ff2b2d044c647908432a1"
     sha256 cellar: :any_skip_relocation, mojave:        "8f1e79b59b651b109441563a195677bfba35d37489ba84e145b3bd8efb76c5e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9df5dda0745b5f5e84b272de3b29ae046c6344cbd0516172b6603ee008c4085d"
   end
 
   depends_on "go" => :build
