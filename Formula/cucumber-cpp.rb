@@ -63,7 +63,7 @@ class CucumberCpp < Formula
            "-lcucumber-cpp", "-I#{Formula["boost"].opt_include}",
            "-L#{Formula["boost"].opt_lib}", "-lboost_regex", "-lboost_system",
            "-lboost_program_options", "-lboost_filesystem", "-lboost_chrono",
-           *("-pthread" unless OS.mac?)
+           "-pthread"
     begin
       pid = fork { exec "./test" }
       expected = <<~EOS
