@@ -1,17 +1,15 @@
 class Libical < Formula
   desc "Implementation of iCalendar protocols and data formats"
   homepage "https://libical.github.io/libical/"
-  url "https://github.com/libical/libical/releases/download/v3.0.9/libical-3.0.9.tar.gz"
-  sha256 "bd26d98b7fcb2eb0cd5461747bbb02024ebe38e293ca53a7dfdcb2505265a728"
+  url "https://github.com/libical/libical/releases/download/v3.0.10/libical-3.0.10.tar.gz"
+  sha256 "f933b3e6cf9d56a35bb5625e8e4a9c3a50239a85aea05ed842932c1a1dc336b4"
   license any_of: ["LGPL-2.1-or-later", "MPL-2.0"]
-  revision 2
 
   bottle do
-    sha256                               arm64_big_sur: "92dff71359989b5e1d9b393ad32577a1cb7462ce96654292d5a4694a93230010"
-    sha256                               big_sur:       "76add0e5fce6a528dc2ab84b226524f587e663ad349dfad726b2d4915e8f1c91"
-    sha256                               catalina:      "53c30edf307bf09de5f04d83d4772a27073aae375e4ffb3157f6e4f20e8af9b0"
-    sha256                               mojave:        "dbb77478aea20be00b83f170849d064b0ee870a9481ad2abf93c56d16c680dc7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b705ce2dd2f41a65cec1fe9f106732fe599b3cc6a8914094a43e6ee28dc72b3"
+    sha256 arm64_big_sur: "78820f4354ff775e64e9c513b55f5e5a40db58705642bcf59a1e55ae822a83ef"
+    sha256 big_sur:       "aeb2152eb974ac69926bbcb5b1b8f2180cf144ebb840a59fcb835dc1a2a749d5"
+    sha256 catalina:      "b024a7bd0873db2015f36a5ea332cb4edf3fe31b0780b622f024cda0347a7560"
+    sha256 mojave:        "e417dc1981f7baaaa0acf469e65fff9d14843efe64d7b62537b26e3f484724d2"
   end
 
   depends_on "cmake" => :build

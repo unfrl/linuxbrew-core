@@ -132,7 +132,7 @@ class Netcdf < Formula
                 "/usr/bin/c++"
     end
 
-    if OS.mac?
+    on_macos do
       # SIP causes system Python not to play nicely with @rpath
       libnetcdf = (lib/"libnetcdf.dylib").readlink
       %w[libnetcdf-cxx4.dylib libnetcdf_c++.dylib].each do |f|
