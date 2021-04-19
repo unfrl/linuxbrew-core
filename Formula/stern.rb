@@ -11,6 +11,7 @@ class Stern < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "cd6c7cedf744d2436a58502186bf53c41bfe59b5049ff4c229ead7947a910b9e"
     sha256 cellar: :any_skip_relocation, catalina:      "8eb5b680678d6324aca6c33347c952375ad53712d7211ec6e9354e365dcf0b13"
     sha256 cellar: :any_skip_relocation, mojave:        "5c76df662b3d6225581abd431bb08f178d5db325d58a760cf5cf9177b30cd80f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01901f7267be964ea5d89d9d497d7796bf739eff2526fd0b823aba51fc76284b"
   end
 
   depends_on "go" => :build
