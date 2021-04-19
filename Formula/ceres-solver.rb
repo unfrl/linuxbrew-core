@@ -8,10 +8,11 @@ class CeresSolver < Formula
   head "https://ceres-solver.googlesource.com/ceres-solver.git"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "6590abc459c48af9965f3d456b36ad0edb34502a5fb53c81530f5b5a1748b377"
-    sha256 cellar: :any, big_sur:       "3553990ae1e702986b4ba78b5e73219c525f32fa92c91b9c4debf58992c2506f"
-    sha256 cellar: :any, catalina:      "62cc6e437638a68e7b0c7b053e799a928a446ffe25635588f0b4635d8995ae27"
-    sha256 cellar: :any, mojave:        "849c1cf12a1755149b155bfe6e2b2e6e773fec0773cb74f3ff04951ad8b6d69d"
+    sha256 cellar: :any,                 arm64_big_sur: "6590abc459c48af9965f3d456b36ad0edb34502a5fb53c81530f5b5a1748b377"
+    sha256 cellar: :any,                 big_sur:       "3553990ae1e702986b4ba78b5e73219c525f32fa92c91b9c4debf58992c2506f"
+    sha256 cellar: :any,                 catalina:      "62cc6e437638a68e7b0c7b053e799a928a446ffe25635588f0b4635d8995ae27"
+    sha256 cellar: :any,                 mojave:        "849c1cf12a1755149b155bfe6e2b2e6e773fec0773cb74f3ff04951ad8b6d69d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55ffb41f226431292a63a7b4943be25a27b2acd7744a54045925fdc4a95a076a"
   end
 
   depends_on "cmake" => [:build, :test]
