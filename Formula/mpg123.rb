@@ -27,6 +27,10 @@ class Mpg123 < Formula
       --with-module-suffix=.so
     ]
 
+    on_macos do
+      args << "--with-default-audio=coreaudio"
+    end
+
     args << if Hardware::CPU.arm?
       "--with-cpu=aarch64"
     else
