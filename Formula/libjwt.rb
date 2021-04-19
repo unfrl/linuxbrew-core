@@ -6,10 +6,11 @@ class Libjwt < Formula
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "933563d341e01adcc81503b3b3d043b834310bf69973c31f495fb58f5ec4e725"
-    sha256 cellar: :any, big_sur:       "c32d81541ca6483a85f49777d6a4e54eb8bdb4318aae54c8f3a5c615003977de"
-    sha256 cellar: :any, catalina:      "05956fd035389488a5c37d6512ecbf0576cf8bcf54c6270769ce37268e6ecea6"
-    sha256 cellar: :any, mojave:        "a1a41e5c06932d420c32ec962555fd14bc0a2331ad9633413f3d5df452e8a259"
+    sha256 cellar: :any,                 arm64_big_sur: "933563d341e01adcc81503b3b3d043b834310bf69973c31f495fb58f5ec4e725"
+    sha256 cellar: :any,                 big_sur:       "c32d81541ca6483a85f49777d6a4e54eb8bdb4318aae54c8f3a5c615003977de"
+    sha256 cellar: :any,                 catalina:      "05956fd035389488a5c37d6512ecbf0576cf8bcf54c6270769ce37268e6ecea6"
+    sha256 cellar: :any,                 mojave:        "a1a41e5c06932d420c32ec962555fd14bc0a2331ad9633413f3d5df452e8a259"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f203b672d3aa6ad1ce2e0bf87ab88be874ca1f9ab01c30041388670adf756b1c"
   end
 
   depends_on "autoconf" => :build
