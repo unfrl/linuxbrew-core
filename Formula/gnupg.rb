@@ -30,8 +30,9 @@ class Gnupg < Formula
   depends_on "npth"
   depends_on "pinentry"
 
+  uses_from_macos "sqlite" => :build
+
   on_linux do
-    depends_on "sqlite" => :build
     depends_on "libidn"
   end
 
