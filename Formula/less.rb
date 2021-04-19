@@ -1,16 +1,9 @@
 class Less < Formula
   desc "Pager program similar to more"
-  homepage "http://www.greenwoodsoftware.com/less/index.html"
+  homepage "https://www.greenwoodsoftware.com/less/index.html"
+  url "https://www.greenwoodsoftware.com/less/less-581.tar.gz"
+  sha256 "1d077f83fe7867e0ecfd278eab3122326b21c22c9161366189c38e09b96a2c65"
   license "GPL-3.0-or-later"
-
-  stable do
-    url "http://www.greenwoodsoftware.com/less/less-563.tar.gz"
-    sha256 "ce5b6d2b9fc4442d7a07c93ab128d2dff2ce09a1d4f2d055b95cf28dd0dc9a9a"
-
-    # Fix build with Xcode 12 as it no longer allows implicit function declarations
-    # See https://github.com/gwsw/less/issues/91
-    patch :DATA
-  end
 
   livecheck do
     url :homepage
@@ -18,12 +11,10 @@ class Less < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any, arm64_big_sur: "c7bc35b8debbb322fc3bdd644ba526eeec3ab8d5f982c76442995a763c77c739"
-    sha256 cellar: :any, big_sur:       "431d227c11a0d52bb4d4392244615933d9f04265f36faedc93f5406226d38076"
-    sha256 cellar: :any, catalina:      "491fc7dc78848cd91c85c4a6a1ff5457166c0ad83dda9f05145489c2aa2828eb"
-    sha256 cellar: :any, mojave:        "d03e895349d8503cea9c8da326015298bf64d80796ab9ee62138a4a072e4559f"
-    sha256 cellar: :any, x86_64_linux:  "fc95b664486d6e81fae0768b8e3f3f7b5be99607571ae04ce641bca4960be607"
+    sha256 cellar: :any, arm64_big_sur: "95b4a2d6ccbcadca7bb39d9b86997d92945c56d7ba421ba5a24fad5e456aa012"
+    sha256 cellar: :any, big_sur:       "2732e9582beafecf6084067ec39d547e2c6259dee8884c6dbb0ab083a9d32168"
+    sha256 cellar: :any, catalina:      "908e9936ade67b803ba14ab6c85ffae16a804baae405ffcf017f327828c8d096"
+    sha256 cellar: :any, mojave:        "55c3665b219f38f3a4bea7be9961d6c13e513cebd935408fda11bd6d84582b74"
   end
 
   head do
@@ -45,21 +36,3 @@ class Less < Formula
     system "#{bin}/lesskey", "-V"
   end
 end
-__END__
-diff --git a/configure b/configure
-index 0ce6db1..eac7ca0 100755
---- a/configure
-+++ b/configure
-@@ -4104,11 +4104,11 @@ if test "x$TERMLIBS" = x; then
-     TERMLIBS="-lncurses"
-     SAVE_LIBS=$LIBS
-     LIBS="$LIBS $TERMLIBS"
-     cat confdefs.h - <<_ACEOF >conftest.$ac_ext
- /* end confdefs.h.  */
--
-+#include <termcap.h>
- int
- main ()
- {
- tgetent(0,0); tgetflag(0); tgetnum(0); tgetstr(0,0);
-   ;
