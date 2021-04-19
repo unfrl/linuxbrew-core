@@ -10,6 +10,7 @@ class VulkanHeaders < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "3f2c17c525e3a61d0088da38a6bf4472aae7ec34500905dadc4108cbf6f1f626"
     sha256 cellar: :any_skip_relocation, catalina:      "3f2c17c525e3a61d0088da38a6bf4472aae7ec34500905dadc4108cbf6f1f626"
     sha256 cellar: :any_skip_relocation, mojave:        "41b6eb1721da5d5304153e0e861b756a95e7b938bf99d22e624b7f6385293e8c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c40612733d07a26228cfefd465fa00f82563e8cb97074487fe789d9619b2f2e9"
   end
 
   depends_on "cmake" => :build
