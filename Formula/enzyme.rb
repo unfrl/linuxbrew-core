@@ -4,21 +4,22 @@ class Enzyme < Formula
   url "https://github.com/wsmoses/Enzyme/archive/v0.0.9.tar.gz"
   sha256 "c6f906747f1d32f92c70f6f9e0b8d94f38fc43fdb8633db09281b360b97a1421"
   license "Apache-2.0" => { with: "LLVM-exception" }
+  revision 1
   head "https://github.com/wsmoses/Enzyme.git", branch: "main"
 
   bottle do
-    sha256 arm64_big_sur: "f33b0cf71958fcf10357dc8dc005c9bd5123e8538ef122536d0bbd8a4f2369bd"
-    sha256 big_sur:       "400c0178774a87c3a357ada0fe613691ead64c2bd04c6535349be6fd55c16f0d"
-    sha256 catalina:      "bfb97f1714c1686b8eb7f57aeec89ed9f3e9160ee72b14c81b9b9d3045f4f3de"
-    sha256 mojave:        "1ab282a86c3910ee2c1b6432016efae90ef92562f1c5ad84d422eaf0c5cb8210"
+    sha256 arm64_big_sur: "455afc6a9e4c8c52c683fe064aabdd6aaa212d3581db5b5138a0ee8d2f5f085c"
+    sha256 big_sur:       "a2b615f56c372801bbdd2860a8ef74c0cde69ebd82f7ffbbc6e79230a0db2ca6"
+    sha256 catalina:      "619e440cad7a1b494af3b22d92052d3df4f42578ae40afb98de9c02dada1fad4"
+    sha256 mojave:        "0f8594cf38cb590904b702c10b548fe643a7780bfa72b952f0e650c46c78a2c9"
   end
 
   depends_on "cmake" => :build
-  depends_on "llvm"
+  depends_on "llvm@11"
 
   def install
     mkdir "build" do
-      system "cmake", "../enzyme", *std_cmake_args, "-DLLVM_DIR=#{Formula["llvm"].opt_lib}/cmake/llvm"
+      system "cmake", "../enzyme", *std_cmake_args, "-DLLVM_DIR=#{Formula["llvm@11"].opt_lib}/cmake/llvm"
       system "make"
       system "make", "install"
     end
@@ -40,14 +41,13 @@ class Enzyme < Formula
       }
     EOS
 
-    llvm = Formula["llvm"]
-    llvm_version = llvm.version.major
+    llvm = Formula["llvm@11"]
     opt = llvm.opt_bin/"opt"
     ENV["CC"] = llvm.opt_bin/"clang"
 
     system ENV.cc, testpath/"test.c", "-S", "-emit-llvm", "-o", "input.ll", "-O2",
                    "-fno-vectorize", "-fno-slp-vectorize", "-fno-unroll-loops"
-    system opt, "input.ll", "-load=#{opt_lib}/#{shared_library("LLVMEnzyme-#{llvm_version}")}",
+    system opt, "input.ll", "-load=#{opt_lib}/#{shared_library("LLVMEnzyme-#{llvm.version.major}")}",
                 "-enzyme", "-o", "output.ll", "-S"
     system ENV.cc, "output.ll", "-O3", "-o", "test"
 

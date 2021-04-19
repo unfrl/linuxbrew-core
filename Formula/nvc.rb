@@ -4,13 +4,13 @@ class Nvc < Formula
   url "https://github.com/nickg/nvc/releases/download/r1.5.0/nvc-1.5.tar.gz"
   sha256 "4da984ba95eb3b8dd2893fb7a676675de869ff114b827a9f5490dfd54bc95fcb"
   license "GPL-3.0-or-later"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 arm64_big_sur: "76441135ec856345e43510a1a7da280138a85d9c0cfee5976dd66d765d4baf4e"
-    sha256 big_sur:       "1f2d64225daa270c2914bc24bf9510ee778e3760a287c9d72f1aa6e96eb9ecbe"
-    sha256 catalina:      "35cf1be4eec7f103dd0d77d3a19464e7bbb745bc3dbbf04ccb0edf35ea82c734"
-    sha256 mojave:        "512571d57d7e9e97199941fc0dea8347034d64f750abb000ada7ba9fa5c8f4ea"
+    sha256 arm64_big_sur: "89ad43a7f12f4bcc1abbe56e571a374fbfea3601b43d05c5175e191ede8457a6"
+    sha256 big_sur:       "b950d81b34fd6ba099b10c85fc96562190bc8af66f0ba5315f10d325c58f547a"
+    sha256 catalina:      "37aac62a2eb006671e90730ede9016a1f2282caff5f1bb41f95e4c53cb93e297"
+    sha256 mojave:        "4d57ff4df2c881f16e82a57be5af32701729a9cc710e9a7581d688302c3dac72"
   end
 
   head do
@@ -22,7 +22,7 @@ class Nvc < Formula
 
   depends_on "check" => :build
   depends_on "pkg-config" => :build
-  depends_on "llvm"
+  depends_on "llvm@11"
 
   resource "vim-hdl-examples" do
     url "https://github.com/suoto/vim-hdl-examples.git",
@@ -32,7 +32,7 @@ class Nvc < Formula
   def install
     system "./autogen.sh" if build.head?
     system "./tools/fetch-ieee.sh"
-    system "./configure", "--with-llvm=#{Formula["llvm"].opt_bin}/llvm-config",
+    system "./configure", "--with-llvm=#{Formula["llvm@11"].opt_bin}/llvm-config",
                           "--prefix=#{prefix}",
                           "--with-system-cc=/usr/bin/clang"
     system "make"

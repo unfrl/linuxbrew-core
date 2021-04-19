@@ -4,11 +4,14 @@ class Ccls < Formula
   url "https://github.com/MaskRay/ccls/archive/0.20210330.tar.gz"
   sha256 "28c228f49dfc0f23cb5d581b7de35792648f32c39f4ca35f68ff8c9cb5ce56c2"
   license "Apache-2.0"
+  revision OS.mac? ? 1 : 2
   head "https://github.com/MaskRay/ccls.git"
-  revision 1 unless OS.mac?
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c84af931d520cc92941a4be9c34fdb8d5d7134cc19ca199307070dfb471c787e"
+    sha256 arm64_big_sur: "4b2edaf5fa08c9846ca7bc5cc20d36cbf6c6299af4df34527fbd511bbdebb5d7"
+    sha256 big_sur:       "cde35a76dbcadb48c962ded6e8e42e232e2a9084d46f01671b4a372a71dcc6cc"
+    sha256 catalina:      "86b111c8e74d39fb31558870c8b11b45625fab9573bbced33600319c53448530"
+    sha256 mojave:        "f8c02843ad68842a00b2b1d7015f3e73577b2717eef55c5c614231f0a4b57212"
   end
 
   depends_on "cmake" => :build
