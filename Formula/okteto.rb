@@ -11,6 +11,7 @@ class Okteto < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "d961e39a305f6f9b189b04c1956c3a271853bd939495856b1932cb22b620ec5b"
     sha256 cellar: :any_skip_relocation, catalina:      "9190f9c9b6081905b0d0dc2a6603b2afc89e0040fd5129cab50f0a511d780b9f"
     sha256 cellar: :any_skip_relocation, mojave:        "1054c0231d29146d71c3aac2a33ae398e7256ab0e356daf0ba8ef4c7d0f59457"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e08762b352e94d6adfac4bcec192e79e8a91d1b0aa231ea118dc005b7916decf"
   end
 
   depends_on "go" => :build
