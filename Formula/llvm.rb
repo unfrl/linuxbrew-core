@@ -190,7 +190,7 @@ class Llvm < Formula
 
     system "#{bin}/clang", "-L#{lib}", "-fopenmp", "-nobuiltininc",
                            "-I#{lib}/clang/#{clean_version}/include",
-                           "omptest.c", "-o", "omptest", *ENV["LDFLAGS"].split
+                           "omptest.c", "-o", "omptest"
     testresult = shell_output("./omptest")
 
     sorted_testresult = testresult.split("\n").sort.join("\n")
@@ -220,51 +220,16 @@ class Llvm < Formula
       }
     EOS
 
-    unless OS.mac?
-      system "#{bin}/clang++", "-v", "test.cpp", "-o", "test"
-      assert_equal "Hello World!", shell_output("./test").chomp
-    end
-
-    # Testing mlir
-    (testpath/"test.mlir").write <<~EOS
-      func @bad_branch() {
-        br ^missing  // expected-error {{reference to an undefined block}}
-      }
-    EOS
-
-    system "#{bin}/mlir-opt", "--verify-diagnostics", "test.mlir"
-
-    if OS.mac?
-      # Testing default toolchain and SDK location.
-      system "#{bin}/clang++", "-v",
-             "-std=c++11", "test.cpp", "-o", "test++"
-      assert_includes MachO::Tools.dylibs("test++"), "/usr/lib/libc++.1.dylib"
-      assert_equal "Hello World!", shell_output("./test++").chomp
-      system "#{bin}/clang", "-v", "test.c", "-o", "test"
-      assert_equal "Hello World!", shell_output("./test").chomp
-    end
+    # Testing default toolchain and SDK location.
+    system "#{bin}/clang++", "-v",
+           "-std=c++11", "test.cpp", "-o", "test++"
+    on_macos { assert_includes MachO::Tools.dylibs("test++"), "/usr/lib/libc++.1.dylib" }
+    assert_equal "Hello World!", shell_output("./test++").chomp
+    system "#{bin}/clang", "-v", "test.c", "-o", "test"
+    assert_equal "Hello World!", shell_output("./test").chomp
 
     # Testing Command Line Tools
-    if OS.mac? && MacOS::CLT.installed?
-      libclangclt = Dir[
-        "/Library/Developer/CommandLineTools/usr/lib/clang/#{MacOS::CLT.version.to_i}*"
-      ].last { |f| File.directory? f }
-
-      system "#{bin}/clang++", "-v", "-nostdinc",
-              "-I/Library/Developer/CommandLineTools/usr/include/c++/v1",
-              "-I#{libclangclt}/include",
-              "-I/usr/include",
-              # need it because /Library/.../usr/include/c++/v1/iosfwd refers to <wchar.h>,
-              # which CLT installs to /usr/include
-              "test.cpp", "-o", "testCLT++"
-      # Testing default toolchain and SDK location.
-      system "#{bin}/clang++", "-v",
-             "-std=c++11", "test.cpp", "-o", "test++"
-      assert_includes MachO::Tools.dylibs("test++"), "/usr/lib/libc++.1.dylib"
-      assert_equal "Hello World!", shell_output("./test++").chomp
-      system "#{bin}/clang", "-v", "test.c", "-o", "test"
-      assert_equal "Hello World!", shell_output("./test").chomp
-
+    if MacOS::CLT.installed?
       toolchain_path = "/Library/Developer/CommandLineTools"
       system "#{bin}/clang++", "-v",
              "-isysroot", MacOS::CLT.sdk_path,
@@ -279,7 +244,7 @@ class Llvm < Formula
     end
 
     # Testing Xcode
-    if OS.mac? && MacOS::Xcode.installed?
+    if MacOS::Xcode.installed?
       system "#{bin}/clang++", "-v",
              "-isysroot", MacOS::Xcode.sdk_path,
              "-isystem", "#{MacOS::Xcode.toolchain_path}/usr/include/c++/v1",
@@ -296,47 +261,52 @@ class Llvm < Formula
 
     # link against installed libc++
     # related to https://github.com/Homebrew/legacy-homebrew/issues/47149
-    if OS.mac?
-      system "#{bin}/clang++", "-v",
-             "-isystem", "#{opt_include}/c++/v1",
-             "-std=c++11", "-stdlib=libc++", "test.cpp", "-o", "testlibc++",
-             "-L#{opt_lib}", "-Wl,-rpath,#{opt_lib}"
-      assert_includes MachO::Tools.dylibs("testlibc++"), "#{opt_lib}/libc++.1.dylib"
-      assert_equal "Hello World!", shell_output("./testlibc++").chomp
+    system "#{bin}/clang++", "-v",
+           "-isystem", "#{opt_include}/c++/v1",
+           "-std=c++11", "-stdlib=libc++", "test.cpp", "-o", "testlibc++",
+           "-L#{opt_lib}", "-Wl,-rpath,#{opt_lib}"
+    on_macos { assert_includes MachO::Tools.dylibs("testlibc++"), "#{opt_lib}/libc++.1.dylib" }
+    assert_equal "Hello World!", shell_output("./testlibc++").chomp
 
-      (testpath/"scanbuildtest.cpp").write <<~EOS
-        #include <iostream>
-        int main() {
-          int *i = new int;
-          *i = 1;
-          delete i;
-          std::cout << *i << std::endl;
-          return 0;
-        }
-      EOS
-      assert_includes shell_output("#{bin}/scan-build clang++ scanbuildtest.cpp 2>&1"),
-        "warning: Use of memory after it is freed"
+    # Testing mlir
+    (testpath/"test.mlir").write <<~EOS
+      func @bad_branch() {
+        br ^missing  // expected-error {{reference to an undefined block}}
+      }
+    EOS
+    system "#{bin}/mlir-opt", "--verify-diagnostics", "test.mlir"
 
-      (testpath/"clangformattest.c").write <<~EOS
-        int    main() {
-            printf("Hello world!"); }
-      EOS
-      assert_equal "int main() { printf(\"Hello world!\"); }\n",
+    (testpath/"scanbuildtest.cpp").write <<~EOS
+      #include <iostream>
+      int main() {
+        int *i = new int;
+        *i = 1;
+        delete i;
+        std::cout << *i << std::endl;
+        return 0;
+      }
+    EOS
+    assert_includes shell_output("#{bin}/scan-build clang++ scanbuildtest.cpp 2>&1"),
+      "warning: Use of memory after it is freed"
+
+    (testpath/"clangformattest.c").write <<~EOS
+      int    main() {
+          printf("Hello world!"); }
+    EOS
+    assert_equal "int main() { printf(\"Hello world!\"); }\n",
       shell_output("#{bin}/clang-format -style=google clangformattest.c")
-    end
 
     # Ensure LLVM did not regress output of `llvm-config --system-libs` which for a time
     # was known to output incorrect linker flags; e.g., `-llibxml2.tbd` instead of `-lxml2`.
     # On the other hand, note that a fully qualified path to `dylib` or `tbd` is OK, e.g.,
     # `/usr/local/lib/libxml2.tbd` or `/usr/local/lib/libxml2.dylib`.
-    ext = shared_library("")
     shell_output("#{bin}/llvm-config --system-libs").chomp.strip.split.each do |lib|
       if lib.start_with?("-l")
         assert !lib.end_with?(".tbd"), "expected abs path when lib reported as .tbd"
-        assert !lib.end_with?(ext), "expected abs path when lib reported as .dylib"
+        assert !lib.end_with?(".dylib"), "expected abs path when lib reported as .dylib"
       else
         p = Pathname.new(lib)
-        if p.extname == ".tbd" || p.extname == ext
+        if p.extname == ".tbd" || p.extname == ".dylib"
           assert p.absolute?, "expected abs path when lib reported as .tbd or .dylib"
         end
       end
