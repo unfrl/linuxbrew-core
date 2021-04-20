@@ -303,25 +303,27 @@ class LlvmAT11 < Formula
     EOS
     system "#{bin}/mlir-opt", "--verify-diagnostics", "test.mlir"
 
-    (testpath/"scanbuildtest.cpp").write <<~EOS
-      #include <iostream>
-      int main() {
-        int *i = new int;
-        *i = 1;
-        delete i;
-        std::cout << *i << std::endl;
-        return 0;
-      }
-    EOS
-    assert_includes shell_output("#{bin}/scan-build clang++ scanbuildtest.cpp 2>&1"),
-      "warning: Use of memory after it is freed"
+    if OS.mac?
+      (testpath/"scanbuildtest.cpp").write <<~EOS
+        #include <iostream>
+        int main() {
+          int *i = new int;
+          *i = 1;
+          delete i;
+          std::cout << *i << std::endl;
+          return 0;
+        }
+      EOS
+      assert_includes shell_output("#{bin}/scan-build clang++ scanbuildtest.cpp 2>&1"),
+        "warning: Use of memory after it is freed"
 
-    (testpath/"clangformattest.c").write <<~EOS
-      int    main() {
-          printf("Hello world!"); }
-    EOS
-    assert_equal "int main() { printf(\"Hello world!\"); }\n",
-      shell_output("#{bin}/clang-format -style=google clangformattest.c")
+      (testpath/"clangformattest.c").write <<~EOS
+        int    main() {
+            printf("Hello world!"); }
+      EOS
+      assert_equal "int main() { printf(\"Hello world!\"); }\n",
+        shell_output("#{bin}/clang-format -style=google clangformattest.c")
+    end
 
     # Ensure LLVM did not regress output of `llvm-config --system-libs` which for a time
     # was known to output incorrect linker flags; e.g., `-llibxml2.tbd` instead of `-lxml2`.
