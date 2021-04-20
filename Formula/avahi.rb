@@ -5,7 +5,8 @@ class Avahi < Formula
   sha256 "c15e750ef7c6df595fb5f2ce10cac0fee2353649600e6919ad08ae8871e4945f"
 
   bottle do
-    sha256 x86_64_linux: "9d76bcfece943950baceee7f9cd18de2302190228493dc8b832fd00f4e0afe6d"
+    rebuild 1
+    sha256 x86_64_linux: "f917789b377a8aba9b81a612053d46716d07012c6f98e908e03b8eb580ee0146"
   end
 
   depends_on "autoconf" => :build
