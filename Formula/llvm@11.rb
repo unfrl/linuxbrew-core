@@ -12,10 +12,11 @@ class LlvmAT11 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "5871a473293bde42baf9abf89169189e3abaa7f781fd77636adb84360e28a7e6"
-    sha256 cellar: :any, big_sur:       "faba8d2d00aeecf0f4d8898b64973f5d284568089ac7ac12db41a6c15c50befb"
-    sha256 cellar: :any, catalina:      "50c129d10bad4eb67d327f5409cd6d2437953a51bd86d4c7cb8870ccab3f5caf"
-    sha256 cellar: :any, mojave:        "501ae2d6c4030397444698ade77a596f84e0b8490ba440be243a33df2473a42a"
+    sha256 cellar: :any,                 arm64_big_sur: "5871a473293bde42baf9abf89169189e3abaa7f781fd77636adb84360e28a7e6"
+    sha256 cellar: :any,                 big_sur:       "faba8d2d00aeecf0f4d8898b64973f5d284568089ac7ac12db41a6c15c50befb"
+    sha256 cellar: :any,                 catalina:      "50c129d10bad4eb67d327f5409cd6d2437953a51bd86d4c7cb8870ccab3f5caf"
+    sha256 cellar: :any,                 mojave:        "501ae2d6c4030397444698ade77a596f84e0b8490ba440be243a33df2473a42a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b9664ef4aed5b11ac4e150e60a92c379ba59e8beade5a8f7a3381225038f19c"
   end
 
   # Clang cannot find system headers if Xcode CLT is not installed
