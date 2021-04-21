@@ -11,6 +11,7 @@ class GitSizer < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "d7fc3bb98099bcadde6818634cbc4d3b3440e2b1f8672b9a62cef90a14a7c3c5"
     sha256 cellar: :any_skip_relocation, catalina:      "bbdf301eacbdf973d706caf49406bd1b281b6e48c94ec7105584a3f1e9d85b8b"
     sha256 cellar: :any_skip_relocation, mojave:        "3e96a263147ce3bb4b210f546355160b30f14d319ce49746663960e622db2487"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50db0177fce53dd869e33a4d6e6450094765da811736aae7f47ebff6ab1f76d1"
   end
 
   depends_on "go" => :build
