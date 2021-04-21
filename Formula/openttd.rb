@@ -1,8 +1,8 @@
 class Openttd < Formula
   desc "Simulation game based upon Transport Tycoon Deluxe"
   homepage "https://www.openttd.org/"
-  url "https://cdn.openttd.org/openttd-releases/1.11.0/openttd-1.11.0-source.tar.xz"
-  sha256 "5e65184e07368ba1afa62dbb3e35abaee6c4da6730ff4bc9eb4447d53363c7a8"
+  url "https://cdn.openttd.org/openttd-releases/1.11.1/openttd-1.11.1-source.tar.xz"
+  sha256 "a9919e2e429bb08fa29fe8e67ba9bc75c90e9ef6fa64248eb34223a325d400a3"
   license "GPL-2.0-only"
   head "https://github.com/OpenTTD/OpenTTD.git"
 
@@ -12,9 +12,9 @@ class Openttd < Formula
   end
 
   bottle do
-    sha256 cellar: :any, big_sur:  "0d3994d93730c19736b38cc3b03f773cd379f9ef4b9177956b9e5002f8f7ead4"
-    sha256 cellar: :any, catalina: "8954c67873a3aea6a5cf33ab5d7b547b2598c0b45356639e2fdbc748d8e173e4"
-    sha256 cellar: :any, mojave:   "70af7ffea9b4c684cd51e56b0b74efc44642915713da8378402d778fe9a80d51"
+    sha256 cellar: :any, big_sur:  "31ae2ed8dcd5b4c33d8f49cbe2827b99de23788b820f787ef6c1b3c0f6f0786e"
+    sha256 cellar: :any, catalina: "f26ba56a9169739aa89d97ab3cb6f9fdf9c230cd8464fe75adf0bc84a05d6376"
+    sha256 cellar: :any, mojave:   "38b60732cd3ad6df673a6760a9a6d0d3b58dac3b4dbd7cf19cb275026e0e3c1e"
   end
 
   depends_on "cmake" => :build
@@ -28,14 +28,14 @@ class Openttd < Formula
     sha256 "c694a112cd508d9c8fdad1b92bde05e7c48b14d66bad0c3999e443367437e37e"
   end
 
-  resource "opensfx" do
-    url "https://cdn.openttd.org/opensfx-releases/1.0.1/opensfx-1.0.1-all.zip"
-    sha256 "37b825426f1d690960313414423342733520d08916f512f30f7aaf30910a36c5"
-  end
-
   resource "openmsx" do
     url "https://cdn.openttd.org/openmsx-releases/0.4.0/openmsx-0.4.0-all.zip"
     sha256 "7698cadf06c44fb5e847a5773a22a4a1ea4fc0cf45664181254656f9e1b27ee2"
+  end
+
+  resource "opensfx" do
+    url "https://cdn.openttd.org/opensfx-releases/1.0.1/opensfx-1.0.1-all.zip"
+    sha256 "37b825426f1d690960313414423342733520d08916f512f30f7aaf30910a36c5"
   end
 
   def install

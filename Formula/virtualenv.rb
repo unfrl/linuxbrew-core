@@ -3,16 +3,16 @@ class Virtualenv < Formula
 
   desc "Tool for creating isolated virtual python environments"
   homepage "https://virtualenv.pypa.io/"
-  url "https://files.pythonhosted.org/packages/f4/6d/bfcfff1709d05143e71337db4800b30dd9abf0c41972960c9e8984ab96f7/virtualenv-20.4.3.tar.gz"
-  sha256 "49ec4eb4c224c6f7dd81bb6d0a28a09ecae5894f4e593c89b0db0885f565a107"
+  url "https://files.pythonhosted.org/packages/ca/5d/c746f030903a75fd428851560f2895a16a5065ed53a69c232c4beb0eafb4/virtualenv-20.4.4.tar.gz"
+  sha256 "09c61377ef072f43568207dc8e46ddeac6bcdcaf288d49011bda0e7f4d38c4a2"
   license "MIT"
   head "https://github.com/pypa/virtualenv.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "00881fbdbea68d16f933d16665258d98de7794fea4b78335219bcd3fc1a8f4fc"
-    sha256 cellar: :any_skip_relocation, big_sur:       "7d5a8e93ed2690dcda326480d52565a603b2b3ece9bc39c705edfbaf69cb842b"
-    sha256 cellar: :any_skip_relocation, catalina:      "1b2314e8b79c6b760377d2c374d5e6e9c9a4bd907c019874bb90134943b97880"
-    sha256 cellar: :any_skip_relocation, mojave:        "ff6dac3b56950648b93a27642f6f551afd645c93ec737081e77b2a79d5d74b94"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "e769fbd676d5d178436dc69744702e1c449aa9b7b5036ee6cc0f7ecc415cc4f3"
+    sha256 cellar: :any_skip_relocation, big_sur:       "f3a77f3f04d64ab6173f0d22f2da3014830148c739865b36edc5bea0d82892c1"
+    sha256 cellar: :any_skip_relocation, catalina:      "117e64ef63afe93b83e22403926cbe1b9bb1840d7956af7881e7319e3cc03c2a"
+    sha256 cellar: :any_skip_relocation, mojave:        "2bd53c13f621b286dd96a1a833bbd876224c91348e2f9c50dd7cbab87e215483"
   end
 
   depends_on "python@3.9"
