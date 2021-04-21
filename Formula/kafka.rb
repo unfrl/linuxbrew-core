@@ -7,9 +7,10 @@ class Kafka < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:  "2419e9580114e1927801684919abd741fa1b90dc05b458209e40848da97f536f"
-    sha256 cellar: :any_skip_relocation, catalina: "2419e9580114e1927801684919abd741fa1b90dc05b458209e40848da97f536f"
-    sha256 cellar: :any_skip_relocation, mojave:   "0dcd62ccde3266e7e2719e06bc40c8f9ec837e9d37dcffc18bd9b8d78c1536b7"
+    sha256 cellar: :any_skip_relocation, big_sur:      "2419e9580114e1927801684919abd741fa1b90dc05b458209e40848da97f536f"
+    sha256 cellar: :any_skip_relocation, catalina:     "2419e9580114e1927801684919abd741fa1b90dc05b458209e40848da97f536f"
+    sha256 cellar: :any_skip_relocation, mojave:       "0dcd62ccde3266e7e2719e06bc40c8f9ec837e9d37dcffc18bd9b8d78c1536b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ad5cfb9c0188c20ec38727fd90466a4ca4a8cb500f2940dc03520d77665cd746"
   end
 
   depends_on "openjdk"
