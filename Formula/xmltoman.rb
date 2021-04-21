@@ -34,10 +34,10 @@ class Xmltoman < Formula
           system "make", "install"
         end
       end
-    end
 
-    inreplace "xmltoman", "#!/usr/bin/perl -w", "#!/usr/bin/env perl"
-    rewrite_shebang detected_perl_shebang, "xmlmantohtml"
+      inreplace "xmltoman", "#!/usr/bin/perl -w", "#!/usr/bin/env perl"
+      rewrite_shebang detected_perl_shebang, "xmlmantohtml"
+    end
 
     # generate the man files from their original XML sources
     system "./xmltoman xml/xmltoman.1.xml > xmltoman.1"
@@ -47,6 +47,10 @@ class Xmltoman < Formula
     bin.install %w[xmltoman xmlmantohtml]
     bin.env_script_all_files(libexec/"bin", PERL5LIB: ENV["PERL5LIB"])
     pkgshare.install %w[xmltoman.xsl xmltoman.dtd xmltoman.css]
+
+    on_linux do
+      bin.env_script_all_files(libexec/"bin", PERL5LIB: ENV["PERL5LIB"])
+    end
   end
 
   def test_do

@@ -47,7 +47,7 @@ class Docbook2x < Formula
   end
 
   def install
-    unless OS.mac?
+    on_linux do
       ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
       resources.each do |res|
         res.stage do
@@ -64,7 +64,9 @@ class Docbook2x < Formula
                           "--prefix=#{prefix}"
     system "make", "install"
 
-    bin.env_script_all_files libexec/"bin", PERL5LIB: ENV["PERL5LIB"] unless OS.mac?
+    on_linux do
+      bin.env_script_all_files libexec/"bin", PERL5LIB: ENV["PERL5LIB"]
+    end
   end
 
   test do
