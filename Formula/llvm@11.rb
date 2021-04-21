@@ -281,29 +281,24 @@ class LlvmAT11 < Formula
       assert_equal "Hello World!", shell_output("./testXC").chomp
     end
 
-    lib_path = ""
-    on_linux do
-      lib_path = "/x86_64-unknown-linux-gnu/c++/"
-    end
-
-    # link against installed libc++
-    # related to https://github.com/Homebrew/legacy-homebrew/issues/47149
-    system "#{bin}/clang++", "-v",
-           "-isystem", "#{opt_include}/c++/v1",
-           "-std=c++11", "-stdlib=libc++", "test.cpp", "-o", "testlibc++",
-           "-L#{opt_lib}", "-Wl,-rpath,#{opt_lib}#{lib_path}"
-    on_macos { assert_includes MachO::Tools.dylibs("testlibc++"), "#{opt_lib}/libc++.1.dylib" }
-    assert_equal "Hello World!", shell_output("./testlibc++").chomp
-
-    # Testing mlir
-    (testpath/"test.mlir").write <<~EOS
-      func @bad_branch() {
-        br ^missing  // expected-error {{reference to an undefined block}}
-      }
-    EOS
-    system "#{bin}/mlir-opt", "--verify-diagnostics", "test.mlir"
-
     if OS.mac?
+      # link against installed libc++
+      # related to https://github.com/Homebrew/legacy-homebrew/issues/47149
+      system "#{bin}/clang++", "-v",
+             "-isystem", "#{opt_include}/c++/v1",
+             "-std=c++11", "-stdlib=libc++", "test.cpp", "-o", "testlibc++",
+             "-L#{opt_lib}", "-Wl,-rpath,#{opt_lib}"
+      on_macos { assert_includes MachO::Tools.dylibs("testlibc++"), "#{opt_lib}/libc++.1.dylib" }
+      assert_equal "Hello World!", shell_output("./testlibc++").chomp
+
+      # Testing mlir
+      (testpath/"test.mlir").write <<~EOS
+        func @bad_branch() {
+          br ^missing  // expected-error {{reference to an undefined block}}
+        }
+      EOS
+      system "#{bin}/mlir-opt", "--verify-diagnostics", "test.mlir"
+
       (testpath/"scanbuildtest.cpp").write <<~EOS
         #include <iostream>
         int main() {
