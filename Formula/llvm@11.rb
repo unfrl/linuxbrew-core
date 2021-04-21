@@ -91,10 +91,10 @@ class LlvmAT11 < Formula
     ]
     runtimes = %w[
       compiler-rt
-      libcxx
       libcxxabi
       libunwind
     ]
+    runtimes << "libcxx" if OS.mac?
 
     py_ver = Language::Python.major_minor_version("python3")
     site_packages = Language::Python.site_packages("python3").delete_prefix("lib/")
