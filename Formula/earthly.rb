@@ -16,6 +16,7 @@ class Earthly < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "a85579fe2ce56105f8325efdb699be34885623c61058d104904dbcee10b9cb0b"
     sha256 cellar: :any_skip_relocation, catalina:      "f7d7f6e751034d9315c8466e128b94ecb448d995d7ed3aaa1f5537a19c6d9281"
     sha256 cellar: :any_skip_relocation, mojave:        "4c984626fc13facd2b1654b414754812ef478360911f28a4f3a4d5c4ec3cb648"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9e16ca0d2115152d5c03482c6afd903eedab99188c4656dbbeeee2d288a5ab6"
   end
 
   depends_on "go" => :build
