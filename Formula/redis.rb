@@ -1,8 +1,8 @@
 class Redis < Formula
   desc "Persistent key-value database, with built-in net interface"
   homepage "https://redis.io/"
-  url "https://download.redis.io/releases/redis-6.2.1.tar.gz"
-  sha256 "cd222505012cce20b25682fca931ec93bd21ae92cb4abfe742cf7b76aa907520"
+  url "https://download.redis.io/releases/redis-6.2.2.tar.gz"
+  sha256 "7a260bb74860f1b88c3d5942bf8ba60ca59f121c6dce42d3017bed6add0b9535"
   license "BSD-3-Clause"
   head "https://github.com/redis/redis.git", branch: "unstable"
 
@@ -12,11 +12,10 @@ class Redis < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "44b680e722560b6e189c2ea5626d59a013e8935f973c1e78133e11db8128f0f6"
-    sha256 cellar: :any,                 big_sur:       "5d08e24723ba5e56ad97152024b4a4cdb867d79bf3623dfa46d849ea81ebbc51"
-    sha256 cellar: :any,                 catalina:      "81c2a841e0b19040e7ea999d57f595863278deb8bb2822596601b16e6e2598bb"
-    sha256 cellar: :any,                 mojave:        "01351e9736db89c25b5a700fe6e3a12f74e121d96c5d438675c59b436f551559"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0734dac39aae3d91eaf0c168d756ab3e28e2163c3e2e9812b562e4fd1e7dd21"
+    sha256 cellar: :any, arm64_big_sur: "9482c330c724093502fb5f57afb6f646674d06a87b8ec05b64f4e43a371e7484"
+    sha256 cellar: :any, big_sur:       "9a862673d52bf3614f802fcd121092aa36090fecdb370257b4af16ef95e56eae"
+    sha256 cellar: :any, catalina:      "3b075b8ac156edaf6aa2d22353b27ba075454bcc530601c3395cc465cf8fbc6f"
+    sha256 cellar: :any, mojave:        "9e0be08a9f8b5fd4b221cc88d6d2a5fb19f0975cc16322cd0a9eb560c9c7b62c"
   end
 
   depends_on "openssl@1.1"
