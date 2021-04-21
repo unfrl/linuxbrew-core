@@ -1,26 +1,16 @@
 class Rocksdb < Formula
   desc "Embeddable, persistent key-value store for fast storage"
   homepage "https://rocksdb.org/"
+  url "https://github.com/facebook/rocksdb/archive/v6.19.3.tar.gz"
+  sha256 "5c19ffefea2bbe4c275d0c60194220865f508f371c64f42e802b4a85f065af5b"
   license any_of: ["GPL-2.0-only", "Apache-2.0"]
   head "https://github.com/facebook/rocksdb.git"
 
-  stable do
-    url "https://github.com/facebook/rocksdb/archive/v6.17.3.tar.gz"
-    sha256 "bdd4790516f5ae17f83882dca1316f4dcaf4b245edbd641e7ec4ac3444c3c841"
-
-    # Add artifact suffix to shared library
-    # https://github.com/facebook/rocksdb/pull/7755
-    patch do
-      url "https://github.com/facebook/rocksdb/commit/98f3f3143007bcb5455105a05da7eeecc9cf53a0.patch?full_index=1"
-      sha256 "6fb59cd640ed8c39692855115b72e8aa8db50a7aa3842d53237e096e19f88fc1"
-    end
-  end
-
   bottle do
-    sha256 cellar: :any,                 big_sur:      "64c9409aa489f322acc46bec6460303058daf642155f59d2f64dd8f3cd41161f"
-    sha256 cellar: :any,                 catalina:     "24ff5acadd42ad6050b3bac0e044974b73e83e6b025c662b186bb955ab73e3e8"
-    sha256 cellar: :any,                 mojave:       "bc678f7342378487c4b9f69b8e51710fa676991320173f01c1644eb53736303f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b3a82430b26ce62cdb5a66dbfef29c05789651199a28a2ed5b7cbdb90963cc1a"
+    sha256 arm64_big_sur: "1d2b2374d7833a316fd79cab75c8f14c1afbb617703f79ddb4ca617e0f539944"
+    sha256 big_sur:       "10fb1b352c8eb18a4f2390aebd9dbb51ce7358a5cd2fb2c98cf8821c767019bd"
+    sha256 catalina:      "6f334f8c796f486a0c677b0255569ac93f10f21ad9a09e88311cc10a3446148f"
+    sha256 mojave:        "d7e739eda161091e97de9272ccb0b5747520d7f02cee96d6480a3e47dbdad952"
   end
 
   depends_on "cmake" => :build
@@ -34,7 +24,7 @@ class Rocksdb < Formula
 
   def install
     ENV.cxx11
-    args = std_cmake_args + %w[
+    args = std_cmake_args + %W[
       -DPORTABLE=ON
       -DUSE_RTTI=ON
       -DWITH_BENCHMARK_TOOLS=OFF
@@ -43,9 +33,8 @@ class Rocksdb < Formula
       -DWITH_SNAPPY=ON
       -DWITH_ZLIB=ON
       -DWITH_ZSTD=ON
+      -DCMAKE_EXE_LINKER_FLAGS=-Wl,-rpath,#{lib}
     ]
-
-    args << "-DCMAKE_EXE_LINKER_FLAGS=-Wl,-rpath -Wl,#{lib}"
 
     # build regular rocksdb
     mkdir "build" do

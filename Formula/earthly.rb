@@ -1,8 +1,8 @@
 class Earthly < Formula
   desc "Build automation tool for the container era"
   homepage "https://earthly.dev/"
-  url "https://github.com/earthly/earthly/archive/v0.5.9.tar.gz"
-  sha256 "c9dd4d4fa0d22df9c3f589731a11572a30419593eccb4c3336e91e554d7410f8"
+  url "https://github.com/earthly/earthly/archive/v0.5.10.tar.gz"
+  sha256 "71d8f7c5dd603cb6bdd2679baf20ade5fc419bc5cb5e53a723775302222f59d5"
   license "BUSL-1.1"
   head "https://github.com/earthly/earthly.git"
 
@@ -12,18 +12,17 @@ class Earthly < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "d7bcd5669d668b1e4980e08c84650c51b91f611b5544148e59e0319b517053a1"
-    sha256 cellar: :any_skip_relocation, big_sur:       "139327d1e63b5a7ca947380ae9583f1c6c5df781fc8a1683345c88252996dd8b"
-    sha256 cellar: :any_skip_relocation, catalina:      "6fe33a239812b36737bcb35a603752a601721e1da32422c00b1e8d8cdf74c251"
-    sha256 cellar: :any_skip_relocation, mojave:        "bbdfe1d4d6de7d810d46c6f716870dcdb7eca9297df275c68e6e3334dfee9188"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32043c3984a182c0b005d3870b7e9095e89df907dff4c0f190b3e4bf6c7fb0ab"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "7cb042be498c5eece87fe21dc4058cb0e120f9de3975c3ec7b6bcfc5ad136f15"
+    sha256 cellar: :any_skip_relocation, big_sur:       "a85579fe2ce56105f8325efdb699be34885623c61058d104904dbcee10b9cb0b"
+    sha256 cellar: :any_skip_relocation, catalina:      "f7d7f6e751034d9315c8466e128b94ecb448d995d7ed3aaa1f5537a19c6d9281"
+    sha256 cellar: :any_skip_relocation, mojave:        "4c984626fc13facd2b1654b414754812ef478360911f28a4f3a4d5c4ec3cb648"
   end
 
   depends_on "go" => :build
 
   def install
-    ldflags = "-X main.DefaultBuildkitdImage=earthly/buildkitd:v#{version} -X main.Version=v#{version} -X" \
-              " main.GitSha=1827762e99c23631ca0c14ce236ae904bea8b164 "
+    ldflags = "-X main.DefaultBuildkitdImage=earthly/buildkitd:v#{version} -X main.Version=v#{version} " \
+              "-X main.GitSha=a5026a1428d3329dd99f0ab85f3530552a3a5f02 "
     tags = "dfrunmount dfrunsecurity dfsecrets dfssh dfrunnetwork"
     system "go", "build",
         "-tags", tags,

@@ -1,16 +1,15 @@
 class Ko < Formula
   desc "Build and deploy Go applications on Kubernetes"
   homepage "https://github.com/google/ko"
-  url "https://github.com/google/ko/archive/v0.8.1.tar.gz"
-  sha256 "8efe36bed8c367603b3b10a1db2b7e57bd01bf9eb9f48532ef6a7c7ba304732a"
+  url "https://github.com/google/ko/archive/v0.8.2.tar.gz"
+  sha256 "ba4cff07c78b131de7b28c5bc7d6dcf1f6eb8a3bf7dbe5c4e249f5c4212bda4d"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "9a1fe53fb9e0887724c7c90a8e10f94bc87cd43eeb703985752f2bb9cf070bd3"
-    sha256 cellar: :any_skip_relocation, big_sur:       "ab51fedb6e7e107d3c7cf11578e994b99a5f4414ba578ef33543046c736726f3"
-    sha256 cellar: :any_skip_relocation, catalina:      "fc493090de5972372006e1ac97f0bfe150130fdf1fd03abede777a2638dad0a1"
-    sha256 cellar: :any_skip_relocation, mojave:        "40138b8a4416ca6d55ae6ad507d2dc1d7feda8cc4e09a35fa418b39341654b87"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d309bc08de90597641e2d6b3e9aefa0c390ed31feafce69ddf6a35171cc7927d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "f4002186fc347777aa33b93cc15e2789c42c4633f3dc3c9b79bfa7cd127961c2"
+    sha256 cellar: :any_skip_relocation, big_sur:       "4fb84c226a9be21f6d1e74fe2a9623b9e5359d7e224f5d6fa252d6615d6f3014"
+    sha256 cellar: :any_skip_relocation, catalina:      "18ead79305ac4da43e9135168178038e185723688380634104d73014913cfc77"
+    sha256 cellar: :any_skip_relocation, mojave:        "fc632167d22a5aabed09e3dd551fb2b8533c262d8b5f7274952db4d6dda423f9"
   end
 
   depends_on "go" => :build

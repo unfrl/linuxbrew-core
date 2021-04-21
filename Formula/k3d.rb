@@ -4,6 +4,7 @@ class K3d < Formula
   url "https://github.com/rancher/k3d/archive/v4.4.2.tar.gz"
   sha256 "e3e6bc85b7f548580023671f59cec18c4c7f99ad3c7c37d1838984f82d4bf86c"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,11 +12,10 @@ class K3d < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "140eb9a2e7cc9effa9454b90635f2da96b9c1d7c7ccebbc150f60849376d80bc"
-    sha256 cellar: :any_skip_relocation, big_sur:       "c177334372abe0bbfacde70bc45a22cee74c4ee916c41ce0bbcbb9eca73b7a08"
-    sha256 cellar: :any_skip_relocation, catalina:      "6d0176e00e99a71db1f9a09982f886c768ae13d1bf595e9d0bf4e8b015677fbb"
-    sha256 cellar: :any_skip_relocation, mojave:        "76d106d7ad491c72fa34994be2a87678758c3d35e37fe960ee30486f310c0a94"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f20410482eb0326f3b82ab2f5581c2a4593a7f4a0176df2b4bdd71af30bd2c21"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "da574c2a76ff675e655b9b5ab13da7819ef0ade675ad18dde491c940dee03fac"
+    sha256 cellar: :any_skip_relocation, big_sur:       "a3f08b90642e2307fb93c17b6fb5f25523e3807c3d092c37d26dd48440d2456e"
+    sha256 cellar: :any_skip_relocation, catalina:      "e9f0bdd09cec50ccc95f79f2759782bf5425226098ac60c7145f7b78d3ab4bbd"
+    sha256 cellar: :any_skip_relocation, mojave:        "3c010c7bc9c3e825147b949962468b65722829e442b661c6a95a0072a99981dc"
   end
 
   depends_on "go" => :build
@@ -34,6 +34,10 @@ class K3d < Formula
     # Install zsh completion
     output = Utils.safe_popen_read("#{bin}/k3d", "completion", "zsh")
     (zsh_completion/"_k3d").write output
+
+    # Install fish completion
+    output = Utils.safe_popen_read("#{bin}/k3d", "completion", "fish")
+    (fish_completion/"k3d.fish").write output
   end
 
   test do
