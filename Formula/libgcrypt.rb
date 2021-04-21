@@ -11,10 +11,11 @@ class Libgcrypt < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "65279a10d89457614d2302e2d89fed3c1fa9cdc69a8fe7c2f4c4d48d6d375def"
-    sha256 cellar: :any, big_sur:       "54c3d59311aea6eff9d5a313243d5dd037f17d936a14e3fe707828f4e06de389"
-    sha256 cellar: :any, catalina:      "7b62e5158ca2910802dbd6a478bac6679b1a967ec7739a80018ae0069fcb2468"
-    sha256 cellar: :any, mojave:        "dcd2fb732dcf01ba32dea8f5e0d739ccfdd39ed2734520c985c73dff81b8cb8c"
+    sha256 cellar: :any,                 arm64_big_sur: "65279a10d89457614d2302e2d89fed3c1fa9cdc69a8fe7c2f4c4d48d6d375def"
+    sha256 cellar: :any,                 big_sur:       "54c3d59311aea6eff9d5a313243d5dd037f17d936a14e3fe707828f4e06de389"
+    sha256 cellar: :any,                 catalina:      "7b62e5158ca2910802dbd6a478bac6679b1a967ec7739a80018ae0069fcb2468"
+    sha256 cellar: :any,                 mojave:        "dcd2fb732dcf01ba32dea8f5e0d739ccfdd39ed2734520c985c73dff81b8cb8c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1c2981cad455cb52c3c65fd3fb3fb2b93d70edf55dc714c657c9b7c3ea829c4"
   end
 
   depends_on "libgpg-error"
