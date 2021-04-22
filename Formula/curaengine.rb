@@ -22,6 +22,7 @@ class Curaengine < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "4bca11af405fb69326042a262c8067e5d30c29139a00c3f6aef4354c7bb5aae5"
     sha256 cellar: :any_skip_relocation, catalina:      "7a354f482837af85758b8fafed7bcc5cd771da49c19dc6bb4d3aa771882e283d"
     sha256 cellar: :any_skip_relocation, mojave:        "dd293b4200865f3e3991a5dd6d981eafbd5398819914e78f2380ac85d0255fec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c72266c62f3dc3f932b6d85fca802d029fa5571d8d56bad02da7e41402ce3e93"
   end
 
   depends_on "cmake" => :build
