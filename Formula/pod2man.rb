@@ -15,6 +15,7 @@ class Pod2man < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "c5247c23c7441d746207c85b3e2f76f83c4149fcc4ad3bdefa5e41f609820fca"
     sha256 cellar: :any_skip_relocation, catalina:      "6a46194855951dff9cd5040fb70725947b65a1433868d6fda21fcc6262b598ae"
     sha256 cellar: :any_skip_relocation, mojave:        "6a46194855951dff9cd5040fb70725947b65a1433868d6fda21fcc6262b598ae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e7cb6c3eaef1bc68a05ae03014f17a27dd70b333647b023df33f5f1cedc9a72"
   end
 
   keg_only :provided_by_macos
