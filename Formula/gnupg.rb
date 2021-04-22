@@ -15,6 +15,7 @@ class Gnupg < Formula
     sha256 big_sur:       "dfd024ae4c3b74b275cd44ec0a95b9063eb3f270ea5eaa402932657421736176"
     sha256 catalina:      "fcaf082ce7bf9165ac17efb53fa078b623794fe062f041b495041ab72f65de5d"
     sha256 mojave:        "808efd7a7f741e67f293a75aed1934203cdc5ca779907882503f4325cb459181"
+    sha256 x86_64_linux:  "8218774cf789423393fec8ba600736e893b30555899270ea4973dbbb4811bfb7"
   end
 
   depends_on "pkg-config" => :build
