@@ -3,10 +3,9 @@ class Mesa < Formula
 
   desc "Graphics Library"
   homepage "https://www.mesa3d.org/"
-  url "https://archive.mesa3d.org/mesa-21.0.1.tar.xz"
-  sha256 "379fc984459394f2ab2d84049efdc3a659869dc1328ce72ef0598506611712bb"
+  url "https://archive.mesa3d.org/mesa-21.0.3.tar.xz"
+  sha256 "565c6f4bd2d5747b919454fc1d439963024fc78ca56fd05158c3b2cde2f6912b"
   license "MIT"
-  revision 1 unless OS.mac?
   head "https://gitlab.freedesktop.org/mesa/mesa.git"
 
   livecheck do
@@ -15,7 +14,10 @@ class Mesa < Formula
   end
 
   bottle do
-    sha256 x86_64_linux: "b2702609b758493877b5904a6d51678f7705ee1bc6f4c097e5e927ecd8c4cdf9"
+    sha256 arm64_big_sur: "bbf7549e32809888991466828171e879e42ce6c43d1cba9d24b5153de7c37b4c"
+    sha256 big_sur:       "57e29996782f3f26e1f8acbf80c8f379c80c41c6a4416326feffd2248c5a2b1c"
+    sha256 catalina:      "3773091e14cd5edad4eace8704823ef3bbe6f1627c485e89942b41ea859d7c82"
+    sha256 mojave:        "eeb3f8757ed4e113e27784cc441182ed32e8a43f50ed064ce11b6e211e9c34db"
   end
 
   depends_on "meson" => :build

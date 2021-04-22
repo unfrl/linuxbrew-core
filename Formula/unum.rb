@@ -13,6 +13,9 @@ class Unum < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "300f2098b00402fe7dddac15886fa6d4005b31274720fb6707298da5b7d497d7"
   end
 
+  uses_from_macos "perl"
+  uses_from_macos "pod2man"
+
   def install
     system "pod2man", "unum.pl", "unum.1"
     bin.install "unum.pl" => "unum"

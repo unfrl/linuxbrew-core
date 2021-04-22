@@ -15,6 +15,9 @@ class NumUtils < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6550f365537f58184c873796fd768b06c366122a3453174e3448c959bbf20b6"
   end
 
+  uses_from_macos "perl"
+  uses_from_macos "pod2man"
+
   conflicts_with "normalize", because: "both install `normalize` binaries"
   conflicts_with "crush-tools", because: "both install an `range` binary"
   conflicts_with "argyll-cms", because: "both install `average` binaries"
