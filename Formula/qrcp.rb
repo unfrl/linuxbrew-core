@@ -10,6 +10,7 @@ class Qrcp < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "7038c69582572ca6349b76988869971801c60182fedf579f47998bc47551ad01"
     sha256 cellar: :any_skip_relocation, catalina:      "f063aace4506bca0113e3dc0210134feb4a9c0f36f76c29327373066aa177451"
     sha256 cellar: :any_skip_relocation, mojave:        "0709ace3c107c6ad7f23563e085a3ace600d763fc062b108211f60a710a737d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b757a196c259d96af6a529cf8cb672d551c31e174ddfa2c7ba6e0361444a2840"
   end
 
   depends_on "go" => :build
