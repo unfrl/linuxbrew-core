@@ -125,13 +125,19 @@ class Gedit < Formula
       -lgmodule-2.0
       -lgobject-2.0
       -lgtk-3
+      <<<<<<< HEAD
       -lgtksourceview-#{OS.mac? ? "4.0" : "4"}
+      =======
+      -lgtksourceview-4.0
+      >>>>>>> 44891072505
       -lpango-1.0
       -lpangocairo-1.0
       -lpeas-1.0
       -lpeas-gtk-1.0
     ]
-    flags << "-lintl" if OS.mac?
+    on_macos do
+      flags << "-lintl"
+    end
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
   end
