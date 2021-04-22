@@ -8,6 +8,7 @@ class Libfuse < Formula
 
   bottle do
     sha256 cellar: :any, arm64_big_sur: "00b310b416ecb09febaca37fb246881c561ebea6dbe8676e7c46df7f76527261"
+    sha256               x86_64_linux:  "9969ed56fd264e7c9095d48e8bc85b46fb0945e9532f7b56a7cde03e921b8ffd"
   end
 
   depends_on "autoconf" => :build
