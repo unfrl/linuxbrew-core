@@ -94,6 +94,10 @@ class VtkAT82 < Formula
     ]
     args << "-DVTK_USE_COCOA=" + (OS.mac? ? "ON" : "OFF")
 
+    on_macos do
+      args << "-DVTK_USE_COCOA=ON"
+    end
+
     mkdir "build" do
       system "cmake", "..", *args
       system "make"

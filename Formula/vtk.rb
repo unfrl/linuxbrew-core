@@ -60,7 +60,6 @@ class Vtk < Formula
       -DCMAKE_INSTALL_RPATH:STRING=#{lib}
       -DVTK_WRAP_PYTHON:BOOL=ON
       -DVTK_PYTHON_VERSION:STRING=3
-      -DVTK_USE_COCOA:BOOL=ON
       -DVTK_LEGACY_REMOVE:BOOL=ON
       -DVTK_MODULE_ENABLE_VTK_InfovisBoost:STRING=YES
       -DVTK_MODULE_ENABLE_VTK_InfovisBoostGraphAlgorithms:STRING=YES
@@ -90,6 +89,10 @@ class Vtk < Formula
     ]
     args << "-DVTK_USE_COCOA=" + (OS.mac? ? "ON" : "OFF")
     args << "-DOpenGL_GL_PREFERENCE=LEGACY" unless OS.mac?
+
+    on_macos do
+      args << "-DVTK_USE_COCOA:BOOL=ON"
+    end
 
     mkdir "build" do
       system "cmake", "..", *args

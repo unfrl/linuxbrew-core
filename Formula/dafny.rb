@@ -1,8 +1,8 @@
 class Dafny < Formula
   desc "Verification-aware programming language"
   homepage "https://github.com/dafny-lang/dafny/blob/master/README.md"
-  url "https://github.com/dafny-lang/dafny/archive/v3.0.0.tar.gz"
-  sha256 "5e9af6ca59c3329cd93d792bf9890c55c68c4f656afb19c85d1c44b0c7989fc2"
+  url "https://github.com/dafny-lang/dafny/archive/v3.1.0.tar.gz"
+  sha256 "6cecba54e4190094b805fa6462538413226dca44f288a8500003884878f1cc7a"
   license "MIT"
 
   livecheck do
@@ -11,9 +11,9 @@ class Dafny < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:  "3509c42eaa5d7a44d8de60b9f0ec3f0f8e5b6f2f69724988b89ac71266fa1236"
-    sha256 cellar: :any_skip_relocation, catalina: "35229c27248fe2da8362e4dc6610aca3dd38ccfcaaaefab7971fce1957a9f3b1"
-    sha256 cellar: :any_skip_relocation, mojave:   "75e758fa9f89593859f02258a917a86fbe938f341eb51d7e05a5c10717a640f1"
+    sha256 cellar: :any_skip_relocation, big_sur:  "b5dee124b89d1626cfcc7bf5b10301aa4b313b4987dfae22f7ec446c02473117"
+    sha256 cellar: :any_skip_relocation, catalina: "f9152b697e18c3e5f2e1cb464bbfe1cb889925b87e15d1f795a10144367eaf2a"
+    sha256 cellar: :any_skip_relocation, mojave:   "65372686b3f7864c048023e166fa49e2409b93904659de4fcc0dc52ce93a347a"
   end
 
   depends_on "gradle" => :build
