@@ -16,6 +16,7 @@ class Widelands < Formula
     sha256 big_sur:       "05aa1e99267fc657793b9871ffbd34f0e4ec944920bac7fe8593328408246ecc"
     sha256 catalina:      "9933c7f6952274d3d65fab22c6f1e72d086dd2754207cf3d0b16da5f972aa2e1"
     sha256 mojave:        "fd14ec7e3b41d4607d31ccbdeaf44ed1f1826027ea29b8e25f2d9afdd62a1517"
+    sha256 x86_64_linux:  "da8222ba2b2c01bae3555ec20d72cc8b93c01de40100abf477416c0231a3604e"
   end
 
   depends_on "cmake" => :build
