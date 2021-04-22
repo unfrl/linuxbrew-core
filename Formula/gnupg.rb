@@ -34,6 +34,10 @@ class Gnupg < Formula
     depends_on "libidn"
   end
 
+  # Fix tests for gnupg 2.3.1, remove in the next release
+  # Patch ref: https://dev.gnupg.org/rGd36c4dc95b72b780375d57311bdf4ae842fd54fa
+  patch :DATA
+
   def install
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
@@ -74,3 +78,17 @@ class Gnupg < Formula
     end
   end
 end
+
+__END__
+diff --git a/tests/openpgp/defs.scm b/tests/openpgp/defs.scm
+index 768d479aa..86d312f82 100644
+--- a/tests/openpgp/defs.scm
++++ b/tests/openpgp/defs.scm
+@@ -338,6 +338,7 @@
+   (create-file "common.conf"
+ 	       (if (flag "--use-keyboxd" *args*)
+ 		   "use-keyboxd" "#use-keyboxd")
++	       (string-append "keyboxd-program " (tool 'keyboxd))
+ 	       )
+
+   (create-file "gpg.conf"
