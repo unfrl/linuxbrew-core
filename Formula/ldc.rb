@@ -13,10 +13,7 @@ class Ldc < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "b77a8eafcd350b25ec3e29a2c768c34f0f3ad322f1d8e60dcee7ea76da923fac"
-    sha256 big_sur:       "e9cdbad72f9d7bf0b9efa3ba7776991f2f6096801d86a0fe4a1a180bf7082e31"
-    sha256 catalina:      "88b4647fb9e5e172205aed2d9173867c1fc8a7421ece26593075b2f537de41ee"
-    sha256 mojave:        "b513d65c9f42d4753dd2e2d15b5b3b5ac7424d33ef037860bea86c55b1d9c7f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "dfa7d69db369ef23add5db521c007775215df7b77d078fb126f2774ff47809c6"
   end
 
   depends_on "cmake" => :build
