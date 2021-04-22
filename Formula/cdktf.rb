@@ -3,16 +3,15 @@ require "language/node"
 class Cdktf < Formula
   desc "Cloud Development Kit for Terraform"
   homepage "https://github.com/hashicorp/terraform-cdk"
-  url "https://registry.npmjs.org/cdktf-cli/-/cdktf-cli-0.2.2.tgz"
-  sha256 "48fbd5896b936bcae1506fa2076f44790c06a862ec9321fd7bb7fff56de68adf"
+  url "https://registry.npmjs.org/cdktf-cli/-/cdktf-cli-0.3.0.tgz"
+  sha256 "9de75547d30ef2e19b7e700444e7f9ef41466589cc365f860a9a3f27b10ead4d"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "f010eea2ab21bac1048b27b5202b5cfb9d50c87de73035e98cd07758f8144715"
-    sha256 cellar: :any_skip_relocation, big_sur:       "7699e0581f1a128f9c1658281d1cde56c88be2cc8ba008a1873f6aa9ec901f7a"
-    sha256 cellar: :any_skip_relocation, catalina:      "91f4daf68a3b5d01b7e4e873abb9c3380b72a830185b6dd94f3debfdfbc26163"
-    sha256 cellar: :any_skip_relocation, mojave:        "4f2df03511155efc481b6378eeec8ef43142185b5728aa90c2076e4b640b8a7a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eec15dbbfa9fc381e85858508c8ec9c78e0eacec18cf2b7826e4251a79ad3ec6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "a0bf8e63f821acf34ae121085deb186442cb227e510e0ed79a9138e60c975e00"
+    sha256 cellar: :any_skip_relocation, big_sur:       "86af5928c4bbc02bb02a9eff1d7cabe2bec0b8024cfcc36011bd014727beb7ee"
+    sha256 cellar: :any_skip_relocation, catalina:      "86af5928c4bbc02bb02a9eff1d7cabe2bec0b8024cfcc36011bd014727beb7ee"
+    sha256 cellar: :any_skip_relocation, mojave:        "86af5928c4bbc02bb02a9eff1d7cabe2bec0b8024cfcc36011bd014727beb7ee"
   end
 
   depends_on "node"

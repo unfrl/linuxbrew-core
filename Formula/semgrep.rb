@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https://semgrep.dev"
   url "https://github.com/returntocorp/semgrep.git",
-      tag:      "v0.47.0",
-      revision: "df9065596ebbde9647944b2458500b7ad413de81"
+      tag:      "v0.48.0",
+      revision: "daf6df3b6edb3bfe057c846eae08dd7c9b576c58"
   license "LGPL-2.1-only"
   head "https://github.com/returntocorp/semgrep.git", branch: "develop"
 
@@ -15,10 +15,10 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "b79ead2cace8c878e54f66df8f95ce5e78573c9cadb09f67e88d7d0af026f7f9"
-    sha256 cellar: :any, big_sur:       "098e6f9f53efcdf07a8849f1c845c97dec6fe255e1cffae6efd24b566f906800"
-    sha256 cellar: :any, catalina:      "d6912e27fee65235788b9b11975dda222742d0a190841df5507316d03bebca02"
-    sha256 cellar: :any, mojave:        "86b297fb1ccb855a08850e554081901b1faa176a0a58478c39bfdd8a4caf2e0b"
+    sha256 cellar: :any, arm64_big_sur: "a1f31fa34a82c9024a51b36796f1f01d99903c4d6becadbf2fb65ae0b52aa825"
+    sha256 cellar: :any, big_sur:       "6ec67abd505504a116c77501ec037230980a7bc639c4b755d2c08cae7220ad99"
+    sha256 cellar: :any, catalina:      "58512afe5f6513abfa80c432a8467e7946f8dca1f7d0721be4fda09d2d5eb402"
+    sha256 cellar: :any, mojave:        "f2e809da59c1cd2b0f205eb34b62e9a499145ef4b5af934005987f024d2cd5ae"
   end
 
   depends_on "cmake" => :build
@@ -132,12 +132,8 @@ class Semgrep < Formula
       system "opam", "exec", "--", "make", "setup"
 
       # Install spacegrep
-      cd "spacegrep" do
-        system "opam", "install", "--deps-only", "-y", "."
-        system "opam", "exec", "--", "make"
-        system "opam", "exec", "--", "make", "install"
-        bin.install "_build/default/src/bin/Space_main.exe" => "spacegrep"
-      end
+      system "opam", "exec", "--", "make", "build-spacegrep"
+      bin.install "spacegrep/_build/default/src/bin/Space_main.exe" => "spacegrep"
 
       # Install tree-sitter
       cd "ocaml-tree-sitter" do

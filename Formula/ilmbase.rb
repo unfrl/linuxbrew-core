@@ -14,6 +14,9 @@ class Ilmbase < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c22e3cded26d0b91af67f0532da008d1daf98cca3e02f7950646cbffdfea18e"
   end
 
+  # https://github.com/AcademySoftwareFoundation/openexr/pull/929
+  deprecate! date: "2021-04-05", because: :unsupported
+
   depends_on "cmake" => :build
 
   def install
