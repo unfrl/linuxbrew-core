@@ -12,6 +12,7 @@ class Mockery < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "8067f6c4b60902b0c4f1295889f318ff6f5ff7bc88696f825921948728df5ff4"
     sha256 cellar: :any_skip_relocation, catalina:      "d773da6f15148f639d91e555c1135be6a25973adf7602d8a8c8d34e4d08faa89"
     sha256 cellar: :any_skip_relocation, mojave:        "3f451f3c8f14796bc4fc526c287667ee1de9578a078837ee1cfe7c98a219b68e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e96fcc7ad01e782a4f35d428e7446ad396fd74b32fa73bd3af1c02e9995e55c"
   end
 
   depends_on "go" => :build
