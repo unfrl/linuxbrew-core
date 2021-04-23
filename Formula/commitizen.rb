@@ -3,23 +3,23 @@ class Commitizen < Formula
 
   desc "Defines a standard way of committing rules and communicating it"
   homepage "https://commitizen-tools.github.io/commitizen/"
-  url "https://files.pythonhosted.org/packages/f5/4f/172550708c4ecb005ef1a8429319edbc03f1eb375050141fef6efd70e908/commitizen-2.17.3.tar.gz"
-  sha256 "62fb10780c82555bd8780e97b1fddc86aec4912270101e1d8071b9b47af00c00"
+  url "https://files.pythonhosted.org/packages/94/63/8a32c3bd93657bbfaae9dd999dbfc397d0db3903598127bba1dee280884c/commitizen-2.17.4.tar.gz"
+  sha256 "1f6e7fefd3a5ab107ffd7b14116b8f6319acc37231178d96998bdb5ca2727225"
   license "MIT"
   head "https://github.com/commitizen-tools/commitizen.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "ebea3ca8430576e1bebff66588f7f818054790ee5fb6e6e77944679c13969350"
-    sha256 cellar: :any_skip_relocation, big_sur:       "66b3ce9d499c54bd2a69675e966bec589824e0baa192a859992e851406af4f1d"
-    sha256 cellar: :any_skip_relocation, catalina:      "1d4df6db497aa44ba29ee2dda159c08b2c002605b1db74cb10fcbcbd16517c99"
-    sha256 cellar: :any_skip_relocation, mojave:        "c669863d4cb39442d2713d3682adbd8bb07f8f9c7e4b1483fa179aab77219fd4"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "c733c01c500496836023efe5f03ae9b1a5f2df14bb6726f292c19f16453ecb47"
+    sha256 cellar: :any_skip_relocation, big_sur:       "9fe631dc56af1a4142fc64472e7708ced29a3f676fcbe5db338f3e856bbaca6e"
+    sha256 cellar: :any_skip_relocation, catalina:      "65dc5f9129c2c400b6fb75680c1350d087079b6cfa3d3e089787683d858ad610"
+    sha256 cellar: :any_skip_relocation, mojave:        "7715c6b221a6f4207bed9500e956bdda9108b7b4121e5e0b1ea8002e3fe170d1"
   end
 
   depends_on "python@3.9"
 
   resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/cb/53/d2e3d11726367351b00c8f078a96dacb7f57aef2aca0d3b6c437afc56b55/argcomplete-1.12.2.tar.gz"
-    sha256 "de0e1282330940d52ea92a80fea2e4b9e0da1932aaa570f84d268939d1897b04"
+    url "https://files.pythonhosted.org/packages/6a/b4/3b1d48b61be122c95f4a770b2f42fc2552857616feba4d51f34611bd1352/argcomplete-1.12.3.tar.gz"
+    sha256 "2c7dbffd8c045ea534921e63b0be6fe65e88599990d8dc408ac8c542b72a5445"
   end
 
   resource "colorama" do
