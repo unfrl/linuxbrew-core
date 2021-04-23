@@ -11,6 +11,7 @@ class GoogleBenchmark < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "93009a5d8090d75273b8a0e3cf0bce67508c97ff974b4e47f12a43a9020d1d2f"
     sha256 cellar: :any_skip_relocation, catalina:      "0351832c3848ed1c885e88c41f36f26e25142603f81e13ec28dfab99fb74de40"
     sha256 cellar: :any_skip_relocation, mojave:        "fb72bb473bf016fac7229f21a7c1f973b42cdbaf5f0bfac7ab29ecddeeabade2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc107d45be3333b98f64db7d7fa1b2170aefeae7c731e54321cbaf23977fa75a"
   end
 
   depends_on "cmake" => :build
