@@ -15,6 +15,7 @@ class Gtkx3 < Formula
     sha256 big_sur:       "4e6a45810d70045f5b538f0bce3858965ff65a5bf2a7765a2707fefad141a8d3"
     sha256 catalina:      "a4960ef5af1ee4246fbcaee1edece012c72faca4cd86666066685597121edc15"
     sha256 mojave:        "2d5a82e40154be62fc29cb91b14febd5e33cd06e61c1c1b1f0a038068135eca4"
+    sha256 x86_64_linux:  "22252d1f69aeea149468ad8b895eb10e0a26ae1697e0422280fe20e931af4ae0"
   end
 
   depends_on "docbook" => :build
