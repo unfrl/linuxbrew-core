@@ -15,6 +15,7 @@ class Glslang < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "d87b0cc55bfdb9dff2ba9903b3ff0e77a84bb2e71aff11fc1403b58504392921"
     sha256 cellar: :any_skip_relocation, catalina:      "2b87fba839e5e1c36ed9710be62eb4ac39c476f230a86726c71251a9e22f1773"
     sha256 cellar: :any_skip_relocation, mojave:        "3cd9f396d9a55e1b039756c67f62e329ad4e184e777391982a92554158c90b71"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d870bcf59872ad7c98ef81c222b1ade3a60337b6c33950ad6e84a89c2cecabc8"
   end
 
   depends_on "cmake" => :build
