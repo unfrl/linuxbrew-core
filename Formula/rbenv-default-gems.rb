@@ -7,7 +7,9 @@ class RbenvDefaultGems < Formula
   revision 1
   head "https://github.com/sstephenson/rbenv-default-gems.git"
 
-  bottle :unneeded
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "a0d9a36598b96b0762b6bb943ed425f4f87e1d89b020699710d6eaae2592040b"
+  end
 
   depends_on "rbenv"
 

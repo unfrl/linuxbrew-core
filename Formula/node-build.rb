@@ -11,7 +11,9 @@ class NodeBuild < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  bottle :unneeded
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "4ed8e2ced0062dca2d5c31dcd7f90984ac2d21e2560cc0b0b1fc4bb94896bd42"
+  end
 
   depends_on "autoconf"
   depends_on "openssl@1.1"
