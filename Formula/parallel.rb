@@ -18,6 +18,7 @@ class Parallel < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "7a604a471b0f1e51112a7bdb3a3b6656948082c8ab41c5b5cb651c22e5b5e7eb"
     sha256 cellar: :any_skip_relocation, catalina:      "7a604a471b0f1e51112a7bdb3a3b6656948082c8ab41c5b5cb651c22e5b5e7eb"
     sha256 cellar: :any_skip_relocation, mojave:        "7a604a471b0f1e51112a7bdb3a3b6656948082c8ab41c5b5cb651c22e5b5e7eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "620c659892f66e00d66321096ca3bd694315a037a3660e5eed37372d65fb0999"
   end
 
   conflicts_with "moreutils", because: "both install a `parallel` executable"
