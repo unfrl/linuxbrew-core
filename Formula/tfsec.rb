@@ -15,6 +15,7 @@ class Tfsec < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "ffb7d9faf61ad1f572ee1ef24d6f2ccfd808308cf7c12166e55af4f521825024"
     sha256 cellar: :any_skip_relocation, catalina:      "02033fe9f7746cf8f555205ecfdec165d59a247aa9df679a410e2a08106edf99"
     sha256 cellar: :any_skip_relocation, mojave:        "1f2f213167999e8f7af999159a702a5b096163655f9f441bcf02fb9a9bf41325"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8788cb47b44e6f52665b71d88ad36087817063181886c11a51831de2100c4d26"
   end
 
   depends_on "go" => :build
