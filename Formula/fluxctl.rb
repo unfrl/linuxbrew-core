@@ -16,6 +16,7 @@ class Fluxctl < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "7fb226fef1a99a861f5ca5e4d0e2740076ef3fd96d5353f42429cafebdfc474c"
     sha256 cellar: :any_skip_relocation, catalina:      "a5d5ec6aef86b4ef13afd05e3575db6dcdc47f2eb9368a18cf16b588d14f49cb"
     sha256 cellar: :any_skip_relocation, mojave:        "a754f8206d5ef9a7247db6d5a0caa78065dfe350ece33d4549d2999df751e69b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7994704c518f61f37efb4d202b61edfac9fd17aa50192331fd42d5e690a973ee"
   end
 
   depends_on "go" => :build
