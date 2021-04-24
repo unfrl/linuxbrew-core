@@ -8,10 +8,11 @@ class Duplicity < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "caecc9dfee273b1b776cb9777e0bf194d5bc6d7a61346d159d403a69b710f032"
-    sha256 cellar: :any, big_sur:       "719bdb3958afc53539ffe1bf845187dd7184c77e1610d3ea25cd62f08d7d18f8"
-    sha256 cellar: :any, catalina:      "98e506f8171bf5b3aecf901bce848ba1947dd28fd65907085bd1f5917ef5544b"
-    sha256 cellar: :any, mojave:        "c8db4c2f1582613ed3ac1cb18e2b46a72bf46fbde588ae4b7afc159530d65f6d"
+    sha256 cellar: :any,                 arm64_big_sur: "caecc9dfee273b1b776cb9777e0bf194d5bc6d7a61346d159d403a69b710f032"
+    sha256 cellar: :any,                 big_sur:       "719bdb3958afc53539ffe1bf845187dd7184c77e1610d3ea25cd62f08d7d18f8"
+    sha256 cellar: :any,                 catalina:      "98e506f8171bf5b3aecf901bce848ba1947dd28fd65907085bd1f5917ef5544b"
+    sha256 cellar: :any,                 mojave:        "c8db4c2f1582613ed3ac1cb18e2b46a72bf46fbde588ae4b7afc159530d65f6d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4bd9e676f6c92fa7e3576f2346f345fecbe89eb20bef7adb0dd2f88f654e083d"
   end
 
   depends_on "gnupg"
