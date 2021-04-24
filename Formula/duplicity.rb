@@ -3,17 +3,15 @@ class Duplicity < Formula
 
   desc "Bandwidth-efficient encrypted backup"
   homepage "https://launchpad.net/duplicity"
-  url "https://code.launchpad.net/duplicity/0.8-series/0.8.17/+download/duplicity-0.8.17.tar.gz"
-  sha256 "a273b1e74d8d0b7825572f51be9c8284e579961e01f4fc1473048e95dce49984"
+  url "https://code.launchpad.net/duplicity/0.8-series/0.8.18/+download/duplicity-0.8.18.tar.gz"
+  sha256 "2643fea0f52920a0fb114069c78389f9621f1c24db7f26bda77bbc239b01ae53"
   license "GPL-2.0-or-later"
-  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "5c408cc5c3319ab6750aee8e97164557482b5ad1dd5572872f8f59cba6836076"
-    sha256 cellar: :any, big_sur:       "f7dbf94b4d5f45eb4011ff6f79ae9b3a78a12e2c188bdc502740be0adafe76aa"
-    sha256 cellar: :any, catalina:      "6cdc61da8c7599e9d1fa9ec155f00efa7b1603e14053e8bcfb300f4f41d267e0"
-    sha256 cellar: :any, mojave:        "eb1e2c9d0bc90bc9db0526b16b6a2404c1e4033f6f6adf3074dbcaf7dae1109b"
-    sha256 cellar: :any, x86_64_linux:  "fbcf6199efe1be2dd87066bd056a9fdab54fc6205f16cfbcc05fd9d32e4dea8b"
+    sha256 cellar: :any, arm64_big_sur: "caecc9dfee273b1b776cb9777e0bf194d5bc6d7a61346d159d403a69b710f032"
+    sha256 cellar: :any, big_sur:       "719bdb3958afc53539ffe1bf845187dd7184c77e1610d3ea25cd62f08d7d18f8"
+    sha256 cellar: :any, catalina:      "98e506f8171bf5b3aecf901bce848ba1947dd28fd65907085bd1f5917ef5544b"
+    sha256 cellar: :any, mojave:        "c8db4c2f1582613ed3ac1cb18e2b46a72bf46fbde588ae4b7afc159530d65f6d"
   end
 
   depends_on "gnupg"
