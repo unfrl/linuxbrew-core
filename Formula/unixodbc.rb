@@ -4,6 +4,7 @@ class Unixodbc < Formula
   url "http://www.unixodbc.org/unixODBC-2.3.9.tar.gz"
   sha256 "52833eac3d681c8b0c9a5a65f2ebd745b3a964f208fc748f977e44015a31b207"
   license "LGPL-2.1-or-later"
+  revision 1
 
   livecheck do
     url "http://www.unixodbc.org/download.html"
@@ -11,12 +12,10 @@ class Unixodbc < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "112790241d32af0dedc7173711c714eae35ddac6f6aee9d5a7bc979063956990"
-    sha256 big_sur:       "1b7672ec7e627941ab8e36dbe98516be3cc5861d77861dabdddf00a76aed135b"
-    sha256 catalina:      "b312633496b3b92a61751508d0c35b7053a1cf202aedae79d2609cf6dfdede27"
-    sha256 mojave:        "f52d9ff5a13e7e78560cead35ca4a3d17e4582e791319c6c15d47ac8ac6f63d4"
-    sha256 high_sierra:   "f7bbaf85f41df090d7ea6c8103543ec2890164ef43c4c2bdb7cef13c0993585d"
-    sha256 x86_64_linux:  "0386280174b6d476b5f0e4d4c24e5c341867a1fddcfce04ab48eaa1fe4c0c5ee"
+    sha256 arm64_big_sur: "66e4b186a19526e02782557afe6926d2cfb9f372e94cbcc387f531b122f510e0"
+    sha256 big_sur:       "7e85c6cae69a18bc572ac63a624d44f5e1f71b84693cdf6acf165449b35f90b7"
+    sha256 catalina:      "bd9ae8319552747572047c19a24ff3d55e3c59a51635ab799fd0959655d07459"
+    sha256 mojave:        "e3b8eeab0c16a66f1aae4784e5248f46c1476460982113803d62840379116f07"
   end
 
   depends_on "libtool"
