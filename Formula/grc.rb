@@ -9,7 +9,8 @@ class Grc < Formula
   head "https://github.com/garabik/grc.git", branch: "devel"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8853ca1088ea0598d4eed82cae88748f677372487ed1794b1e0ee564d2c1b783"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4a5c03d218092356e8a1f0969dc1d6ad5462931c0c49542e979faf75b1adde25"
+    sha256 cellar: :any_skip_relocation, all:          "8853ca1088ea0598d4eed82cae88748f677372487ed1794b1e0ee564d2c1b783"
   end
 
   depends_on "python@3.9"
