@@ -8,7 +8,8 @@ class RbenvDefaultGems < Formula
   head "https://github.com/sstephenson/rbenv-default-gems.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a0d9a36598b96b0762b6bb943ed425f4f87e1d89b020699710d6eaae2592040b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8f8a731667273ee89b150dc4ae831c14cc3549e29aa35dc4fd853083b8db591e"
+    sha256 cellar: :any_skip_relocation, all:          "a0d9a36598b96b0762b6bb943ed425f4f87e1d89b020699710d6eaae2592040b"
   end
 
   depends_on "rbenv"
