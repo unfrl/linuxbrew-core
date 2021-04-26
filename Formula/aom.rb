@@ -8,10 +8,11 @@ class Aom < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_big_sur: "e0571295e7c45b346677673f1ca8e4b62cfa1f17ef070c225fa8251b707c1f11"
-    sha256 cellar: :any, big_sur:       "67a3761a41430e4c3b314d7c6b02225682e3907fd476b38b2e3fb736c5006e3c"
-    sha256 cellar: :any, catalina:      "57b3be90bfbebeb28f29c64ee2a9c0d0c520827ed0f879f89280bb60cfc5238c"
-    sha256 cellar: :any, mojave:        "9c8b6d66053c671b354ef7ba62f244d8ab0d65b4409f6c0798db1c22594cee49"
+    sha256 cellar: :any,                 arm64_big_sur: "e0571295e7c45b346677673f1ca8e4b62cfa1f17ef070c225fa8251b707c1f11"
+    sha256 cellar: :any,                 big_sur:       "67a3761a41430e4c3b314d7c6b02225682e3907fd476b38b2e3fb736c5006e3c"
+    sha256 cellar: :any,                 catalina:      "57b3be90bfbebeb28f29c64ee2a9c0d0c520827ed0f879f89280bb60cfc5238c"
+    sha256 cellar: :any,                 mojave:        "9c8b6d66053c671b354ef7ba62f244d8ab0d65b4409f6c0798db1c22594cee49"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e9a3be069825995d77f979f068a74ec5c26d75962ed189e9cc84099f9a19320"
   end
 
   depends_on "cmake" => :build
