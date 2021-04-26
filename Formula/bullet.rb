@@ -7,12 +7,11 @@ class Bullet < Formula
   head "https://github.com/bulletphysics/bullet3.git"
 
   bottle do
-    rebuild 1
-    sha256                               arm64_big_sur: "1aaa38aecfc0d31a795175c22a7bf906c30e79226a72b7d10a3cb14a60f496a5"
-    sha256                               big_sur:       "d48eafeb3a22111a1269f0ba5cd8be8a9a6f9076561595358a04f7c03ffe37f5"
-    sha256                               catalina:      "58ea37e74322edadcfbf673f463e543db10bb2eabdd71743c8420e95441bd1e9"
-    sha256                               mojave:        "58a5289bd9672d3a6f0ad7c586f8465f91fd64fb15164841fd48758889982d36"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6801c97c307e0ccf61a2d2918dcaec9e7397a8614a8ca733fe8a8da920b47c86"
+    rebuild 2
+    sha256 cellar: :any, arm64_big_sur: "945ddcfbc1826e3fd71e88a4f6b64917c20654022692fc6cc687e649d3c8bf0e"
+    sha256 cellar: :any, big_sur:       "946daa961b764288a543f716ee6706f14f39bba63253a81f8d2f29b8a9ac428b"
+    sha256 cellar: :any, catalina:      "db37ddd9a80b8b9ceff16485b0e2a443c241610346904b5e3579b857a4af7ce4"
+    sha256 cellar: :any, mojave:        "5f28a83cf4c946380a82c7facfee88d1881f9ddefc2177811370747d6de06f1d"
   end
 
   depends_on "cmake" => :build
@@ -25,7 +24,8 @@ class Bullet < Formula
       -DBUILD_PYBULLET_NUMPY=ON
       -DBT_USE_EGL=ON
       -DBUILD_UNIT_TESTS=OFF
-      -DCMAKE_INSTALL_RPATH=#{lib}
+      -DCMAKE_INSTALL_RPATH=#{rpath}
+      -DCMAKE_INSTALL_NAME_DIR=#{opt_lib}
       -DINSTALL_EXTRA_LIBS=ON
     ]
 

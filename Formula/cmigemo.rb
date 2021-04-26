@@ -28,7 +28,10 @@ class Cmigemo < Formula
   def install
     chmod 0755, "./configure"
     system "./configure", "--prefix=#{prefix}"
-    os = OS.mac? ? "osx" : "gcc"
+    os = "osx"
+    on_linux do
+      os = "gcc"
+    end
     system "make", os
     system "make", "#{os}-dict"
     system "make", "-C", "dict", "utf-8" if build.stable?
