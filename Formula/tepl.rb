@@ -11,6 +11,7 @@ class Tepl < Formula
     sha256 big_sur:       "636197976067d2871dd01fdc4405579cec4c98af09838e469b296289e52b3147"
     sha256 catalina:      "3a0303c141c4e71a15fd7233c60d7f1c55db9a8ef3173105de4d0d12ae0d06d8"
     sha256 mojave:        "911f8f12c8f6b0af2cc4126bdc774acd977726cc267b6fc53b92b605c81402f1"
+    sha256 x86_64_linux:  "3bd134d72435dc30ccf911d5261a37914a1cab8d8cac3730fd1f33020a96c1a3"
   end
 
   depends_on "gobject-introspection" => :build
