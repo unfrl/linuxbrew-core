@@ -14,10 +14,11 @@ class Lean < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "4bc6829c4bd04da5b824636f38cc33b28a91b6c0897623b979cfa7047d70c74a"
-    sha256 cellar: :any, big_sur:       "d3535e7716eb63e12b18814158bcd71831df116732a3b1b31d9f5b538570bb1d"
-    sha256 cellar: :any, catalina:      "1c311fa94cdef29fa311e97112c94342f292017584767fda2b1327f01dfd5151"
-    sha256 cellar: :any, mojave:        "b71d9c9389dddada7c4cb26559258515f2d270b3bd548c0d6776270722118687"
+    sha256 cellar: :any,                 arm64_big_sur: "4bc6829c4bd04da5b824636f38cc33b28a91b6c0897623b979cfa7047d70c74a"
+    sha256 cellar: :any,                 big_sur:       "d3535e7716eb63e12b18814158bcd71831df116732a3b1b31d9f5b538570bb1d"
+    sha256 cellar: :any,                 catalina:      "1c311fa94cdef29fa311e97112c94342f292017584767fda2b1327f01dfd5151"
+    sha256 cellar: :any,                 mojave:        "b71d9c9389dddada7c4cb26559258515f2d270b3bd548c0d6776270722118687"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19763a3b169fe9a0954dfd7bd96e87cf4a1c1e58c090e7425dbabebf4c3b47af"
   end
 
   depends_on "cmake" => :build
