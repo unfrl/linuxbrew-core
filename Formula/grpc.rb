@@ -15,10 +15,11 @@ class Grpc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "123883d5fcb234baabbdd2123c5afabaab42b76923ad9a4f83473e1e45fa9f8c"
-    sha256 cellar: :any, big_sur:       "3928041f47f3d9cfbcb8c52e9fef66bbeaf44b8805ba2808af3607fce47bd2c5"
-    sha256 cellar: :any, catalina:      "5faf2cedba74b706a66e5976d80711eabfcbd349b46be581169d131761bf9de9"
-    sha256 cellar: :any, mojave:        "7d026f00c805d4fb729cc4804d7f1ae50fa1c1f93d0f686fb91769ef6533b6a7"
+    sha256 cellar: :any,                 arm64_big_sur: "123883d5fcb234baabbdd2123c5afabaab42b76923ad9a4f83473e1e45fa9f8c"
+    sha256 cellar: :any,                 big_sur:       "3928041f47f3d9cfbcb8c52e9fef66bbeaf44b8805ba2808af3607fce47bd2c5"
+    sha256 cellar: :any,                 catalina:      "5faf2cedba74b706a66e5976d80711eabfcbd349b46be581169d131761bf9de9"
+    sha256 cellar: :any,                 mojave:        "7d026f00c805d4fb729cc4804d7f1ae50fa1c1f93d0f686fb91769ef6533b6a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94ff9ea9140d513894347a7eca18b0dbf6a934016e9827e5298719f10ac9918a"
   end
 
   depends_on "autoconf" => :build
