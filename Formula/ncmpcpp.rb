@@ -7,10 +7,11 @@ class Ncmpcpp < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "230fddcffeab41e3d3c674967866220707ebf723df71052c41066c45078f547a"
-    sha256 cellar: :any, big_sur:       "8b5557ea3d590cbd62a6f9a39d57bc73c0a44f27006c92e78e5aa8b4fb36b482"
-    sha256 cellar: :any, catalina:      "33ded09a74a39dfb922b0a91fc2116c9ed286b473d6233929c2fc2a8e6eff8f7"
-    sha256 cellar: :any, mojave:        "fd2142f91f93b9aaf21f6396d5992a2574fd41cdd00aabb2d8ad1c8d8c839c40"
+    sha256 cellar: :any,                 arm64_big_sur: "230fddcffeab41e3d3c674967866220707ebf723df71052c41066c45078f547a"
+    sha256 cellar: :any,                 big_sur:       "8b5557ea3d590cbd62a6f9a39d57bc73c0a44f27006c92e78e5aa8b4fb36b482"
+    sha256 cellar: :any,                 catalina:      "33ded09a74a39dfb922b0a91fc2116c9ed286b473d6233929c2fc2a8e6eff8f7"
+    sha256 cellar: :any,                 mojave:        "fd2142f91f93b9aaf21f6396d5992a2574fd41cdd00aabb2d8ad1c8d8c839c40"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "99bb04db955df1b91b98d95966a53328bb736284ffd13e8b98a473373c38e732"
   end
 
   head do
