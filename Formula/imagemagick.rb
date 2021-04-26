@@ -16,6 +16,7 @@ class Imagemagick < Formula
     sha256 big_sur:       "7b8c370a3f4b9f07f3adcbc07cad1ee546ee5e338e8cf32e6e9810945bd2ffd1"
     sha256 catalina:      "80d743b6442e296fa8ec640fbc43ba80448794d42f96dc82a4aba3431e57f6c1"
     sha256 mojave:        "fb0fa1a417438b1bf90829139b92a085994a5fccbbb5ea095a97cc00d381814c"
+    sha256 x86_64_linux:  "6a597326541302558585b324dcf32538615044c98f07b26ddc027dfd71ba4ef8"
   end
 
   depends_on "pkg-config" => :build
