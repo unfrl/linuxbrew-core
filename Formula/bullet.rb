@@ -8,10 +8,11 @@ class Bullet < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any, arm64_big_sur: "945ddcfbc1826e3fd71e88a4f6b64917c20654022692fc6cc687e649d3c8bf0e"
-    sha256 cellar: :any, big_sur:       "946daa961b764288a543f716ee6706f14f39bba63253a81f8d2f29b8a9ac428b"
-    sha256 cellar: :any, catalina:      "db37ddd9a80b8b9ceff16485b0e2a443c241610346904b5e3579b857a4af7ce4"
-    sha256 cellar: :any, mojave:        "5f28a83cf4c946380a82c7facfee88d1881f9ddefc2177811370747d6de06f1d"
+    sha256 cellar: :any,                 arm64_big_sur: "945ddcfbc1826e3fd71e88a4f6b64917c20654022692fc6cc687e649d3c8bf0e"
+    sha256 cellar: :any,                 big_sur:       "946daa961b764288a543f716ee6706f14f39bba63253a81f8d2f29b8a9ac428b"
+    sha256 cellar: :any,                 catalina:      "db37ddd9a80b8b9ceff16485b0e2a443c241610346904b5e3579b857a4af7ce4"
+    sha256 cellar: :any,                 mojave:        "5f28a83cf4c946380a82c7facfee88d1881f9ddefc2177811370747d6de06f1d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "125888dc91a867016e100046c67d1b422ac894d75f759bda46d60d07acb74b5a"
   end
 
   depends_on "cmake" => :build
