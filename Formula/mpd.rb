@@ -4,11 +4,14 @@ class Mpd < Formula
   url "https://www.musicpd.org/download/mpd/0.22/mpd-0.22.6.tar.xz"
   sha256 "2be149a4895c3cb613477f8cf1193593e3d8a1d38a75ffa7d32da8c8316a4d5e"
   license "GPL-2.0-or-later"
-  revision OS.mac? ? 1 : 2
+  revision OS.mac? ? 2 : 3
   head "https://github.com/MusicPlayerDaemon/MPD.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "2773e571f3194ad022552ecd4368b5a889cc55db26c54a74e2ce071d039e85f8"
+    sha256 cellar: :any, arm64_big_sur: "343ee0563bf6dff95c18217de874740c938462c1b2334a5fb796ebfce204bab3"
+    sha256 cellar: :any, big_sur:       "abfe4a13714b4348764a562c48c5f18fe434fc9792e17bbcb06aef5791b32a35"
+    sha256 cellar: :any, catalina:      "22597e05e5c45891bf74c701275df3d8332d0d2cb7672b360bc492a69854dba2"
+    sha256 cellar: :any, mojave:        "72202e8a055745eec3eb229cb82b08dbcd0fdc4a7accecb4fbddef05ee746067"
   end
 
   depends_on "boost" => :build
