@@ -8,10 +8,11 @@ class Apngasm < Formula
   head "https://github.com/apngasm/apngasm.git"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "9f447e672e2a167926aba3a733123ad244be88f5814dbf86dff970394537abf4"
-    sha256 cellar: :any, big_sur:       "6cbad5185766695cdf400d99aae063ea9d6c97e39b4ef1e56d5b74c98abcb359"
-    sha256 cellar: :any, catalina:      "31d5d3176ba5d537d34ca05e9a10a3d61b60a625545fe03250c6329a0463d341"
-    sha256 cellar: :any, mojave:        "7ce45f6142f41d016eddded9324a7a65dd9921d2156f2d4fe2cadc3e1f991e6e"
+    sha256 cellar: :any,                 arm64_big_sur: "9f447e672e2a167926aba3a733123ad244be88f5814dbf86dff970394537abf4"
+    sha256 cellar: :any,                 big_sur:       "6cbad5185766695cdf400d99aae063ea9d6c97e39b4ef1e56d5b74c98abcb359"
+    sha256 cellar: :any,                 catalina:      "31d5d3176ba5d537d34ca05e9a10a3d61b60a625545fe03250c6329a0463d341"
+    sha256 cellar: :any,                 mojave:        "7ce45f6142f41d016eddded9324a7a65dd9921d2156f2d4fe2cadc3e1f991e6e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09c6c9426ad8703f37ae552e3b6557cb6098f5e9b91c3e461aff2c2ef26a2a95"
   end
 
   depends_on "cmake" => :build
