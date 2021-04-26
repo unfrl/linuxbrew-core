@@ -8,10 +8,11 @@ class Rocksdb < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_big_sur: "fc7f96ec1bc79a756b0942f64d3843819924bebc0aacf681975869a4273509c5"
-    sha256 cellar: :any, big_sur:       "1957496aa9652d17dbf5d56e8c21aee82e81e6f6b1fe4bf8feb4ec65096049d4"
-    sha256 cellar: :any, catalina:      "3cfd78fbb26e649b66928fb5209a49409ac0e8219974f50897d4b06d1a8cd876"
-    sha256 cellar: :any, mojave:        "28f1454971da5bf386ec56322b5e3b828696d0185d66a54b922c89dd55dfdb1d"
+    sha256 cellar: :any,                 arm64_big_sur: "fc7f96ec1bc79a756b0942f64d3843819924bebc0aacf681975869a4273509c5"
+    sha256 cellar: :any,                 big_sur:       "1957496aa9652d17dbf5d56e8c21aee82e81e6f6b1fe4bf8feb4ec65096049d4"
+    sha256 cellar: :any,                 catalina:      "3cfd78fbb26e649b66928fb5209a49409ac0e8219974f50897d4b06d1a8cd876"
+    sha256 cellar: :any,                 mojave:        "28f1454971da5bf386ec56322b5e3b828696d0185d66a54b922c89dd55dfdb1d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "401f43d0542cd47a0830bea048e9f691d806e44903fc4bdd0965e50855ed9215"
   end
 
   depends_on "cmake" => :build
