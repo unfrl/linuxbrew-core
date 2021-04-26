@@ -7,10 +7,11 @@ class Libical < Formula
   revision 1
 
   bottle do
-    sha256 arm64_big_sur: "a7658e9ae8a6404685ce931b5a19eb950817915b910680778db9497245c3214d"
-    sha256 big_sur:       "d4719732f95e73c1c85cfcfecf14249036af09b15444f22903be74fd84bfa9d0"
-    sha256 catalina:      "b9ea72b109cc455f12925e0a3c5089d00741468c7d5281c53bdcd535a40a31e2"
-    sha256 mojave:        "f4a628cd0a30a0eb8f961a0012f2651346b8c45d4e36ebf9b741ef4a98d421f8"
+    sha256                               arm64_big_sur: "a7658e9ae8a6404685ce931b5a19eb950817915b910680778db9497245c3214d"
+    sha256                               big_sur:       "d4719732f95e73c1c85cfcfecf14249036af09b15444f22903be74fd84bfa9d0"
+    sha256                               catalina:      "b9ea72b109cc455f12925e0a3c5089d00741468c7d5281c53bdcd535a40a31e2"
+    sha256                               mojave:        "f4a628cd0a30a0eb8f961a0012f2651346b8c45d4e36ebf9b741ef4a98d421f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e6d0313dea3de2c540d9e99c877095b3d7008dd78e77d2d1cea4e4be3cd8863"
   end
 
   depends_on "cmake" => :build
