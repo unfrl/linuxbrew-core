@@ -1,17 +1,16 @@
 class N < Formula
   desc "Node version management"
   homepage "https://github.com/tj/n"
-  url "https://github.com/tj/n/archive/v7.2.1.tar.gz"
-  sha256 "64c22d111f606d33043718147f5dd924e492578c34c6d769416e9078d35c0380"
+  url "https://github.com/tj/n/archive/v7.2.2.tar.gz"
+  sha256 "9654440b0e7169cf3be5897a563258116b21ec6e7e7e266acc56979d3ebec6a2"
   license "MIT"
   head "https://github.com/tj/n.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "d48818412130b3b814641e8c7eec81a1c28cdd40448758e5e79ea9b258dd5d21"
-    sha256 cellar: :any_skip_relocation, big_sur:       "2bbef166a31db55738ef621c11b5ec967daa4442dab3eb0bd336fa83e756deda"
-    sha256 cellar: :any_skip_relocation, catalina:      "2bbef166a31db55738ef621c11b5ec967daa4442dab3eb0bd336fa83e756deda"
-    sha256 cellar: :any_skip_relocation, mojave:        "bfba14563291de6675278c5d2a6ba81f01e185daa4da3ecf9e4191ebfb6b8012"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e960197d760729faa15dc17ceaac2a9925b946fd8e4c1231fc0506031baddb8"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "8f377703e852c68fd063f5f15ed7606ded6f3006ccd8b11f6cc06667c5d52fa1"
+    sha256 cellar: :any_skip_relocation, big_sur:       "1a0c2427ac36e4f4f6175380e2545a79de41031bc54021d8061f09d5cf6dd67b"
+    sha256 cellar: :any_skip_relocation, catalina:      "1a0c2427ac36e4f4f6175380e2545a79de41031bc54021d8061f09d5cf6dd67b"
+    sha256 cellar: :any_skip_relocation, mojave:        "1a0c2427ac36e4f4f6175380e2545a79de41031bc54021d8061f09d5cf6dd67b"
   end
 
   def install
