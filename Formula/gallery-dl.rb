@@ -3,17 +3,16 @@ class GalleryDl < Formula
 
   desc "Command-line downloader for image-hosting site galleries and collections"
   homepage "https://github.com/mikf/gallery-dl"
-  url "https://files.pythonhosted.org/packages/0b/37/7e5c16313471fb5297e3b104450d2034121687ab2c68f776ea3f88f15470/gallery_dl-1.17.2.tar.gz"
-  sha256 "ff1393fa4d167b5e4f01d63109f5ecbd62b1e6ca3dcab764613dada15cba5b52"
+  url "https://files.pythonhosted.org/packages/6a/91/a6d537b52a50b24ca88f2c5cb82d715ca0a73e0552988f0932e0f394d3c6/gallery_dl-1.17.3.tar.gz"
+  sha256 "5da10d931c371841575d988b4e91e9d4ce55c8c3c99aa6d4efa5abca34c75ec8"
   license "GPL-2.0-only"
   head "https://github.com/mikf/gallery-dl.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "4330108cb1edf64a2f2811b40c1709a557c3ebd9a97d1415db65d64d653d4ce7"
-    sha256 cellar: :any_skip_relocation, big_sur:       "cde791bce066a3e5213967b7f7bb33f8e6925916186987ca961c948df70082ef"
-    sha256 cellar: :any_skip_relocation, catalina:      "328d1e7551bbde8d0c9a8fb87a1e325f053816c8f9b292f99657d7ded1ac8d7c"
-    sha256 cellar: :any_skip_relocation, mojave:        "ba9321a15cbd00480da05e3af9dd9e2d030a1f9495bb8c5eaac7b7c46a26b5a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0e50a19dfd85eab5aa733be465bf37697654fddeb24b6f3e6d6a45bb8e0b775"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "61dc25017cf96e4bef674ec12cbd1e171187462d4fca8646abe91317f0d18665"
+    sha256 cellar: :any_skip_relocation, big_sur:       "178cc8859c98f1838034975fd90cf929dee28ee551a4b21e15af94a7f83abebe"
+    sha256 cellar: :any_skip_relocation, catalina:      "178cc8859c98f1838034975fd90cf929dee28ee551a4b21e15af94a7f83abebe"
+    sha256 cellar: :any_skip_relocation, mojave:        "178cc8859c98f1838034975fd90cf929dee28ee551a4b21e15af94a7f83abebe"
   end
 
   depends_on "python@3.9"
