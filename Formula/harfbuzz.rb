@@ -8,10 +8,11 @@ class Harfbuzz < Formula
   head "https://github.com/harfbuzz/harfbuzz.git"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "91e0c2a71152c03b8dbd2272bf8fa785831f758161d8b8a6572c05a8783966c4"
-    sha256 cellar: :any, big_sur:       "899db26127544a87d917edb9f9b3c97e0361d94ca5ae80740ce8abc0629c061f"
-    sha256 cellar: :any, catalina:      "0f401b7d12cf09e886114ca46c85d6fd035c33564b1c693507bb1ef196e05b09"
-    sha256 cellar: :any, mojave:        "9416231ccfc95ed28645ec5fcbb1f5dda56222c94c8e47d3281095105d517f19"
+    sha256 cellar: :any,                 arm64_big_sur: "91e0c2a71152c03b8dbd2272bf8fa785831f758161d8b8a6572c05a8783966c4"
+    sha256 cellar: :any,                 big_sur:       "899db26127544a87d917edb9f9b3c97e0361d94ca5ae80740ce8abc0629c061f"
+    sha256 cellar: :any,                 catalina:      "0f401b7d12cf09e886114ca46c85d6fd035c33564b1c693507bb1ef196e05b09"
+    sha256 cellar: :any,                 mojave:        "9416231ccfc95ed28645ec5fcbb1f5dda56222c94c8e47d3281095105d517f19"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "923b0faa1a0371a2313192a727df6a2f1d99b383110a574f3d0330682d92db18"
   end
 
   depends_on "meson" => :build
