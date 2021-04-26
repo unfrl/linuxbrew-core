@@ -16,6 +16,7 @@ class PostgresqlAT11 < Formula
     sha256 big_sur:       "3f6419a3e4a8b1c78cfcc58955e4a9b9f61191151f4d66278cda4e07de94d716"
     sha256 catalina:      "1c7e187a23f44f4d65adc6227866b5a2e0385b95612e1147f6e23a27d1835019"
     sha256 mojave:        "2764eb72e2a74685919ed509aab4e120c9adc851a72a09bf55248551a81e530e"
+    sha256 x86_64_linux:  "14e94d6d924cc911c7c640bfbb3c1ff0bf06721a69b4368f50e309855d52c12f"
   end
 
   keg_only :versioned_formula
