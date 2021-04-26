@@ -3,17 +3,16 @@ class Bpytop < Formula
 
   desc "Linux/OSX/FreeBSD resource monitor"
   homepage "https://github.com/aristocratos/bpytop"
-  url "https://files.pythonhosted.org/packages/a5/4b/6822d87164e2696705e8e3d08b7f9431e9b7d17226954db96e864b8ca534/bpytop-1.0.63.tar.gz"
-  sha256 "21d4c87ceae7c9152e8c8094f50843c6174e47a94649dcbecda63c4190168762"
+  url "https://files.pythonhosted.org/packages/c1/fe/25709a8103a6e2d0fc7dc79d919f541156c2c1a758ed5231965c3433588d/bpytop-1.0.64.tar.gz"
+  sha256 "758fa894d6147bbdaba51b7bd1c5bf878b7f742c59ac10c1bfac5c974e2ca20a"
   license "Apache-2.0"
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "ea5b97c65402aba37adfd6d227b5a6232249e1897bada76a7d2b63e2665481bf"
-    sha256 cellar: :any_skip_relocation, big_sur:       "332ab74636f4b41b83cf717eaa55a33405ee6de585a38c1e20b4e8e7d60baf6c"
-    sha256 cellar: :any_skip_relocation, catalina:      "ecacc9a44eba5e190d6fcc835c5a2d751e76489472b23d3f4e21d2eea44bdc88"
-    sha256 cellar: :any_skip_relocation, mojave:        "77e1fd7926e3187c90d5456e9f990f1530b17f518272cce1bda972101984a69d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4b4b0435762ebfd504e084745e84d79248a07b161e13d0b1d792d5b61a24893"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "a948efb8575563dfa4e58feab665989003e043602c32c780647c3ee0b1405c6c"
+    sha256 cellar: :any_skip_relocation, big_sur:       "4734b7a4876f2ce8fcab0e7e4dde25e55c574cb5054dc5b8094e499ae20e5deb"
+    sha256 cellar: :any_skip_relocation, catalina:      "af52fe4d6d3ff458572a9fd39507e33ad0bad4f1fb15a6d6eb06f3e6b4965d0a"
+    sha256 cellar: :any_skip_relocation, mojave:        "d0a896d093dd71505646544947c5b1b9160556764a407ea2f9fc7bee9f133192"
   end
 
   depends_on "rust" => :build # for cryptography
@@ -34,7 +33,7 @@ class Bpytop < Formula
 
   test do
     config = (testpath/".config/bpytop")
-    config.install_symlink "#{pkgshare}/themes" => "themes"
+    mkdir config/"themes"
     (config/"bpytop.conf").write <<~EOS
       #? Config file for bpytop v. #{version}
 

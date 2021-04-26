@@ -23,12 +23,13 @@ class Git < Formula
   depends_on "gettext"
   depends_on "pcre2"
 
+  uses_from_macos "curl"
+  uses_from_macos "expat"
+  uses_from_macos "openssl@1.1"
+  uses_from_macos "zlib"
+
   on_linux do
-    depends_on "curl"
-    depends_on "expat"
     depends_on "linux-headers"
-    depends_on "openssl@1.1"
-    depends_on "zlib"
   end
 
   resource "html" do
@@ -59,7 +60,7 @@ class Git < Formula
 
     perl_version = Utils.safe_popen_read("perl", "--version")[/v(\d+\.\d+)(?:\.\d+)?/, 1]
 
-    if OS.mac?
+    on_macos do
       ENV["PERLLIB_EXTRA"] = %W[
         #{MacOS.active_developer_dir}
         /Library/Developer/CommandLineTools
@@ -101,7 +102,7 @@ class Git < Formula
     git_core = libexec/"git-core"
 
     # Install the macOS keychain credential helper
-    if OS.mac?
+    on_macos do
       cd "contrib/credential/osxkeychain" do
         system "make", "CC=#{ENV.cc}",
                        "CFLAGS=#{ENV.cflags}",
@@ -168,11 +169,13 @@ class Git < Formula
 
     # Set the macOS keychain credential helper by default
     # (as Apple's CLT's git also does this).
-    (buildpath/"gitconfig").write <<~EOS
-      [credential]
-      \thelper = osxkeychain
-    EOS
-    etc.install "gitconfig" if OS.mac?
+    on_macos do
+      (buildpath/"gitconfig").write <<~EOS
+        [credential]
+        \thelper = osxkeychain
+      EOS
+      etc.install "gitconfig"
+    end
   end
 
   def caveats

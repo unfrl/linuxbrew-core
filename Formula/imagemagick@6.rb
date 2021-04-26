@@ -4,8 +4,8 @@ class ImagemagickAT6 < Formula
   # Please always use a mirror as the primary URL as the
   # ImageMagick site removes tarballs regularly which means we get issues
   # unnecessarily and older versions of the formula are broken.
-  url "https://www.imagemagick.org/download/releases/ImageMagick-6.9.12-7.tar.xz"
-  sha256 "57631b1665d004680a9f7c072434c4897f445a7cded258ec28b0006587b485db"
+  url "https://www.imagemagick.org/download/releases/ImageMagick-6.9.12-9.tar.xz"
+  sha256 "b8c75ade00884ed06007111f2aa144ff3125e15c6e0667d6aea8cec742cbc1ee"
   license "ImageMagick"
   head "https://github.com/imagemagick/imagemagick6.git"
 
@@ -15,11 +15,10 @@ class ImagemagickAT6 < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "e56c6c17730882fbe5183aef49bbcfa378156d48a67f0333877ac22d3687cc0c"
-    sha256 big_sur:       "b22591e8c3220ac13661c9aaca36cda1e972af400e3c6c47f5f7b0d983ada6fa"
-    sha256 catalina:      "64da137ebc9c606265057f542ff6c098361166868766c428da01250aa23d45ab"
-    sha256 mojave:        "dcf09245082947c64faa3eae5e5ed09ab9175691acf71587910fe40680be1515"
-    sha256 x86_64_linux:  "cadd632af1b836eda7bc12c4cd222c6cdb7ae6981aea201c442bb4db51985f7d"
+    sha256 arm64_big_sur: "2cfb599380edd0601aab1cf467278730d061f49b10f1b59da5e3a05a8a6d011a"
+    sha256 big_sur:       "b62b6bfd94954595ff9c31c65f08d46dd527369dd887501e8c0c6879c83947f9"
+    sha256 catalina:      "2d88f3de596a515ed08667ab6a9240f7b21105e1b92bef5e84ff77ba32d8fde9"
+    sha256 mojave:        "2b882e0567de1e0b945c32ec767dec26ed4b03ea4ae3e586d0e7382570d2845c"
   end
 
   keg_only :versioned_formula
