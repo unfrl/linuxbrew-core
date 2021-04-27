@@ -1,15 +1,15 @@
 class Libhandy < Formula
   desc "Building blocks for modern adaptive GNOME apps"
   homepage "https://gitlab.gnome.org/GNOME/libhandy"
-  url "https://gitlab.gnome.org/GNOME/libhandy/-/archive/1.2.1/libhandy-1.2.1.tar.gz"
-  sha256 "90cee074048310926a1c66278fa10043a220953cc6be03f9f5eb756b6bcd1043"
+  url "https://gitlab.gnome.org/GNOME/libhandy/-/archive/1.2.2/libhandy-1.2.2.tar.gz"
+  sha256 "006c1d7285602065a8c442227dba84efc74fe028f06bf8a43c1bfdb0b04959ad"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 arm64_big_sur: "dd4385ff55eaa5a8b512314e0a31e1172bfdaa7b9614a64655a8de03fce7b0a0"
-    sha256 big_sur:       "cce5ed26f5f2a34ef5b6c04e180f8405d40f3004456323c0e662060e93925a53"
-    sha256 catalina:      "a94d7f827adf5af00990511f95b9997c40dbfadf1e11b1d38f82159b2a1373f2"
-    sha256 mojave:        "2e42e381790cd71abd83024191ce49b634aed547cd482e3efe711792661c8e15"
+    sha256 arm64_big_sur: "77d84c76983108e91ac0c046c015a849effb0050ad6301f5a1f1a295512f9772"
+    sha256 big_sur:       "d8f5de54f43a158e7cd1e722cfb66d27e20ba73d149e19216960fbfd63956dd3"
+    sha256 catalina:      "d1091de69a0bb535fd94ec47cf46f7750aa77fa7ce9b5c955a3d552336156b39"
+    sha256 mojave:        "880084f90ca3cd8023c79ec1d511b0a7f4ef585a8ef61464bd79a757add25abc"
   end
 
   # NOTE: The glade catalog is disabled due to a bug that has been fixed but

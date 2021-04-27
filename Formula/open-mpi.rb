@@ -1,27 +1,9 @@
 class OpenMpi < Formula
   desc "High performance message passing library"
   homepage "https://www.open-mpi.org/"
+  url "https://download.open-mpi.org/release/open-mpi/v4.1/openmpi-4.1.1.tar.bz2"
+  sha256 "e24f7a778bd11a71ad0c14587a7f5b00e68a71aa5623e2157bafee3d44c07cda"
   license "BSD-3-Clause"
-  revision 1 unless OS.mac?
-
-  stable do
-    url "https://download.open-mpi.org/release/open-mpi/v4.1/openmpi-4.1.0.tar.bz2"
-    sha256 "73866fb77090819b6a8c85cb8539638d37d6877455825b74e289d647a39fd5b5"
-
-    if Hardware::CPU.arm?
-      # Dependencies needed for patch. Remove at next release.
-      depends_on "autoconf" => :build
-      depends_on "automake" => :build
-      depends_on "libtool" => :build
-
-      # Patch to fix ARM build. Remove at next release.
-      # https://github.com/open-mpi/ompi/pull/8421
-      patch do
-        url "https://github.com/open-mpi/ompi/commit/4779d8e079314ffd4556e3cb3289fecd07646cc5.patch?full_index=1"
-        sha256 "0553ffcc813919ee06937156073fc18ef6b55fa58201a9cba5168f35f7040c66"
-      end
-    end
-  end
 
   livecheck do
     url :homepage
@@ -29,12 +11,10 @@ class OpenMpi < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "6134b45b6faa235377c5cd017b58393a0a124936c81a14da9902604671143ca8"
-    sha256 big_sur:       "2afe47eb2c9664599a1bf8687d0244a9b9067bc96e3de184cdee8e3110fa8012"
-    sha256 catalina:      "fd21d8d449c7fee6126f11994b6e0d12178b1eab55cbb17f99056d535cb1ace4"
-    sha256 mojave:        "f3a7dca683792a4fe866b62004351b1dae6acf2376609cf36bdc771d9e9104ef"
-    sha256 high_sierra:   "33d3cd119f7f7d7d3154d758cc0ad68ad513624c9a648c9b87d732ea6a8e6068"
-    sha256 x86_64_linux:  "214b0e8a50e481ca85de5d4fb1e24597e9e743741e84aabf1ee6775c24db5adc"
+    sha256 arm64_big_sur: "25d0e0b937bfcbaf91f69da6d56bda31aab1cb9df339221185852f3382bf8b9a"
+    sha256 big_sur:       "005a39311bb1bd8ab0b23706713897816547c6a6e25a2175ad7aad5f94948b4c"
+    sha256 catalina:      "a2a4edb115a7250b8ad9de6642607e97e30a949d073fa39073e483c7723cdc68"
+    sha256 mojave:        "01111108516c36da32dbbdc93e65386c7567ef977f437a001a3fd8c1a3e9d3a4"
   end
 
   head do
@@ -98,8 +78,7 @@ class OpenMpi < Formula
     ]
     args << "--with-platform-optimized" if build.head?
 
-    # Remove ` || Hardware::CPU.arm?` in the next release
-    system "./autogen.pl", "--force" if build.head? || Hardware::CPU.arm?
+    system "./autogen.pl", "--force" if build.head?
     system "./configure", *args
     system "make", "all"
     system "make", "check"

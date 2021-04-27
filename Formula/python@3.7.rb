@@ -4,7 +4,7 @@ class PythonAT37 < Formula
   url "https://www.python.org/ftp/python/3.7.10/Python-3.7.10.tar.xz"
   sha256 "f8d82e7572c86ec9d55c8627aae5040124fd2203af400c383c821b980306ee6b"
   license "Python-2.0"
-  revision 2
+  revision 3
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -12,10 +12,9 @@ class PythonAT37 < Formula
   end
 
   bottle do
-    sha256 big_sur:      "80254e0ed92ea7c5a77aab2e1ca9f1b7ea4f9258419710114b9cdca2740f2247"
-    sha256 catalina:     "a5ae644b32ffc98ae4c06fa252b97d55abd653b6798cf908e8555bf03294ea12"
-    sha256 mojave:       "032d2875bd49a94e0a465f9ddb578198bc2c498a3308eb03536c07a9730dcf7b"
-    sha256 x86_64_linux: "86478118afcef8ca708d47879fbe4050a285774fdbe9934fe1150b22322158f0"
+    sha256 big_sur:  "27851e61f8412365b7a459db63712548999561e6effef3f4fc8ec88dcd3637bd"
+    sha256 catalina: "838cb307a4a5a421bef14eb1797b215b694b41cf77f3822f4eabfbd865037622"
+    sha256 mojave:   "9cb10a1ddd3a2b325f4922899578ef78d9666eba14f38e32d8016d4e756e74da"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -82,8 +81,8 @@ class PythonAT37 < Formula
   # ourselves.
   # https://bugs.python.org/issue42504
   patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/05a27807/python/3.7.9.patch"
-    sha256 "486188ac1a4af4565de5ad54949939bb69bffc006297e8eac9339f19d7d7492b"
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/c4bc563a8d008ebd0e8d927c043f6dd132d3ba89/python/big-sur-3.7.patch"
+    sha256 "67c99bdf0bbe0a640d70747aad514cd74602e7c4715fd15f1f9863eef257735e"
   end
 
   # Link against libmpdec.so.3, update for mpdecimal.h symbol cleanup.

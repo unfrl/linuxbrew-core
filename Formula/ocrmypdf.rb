@@ -3,17 +3,16 @@ class Ocrmypdf < Formula
 
   desc "Adds an OCR text layer to scanned PDF files"
   homepage "https://github.com/jbarlow83/OCRmyPDF"
-  url "https://files.pythonhosted.org/packages/6d/ac/972029bdda58ca452e3124315fc892729fe68d51837f2abd1212dceeffb5/ocrmypdf-12.0.0.tar.gz"
-  sha256 "01699b151c6b1a7c6debcd2ed154f842c70e275c508d3a5614ad6ba261f6f09f"
+  url "https://files.pythonhosted.org/packages/c2/0b/f15c5f5398d40d3d04d93488e8d932d029f9c82f1ae3032c9c54269b4a16/ocrmypdf-12.0.1.tar.gz"
+  sha256 "c18db17e18984f540eaa774245571e3ec63a74f459b6029de561a06a77e78310"
   license "MPL-2.0"
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "a0f3c31b958b4a302bb27508e1e91896e9b5704e321c738033e6d4fdc39e7457"
-    sha256 cellar: :any,                 big_sur:       "929157cca07e1a451405ff7fac4a12e3836c9ea1eba01f5fe2c828e2cdc18562"
-    sha256 cellar: :any,                 catalina:      "d830b0228fdfdd2da80d328f0e4c6694adb3f101b993abfb810f940420e7cde4"
-    sha256 cellar: :any,                 mojave:        "43a20d78b72d064546439bf52c6eb00797bb814f9e26cc64f26db2b40488edb8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41b2e4d711cdd44972cddd8a708098e31c77cd45179808436b8ea6c8e4f47b74"
+    sha256 cellar: :any, arm64_big_sur: "d874962c0c0546ff6c7e22cafa6fc52e3d8011a4b5b872bbdc19e617d0d5c153"
+    sha256 cellar: :any, big_sur:       "079ad48ce0fce01857de8148523474f350f58c97d8f6d088a22f40c78b302187"
+    sha256 cellar: :any, catalina:      "7042c307a55bea034ae258834114349b362afc5c102a217fdd2467b2dec21599"
+    sha256 cellar: :any, mojave:        "fb1636a524f37f738026abf6fe2c3101ccaea67989c41ac21413794544527d51"
   end
 
   depends_on "pkg-config" => :build
