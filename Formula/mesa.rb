@@ -34,11 +34,11 @@ class Mesa < Formula
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
+  uses_from_macos "llvm"
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
   on_linux do
-    depends_on "llvm"
     depends_on "lm-sensors"
     depends_on "libelf"
     depends_on "libxfixes"
@@ -84,11 +84,9 @@ class Mesa < Formula
     ENV.prepend_path "PATH", "#{venv_root}/bin"
 
     mkdir "build" do
-      args = %w[
-        -Db_ndebug=true
-      ]
+      args = ["-Db_ndebug=true"]
 
-      unless OS.mac?
+      on_linux do
         args << "-Dplatforms=x11,wayland"
         args << "-Dglx=auto"
         args << "-Ddri3=true"
@@ -110,7 +108,7 @@ class Mesa < Formula
       system "ninja", "install"
     end
 
-    unless OS.mac?
+    on_linux do
       # Strip executables/libraries/object files to reduce their size
       system("strip", "--strip-unneeded", "--preserve-dates", *(Dir[bin/"**/*", lib/"**/*"]).select do |f|
         f = Pathname.new(f)

@@ -1,15 +1,14 @@
 class Keptn < Formula
   desc "Is the CLI for keptn.sh a message-driven control-plane for application delivery"
   homepage "https://keptn.sh"
-  url "https://github.com/keptn/keptn/archive/0.8.1.tar.gz"
-  sha256 "d64a39bfad897d8e3016b66768dc7650132028fa9d30abeccadd0f96eaa8e140"
+  url "https://github.com/keptn/keptn/archive/0.8.2.tar.gz"
+  sha256 "eb20175aa8e2a56bc4c7311e34fd2d4046382111048f5fdae46a0d3488b13e01"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:      "e1a0740fe66a3c67c1a4ba6638849cc12c6ebf0686bcfc0db71d6e785ee063a4"
-    sha256 cellar: :any_skip_relocation, catalina:     "91b2633183164288ac640fbdff47b8a7bf6a04c8b864cd3c92a13c9aba103da3"
-    sha256 cellar: :any_skip_relocation, mojave:       "c2028545946baf04ed42448fb5594cef24c99b2e33d2364462a33896080a0230"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "6b4baa71487a1f85898dc3ec917fa89445047af86ff23e0d6cc1a19d942d0aa4"
+    sha256 cellar: :any_skip_relocation, big_sur:  "ca106c9f94dccb75e2bb6eab13c465fec3db695ad16dbf3ea7bc190bb067af4b"
+    sha256 cellar: :any_skip_relocation, catalina: "df772fbde810b557ecf3d2a8378f7a0290454575fd6bf3838e9157d07e56c6fc"
+    sha256 cellar: :any_skip_relocation, mojave:   "90b8a010292b55c76c07b86073065a333f9b0101a71c755db177d668db0d342a"
   end
 
   depends_on "go" => :build
