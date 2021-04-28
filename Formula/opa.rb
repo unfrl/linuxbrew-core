@@ -11,6 +11,7 @@ class Opa < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "ef48d8bffd455072906d6367509bebba2909f652fdd0ef4ee44fc2b980e4c793"
     sha256 cellar: :any_skip_relocation, catalina:      "f0396952b79b701f2edec59f9526c9d379f1a4c4d5b90a94354e83f5e00408b5"
     sha256 cellar: :any_skip_relocation, mojave:        "a012eb7c26bfa3aef3c5a26d37cb930afbfb224508916166708a7cb0d9a37915"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "197a276c2f771bede3fae52f025a022f64970aaf8981785aec0eab33bfebb5dc"
   end
 
   depends_on "go" => :build
