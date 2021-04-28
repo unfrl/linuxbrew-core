@@ -3,15 +3,15 @@ class SvtplayDl < Formula
 
   desc "Download videos from https://www.svtplay.se/"
   homepage "https://svtplay-dl.se/"
-  url "https://files.pythonhosted.org/packages/f4/1d/939fd0593890ec45095ec35cfb3a8d881d75fb7f7e572d8cc21ae454005d/svtplay-dl-3.6.tar.gz"
-  sha256 "8cc09604e172d3e2991f7a1ca603a272b0f2a591c626dce931fc509afab44529"
+  url "https://files.pythonhosted.org/packages/eb/71/7dd2120e84a8f1aa936f08b535bfbca22b0cfb09948a8d50158600058b00/svtplay-dl-3.7.tar.gz"
+  sha256 "74a5365c44113181764c4328e3131624e68c7f299831635e2aca8cda1d53e136"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "b85038dae36676f581096ba7faea3ab9c030ce8f3e6921ffbb59d4639dd7ba7b"
-    sha256 cellar: :any, big_sur:       "a3ac03cbdcb81923eaa346327a4fb1c10a3e97891a4ddbd209f378bcaaae113e"
-    sha256 cellar: :any, catalina:      "f5656a009345b2bdb280ac5294d94efe30f79f2a8d1c46eeb2644e97a00e5d12"
-    sha256 cellar: :any, mojave:        "9a31342a53b22507b34585663dfc3821f60edcd7c3200f1869903960da70c87b"
+    sha256 cellar: :any, arm64_big_sur: "64bbd7b92be024a55e1c24b6e19c87215a269e598f9ea1ef9200cc09d3d8c50b"
+    sha256 cellar: :any, big_sur:       "7760f8d01431677c256696c2eff2140c34ebcf1f8d457862dae388fbeebb8a97"
+    sha256 cellar: :any, catalina:      "e8bd91dd42890b4101f3709a5f1908874631420c94cfc398fdf762b33caa7e27"
+    sha256 cellar: :any, mojave:        "4bc8fe10eaea6904ac80aa87e6c5242c13a412ec67d89c668c28f60898abc4f2"
   end
 
   depends_on "rust" => :build
