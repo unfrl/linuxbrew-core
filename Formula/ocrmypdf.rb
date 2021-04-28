@@ -9,10 +9,11 @@ class Ocrmypdf < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "d874962c0c0546ff6c7e22cafa6fc52e3d8011a4b5b872bbdc19e617d0d5c153"
-    sha256 cellar: :any, big_sur:       "079ad48ce0fce01857de8148523474f350f58c97d8f6d088a22f40c78b302187"
-    sha256 cellar: :any, catalina:      "7042c307a55bea034ae258834114349b362afc5c102a217fdd2467b2dec21599"
-    sha256 cellar: :any, mojave:        "fb1636a524f37f738026abf6fe2c3101ccaea67989c41ac21413794544527d51"
+    sha256 cellar: :any,                 arm64_big_sur: "d874962c0c0546ff6c7e22cafa6fc52e3d8011a4b5b872bbdc19e617d0d5c153"
+    sha256 cellar: :any,                 big_sur:       "079ad48ce0fce01857de8148523474f350f58c97d8f6d088a22f40c78b302187"
+    sha256 cellar: :any,                 catalina:      "7042c307a55bea034ae258834114349b362afc5c102a217fdd2467b2dec21599"
+    sha256 cellar: :any,                 mojave:        "fb1636a524f37f738026abf6fe2c3101ccaea67989c41ac21413794544527d51"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "79cd144c5e2746d8376391c96c7bb3101817f848eb03ebc7e1043bcb28547f0f"
   end
 
   depends_on "pkg-config" => :build
