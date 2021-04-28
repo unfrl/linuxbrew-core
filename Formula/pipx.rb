@@ -1,17 +1,16 @@
 class Pipx < Formula
   desc "Execute binaries from Python packages in isolated environments"
   homepage "https://github.com/pipxproject/pipx"
-  url "https://files.pythonhosted.org/packages/34/19/e79e0a9836187e0b576da06859314887715c3adf4c6e2b4b4d5629f5a04f/pipx-0.16.1.0.tar.gz"
-  sha256 "22b9a0f0536e6b4e7ae030d33cbe34528c3f7ad1615d0c3795f2e5ac4db9d76d"
+  url "https://files.pythonhosted.org/packages/66/44/7a0e6aeb66e762dd3bced7cd057f8f480d9da116d1ddbc3fb87df81b428c/pipx-0.16.2.0.tar.gz"
+  sha256 "5611b616d1180b2005294751d3e3d77e6ec9ea54316a4d91a3af171523515b47"
   license "MIT"
   head "https://github.com/pipxproject/pipx.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "bab02779c5da9216dbc21812e5786dce16e6c0f79457575fd78037ed96bd6cd0"
-    sha256 cellar: :any_skip_relocation, big_sur:       "9c07a40553cfa635460d685e72ec0fc29192a0c50167d6c5ee8a441db3065453"
-    sha256 cellar: :any_skip_relocation, catalina:      "abc0c5222a5ddafa0230be3df0e96251b10731ac139a776b367486fccf817ace"
-    sha256 cellar: :any_skip_relocation, mojave:        "85019ec96f1cf0aa890a9424522755a3beb3a69d6ef508293cf9292895acd1b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "adb3c6f763fe1db87849d6012fdecebbd4a02cade78a510d73d136ef032e890e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "d0045da26b800ce84d31bc11d4952c53da777eaa821e06d8ebf9ce1be735cfbb"
+    sha256 cellar: :any_skip_relocation, big_sur:       "510c1ea189d33edc1cd95e38607a93b8d9abfb4cf24da84796ea97e3d20b561d"
+    sha256 cellar: :any_skip_relocation, catalina:      "510c1ea189d33edc1cd95e38607a93b8d9abfb4cf24da84796ea97e3d20b561d"
+    sha256 cellar: :any_skip_relocation, mojave:        "510c1ea189d33edc1cd95e38607a93b8d9abfb4cf24da84796ea97e3d20b561d"
   end
 
   depends_on "python@3.9"
@@ -24,8 +23,8 @@ class Pipx < Formula
   end
 
   resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/cb/53/d2e3d11726367351b00c8f078a96dacb7f57aef2aca0d3b6c437afc56b55/argcomplete-1.12.2.tar.gz"
-    sha256 "de0e1282330940d52ea92a80fea2e4b9e0da1932aaa570f84d268939d1897b04"
+    url "https://files.pythonhosted.org/packages/6a/b4/3b1d48b61be122c95f4a770b2f42fc2552857616feba4d51f34611bd1352/argcomplete-1.12.3.tar.gz"
+    sha256 "2c7dbffd8c045ea534921e63b0be6fe65e88599990d8dc408ac8c542b72a5445"
   end
 
   resource "click" do

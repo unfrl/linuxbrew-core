@@ -1,8 +1,8 @@
 class Earthly < Formula
   desc "Build automation tool for the container era"
   homepage "https://earthly.dev/"
-  url "https://github.com/earthly/earthly/archive/v0.5.10.tar.gz"
-  sha256 "71d8f7c5dd603cb6bdd2679baf20ade5fc419bc5cb5e53a723775302222f59d5"
+  url "https://github.com/earthly/earthly/archive/v0.5.11.tar.gz"
+  sha256 "1584495fd8dfa3839f36286fa16bdb611151773033a5e6b936a5df9836c5b06b"
   license "BUSL-1.1"
   head "https://github.com/earthly/earthly.git"
 
@@ -12,18 +12,17 @@ class Earthly < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "7cb042be498c5eece87fe21dc4058cb0e120f9de3975c3ec7b6bcfc5ad136f15"
-    sha256 cellar: :any_skip_relocation, big_sur:       "a85579fe2ce56105f8325efdb699be34885623c61058d104904dbcee10b9cb0b"
-    sha256 cellar: :any_skip_relocation, catalina:      "f7d7f6e751034d9315c8466e128b94ecb448d995d7ed3aaa1f5537a19c6d9281"
-    sha256 cellar: :any_skip_relocation, mojave:        "4c984626fc13facd2b1654b414754812ef478360911f28a4f3a4d5c4ec3cb648"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9e16ca0d2115152d5c03482c6afd903eedab99188c4656dbbeeee2d288a5ab6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "d997f63c1c1f59d4f87d692115d817fcc47bba548489aafd49b5ae2670cd90d7"
+    sha256 cellar: :any_skip_relocation, big_sur:       "bd9fb8d49cabf534ec2d116d89eb3bdeb6b903ee03edc96052481dd984f5c4ba"
+    sha256 cellar: :any_skip_relocation, catalina:      "90ea7724fa1ba7761ecb35a2c0ea09891966c61fd61416cef57a41c1c2db104b"
+    sha256 cellar: :any_skip_relocation, mojave:        "28908c28b5f5b2f128a04f4d1caceb0ab8fc1b9f2007f09a9af32fea02dc564c"
   end
 
   depends_on "go" => :build
 
   def install
     ldflags = "-X main.DefaultBuildkitdImage=earthly/buildkitd:v#{version} -X main.Version=v#{version} " \
-              "-X main.GitSha=a5026a1428d3329dd99f0ab85f3530552a3a5f02 "
+              "-X main.GitSha=4441aa72487b448d1a3e94cb0ae6afc1ad02ce96 "
     tags = "dfrunmount dfrunsecurity dfsecrets dfssh dfrunnetwork"
     system "go", "build",
         "-tags", tags,

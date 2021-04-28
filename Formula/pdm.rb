@@ -3,17 +3,16 @@ class Pdm < Formula
 
   desc "Modern Python package manager with PEP 582 support"
   homepage "https://pdm.fming.dev"
-  url "https://files.pythonhosted.org/packages/90/85/9048e8f96c6af1d53aae9f225b9e9d4334178bb1858642a34b4374c43149/pdm-1.5.1.tar.gz"
-  sha256 "325a232411efa3b1212de9ec54c701fa1c5209456303d808c15bea79104f0777"
+  url "https://files.pythonhosted.org/packages/8a/22/740b4a242fc22d0825a58f5729c180ad57a0d835a85bc3de2d79a53c5648/pdm-1.5.2.tar.gz"
+  sha256 "5691d3d8e6d03ab6dabbdc51a7ff3dace0aa65d1f550e9df1d52eef4fba95068"
   license "MIT"
   head "https://github.com/frostming/pdm.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "2d7128c379e64ab77cfd5eb01eee5031366b48ef22a7ecea6dd326986f7e4fb6"
-    sha256 cellar: :any_skip_relocation, big_sur:       "50103e98d2ebed6bc0a3c729a19762caab180d6916e1bd97e1a241e68f422a5a"
-    sha256 cellar: :any_skip_relocation, catalina:      "41df7ee08f7ab14d089c09ad8d07573a35a0ae06d825af30f997665d5b86ec12"
-    sha256 cellar: :any_skip_relocation, mojave:        "5a8c1c34610a22a5d0fef371573d8c0b463d97cec8d56dbf4ab3654e2ffed55e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe99355e6bac3ebb852e2369a761af4596c47b63ee8fcfaaa32471d6ab9c92b5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "4b201ae492be612de904279030b5734329ee9228a9042a803b8cfbc0188ade35"
+    sha256 cellar: :any_skip_relocation, big_sur:       "2159d18bf0cb1a683195a66a5702dfba66ca6e7c94ab31b759489b668ae9b686"
+    sha256 cellar: :any_skip_relocation, catalina:      "0f65853e220e1e719857dd2c911dc6446275e590d8dc0d0eaf3b07e0efe43c64"
+    sha256 cellar: :any_skip_relocation, mojave:        "2c37267bc2e04584f2003a4dbd1c7c3f283b1ca1f04acee8442b046a25205090"
   end
 
   depends_on "python@3.9"
@@ -64,8 +63,8 @@ class Pdm < Formula
   end
 
   resource "pdm-pep517" do
-    url "https://files.pythonhosted.org/packages/f9/f0/1c92752c5f228d9051e0c770ed807cb86a41cb4a1282a1d5f5dac801536b/pdm-pep517-0.7.1.tar.gz"
-    sha256 "9be35581a4244398d96bb26f972d4a2d90fd753a31af73b10785ad3676d433c8"
+    url "https://files.pythonhosted.org/packages/5b/d1/8195c88dab9fb39199cffce9aa676960081290a2ae08a29773e423ecf9f7/pdm-pep517-0.7.2.tar.gz"
+    sha256 "6808a21d215591b8a855b1a1cf9d49dc742aed5ce872a4c06ca793f0e9a3e1b9"
   end
 
   resource "pep517" do
