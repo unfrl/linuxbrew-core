@@ -7,10 +7,11 @@ class Srt < Formula
   head "https://github.com/Haivision/srt.git"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "5030a6897c290fe9c26bcd06b1033ca4e11b25709057f39060b2f3ad37235bf5"
-    sha256 cellar: :any, big_sur:       "5f8231fcfa94e640638c5a6b38e75630d48338118a578308dea0fa7e0deaadfd"
-    sha256 cellar: :any, catalina:      "1f1cdf82af07c72eeeee3a1ea96f87123f45fff74f6f4615fd491fe15e77f37b"
-    sha256 cellar: :any, mojave:        "37b8bb756634847c6ea8f53a32a61c3228f960e168953f0da646ae462396ca12"
+    sha256 cellar: :any,                 arm64_big_sur: "5030a6897c290fe9c26bcd06b1033ca4e11b25709057f39060b2f3ad37235bf5"
+    sha256 cellar: :any,                 big_sur:       "5f8231fcfa94e640638c5a6b38e75630d48338118a578308dea0fa7e0deaadfd"
+    sha256 cellar: :any,                 catalina:      "1f1cdf82af07c72eeeee3a1ea96f87123f45fff74f6f4615fd491fe15e77f37b"
+    sha256 cellar: :any,                 mojave:        "37b8bb756634847c6ea8f53a32a61c3228f960e168953f0da646ae462396ca12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f38b65414d1f81912969e88daa7ee22ef7ebc5f1bb4236fe9d94dc5426eb94e8"
   end
 
   depends_on "cmake" => :build
