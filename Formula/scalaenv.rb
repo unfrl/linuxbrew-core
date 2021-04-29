@@ -6,6 +6,10 @@ class Scalaenv < Formula
   license "MIT"
   head "https://github.com/scalaenv/scalaenv.git"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "20e50744ac8ab899eba17e0fc2c00a2675aaca70d8610ed9403787e06375cb89"
+  end
+
   def install
     inreplace "libexec/scalaenv", "/usr/local", HOMEBREW_PREFIX
     prefix.install "bin", "completions", "libexec"
