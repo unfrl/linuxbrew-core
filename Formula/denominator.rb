@@ -5,6 +5,10 @@ class Denominator < Formula
   sha256 "f2d09aaebb63ccb348dcba3a5cc3e94a42b0eae49e90ac0ec2b0a14adfbe5254"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ab2b8c29931276ee2c497d742ac3c70f77de6a939118596369fc267236b6b82d"
+  end
+
   depends_on "openjdk"
 
   def install
