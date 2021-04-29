@@ -6,6 +6,10 @@ class Sbtenv < Formula
   license "MIT"
   head "https://github.com/sbtenv/sbtenv.git"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0fd1a251e65cebbc40c6c4b901889f81963d24d3baf58d84c31f77d6ea6f74d1"
+  end
+
   def install
     inreplace "libexec/sbtenv", "/usr/local", HOMEBREW_PREFIX
     prefix.install "bin", "completions", "libexec"
