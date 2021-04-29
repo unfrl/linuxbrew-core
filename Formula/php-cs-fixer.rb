@@ -5,6 +5,10 @@ class PhpCsFixer < Formula
   sha256 "f74b385d358aa2d81b4e2f8cc7ede697b36a0d83b7c62231cb653fa98c6d4411"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7ca0743816ebd6ecab8cd88705736e5894ff5967a35c7b0990156465a583edfa"
+  end
+
   depends_on "php" if MacOS.version <= :el_capitan
 
   def install
