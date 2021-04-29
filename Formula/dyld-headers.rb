@@ -10,6 +10,10 @@ class DyldHeaders < Formula
     regex(/href=.*?dyld[._-]v?(\d+(?:\.\d+)*)\.t/i)
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f3c9a81c4d977c1dbaf3c49cf35ea700861f7ce2c730755b7e9e64b118671bda"
+  end
+
   keg_only :provided_by_macos
 
   def install
