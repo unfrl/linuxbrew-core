@@ -14,6 +14,7 @@ class Artifactory < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "1e63e1246239ddcbc0ad1120731b0631d03fab85a546457de4003036a2cb38bf"
     sha256 cellar: :any_skip_relocation, catalina:      "1e63e1246239ddcbc0ad1120731b0631d03fab85a546457de4003036a2cb38bf"
     sha256 cellar: :any_skip_relocation, mojave:        "1e63e1246239ddcbc0ad1120731b0631d03fab85a546457de4003036a2cb38bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "125b854f5e85c2789906ab5d79d5b869386fbac1f7652a276b71ded845b8c408"
   end
 
   depends_on "openjdk"
