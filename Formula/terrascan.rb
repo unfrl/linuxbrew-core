@@ -1,20 +1,25 @@
 class Terrascan < Formula
   desc "Detect compliance and security violations across Infrastructure as Code"
   homepage "https://www.accurics.com/products/terrascan/"
-  url "https://github.com/accurics/terrascan/archive/v1.5.0.tar.gz"
-  sha256 "e969960d9748e50125359097f5004c34ccf72e638dd06d10204a62468d57b260"
+  url "https://github.com/accurics/terrascan/archive/v1.5.1.tar.gz"
+  sha256 "0ef2490c711fc089e05a926ba1935be62f60bd20b7226906e207382aaae48f84"
   license "Apache-2.0"
   head "https://github.com/accurics/terrascan.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "aea4fc921a9bc17806e65a39dacdd9547658eb961db1f1ef0ffef2983583b74a"
-    sha256 cellar: :any_skip_relocation, big_sur:       "e17888a492ace8be4e980409ed5c1fbef37f0487c95aeb95a4c3b37d04dbaa8d"
-    sha256 cellar: :any_skip_relocation, catalina:      "a00587f2b704c07f60cc87f1c177806998ed4019b1358866df18731095cf7dd0"
-    sha256 cellar: :any_skip_relocation, mojave:        "9a6b700d6bb49bc1b95e31f2eadfedd37edb574ce2933e935a2ae902c9bf9b90"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7013c13c40022cd2490c5649c3ec649553e27bfbf24e4fbe3382bb1dd123b7c5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "420232aa61cfa954e467fe5eb7a666a8f9c3758600ec635daf3d89126ea4c9ce"
+    sha256 cellar: :any_skip_relocation, big_sur:       "3258a5aa80903392c95fc08ddf1f78e0a785b7800777e4de1df76d6e139af1cb"
+    sha256 cellar: :any_skip_relocation, catalina:      "68b802211d0c7bec0def0c699d9960ea51d93ae1bc3248b3d40aab633fc510f6"
+    sha256 cellar: :any_skip_relocation, mojave:        "f0082583149595cee580f8d7af1b33006ce5579073e552ed9e18dfd5f9caab21"
   end
 
   depends_on "go" => :build
+
+  # Fixes version, remove in next release.
+  patch do
+    url "https://github.com/accurics/terrascan/commit/d8fd9c4bae5b12ffbe8d7c7e1a1d67042dfd8edf.patch?full_index=1"
+    sha256 "994c4bc35899286edf48baad868b7482e5dc1090ad8a7dceffe25e4df438ca2f"
+  end
 
   def install
     system "go", "build", *std_go_args, "./cmd/terrascan"
