@@ -8,6 +8,7 @@ class DiffSoFancy < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e93e7878b60a2a30e8c699caedb06e79c9a623c7f30de1e3a49277b51377bf0f"
   end
 
   def install
