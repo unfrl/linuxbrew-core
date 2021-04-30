@@ -17,6 +17,7 @@ class Php < Formula
     sha256 big_sur:       "da91618f65be4c02a5eeb67192fa8d5b6f82c0013a359e0457deec895fec0484"
     sha256 catalina:      "f3c7e464814494bd755cdbe4597b53b90079120b42522eeacbfc3610e9754742"
     sha256 mojave:        "d6679ec069a0cdcb04b60ac95abd0e9db7897dd1ef6128ee44a2f9325e704ab7"
+    sha256 x86_64_linux:  "22224d6c87501194c0a9c6a64fc2f536023b268274279885e527613fd7ecc1a8"
   end
 
   head do
