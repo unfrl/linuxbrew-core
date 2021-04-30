@@ -11,6 +11,7 @@ class CargoWatch < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "2f4b3b4410a34806cd66b552d867ab34a4e7b1d5f0c9228952f934b6c757a224"
     sha256 cellar: :any_skip_relocation, catalina:      "5ff7e7f551f2920cd801d7dc61d19bcf17e547699130a631728112f680f2c72b"
     sha256 cellar: :any_skip_relocation, mojave:        "60941d8cdb17a93935050a4bbfe5142314a4958af1d871abb8b33445374a8af4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c7de9a074f88b31b88199b6d79db02259bc98ffafa89941db630aa7961617d2"
   end
 
   depends_on "rust" => :build
