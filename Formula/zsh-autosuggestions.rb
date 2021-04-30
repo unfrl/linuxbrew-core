@@ -7,6 +7,7 @@ class ZshAutosuggestions < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c606901742fdb8b6124897a896573484f28acb8cc3ab2e440bccfed3e305b9ab"
   end
 
   uses_from_macos "zsh" => :test
