@@ -11,10 +11,11 @@ class Less < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "9e0c12d3d5fb90f1b8c6019640952850d46a67b4fbe6a97fd588c8a33e8257f7"
-    sha256 cellar: :any, big_sur:       "25c7f4a05a8c1796a2e5852af187d6fed214a4eebdf208cddf10943d9304128c"
-    sha256 cellar: :any, catalina:      "ec99b4636cf2cf7be091512342b4d4814d1c7aaf77dc06847b0faf93c614a3e2"
-    sha256 cellar: :any, mojave:        "c9beae597064d6622349a334f164b02522f25535ccb3969349d18d60c1252032"
+    sha256 cellar: :any,                 arm64_big_sur: "9e0c12d3d5fb90f1b8c6019640952850d46a67b4fbe6a97fd588c8a33e8257f7"
+    sha256 cellar: :any,                 big_sur:       "25c7f4a05a8c1796a2e5852af187d6fed214a4eebdf208cddf10943d9304128c"
+    sha256 cellar: :any,                 catalina:      "ec99b4636cf2cf7be091512342b4d4814d1c7aaf77dc06847b0faf93c614a3e2"
+    sha256 cellar: :any,                 mojave:        "c9beae597064d6622349a334f164b02522f25535ccb3969349d18d60c1252032"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aebeb7fcc64d2dc08bf748a48c89c6f3e3427702104d1687fde314578d2b9348"
   end
 
   head do
