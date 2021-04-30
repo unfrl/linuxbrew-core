@@ -15,6 +15,7 @@ class Nano < Formula
     sha256 big_sur:       "23f59d57b904ceba9f709fa3fb25c18891d9a6091e8fd411a8a6a3b84a138955"
     sha256 catalina:      "12483c78e4b66e8fa3b5c9983acf73aa162d6004dacf027823a22a362d9e8210"
     sha256 mojave:        "1f76378ae998b1541c336611a0e1064d98a7028c407f46a0f4e00547fe98ad1a"
+    sha256 x86_64_linux:  "91cbc11cb8e317bd97f213e66d9f659f664b723c344dbebaf6bce4c1ae519a58"
   end
 
   depends_on "pkg-config" => :build
