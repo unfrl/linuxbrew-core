@@ -11,6 +11,7 @@ class Gostatic < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "c4f7345456e442572d53bced745c05084fbe9f8d014b2fbbc00052e3b86f362c"
     sha256 cellar: :any_skip_relocation, catalina:      "c6a00510ee9980c98130a84a2fc97884eeef52a1c8d729855661dae7ed798fbf"
     sha256 cellar: :any_skip_relocation, mojave:        "b9be489a7adcc1e9f45cf5ce224f7ed981dcaa95fd445a84dce9bb22a7f06188"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce2f6930c77536faca1d88ffe3c0d35cfb3592fff51a70ec7ba216cd14834069"
   end
 
   depends_on "go" => :build
