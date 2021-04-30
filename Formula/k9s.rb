@@ -12,6 +12,7 @@ class K9s < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "cdf4f0f9efd1195dc7775c51645f145f3d63c05e2993048777544307b4b5315d"
     sha256 cellar: :any_skip_relocation, catalina:      "f2b2a0077a8448cd0fad2e51b6538663f50cf91a16139ec6d3e61570b64dbcf0"
     sha256 cellar: :any_skip_relocation, mojave:        "6d9d395dc4fb4f3c4e85e93863f0f0ddf6527e4e3165da71f7136200005c5de3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e252a636251902d96a6675174d53722a51fc81d8c39ce32cae545ddfd6350191"
   end
 
   depends_on "go" => :build
