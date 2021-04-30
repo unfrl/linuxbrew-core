@@ -11,6 +11,7 @@ class Sbcl < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "019e21e1de33d751ccc8c1dd6e5dd7cd161d22016fce2624083ef3833189f8bf"
     sha256 cellar: :any_skip_relocation, catalina:      "ed4fdc4198a634f1d15e1887304a08faa2a1f515b5f8bcf91885f6c8f5854b20"
     sha256 cellar: :any_skip_relocation, mojave:        "1259d3e38d595738ef04bbd9ddbd6fd6adb3d002316bc5c540ff05568e2fa23b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "997718e1242a4fa6cc83464ac4ca6ecbc7dff0e50f39086b4015a51452edaca3"
   end
 
   depends_on "ecl" => :build
