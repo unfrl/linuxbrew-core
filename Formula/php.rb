@@ -2,11 +2,10 @@ class Php < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-8.0.3.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.0.3.tar.xz"
-  sha256 "c9816aa9745a9695672951eaff3a35ca5eddcb9cacf87a4f04b9fb1169010251"
+  url "https://www.php.net/distributions/php-8.0.5.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.0.5.tar.xz"
+  sha256 "5dd358b35ecd5890a4f09fb68035a72fe6b45d3ead6999ea95981a107fd1f2ab"
   license "PHP-3.01"
-  revision 1
 
   livecheck do
     url "https://www.php.net/releases/feed.php"
@@ -14,11 +13,10 @@ class Php < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "4f8a860f38f3716ada5731cf61b83aaee37fd4b77c573d6f4f9ac3bb372b0d59"
-    sha256 big_sur:       "4b2596b7c8e0fea52fef4426a5c41f295203893ac78d0dda6c805d20f17fc4df"
-    sha256 catalina:      "053a0f4b057077525cb0c20e3a6eae9c5f7fdb0b31b907be4beb3bbc580f65b8"
-    sha256 mojave:        "5ff80fa0d79fff9619296e5994bd12113503eaa3da786076e64e0c3976484228"
-    sha256 x86_64_linux:  "adee22f08a3afe994bc55e9e43f071a77d2f8c153a85d7cb5eb803ef6c1b1fc2"
+    sha256 arm64_big_sur: "5156006b3369b24a12fa225c96c83e05ac75bbb06f2ca62224f227fbd95670ea"
+    sha256 big_sur:       "da91618f65be4c02a5eeb67192fa8d5b6f82c0013a359e0457deec895fec0484"
+    sha256 catalina:      "f3c7e464814494bd755cdbe4597b53b90079120b42522eeacbfc3610e9754742"
+    sha256 mojave:        "d6679ec069a0cdcb04b60ac95abd0e9db7897dd1ef6128ee44a2f9325e704ab7"
   end
 
   head do

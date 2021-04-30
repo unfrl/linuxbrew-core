@@ -1,17 +1,16 @@
 class Pipx < Formula
   desc "Execute binaries from Python packages in isolated environments"
   homepage "https://github.com/pipxproject/pipx"
-  url "https://files.pythonhosted.org/packages/66/44/7a0e6aeb66e762dd3bced7cd057f8f480d9da116d1ddbc3fb87df81b428c/pipx-0.16.2.0.tar.gz"
-  sha256 "5611b616d1180b2005294751d3e3d77e6ec9ea54316a4d91a3af171523515b47"
+  url "https://files.pythonhosted.org/packages/92/09/c4afd1d89677871c3a69657b9aa34c12328b2fb409b068e3933a6e8c2fa4/pipx-0.16.2.1.tar.gz"
+  sha256 "805319eab100c0c36e349b76103bbe903445229a60ebb0010d7cf7590ff5ba20"
   license "MIT"
   head "https://github.com/pipxproject/pipx.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "d0045da26b800ce84d31bc11d4952c53da777eaa821e06d8ebf9ce1be735cfbb"
-    sha256 cellar: :any_skip_relocation, big_sur:       "510c1ea189d33edc1cd95e38607a93b8d9abfb4cf24da84796ea97e3d20b561d"
-    sha256 cellar: :any_skip_relocation, catalina:      "510c1ea189d33edc1cd95e38607a93b8d9abfb4cf24da84796ea97e3d20b561d"
-    sha256 cellar: :any_skip_relocation, mojave:        "510c1ea189d33edc1cd95e38607a93b8d9abfb4cf24da84796ea97e3d20b561d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b1f742e3e97053b6c1edc3e7c0ee1da0982fbe49b36c5636982d2c7adf8d283"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "a6dde65154b456011d4157a3dded90f118266af5f1447a1601044d219706e164"
+    sha256 cellar: :any_skip_relocation, big_sur:       "61219c287997023648711a74f6a88ed74cc8696a5a8cdca4db23ab9c4c0c51cb"
+    sha256 cellar: :any_skip_relocation, catalina:      "61219c287997023648711a74f6a88ed74cc8696a5a8cdca4db23ab9c4c0c51cb"
+    sha256 cellar: :any_skip_relocation, mojave:        "61219c287997023648711a74f6a88ed74cc8696a5a8cdca4db23ab9c4c0c51cb"
   end
 
   depends_on "python@3.9"

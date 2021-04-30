@@ -6,6 +6,10 @@ class SpeedtestCli < Formula
   license "Apache-2.0"
   head "https://github.com/sivel/speedtest-cli.git"
 
+  bottle do
+    rebuild 1
+  end
+
   def install
     bin.install "speedtest.py" => "speedtest"
     bin.install_symlink "speedtest" => "speedtest-cli"

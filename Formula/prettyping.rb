@@ -6,8 +6,7 @@ class Prettyping < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "cc8b3eba4bddc356a59dfa61808e48e779ae75a072139607b390270c30071df5"
-    sha256 cellar: :any_skip_relocation, all:          "dec25756805667628569cdf587abe895d0dbe1882b8a0eb9bf797a33953d5eaa"
+    rebuild 1
   end
 
   # Fixes IPv6 handling on BSD/OSX:

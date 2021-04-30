@@ -1,17 +1,16 @@
 class Terracognita < Formula
   desc "Reads from existing Cloud Providers and generates Terraform code"
   homepage "https://github.com/cycloidio/terracognita"
-  url "https://github.com/cycloidio/terracognita/archive/v0.6.3.tar.gz"
-  sha256 "505ec50d30fda5d20ce2c67a4340480997df78376f427aa28f7a352fbd7c4400"
+  url "https://github.com/cycloidio/terracognita/archive/v0.6.4.tar.gz"
+  sha256 "b9282055bf2235e0f8b9fbc1ae31c22909986ee3b3df5cc64e644b34f6513485"
   license "MIT"
   head "https://github.com/cycloidio/terracognita.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "8bcd4362188f72c3de80afefa3d8eb07ce32cc31270afebc6d0e379a6e8c750f"
-    sha256 cellar: :any_skip_relocation, big_sur:       "e0fa9596e95a1fd5b7fad0eec6efc77279e34359fd5c13851945f5e8cf789258"
-    sha256 cellar: :any_skip_relocation, catalina:      "b8578fa3b4d8e146e82ff3f4c5a033c980ba5e72c63f2558ee530d1fe6c32387"
-    sha256 cellar: :any_skip_relocation, mojave:        "da3ad7e032bfba9ef62a22cfbeafd978a98c853ec38ed228498c9605297276b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd6a85a3532ee36527c7c92214dd235f91b750d42ec4b2a8145d6317ab4cb127"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "2cafed794c34f72a5e390a1bdf821798d33c55c567c6b4fa1348d800f3584711"
+    sha256 cellar: :any_skip_relocation, big_sur:       "7cf78bf712f39334a49d05faed61c57c5ae431b2da03e2978462c51c6108133a"
+    sha256 cellar: :any_skip_relocation, catalina:      "ebe755ce13ebff04cacce0edf79b3af170c490c53265ef2fd3ef0ac87a3359da"
+    sha256 cellar: :any_skip_relocation, mojave:        "2b38f5cdbd101cc038bfc6ec0570c9b989ae358e7ed604134e9bd41a8155b275"
   end
 
   depends_on "go" => :build
