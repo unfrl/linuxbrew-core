@@ -1,8 +1,8 @@
 class Less < Formula
   desc "Pager program similar to more"
   homepage "https://www.greenwoodsoftware.com/less/index.html"
-  url "https://www.greenwoodsoftware.com/less/less-581.tar.gz"
-  sha256 "1d077f83fe7867e0ecfd278eab3122326b21c22c9161366189c38e09b96a2c65"
+  url "https://www.greenwoodsoftware.com/less/less-581.2.tar.gz"
+  sha256 "ce34b47caf20a99740672bf560fc48d5d663c5e78e67bc254e616b9537d5d83b"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,11 +11,10 @@ class Less < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "95b4a2d6ccbcadca7bb39d9b86997d92945c56d7ba421ba5a24fad5e456aa012"
-    sha256 cellar: :any,                 big_sur:       "2732e9582beafecf6084067ec39d547e2c6259dee8884c6dbb0ab083a9d32168"
-    sha256 cellar: :any,                 catalina:      "908e9936ade67b803ba14ab6c85ffae16a804baae405ffcf017f327828c8d096"
-    sha256 cellar: :any,                 mojave:        "55c3665b219f38f3a4bea7be9961d6c13e513cebd935408fda11bd6d84582b74"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3099fcbd5f69b18915aafa8ea9f0e726311d7348916cad48555993c8ac315e8"
+    sha256 cellar: :any, arm64_big_sur: "9e0c12d3d5fb90f1b8c6019640952850d46a67b4fbe6a97fd588c8a33e8257f7"
+    sha256 cellar: :any, big_sur:       "25c7f4a05a8c1796a2e5852af187d6fed214a4eebdf208cddf10943d9304128c"
+    sha256 cellar: :any, catalina:      "ec99b4636cf2cf7be091512342b4d4814d1c7aaf77dc06847b0faf93c614a3e2"
+    sha256 cellar: :any, mojave:        "c9beae597064d6622349a334f164b02522f25535ccb3969349d18d60c1252032"
   end
 
   head do
