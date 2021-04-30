@@ -10,6 +10,7 @@ class Thanos < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "6f69fdf0ea0124baa7a4a77b0f8e0895a2b81a997b02310ff5ccef87e919a143"
     sha256 cellar: :any_skip_relocation, catalina:      "daf51b90e9db015ffa8e75d24398be7e010919e6cdcee2068de2f67a18647fef"
     sha256 cellar: :any_skip_relocation, mojave:        "f329991480819f9cfcc6886d79b28734c036aedd4726724b667a7dd7edcc49cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb461964860ad5a09da6094cb8b9efbc4297d32957e1093258ad5b3aee5e68bd"
   end
 
   depends_on "go" => :build
