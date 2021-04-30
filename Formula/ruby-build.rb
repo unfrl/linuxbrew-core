@@ -8,6 +8,7 @@ class RubyBuild < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e76df288fbdddd33b607dc8b1c2a5e0901092944974ccd0b6715431ef0d4e1ce"
   end
 
   depends_on "autoconf"
