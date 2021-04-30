@@ -26,6 +26,7 @@ class Bind < Formula
     sha256 big_sur:       "0f2845f4dabf9941aaa6cd7c0dad99e7ac2e59ca7081b4fdd413056b0d69f0dc"
     sha256 catalina:      "036eaa91967bac97fa1dd141404b39f6f209b414bb6d8036fefcf86378637a63"
     sha256 mojave:        "af7ad47045748051e6d747063857c2097306a468af735e1a2498be87b9084bb9"
+    sha256 x86_64_linux:  "55a8d57bfce2d834869359ab5c4e758c28c7034e49a6ce68ce729d418a3669d9"
   end
 
   depends_on "pkg-config" => :build
