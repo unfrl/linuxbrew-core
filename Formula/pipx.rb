@@ -11,6 +11,7 @@ class Pipx < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "61219c287997023648711a74f6a88ed74cc8696a5a8cdca4db23ab9c4c0c51cb"
     sha256 cellar: :any_skip_relocation, catalina:      "61219c287997023648711a74f6a88ed74cc8696a5a8cdca4db23ab9c4c0c51cb"
     sha256 cellar: :any_skip_relocation, mojave:        "61219c287997023648711a74f6a88ed74cc8696a5a8cdca4db23ab9c4c0c51cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28f9e87d7c1c3cf47e84f12d84f509a2fceba1a8896bb6e0352ec7add1015d9d"
   end
 
   depends_on "python@3.9"
