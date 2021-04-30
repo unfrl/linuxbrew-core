@@ -8,6 +8,10 @@ class ApacheFlink < Formula
   license "Apache-2.0"
   head "https://github.com/apache/flink.git"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "357500e8ad9f931b71faa9c8a58b6f605167094138e7ea9b1c0464a4943778df"
+  end
+
   depends_on "openjdk@11"
 
   def install
