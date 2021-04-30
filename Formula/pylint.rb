@@ -3,16 +3,15 @@ class Pylint < Formula
 
   desc "It's not just a linter that annoys you!"
   homepage "https://github.com/PyCQA/pylint"
-  url "https://files.pythonhosted.org/packages/29/c5/6fa87d306b7bf82369fdd8676be017c23b3cd05a4d28e2bbe238e31d762b/pylint-2.8.1.tar.gz"
-  sha256 "ad1bff19c46bfc6d2aeba4de5f76570d253df4915d2043ba61dc6a96233c4bd6"
+  url "https://files.pythonhosted.org/packages/d0/36/1aaf87b263989db93a6c32f1df41bfa3f10f6801c77649cd88e78c99674f/pylint-2.8.2.tar.gz"
+  sha256 "586d8fa9b1891f4b725f587ef267abe2a1bad89d6b184520c7f07a253dd6e217"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "ca58154f827bcaf7eddc3cff366ec4a3a1202cff12c55345665c50007038ccac"
-    sha256 cellar: :any_skip_relocation, big_sur:       "eb04bc360919209ecbd5d75f19f7064a6a412c8fbe96883b3e1ff6ae51dc2538"
-    sha256 cellar: :any_skip_relocation, catalina:      "044b1249dca5bdeb355ee80539c238dde55f14f02f8cf26ae2f86182bfb577a4"
-    sha256 cellar: :any_skip_relocation, mojave:        "6f01f5dfb0c54f85f5e42bef756a506cc45ea9e16fc57b23104eb5f500a9eeff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ccf2c36775470785ed688ff7ec549cb460730395acf4e9e984cecb9902d9a61"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "ba6a5986edb1cb52609313b164c27f13cded2625e0a65a2f280837e276c94e6a"
+    sha256 cellar: :any_skip_relocation, big_sur:       "041a5b2211d40fec0362f6dc62e535665fa632060fd58da7351666207c825293"
+    sha256 cellar: :any_skip_relocation, catalina:      "d6b86f09da743b3126d4128221e9dd46ef8b9704a8d8649fe4aec2bbfe6c6b61"
+    sha256 cellar: :any_skip_relocation, mojave:        "b9439cf43fae088d646e5b478cc22f3ae374d45f50bae09f1b340c6e0466f3be"
   end
 
   depends_on "python@3.9"
