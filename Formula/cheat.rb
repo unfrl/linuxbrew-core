@@ -10,6 +10,7 @@ class Cheat < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "0f6bfd612dd9d9de05ec3ecec8de402383855e1ab8bd10bd26180abc29d39ad6"
     sha256 cellar: :any_skip_relocation, catalina:      "c635e1e6108ac066791cc64e613906729297a85c3326f5dda876c417c3bd5f02"
     sha256 cellar: :any_skip_relocation, mojave:        "14f1f0861484d6a340d79779592ade42f3665aad8843ae14ce8b637a61e2a1bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd3c4b00497df3990005381301d8b9747416f56616802afd6190259d96718f93"
   end
 
   depends_on "go" => :build
