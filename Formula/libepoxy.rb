@@ -13,10 +13,11 @@ class Libepoxy < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "7db980cb3bd2ee6f121cca0d9039965460ed99516fd83bd66beb00a0281f34f1"
-    sha256 cellar: :any, big_sur:       "bbf7d15c4937101479c15e3fcaf5ca9311d4862e2aa26aa69653841f1432ad73"
-    sha256 cellar: :any, catalina:      "634e7833ff644eb9deda3a21a0194b178295d4b120b7f1f7eb6080ddd6325548"
-    sha256 cellar: :any, mojave:        "9b6337f51f9fe1d49b7260f07caee990b1cd7e30c032a41c873eb25d8d1b7751"
+    sha256 cellar: :any,                 arm64_big_sur: "7db980cb3bd2ee6f121cca0d9039965460ed99516fd83bd66beb00a0281f34f1"
+    sha256 cellar: :any,                 big_sur:       "bbf7d15c4937101479c15e3fcaf5ca9311d4862e2aa26aa69653841f1432ad73"
+    sha256 cellar: :any,                 catalina:      "634e7833ff644eb9deda3a21a0194b178295d4b120b7f1f7eb6080ddd6325548"
+    sha256 cellar: :any,                 mojave:        "9b6337f51f9fe1d49b7260f07caee990b1cd7e30c032a41c873eb25d8d1b7751"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9552aae67e1da190feffcbd794d44fd53a733470c8cbb0c81885999d1a2ba29f"
   end
 
   depends_on "meson" => :build
