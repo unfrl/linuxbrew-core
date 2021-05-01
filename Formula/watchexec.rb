@@ -10,6 +10,7 @@ class Watchexec < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "e11ea49833ca78297ead67ae8ff32b2b8023f70d26b589b9070a0b17a5b78be7"
     sha256 cellar: :any_skip_relocation, catalina:      "9111fd6e09f1cd824bd0a8df22b756323d79278f2d7a2afb7533b9cf1899bc5f"
     sha256 cellar: :any_skip_relocation, mojave:        "a34fcc86ceaf575414defd3b8ed169f541f6b2e7335c96c8ff4d4323ba5f3e94"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8d739493c01fbe2addcb0d996c020de6298aecfce99ef49bf4b3ef41a0a0118"
   end
 
   depends_on "rust" => :build
