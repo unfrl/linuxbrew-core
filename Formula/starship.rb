@@ -1,17 +1,16 @@
 class Starship < Formula
   desc "Cross-shell prompt for astronauts"
   homepage "https://starship.rs"
-  url "https://github.com/starship/starship/archive/v0.52.1.tar.gz"
-  sha256 "7fa3fad6940276a62b7c6250be34ba544e37652f9de706b48ddf9bcee74ce3d8"
+  url "https://github.com/starship/starship/archive/v0.53.0.tar.gz"
+  sha256 "42353977aba8cf711591381d713814140d9bb602015e8d6c589ef1a42d116ae1"
   license "ISC"
   head "https://github.com/starship/starship.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "7e9059e8609d78d19775f9264a79adfdd990f514ebea85ca31ae42c5643347dd"
-    sha256 cellar: :any_skip_relocation, big_sur:       "61b425022d3da693df66522872982666925e43619ac464a829545a6fca8cfae2"
-    sha256 cellar: :any_skip_relocation, catalina:      "039a39b47b97f47a0176c0dc0d6ab99333a970cabe514e1a57d81ebbfa8cdb4d"
-    sha256 cellar: :any_skip_relocation, mojave:        "01cccd0f97d5fc9312c357d70a6968c2fabd4f4ea00834bd851d734853dfdb50"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d0e4f9fbe81812755c4f8aa35c85d64607d51569c5a22d08bf0687ab3f36dd1"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "e0869388fe25d181da663363e4cda5085399ba250bf1bd33e9366c0ea40c5e38"
+    sha256 cellar: :any_skip_relocation, big_sur:       "12f1ff2524fb52afc6be976905975d2b684145a1bd65d4802faad10696925a21"
+    sha256 cellar: :any_skip_relocation, catalina:      "af8151d2b68793c7f9b4a65d6acb061444468227148b3e7a9ecb5032b7879dbf"
+    sha256 cellar: :any_skip_relocation, mojave:        "720ff7cd94703500f7f7286ea11e2f38bed529f3545270e280bf277c780fc3bf"
   end
 
   depends_on "rust" => :build
