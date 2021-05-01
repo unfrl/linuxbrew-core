@@ -12,10 +12,11 @@ class Sqlite < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "85e058d256013feea4835f51d9054dd1b8eec435d66ed581c95d161b3152e3b0"
-    sha256 cellar: :any, big_sur:       "801e11dff40b2e7067b8e124d266f82050cbae434447d7fa1ad36888fd8ceec2"
-    sha256 cellar: :any, catalina:      "217e257590018c8e0b2e994f8f8c9fa548459f1532acecf0b229f9885bf0ce22"
-    sha256 cellar: :any, mojave:        "b25dc8abacbef73874c1ee995beff6a0612e2863523913ccb348eda918c3547e"
+    sha256 cellar: :any,                 arm64_big_sur: "85e058d256013feea4835f51d9054dd1b8eec435d66ed581c95d161b3152e3b0"
+    sha256 cellar: :any,                 big_sur:       "801e11dff40b2e7067b8e124d266f82050cbae434447d7fa1ad36888fd8ceec2"
+    sha256 cellar: :any,                 catalina:      "217e257590018c8e0b2e994f8f8c9fa548459f1532acecf0b229f9885bf0ce22"
+    sha256 cellar: :any,                 mojave:        "b25dc8abacbef73874c1ee995beff6a0612e2863523913ccb348eda918c3547e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b1a4c7d1bcde097e2b645bd0c653290ac6202fad8cdb18420b867c465fa0a93"
   end
 
   keg_only :provided_by_macos
