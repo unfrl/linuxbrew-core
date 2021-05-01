@@ -12,6 +12,7 @@ class Cfssl < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "5461bace7b3ba595fca81cd7d2bacb35fe349e1915d04dcfcb18c47e2e6d7c77"
     sha256 cellar: :any_skip_relocation, catalina:      "8da797d63b4ee6f985b0bf1e2b4a44a08fcc4d5c1c4266fca178891c40cec83a"
     sha256 cellar: :any_skip_relocation, mojave:        "9a0553b89f1058f0ede9aef4667fa1527e230a27c0d6e26af01f0b63c9f71409"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5cd6f4b229a4314194d0b422ba946e6651e6b201ccf8a831a778c59117c80626"
   end
 
   depends_on "go" => :build
