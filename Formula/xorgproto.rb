@@ -5,6 +5,10 @@ class Xorgproto < Formula
   sha256 "0f5157030162844b398e7ce69b8bb967c2edb8064b0a9c9bb5517eb621459fbf"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f8a7c3b5c61c48affa144576747aa93a18c49f8b861b782e45aeb643a2708363"
+  end
+
   depends_on "pkg-config" => [:build, :test]
   depends_on "util-macros" => :build
 
