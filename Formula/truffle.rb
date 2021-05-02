@@ -3,15 +3,15 @@ require "language/node"
 class Truffle < Formula
   desc "Development environment, testing framework and asset pipeline for Ethereum"
   homepage "https://trufflesuite.com"
-  url "https://registry.npmjs.org/truffle/-/truffle-5.3.3.tgz"
-  sha256 "f8ac89b0f97ce52ca89f964966aafc8d0dc33b53341f68245bd1a1776f973477"
+  url "https://registry.npmjs.org/truffle/-/truffle-5.3.4.tgz"
+  sha256 "fc8d487ced25d3f094cfad4542e09d64569a6c90c429cc24bf581fae9ad332ca"
   license "MIT"
 
   bottle do
-    sha256 arm64_big_sur: "805e450cc6e60d3a54b9bc7a794c68a89dbc45eb04042025f120dfa7d106e551"
-    sha256 big_sur:       "53913c7ee4d9ee2d7a04bc3bfe2d6638a18e686391defddee4d4fff2053a4017"
-    sha256 catalina:      "627838e27e569740c023bf88d23bb213be3ba42880d8ac304e5087e73b58e776"
-    sha256 mojave:        "911861ad1225f6eb0c04ef03de0879305aba91dd171de39482d79f90517d265a"
+    sha256 arm64_big_sur: "19f88ac63977c5944c34a093fd76be9eef1bca5fc381ddb1fff22b44c6a8d78b"
+    sha256 big_sur:       "c66738affb0e9ad09c6aa998f216126aee666484f2c2fc4d2c64a41c801f602e"
+    sha256 catalina:      "15161fbf118309f1ec0a549135a4708f316f3798c4da69d614d306fb5b01acf0"
+    sha256 mojave:        "2a37d932df68e2424a1755db249bbf912030a68e29e3f7939936ab9da863a93a"
   end
 
   depends_on "node"

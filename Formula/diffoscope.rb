@@ -3,16 +3,15 @@ class Diffoscope < Formula
 
   desc "In-depth comparison of files, archives, and directories"
   homepage "https://diffoscope.org"
-  url "https://files.pythonhosted.org/packages/ab/b9/fdd4e0ed6d4feeb493f2375190b034d1a7b8419f2f98e4002669890a1838/diffoscope-172.tar.gz"
-  sha256 "5ffe7f38555c6409bc7e7edc277ed77dd78641fe1306fc38d153dbbe445ddea4"
+  url "https://files.pythonhosted.org/packages/21/51/7f9948ea65a3fc38ac3a35cac07cb1f14811c37a0a449336a59d98f131c6/diffoscope-173.tar.gz"
+  sha256 "829ac9f3d510c36ca841f89f2bad3bce06d359e47106c43b240d4287dbde999e"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "a5ca1d33d7a040ea6de4c4e08c26497392f5f995a335dfa0ea56e404586313b1"
-    sha256 cellar: :any_skip_relocation, big_sur:       "6e9d7f9bbf6808617e9cfddb43655bbff4de1dffc524ebcb83d50de1b47bbfd0"
-    sha256 cellar: :any_skip_relocation, catalina:      "fd69ac05e2d97e59d924af02d6fcc6cb299c260420d39ce214e63409ad16eb87"
-    sha256 cellar: :any_skip_relocation, mojave:        "31483ab0eb243b19948e87c1a9eaccfd0703887a65eff47e66c26e343c8640e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b69fc477f8bd83abdd680af1fdf7fe86504ad4149658936eafd703fa84e5d42"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "8d811f32eb85b77bf43e360062285165f2b6f35747b12a5f18f79a3fab728773"
+    sha256 cellar: :any_skip_relocation, big_sur:       "d70e145a40e2fa6451949766d00f14bf5d6de9f5f1f75cbe34fd7bf6408728c5"
+    sha256 cellar: :any_skip_relocation, catalina:      "ccda1459dcf1bdabd5db4ad9006cedb207487b19897f179ab398b58c09af1420"
+    sha256 cellar: :any_skip_relocation, mojave:        "20c1b6dc863c0403d701cfee5608b522a93716de243114dbddfa64d6bb45e2a6"
   end
 
   depends_on "libarchive"
@@ -21,8 +20,8 @@ class Diffoscope < Formula
 
   # Use resources from diffoscope[cmdline]
   resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/cb/53/d2e3d11726367351b00c8f078a96dacb7f57aef2aca0d3b6c437afc56b55/argcomplete-1.12.2.tar.gz"
-    sha256 "de0e1282330940d52ea92a80fea2e4b9e0da1932aaa570f84d268939d1897b04"
+    url "https://files.pythonhosted.org/packages/6a/b4/3b1d48b61be122c95f4a770b2f42fc2552857616feba4d51f34611bd1352/argcomplete-1.12.3.tar.gz"
+    sha256 "2c7dbffd8c045ea534921e63b0be6fe65e88599990d8dc408ac8c542b72a5445"
   end
 
   resource "libarchive-c" do
