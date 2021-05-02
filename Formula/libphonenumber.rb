@@ -11,10 +11,11 @@ class Libphonenumber < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "1ec46d2dbc58dd08679e11b72e1a00b7bea1b00c3ad359a6f256dd02798a195b"
-    sha256 cellar: :any, big_sur:       "48e4638d0e4142306a2ce73ecbbcd0e89911fdaac588a985aee75f3f922ef94b"
-    sha256 cellar: :any, catalina:      "8238631ca23b4a5c7d81e12de828824c389643fd4da506f58ff2d1236da17cec"
-    sha256 cellar: :any, mojave:        "6e12debcc4ab0ebb262243bf3dedcae8d45c7c3e0d54e535b813a9ec9e328e61"
+    sha256 cellar: :any,                 arm64_big_sur: "1ec46d2dbc58dd08679e11b72e1a00b7bea1b00c3ad359a6f256dd02798a195b"
+    sha256 cellar: :any,                 big_sur:       "48e4638d0e4142306a2ce73ecbbcd0e89911fdaac588a985aee75f3f922ef94b"
+    sha256 cellar: :any,                 catalina:      "8238631ca23b4a5c7d81e12de828824c389643fd4da506f58ff2d1236da17cec"
+    sha256 cellar: :any,                 mojave:        "6e12debcc4ab0ebb262243bf3dedcae8d45c7c3e0d54e535b813a9ec9e328e61"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "640255ee701b9ecfb539dafcf0786e00481d3d969d050df9fefc5b9ca2d92e5a"
   end
 
   depends_on "cmake" => :build
