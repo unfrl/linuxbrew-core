@@ -5,7 +5,7 @@ class Mpich < Formula
   mirror "https://fossies.org/linux/misc/mpich-3.4.1.tar.gz"
   sha256 "8836939804ef6d492bcee7d54abafd6477d2beca247157d92688654d13779727"
   license "mpich2"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://www.mpich.org/static/downloads/"
@@ -13,11 +13,10 @@ class Mpich < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "d57992c74140b8bc0d410bc86a6e67febeb0e6e9805b2ab5608f41f5f26b121b"
-    sha256 cellar: :any,                 big_sur:       "7f970d15db426859aadea466f17549bd4add967ad1082d34fc5844b332b4099e"
-    sha256 cellar: :any,                 catalina:      "823585ee5005dd4c5298524ff8b6950296f3cbcc6a9c6cc53b3e93252185344f"
-    sha256 cellar: :any,                 mojave:        "30ff98a7f4bded67dc55b08ab72a01cac22b747d7b91389d72577a60c4815187"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b7acb3d38fa39d9d2dd94c9fe61a17ad7ecbe2efbbb73b8d5e0c16191cc11e1"
+    sha256 cellar: :any, arm64_big_sur: "f4461de2242f5a61ccc6eaffa8210cbe21b0f968a8b8e055e4c374bdd8909733"
+    sha256 cellar: :any, big_sur:       "b97881007a8fd728faabd6a4e75bed17aa66bb08a6d11ad77c022d476de5a129"
+    sha256 cellar: :any, catalina:      "cc76dc1e731cdf45f74d33ba42bfa9886d7109194898a72ae84b9d72f3450f3f"
+    sha256 cellar: :any, mojave:        "8c8f4b49c0022fa44bac9a54d43947db77824a3f1163aa519f3867ec8c795e8f"
   end
 
   head do
@@ -29,6 +28,17 @@ class Mpich < Formula
   end
 
   depends_on "gcc" # for gfortran
+  depends_on "hwloc"
+
+  on_macos do
+    conflicts_with "libfabric", because: "both install `fabric.h`"
+  end
+
+  on_linux do
+    # Can't be enabled on mac:
+    # https://lists.mpich.org/pipermail/discuss/2021-May/006192.html
+    depends_on "libfabric"
+  end
 
   conflicts_with "open-mpi", because: "both install MPI compiler wrappers"
 
@@ -51,24 +61,33 @@ class Mpich < Formula
       system "./autogen.sh"
     end
 
-    system "./configure", "--disable-dependency-tracking",
-                          "--enable-fast=all,O3",
-                          "--enable-g=dbg",
-                          "--enable-romio",
-                          "--enable-shared",
-                          "--with-pm=hydra",
-                          "FC=gfortran-#{Formula["gcc"].any_installed_version.major}",
-                          "F77=gfortran-#{Formula["gcc"].any_installed_version.major}",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}",
-                          "--mandir=#{man}",
-                          # Flag for compatibility with GCC 10
-                          # https://lists.mpich.org/pipermail/discuss/2020-January/005863.html
-                          "FFLAGS=-fallow-argument-mismatch",
-                          "CXXFLAGS=-Wno-deprecated",
-                          "CFLAGS=-fgnu89-inline -Wno-deprecated",
-                          # Use libfabric https://lists.mpich.org/pipermail/discuss/2021-January/006092.html
-                          *("--with-device=ch4:ofi" unless OS.mac?)
+    args = %W[
+      --disable-dependency-tracking
+      --enable-fast=all,O3
+      --enable-g=dbg
+      --enable-romio
+      --enable-shared
+      --with-pm=hydra
+      FC=gfortran-#{Formula["gcc"].any_installed_version.major}
+      F77=gfortran-#{Formula["gcc"].any_installed_version.major}
+      --disable-silent-rules
+      --prefix=#{prefix}
+      --mandir=#{man}
+    ]
+
+    # Flag for compatibility with GCC 10
+    # https://lists.mpich.org/pipermail/discuss/2020-January/005863.html
+    args << "FFLAGS=-fallow-argument-mismatch"
+    args << "CXXFLAGS=-Wno-deprecated"
+    args << "CFLAGS=-fgnu89-inline -Wno-deprecated"
+
+    on_linux do
+      # Use libfabric https://lists.mpich.org/pipermail/discuss/2021-January/006092.html
+      args << "--with-device=ch4:ofi"
+      args << "--with-libfabric=#{Formula["libfabric"].opt_prefix}"
+    end
+
+    system "./configure", *args
 
     system "make"
     system "make", "install"
