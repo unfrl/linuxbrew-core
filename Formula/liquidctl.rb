@@ -3,16 +3,16 @@ class Liquidctl < Formula
 
   desc "Cross-platform tool and drivers for liquid coolers and other devices"
   homepage "https://github.com/jonasmalacofilho/liquidctl"
-  url "https://files.pythonhosted.org/packages/f1/47/fcdf947dc9edfce97bf2d91cbbe2b6b1cd979d8dbbae76e4d1b7a59a0793/liquidctl-1.6.0.tar.gz"
-  sha256 "486dc366f10810a4efb301f3ceda10657a09937e9bc936cecec792ac26c2f186"
+  url "https://files.pythonhosted.org/packages/8b/aa/fe1e38a2092a674e80def5dcde1d54ae41da7b9424d143f35b1179e9faa1/liquidctl-1.6.1.tar.gz"
+  sha256 "e3b6aa5ae55204f8d9a8813105269df7dc8f80087670e3eac88b722949b3843f"
   license "GPL-3.0-or-later"
   head "https://github.com/jonasmalacofilho/liquidctl.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "1315e79c53a304bfa0a70b821a306514e0384cfc2f805b5e50a26f5cf761f681"
-    sha256 cellar: :any_skip_relocation, big_sur:       "9a492ffb64e8a73fbb7023faa558d02a42c6e3628a5ba614d3667e51360a2c68"
-    sha256 cellar: :any_skip_relocation, catalina:      "675bd06ba716721b66af2595ce69a65a2c07e4a3e4f9c462c39c7e8f56d4ee22"
-    sha256 cellar: :any_skip_relocation, mojave:        "a019c0ce844ed6788f8101afd26283b8c3f9e221441af559c481af4103a30cc6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "756b2b32a0e6440ef2fb75ac6273c1211960fb132d4a0afc062ef4c41fea5411"
+    sha256 cellar: :any_skip_relocation, big_sur:       "63068884b025d541321ad4e7a35e06547b700a1b687fb0e81a347fdf20759f0e"
+    sha256 cellar: :any_skip_relocation, catalina:      "8b736b2048c0732d0777238ba4a34135906a3d50c9a5018dc292fea77857ab59"
+    sha256 cellar: :any_skip_relocation, mojave:        "cd4a4c709d22b120df4c2ef1206ebd84cbc1c268fb20f0e5bccee59f7a9c3161"
   end
 
   depends_on "libusb"

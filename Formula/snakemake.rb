@@ -3,17 +3,16 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/85/31/ce328a6f1552e115495462090b4db704d657cc45c5375dae9798d3bc0d2d/snakemake-6.2.1.tar.gz"
-  sha256 "cbb7688aee07a7e9a223a3b05bc9425d6245f8ad0990fc3c623e6645b02f310c"
+  url "https://files.pythonhosted.org/packages/70/51/b444f00d922f6fa02cdb21f74ff51b1a499aec0c62cdd6ebfce155abc0cf/snakemake-6.3.0.tar.gz"
+  sha256 "eb6a59c7cfe847333d792fad8ef04a478bed8f2184f0f447c011b15dfbc20a49"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "7bd1ad56cafd5bd535a8cadfa9118e71b9b361b84932f3ea72d494848328b10a"
-    sha256 cellar: :any_skip_relocation, big_sur:       "314e8eef6f66e967ebbb311e536f1cf4c4f300941d084ef7bc1afc7882f19d41"
-    sha256 cellar: :any_skip_relocation, catalina:      "92387970225bf4a2348f4964c82354b327399c246e42b5cc0f370a48b0348dad"
-    sha256 cellar: :any_skip_relocation, mojave:        "1999dc03f02e2309d71fbf7d66bf475eddde376ea1c9e1f7b0e309799abfb2ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "195014e69d096adaae8f205dd5e74efa72e2def4bf345db07b5d4f261061a285"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "12f127f199c666ca8929a9d4984d7c38318ca1de664cb71257fb49a9388e24a8"
+    sha256 cellar: :any_skip_relocation, big_sur:       "ba753729d9dc2b106daa822ea6eeb4c8236199dec88d00005b91b07729ea3171"
+    sha256 cellar: :any_skip_relocation, catalina:      "3da7d47d5a3eae12b86d5f8fdbfb99baa5463e0776246d8c2479eb8c2ed8388c"
+    sha256 cellar: :any_skip_relocation, mojave:        "003449388611689b46fa8ab2ca7bc696afaa2e237f1d9ff455dd1daa5deceafd"
   end
 
   depends_on "cbc"
@@ -165,8 +164,8 @@ class Snakemake < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/16/06/0f7367eafb692f73158e5c5cbca1aec798cdf78be5167f6415dd4205fa32/typing_extensions-3.7.4.3.tar.gz"
-    sha256 "99d4073b617d30288f569d3f13d2bd7548c3a7e4c8de87db09a9d29bb3a4a60c"
+    url "https://files.pythonhosted.org/packages/aa/55/62e2d4934c282a60b4243a950c9dbfa01ae7cac0e8d6c0b5315b87432c81/typing_extensions-3.10.0.0.tar.gz"
+    sha256 "50b6f157849174217d0656f99dc82fe932884fb250826c18350e159ec6cdf342"
   end
 
   resource "urllib3" do

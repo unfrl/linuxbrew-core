@@ -3,16 +3,15 @@ class Twarc < Formula
 
   desc "Command-line tool and Python library for archiving Twitter JSON"
   homepage "https://github.com/DocNow/twarc"
-  url "https://files.pythonhosted.org/packages/7b/bd/7b73c30c9ad77dfbf326752a9ded35ad8096cd21e3d445a2f358a4c62dc3/twarc-2.0.8.tar.gz"
-  sha256 "1400bf6e5ce594be9163e7404417e124921b2d8fe77d9b4ce7ce3c2ac35f4e62"
+  url "https://files.pythonhosted.org/packages/52/21/f6ecb251296e914b3c48303f7d03366f673ba48678e992accd911599cd9b/twarc-2.0.12.tar.gz"
+  sha256 "6f9bdfda5ce9263be3233dc9d15b053e7683832a8f42db55277a387b375da2be"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "5ffe9772f70f91575968dd3800d39abeb7aa9f29213e24ff474a152dbdd851d8"
-    sha256 cellar: :any_skip_relocation, big_sur:       "029acc4b8e52bf412d7ae8f8e4ad0b9e8b063f4dd6c55e86bfb8ff7a06942528"
-    sha256 cellar: :any_skip_relocation, catalina:      "53abdb9eb19afc5472cc1046b3390a09c0a87da6b85a0581094751e3c0d58d69"
-    sha256 cellar: :any_skip_relocation, mojave:        "3ee20731fd1c4740d5c6a2bd677410dba6b1a9897c9fc2bd4c62c379a62c5234"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37d46df4e28e73f82a204970ffb3b98595e4145e7923bb9553d426d9bb5237fa"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "5a40982cc82ae307ab6cd2923d87e8b7182973b9cd6128fc979cb9a67aa5965f"
+    sha256 cellar: :any_skip_relocation, big_sur:       "97c76441541a2b6304c1c9dbd6466eb17f58a613887dd55c8a1c3c0dc3cc6747"
+    sha256 cellar: :any_skip_relocation, catalina:      "c6a68c00ff72d9c3955edff7152bc7bf560e5a0941f425b1f79620eadab97080"
+    sha256 cellar: :any_skip_relocation, mojave:        "f0997ead866dc38e1fcfb1bd86d19e8dc0e078c798de1331fa1376b22563eed6"
   end
 
   depends_on "python@3.9"
