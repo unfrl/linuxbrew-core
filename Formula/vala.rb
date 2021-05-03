@@ -10,6 +10,7 @@ class Vala < Formula
     sha256 big_sur:       "5ccb07c2adb88e1dd744fd73be423e594ecf22c0767c2d3f7277ee3d4917f513"
     sha256 catalina:      "550e6d05e894e564ea38204a5b5e89a3a7b33cfea89b12db24a88ca38e9827e1"
     sha256 mojave:        "ed18ebc142d30bfab9bf5c6cdd1d3a814d7e7795d0e857c6be9bd241aa11a44a"
+    sha256 x86_64_linux:  "c70ff73c0a78e8169f8cdcf89cf0a9f9c7726d294ab4d64c7343aab62738712e"
   end
 
   depends_on "gettext"
