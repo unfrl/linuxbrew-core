@@ -24,6 +24,10 @@ class Pinentry < Formula
   depends_on "libgpg-error"
   depends_on "libsecret" unless OS.mac?
 
+  on_linux do
+    depends_on "libsecret"
+  end
+
   def install
     args = %W[
       --disable-dependency-tracking

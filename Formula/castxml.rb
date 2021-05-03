@@ -20,7 +20,9 @@ class Castxml < Formula
   depends_on "cmake" => :build
   depends_on "llvm"
 
-  depends_on "gcc" unless OS.mac?
+  on_linux do
+    depends_on "gcc"
+  end
 
   fails_with gcc: "5"
 
