@@ -6,10 +6,11 @@ class Libass < Formula
   license "ISC"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "6eb8abbcbba5ca09e35b9ff4c6fac078fbef383392677f42cc28ef735188165c"
-    sha256 cellar: :any, big_sur:       "4545a55482e45e533c212e57c8a14660c547456072d68c2d2ed13c819f1300c5"
-    sha256 cellar: :any, catalina:      "814ec97150e4fc19142f50a72ad366d6d46857520b20b5d7c20678af440b8dcf"
-    sha256 cellar: :any, mojave:        "5178eda1fef01d6ab29af84953a29f00d13bf6cc1ceec05940da017891628970"
+    sha256 cellar: :any,                 arm64_big_sur: "6eb8abbcbba5ca09e35b9ff4c6fac078fbef383392677f42cc28ef735188165c"
+    sha256 cellar: :any,                 big_sur:       "4545a55482e45e533c212e57c8a14660c547456072d68c2d2ed13c819f1300c5"
+    sha256 cellar: :any,                 catalina:      "814ec97150e4fc19142f50a72ad366d6d46857520b20b5d7c20678af440b8dcf"
+    sha256 cellar: :any,                 mojave:        "5178eda1fef01d6ab29af84953a29f00d13bf6cc1ceec05940da017891628970"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "add7749c74f0c18c52b9c50d3b2a387a844b18ca2f07e7f4527bd3aff9224e58"
   end
 
   head do
