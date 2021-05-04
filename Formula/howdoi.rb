@@ -12,6 +12,7 @@ class Howdoi < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "e4f96d79f2eed73f3531342cfeb7d4bfe914bc5a44966f1c864b984aa14798e5"
     sha256 cellar: :any_skip_relocation, catalina:      "1d5d52a64b54a242e4a7e6223c81e5d7c2a06edb1f136f0fe42fe5b3ecb55d59"
     sha256 cellar: :any_skip_relocation, mojave:        "27e15872f2f1e51ee00a2f72358eea97cb9ac723ac660415b7462d91daaadee7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c52def33c226f02739ee792d4c4ca51be0e759ef1169824584c89234f6e1df8"
   end
 
   depends_on "python@3.9"
