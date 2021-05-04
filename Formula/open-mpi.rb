@@ -16,6 +16,7 @@ class OpenMpi < Formula
     sha256 big_sur:       "6b51e6bf47e0cc347354563337f0d5044d9ada003e8e3f083e4facdd1ae2a5d0"
     sha256 catalina:      "12d84452255bc13ca6071c1b9d08c27097b88c8556bb72ee1d4dfab6fc3eaae3"
     sha256 mojave:        "7238c26d4f8b1a2e943de6dcf587ba2151e667649bd811aa213e9ae64f7ab6c4"
+    sha256 x86_64_linux:  "a98769cb86f8d4eed1af8eeadcb83414fe157b4bdae28e671e491628e6a2b6ee"
   end
 
   head do
