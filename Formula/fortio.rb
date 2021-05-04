@@ -16,6 +16,7 @@ class Fortio < Formula
     sha256 big_sur:       "67f56cedcac8bd88603d650accf0b6acc49649e294828fc7dc65f4b6240e8741"
     sha256 catalina:      "f9b77d3ab6bc25ee84ba90d0ae05f807e3eb2a97f1c982cd091e2b723c514bbd"
     sha256 mojave:        "854b2ccc76f286ee9b9a6edb04d7c24bff9bd7d238004c64d4166ba6cbbea4f6"
+    sha256 x86_64_linux:  "dffda7443b7185da885e5e292cf3bff504e395e6d9b8f11948abfdfcfa90caf5"
   end
 
   depends_on "go" => :build
