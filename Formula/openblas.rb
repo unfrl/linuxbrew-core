@@ -1,22 +1,11 @@
 class Openblas < Formula
   desc "Optimized BLAS library"
   homepage "https://www.openblas.net/"
+  url "https://github.com/xianyi/OpenBLAS/archive/v0.3.15.tar.gz"
+  sha256 "30a99dec977594b387a17f49904523e6bc8dd88bd247266e83485803759e4bbe"
   license "BSD-3-Clause"
   revision 1 unless OS.mac?
   head "https://github.com/xianyi/OpenBLAS.git", branch: "develop"
-
-  # Remove stable block at version bump
-  stable do
-    url "https://github.com/xianyi/OpenBLAS/archive/v0.3.13.tar.gz"
-    sha256 "79197543b17cc314b7e43f7a33148c308b0807cd6381ee77f77e15acf3e6459e"
-
-    # Build script fix. Remove at version bump.
-    # https://github.com/xianyi/OpenBLAS/pull/3038
-    patch do
-      url "https://github.com/xianyi/OpenBLAS/commit/00ce35336ee1eb1089f30d1e117a8a6a933f9654.patch?full_index=1"
-      sha256 "555e3a8ab042bef2320549db2bad57249d9cf351a6f28e82d6ba53f008920465"
-    end
-  end
 
   livecheck do
     url :stable
@@ -24,11 +13,10 @@ class Openblas < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "9ac956e8d8704e272b0cf2ddc83c8fd6a78e04fd46b10b5be778d83a6ef24c06"
-    sha256 cellar: :any,                 big_sur:       "daa8f1e3c94b3dff6a696886e92dd4edcdef12c2d4c68a689c16697ac4590692"
-    sha256 cellar: :any,                 catalina:      "71191dd65059b73a8dffea7f55c06a3bcaefa27cf0946116f63efd6f976ee9fd"
-    sha256 cellar: :any,                 mojave:        "10012e1adcafdf18ac06f457c6069805266301879a42453ec0587ffe9647c751"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0709299e2c031af372db00df8db4581291cf07acaeb5426222456460f255b4b"
+    sha256 cellar: :any, arm64_big_sur: "f7eaeb832b3d1e5438e57fe567862aab8d8e79e767db194d90ccf93687ecac78"
+    sha256 cellar: :any, big_sur:       "12bf96c63f88eb14e560a3985f9688be855286a2d55fdacdd33fdcb7330706d8"
+    sha256 cellar: :any, catalina:      "bb7cdf02a9ae5795c2cd2795021f5902fea6a29f8434dd9b1126fcb37308ec0a"
+    sha256 cellar: :any, mojave:        "36240e1d6e802b2353e28bb770f1a48f821498e3695b15a3fb25d6db3d12a165"
   end
 
   keg_only :shadowed_by_macos, "macOS provides BLAS in Accelerate.framework"
