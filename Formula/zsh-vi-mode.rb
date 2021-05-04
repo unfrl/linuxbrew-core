@@ -6,10 +6,6 @@ class ZshViMode < Formula
   license "MIT"
   head "https://github.com/jeffreytse/zsh-vi-mode.git"
 
-  bottle do
-    sha256 cellar: :any_skip_relocation, all: "f9c566d9654f1dd04cb64515b937ac18ca47c0ceb2b30587ea93e371f4e977a8"
-  end
-
   def install
     pkgshare.install "zsh-vi-mode.zsh"
     pkgshare.install "zsh-vi-mode.plugin.zsh"
