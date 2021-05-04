@@ -3,16 +3,15 @@ class Internetarchive < Formula
 
   desc "Python wrapper for the various Internet Archive APIs"
   homepage "https://github.com/jjjake/internetarchive"
-  url "https://files.pythonhosted.org/packages/3f/61/4b1924191ee2806e82c09d9b1d52bf3f703121955c2690a7a6709f5a25cd/internetarchive-2.0.2.tar.gz"
-  sha256 "515e6646a2b917c15f2241670d21f14a014b9c67dc509aef4d4aca5a59cdda65"
+  url "https://files.pythonhosted.org/packages/d5/3f/924b6b400a3f1fb32a5e080509b3f39590ecc73111033dcc397f1917e5a9/internetarchive-2.0.3.tar.gz"
+  sha256 "2ce0ab89fea37e5b2311bc7d163955e84f73f6beeac3942e17e9d51ad7cc9ffa"
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "25e8b4e563a9457537efaa3a8b62c71e8de046b6deb79db322da553b478fd277"
-    sha256 cellar: :any_skip_relocation, big_sur:       "f132057ac4d048270739bbd10a2e5ef9ba7035d033bd533562977ade209c4afd"
-    sha256 cellar: :any_skip_relocation, catalina:      "9cc622f3fc3eff5776ef614802b026efda1bd805d67923c23e2d8c47434d5349"
-    sha256 cellar: :any_skip_relocation, mojave:        "b31d38254ea3bcc7e55754e4641f7396c75edb3104e7649ab325d77dcc02ea98"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bfde7630848aaf57d5808e519f5a972ad10acf7e253ce70a9909631f5931c823"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "444c7b0950abc32a994677a26baea3552b38657cc8282850ed3af8400affe40d"
+    sha256 cellar: :any_skip_relocation, big_sur:       "4795f5dbef8f8c5e8c07ec878dfe308273b4e346922b76ac128396921071cb56"
+    sha256 cellar: :any_skip_relocation, catalina:      "ff92b8523de18c71521b8245a08d7eae83d33c0292536c3551d9571b40c9adf4"
+    sha256 cellar: :any_skip_relocation, mojave:        "1b7333d8a28ae74c4d20cfa387fa524de5bb2e2b8928db61be9ac51c73dcc97f"
   end
 
   depends_on "python@3.9"
