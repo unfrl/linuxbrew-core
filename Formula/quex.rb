@@ -11,6 +11,10 @@ class Quex < Formula
     regex(%r{url=.*?/quex[._-]v?(\d+(?:\.\d+)+)\.[tz]}i)
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0846e378796efe8d17ffb22efb697e35f4d2c3e540e7b390e3e63ac73ac9d620"
+  end
+
   depends_on "python@3.9"
 
   def install
