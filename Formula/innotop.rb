@@ -7,10 +7,11 @@ class Innotop < Formula
   head "https://github.com/innotop/innotop.git"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "d3c89d569fb57e7aab3101ff685af8e00e3e35ba83afaa043d1c861795c95b13"
-    sha256 cellar: :any, big_sur:       "5795f27b819b9496c15d36ac9964354aaa3f3cde39a6349bbad94ea307b809f3"
-    sha256 cellar: :any, catalina:      "0a12a9c8286ea8f79e1f31de8b08906aa0a9d75cf33ca9295672ef691d15f725"
-    sha256 cellar: :any, mojave:        "dcdbb056fee48e33b79cdf448ced136e699e93e6a6a57c08b4f3004c65931617"
+    sha256 cellar: :any,                 arm64_big_sur: "d3c89d569fb57e7aab3101ff685af8e00e3e35ba83afaa043d1c861795c95b13"
+    sha256 cellar: :any,                 big_sur:       "5795f27b819b9496c15d36ac9964354aaa3f3cde39a6349bbad94ea307b809f3"
+    sha256 cellar: :any,                 catalina:      "0a12a9c8286ea8f79e1f31de8b08906aa0a9d75cf33ca9295672ef691d15f725"
+    sha256 cellar: :any,                 mojave:        "dcdbb056fee48e33b79cdf448ced136e699e93e6a6a57c08b4f3004c65931617"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0cc1afeaabdb9fe1b1129006677d4856d0b15854381fc02f5db09073961e2af6"
   end
 
   depends_on "mysql-client"
