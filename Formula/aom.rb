@@ -7,10 +7,11 @@ class Aom < Formula
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "42d5b42cfd577ec6c05cc6db35241e129841ec848acb32dfab2b8e9106213f63"
-    sha256 cellar: :any, big_sur:       "b01451365abb2da2a9b17d2aff9fba994e90b37183a946c6bf70acd8f4fc6a2a"
-    sha256 cellar: :any, catalina:      "45c28e95a7e3753c21e8fcea18923c554ee62df7c9b44c93c077abfd65adf8c2"
-    sha256 cellar: :any, mojave:        "09ae7034b69c0c07696ebce9a8d04131b8395abb755a365240d1f92d60ceb2c8"
+    sha256 cellar: :any,                 arm64_big_sur: "42d5b42cfd577ec6c05cc6db35241e129841ec848acb32dfab2b8e9106213f63"
+    sha256 cellar: :any,                 big_sur:       "b01451365abb2da2a9b17d2aff9fba994e90b37183a946c6bf70acd8f4fc6a2a"
+    sha256 cellar: :any,                 catalina:      "45c28e95a7e3753c21e8fcea18923c554ee62df7c9b44c93c077abfd65adf8c2"
+    sha256 cellar: :any,                 mojave:        "09ae7034b69c0c07696ebce9a8d04131b8395abb755a365240d1f92d60ceb2c8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08222752d5958176e9dad20f5af5962e5aaa7f5fcb39dd557f44be9497fae6de"
   end
 
   depends_on "cmake" => :build
