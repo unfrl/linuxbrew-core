@@ -10,6 +10,7 @@ class JfrogCli < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "47c51683ffb76d3485bedf521a2afd72b906ceced331725fe991d408b46dd16e"
     sha256 cellar: :any_skip_relocation, catalina:      "9ce92b9c0425c5c444d6fb800475c39635ce831253c8bea68507e3d457fe77ea"
     sha256 cellar: :any_skip_relocation, mojave:        "50b70ee678b3275024fc854e7317676d4b942885fd34de5ce686177c0c664878"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a0b7d71c0750892262933724b69a896b7c394677338fc7821095f133a1f0cae"
   end
 
   depends_on "go" => :build
