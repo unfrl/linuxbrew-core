@@ -10,6 +10,7 @@ class Findomain < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "256fbc8415d040ea1e52f8c2d7b657668ec0a42887f14089dcb22e5a9cf67803"
     sha256 cellar: :any_skip_relocation, catalina:      "e683ee1142c5ec0dea303084ca991b7b3a9beeca1c9b5e2fb975d2abfea48a2e"
     sha256 cellar: :any_skip_relocation, mojave:        "977fe61e3526d8d57f7904ca07f9e3bc6669b465e270738800995da28b8d9056"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3409ec41a9e73ed9824a2dfd26c802c7a635ce12f52c719d2df3f9efcdc0394c"
   end
 
   depends_on "rust" => :build
