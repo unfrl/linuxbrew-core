@@ -10,6 +10,7 @@ class Vale < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "63309f2ad4c4113344df06b93c834f453bd1e25ee38e7b5f417800950e94a71a"
     sha256 cellar: :any_skip_relocation, catalina:      "43500d0981332bfc00573e647f8cc7ab05a338e64948153f06c20c3d52160704"
     sha256 cellar: :any_skip_relocation, mojave:        "0eab2f5b2a741f46dc8edb3f95bb6b57f5831c124f8e69fe983bf730efd6ded5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74986b42589a38cbe3c02d8f5ec916d38cfe837dd0f2abc412aa9b7f6401e3cf"
   end
 
   depends_on "go" => :build
