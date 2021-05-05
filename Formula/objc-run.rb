@@ -6,16 +6,25 @@ class ObjcRun < Formula
   license "MIT"
   head "https://github.com/iljaiwas/objc-run.git"
 
-  def install
-    # Keep bottles uniform before keg-relocation
-    inreplace "objc-run", "/usr/local", HOMEBREW_PREFIX
-    bin.install "objc-run"
-    pkgshare.install "examples", "test.bash"
+  bottle do
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "867a4f8909af9d28d6995738b58132965a62302f867cf7de125144eb04af1d3c"
+    sha256 cellar: :any_skip_relocation, big_sur:       "65be98ab9f851e2184d33c710a7619e6fd55820f0bbd1ad969c77a3f0755dbeb"
+    sha256 cellar: :any_skip_relocation, catalina:      "65be98ab9f851e2184d33c710a7619e6fd55820f0bbd1ad969c77a3f0755dbeb"
+    sha256 cellar: :any_skip_relocation, mojave:        "65be98ab9f851e2184d33c710a7619e6fd55820f0bbd1ad969c77a3f0755dbeb"
   end
 
-  def post_install
-    # Undo mistaken keg relocation
-    inreplace bin/"objc-run", HOMEBREW_PREFIX, "/usr/local"
+  pour_bottle? do
+    reason "The bottle needs to be installed into #{Homebrew::DEFAULT_PREFIX}."
+    # https://github.com/Homebrew/homebrew-core/pull/76633
+    # Remove when the following issue is resolved:
+    # https://github.com/Homebrew/brew/issues/11302
+    satisfy { HOMEBREW_PREFIX.to_s == Homebrew::DEFAULT_PREFIX } unless Hardware::CPU.arm?
+  end
+
+  def install
+    bin.install "objc-run"
+    pkgshare.install "examples", "test.bash"
   end
 
   test do

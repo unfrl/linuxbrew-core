@@ -3,8 +3,8 @@ class Black < Formula
 
   desc "Python code formatter"
   homepage "https://black.readthedocs.io/en/stable/"
-  url "https://files.pythonhosted.org/packages/f7/75/69fabe4a2d578b315a3b90e485b1671b9872d192028944e9af726bb8c452/black-21.4b2.tar.gz"
-  sha256 "fc9bcf3b482b05c1f35f6a882c079dc01b9c7795827532f4cc43c0ec88067bbc"
+  url "https://files.pythonhosted.org/packages/52/7e/6a41d1504225ef9213731e69ecebfa8fe78c614bcb01e1147f6242073636/black-21.5b0.tar.gz"
+  sha256 "9dc2042018ca10735366d944c2c12d9cad6dec74a3d5f679d09384ea185d9943"
   license "MIT"
 
   livecheck do
@@ -13,10 +13,10 @@ class Black < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "0de8dace3ee3d0203d737264a2672cd9c7c208ae2b5ae3a59cc1a4ae37fc61da"
-    sha256 cellar: :any_skip_relocation, big_sur:       "44406cbf892245d5747d12321096dd3efa0d9f92d80db2a30b0cb1b1da0d68ef"
-    sha256 cellar: :any_skip_relocation, catalina:      "cb7d3f3efa39fbbc785cc3db662e9103b2a7ed89bf937c6320a42895dc13b7e1"
-    sha256 cellar: :any_skip_relocation, mojave:        "38733488b96bc7ed327cc934b4270490b39e6c15cc63a48c365a50a96de6bd5f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "5a1a80580fec048bb105fe1df5ae1d51e3fe708883802eef515788b490952424"
+    sha256 cellar: :any_skip_relocation, big_sur:       "f7d159b8f1ce3bdff34ee1c46de9fda1eb7bac4dc028cd95e64c8c28f1f0552d"
+    sha256 cellar: :any_skip_relocation, catalina:      "dc578c03b161efa77a02264b29f3a00d1fd8e37ede354412afbd407d8a6df887"
+    sha256 cellar: :any_skip_relocation, mojave:        "abe8f4bc4e374f816fb2ab50459e810d2981f3da5b005a0b79f41c9cfb357351"
   end
 
   depends_on "python@3.9"
@@ -87,8 +87,8 @@ class Black < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/16/06/0f7367eafb692f73158e5c5cbca1aec798cdf78be5167f6415dd4205fa32/typing_extensions-3.7.4.3.tar.gz"
-    sha256 "99d4073b617d30288f569d3f13d2bd7548c3a7e4c8de87db09a9d29bb3a4a60c"
+    url "https://files.pythonhosted.org/packages/aa/55/62e2d4934c282a60b4243a950c9dbfa01ae7cac0e8d6c0b5315b87432c81/typing_extensions-3.10.0.0.tar.gz"
+    sha256 "50b6f157849174217d0656f99dc82fe932884fb250826c18350e159ec6cdf342"
   end
 
   resource "yarl" do

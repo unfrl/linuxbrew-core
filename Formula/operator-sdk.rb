@@ -2,17 +2,16 @@ class OperatorSdk < Formula
   desc "SDK for building Kubernetes applications"
   homepage "https://coreos.com/operators/"
   url "https://github.com/operator-framework/operator-sdk.git",
-      tag:      "v1.6.2",
-      revision: "b131ca8ec77c96b9898470eba9560c30af0f23f3"
+      tag:      "v1.7.1",
+      revision: "c984b00c1a1f75871788bb082ee8226b5118e4da"
   license "Apache-2.0"
   head "https://github.com/operator-framework/operator-sdk.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "f769aa66b8f7eaecd187da23b1b51d011107c963298151e173c7c1d605541480"
-    sha256 cellar: :any_skip_relocation, big_sur:       "73cc28162f8d5b9895444bf3652936d39f8c462592b181b5653ab9948b2125eb"
-    sha256 cellar: :any_skip_relocation, catalina:      "8e472b581f42efb6009e822772f363eb98dd9e2f925a2322705a2241525ff039"
-    sha256 cellar: :any_skip_relocation, mojave:        "75808bc1c5a94715dcd4fbd47419e264bc722d8038f28ee331a72f2d8d75b8cd"
-    sha256                               x86_64_linux:  "689ddb5d808025059b77af748ca5da8e69123a834fef8a0c2bda9e0b75045a24"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "91d0d20be4ed36807478fd1326d607e1e83c2095776859f5b2869cc91de01dd9"
+    sha256 cellar: :any_skip_relocation, big_sur:       "9577c43f6ff3a5bfdbb929137bfeac820ef75579d40db67505a779a480c51985"
+    sha256 cellar: :any_skip_relocation, catalina:      "8643768ce00b196a010017f35b2cbf66df28723f2bf332987aff9dcf42ae5f46"
+    sha256 cellar: :any_skip_relocation, mojave:        "eb5f793df3bde5fb288547d98f1e76ec69bae51eea11389cb8d46bf416fe76e6"
   end
 
   depends_on "go"
