@@ -10,6 +10,7 @@ class Frugal < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "a4cc0a9dabaec0d9c8410d4232f6ca7f7794fc998f2734416c82b17160a16ef8"
     sha256 cellar: :any_skip_relocation, catalina:      "a4cc0a9dabaec0d9c8410d4232f6ca7f7794fc998f2734416c82b17160a16ef8"
     sha256 cellar: :any_skip_relocation, mojave:        "a4cc0a9dabaec0d9c8410d4232f6ca7f7794fc998f2734416c82b17160a16ef8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "24a6a195e6ca85f849baeae0c3c2e8a4217d663bca1b2941a778397c9d6bdd21"
   end
 
   depends_on "go" => :build
