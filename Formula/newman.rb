@@ -12,6 +12,7 @@ class Newman < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "e2b0ff57bf37306d4b826dfaeb0492f21ff967602ce613590a6fa50996dda84a"
     sha256 cellar: :any_skip_relocation, catalina:      "e2b0ff57bf37306d4b826dfaeb0492f21ff967602ce613590a6fa50996dda84a"
     sha256 cellar: :any_skip_relocation, mojave:        "e2b0ff57bf37306d4b826dfaeb0492f21ff967602ce613590a6fa50996dda84a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9f198c44fe1ce37a4294a7b1aefa7e89f816ecce0222e66ed55c83a2d0b4571"
   end
 
   depends_on "node"
