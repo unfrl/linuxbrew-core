@@ -15,6 +15,7 @@ class Dialog < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "4fb719fa5573402c89dfa1ec9662b49727837f408883fe1b634519e87d670ca9"
     sha256 cellar: :any_skip_relocation, catalina:      "5e2c06ad6adbb69ac46cc75b1a71ffeb9becb918e54484563e2da16dfdab5a31"
     sha256 cellar: :any_skip_relocation, mojave:        "34d01a1614762e0ce58b0920ca7ad8433e0d34a77c13b21c5c1e71728afde6ae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ec3d038f405304d226351fb0a6a641cb60e90a6c4dbcf1fa711c7116bc03ee6"
   end
 
   uses_from_macos "ncurses"
