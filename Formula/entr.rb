@@ -16,6 +16,7 @@ class Entr < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "2cd27734479f6797b4d935d434f795a9794acd6e6dab0f0215b4ac96384c75ae"
     sha256 cellar: :any_skip_relocation, catalina:      "9e8c9239cf071087ff47cfcd1ab0a729a77e5a9e7284a038d1790a81eebd70a3"
     sha256 cellar: :any_skip_relocation, mojave:        "810b1d21eef7e39c5194296c0717bdb200c2d5f1edf2c64d24093d4df95d4bf2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "658f0d3546731562d476c8e79ffb4e038aa2c316de508916d17c8edb8294a706"
   end
 
   def install
