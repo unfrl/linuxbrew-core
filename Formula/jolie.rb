@@ -5,6 +5,10 @@ class Jolie < Formula
   sha256 "d50c3ac2f5567c2fb04880bcf8466b3822dfae31c540dae1ee49a8162969bc3d"
   license "LGPL-2.1"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7e8857e75b8b4131ad430a1eb4a066e1290069fd8747d4c2ac6a16efdb49f31a"
+  end
+
   depends_on "openjdk"
 
   def install
