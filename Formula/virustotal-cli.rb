@@ -10,6 +10,7 @@ class VirustotalCli < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "a2a77c2bb93847075627f29c0647520c0ea1c52f8a42642a38b84fb55ef9c80b"
     sha256 cellar: :any_skip_relocation, catalina:      "503640901267849943d77acc565117035f2ea14724e0e18f5bb6510e6dfc6cc1"
     sha256 cellar: :any_skip_relocation, mojave:        "60a2c00bc879b6b72bf73d560aa765d227e30541f981200ee2018c3a55c238ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c38f9217fd3c6be4b1637a45a08a560b39dd93bc04e75551e1e7981a4ee41926"
   end
 
   depends_on "go" => :build
