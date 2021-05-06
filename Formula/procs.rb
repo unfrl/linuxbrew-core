@@ -10,6 +10,7 @@ class Procs < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "aafca07219f4e6b1fc7281ee7beed8a8e6a55090864598c2c0a115d1310ce6bb"
     sha256 cellar: :any_skip_relocation, catalina:      "8014350b64db9d4b301bcb832c6afc8e1f45d81857a9e5d0cdbb54520a32de71"
     sha256 cellar: :any_skip_relocation, mojave:        "eb13ae0064dfebeeba1c48ff7ce9f20bd5a0a73c4f837bcadcb24c55e4711417"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56a29b38444c97172348598de7606482813776eaf785fdfcec12b27b78c30a3d"
   end
 
   depends_on "rust" => :build
