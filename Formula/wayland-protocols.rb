@@ -5,6 +5,11 @@ class WaylandProtocols < Formula
   sha256 "b99945842d8be18817c26ee77dafa157883af89268e15f4a5a1a1ff3ffa4cde5"
   license "MIT"
 
+  bottle do
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c6acbc8ee3b97bd1fc5d80db380915d7d5ce0c48b60126d5d484d9e71fe92c1d"
+  end
+
   depends_on "pkg-config" => [:build, :test]
   depends_on "wayland" => :build
   depends_on :linux
