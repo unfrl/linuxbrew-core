@@ -10,6 +10,7 @@ class Gleam < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "5cb82671ad74bf2d9d0ef35fb64f0875f568dec5054f5b30a57db4029e3da9fd"
     sha256 cellar: :any_skip_relocation, catalina:      "886edf156c5bc084f7ea488d278468bdb6449e78ea0f4dc10c632bd56cdf7c02"
     sha256 cellar: :any_skip_relocation, mojave:        "5159e973342ed40e3c717d3c65e6611e25fba6198acf380b9377cfdda9b59021"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d782f91c86728239093d63115334eec8fb3a0ad19fe186346df3dc279b888a1c"
   end
 
   depends_on "rust" => :build
