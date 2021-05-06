@@ -7,6 +7,7 @@ class Autorest < Formula
   sha256 "6ca6a3428d94a3ac2ab4302145655de69e1724629c58bae415c7fa0d9af765ff"
   license "MIT"
 
+  depends_on arch: :x86_64
   depends_on "node"
 
   resource "homebrew-petstore" do
