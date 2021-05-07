@@ -10,6 +10,7 @@ class Fselect < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "6a8fa1a4c0836f2b5d2231539041dfbe833b6b0dd570277a9add7e2403d9617e"
     sha256 cellar: :any_skip_relocation, catalina:      "4823c2b864930f0ad1272aebded125fb07d5c0689740b8fb886e1d3966a6d505"
     sha256 cellar: :any_skip_relocation, mojave:        "55448eaecbf7bedf267dfa349c01cee1d00872e2e3b5fc7885678f8f7459a853"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "afaa1287c7e0471cca8c1481ff405a415b4b4871cf632a2619e24d3cc327467b"
   end
 
   depends_on "rust" => :build
