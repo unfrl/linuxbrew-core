@@ -16,6 +16,7 @@ class Gopls < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "72fdc3f10bd2771b269e8fb277ad1b9c58fd87cde1b7af5f9d3e53cf77462e5c"
     sha256 cellar: :any_skip_relocation, catalina:      "a1adc4624d2c66c278dc3c5ebf457d988363d92eea9a88e444b9dc4cc6d789c4"
     sha256 cellar: :any_skip_relocation, mojave:        "af7b08c0cda0b07364e6a92d104782827aa9ea45f463a51aef3b52e317a5c763"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7102075036bde666aae91485b9f606b7d823e5567b8122377a1bd7ff15bdeddf"
   end
 
   depends_on "go" => :build
