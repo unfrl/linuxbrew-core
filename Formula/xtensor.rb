@@ -5,6 +5,10 @@ class Xtensor < Formula
   sha256 "5bdb9d85ee82c60be0bce32d891b5cc20eb633284a0aabb907f55bbe722cc8e3"
   license "BSD-3-Clause"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a1723a2325f944746825efab9a68793453fd3d06bc5015a6364bc4b994bcaa46"
+  end
+
   depends_on "cmake" => :build
 
   resource "xtl" do
