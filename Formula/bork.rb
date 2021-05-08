@@ -6,9 +6,10 @@ class Bork < Formula
   license "Apache-2.0"
   head "https://github.com/skylarmacdonald/bork.git", branch: "main"
 
-  bottle :unneeded
-
   def install
+    files = %w[types/shells.sh types/pipsi.sh types/cask.sh test/type-pipsi.bats test/type-cask.bats]
+    inreplace files, "/usr/local/", HOMEBREW_PREFIX
+
     prefix.install %w[bin docs lib test types]
   end
 
