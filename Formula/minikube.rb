@@ -12,6 +12,7 @@ class Minikube < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "22ed1a5612a4adea9fd5498dd5ee7239b91b25b76f0b0f3ec0dae526c262f760"
     sha256 cellar: :any_skip_relocation, catalina:      "516c090d58dd73861792aebcebcf1944fdea269c8272d10c8899ce0ba56de8e3"
     sha256 cellar: :any_skip_relocation, mojave:        "b657f734e8feb8dd5437f653c06f4c975209533ef39bb0cf4fe4a00cba08357b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e232c28548672fa61a3211523debdce6e886b97c135ed863f8560b83ade191f8"
   end
 
   depends_on "go" => :build
