@@ -15,6 +15,7 @@ class StressNg < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "12ec86573083748a993dfcde1c388152428be681ed4be39dbf08f0ed1ac066a6"
     sha256 cellar: :any_skip_relocation, catalina:      "fc290b71d25b459c6e527145ca2ebd6d24f05fd84bc2a7d68f076c43feec0969"
     sha256 cellar: :any_skip_relocation, mojave:        "bfa0ec38f5e634160ec49f7aed4646900029d53b6fde7e7db2690aa7595e7236"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ea9950a798002c7e5278c3679253ab5122bbaccb99ea711e79a4e48938bb452"
   end
 
   uses_from_macos "zlib"
