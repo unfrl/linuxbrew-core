@@ -122,9 +122,10 @@ class Alot < Formula
       pid = fork do
         $stdout.reopen("/dev/null")
         $stdin.reopen("/dev/null")
-        if OS.mac?
+        on_macos do
           exec "script", "-q", "/dev/null", bin/"alot", "--logfile", testpath/"out.log"
-        else
+        end
+        on_linux do
           exec "script", "-q", "/dev/null", "-e", "-c", "#{bin}/alot --logfile #{testpath}/out.log"
         end
       end

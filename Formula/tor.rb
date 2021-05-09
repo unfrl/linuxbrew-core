@@ -77,9 +77,10 @@ class Tor < Formula
   end
 
   test do
-    if OS.mac?
+    on_macos do
       pipe_output("script -q /dev/null #{bin}/tor-gencert --create-identity-key", "passwd\npasswd\n")
-    else
+    end
+    on_linux do
       pipe_output("script -q /dev/null -e -c \"#{bin}/tor-gencert --create-identity-key\"", "passwd\npasswd\n")
     end
     assert_predicate testpath/"authority_certificate", :exist?
