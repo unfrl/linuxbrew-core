@@ -1,16 +1,18 @@
 class Openvdb < Formula
   desc "Sparse volume processing toolkit"
   homepage "https://www.openvdb.org/"
+  # Check whether this can be switched to `openexr` and `imath` at version bump
   url "https://github.com/AcademySoftwareFoundation/openvdb/archive/v8.0.1.tar.gz"
   sha256 "a6845da7c604d2c72e4141c898930ac8a2375521e535f696c2cd92bebbe43c4f"
   license "MPL-2.0"
+  revision 1
   head "https://github.com/AcademySoftwareFoundation/openvdb.git"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "9cb0c66ec3ad5baa45c67f8dada344f9ea146f77e077addefbea16706764980a"
-    sha256 cellar: :any, big_sur:       "bd06f00067f72d29c1db2d4dc5b89b4478f03b2706f0643ac2b7d7014339c0c3"
-    sha256 cellar: :any, catalina:      "6a6d9b59e6e0a83d1067183a239fb01cd6fccdc18951e50bca8221a7b14934de"
-    sha256 cellar: :any, mojave:        "942d34f3346db67246bcb9d9ad642c6f328645425fced48f68e885277d3c09be"
+    sha256 arm64_big_sur: "c44a27f955af5aefb5dcc261f6510c7ae0481bbb53bf0f49ff0a0aed8a5fed6c"
+    sha256 big_sur:       "9434d3db9e7bf017b661e9e289a653f99365f08c4f784536a20ec6f1fdca7274"
+    sha256 catalina:      "6281c2b480d0ddb3dd0ffb1aec1d3923902f6dd2e9df5c0ea17f4f233a85c7a6"
+    sha256 mojave:        "e90012d44ce759ed35d22e65affe874ece89624d2a825a3a101328ce480851bc"
   end
 
   depends_on "cmake" => :build
@@ -20,7 +22,7 @@ class Openvdb < Formula
   depends_on "glfw"
   depends_on "ilmbase"
   depends_on "jemalloc"
-  depends_on "openexr"
+  depends_on "openexr@2"
   depends_on "tbb"
 
   resource "test_file" do

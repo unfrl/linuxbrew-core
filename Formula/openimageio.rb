@@ -4,6 +4,7 @@ class Openimageio < Formula
   url "https://github.com/OpenImageIO/oiio/archive/Release-2.2.14.0.tar.gz"
   sha256 "e41b4b6958d318250caa1d1f167863a915a99062273583bb96457101d54e89cd"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/OpenImageIO/oiio.git"
 
   livecheck do
@@ -13,10 +14,9 @@ class Openimageio < Formula
   end
 
   bottle do
-    sha256                               big_sur:      "34ca101cbdcaa617b6ff48b2504acaea2e4329e8e46d788259c5f0020388d1da"
-    sha256                               catalina:     "7d3a451c8d56284ff874657afa611c0cbd51c9139b434bab80ff2903ee431750"
-    sha256                               mojave:       "e7d86c9046739f1ab145a242a87b5a76f553ae449e3c4faf3434db7d0bc2a8c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "178ba900289cd993d1e8aea6f4095a93e817a21cd1daf0d02cbcda6de7a0f097"
+    sha256 big_sur:  "d7cace1da4d4f2f811f1ec5721bcf58c111844dc0546657242e6bd50621b8d40"
+    sha256 catalina: "f90cd13619a1d8478bfe06821d38146a504dc4163bae4b82d9d6c36c601e2ae9"
+    sha256 mojave:   "db0b3c160e16fb8eec055d305b14b0308a8c286f97a674a157849fb0d5bb1988"
   end
 
   depends_on "cmake" => :build
@@ -26,7 +26,7 @@ class Openimageio < Formula
   depends_on "ffmpeg"
   depends_on "freetype"
   depends_on "giflib"
-  depends_on "ilmbase"
+  depends_on "imath"
   depends_on "jpeg"
   depends_on "libheif"
   depends_on "libpng"
