@@ -9,10 +9,11 @@ class Zstd < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_big_sur: "3d51ef9a3f13e82d4dc2e3796c3f02ee32593686c87498f0ba49302b38fb5f7a"
-    sha256 cellar: :any, big_sur:       "84b118224c8da97b293087196e5dabcefceaede9d0c4c60dd05bcb103d2668a6"
-    sha256 cellar: :any, catalina:      "3bdec91921f43b57d2afb4fd61641dd912330c010b2c1979c51602cecfe66f1a"
-    sha256 cellar: :any, mojave:        "29f6070e68f504cda74fb368ca267cf4031203371fb74cd4bdb9547229fec849"
+    sha256 cellar: :any,                 arm64_big_sur: "3d51ef9a3f13e82d4dc2e3796c3f02ee32593686c87498f0ba49302b38fb5f7a"
+    sha256 cellar: :any,                 big_sur:       "84b118224c8da97b293087196e5dabcefceaede9d0c4c60dd05bcb103d2668a6"
+    sha256 cellar: :any,                 catalina:      "3bdec91921f43b57d2afb4fd61641dd912330c010b2c1979c51602cecfe66f1a"
+    sha256 cellar: :any,                 mojave:        "29f6070e68f504cda74fb368ca267cf4031203371fb74cd4bdb9547229fec849"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "030fd386a6a215c12a12279605c1f01151a157a64b1f1e780f65101c68b0deb9"
   end
 
   depends_on "cmake" => :build
