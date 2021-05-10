@@ -4,7 +4,7 @@ class OpenMpi < Formula
   url "https://download.open-mpi.org/release/open-mpi/v4.1/openmpi-4.1.1.tar.bz2"
   sha256 "e24f7a778bd11a71ad0c14587a7f5b00e68a71aa5623e2157bafee3d44c07cda"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   livecheck do
     url :homepage
@@ -12,11 +12,10 @@ class OpenMpi < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "56d00ec16ad3d8b27c2bb2d0f59793802147dbf29dc9913cfa1137b00f5ad6f1"
-    sha256 big_sur:       "6b51e6bf47e0cc347354563337f0d5044d9ada003e8e3f083e4facdd1ae2a5d0"
-    sha256 catalina:      "12d84452255bc13ca6071c1b9d08c27097b88c8556bb72ee1d4dfab6fc3eaae3"
-    sha256 mojave:        "7238c26d4f8b1a2e943de6dcf587ba2151e667649bd811aa213e9ae64f7ab6c4"
-    sha256 x86_64_linux:  "a98769cb86f8d4eed1af8eeadcb83414fe157b4bdae28e671e491628e6a2b6ee"
+    sha256 arm64_big_sur: "c24af00250fad2b097822d0d6e51f1027915e375dcbc0590b385b30ef8af6453"
+    sha256 big_sur:       "da310195e62c1a27aea7365b325cb15dd48f99dd673fd1f685f8b5247cfbb48d"
+    sha256 catalina:      "27f25156376078df9cb6e41a57c370cb030f16092ee7dfe85d7a8000f252240e"
+    sha256 mojave:        "4d57102ec2e06043bc97d34130ae5cd9115a6a1718331476f5fbd71d8bef149e"
   end
 
   head do

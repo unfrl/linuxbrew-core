@@ -4,6 +4,7 @@ class Abyss < Formula
   url "https://github.com/bcgsc/abyss/releases/download/2.3.1/abyss-2.3.1.tar.gz"
   sha256 "664045e7903e9732411effc38edb9ebb1a0c1b7636c64b3a14a681f465f43677"
   license all_of: ["GPL-3.0-only", "LGPL-2.1-or-later", "MIT", "BSD-3-Clause"]
+  revision 1
 
   livecheck do
     url :stable
@@ -11,11 +12,10 @@ class Abyss < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "bb058d5f870631a365a463928f44d712bf74816d63802afb8d71ef6c25bdd70d"
-    sha256 cellar: :any,                 big_sur:       "e89a82779e47b75a1a890512101ce337ad1115589452e4aadf4a24a4d0fc64b6"
-    sha256 cellar: :any,                 catalina:      "9c8439788542b27321fa85a544ad66f3ede713ff4c3b358fa21af74d8b443a40"
-    sha256 cellar: :any,                 mojave:        "4dc19d24229a313add5756947cb7a236da55c040f91eb9cab8a41d0d201ce0d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb2bd7e39e7a5cf197293e2aa685036735902d451786dd80a4942f81e7b88be1"
+    sha256               arm64_big_sur: "21d1cb2d31fa162cefea32db0630fc6011f8d3d0bb7ababa31f8e772820d1c7f"
+    sha256 cellar: :any, big_sur:       "e56ce6b9bf533fb34bd2f87e87fb1019e3cccdcdc94d0e665e144121c95ddcad"
+    sha256 cellar: :any, catalina:      "5a95037e8675013c34f4119d5a2914706ec3b99f522426878a19f27031ad4d79"
+    sha256 cellar: :any, mojave:        "fc1208b6ff7dbcdc23d621076a271a40f1090cab41690ce35433c81425984494"
   end
 
   head do

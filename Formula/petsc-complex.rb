@@ -4,6 +4,7 @@ class PetscComplex < Formula
   url "https://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.15.0.tar.gz"
   sha256 "ac46db6bfcaaec8cd28335231076815bd5438f401a4a05e33736b4f9ff12e59a"
   license "BSD-2-Clause"
+  revision 1
 
   livecheck do
     url "https://ftp.mcs.anl.gov/pub/petsc/release-snapshots/"
@@ -11,10 +12,10 @@ class PetscComplex < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "f25cd098cf7896633557b30986f6e8d39741fc397d39c813ca6719d0c577601d"
-    sha256 big_sur:       "4c296aa37c1a1253ea472d56edc78ebafbebaf7ce62853d52b04d53cc5022dce"
-    sha256 catalina:      "30042d132c880dde9849a11271db4738f5869ae950c1acb4ca09db43aa751132"
-    sha256 mojave:        "6b89bf601a92e634ce8badc710afaf5e47c61f5d82c600fcc4a1d185aaec7890"
+    sha256 arm64_big_sur: "241001a99e42943db2790681ccbecbbad4a7fc24a5e1581a7382312fd37b89fb"
+    sha256 big_sur:       "c3a1e0a5eef41a9af588eb485eeaef7fa7b917c10b8dda6d5e9fa1ef41ed050d"
+    sha256 catalina:      "f829fd5f01d5d7a5018ff7c2efadcee33c30aa9b4724db1176a84cf308d3703e"
+    sha256 mojave:        "4ef2eb92c98a1c357333202fb03a13d7fd639526cee560e1addb538b9440fe63"
   end
 
   depends_on "hdf5"

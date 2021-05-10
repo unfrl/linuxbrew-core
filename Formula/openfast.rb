@@ -4,17 +4,24 @@ class Openfast < Formula
   url "https://github.com/openfast/openfast/archive/v2.5.0.tar.gz"
   sha256 "b3d9cfcdd87a8fa0e8e62d08bf65a9a9ee69e16a5221e6fb0d3b7f4226971d0e"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 big_sur:      "59580daa33a07c7e6e82457b95c1c29f9a0c7771e3660f05a540055f61d4de84"
-    sha256 cellar: :any,                 catalina:     "65291fb3a065b7f618be694e47e97acaf676a6e791577f32166c8097cfb897a3"
-    sha256 cellar: :any,                 mojave:       "8c7af9c78eb329aa2e6804080862c8996693ee35fb076aef1142cbdc4e09766a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "fcb9ce3ae11ba344725b0f842e68cb0cb686a89a96ce87c95d02c4338ecc0bd9"
+    sha256 cellar: :any, big_sur:  "4b6211261ec4a1f093cb5a04b3c423eee0ff4dfb4b280c25ba9bdce239397ca5"
+    sha256 cellar: :any, catalina: "bccfffda9f7d31e3645a193b6c6b0a27bfb0f4f1ed7af9c6b569f07877a95554"
+    sha256 cellar: :any, mojave:   "ce8b7d2cbc9d809660ababc4d015fd415f22065b04218d6c449ea7a327f6023b"
   end
 
   depends_on "cmake" => :build
   depends_on "gcc"
   depends_on "openblas"
+
+  # Fix build on ARM
+  # https://github.com/OpenFAST/openfast/pull/744
+  patch do
+    url "https://github.com/OpenFAST/openfast/commit/2f5cb69efcaeebce099a814d6a338171b828ae0d.patch?full_index=1"
+    sha256 "77611167b092e8daef0650db82dab24127f829d060199bae8b191cac9e3c0b9a"
+  end
 
   def install
     args = std_cmake_args + %w[

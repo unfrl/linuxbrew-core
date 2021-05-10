@@ -4,36 +4,33 @@ class Gcc < Formula
   desc "GNU compiler collection"
   homepage "https://gcc.gnu.org/"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
-  revision 4
   head "https://gcc.gnu.org/git/gcc.git"
-
   if Hardware::CPU.arm?
     # Branch from the Darwin maintainer of GCC with Apple Silicon support,
     # located at https://github.com/iains/gcc-darwin-arm64 and
-    # backported with his help to gcc-10 branch. Too big for a patch.
-    url "https://github.com/fxcoudert/gcc/archive/gcc-10-arm-20210220.tar.gz"
-    sha256 "53beed690e4e0355d972ad58917a11e01af1cfe67b2e7602ca1ef89c98417a67"
-    version "10.2.0"
+    # backported with his help to gcc-11 branch. Too big for a patch.
+    url "https://github.com/fxcoudert/gcc/archive/refs/tags/gcc-11.1.0-arm-20210504.tar.gz"
+    sha256 "ce862b4a4bdc8f36c9240736d23cd625a48af82c2332d2915df0e16e1609a74c"
+    version "11.1.0"
   else
-    url "https://ftp.gnu.org/gnu/gcc/gcc-10.2.0/gcc-10.2.0.tar.xz"
-    mirror "https://ftpmirror.gnu.org/gcc/gcc-10.2.0/gcc-10.2.0.tar.xz"
-    sha256 "b8dd4368bb9c7f0b98188317ee0254dd8cc99d1e3a18d0ff146c855fe16c1d8c"
+    url "https://ftp.gnu.org/gnu/gcc/gcc-11.1.0/gcc-11.1.0.tar.xz"
+    mirror "https://ftpmirror.gnu.org/gcc/gcc-11.1.0/gcc-11.1.0.tar.xz"
+    sha256 "4c4a6fb8a8396059241c2e674b85b351c26a5d678274007f076957afa1cc9ddf"
   end
 
   livecheck do
     # Should be
     # url :stable
     # but that does not work with the ARM-specific branch above
-    url "https://ftp.gnu.org/gnu/gcc/gcc-10.2.0"
+    url "https://ftp.gnu.org/gnu/gcc/gcc-11.1.0"
     regex(%r{href=.*?gcc[._-]v?(\d+(?:\.\d+)+)(?:/?["' >]|\.t)}i)
   end
 
   bottle do
-    sha256 arm64_big_sur: "82f9ed75ca22c2120054b0011430a007eb28d3daa218e523d4c09210c5c32dea"
-    sha256 big_sur:       "8b5bbf48a1436297fe001eff470552db520a85c5bace19896572df4ad1a59e88"
-    sha256 catalina:      "ad8caedc23b71e5c14eaf4bf5bc747e5ef73620b99b460ef0e17c6e80e17b971"
-    sha256 mojave:        "62483f796012e79c433fee8690e817266b704d171d03cb5d6ce75ca558d959a0"
-    sha256 x86_64_linux:  "e62efea399fd03d854ff871210b941e5c3277d821e9148badceeda883f53f016"
+    sha256 arm64_big_sur: "0b2cefe66734ad3735ab68ee3a37f35e8a6ac973c65123c26c57e4cdba77b770"
+    sha256 big_sur:       "0de7e36bd2fb710bcb25ba27581784570c55a3e2ec652ecdd3a5cf1b6105a9e3"
+    sha256 catalina:      "f3e0b6948b4c1cd454f3b8a020929381b559662b92eccc080b2f9a52683f3743"
+    sha256 mojave:        "57d923640559ee09ad782e6dd5035613772ca9f63c660b28e3b16a7e2f767962"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -58,15 +55,6 @@ class Gcc < Formula
 
   # GCC bootstraps itself, so it is OK to have an incompatible C++ stdlib
   cxxstdlib_check :skip
-
-  if Hardware::CPU.intel?
-    # Patch for Big Sur, remove with GCC 10.3
-    # https://gcc.gnu.org/bugzilla/show_bug.cgi?id=98805
-    patch do
-      url "https://raw.githubusercontent.com/Homebrew/formula-patches/6a83f36d/gcc/bigsur_2.patch"
-      sha256 "347a358b60518e1e0fe3c8e712f52bdac1241e44e6c7738549d969c24095f65b"
-    end
-  end
 
   def version_suffix
     if build.head?
