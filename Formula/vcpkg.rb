@@ -13,6 +13,7 @@ class Vcpkg < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "0392fae50da34c6beeb52fa58ac63792ec4ac75801285f13ca65aa984af5368f"
     sha256 cellar: :any_skip_relocation, catalina:      "d4aada87eb2d5b7cb32214e9a328fc54cbbcb208898adb95b75a51f0bcfc6d11"
     sha256 cellar: :any,                 mojave:        "17881d46973aa1dd96b9fa4e3e5d2b8922febe9be86555639a1f37f8a7eca5cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42c994b8fb334224e3cf863318213e2f2244b06470e515f3af6c3c995e15d900"
   end
 
   depends_on "cmake" => :build
