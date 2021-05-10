@@ -7,10 +7,11 @@ class Libxc < Formula
   revision OS.mac? ? 2 : 3
 
   bottle do
-    sha256               arm64_big_sur: "08e052bb3fdc234263a6bafffd84ac393ad7bec9c9053af7b758177313a5cf63"
-    sha256 cellar: :any, big_sur:       "2173f36d9439252a028507c8a10f9c918aebdd7804740e4946706fbf13a6ca54"
-    sha256 cellar: :any, catalina:      "5b6a06de05d4f4539c46a66e300980848f00f36e221e3988bb08b453aa2ee7db"
-    sha256 cellar: :any, mojave:        "3839693eabb3936f15ad769250ee539087b627c3f5ee1d65b1a37504c991f421"
+    sha256                               arm64_big_sur: "08e052bb3fdc234263a6bafffd84ac393ad7bec9c9053af7b758177313a5cf63"
+    sha256 cellar: :any,                 big_sur:       "2173f36d9439252a028507c8a10f9c918aebdd7804740e4946706fbf13a6ca54"
+    sha256 cellar: :any,                 catalina:      "5b6a06de05d4f4539c46a66e300980848f00f36e221e3988bb08b453aa2ee7db"
+    sha256 cellar: :any,                 mojave:        "3839693eabb3936f15ad769250ee539087b627c3f5ee1d65b1a37504c991f421"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7cd9869942f8397e80d9fbc5bcb8fbb17f9769144468e5f65eacf9d703cd55d"
   end
 
   depends_on "autoconf" => :build
