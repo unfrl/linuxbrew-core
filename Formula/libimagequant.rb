@@ -6,10 +6,11 @@ class Libimagequant < Formula
   license :cannot_represent
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "bdfb6b39244941193b91ec2a2972f95cbb059a6628aaf4ae361df20293c12937"
-    sha256 cellar: :any, big_sur:       "045a6d3c44c2e495ee6191d4df3033f88efbc776b845cc748c78dfc2d1fa1480"
-    sha256 cellar: :any, catalina:      "45328d9da00b95a9ccae2b1e78888107b0da8b6ecb9bf84b8a49adc710e1d74f"
-    sha256 cellar: :any, mojave:        "ba57ff195e53e7660f34ff9c4d54b13443f5d8548015e159857643fe0d038cd7"
+    sha256 cellar: :any,                 arm64_big_sur: "bdfb6b39244941193b91ec2a2972f95cbb059a6628aaf4ae361df20293c12937"
+    sha256 cellar: :any,                 big_sur:       "045a6d3c44c2e495ee6191d4df3033f88efbc776b845cc748c78dfc2d1fa1480"
+    sha256 cellar: :any,                 catalina:      "45328d9da00b95a9ccae2b1e78888107b0da8b6ecb9bf84b8a49adc710e1d74f"
+    sha256 cellar: :any,                 mojave:        "ba57ff195e53e7660f34ff9c4d54b13443f5d8548015e159857643fe0d038cd7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6abf3fd8e3d54601322f3ec5c9593b86af934429e85f477607350031056a9f12"
   end
 
   def install
