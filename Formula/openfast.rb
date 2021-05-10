@@ -7,9 +7,10 @@ class Openfast < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any, big_sur:  "4b6211261ec4a1f093cb5a04b3c423eee0ff4dfb4b280c25ba9bdce239397ca5"
-    sha256 cellar: :any, catalina: "bccfffda9f7d31e3645a193b6c6b0a27bfb0f4f1ed7af9c6b569f07877a95554"
-    sha256 cellar: :any, mojave:   "ce8b7d2cbc9d809660ababc4d015fd415f22065b04218d6c449ea7a327f6023b"
+    sha256 cellar: :any,                 big_sur:      "4b6211261ec4a1f093cb5a04b3c423eee0ff4dfb4b280c25ba9bdce239397ca5"
+    sha256 cellar: :any,                 catalina:     "bccfffda9f7d31e3645a193b6c6b0a27bfb0f4f1ed7af9c6b569f07877a95554"
+    sha256 cellar: :any,                 mojave:       "ce8b7d2cbc9d809660ababc4d015fd415f22065b04218d6c449ea7a327f6023b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0bb3aaa0ac5b0c1acbebc8545df1f49fa30e71384d5992cceac033ab40b2334c"
   end
 
   depends_on "cmake" => :build
