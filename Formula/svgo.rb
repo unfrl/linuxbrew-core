@@ -7,6 +7,10 @@ class Svgo < Formula
   sha256 "0c22647a9fba0cf80ffb5fb15e55401d62eace98a993348ee485cd8ffd4f410b"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "afbccecaf1a166cb6b0fc48ef9d963daf80d7a226bcb4790b2d5583335615d68"
+  end
+
   depends_on "node"
 
   def install
