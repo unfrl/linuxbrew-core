@@ -11,6 +11,7 @@ env:
   HOMEBREW_GITHUB_ACTIONS: 1
   HOMEBREW_NO_AUTO_UPDATE: 1
   HOMEBREW_CHANGE_ARCH_TO_ARM: 1
+  HOMEBREW_RELOCATE_RPATHS: 1
 jobs:
   tap_syntax:
     if: github.repository == 'Homebrew/linuxbrew-core' && ! contains(github.event.pull_request.labels.*.name, 'self-hosted-ci')
