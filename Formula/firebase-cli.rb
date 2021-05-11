@@ -13,6 +13,7 @@ class FirebaseCli < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "8e4bab73423f93b6f7ee998c2135cbfa019809039f85406455e35f653edfd191"
     sha256 cellar: :any_skip_relocation, catalina:      "8e4bab73423f93b6f7ee998c2135cbfa019809039f85406455e35f653edfd191"
     sha256 cellar: :any_skip_relocation, mojave:        "8e4bab73423f93b6f7ee998c2135cbfa019809039f85406455e35f653edfd191"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6da2211741636642c376ed1d15b7989b9ce29416dfdf6b8e006a38368e7d726e"
   end
 
   depends_on "node"
