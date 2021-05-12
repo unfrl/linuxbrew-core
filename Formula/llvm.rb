@@ -8,16 +8,17 @@ class Llvm < Formula
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
 
-  bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "7c5577290b145406df523d193727305aff820e8d704d8d573bd152c783697899"
-  end
-  revision 1 unless OS.mac?
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
   livecheck do
     url :homepage
     regex(/LLVM (\d+\.\d+\.\d+)/i)
   end
+
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7c5577290b145406df523d193727305aff820e8d704d8d573bd152c783697899"
+  end
+  revision 1 unless OS.mac?
 
   # Clang cannot find system headers if Xcode CLT is not installed
   pour_bottle? do
