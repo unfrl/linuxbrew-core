@@ -3,9 +3,16 @@ require "language/node"
 class MermaidCli < Formula
   desc "Command-line interface (CLI) for mermaid"
   homepage "https://github.com/mermaid-js/mermaid-cli"
-  url "https://registry.npmjs.org/@mermaid-js/mermaid-cli/-/mermaid-cli-8.9.3.tgz"
-  sha256 "c2f89e9a1e8c0a58a5de044748ed8b431f56ab8940707f7a451efd011f76334f"
+  url "https://registry.npmjs.org/@mermaid-js/mermaid-cli/-/mermaid-cli-8.9.3-1.tgz"
+  sha256 "7ab5ec6cc7eb3dab4d993fded334ee8c4266328c7f4b57bda64b0e6d6799ddd5"
   license "MIT"
+
+  bottle do
+    sha256 cellar: :any, arm64_big_sur: "12409246875f59713ec10d1ae04baee79f6eb9d95c003aa0a0e0501f38e7ee25"
+    sha256 cellar: :any, big_sur:       "1fe406f5cbec5a904c6a0f231acf94c016c6059814ac64958f57715b30371731"
+    sha256 cellar: :any, catalina:      "1fe406f5cbec5a904c6a0f231acf94c016c6059814ac64958f57715b30371731"
+    sha256 cellar: :any, mojave:        "1fe406f5cbec5a904c6a0f231acf94c016c6059814ac64958f57715b30371731"
+  end
 
   depends_on "node"
 

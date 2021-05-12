@@ -8,10 +8,10 @@ class Etcd < Formula
   head "https://github.com/etcd-io/etcd.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:      "3f46ed70ded919e67a606292612f2a6d1c7a59a5ba5ed4b2d60bd1ae6b65cccf"
-    sha256 cellar: :any_skip_relocation, catalina:     "1430a7848ddb6386f12aa4ddff3d6637b92b4a1a6b84a1f36ed608e01e0c44fc"
-    sha256 cellar: :any_skip_relocation, mojave:       "c1f8e5c3dfd9f7ade40610f6d3594f8be25e511e341619e0ea205c87f607a9b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "739472800366422801b85f1b47ba70978152827b16f2cf797e0ee0f642d729c6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "1b7f847a62ccdfac2b07fac9a7e97e7e859a2b775ffe4b787cd929c7863aa4c8"
+    sha256 cellar: :any_skip_relocation, big_sur:       "3f46ed70ded919e67a606292612f2a6d1c7a59a5ba5ed4b2d60bd1ae6b65cccf"
+    sha256 cellar: :any_skip_relocation, catalina:      "1430a7848ddb6386f12aa4ddff3d6637b92b4a1a6b84a1f36ed608e01e0c44fc"
+    sha256 cellar: :any_skip_relocation, mojave:        "c1f8e5c3dfd9f7ade40610f6d3594f8be25e511e341619e0ea205c87f607a9b9"
   end
 
   depends_on "go" => :build
@@ -29,35 +29,26 @@ class Etcd < Formula
 
   plist_options manual: "etcd"
 
-  def plist
-    <<~EOS
-      <?xml version="1.0" encoding="UTF-8"?>
-      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-      <plist version="1.0">
-        <dict>
-          <key>KeepAlive</key>
-          <dict>
-            <key>SuccessfulExit</key>
-            <false/>
-          </dict>
-          <key>Label</key>
-          <string>#{plist_name}</string>
-          <key>ProgramArguments</key>
-          <array>
-            <string>#{opt_bin}/etcd</string>
-          </array>
-          <key>RunAtLoad</key>
-          <true/>
-          <key>WorkingDirectory</key>
-          <string>#{var}</string>
-        </dict>
-      </plist>
-    EOS
+  service do
+    environment_variables ETCD_UNSUPPORTED_ARCH: "arm64" if Hardware::CPU.arm?
+    run [opt_bin/"etcd"]
+    run_type :immediate
+    keep_alive true
+    working_dir var
   end
 
   test do
     test_string = "Hello from brew test!"
     etcd_pid = fork do
+      on_macos do
+        if Hardware::CPU.arm?
+          # etcd isn't officially supported on arm64
+          # https://github.com/etcd-io/etcd/issues/10318
+          # https://github.com/etcd-io/etcd/issues/10677
+          ENV["ETCD_UNSUPPORTED_ARCH"]="arm64"
+        end
+      end
+
       exec bin/"etcd",
         "--enable-v2", # enable etcd v2 client support
         "--force-new-cluster",

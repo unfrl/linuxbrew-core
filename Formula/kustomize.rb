@@ -2,8 +2,8 @@ class Kustomize < Formula
   desc "Template-free customization of Kubernetes YAML manifests"
   homepage "https://github.com/kubernetes-sigs/kustomize"
   url "https://github.com/kubernetes-sigs/kustomize.git",
-      tag:      "kustomize/v4.1.2",
-      revision: "a5914abad89e0b18129eaf1acc784f9fe7d21439"
+    tag:      "kustomize/v4.1.2",
+    revision: "a5914abad89e0b18129eaf1acc784f9fe7d21439"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/kustomize.git"
 
@@ -13,23 +13,22 @@ class Kustomize < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "88e511d1c3a53c368ccda174321b8e7d62cb805604b970ad78475971bf5312c9"
-    sha256 cellar: :any_skip_relocation, big_sur:       "a09fe36547fe994531475b381515bfd4295e52e439cc1122d10d7c92810f5910"
-    sha256 cellar: :any_skip_relocation, catalina:      "578e14924d8120727d5582969b3017acb368750efb1b8cfc0dc004413321dbd7"
-    sha256 cellar: :any_skip_relocation, mojave:        "1c18ce5a11f0b4a4afabf6487775fa469407bfdd275b5b06167d2ee44e2acc10"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0f982550913e66384bf2268ad8edb74c1ac38f2a42a4dd7de6aaaecc681b2dc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "ae14da636d61ec922730218fb4674d1f69b8f4c4e29b3aaea4f845173ab6723f"
+    sha256 cellar: :any_skip_relocation, big_sur:       "a6589eddff020f4c94bb1649750d9c82971d510e2fac70597dfd3bb8e5e236ea"
+    sha256 cellar: :any_skip_relocation, catalina:      "d5582d70c031d76643a1711536e64f0e1c38784090b21d5c24bd383c7e809dc2"
+    sha256 cellar: :any_skip_relocation, mojave:        "dd31681f5009b345f9390a9c0601f3af3d0bb21684f750e372a28e5e5cfe1a09"
   end
 
   depends_on "go" => :build
 
   def install
     commit = Utils.git_head
-    tag = Utils.safe_popen_read("git", "tag", "--contains", "HEAD").strip
 
     cd "kustomize" do
       ldflags = %W[
         -s
-        -X sigs.k8s.io/kustomize/api/provenance.version=#{tag}
+        -X sigs.k8s.io/kustomize/api/provenance.version=#{name}/v#{version}
         -X sigs.k8s.io/kustomize/api/provenance.gitCommit=#{commit}
         -X sigs.k8s.io/kustomize/api/provenance.buildDate=#{Time.now.iso8601}
       ]
