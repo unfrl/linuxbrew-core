@@ -7,6 +7,10 @@ class Llvm < Formula
   sha256 "9ed1688943a4402d7c904cc4515798cdb20080066efa010fe7e1f2551b423628"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
+
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7c5577290b145406df523d193727305aff820e8d704d8d573bd152c783697899"
+  end
   revision 1 unless OS.mac?
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
