@@ -9,10 +9,11 @@ class Luaradio < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_big_sur: "7e52830ddd8a71879d33c359971b828bc4802a10f4b8a8f176748406105d1fdf"
-    sha256 cellar: :any, big_sur:       "7b03a5efbefa3aacf0d70d0c33004eef5afdcb4d5535be67d924149010fd9efa"
-    sha256 cellar: :any, catalina:      "d262ff65dc4fde0c784ad364812708f845dfd5543cf893e6e616595360071046"
-    sha256 cellar: :any, mojave:        "16197ba0307226d4d0dd4dbba8fc8d2a1d5a2dfe0d1ef1a8d69788eea6ddf352"
+    sha256 cellar: :any,                 arm64_big_sur: "7e52830ddd8a71879d33c359971b828bc4802a10f4b8a8f176748406105d1fdf"
+    sha256 cellar: :any,                 big_sur:       "7b03a5efbefa3aacf0d70d0c33004eef5afdcb4d5535be67d924149010fd9efa"
+    sha256 cellar: :any,                 catalina:      "d262ff65dc4fde0c784ad364812708f845dfd5543cf893e6e616595360071046"
+    sha256 cellar: :any,                 mojave:        "16197ba0307226d4d0dd4dbba8fc8d2a1d5a2dfe0d1ef1a8d69788eea6ddf352"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "898939708ff7fe0d913726c68fea7cf57ef50cdb91fff6cdef7db6855153fc2a"
   end
 
   depends_on "pkg-config" => :build
