@@ -19,10 +19,11 @@ class SuiteSparse < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_big_sur: "b45ef039ffd66c0166b487840a19c66b7ad260e32566685b61de30b3a7532719"
-    sha256 cellar: :any, big_sur:       "50a18520d9099373434967e3a275f110fbb43aacb3120ab242532b3e21551f2b"
-    sha256 cellar: :any, catalina:      "61a1de9849c6b9ed4291f543899814b2da4e9db629b1b6920fbc4d556f1379c3"
-    sha256 cellar: :any, mojave:        "9950440e6259dff3c96d5f29bb5b50435ab02b4371095f89da4a3f5351cba752"
+    sha256 cellar: :any,                 arm64_big_sur: "b45ef039ffd66c0166b487840a19c66b7ad260e32566685b61de30b3a7532719"
+    sha256 cellar: :any,                 big_sur:       "50a18520d9099373434967e3a275f110fbb43aacb3120ab242532b3e21551f2b"
+    sha256 cellar: :any,                 catalina:      "61a1de9849c6b9ed4291f543899814b2da4e9db629b1b6920fbc4d556f1379c3"
+    sha256 cellar: :any,                 mojave:        "9950440e6259dff3c96d5f29bb5b50435ab02b4371095f89da4a3f5351cba752"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b32d44ad8d2784e44518d09e519d5117ed668922c7f8de1148231f20081092df"
   end
 
   depends_on "cmake" => :build
