@@ -5,6 +5,10 @@ class Eless < Formula
   sha256 "de7a7891a20a5e7f25c0b5df812edaea87ab0d3336d41821a24e2d248aaf4abc"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "cc720394c1e88326fb9a2f76457a1edb4efa081313fe7fc914e1e9375b1e5ade"
+  end
+
   depends_on "emacs"
 
   def install
