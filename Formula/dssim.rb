@@ -10,6 +10,7 @@ class Dssim < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "a1c5c83958163239faa9fc6be6df3b22b5b3f22e73d592550a0644673748bbaa"
     sha256 cellar: :any_skip_relocation, catalina:      "79e984e37783117cbc3923f5f5dc98ec8f65d0f9c550e64ce32135f48cbc04bb"
     sha256 cellar: :any_skip_relocation, mojave:        "78f969b1a8b31bd99305cc9b43e91e3e2e5c39f71ed4083fd7bfbcfcef36a00c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed9396d267f1bd634cb25a83f4e435e27b13e4fd860635f16935296e08cb6276"
   end
 
   depends_on "nasm" => :build
