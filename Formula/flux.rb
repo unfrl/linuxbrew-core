@@ -2,8 +2,8 @@ class Flux < Formula
   desc "Lightweight scripting language for querying databases"
   homepage "https://www.influxdata.com/products/flux/"
   url "https://github.com/influxdata/flux.git",
-      tag:      "v0.114.1",
-      revision: "f10042ff23fd575fac8055f5041eecf1db80afa4"
+      tag:      "v0.115.0",
+      revision: "6c92e39ef008c84e41d8c538000f63929bc5465f"
   license "MIT"
   head "https://github.com/influxdata/flux.git"
 
@@ -13,11 +13,10 @@ class Flux < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "bd91c49404174c1ba144c7a0e38d7adcfc4544bfa32e9c3a3db2146f2d6dc2fd"
-    sha256 cellar: :any,                 big_sur:       "da4f31757fb58d9187f063c72c11146521af858459f9f0c821c6bc366ed262f8"
-    sha256 cellar: :any,                 catalina:      "68b8c13a44ca0d0ec04e3a2dd5bcb4988226335e693a62ccda0d17dcda46577b"
-    sha256 cellar: :any,                 mojave:        "e7065e47c8f418e010fad574a7458752934d36cb68683254eb3d4cf2b77e8ab4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f889f5c796a0b2f02e724aca4f982d6e1df0fbcd7395a81935a2abf8ca42e2c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "2b6c6cb0f75d7f08a0f276eeefd21b64f503abdb3e1ec20cabbb163bb9087452"
+    sha256 cellar: :any,                 big_sur:       "94e9db3fc9a8ab1edad9ef010eaebadf1a0b5ec5b7cee48d59a8b6f977b22251"
+    sha256 cellar: :any,                 catalina:      "5c6ab736c144359eadb3b249767b7b4a04475b71c9ce10869dd6ef108f035c24"
+    sha256 cellar: :any,                 mojave:        "40d383f6b7e6fa77b735ea62bd399a0024fa773f47a2aaa6d2acc2199b37adcf"
   end
 
   depends_on "go" => :build
