@@ -8,6 +8,10 @@ class PyqtBuilder < Formula
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
   head "https://www.riverbankcomputing.com/hg/PyQt-builder", using: :hg
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0930178ad00344b2049292aeb8c4b01bca38e548fbc51be84b27b1deec5c3bb1"
+  end
+
   depends_on "python@3.9"
   depends_on "sip"
 
