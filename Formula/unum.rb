@@ -1,16 +1,20 @@
 class Unum < Formula
   desc "Interconvert numbers, Unicode, and HTML/XHTML entities"
   homepage "https://www.fourmilab.ch/webtools/unum/"
-  url "https://www.fourmilab.ch/webtools/unum/prior-releases/3.2/unum.tar.gz"
-  sha256 "d290070f4be54addacac7318dfb2c0bfde71690bba51f99ecf64671b71801d2a"
+  url "https://www.fourmilab.ch/webtools/unum/prior-releases/3.3/unum.tar.gz"
+  sha256 "544dd1172665c38237bbeb2d4d820329064e6a78373486b92fbd498714dc2e91"
+  license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
+
+  livecheck do
+    url "https://www.fourmilab.ch/webtools/unum/prior-releases/"
+    regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
+  end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "e0f619918472df38d68814008a4a39238faa5b6dcc7b259486491c96da869f17"
-    sha256 cellar: :any_skip_relocation, big_sur:       "668661702317b0eda68f6e710916536f96c0a459c9500c0ac684359b2a8657b6"
-    sha256 cellar: :any_skip_relocation, catalina:      "7ceee0d5f8227329b325fdbabd54b7c2cd6a1a5ad38a3ab8b860c25036197fcd"
-    sha256 cellar: :any_skip_relocation, mojave:        "7ceee0d5f8227329b325fdbabd54b7c2cd6a1a5ad38a3ab8b860c25036197fcd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f4c021aa55d9ea6210904899be6044cc22861bb91be718854064b3adf8932b9"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "7875f9a1d69e17ee8db706b271fdf440be41a5c82ae49fb92ad978f977ee87c9"
+    sha256 cellar: :any_skip_relocation, big_sur:       "2b06d8e730fe99e43e0fa0414c4009ed321fa3f76030cb0a6d9ec51bec53eebc"
+    sha256 cellar: :any_skip_relocation, catalina:      "fb174cf449a9d7442bfeecb93ef0daf07d90928e4cdddd55a66e91d4e882956a"
+    sha256 cellar: :any_skip_relocation, mojave:        "fb174cf449a9d7442bfeecb93ef0daf07d90928e4cdddd55a66e91d4e882956a"
   end
 
   depends_on "pod2man" => :build
