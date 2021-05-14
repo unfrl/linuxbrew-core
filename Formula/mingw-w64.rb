@@ -1,10 +1,9 @@
 class MingwW64 < Formula
   desc "Minimalist GNU for Windows and GCC cross-compilers"
   homepage "https://sourceforge.net/projects/mingw-w64/"
-  url "https://downloads.sourceforge.net/project/mingw-w64/mingw-w64/mingw-w64-release/mingw-w64-v8.0.0.tar.bz2"
-  sha256 "44c740ea6ab3924bc3aa169bad11ad3c5766c5c8459e3126d44eabb8735a5762"
+  url "https://downloads.sourceforge.net/project/mingw-w64/mingw-w64/mingw-w64-release/mingw-w64-v8.0.2.tar.bz2"
+  sha256 "f00cf50951867a356d3dc0dcc7a9a9b422972302e23d54a33fc05ee7f73eee4d"
   license "ZPL-2.1"
-  revision 4
 
   livecheck do
     url :stable
@@ -12,10 +11,9 @@ class MingwW64 < Formula
   end
 
   bottle do
-    sha256 big_sur:      "8c3cd715317e77d6a0d08533c8ff5d52a1579167df4135e4d2e9454b50ebc60a"
-    sha256 catalina:     "fbc6d694298b4605a1cee8cda91d7ab5aaec320e8032881138fd710d2a21e3c8"
-    sha256 mojave:       "c3a059d85c9aacc3ae3c4f2a72e7d13f3361eaaf342cae7203bb907c66e72fc5"
-    sha256 x86_64_linux: "848751a8ab8ac14ec5392ca7a92280d8ee42233b2c6b98e2022af54e052812bf"
+    sha256 big_sur:  "62b1042ea9745e5056f5dd165d6e766a748fdb14f662b192e92467db7fd6a52a"
+    sha256 catalina: "ad473543302834e49b7bded4ea31ac357215c8b1a0bc1ec8d85e0f2a98afaafe"
+    sha256 mojave:   "0ce228044b3bc2fc0cbe51f4deb8af9f9434e70d906e615b4eb0d688cb9f1a85"
   end
 
   # Apple's makeinfo is old and has bugs

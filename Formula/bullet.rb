@@ -7,12 +7,11 @@ class Bullet < Formula
   head "https://github.com/bulletphysics/bullet3.git"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_big_sur: "945ddcfbc1826e3fd71e88a4f6b64917c20654022692fc6cc687e649d3c8bf0e"
-    sha256 cellar: :any,                 big_sur:       "946daa961b764288a543f716ee6706f14f39bba63253a81f8d2f29b8a9ac428b"
-    sha256 cellar: :any,                 catalina:      "db37ddd9a80b8b9ceff16485b0e2a443c241610346904b5e3579b857a4af7ce4"
-    sha256 cellar: :any,                 mojave:        "5f28a83cf4c946380a82c7facfee88d1881f9ddefc2177811370747d6de06f1d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "125888dc91a867016e100046c67d1b422ac894d75f759bda46d60d07acb74b5a"
+    rebuild 1
+    sha256 cellar: :any, arm64_big_sur: "1f2000191b311d231c5e1a949aba892992e533df61cb3cf05cd1ec7ded01cb3f"
+    sha256 cellar: :any, big_sur:       "85bf74ad7500b0bc9b15f212cc45d1d3ad6e2a2e427a1878ac571e7fd7007d97"
+    sha256 cellar: :any, catalina:      "76e1c4ed888700e335545275f080f954071d76164784881488b0b31f295bdbb3"
+    sha256 cellar: :any, mojave:        "3b39c389a9b532dfdbc0f3652bf9530fc68e1d453d1df5e017028b41f448e6c6"
   end
 
   depends_on "cmake" => :build
@@ -24,12 +23,12 @@ class Bullet < Formula
       -DBT_USE_EGL=ON
       -DBUILD_UNIT_TESTS=OFF
       -DINSTALL_EXTRA_LIBS=ON
-      -DBUILD_SHARED_LIBS=ON
     ]
 
     double_args = std_cmake_args + %W[
-      -DCMAKE_INSTALL_RPATH=#{opt_lib}/bullet_double
+      -DCMAKE_INSTALL_RPATH=#{opt_lib}/bullet/double
       -DUSE_DOUBLE_PRECISION=ON
+      -DBUILD_SHARED_LIBS=ON
     ]
 
     mkdir "builddbl" do
@@ -37,22 +36,28 @@ class Bullet < Formula
       system "make", "install"
     end
     dbllibs = lib.children
-    (lib/"bullet_double").install dbllibs
+    (lib/"bullet/double").install dbllibs
 
     args = std_cmake_args + %W[
-      -DBUILD_PYBULLET=ON
       -DBUILD_PYBULLET_NUMPY=ON
       -DCMAKE_INSTALL_RPATH=#{opt_lib}
     ]
 
     mkdir "build" do
-      system "cmake", "..", *args, *common_args, "-DBUILD_SHARED_LIBS=OFF"
+      system "cmake", "..", *args, *common_args, "-DBUILD_SHARED_LIBS=OFF", "-DBUILD_PYBULLET=OFF"
       system "make", "install"
 
       system "make", "clean"
 
-      system "cmake", "..", *args, *common_args, "-DBUILD_SHARED_LIBS=ON"
+      system "cmake", "..", *args, *common_args, "-DBUILD_SHARED_LIBS=ON", "-DBUILD_PYBULLET=ON"
       system "make", "install"
+    end
+
+    # Install single-precision library symlinks into `lib/"bullet/single"` for consistency
+    lib.each_child do |f|
+      next if f == lib/"bullet"
+
+      (lib/"bullet/single").install_symlink f
     end
   end
 
@@ -78,7 +83,7 @@ class Bullet < Formula
     system "./test"
 
     # Test double-precision library
-    system ENV.cc, "test.cpp", "-I#{include}/bullet", "-L#{lib}/bullet_double",
+    system ENV.cc, "test.cpp", "-I#{include}/bullet", "-L#{lib}/bullet/double",
                    "-lLinearMath", cxx_lib, "-o", "test"
     system "./test"
   end

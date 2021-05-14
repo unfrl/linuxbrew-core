@@ -4,14 +4,11 @@ class Phpunit < Formula
   url "https://phar.phpunit.de/phpunit-9.5.4.phar"
   sha256 "79caa5773272293ebcfcd4bfd68ecac7707fc71019bfb17aac6884ef0a11d005"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url "https://phar.phpunit.de/"
     regex(/href=.*?phpunit[._-]v?(\d+(?:\.\d+)+)\.phar/i)
-  end
-
-  bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "fb7d2e5956a5b94ae7bfd379457c30f0cdf5d1fa762e99afed5404be99a4501e"
   end
 
   depends_on "php" => :test

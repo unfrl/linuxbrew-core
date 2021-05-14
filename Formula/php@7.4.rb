@@ -6,13 +6,13 @@ class PhpAT74 < Formula
   mirror "https://fossies.org/linux/www/php-7.4.19.tar.xz"
   sha256 "6c17172c4a411ccb694d9752de899bb63c72a0a3ebe5089116bc13658a1467b2"
   license "PHP-3.01"
+  revision 1
 
   bottle do
-    sha256 arm64_big_sur: "5133e091bffa311ffe767b4acd3c34b34e9feade1a45a217c8e5d8aeecb57973"
-    sha256 big_sur:       "9987fc7fee5d8f3bdbe123ea08c22464d525aba3662a462c5a2948601067d593"
-    sha256 catalina:      "db9b74ba8128d1f2edc71ff916e761305eb3ae1590138828c2ef577ef3d4cd9e"
-    sha256 mojave:        "294f9650000083dda8a977ab5ddbfc1750e968f4f66c7ea1b1231e9a69e4579b"
-    sha256 x86_64_linux:  "885c0f72dbcc9e0d8bf805541394c5a6a9aec6ef0fec4fdbfae383703d930d0c"
+    sha256 arm64_big_sur: "cf8a5b7e38d111b262a9f67f0731ec8e562abb3dede3d5b367d5c33d5699165a"
+    sha256 big_sur:       "e9533d8355dd33f2c8431eded1a7c8c0711ef31ba6f23c3a137ebd746ef29ad1"
+    sha256 catalina:      "2f74b884afbb639639b1716426db1e48f662118fd90b4ac8fecc2867d242afee"
+    sha256 mojave:        "5736e0f9dc341e7cd169a485c2d146edc6641af33ffe624cd7a9166da0deb2b1"
   end
 
   keg_only :versioned_formula
