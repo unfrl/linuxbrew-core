@@ -7,9 +7,10 @@ class Roswell < Formula
   head "https://github.com/roswell/roswell.git"
 
   bottle do
-    sha256 big_sur:  "9cc57eb8499901954640e50f20cf1935f206a6f415d1812d4c875eec1361cf9c"
-    sha256 catalina: "274105c09c47e4aa6d586f970dd5f44da0e664db7f1c8a8f2b04691b2894c164"
-    sha256 mojave:   "2b7ec4f359c16791326ac1a8ef064ba40e6dc758ed0b6b9c277cc13c12c1a6cf"
+    sha256 big_sur:      "9cc57eb8499901954640e50f20cf1935f206a6f415d1812d4c875eec1361cf9c"
+    sha256 catalina:     "274105c09c47e4aa6d586f970dd5f44da0e664db7f1c8a8f2b04691b2894c164"
+    sha256 mojave:       "2b7ec4f359c16791326ac1a8ef064ba40e6dc758ed0b6b9c277cc13c12c1a6cf"
+    sha256 x86_64_linux: "df225d2a1ad9e5a4ed8cf2ab047f33c15e925781b28bf5e851d7e0f1463356e8"
   end
 
   depends_on "autoconf" => :build
