@@ -11,6 +11,10 @@ class Phpunit < Formula
     regex(/href=.*?phpunit[._-]v?(\d+(?:\.\d+)+)\.phar/i)
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b708cdfc5c04270374de843a69f8f0add7e5e418bb662ff173e7e92702e2683f"
+  end
+
   depends_on "php" => :test
 
   def install
