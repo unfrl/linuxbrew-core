@@ -15,6 +15,7 @@ class Openldap < Formula
     sha256 big_sur:       "3cd664ef4e02c7034c0fbded6a9ce81d7995e7785547b4e2b4258be2c6ac2727"
     sha256 catalina:      "2a09c420f6510ca308e88839f6479f4578f93915224852c9b0ee23f8ac9a0c80"
     sha256 mojave:        "2aeca689b082906b3f9c655581bbc0d9b0642a93fe05f6b20d534a068e29d8c2"
+    sha256 x86_64_linux:  "a95618554383809f8689936de9a462bdedbdbb38f17142a9972b026dc5ef5805"
   end
 
   keg_only :provided_by_macos
