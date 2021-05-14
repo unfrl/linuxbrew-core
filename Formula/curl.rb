@@ -20,10 +20,11 @@ class Curl < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "04dd02baef28b4d4a3b03700a8a9ac8c08f413bd2f49b15e312340793ea435f8"
-    sha256 cellar: :any, big_sur:       "ebd3c6a3797ef3851a4b5976360368ed0d74d460a73c4302abb4589dbeac45a2"
-    sha256 cellar: :any, catalina:      "2b6a03437d62e53fb70f2ed195fe1a661ee91657601c8280fb79202ee0d86d18"
-    sha256 cellar: :any, mojave:        "cc4c94713a8b34de386285a1579238f983c59e02a9ae109a54b919435fb72728"
+    sha256 cellar: :any,                 arm64_big_sur: "04dd02baef28b4d4a3b03700a8a9ac8c08f413bd2f49b15e312340793ea435f8"
+    sha256 cellar: :any,                 big_sur:       "ebd3c6a3797ef3851a4b5976360368ed0d74d460a73c4302abb4589dbeac45a2"
+    sha256 cellar: :any,                 catalina:      "2b6a03437d62e53fb70f2ed195fe1a661ee91657601c8280fb79202ee0d86d18"
+    sha256 cellar: :any,                 mojave:        "cc4c94713a8b34de386285a1579238f983c59e02a9ae109a54b919435fb72728"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ec0fc19e0b4c567470bc979dd1ec91f63c45deb81d09255a4791fcb0bfcd46e"
   end
 
   head do
