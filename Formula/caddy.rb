@@ -1,25 +1,23 @@
 class Caddy < Formula
   desc "Powerful, enterprise-ready, open source web server with automatic HTTPS"
   homepage "https://caddyserver.com/"
-  url "https://github.com/caddyserver/caddy/archive/v2.3.0.tar.gz"
-  sha256 "4688b122ac05be39622aa81324d1635f1642e4a66d731e82d210aef78cf2766a"
+  url "https://github.com/caddyserver/caddy/archive/v2.4.0.tar.gz"
+  sha256 "36ac7c018e27ea42d13f1f6e2fc3137bda26a160d1dc4888ebfa9090da2f551e"
   license "Apache-2.0"
   head "https://github.com/caddyserver/caddy.git"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "506af0d514605b32b5775cf716d241a5de2e96e8c5a99139573753c4476fbb4d"
-    sha256 cellar: :any_skip_relocation, big_sur:       "9564b852006d1a2bbad34dffce96a225b26e258fb9bc34a2202fe2b9dceee397"
-    sha256 cellar: :any_skip_relocation, catalina:      "e3426aa235903fb0d6d25674114e16f05974f719119bec81b443136f8cc1b347"
-    sha256 cellar: :any_skip_relocation, mojave:        "182ffcf9b7bb81f4299897a225848e690605f47126f1a2dd97b69ca5a7f869ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9e47e306a1dbe45059abe36b4ebe74e6a005868be9d2f4e0c3c26aa265bc3e1"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "fb0c874c527071d616bbb93dd368b78fade161156277345f289038932e2a5bac"
+    sha256 cellar: :any_skip_relocation, big_sur:       "f73e60413d840be6f29c75a8b4df868534bc97816fdccaad5ece3649b41a9f49"
+    sha256 cellar: :any_skip_relocation, catalina:      "f73e60413d840be6f29c75a8b4df868534bc97816fdccaad5ece3649b41a9f49"
+    sha256 cellar: :any_skip_relocation, mojave:        "f73e60413d840be6f29c75a8b4df868534bc97816fdccaad5ece3649b41a9f49"
   end
 
   depends_on "go" => :build
 
   resource "xcaddy" do
-    url "https://github.com/caddyserver/xcaddy/archive/v0.1.8.tar.gz"
-    sha256 "517e800e2c3edfa0bcb5a80092d2cc7dc2f7d1c21a91ec6e77393df127b182f9"
+    url "https://github.com/caddyserver/xcaddy/archive/v0.1.9.tar.gz"
+    sha256 "399880f59bf093394088cf2d802b19e666377aea563b7ada5001624c489b62c9"
   end
 
   def install

@@ -1,16 +1,17 @@
 class CadenceWorkflow < Formula
   desc "Distributed, scalable, durable, and highly available orchestration engine"
   homepage "https://cadenceworkflow.io/"
-  url "https://github.com/uber/cadence/archive/refs/tags/v0.18.2.tar.gz"
-  sha256 "1cdffbee29d9455a0ff4e61114f93b1f5fc210366b707b7dd496a90325a21dce"
+  url "https://github.com/uber/cadence.git",
+    tag:      "v0.21.0",
+    revision: "667b7c68e67682a8d23f4b8f93e91a791313d8d6"
   license "MIT"
   head "https://github.com/uber/cadence.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "4108b02d4a11dba98b26af83c2633550d922eeb00160218458f9896244cc6b25"
-    sha256 cellar: :any_skip_relocation, big_sur:       "04a9302cdc9bd7ac3986ba5dba8d786dda09737410071b5d33d59645369bb0fe"
-    sha256 cellar: :any_skip_relocation, catalina:      "2402f801a03a4d4a5a557958e0f7342e70901c988475eaed26ac02e1f9e84fa8"
-    sha256 cellar: :any_skip_relocation, mojave:        "5f123ab1904790aa0442ad18d3f9fc09ee99799711403e96e613964c3ad84ac3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "8e1850323d0cad6a3f44473ff4aaef105184612d7722f50d1873a7da7316679a"
+    sha256 cellar: :any_skip_relocation, big_sur:       "c6dab9ef8e9cb3c7f132f7b5a38220b44d2ed67ef3ad8c4e40254203cd6e36e8"
+    sha256 cellar: :any_skip_relocation, catalina:      "5ce8a6e9023ae8e94fd0a050b1eea6c8e6f66d825efd424f6cf684deadbef854"
+    sha256 cellar: :any_skip_relocation, mojave:        "55181a06191e4d5e71a954330db3366a26cbf210e6bc53fb7e6ad3cbc9b045ab"
   end
 
   depends_on "go" => :build
@@ -18,6 +19,7 @@ class CadenceWorkflow < Formula
   conflicts_with "cadence", because: "both install an `cadence` executable"
 
   def install
+    system "make", ".fake-codegen"
     system "make", "cadence", "cadence-server", "cadence-canary", "cadence-sql-tool", "cadence-cassandra-tool"
     bin.install "cadence"
     bin.install "cadence-server"

@@ -1,8 +1,8 @@
 class Curaengine < Formula
   desc "C++ 3D printing GCode generator"
   homepage "https://github.com/Ultimaker/CuraEngine"
-  url "https://github.com/Ultimaker/CuraEngine/archive/4.9.0.tar.gz"
-  sha256 "202edbdd3c376765009dc9b8883ab0480d9c501c7ce7c9cfc2c383969ea908c2"
+  url "https://github.com/Ultimaker/CuraEngine/archive/4.9.1.tar.gz"
+  sha256 "eb422ef388bee09d26bbf3bade489359bf1fd59fd04d8452ac5d6ab3ba5e3894"
   license "AGPL-3.0-or-later"
   version_scheme 1
   head "https://github.com/Ultimaker/CuraEngine.git"
@@ -18,11 +18,10 @@ class Curaengine < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "aab107cb0efa59ad32f3fbe3c6442cf28c0473219fa6127ec66440930272f66c"
-    sha256 cellar: :any_skip_relocation, big_sur:       "4bca11af405fb69326042a262c8067e5d30c29139a00c3f6aef4354c7bb5aae5"
-    sha256 cellar: :any_skip_relocation, catalina:      "7a354f482837af85758b8fafed7bcc5cd771da49c19dc6bb4d3aa771882e283d"
-    sha256 cellar: :any_skip_relocation, mojave:        "dd293b4200865f3e3991a5dd6d981eafbd5398819914e78f2380ac85d0255fec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c72266c62f3dc3f932b6d85fca802d029fa5571d8d56bad02da7e41402ce3e93"
+    sha256 cellar: :any, arm64_big_sur: "7551b87adf579e74e8469e37e4af3e5e57e5d132b02828a4b8331e3b93bdb0ab"
+    sha256 cellar: :any, big_sur:       "fd8acf73caf3d14af5fe1d4cbcbb486a315f352139a6dbc4b836ea4568955d55"
+    sha256 cellar: :any, catalina:      "0087d26cdeaa2a02e0d3ef8e4e5eb577c18e0d74f90047e5dd509c4eea903c31"
+    sha256 cellar: :any, mojave:        "aa47077792c283be3ecda128bbad0f9686db11dce5dcf08ac3dbb34e1bfd2ea5"
   end
 
   depends_on "cmake" => :build
@@ -30,12 +29,12 @@ class Curaengine < Formula
   # The version tag in these resources (e.g., `/1.2.3/`) should be changed as
   # part of updating this formula to a new version.
   resource "fdmextruder_defaults" do
-    url "https://raw.githubusercontent.com/Ultimaker/Cura/4.9.0/resources/definitions/fdmextruder.def.json"
+    url "https://raw.githubusercontent.com/Ultimaker/Cura/4.9.1/resources/definitions/fdmextruder.def.json"
     sha256 "d9b38fdf02d1dcdc6ee7401118ca9468236adb860786361e453f1eeb54c95b1f"
   end
 
   resource "fdmprinter_defaults" do
-    url "https://raw.githubusercontent.com/Ultimaker/Cura/4.9.0/resources/definitions/fdmprinter.def.json"
+    url "https://raw.githubusercontent.com/Ultimaker/Cura/4.9.1/resources/definitions/fdmprinter.def.json"
     sha256 "bc4ed29f1c4191ccf6fa76b0a2857aca7ab6ed2a5f526364f52910f330dfa6a6"
   end
 

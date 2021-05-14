@@ -4,16 +4,15 @@ class Checkov < Formula
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
   # checkov should only be updated every 15 releases on multiples of 15
-  url "https://files.pythonhosted.org/packages/a3/da/6a5a35cb0619122d785a9d0fcdef7f084c0ee5278b9918d7a5b128a70b31/checkov-2.0.120.tar.gz"
-  sha256 "97128d40bc37d303705b1b73a4f4d21ae443a43542ea08d49707d870fae5f63a"
+  url "https://files.pythonhosted.org/packages/3e/b9/fe899852340a28c969e8549dd592cd7b67e3790ed6c6c7e76f49c35225da/checkov-2.0.135.tar.gz"
+  sha256 "de2aba914d7aff1347aa8bb007eb150a934e62b0993d5de5a9850c81d462deb8"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "aa9e4035aa68e4978f923f6d329b91ac69fdda78c8bff630f8a6f6469129f880"
-    sha256 cellar: :any_skip_relocation, big_sur:       "29a3fc07db944b77017f95773bf63e143870216cd28d371a744e74c2bad20aa2"
-    sha256 cellar: :any_skip_relocation, catalina:      "33ab6877115b9af43a565fcb9e58f6a87e251545062f7bd24b02ca242a3e1614"
-    sha256 cellar: :any_skip_relocation, mojave:        "638a10e146b48752e410b31f2664296516a42db532219c991ebf1b409c6ff31a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3bf23db3a69809157e8a8c4206cff8f33a09feb2583afd1db7dd2474be152bb"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "fa74c600351ebcf71a13534d45bae9ecbeb133a0f1d7bce9ef7976655bd69dbe"
+    sha256 cellar: :any_skip_relocation, big_sur:       "caed28f76415c6f2f22e87d1f529637bcd15a2935af63c18ba5bdb3c00dea44c"
+    sha256 cellar: :any_skip_relocation, catalina:      "2f6ba0b3450832ad04b3db3dc059dcbd5160a83e4a61d2fe99f4306d3397db24"
+    sha256 cellar: :any_skip_relocation, mojave:        "fcd8e8943c27835d6d2b4dc171b431770e638685f914149516da98fb3c730f03"
   end
 
   depends_on "python-tabulate"
@@ -35,8 +34,8 @@ class Checkov < Formula
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/84/bc/2e91f286a89c84cc77bd8ca64aff2eadc91a9e5b7ac43b5be359c1117134/botocore-1.20.68.tar.gz"
-    sha256 "0f693f5ad6348ec1a62b3a66fee2840d3b722d66b44896022d644275ff8b143d"
+    url "https://files.pythonhosted.org/packages/36/10/0aad4fae034a4b395ab67cb6943b57224c70bccebe046cb17cb9bbf94b44/botocore-1.20.71.tar.gz"
+    sha256 "b7afebca1fd6ca1f8af79f377a445d474e3bd2cf88e704169d6713a6362a304f"
   end
 
   resource "cached-property" do
@@ -120,8 +119,8 @@ class Checkov < Formula
   end
 
   resource "Jinja2" do
-    url "https://files.pythonhosted.org/packages/4f/e7/65300e6b32e69768ded990494809106f87da1d436418d5f1367ed3966fd7/Jinja2-2.11.3.tar.gz"
-    sha256 "a6d58433de0ae800347cab1fa3043cebbabe8baa9d29e668f1c768cb87a333c6"
+    url "https://files.pythonhosted.org/packages/7a/0c/23cbcf515b5394e9f59a3e6629f26e1142b92d474ee0725a26aa5a3bcf76/Jinja2-3.0.0.tar.gz"
+    sha256 "ea8d7dd814ce9df6de6a761ec7f1cac98afe305b8cdc4aaae4e114b8d8ce24c5"
   end
 
   resource "jmespath" do
@@ -145,8 +144,8 @@ class Checkov < Formula
   end
 
   resource "MarkupSafe" do
-    url "https://files.pythonhosted.org/packages/b9/2e/64db92e53b86efccfaea71321f597fa2e1b2bd3853d8ce658568f7a13094/MarkupSafe-1.1.1.tar.gz"
-    sha256 "29872e92839765e546828bb7754a68c418d927cd064fd4708fab9fe9c8bb116b"
+    url "https://files.pythonhosted.org/packages/67/6a/5b3ed5c122e20c33d2562df06faf895a6b91b0a6b96a4626440ffe1d5c8e/MarkupSafe-2.0.0.tar.gz"
+    sha256 "4fae0677f712ee090721d8b17f412f1cbceefbf0dc180fe91bab3232f38b4527"
   end
 
   resource "networkx" do
