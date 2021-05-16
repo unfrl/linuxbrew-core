@@ -8,6 +8,10 @@ class Babel < Formula
   sha256 "c0bf2dbc4714cdb6341001b120d4a99b6919ffe4960aa4fb9ffbcab8e1b11616"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "db7271fc867cbf6ffe30b7cb53d9cb862eada7cfea35b50d5d25535eb7c1bd64"
+  end
+
   depends_on "node"
 
   resource "babel-cli" do
