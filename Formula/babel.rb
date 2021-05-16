@@ -4,17 +4,9 @@ require "json"
 class Babel < Formula
   desc "Compiler for writing next generation JavaScript"
   homepage "https://babeljs.io/"
-  url "https://registry.npmjs.org/@babel/core/-/core-7.14.0.tgz"
-  sha256 "41cff7659caf896fce5956bdcd96ec31a6e99cfbdbd8bff958f00366f352dc7e"
+  url "https://registry.npmjs.org/@babel/core/-/core-7.14.2.tgz"
+  sha256 "c0bf2dbc4714cdb6341001b120d4a99b6919ffe4960aa4fb9ffbcab8e1b11616"
   license "MIT"
-
-  bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "17450dbe68d163d15a7724696b3a160d55fa67bb46dbb098f3fa098f7fdfb811"
-    sha256 cellar: :any_skip_relocation, big_sur:       "a06fc96c6b5d0791b98e94f28d1eef5dbbe1be5817ab1e53bbc283392e99c0b2"
-    sha256 cellar: :any_skip_relocation, catalina:      "a06fc96c6b5d0791b98e94f28d1eef5dbbe1be5817ab1e53bbc283392e99c0b2"
-    sha256 cellar: :any_skip_relocation, mojave:        "a06fc96c6b5d0791b98e94f28d1eef5dbbe1be5817ab1e53bbc283392e99c0b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8b8288b1d583025ecb161662617f6da80ae9ece5512aa37f0a12b5f3a14b45a"
-  end
 
   depends_on "node"
 
