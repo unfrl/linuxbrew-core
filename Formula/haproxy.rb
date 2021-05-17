@@ -1,8 +1,8 @@
 class Haproxy < Formula
   desc "Reliable, high performance TCP/HTTP load balancer"
   homepage "https://www.haproxy.org/"
-  url "https://www.haproxy.org/download/2.3/src/haproxy-2.3.10.tar.gz"
-  sha256 "9946e0cfc83f29072b3431e37246221cf9d4a9d28a158c075714d345266f4f35"
+  url "https://www.haproxy.org/download/2.4/src/haproxy-2.4.0.tar.gz"
+  sha256 "0a6962adaf5a1291db87e3eb4ddf906a72fed535dbd2255b164b7d8394a53640"
   license "GPL-2.0-or-later" => { with: "openvpn-openssl-exception" }
 
   livecheck do
@@ -11,11 +11,10 @@ class Haproxy < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "84029114d1b57c063945f6cd2c41dc546ca3ea4f508f5974359d7fda3cf4bc93"
-    sha256 cellar: :any,                 big_sur:       "99ce3991d747cce449f08245a16993dd3dabc34c406daac209ff90730f3d06b5"
-    sha256 cellar: :any,                 catalina:      "87165db5388506d060e0f3fbafd7b7827e9ceeb9ec6cbe55221c2cbebe135fcc"
-    sha256 cellar: :any,                 mojave:        "db4c0571bec487919c0a734c0249588296e331bda6f6bafb8ae5b5ecf9607757"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bfbffd89936f7eada4889ec62c64c0374f33c71d1748ed0733a57554f112d168"
+    sha256 cellar: :any, arm64_big_sur: "3cdc46f82b1c8fbc95f108ed5a342d3173ec9e003d82ceab72241ec10606ad9a"
+    sha256 cellar: :any, big_sur:       "4eea98c884ffbb65ad1765a69046d8885e7d50f7cc202a282a8a75e7610647e9"
+    sha256 cellar: :any, catalina:      "07c90429e84257cc4ef2cbf02ff41e01f6d4a928d4da73312fc8219f21792e7c"
+    sha256 cellar: :any, mojave:        "f44bd38a076a47dae9bd4f6c97937c2b215ef892a8ecd8e97bc7b6a2726901e3"
   end
 
   depends_on "openssl@1.1"

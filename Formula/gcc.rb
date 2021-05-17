@@ -27,11 +27,11 @@ class Gcc < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "0b2cefe66734ad3735ab68ee3a37f35e8a6ac973c65123c26c57e4cdba77b770"
-    sha256 big_sur:       "0de7e36bd2fb710bcb25ba27581784570c55a3e2ec652ecdd3a5cf1b6105a9e3"
-    sha256 catalina:      "f3e0b6948b4c1cd454f3b8a020929381b559662b92eccc080b2f9a52683f3743"
-    sha256 mojave:        "57d923640559ee09ad782e6dd5035613772ca9f63c660b28e3b16a7e2f767962"
-    sha256 x86_64_linux:  "66eab1887c2baa56c6b179a1c61f05acd4d49311da5f2e56fbd9032ef261454a"
+    rebuild 1
+    sha256 arm64_big_sur: "2542ede762fa167948115926cd8bd9236e11d5de282ff8d3b4cd8e74209b2ef2"
+    sha256 big_sur:       "041a6c4ec4bee580086bef7aec94a10ef375150d72d9047d28bbb6fb2a797976"
+    sha256 catalina:      "bc05fc7bb80169e21096aca2245b85b7cb7fd131663691af9fc2f6ba9990f61f"
+    sha256 mojave:        "b6516f3ab77f60f6811d403b19de4c6266aa26e5ef009e974211cbdd06b13d15"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -74,6 +74,7 @@ class Gcc < Formula
     #  - Go, currently not supported on macOS
     #  - BRIG
     languages = %w[c c++ objc obj-c++ fortran]
+    languages << "d" if Hardware::CPU.intel?
 
     pkgversion = "Homebrew GCC #{pkg_version} #{build.used_options*" "}".strip
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
@@ -92,6 +93,8 @@ class Gcc < Formula
       --with-pkgversion=#{pkgversion}
       --with-bugurl=#{tap.issues_url}
     ]
+    # libphobos is part of gdc
+    args << "--enable-libphobos" if Hardware::CPU.intel?
 
     on_macos do
       args << "--build=#{cpu}-apple-darwin#{OS.kernel_version.major}"
@@ -99,6 +102,10 @@ class Gcc < Formula
 
       # Xcode 10 dropped 32-bit support
       args << "--disable-multilib" if DevelopmentTools.clang_build_version >= 1000
+
+      # Workaround for Xcode 12.5 bug on Intel
+      # https://gcc.gnu.org/bugzilla/show_bug.cgi?id=100340
+      args << "--without-build-config" if Hardware::CPU.intel? && DevelopmentTools.clang_build_version >= 1205
 
       # System headers may not be in /usr/include
       sdk = MacOS.sdk_path_if_needed
@@ -145,6 +152,8 @@ class Gcc < Formula
         lib.install_symlink lib/"gcc/#{version_suffix}/libgfortran.a"
         lib.install_symlink lib/"gcc/#{version_suffix}/libgfortran.so.5"
       end
+
+      bin.install_symlink bin/"gdc-#{version_suffix}" => "gdc" if Hardware::CPU.intel?
     end
 
     # Handle conflicts between GCC formulae and avoid interfering
@@ -277,5 +286,18 @@ class Gcc < Formula
     EOS
     system "#{bin}/gfortran", "-o", "test", "test.f90"
     assert_equal "Done\n", `./test`
+
+    if Hardware::CPU.intel?
+      (testpath/"hello_d.d").write <<~EOS
+        import std.stdio;
+        int main()
+        {
+          writeln("Hello, world!");
+          return 0;
+        }
+      EOS
+      system "#{bin}/gdc-#{version_suffix}", "-o", "hello-d", "hello_d.d"
+      assert_equal "Hello, world!\n", `./hello-d`
+    end
   end
 end

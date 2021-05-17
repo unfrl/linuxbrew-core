@@ -7,7 +7,7 @@ class Llvm < Formula
   sha256 "9ed1688943a4402d7c904cc4515798cdb20080066efa010fe7e1f2551b423628"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
-
+  revision OS.mac? ? 1 : 2
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
   livecheck do
@@ -16,9 +16,11 @@ class Llvm < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "7c5577290b145406df523d193727305aff820e8d704d8d573bd152c783697899"
+    sha256 cellar: :any, arm64_big_sur: "4c8e51f4be4bd897f7eff223409c7215afa87dc6dfe943b90f6a719fa99505b0"
+    sha256 cellar: :any, big_sur:       "a72f029b6c0dbb708b1da7a0fee2ff771adce0141f891145d4cd04dcc74c8f08"
+    sha256 cellar: :any, catalina:      "647ff05ed5d5edcf5be265a731bdfbae67ff2a3a1c4d077bbe3084c9319838f0"
+    sha256 cellar: :any, mojave:        "9231c5c2edb2c0d5226bec12cf1fe40b92beedbdf2fcc03585aa1f0a5d9ae2bc"
   end
-  revision 1 unless OS.mac?
 
   # Clang cannot find system headers if Xcode CLT is not installed
   pour_bottle? do
@@ -158,6 +160,11 @@ class Llvm < Formula
       end)
     end
 
+    on_macos do
+      # Install versioned symlink, or else `llvm-config` doesn't work properly
+      lib.install_symlink "libLLVM.dylib" => "libLLVM-#{version.major}.dylib" unless build.head?
+    end
+
     # Install LLVM Python bindings
     # Clang Python bindings are installed by CMake
     (lib/site_packages).install llvmpath/"bindings/python/llvm"
@@ -175,6 +182,9 @@ class Llvm < Formula
 
   test do
     assert_equal prefix.to_s, shell_output("#{bin}/llvm-config --prefix").chomp
+    assert_equal "-lLLVM-#{version.major}", shell_output("#{bin}/llvm-config --libs").chomp
+    assert_equal (lib/shared_library("libLLVM-#{version.major}")).to_s,
+                 shell_output("#{bin}/llvm-config --libfiles").chomp
 
     (testpath/"omptest.c").write <<~EOS
       #include <stdlib.h>
