@@ -10,10 +10,11 @@ class Reminiscence < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "2bfceaf5574bb466177bea7a5cc2f6137212eba2d4cc4b6c547efcea3af5f52b"
-    sha256 cellar: :any, big_sur:       "94e240b118e26f65e12fe087ba325a924841cdb57de69206f7433f4976b3ae55"
-    sha256 cellar: :any, catalina:      "e5e9f65d1dcdfd16cea37f66f4d7f30a051fd5252bc330cb1e2c5740fb939d11"
-    sha256 cellar: :any, mojave:        "1f9a8d59c676baae13f81ab411be784be4f7ae0cc55bee6ed2e14bab210473b7"
+    sha256 cellar: :any,                 arm64_big_sur: "2bfceaf5574bb466177bea7a5cc2f6137212eba2d4cc4b6c547efcea3af5f52b"
+    sha256 cellar: :any,                 big_sur:       "94e240b118e26f65e12fe087ba325a924841cdb57de69206f7433f4976b3ae55"
+    sha256 cellar: :any,                 catalina:      "e5e9f65d1dcdfd16cea37f66f4d7f30a051fd5252bc330cb1e2c5740fb939d11"
+    sha256 cellar: :any,                 mojave:        "1f9a8d59c676baae13f81ab411be784be4f7ae0cc55bee6ed2e14bab210473b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb43c4b78c380d9dd5f0ec7c68df36f5f79ea915af303f70ce7f65fbd2b46530"
   end
 
   depends_on "autoconf" => :build
