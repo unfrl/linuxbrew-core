@@ -16,6 +16,7 @@ class TerraformLs < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "0587efaef10898b2e23cd4769fb50ac4151198fef2fe4889fe4779bf174f18e6"
     sha256 cellar: :any_skip_relocation, catalina:      "af34e3ad46ae6184dde7c1434593b7438e1ee54891085063a66e02f06c0c778b"
     sha256 cellar: :any_skip_relocation, mojave:        "aa16538d4e07c3b18647f7b8438cf6bb2ecd5a3cbd55a0143144d37a7da42601"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "441e8c53ef262d50443fd2ed8d9085f62725b1324fbc905e59571b9378aef120"
   end
 
   depends_on "go" => :build
