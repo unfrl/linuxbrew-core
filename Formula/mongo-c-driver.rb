@@ -8,10 +8,11 @@ class MongoCDriver < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_big_sur: "b10fae562660ecdb9bc8cba4188eb1a62eaef68e781d21cb1854a25949a4ad78"
-    sha256 cellar: :any, big_sur:       "191fbb678fcdf1934626e694b66f8ba40589e4dcf20a2d3a9c11b5d458d434f4"
-    sha256 cellar: :any, catalina:      "453676b8382d21cf0ab777b2e2e2e7e690045288f81861a82a9f4ca2ff4d51d8"
-    sha256 cellar: :any, mojave:        "1e1bdeedea7a6c15fd096ff77c6291e5f48398dbcb6eb388528de8e80a79614d"
+    sha256 cellar: :any,                 arm64_big_sur: "b10fae562660ecdb9bc8cba4188eb1a62eaef68e781d21cb1854a25949a4ad78"
+    sha256 cellar: :any,                 big_sur:       "191fbb678fcdf1934626e694b66f8ba40589e4dcf20a2d3a9c11b5d458d434f4"
+    sha256 cellar: :any,                 catalina:      "453676b8382d21cf0ab777b2e2e2e7e690045288f81861a82a9f4ca2ff4d51d8"
+    sha256 cellar: :any,                 mojave:        "1e1bdeedea7a6c15fd096ff77c6291e5f48398dbcb6eb388528de8e80a79614d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "882775d9f52b0ec026e8aa6d0da69e5446bbb50b32e3ec97a323e40e49da1092"
   end
 
   depends_on "cmake" => :build
