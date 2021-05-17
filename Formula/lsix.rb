@@ -1,13 +1,9 @@
 class Lsix < Formula
   desc "Shows thumbnails in terminal using sixel graphics"
   homepage "https://github.com/hackerb9/lsix"
-  url "https://github.com/hackerb9/lsix/archive/1.7.3.tar.gz"
-  sha256 "88f1855b0272a307758d344a861370c087432ed8f28cc95696659eb0ed7eb960"
+  url "https://github.com/hackerb9/lsix/archive/1.7.4.tar.gz"
+  sha256 "6079d0b46e4d56cd0a16f31c9f9fd13da2717cdb990033daa820534b6dc4034e"
   license "GPL-3.0-only"
-
-  bottle do
-    sha256 cellar: :any_skip_relocation, all: "d044177e151389e423fe95b95486f46339e19ca8d99e5cadf2ad56e60c060276"
-  end
 
   depends_on "bash"
   depends_on "imagemagick"
