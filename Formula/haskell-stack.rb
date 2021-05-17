@@ -13,9 +13,10 @@ class HaskellStack < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:  "f8c509beacc6ad13fafcdd6fe754880e8420e045303671b37979f6cf8c84e81e"
-    sha256 cellar: :any_skip_relocation, catalina: "77b634ce8c96d01f0d55c86858322030a4b17a55c835fa9acb90b3b3c30ce302"
-    sha256 cellar: :any_skip_relocation, mojave:   "26e6f6d71967378f63659a0232cec8968d1635332ca8714c2467d653b5beb9e7"
+    sha256 cellar: :any_skip_relocation, big_sur:      "f8c509beacc6ad13fafcdd6fe754880e8420e045303671b37979f6cf8c84e81e"
+    sha256 cellar: :any_skip_relocation, catalina:     "77b634ce8c96d01f0d55c86858322030a4b17a55c835fa9acb90b3b3c30ce302"
+    sha256 cellar: :any_skip_relocation, mojave:       "26e6f6d71967378f63659a0232cec8968d1635332ca8714c2467d653b5beb9e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "08788ec035fa05d0b8d7588d0825d312dd91e8ffa2cd3722ed44d7334cea512d"
   end
 
   depends_on "cabal-install" => :build
