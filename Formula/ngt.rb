@@ -11,10 +11,11 @@ class Ngt < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "c7f4a9c7a1119ce686f0d4c1337ae356a04c149599c6fa0dc4a98a1e3f4f8c44"
-    sha256 cellar: :any, big_sur:       "71df6d084a4d4cc69024f1c3260c41b78af143062872c314f21aecd7f95ac07d"
-    sha256 cellar: :any, catalina:      "127743274a8220c01f082604735482020a35dba8ebfc6cd08a32372e319df1e6"
-    sha256 cellar: :any, mojave:        "02d52576abd5791ec271e0ab271de9889302a12800947041b37c18465ff15af6"
+    sha256 cellar: :any,                 arm64_big_sur: "c7f4a9c7a1119ce686f0d4c1337ae356a04c149599c6fa0dc4a98a1e3f4f8c44"
+    sha256 cellar: :any,                 big_sur:       "71df6d084a4d4cc69024f1c3260c41b78af143062872c314f21aecd7f95ac07d"
+    sha256 cellar: :any,                 catalina:      "127743274a8220c01f082604735482020a35dba8ebfc6cd08a32372e319df1e6"
+    sha256 cellar: :any,                 mojave:        "02d52576abd5791ec271e0ab271de9889302a12800947041b37c18465ff15af6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "655df0450441eab8b15409c7b29e502395db9a57f090d7ec92b6c12383cbbe17"
   end
 
   depends_on "cmake" => :build
