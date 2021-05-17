@@ -8,6 +8,10 @@ class Jsdoc3 < Formula
   license "Apache-2.0"
   head "https://github.com/jsdoc3/jsdoc.git"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "3f7e9c3cb44610f907e6e1094a24d5188f0b74f34c3599b08907240159c5cf40"
+  end
+
   depends_on "node"
 
   def install
