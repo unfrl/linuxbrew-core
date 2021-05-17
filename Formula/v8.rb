@@ -2,8 +2,8 @@ class V8 < Formula
   desc "Google's JavaScript engine"
   homepage "https://github.com/v8/v8/wiki"
   # Track V8 version from Chrome stable: https://omahaproxy.appspot.com
-  url "https://github.com/v8/v8/archive/9.0.257.17.tar.gz"
-  sha256 "7b7e421fef178eb220fb135c9a4ae55beb0b5a2639c2896143fa1a9960ef00a4"
+  url "https://github.com/v8/v8/archive/9.0.257.29.tar.gz"
+  sha256 "c39f769f791a5c374b4f4a98e12f2534a23a41cb2e278856429752b98b0fc828"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,10 +12,10 @@ class V8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "53088cb6df741001ff8ef989d73229009d95603ae9d61dabb2362fd782a3bf7d"
-    sha256 cellar: :any, big_sur:       "9076403932bf4e554e51bff63d8ec7b122522fda1e259659c7c1db53e6699b91"
-    sha256 cellar: :any, catalina:      "5e270b464f7d3d2b6ee171d9b481fac7924827632ae84673d03744244b4d37e9"
-    sha256 cellar: :any, mojave:        "78dc0ec1b2ddf1fd185370ce963849bffaf28fa969d32b800b7ba2af0abf0806"
+    sha256 cellar: :any, arm64_big_sur: "dbb2a9b35a9d484b9a9473b3560ead9a53aa2aae70c0cb1a56e4cabf4a6c7b16"
+    sha256 cellar: :any, big_sur:       "a02b360c10b2710d36b728dabc4b833dce4d80040967da0b097771ac2620617d"
+    sha256 cellar: :any, catalina:      "7861616590bf7709f53a022147205153a56231191e0aa6070b03093389d051e8"
+    sha256 cellar: :any, mojave:        "8449adf9e6b06cca4faad182fda9f2eb7b5a358db7acb4809ef2ed24a72394a8"
   end
 
   depends_on "llvm" => :build
@@ -24,13 +24,13 @@ class V8 < Formula
   depends_on xcode: ["10.0", :build] # required by v8
 
   # Look up the correct resource revisions in the DEP file of the specific releases tag
-  # e.g. for CIPD dependency gn: https://github.com/v8/v8/blob/8.9.255.20/DEPS#L50
+  # e.g. for CIPD dependency gn: https://github.com/v8/v8/blob/9.0.257.29/DEPS#L50
   resource "gn" do
     url "https://gn.googlesource.com/gn.git",
         revision: "dfcbc6fed0a8352696f92d67ccad54048ad182b3"
   end
 
-  # e.g.: https://github.com/v8/v8/blob/8.9.255.20/DEPS#L91 for the revision of build for v8 8.9.255.20
+  # e.g.: https://github.com/v8/v8/blob/9.0.257.29/DEPS#L91 for the revision of build for v8 9.0.257.29
   resource "v8/build" do
     url "https://chromium.googlesource.com/chromium/src/build.git",
         revision: "446bf3e5a00bfe4fd99d91cb76ec3b3a7b34d226"
