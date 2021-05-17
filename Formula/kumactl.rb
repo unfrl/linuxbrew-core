@@ -15,6 +15,7 @@ class Kumactl < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "5e7e70a13d8271439c0492e56745d319c1b39d49251b43975c859a20f8f57d0c"
     sha256 cellar: :any_skip_relocation, catalina:      "bda6a4e45d7212b6b57e1cc37f29c72548168c23b4b350594c47c83b1812253e"
     sha256 cellar: :any_skip_relocation, mojave:        "40472bc58519021c64769eea1bb8bbdb846e39b3e01192547d96d8f5adf8be6b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "271ac84bfab0df38dd56dc24549467cc3d085e4b24cc7df206651440f52417af"
   end
 
   depends_on "go" => :build
