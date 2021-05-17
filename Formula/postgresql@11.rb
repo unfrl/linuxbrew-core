@@ -1,10 +1,9 @@
 class PostgresqlAT11 < Formula
   desc "Object-relational database system"
   homepage "https://www.postgresql.org/"
-  url "https://ftp.postgresql.org/pub/source/v11.11/postgresql-11.11.tar.bz2"
-  sha256 "40607b7fa15b7d63f5075a7277daf7b3412486aa5db3aedffdb7768b9298186c"
+  url "https://ftp.postgresql.org/pub/source/v11.12/postgresql-11.12.tar.bz2"
+  sha256 "87f9d8b16b2b8ef71586f2ec76beac844819f64734b07fa33986755c2f53cb04"
   license "PostgreSQL"
-  revision OS.mac? ? 2 : 3
 
   livecheck do
     url "https://ftp.postgresql.org/pub/source/"
@@ -12,11 +11,10 @@ class PostgresqlAT11 < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "455a2d66d9c3a188133dae98e5d642d640b428324ca600056ce21206926fc32f"
-    sha256 big_sur:       "3f6419a3e4a8b1c78cfcc58955e4a9b9f61191151f4d66278cda4e07de94d716"
-    sha256 catalina:      "1c7e187a23f44f4d65adc6227866b5a2e0385b95612e1147f6e23a27d1835019"
-    sha256 mojave:        "2764eb72e2a74685919ed509aab4e120c9adc851a72a09bf55248551a81e530e"
-    sha256 x86_64_linux:  "14e94d6d924cc911c7c640bfbb3c1ff0bf06721a69b4368f50e309855d52c12f"
+    sha256 arm64_big_sur: "32be947f20fbb3ff6a37cabf3310636aec6719c43844f834249f8a0ed92428af"
+    sha256 big_sur:       "c9b90cb465d1606548abcaaf34a1a2e22d434826296afe78f05a38d3dbf2ee18"
+    sha256 catalina:      "221a34eeee6e46f7c1ee740565ad2a390edeea138594ab29230fbe63c796789e"
+    sha256 mojave:        "de88b00db67211c6e85bc5575cde4c93855579be94ececcfb2eafa3c3d106cd8"
   end
 
   keg_only :versioned_formula

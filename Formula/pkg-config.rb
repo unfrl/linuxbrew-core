@@ -20,12 +20,6 @@ class PkgConfig < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc8ac04f3d8e42a748f40544f8e1b7f2471f32608f33e666e903d6108eb4dab2"
   end
 
-  pour_bottle? do
-    # The pc_path is baked into the binary and relocatable detection doesn't pick it up
-    reason "The bottle only works in the default #{Homebrew::DEFAULT_PREFIX} location."
-    satisfy { HOMEBREW_PREFIX.to_s == Homebrew::DEFAULT_PREFIX }
-  end
-
   def install
     pc_path = %W[
       #{HOMEBREW_PREFIX}/lib/pkgconfig
