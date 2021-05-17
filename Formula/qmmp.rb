@@ -1,8 +1,8 @@
 class Qmmp < Formula
   desc "Qt-based Multimedia Player"
   homepage "https://qmmp.ylsoftware.com/"
-  url "https://downloads.sourceforge.net/project/qmmp-dev/qmmp/qmmp-1.4.5.tar.bz2"
-  sha256 "54d02ae9e70602e555a29551138bf02df0f760a2e67bab98ba9ed7df0b3a1c1d"
+  url "https://downloads.sourceforge.net/project/qmmp-dev/qmmp/qmmp-1.4.6.tar.bz2"
+  sha256 "f513774357836ad4983fa216c84cf5db634284faebec48c461733838917fd664"
   license "GPL-2.0-or-later"
   head "https://svn.code.sf.net/p/qmmp-dev/code/branches/qmmp-1.4/"
 
@@ -12,9 +12,9 @@ class Qmmp < Formula
   end
 
   bottle do
-    sha256 big_sur:  "b898d7fd15566fcf1d3eb9fd4fd5f24e02229b694a43cf61b945df95c09a9b67"
-    sha256 catalina: "8999d6b60164acb2a85c8c8b575081b28c31bd7dbb1f3ed329b0744775cec0d5"
-    sha256 mojave:   "b87e7ce56425fc4c81940506dc79f1357dd0cbeb6fa8bda38254d1d5380a1f14"
+    sha256 big_sur:  "314ceb6432da04c39b83c600d22bafee2a680b6c34ef47c238e160181583e7bb"
+    sha256 catalina: "53def71f6922fb2f7f7cfd3557d321011f82015d8d7a259c5aac0f17d0da986b"
+    sha256 mojave:   "2471e481be569677e931cb5588e53d9359bb3ff8b403b8a0051d8c77ff4e7702"
   end
 
   depends_on "cmake" => :build
