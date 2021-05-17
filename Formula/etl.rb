@@ -12,6 +12,10 @@ class Etl < Formula
     regex(%r{url=.*?/releases/.+?/ETL[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e4ddce5b48c3102446302318b8d19895fc4ed310da33f5dcdbf70308daf197cb"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "glibmm@2.66"
 
