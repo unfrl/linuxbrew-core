@@ -16,6 +16,7 @@ class Mysql < Formula
     sha256 big_sur:       "02833bf7906714c3fbe1eae86921d5717d5244d314c3c7e462276556c7b09a6d"
     sha256 catalina:      "e984d16e2ef15ef819a9b0d038567a52f66b30995918d4313af9ce6e67f78467"
     sha256 mojave:        "3277ddff8a64f43021a6ebe208f96523d9c947e6d90b2ca18952c9b4cb0d6da8"
+    sha256 x86_64_linux:  "8873673c1d8d57f27b05f6c77cc3f6db4a9e219971b38111bb64cc7c87d58068"
   end
 
   depends_on "cmake" => :build
