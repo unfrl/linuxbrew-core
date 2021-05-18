@@ -3,10 +3,9 @@ require "os/linux/glibc"
 class GccAT8 < Formula
   desc "GNU compiler collection"
   homepage "https://gcc.gnu.org/"
-  url "https://ftp.gnu.org/gnu/gcc/gcc-8.4.0/gcc-8.4.0.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gcc/gcc-8.4.0/gcc-8.4.0.tar.xz"
-  sha256 "e30a6e52d10e1f27ed55104ad233c30bd1e99cfb5ff98ab022dc941edd1b2dd4"
-  revision 3
+  url "https://ftp.gnu.org/gnu/gcc/gcc-8.5.0/gcc-8.5.0.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gcc/gcc-8.5.0/gcc-8.5.0.tar.xz"
+  sha256 "d308841a511bb830a6100397b0042db24ce11f642dab6ea6ee44842e5325ed50"
 
   livecheck do
     url :stable
@@ -16,10 +15,9 @@ class GccAT8 < Formula
   # gcc is designed to be portable.
   # reminder: always add 'cellar :any'
   bottle do
-    sha256 big_sur:      "a835ceb445a4b4019e14fda6fb4a984a7f633faf5ef5f9f49bddbe23cae1e7fc"
-    sha256 catalina:     "4ef99da615886fab55a27d34bfa4ac88761c9cb73ebcb5ed199d6a0fe6997fd3"
-    sha256 mojave:       "6e73d66113184f35f91c285f3754cc0c67797876cf0a97c75bdce4d92d6af074"
-    sha256 x86_64_linux: "937cc91f2e2b0b11e768b91e61ad41ef368f34eddd3926ed308cf3961b7a562d"
+    sha256 big_sur:  "c23c342d120580e8fbd897712b6ddce67fb0f0235ca8745736f4c00d8b0f2bd5"
+    sha256 catalina: "e031d1e8b3ac06f7fb3ae54e594254dcfdfd2e84e54b15ee370f570d4353db7c"
+    sha256 mojave:   "5ddd8753dbd6a3a3841e3ef72f67608761e0ab574ca3218b4fed54f1399cc861"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -99,6 +97,10 @@ class GccAT8 < Formula
         args << "--with-native-system-header-dir=/usr/include"
         args << "--with-sysroot=#{sdk}"
       end
+
+      # Workaround for Xcode 12.5 bug on Intel
+      # https://gcc.gnu.org/bugzilla/show_bug.cgi?id=100340
+      args << "--without-build-config" if DevelopmentTools.clang_build_version >= 1205
 
       # Ensure correct install names when linking against libgcc_s;
       # see discussion in https://github.com/Homebrew/homebrew/pull/34303
@@ -226,9 +228,13 @@ class GccAT8 < Formula
 
     (testpath/"hello-cc.cc").write <<~EOS
       #include <iostream>
+      struct exception { };
       int main()
       {
         std::cout << "Hello, world!" << std::endl;
+        try { throw exception{}; }
+          catch (exception) { }
+          catch (...) { }
         return 0;
       }
     EOS
