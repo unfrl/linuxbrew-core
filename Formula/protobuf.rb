@@ -1,8 +1,8 @@
 class Protobuf < Formula
   desc "Protocol buffers (Google's data interchange format)"
   homepage "https://github.com/protocolbuffers/protobuf/"
-  url "https://github.com/protocolbuffers/protobuf/releases/download/v3.15.8/protobuf-all-3.15.8.tar.gz"
-  sha256 "2b737d6d120418c443c561cf4032c0141f9626f68f532b5d2c27ee8a191c996e"
+  url "https://github.com/protocolbuffers/protobuf/releases/download/v3.17.0/protobuf-all-3.17.0.tar.gz"
+  sha256 "96da1cb0648c7c1b2e68ef7089149dce18ecf8d0582a171315b3991a59e629c6"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,11 +11,10 @@ class Protobuf < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "a1615a95bf6f0bd3d9111fd0afa9260373295eadf147c35aef03e31abdbef6bc"
-    sha256 cellar: :any,                 big_sur:       "48434534a8272ad371be138166687d9a1f1492c508c302ba860bb182cb7f2bcf"
-    sha256 cellar: :any,                 catalina:      "e71533593002b605f21f2faaccc841fdec2b809bb8fbdb399a5c7d11851428e1"
-    sha256 cellar: :any,                 mojave:        "f95e52b808503a024951b6696bf5a9776cf88d135ea1a6774445ae6b801850be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca9c15d6c1934a1652902e999a84533fdcce20a1ceba0968358d9b13afcd7270"
+    sha256 cellar: :any, arm64_big_sur: "78c5b79d8b3753c9577c8a4756967a3a653508d0a5301f51780b4cb04c8689b8"
+    sha256 cellar: :any, big_sur:       "b568f2e28e4f49a4264fe954490e1a45d3f787fc54f0c7939dde81f38a6fb8c1"
+    sha256 cellar: :any, catalina:      "14051638aac13e3487c928b4105c1ae08a63df89da850b89e8d36f86011db428"
+    sha256 cellar: :any, mojave:        "456d279d47704725f803caf21396f6bb28f2482664cb5396f52a10cea34cb6d4"
   end
 
   head do
@@ -29,8 +28,8 @@ class Protobuf < Formula
   depends_on "python@3.9" => [:build, :test]
 
   resource "six" do
-    url "https://files.pythonhosted.org/packages/6b/34/415834bfdafca3c5f451532e8a8d9ba89a21c9743a0c59fbd0205c7f9426/six-1.15.0.tar.gz"
-    sha256 "30639c035cdb23534cd4aa2dd52c3bf48f06e5f4a941509c8bafd8ce11080259"
+    url "https://files.pythonhosted.org/packages/71/39/171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85e/six-1.16.0.tar.gz"
+    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
   end
 
   def install
