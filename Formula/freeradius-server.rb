@@ -16,6 +16,7 @@ class FreeradiusServer < Formula
     sha256 big_sur:       "ab19adc5c1021e8d6ef924afff07f32010e17bc4cc8eb4c98f9807d7d3b1cc82"
     sha256 catalina:      "725f71cf758fe8f21eb53317b516260a9d38337ce4d28172cc5c65c6b337a5b1"
     sha256 mojave:        "666a6ac614e06cb9d03cc2c8b4a2279153db994c76975d6a735d8596b87d7996"
+    sha256 x86_64_linux:  "8820693464fddf568031b4ff40fc88324ba7a57f019b471f18790d4a8bbcdb09"
   end
 
   depends_on "openssl@1.1"
