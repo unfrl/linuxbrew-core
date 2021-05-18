@@ -4,7 +4,7 @@ class Openimageio < Formula
   url "https://github.com/OpenImageIO/oiio/archive/Release-2.2.14.0.tar.gz"
   sha256 "e41b4b6958d318250caa1d1f167863a915a99062273583bb96457101d54e89cd"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https://github.com/OpenImageIO/oiio.git"
 
   livecheck do
@@ -14,10 +14,9 @@ class Openimageio < Formula
   end
 
   bottle do
-    sha256                               big_sur:      "d7cace1da4d4f2f811f1ec5721bcf58c111844dc0546657242e6bd50621b8d40"
-    sha256                               catalina:     "f90cd13619a1d8478bfe06821d38146a504dc4163bae4b82d9d6c36c601e2ae9"
-    sha256                               mojave:       "db0b3c160e16fb8eec055d305b14b0308a8c286f97a674a157849fb0d5bb1988"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b9e1407543bfc04ad74264fb66dedb0dd72835ada6ffc6ade220ca0543aba7a2"
+    sha256 cellar: :any, big_sur:  "5700ad3563dd392195476056b6555df652d70cf9ee256686d1ff9e7971d318e8"
+    sha256 cellar: :any, catalina: "f4c492f6b7fbab4e5d65ce962f7d3724b201eccadc6535af930a016641065b1d"
+    sha256 cellar: :any, mojave:   "50bd2520b5e62827160eb37d110a48097b33e33baa41669b5dd56fbe0552286a"
   end
 
   depends_on "cmake" => :build

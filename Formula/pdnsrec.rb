@@ -1,8 +1,8 @@
 class Pdnsrec < Formula
   desc "Non-authoritative/recursing DNS server"
   homepage "https://www.powerdns.com/recursor.html"
-  url "https://downloads.powerdns.com/releases/pdns-recursor-4.4.3.tar.bz2"
-  sha256 "f8411258100cc310c75710d7f4d59b5eb4797f437f71dc466ed97a83f1babe05"
+  url "https://downloads.powerdns.com/releases/pdns-recursor-4.5.1.tar.bz2"
+  sha256 "3721a1d0e438a683735f518db1e91da6ace1b90fbfdb9c588adabdf164114e79"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,11 +11,10 @@ class Pdnsrec < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "48090a25f0c900d4f194ab2e12b8cff257c2c28ee48ba1a0be3cfef6613d5488"
-    sha256 big_sur:       "5a70aeb0c0d0fd57d3529744b7c5a0bdeaecfb1897dd07cc0ba83a6fb883a089"
-    sha256 catalina:      "b1653e702eee140a2bd6bd0ff463a9fec7b05fc998d87c4c5bf76b46b4e8a0bb"
-    sha256 mojave:        "8656a83c7405cfeec550aae38a45ec31fd5b82ce3794394bc403da4c6cd7acad"
-    sha256 x86_64_linux:  "280a4304d35ab259d913d58165e3c6dba5db245c5db87e2b2090c9543be2fb63"
+    sha256 arm64_big_sur: "31bbebfa2aa6ed5f7345c57154ae25d887780d4df370f20663ce804fc654f4a8"
+    sha256 big_sur:       "7e8f5d78e02e7b1b8ccbcc6ce48b13d1c3c8e7d3afaad732dea7845f5605a14d"
+    sha256 catalina:      "9bca064b267700534483628226e27cdd72fce306c1192e5baaf419a3b9221c97"
+    sha256 mojave:        "a259bd76eb77f13e463a88f2fef1b52d6de05a83ee7a102e7b5d223262388f54"
   end
 
   depends_on "pkg-config" => :build
@@ -23,8 +22,24 @@ class Pdnsrec < Formula
   depends_on "lua"
   depends_on "openssl@1.1"
 
+  on_macos do
+    depends_on "llvm" => :build if MacOS.version <= :mojave
+  end
+
+  fails_with :clang do
+    build 1100
+    cause <<-EOS
+      Undefined symbols for architecture x86_64:
+        "MOADNSParser::init(bool, std::__1::basic_string_view<char, std::__1::char_traits<char> > const&)"
+    EOS
+  end
+
   def install
     ENV.cxx11
+    ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib
+    on_macos do
+      ENV.llvm_clang if MacOS.version <= :mojave
+    end
 
     args = %W[
       --prefix=#{prefix}
