@@ -13,10 +13,11 @@ class Spotifyd < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_big_sur: "e3c99852d97789b09ef67bb82ac9e7a306df83db777bffc048173b4d2583bc4d"
-    sha256 cellar: :any, big_sur:       "5aadd7c8795f10a8033a0055c1ebea4b1101068b5a89b1ee83efc588121365d3"
-    sha256 cellar: :any, catalina:      "e0728a13eb91be7b7cfa0da67b19b3d49ec9608b745e6833014e9ff26cb9e51f"
-    sha256 cellar: :any, mojave:        "6fbf9e30f4501d8642f827f51ba4a610e7888e6156fccda11fab09ba0b6be3b5"
+    sha256 cellar: :any,                 arm64_big_sur: "e3c99852d97789b09ef67bb82ac9e7a306df83db777bffc048173b4d2583bc4d"
+    sha256 cellar: :any,                 big_sur:       "5aadd7c8795f10a8033a0055c1ebea4b1101068b5a89b1ee83efc588121365d3"
+    sha256 cellar: :any,                 catalina:      "e0728a13eb91be7b7cfa0da67b19b3d49ec9608b745e6833014e9ff26cb9e51f"
+    sha256 cellar: :any,                 mojave:        "6fbf9e30f4501d8642f827f51ba4a610e7888e6156fccda11fab09ba0b6be3b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26591e80efdf8a5ee9d865057290ae044727679bb8f93e66abc4d97567b4706a"
   end
 
   depends_on "pkg-config" => :build
