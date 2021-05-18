@@ -8,10 +8,11 @@ class Openexr < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "e0fce86c7d6b0a32c517e5636d13b272a83f34df60b8c1f8a914694c40f0cdbc"
-    sha256 cellar: :any, big_sur:       "b2b31643cf746ad460034df8d020b3a97d070edcd418716259e1bd501f9a8e5f"
-    sha256 cellar: :any, catalina:      "136eb8c771d87ab27dbded4b1381def640342be80a9c5d7a7a16fa43970890bb"
-    sha256 cellar: :any, mojave:        "c87a3697f6d0bc82d901cb11a5563d4e5cfb712f8b9d612f2cd949a06be61a32"
+    sha256 cellar: :any,                 arm64_big_sur: "e0fce86c7d6b0a32c517e5636d13b272a83f34df60b8c1f8a914694c40f0cdbc"
+    sha256 cellar: :any,                 big_sur:       "b2b31643cf746ad460034df8d020b3a97d070edcd418716259e1bd501f9a8e5f"
+    sha256 cellar: :any,                 catalina:      "136eb8c771d87ab27dbded4b1381def640342be80a9c5d7a7a16fa43970890bb"
+    sha256 cellar: :any,                 mojave:        "c87a3697f6d0bc82d901cb11a5563d4e5cfb712f8b9d612f2cd949a06be61a32"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d97ed759de2d3e8395cb4704cef4b2fcf197798a9fbdb19ec87c6e0fc88c0b2a"
   end
 
   depends_on "cmake" => :build
