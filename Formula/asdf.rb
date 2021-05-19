@@ -6,6 +6,10 @@ class Asdf < Formula
   license "MIT"
   head "https://github.com/asdf-vm/asdf.git"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c294611358559bc924cafddd4bc8693fa5d86398366c73a3abbbbca28ffdc777"
+  end
+
   depends_on "autoconf"
   depends_on "automake"
   depends_on "coreutils"
