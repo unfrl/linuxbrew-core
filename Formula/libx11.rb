@@ -10,6 +10,7 @@ class Libx11 < Formula
     sha256 big_sur:       "9998bb9f54cc7ee1c11cc5dd645efa2ab07542424dd978c87c2b12a59e736dcd"
     sha256 catalina:      "5277fde92c0e663e5078428ec590935fbfba1d781bedb03501a0d899f4b6e377"
     sha256 mojave:        "3528a6e637571a7838976ac7294ebd68f36ad0d1dbffb8214e36c5fc1428cde5"
+    sha256 x86_64_linux:  "8bd6b4ad1195f8dba78397204afec34c457fadba181e5c0692be4bfb6b99809a"
   end
 
   depends_on "pkg-config" => :build
