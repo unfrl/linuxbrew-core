@@ -1,16 +1,15 @@
 class Crane < Formula
   desc "Tool for interacting with remote images and registries"
   homepage "https://github.com/google/go-containerregistry"
-  url "https://github.com/google/go-containerregistry/archive/v0.5.0.tar.gz"
-  sha256 "106af414bd6eb60f190bd2363d63f84c4f107365f34395e5827d03b6ba8717ce"
+  url "https://github.com/google/go-containerregistry/archive/v0.5.1.tar.gz"
+  sha256 "c3e28d8820056e7cc870dbb5f18b4f7f7cbd4e1b14633a6317cef895fdb35203"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "581781712828260aba980e48180c017aa8ce251b0873e673bdd562e8a8d968ec"
-    sha256 cellar: :any_skip_relocation, big_sur:       "c4d9827390cbea19f3606d87ee65282304c6ed5e8c0efcba894f84b1d3d05873"
-    sha256 cellar: :any_skip_relocation, catalina:      "7ce4b31487f73180225c6884f172b1f7b513bc381729624308de28f99cd7110b"
-    sha256 cellar: :any_skip_relocation, mojave:        "c2a41d226e4590cff7067e040d7753f5604bf824079bea66bd7a494f87ddb2b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88784ecc029c37d52e5ef060204b92d62a780cb019f100bae13c22889a770e68"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "bad59b16b56a5f718c38c1d2eafbd149c7d085182d44c39342d77f37fd12ec3b"
+    sha256 cellar: :any_skip_relocation, big_sur:       "4d4b05be67c7a8699be6843a8b453361ef2dc9aefc54066fa6db1c855bc0b5df"
+    sha256 cellar: :any_skip_relocation, catalina:      "d306248c9591b594077728f9f20514b0d451e631ba48d4f639506e583e584e34"
+    sha256 cellar: :any_skip_relocation, mojave:        "5a68f903155a28ac78c1fa39c4fcae394bd87133e9bb65551caa05a4e7fec412"
   end
 
   depends_on "go" => :build

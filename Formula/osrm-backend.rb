@@ -1,8 +1,8 @@
 class OsrmBackend < Formula
   desc "High performance routing engine"
   homepage "http://project-osrm.org/"
-  url "https://github.com/Project-OSRM/osrm-backend/archive/v5.24.0.tar.gz"
-  sha256 "a66b20e7ffe83e5e5fe12324980320e12a6ec2b05f2befd157de5c60c665613c"
+  url "https://github.com/Project-OSRM/osrm-backend/archive/v5.25.0.tar.gz"
+  sha256 "6da276d609a54600bb37007fd98d14c2a48639f51dda0d962b5801dd0118dfbb"
   license "BSD-2-Clause"
   head "https://github.com/Project-OSRM/osrm-backend.git"
 
@@ -12,10 +12,10 @@ class OsrmBackend < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "fe1d2680e22150a35b6d5c76157c867e3faed556bb127fe2b57eff79858ac668"
-    sha256 cellar: :any, big_sur:       "e6dfd1fc4adacbf0b54be1b1c10218fa18b6ea186ea802df3791a023b95f5705"
-    sha256 cellar: :any, catalina:      "fd6cad0c66a91a963006b7f961d3fbdce9d4ecf47acb4c578f23602f8025512e"
-    sha256 cellar: :any, mojave:        "b4dd6eb3f99a2caf3f733beb93046bb69813a3b3b32cb73410527b03e20a5c93"
+    sha256 cellar: :any, arm64_big_sur: "dc65b0d0046277182590cc6d3b16b5436a637a0c87d0d6ca3b81bf4ee4aa138a"
+    sha256 cellar: :any, big_sur:       "5d461962ca9a86f733ee2223080fd63c9ef1bd1c0fbd6820d29dfe1ba46b1f75"
+    sha256 cellar: :any, catalina:      "07166bddc5e210fd5c697c9dd168667522c83260c143a2f956dcf079507e0141"
+    sha256 cellar: :any, mojave:        "002af11b6c8a248e91417f997eb13d9a6a624bbd34795ba961ff48e184f872a5"
   end
 
   depends_on "cmake" => :build
