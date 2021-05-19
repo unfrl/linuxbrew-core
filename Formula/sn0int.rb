@@ -6,10 +6,11 @@ class Sn0int < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "7d001c71593c23fc12bc613badb05fe89d0cd2987128b77cab47e2383c522baa"
-    sha256 cellar: :any, big_sur:       "6474556cd34b9f844287a0bb6a9dcb07616341b28aa7f938fd4e0605314a9a88"
-    sha256 cellar: :any, catalina:      "d21489cd43a9234923ce33344b29ac750a9344d6b65d0ceb4c17e63b8114b6cd"
-    sha256 cellar: :any, mojave:        "a9779b78ec3a79798acc7869a7f219068ffef4b57b273dbc7e60fd9f02f2049c"
+    sha256 cellar: :any,                 arm64_big_sur: "7d001c71593c23fc12bc613badb05fe89d0cd2987128b77cab47e2383c522baa"
+    sha256 cellar: :any,                 big_sur:       "6474556cd34b9f844287a0bb6a9dcb07616341b28aa7f938fd4e0605314a9a88"
+    sha256 cellar: :any,                 catalina:      "d21489cd43a9234923ce33344b29ac750a9344d6b65d0ceb4c17e63b8114b6cd"
+    sha256 cellar: :any,                 mojave:        "a9779b78ec3a79798acc7869a7f219068ffef4b57b273dbc7e60fd9f02f2049c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb303aa87b31b9d5eba3155e6767d928acb40a958dc9b6bd8c528f2effa26e5c"
   end
 
   depends_on "pkg-config" => :build
