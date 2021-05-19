@@ -19,6 +19,7 @@ class Copilot < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "81f05e9994016427444518fd086b07621a8cf4d4fd4f6681fa8580ef72868ca2"
     sha256 cellar: :any_skip_relocation, catalina:      "bf32eb5002c48411587dbc41a53d5eb5520eb3e0ce4f280720668bcd818e11cf"
     sha256 cellar: :any_skip_relocation, mojave:        "4fb4ebf2218dfdc77e9abb032bda30fa186299679a7311853232a04919e79e2f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf19809b35270a0bfba66bb9f9b93d04d4a49ec648736416ff1833af6962ff1c"
   end
 
   depends_on "go" => :build
