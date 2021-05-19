@@ -6,10 +6,11 @@ class Odpi < Formula
   license any_of: ["Apache-2.0", "UPL-1.0"]
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "0a692da83a6cf1036c9a588485707a04ef60ecd13b8b3d671e78d2e04a71f030"
-    sha256 cellar: :any, big_sur:       "1b5ea7539919dc492e3ed06a9a42bf8642fe5cc55fa63e21c8d9931c14f6b807"
-    sha256 cellar: :any, catalina:      "b293495736f6663b131ce171b3adaf75723f9155a2a33d0969c93f6bd34ef12f"
-    sha256 cellar: :any, mojave:        "368ed5728712df73ca2fb82c299fc3c251a20d6b59d143ca7a6f44da1b3fbe61"
+    sha256 cellar: :any,                 arm64_big_sur: "0a692da83a6cf1036c9a588485707a04ef60ecd13b8b3d671e78d2e04a71f030"
+    sha256 cellar: :any,                 big_sur:       "1b5ea7539919dc492e3ed06a9a42bf8642fe5cc55fa63e21c8d9931c14f6b807"
+    sha256 cellar: :any,                 catalina:      "b293495736f6663b131ce171b3adaf75723f9155a2a33d0969c93f6bd34ef12f"
+    sha256 cellar: :any,                 mojave:        "368ed5728712df73ca2fb82c299fc3c251a20d6b59d143ca7a6f44da1b3fbe61"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f1a3579da48bc90e9dd6fc16dc368a98a85c90892f005d5c192466bf1cce1277"
   end
 
   def install
