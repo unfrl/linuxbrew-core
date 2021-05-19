@@ -10,6 +10,7 @@ class RustupInit < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "a336985902c88764c8b5403f5045aa6a4e0780c07d0aa2b980754a35ff0ebeeb"
     sha256 cellar: :any_skip_relocation, catalina:      "1c9b526f407c9bd1b14ed34efe0b4c74ee6c7946618fd80d7f63953562bc3232"
     sha256 cellar: :any_skip_relocation, mojave:        "3d51e6ee4013b3dae0f1435b91e054d0d8bd80ba5e72e4b3412c8e7e635c5e7b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f68466ec12d1d6921f29478919a72a8f003d53803cee9db79ba4eb3aee0e91e8"
   end
 
   depends_on "rust" => :build
