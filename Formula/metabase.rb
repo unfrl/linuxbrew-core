@@ -10,6 +10,10 @@ class Metabase < Formula
     regex(%r{href=.*?/v?(\d+(?:\.\d+)+)/metabase\.jar}i)
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "5b4557d0e6d8fbcb6de71d56549003a7004c3872a315d584801e7012643d806b"
+  end
+
   head do
     url "https://github.com/metabase/metabase.git"
 
