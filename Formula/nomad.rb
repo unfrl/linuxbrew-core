@@ -16,6 +16,7 @@ class Nomad < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "f7d4c0f85b2e451f535b9e4b2be824016a5b3e97ce8999e763d9c2faee061c56"
     sha256 cellar: :any_skip_relocation, catalina:      "fdfb1f0757a5780be2ee07e6fc189e975f90c8bd90fd2dd7c1e8cd44aa0e2c34"
     sha256 cellar: :any_skip_relocation, mojave:        "4f1cfdd22d2f46abc29550c6c382bb741817de85a78a9dcc943541b884de1842"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a9056a2b29420dd981a145765511ecf83bf8c05dc2099b62d751a877f62c8f3"
   end
 
   depends_on "go" => :build
