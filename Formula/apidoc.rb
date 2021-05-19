@@ -12,6 +12,7 @@ class Apidoc < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "9c584dbb14ba991608fa16021e29e120be11b4023a87a15954496d66210891ed"
     sha256 cellar: :any_skip_relocation, catalina:      "9c584dbb14ba991608fa16021e29e120be11b4023a87a15954496d66210891ed"
     sha256 cellar: :any_skip_relocation, mojave:        "9c584dbb14ba991608fa16021e29e120be11b4023a87a15954496d66210891ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c2cb6084a7acfb862b86e9873d9d4c24db55581c0a4e135b051c116a7c6ca9ed"
   end
 
   depends_on "node"
