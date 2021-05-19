@@ -11,6 +11,7 @@ class Kind < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "f0447bc4b8145224995dbcde38f218e6ad3eddf7cec43cc30103d9e89fa8f595"
     sha256 cellar: :any_skip_relocation, catalina:      "872579a3058f9d1e65261effc0b527b80a06fab5c6ea993645a136c19c282d7b"
     sha256 cellar: :any_skip_relocation, mojave:        "ef9d4fb28756c10b4702fd8721ca3c1286af8e2667ac67742b221d2b480eeebd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be605f3c29dc5d831875dea2f6fb1c69152433500f4795da6674f4a6b18e0c64"
   end
 
   depends_on "go" => :build
