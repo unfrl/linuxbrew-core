@@ -35,6 +35,6 @@ class Sniffglue < Formula
 
   test do
     testpath.install resource("testdata")
-    system "#{bin}/sniffglue", "-r", "SkypeIRC.pcap"
+    system bin/"sniffglue", "-r", "SkypeIRC.pcap"
   end
 end
