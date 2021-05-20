@@ -15,6 +15,7 @@ class Eccodes < Formula
     sha256 big_sur:       "9b62e4fa0c735bb2a53b342ec94df6b918595bae35e331aca09eba54e75d7f9e"
     sha256 catalina:      "7e265372d91110d9c9e315ebb711d481761a29d1409e79e59f483d4cd4b7a364"
     sha256 mojave:        "e460ff92d1f1dde670f787c6b79afd41a043445a5f00ccd13ead2f4d53bd5d5c"
+    sha256 x86_64_linux:  "5dfdf128773f243c66abebb72fc8c567e1bc0337648de7018fc84305e6594f54"
   end
 
   depends_on "cmake" => :build
