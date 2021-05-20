@@ -1,13 +1,15 @@
 class Seal < Formula
   desc "Easy-to-use homomorphic encryption library"
   homepage "https://github.com/microsoft/SEAL"
-  url "https://github.com/microsoft/SEAL/archive/v3.6.4.tar.gz"
-  sha256 "a0fb90455de357e8647522fcd417d5060ca767bfec2372cda09107852e438205"
+  url "https://github.com/microsoft/SEAL/archive/v3.6.5.tar.gz"
+  sha256 "77bfcb4a8b785206c419cdf7aff8c200250691518eeddc958f874d1f567b2872"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "a563abafddc8c2d518d7a4107b62e531f92005db3ed2ceb954e8c7f59abe61a2"
+    sha256 cellar: :any, arm64_big_sur: "e5ccaddbed669e29b8292259334ff2c4afde42c686b20280e8fa880c2cf281d5"
+    sha256 cellar: :any, big_sur:       "bad0f9c5b418c39bd6c10049575a8982425736276d7fefd3e97edc860d3a2f1a"
+    sha256 cellar: :any, catalina:      "064a106a35037111f229361082fa84a5938f04cd0971c12c331e4777dacf1ec9"
+    sha256 cellar: :any, mojave:        "7fbe04e726b2333d4af8b2aaa41dab5a56643af4df9a1ada7f8dccefec6bee3c"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -23,8 +25,8 @@ class Seal < Formula
   fails_with gcc: "5"
 
   resource "hexl" do
-    url "https://github.com/intel/hexl/archive/tags/v1.0.1.tar.gz"
-    sha256 "435bc6727a5d54e0b1fca0e2d21ac0fdf5bd8623fbd9015637d01ece931cc602"
+    url "https://github.com/intel/hexl/archive/tags/v1.1.0.tar.gz"
+    sha256 "81965ced20e86b3138fc94dc0c0e41d526c942d654704e3cebc7086171ce497d"
   end
 
   def install
@@ -93,7 +95,7 @@ class Seal < Formula
       target_link_libraries(sealexamples SEAL::seal_shared)
     EOS
 
-    system "cmake", "examples"
+    system "cmake", "examples", "-DHEXL_DIR=#{lib}/cmake"
     system "make"
     # test examples 1-5 and exit
     input = "1\n2\n3\n4\n5\n0\n"

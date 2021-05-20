@@ -10,17 +10,17 @@ class Bear < Formula
   head "https://github.com/rizsotto/Bear.git"
 
   bottle do
-    sha256 arm64_big_sur: "b1366ee18864d28920459b4b9d65a4166ff3e498030e82617939b6ffcc9fce66"
-    sha256 big_sur:       "9c2c172d9d5873d7c38d3886b49b8836c7994ca55a1a98815a0825640a87c5c7"
-    sha256 catalina:      "311d92869dbfb48a30c949172d42f7f7c26f28b7eaa6e682d1999b9e2657bfe7"
-    sha256 x86_64_linux:  "8a3a25a2291a2fbab85969ecf4a4fb8038afb539b8b947acfebc095ee8e6b3c1"
+    rebuild 1
+    sha256 arm64_big_sur: "c48f1cf92b8b1be6c433469d6de1fa27612cf4add52595835b90f2a45c490abc"
+    sha256 big_sur:       "b43ce5dbd5fe126b521766d28ca3a3c94a73cb6dcd7e431abcbd34306dbbba32"
+    sha256 catalina:      "d9e0aa335c566017d373d89d77c4d627c042245e21c9a751d2eeb9eb376eb735"
+    sha256 mojave:        "b18f99eac9cf32923b286ce4d0b8ba4011f4fa1edcf6924c8d767f42e7f0af94"
   end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "fmt"
   depends_on "grpc"
-  depends_on macos: :catalina
   depends_on "nlohmann-json"
   depends_on "python@3.9"
   depends_on "spdlog"
@@ -28,13 +28,29 @@ class Bear < Formula
 
   uses_from_macos "llvm" => :test
 
+  on_macos do
+    depends_on "llvm" if MacOS.version <= :mojave
+  end
+
   on_linux do
     depends_on "gcc"
   end
 
   fails_with gcc: "5" # needs C++17
 
+  fails_with :clang do
+    build 1100
+    cause <<-EOS
+      Undefined symbols for architecture x86_64:
+        "std::__1::__fs::filesystem::__current_path(std::__1::error_code*)"
+    EOS
+  end
+
   def install
+    on_macos do
+      ENV.llvm_clang if MacOS.version <= :mojave
+    end
+
     args = std_cmake_args + %w[
       -DENABLE_UNIT_TESTS=OFF
       -DENABLE_FUNC_TESTS=OFF

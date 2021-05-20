@@ -6,12 +6,13 @@ class Dvc < Formula
   url "https://files.pythonhosted.org/packages/0f/3b/d51f69c500718eb65875dc8134370d1aedf1983327e284ab1464fc36c85a/dvc-2.1.0.tar.gz"
   sha256 "46cfbf0db27107fb3a2d5c643e3a948bb24539bf165ef70e77ce64283959e481"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "b46bdccddfdba0c66b2347139c6c233ac9ab5c0444fc3a06dd9dbf111b6726da"
-    sha256 cellar: :any, big_sur:       "61dd4903c533d4b02c2847ee3435b0ed6e0e11e8ed6b02e48de8e4e666baf6ce"
-    sha256 cellar: :any, catalina:      "8ca4a65fdf2a7d1ce6e56ace647d573ee5876bbca293208ce2339098655682dc"
-    sha256 cellar: :any, mojave:        "5a876797a39eea2728ab7a0bd66493dcf285c5efd45462023a2eb9f62fefe98e"
+    sha256 cellar: :any, arm64_big_sur: "ccbba59605b2f105a0b8b9c5c640d067d123747db3befec45aba0ca5d1c7a178"
+    sha256 cellar: :any, big_sur:       "fabb3ff18cc7db5b336d6fe8ca0be243d8174092d1775b6979a5792d6413f5a0"
+    sha256 cellar: :any, catalina:      "6d8a33865b81380f61b615923571824a7a08336955f394548d22544ffa0715f8"
+    sha256 cellar: :any, mojave:        "018b96c71f92d65e91dbb0844330b8451222edfb351455b26f68ab52ff72d9d5"
   end
 
   depends_on "pkg-config" => :build
@@ -23,6 +24,7 @@ class Dvc < Formula
   depends_on "protobuf"
   depends_on "python-tabulate"
   depends_on "python@3.9"
+  depends_on "six"
 
   # When updating, check that the extra packages in pypi_formula_mappings.json
   # correctly reflects the following extra packages in setup.py:
@@ -540,11 +542,6 @@ class Dvc < Formula
   resource "shtab" do
     url "https://files.pythonhosted.org/packages/4f/9f/1718447f3db4ddc308da97135bdb2a5df325301f99c9a02b8c3e95e573e9/shtab-1.3.6.tar.gz"
     sha256 "7e587e2889b4e51339b6c59c956b3f0eb5194113967d913515025406d5be849c"
-  end
-
-  resource "six" do
-    url "https://files.pythonhosted.org/packages/6b/34/415834bfdafca3c5f451532e8a8d9ba89a21c9743a0c59fbd0205c7f9426/six-1.15.0.tar.gz"
-    sha256 "30639c035cdb23534cd4aa2dd52c3bf48f06e5f4a941509c8bafd8ce11080259"
   end
 
   resource "smmap" do

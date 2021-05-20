@@ -4,7 +4,7 @@ class Clazy < Formula
   url "https://download.kde.org/stable/clazy/1.9/src/clazy-1.9.tar.xz"
   sha256 "4c6c2e473e6aa011cc5fab120ebcffec3fc11a9cc677e21ad8c3ea676eb076f8"
   license "LGPL-2.0-or-later"
-  revision 1
+  revision 2
   head "https://invent.kde.org/sdk/clazy.git"
 
   livecheck do
@@ -13,25 +13,22 @@ class Clazy < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "9ab24ea5bf0d8e16e2bc565ed2950b9bde9037dc364fff0103d04130f1c30696"
-    sha256 cellar: :any, big_sur:       "2c052548e31701dcb7afbcb8b44c152bb13c0a11f37beab616cf81d54d456a30"
-    sha256 cellar: :any, catalina:      "8208e32b87a292ea3e3e738a87c7e9e7336e05dd805767b580fe50fe931e6fe5"
-    sha256 cellar: :any, mojave:        "9a0b81ad2009c80e07ee96c21c44dadae440923c0256e103f7c24b4941195cbd"
+    sha256 cellar: :any, arm64_big_sur: "a8ddb146d2b1a6058a8a86772e24b6f4bcbb76d9ff254557a4bbc4bd152acb0e"
+    sha256 cellar: :any, big_sur:       "c81f75e0c903da26f703002ecc1377a0b393ed7cfe5803c6351fadf6c131318d"
+    sha256 cellar: :any, catalina:      "d0f860fc174f54e0b0022a995f556fe7aa4f2cb3ed016863d4fe970e57112c57"
+    sha256 cellar: :any, mojave:        "7d16a3e2c951be1d7bc818a12efb4e8af98050e846d367fd9e505c10a556c72b"
   end
 
   depends_on "cmake"   => [:build, :test]
-  depends_on "llvm@11" => [:build, :test]
   depends_on "qt"      => :test
-
   depends_on "coreutils"
+  depends_on "llvm@11"
 
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
   def install
-    # avoid use llvm libc++
-    ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm@11"].opt_lib
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

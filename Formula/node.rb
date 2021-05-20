@@ -1,8 +1,8 @@
 class Node < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v16.1.0/node-v16.1.0.tar.xz"
-  sha256 "a0a9230f92c1f1757e63fd1c17cc1a3db63c1d7ef6c1ba1ed4951cc32b02087c"
+  url "https://nodejs.org/dist/v16.2.0/node-v16.2.0.tar.xz"
+  sha256 "d0f93b9842afb8f23c07862e9cd48226e7104547f7b2415d250fdb752d1b35cf"
   license "MIT"
   head "https://github.com/nodejs/node.git"
 
@@ -12,11 +12,10 @@ class Node < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "0ae9b5e3b9010336a6e7adb7a4c9bb094ad13305e77295b3da211e39a07c5e81"
-    sha256 cellar: :any,                 big_sur:       "94748e79deb9f299fa33d7e0d41764893365742079f46dfa0becd02acdd84fb2"
-    sha256 cellar: :any,                 catalina:      "e38a85b22cedbab34810ab88675cbb348285b9c078ddd5582c8e865cd4371f76"
-    sha256 cellar: :any,                 mojave:        "13704ffbf1a1bf9117b5691e8eb465cc10c502a978df8accda22ad1f551940d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "271763090dc005f8b3ef0c540eb41835da48f440ce5974bc8e48af4516666c79"
+    sha256 cellar: :any, arm64_big_sur: "0eb606fccff4aa7b941d28a82e30f3bf2145a538e532aa6658acaec0c9bc1f46"
+    sha256 cellar: :any, big_sur:       "5a07b8c8ece7dedaa748a8f93ec08a416fc87977b7ddc04a4c0d30fa3784faa1"
+    sha256 cellar: :any, catalina:      "ed9f891e488394ccef6f5c3231cebbb49844179068127cedb339ef6e4b595720"
+    sha256 cellar: :any, mojave:        "525dd25c172411ec41d17dc14a38a18bef5043b4060c63a7b9777f84ab5de700"
   end
 
   depends_on "pkg-config" => :build
@@ -33,8 +32,8 @@ class Node < Formula
   # We track major/minor from upstream Node releases.
   # We will accept *important* npm patch releases when necessary.
   resource "npm" do
-    url "https://registry.npmjs.org/npm/-/npm-7.11.2.tgz"
-    sha256 "746e2b9207380746926000aa2bb2bc690bb376ccc2933f2ea4002bc7788a61c4"
+    url "https://registry.npmjs.org/npm/-/npm-7.13.0.tgz"
+    sha256 "f7aff4f68656bc368163001fd0d7d799bc56f50450c1c9a96811040282e7b805"
   end
 
   def install

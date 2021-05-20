@@ -1,10 +1,9 @@
 class Mysql < Formula
   desc "Open source relational database management system"
   homepage "https://dev.mysql.com/doc/refman/8.0/en/"
-  url "https://cdn.mysql.com/Downloads/MySQL-8.0/mysql-boost-8.0.23.tar.gz"
-  sha256 "1c7a424303c134758e59607a0b3172e43a21a27ff08e8c88c2439ffd4fc724a5"
+  url "https://cdn.mysql.com/Downloads/MySQL-8.0/mysql-boost-8.0.25.tar.gz"
+  sha256 "93c5f57cbd69573a8d9798725edec52e92830f70c398a1afaaea2227db331728"
   license "GPL-2.0-only"
-  revision 2
 
   livecheck do
     url "https://dev.mysql.com/downloads/mysql/?tpl=files&os=src"
@@ -12,21 +11,23 @@ class Mysql < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "bf1f71535f92388f12c4760099fbcff48c1ee8856cfad244ab2c37a032fda1b5"
-    sha256 big_sur:       "02833bf7906714c3fbe1eae86921d5717d5244d314c3c7e462276556c7b09a6d"
-    sha256 catalina:      "e984d16e2ef15ef819a9b0d038567a52f66b30995918d4313af9ce6e67f78467"
-    sha256 mojave:        "3277ddff8a64f43021a6ebe208f96523d9c947e6d90b2ca18952c9b4cb0d6da8"
-    sha256 x86_64_linux:  "8873673c1d8d57f27b05f6c77cc3f6db4a9e219971b38111bb64cc7c87d58068"
+    sha256 arm64_big_sur: "6eb5409662bc0529288f41fcf6fe5b9cc45cf2976477ec94d4531f89789c97a0"
+    sha256 big_sur:       "3b121c1a7dc8628a255b9654bac20b324f49387a19cdab126161066c2f2005d0"
+    sha256 catalina:      "0bd40128bca6ba97aa595dc822f9408c593476c6d86310e9ce36f139ce4328f7"
+    sha256 mojave:        "9aeac3bc140793f5e6a363c16345070efecbb22b4e9b2a64ca27419405f0c145"
   end
 
   depends_on "cmake" => :build
+  depends_on "libevent"
   depends_on "openssl@1.1"
   depends_on "protobuf"
+  depends_on "zstd"
 
   uses_from_macos "cyrus-sasl"
 
   # Fix error: Cannot find system editline libraries.
   uses_from_macos "libedit"
+  uses_from_macos "zlib"
 
   conflicts_with "mariadb", "percona-server",
     because: "mysql, mariadb, and percona install the same binaries"
@@ -62,6 +63,9 @@ class Mysql < Formula
       -DWITH_EDITLINE=system
       -DWITH_SSL=#{Formula["openssl@1.1"].opt_prefix}
       -DWITH_PROTOBUF=system
+      -DWITH_LIBEVENT=system
+      -DWITH_ZLIB=system
+      -DWITH_ZSTD=system
       -DWITH_UNIT_TESTS=OFF
       -DENABLED_LOCAL_INFILE=1
       -DWITH_INNODB_MEMCACHED=ON
