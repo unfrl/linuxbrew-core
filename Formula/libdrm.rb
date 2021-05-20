@@ -10,10 +10,6 @@ class Libdrm < Formula
     regex(/href=.*?libdrm[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  bottle do
-    sha256 x86_64_linux: "31deb325b4cda8928d0cbdf307e224404aaacdf3f5f5e09a98ce08b629d6a41c"
-  end
-
   depends_on "docutils" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
