@@ -1,21 +1,21 @@
-class ErlangAT22 < Formula
+class ErlangAT23 < Formula
   desc "Programming language for highly scalable real-time systems"
   homepage "https://www.erlang.org/"
   # Download tarball from GitHub; it is served faster than the official tarball.
-  url "https://github.com/erlang/otp/releases/download/OTP-22.3.4.18/otp_src_22.3.4.18.tar.gz"
-  sha256 "06ca9f9a0de38bae76c3badeab182d694148e79211514a3ee6f0ce798b99f09a"
+  url "https://github.com/erlang/otp/releases/download/OTP-23.3.4/otp_src_23.3.4.tar.gz"
+  sha256 "e19e6e0eebcee3b6165db33a8f7cea7d70c5b98ea41bd336a6fe26ddf775a2bb"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(/^OTP[._-]v?(22(?:\.\d+)+)$/i)
+    regex(/^OTP[._-]v?(23(?:\.\d+)+)$/i)
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "c4a3d042000ec10f0f86463602c4b00f165a64a00180475fb83dcfdf19aaa842"
-    sha256 cellar: :any, big_sur:       "dc58d129adb121c63fa91e303799750d5fa559d9852b985ff1dba572337c6f66"
-    sha256 cellar: :any, catalina:      "c6a85486eba7395025c29fcc0b86a4b785719af103fba59eab03839a31ca6b1c"
-    sha256 cellar: :any, mojave:        "0e28838e3dd1c5b33586c2a90905d849e9ca210814bcbda696a6b15076dea7d0"
+    sha256 cellar: :any, arm64_big_sur: "48eb909e2d285ed434f98032680d0854c9641f05eae56449d1b949b511953f79"
+    sha256 cellar: :any, big_sur:       "cb3d3fdd983036c3b1aab280cb6522808221e109ecaeb27f1428f9df408f681a"
+    sha256 cellar: :any, catalina:      "261d25d1b0dd5692782103cbc7ed41d9e37ca65dae6a62a104d8a41695281b21"
+    sha256 cellar: :any, mojave:        "a48c42ae9cb469cc2d262a968f79f388fa902bae5db40619bf43107b04abb0d6"
   end
 
   keg_only :versioned_formula
@@ -23,14 +23,10 @@ class ErlangAT22 < Formula
   depends_on "openssl@1.1"
   depends_on "wxmac" # for GUI apps like observer
 
-  resource "man" do
-    url "https://www.erlang.org/download/otp_doc_man_22.3.tar.gz"
-    sha256 "43b6d62d9595e1dc51946d55c9528c706c5ae753876b9bf29303b7d11a7ccb16"
-  end
-
   resource "html" do
-    url "https://www.erlang.org/download/otp_doc_html_22.3.tar.gz"
-    sha256 "9b01c61f2898235e7f6643c66215d6419f8706c8fdd7c3e0123e68960a388c34"
+    url "https://www.erlang.org/download/otp_doc_html_23.3.tar.gz"
+    mirror "https://fossies.org/linux/misc/otp_doc_html_23.3.tar.gz"
+    sha256 "03d86ac3e71bb58e27d01743a9668c7a1265b573541d4111590f0f3ec334383e"
   end
 
   def install
@@ -62,7 +58,10 @@ class ErlangAT22 < Formula
     system "make"
     system "make", "install"
 
-    (lib/"erlang").install resource("man").files("man")
+    # Build the doc chunks (manpages are also built by default)
+    system "make", "docs", "DOC_TARGETS=chunks"
+    system "make", "install-docs"
+
     doc.install resource("html")
   end
 

@@ -2,10 +2,9 @@ class Erlang < Formula
   desc "Programming language for highly scalable real-time systems"
   homepage "https://www.erlang.org/"
   # Download tarball from GitHub; it is served faster than the official tarball.
-  url "https://github.com/erlang/otp/archive/OTP-23.3.4.tar.gz"
-  sha256 "adc937319227774d53f941f25fa31990f5f89a530f6cb5511d5ea609f9f18ebe"
+  url "https://github.com/erlang/otp/releases/download/OTP-24.0/otp_src_24.0.tar.gz"
+  sha256 "3d075006fb3832940843b6f12baaa6d1f36cadcd646be18ab2546db9c317e399"
   license "Apache-2.0"
-  head "https://github.com/erlang/otp.git"
 
   livecheck do
     url :stable
@@ -13,25 +12,27 @@ class Erlang < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "eb20c6f2f31a73bb7830a56f1513c8a9bb5bb209b72d555146cc3aa10fb1eb9f"
-    sha256 cellar: :any,                 big_sur:       "841bcaff223387cc95a4687bf59a239defbe6ce1e365d3d303c30878b4b05acb"
-    sha256 cellar: :any,                 catalina:      "c2f3a456080a1c63cc6533fd06cc99d25ba28d44338d4e801509303cb514db35"
-    sha256 cellar: :any,                 mojave:        "fbb11e617a4031b77dbc4c2d20ff1c8e471a8f9894959e015bdf8ebc0403268e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f69efd3516a5725d0da9a6454149a4560ecf8e8597edee5cc0a2123e7715cb29"
+    sha256 cellar: :any, arm64_big_sur: "f2df681660a91310cd483a6525147c9f04a73423d6b9224b497ce2689d3d514c"
+    sha256 cellar: :any, big_sur:       "1cbd09c9e601cd98aae4d9e44222a0465f59821bbc086a8e9d8b3d4cdaa3a9c3"
+    sha256 cellar: :any, catalina:      "d8de6555c6b7d756563d591ed80e6d6d2ab496795c06ce5dbadbf1da4f9eff89"
+    sha256 cellar: :any, mojave:        "bb0aaada4380b5970e5a62c0d5cf6dc657317b541858c0822a17060c9fd41dd3"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
+  head do
+    url "https://github.com/erlang/otp.git"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
+  end
+
   depends_on "openssl@1.1"
   depends_on "wxmac" # for GUI apps like observer
 
-  uses_from_macos "m4" => :build
-
   resource "html" do
-    url "https://www.erlang.org/download/otp_doc_html_23.3.tar.gz"
-    mirror "https://fossies.org/linux/misc/otp_doc_html_23.3.tar.gz"
-    sha256 "03d86ac3e71bb58e27d01743a9668c7a1265b573541d4111590f0f3ec334383e"
+    url "https://www.erlang.org/download/otp_doc_html_24.0.tar.gz"
+    mirror "https://fossies.org/linux/misc/otp_doc_html_24.0.tar.gz"
+    sha256 "6ceaa2cec97fa5a631779544a3c59afe9e146084e560725b823c476035716e73"
   end
 
   def install
@@ -40,7 +41,7 @@ class Erlang < Formula
     %w[LIBS FLAGS AFLAGS ZFLAGS].each { |k| ENV.delete("ERL_#{k}") }
 
     # Do this if building from a checkout to generate configure
-    system "./otp_build", "autoconf" if File.exist? "otp_build"
+    system "./otp_build", "autoconf" unless File.exist? "configure"
 
     args = %W[
       --disable-debug
@@ -48,7 +49,6 @@ class Erlang < Formula
       --prefix=#{prefix}
       --enable-dynamic-ssl-lib
       --enable-hipe
-      --enable-sctp
       --enable-shared-zlib
       --enable-smp-support
       --enable-threads
