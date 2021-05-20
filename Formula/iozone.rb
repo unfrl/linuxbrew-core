@@ -16,6 +16,7 @@ class Iozone < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "5eac860da12c9354228065de651c6ad694735d743cc0e103adddeb0410e03fff"
     sha256 cellar: :any_skip_relocation, catalina:      "16f2d9c8927f2b3c77a386e7fd0e671caae18e0fe537617f89bc62fab59010e7"
     sha256 cellar: :any_skip_relocation, mojave:        "db9937b87103179af1950657d9f330063194987da6873e6177e759f878fd2949"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1af2bb00831c9823e1b03551e3a19d0b498376f6d39074a30d6ee4643b570573"
   end
 
   def install
