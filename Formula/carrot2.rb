@@ -8,9 +8,10 @@ class Carrot2 < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, big_sur:  "8de11252a7b018007a2ba09d912acb2ec5c43d8f07bb9230789084d2a950cdde"
-    sha256 cellar: :any_skip_relocation, catalina: "a7bf7b0100998fd2e78069e7c3be0e8099d8d45192f0277094ba555fe260ed0f"
-    sha256 cellar: :any_skip_relocation, mojave:   "ff58dbebfb493939e5d07f9984fb4a32e34e00cf8b188829703ba6fc04c47658"
+    sha256 cellar: :any_skip_relocation, big_sur:      "8de11252a7b018007a2ba09d912acb2ec5c43d8f07bb9230789084d2a950cdde"
+    sha256 cellar: :any_skip_relocation, catalina:     "a7bf7b0100998fd2e78069e7c3be0e8099d8d45192f0277094ba555fe260ed0f"
+    sha256 cellar: :any_skip_relocation, mojave:       "ff58dbebfb493939e5d07f9984fb4a32e34e00cf8b188829703ba6fc04c47658"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "6b18850487e0e25ad14b065770f29bbd4b13522e3d369a30806008a425e7bf92"
   end
 
   depends_on "openjdk"
