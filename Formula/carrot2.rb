@@ -8,9 +8,10 @@ class Carrot2 < Formula
 
   bottle do
     rebuild 2
-    sha256 cellar: :any_skip_relocation, big_sur:  "378bc81bc95cdfc71b6b9e08058516e40f8bd8446d25fc65cc6e7d7a3840801e"
-    sha256 cellar: :any_skip_relocation, catalina: "7ade89023e00a6fc71b7aa5f3fd8d5c9e4a806248e5aec30cf47d0252d48c523"
-    sha256 cellar: :any_skip_relocation, mojave:   "cc31066d605e9319d118fa02ccabe747772151824e80c53d9940ed21a7853e42"
+    sha256 cellar: :any_skip_relocation, big_sur:      "378bc81bc95cdfc71b6b9e08058516e40f8bd8446d25fc65cc6e7d7a3840801e"
+    sha256 cellar: :any_skip_relocation, catalina:     "7ade89023e00a6fc71b7aa5f3fd8d5c9e4a806248e5aec30cf47d0252d48c523"
+    sha256 cellar: :any_skip_relocation, mojave:       "cc31066d605e9319d118fa02ccabe747772151824e80c53d9940ed21a7853e42"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1ceadd064f8aac8a4e2e0f28060f1414047f96507d996dffdb816b030f783992"
   end
 
   # Switch to `gradle` when carrot2 supports Gradle 7+
