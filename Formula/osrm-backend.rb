@@ -4,6 +4,7 @@ class OsrmBackend < Formula
   url "https://github.com/Project-OSRM/osrm-backend/archive/v5.25.0.tar.gz"
   sha256 "6da276d609a54600bb37007fd98d14c2a48639f51dda0d962b5801dd0118dfbb"
   license "BSD-2-Clause"
+  revision 1
   head "https://github.com/Project-OSRM/osrm-backend.git"
 
   livecheck do
@@ -12,10 +13,10 @@ class OsrmBackend < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "dc65b0d0046277182590cc6d3b16b5436a637a0c87d0d6ca3b81bf4ee4aa138a"
-    sha256 cellar: :any, big_sur:       "5d461962ca9a86f733ee2223080fd63c9ef1bd1c0fbd6820d29dfe1ba46b1f75"
-    sha256 cellar: :any, catalina:      "07166bddc5e210fd5c697c9dd168667522c83260c143a2f956dcf079507e0141"
-    sha256 cellar: :any, mojave:        "002af11b6c8a248e91417f997eb13d9a6a624bbd34795ba961ff48e184f872a5"
+    sha256 cellar: :any, arm64_big_sur: "4f459e02861a2bd1f069f4e4eaf5d067c3f8533c45f05e5d92e3485ba6eed0de"
+    sha256 cellar: :any, big_sur:       "9503f806b2f88daf95a054754e3fcee7c49cb4e89414d1ff18452b476ea80cf1"
+    sha256 cellar: :any, catalina:      "a28c8d9695583ead07fc870472a2701ff9702493147f04467e73371899e88abd"
+    sha256 cellar: :any, mojave:        "1a2240493d43b788bd4c5e0018ed8fa076833b28068364806a9ef9754323a84a"
   end
 
   depends_on "cmake" => :build
@@ -24,7 +25,7 @@ class OsrmBackend < Formula
   depends_on "libxml2"
   depends_on "libzip"
   depends_on "lua"
-  depends_on "tbb"
+  depends_on "tbb@2020"
 
   def install
     lua = Formula["lua"]

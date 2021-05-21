@@ -4,12 +4,12 @@ class Bowtie2 < Formula
   url "https://github.com/BenLangmead/bowtie2/archive/v2.4.3.tar.gz"
   sha256 "616017bcc68fc178418575fe39ffde42fff811d0d071bac7b1e7650288e4d166"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:      "c419e9c0755e6c39afc6c00c108c357347f85caf90924fe34411d8e6fdf91873"
-    sha256 cellar: :any_skip_relocation, catalina:     "2cc14ec9a94276ccd871fe52bce8cf0681121a7122156bdce421433614643cf0"
-    sha256 cellar: :any_skip_relocation, mojave:       "bd542ef51869c57d76a743a82c981dd3257def7172680eca2d5d58796df20ae8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "06138e736144bc5bcd4446af4a8d185d44aca92d78a3f209b0f9fb8475a7643e"
+    sha256 cellar: :any_skip_relocation, big_sur:  "42595bf08b477aef727f3e83bf8f8e8ad3c8d9818b487598aa702e98e0cfb193"
+    sha256 cellar: :any_skip_relocation, catalina: "03fd56e55cbb1807176aca27e8e1924faf762e9d17c0b7362baf27de0fa72c3f"
+    sha256 cellar: :any_skip_relocation, mojave:   "95e10e1d2250a9d228fec785a3b331b3357fd497b6c181a953746be868c20b89"
   end
 
   depends_on "tbb"

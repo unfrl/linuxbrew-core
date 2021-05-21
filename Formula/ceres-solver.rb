@@ -4,14 +4,14 @@ class CeresSolver < Formula
   url "http://ceres-solver.org/ceres-solver-2.0.0.tar.gz"
   sha256 "10298a1d75ca884aa0507d1abb0e0f04800a92871cd400d4c361b56a777a7603"
   license "BSD-3-Clause"
+  revision 2
   head "https://ceres-solver.googlesource.com/ceres-solver.git"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "6a4b388e2ea9cf7b90477cc7ffa4b19214a93e015b10b75a395d961004dd7f67"
-    sha256 cellar: :any, big_sur:       "d07b5cedb61f89df0ea50940be78e5bc7f85148b37621acecb0a92a839abb101"
-    sha256 cellar: :any, catalina:      "899895707bdc81ab3f52e9cf3ac06ac9f39139fcb9d171c09181b13cc8510b83"
-    sha256 cellar: :any, mojave:        "af829a0467fab9ec10f84b5277724dc977b23f57abf4caa5705199629b8bade9"
-    sha256 cellar: :any, x86_64_linux:  "ccc6c8cba0d3e943cb5891933d84bae343b4e7c6c5dcb4f212c402b004c1a630"
+    sha256 cellar: :any, arm64_big_sur: "4f5f5311d7f3cea6e33177135fec375471c807412e69aa9d0fa86653791d2993"
+    sha256 cellar: :any, big_sur:       "499f95a44d1fa42f363abc38fb5c9595493e6a294885d699775dc8d331a2f6bc"
+    sha256 cellar: :any, catalina:      "ea45e948d7435f4dc4140624ab0f989c8ab8a5ef297baf472e687ea214ab959b"
+    sha256 cellar: :any, mojave:        "98890a5ed9725dae76d1bd6bfe7b532dfc3608d63ddf5525acc340e73d6694fd"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -22,6 +22,14 @@ class CeresSolver < Formula
   depends_on "openblas"
   depends_on "suite-sparse"
   depends_on "tbb"
+
+  # Fix compatibility with TBB 2021.1
+  # See https://github.com/ceres-solver/ceres-solver/issues/669
+  # Remove in the next release
+  patch do
+    url "https://github.com/ceres-solver/ceres-solver/commit/941ea13475913ef8322584f7401633de9967ccc8.patch?full_index=1"
+    sha256 "c61ca2ff1e92cc2134ba8e154bd9052717ba3fcae085e8f44957b9c22e6aa4ff"
+  end
 
   def install
     system "cmake", ".", *std_cmake_args,

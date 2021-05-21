@@ -4,13 +4,13 @@ class OpencvAT3 < Formula
   url "https://github.com/opencv/opencv/archive/refs/tags/3.4.14.tar.gz"
   sha256 "dfeb91c93d494be590afbe342ebb61742381f901fe2e0376987b1581f74948d1"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 arm64_big_sur: "78112303aecc8166bc0efdfb7488c758a541b078f9eeacb21d19534db695f2b4"
-    sha256 big_sur:       "251a944cde6718db1ac022fc5072c4a23cf03e6c4510b16fe4e8f558549db5f5"
-    sha256 catalina:      "a9efcf1b0dab378f1691f30979a94a5454e163d7f682fdd167088d0e659141aa"
-    sha256 mojave:        "265b57e227e0bb2410e9cf72025f4bae34ddf4da81b7e6bd26f3ec5fcdec259b"
+    sha256 arm64_big_sur: "747953b32d310d1c2cda9dfe89617bbd95bbb421468f9e142b80ecad28943dea"
+    sha256 big_sur:       "4834eda32632960cbcc9cb5c2c3324ff82d3ab7e69347a37dccfa3303f7fce23"
+    sha256 catalina:      "8f8881f7056f9716565fa3ce0e226ec673a17eb5e23db2a9bf027ee7f386ca29"
+    sha256 mojave:        "4b4533ff65d86330c713761072d8239fa9a6990b5821fb1dbf65853ffb2e71e8"
   end
 
   keg_only :versioned_formula
@@ -33,6 +33,13 @@ class OpencvAT3 < Formula
   resource "contrib" do
     url "https://github.com/opencv/opencv_contrib/archive/3.4.14.tar.gz"
     sha256 "f8394bc68b70c57e54fc7706a4d2b7ef33e514c385f338c4cb470fe37d0dc243"
+  end
+
+  # tbb 2021 support. Backport of
+  # https://github.com/opencv/opencv/pull/19384
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/ec823c01d3275b13b527e4860ae542fac11da24c/opencv%403/tbb2021.patch"
+    sha256 "a125f962ea07f0656869cbd97433f0e465013effc13c97a414752e0d25ed9a7d"
   end
 
   def install

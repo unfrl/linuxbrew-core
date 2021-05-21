@@ -3,16 +3,15 @@ class Pipgrip < Formula
 
   desc "Lightweight pip dependency resolver"
   homepage "https://github.com/ddelange/pipgrip"
-  url "https://files.pythonhosted.org/packages/7e/94/495cfb7c06b0283f289bbda9806d07c47dbf6964e9043596e82b5cc53954/pipgrip-0.6.8.tar.gz"
-  sha256 "b6a7c6f8fd8a3d0e4798e665208d5c042d53beaf29c9cb74b6b4207c2625d8f8"
+  url "https://files.pythonhosted.org/packages/ab/26/fc90c4c5b010838ec83a204ad7ed4fb91d1de864c1e8141b44c071a7a3be/pipgrip-0.6.9.tar.gz"
+  sha256 "1c0d0726e94ef87f7ee7355b3417d36b637c5510efca7454c953ce24762b91a4"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "797398c5cfe5088b6b9ba88c3d9c44fb6dfee11747ff7fc58eabb6b6b51b01f0"
-    sha256 cellar: :any_skip_relocation, big_sur:       "1cb4071cb3e9ce021d3b87c07810b018a1995e35400452711593baac72ca8e33"
-    sha256 cellar: :any_skip_relocation, catalina:      "4fd455f7c74bdcf802b9c0313572bbadac1b7662e23f9c38b485329ba0c34ccf"
-    sha256 cellar: :any_skip_relocation, mojave:        "faa0543cc81c8c0033142882eecfcbbcc83b9e3fde4051452725ab92a9e7f997"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bdbbe6b39f277a2ec017579b694adc60d2a256856ef4f7b6e10854a4f10c7309"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "dbf57bc17a8c9d5439a2b841c3c5c108529641eaac2be2870e347eb92983336e"
+    sha256 cellar: :any_skip_relocation, big_sur:       "b26968f1a6cc06f5220b1ea52d68b3a0e42bfa0a772cf32505a3b84f6ce3b49d"
+    sha256 cellar: :any_skip_relocation, catalina:      "6b91571022671213ecfc3b10911ccd5eb1603658285e13f7b5e32371e1479bb7"
+    sha256 cellar: :any_skip_relocation, mojave:        "4b677cfd3e6f639d0c20eec9a2fce714c785013381eadd6321882422a010cdae"
   end
 
   depends_on "python@3.9"
@@ -23,8 +22,8 @@ class Pipgrip < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/d5/99/286fd2fdfb501620a9341319ba47444040c7b3094d3b6c797d7281469bf8/click-8.0.0.tar.gz"
-    sha256 "7d8c289ee437bcb0316820ccee14aefcb056e58d31830ecab8e47eda6540e136"
+    url "https://files.pythonhosted.org/packages/21/83/308a74ca1104fe1e3197d31693a7a2db67c2d4e668f20f43a2fca491f9f7/click-8.0.1.tar.gz"
+    sha256 "8c04c11192119b1ef78ea049e0a6f0463e4c48ef00a30160c704337586f3ad7a"
   end
 
   resource "packaging" do
