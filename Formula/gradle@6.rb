@@ -10,6 +10,7 @@ class GradleAT6 < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "4da8b0ef695f99b6749c3fade78621827a5e77c887ee51349e9117c7b2a747ec"
     sha256 cellar: :any_skip_relocation, catalina:      "4da8b0ef695f99b6749c3fade78621827a5e77c887ee51349e9117c7b2a747ec"
     sha256 cellar: :any_skip_relocation, mojave:        "4da8b0ef695f99b6749c3fade78621827a5e77c887ee51349e9117c7b2a747ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a91275e244b45749f1e7af88f20d548ee5b9571d8131fb55d19ec8b5cc055c4b"
   end
 
   keg_only :versioned_formula
