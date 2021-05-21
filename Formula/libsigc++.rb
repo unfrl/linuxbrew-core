@@ -6,10 +6,8 @@ class Libsigcxx < Formula
   license "LGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "8cec1498075efde0b642bc9fb942f3311fa06cba220abe9d362ee3a7d5e9e4b6"
-    sha256 cellar: :any, big_sur:       "a6cbe2301ae3a6453a595f8ef6af01178b2abac4509ab56056636d9d52ebee07"
-    sha256 cellar: :any, catalina:      "11a842cc1940fe07eac5f4c28de62348c9a4c2aa3ae7d024a44e0f16f83409f0"
-    sha256 cellar: :any, mojave:        "5329e6dd054b51c9dcae16be93635dab3af249f671717d4894b1866a5b5efdf4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "52e42467d2ac9797c6b22b6ea9eedf1fb77502e4358882573075cce89338b600"
   end
 
   depends_on "meson" => :build
