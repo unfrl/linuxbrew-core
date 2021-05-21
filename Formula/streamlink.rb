@@ -3,18 +3,16 @@ class Streamlink < Formula
 
   desc "CLI for extracting streams from various websites to a video player"
   homepage "https://streamlink.github.io/"
-  url "https://files.pythonhosted.org/packages/05/da/5f25244ae3fbfdc712fea9bb4d3a158b365a8d8240f2949b2b0bf411cddb/streamlink-2.1.1.tar.gz"
-  sha256 "59c56540a137e2544b93c685e36e2fc005bffd0395293b05e7110c1e8b52545e"
+  url "https://files.pythonhosted.org/packages/d8/82/d18ab1a39e58124099871aad6e459e7841028fe5f78d5867d559112570b8/streamlink-2.1.2.tar.gz"
+  sha256 "5e3be17673ed6b7da359a4636bd1e6961b4e58acb2dd7d219f9aaab377a4c84d"
   license "BSD-2-Clause"
-  revision 1
   head "https://github.com/streamlink/streamlink.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "08d99e26d21dfa7191e50edc11b9df4e070ee31695d42ff755f10b04df95ba8e"
-    sha256 cellar: :any_skip_relocation, big_sur:       "8aea80f95f78fb47d5f8f5ad87eb286ccb6c15f0ec462e87cd0fcb198a10fdf7"
-    sha256 cellar: :any_skip_relocation, catalina:      "57543b3f7155253d8e0ff692ea50668309660f5d8868dad6fa9b92ef7bdf87dd"
-    sha256 cellar: :any_skip_relocation, mojave:        "f2afaf9554eb5d5b7af6109d3246d041cefb651891c5dac438d2cb1486b1c616"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5bf7b2f859980ccd1ab189e4c507c08c00478b77f473b6f8f58131d40c1a9789"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "feedfeab35c51fe7cf3e08aff3c51a8ab14825a65d8db95eafe1166970be227b"
+    sha256 cellar: :any_skip_relocation, big_sur:       "81fd84c142e7aacd900c8b3369ed1a611b3e4111a83f29608853be0df22b6b31"
+    sha256 cellar: :any_skip_relocation, catalina:      "85aae8da53cc745bc8b424515bb7c7207d909b1570d2a2953cb651b7296d7e54"
+    sha256 cellar: :any_skip_relocation, mojave:        "832556c3043e75865ef43c45704ea3f34d26048c3c239b3188a19e259faf0555"
   end
 
   depends_on "python@3.9"
@@ -71,8 +69,8 @@ class Streamlink < Formula
   end
 
   resource "six" do
-    url "https://files.pythonhosted.org/packages/6b/34/415834bfdafca3c5f451532e8a8d9ba89a21c9743a0c59fbd0205c7f9426/six-1.15.0.tar.gz"
-    sha256 "30639c035cdb23534cd4aa2dd52c3bf48f06e5f4a941509c8bafd8ce11080259"
+    url "https://files.pythonhosted.org/packages/71/39/171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85e/six-1.16.0.tar.gz"
+    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
   end
 
   resource "urllib3" do
@@ -81,8 +79,8 @@ class Streamlink < Formula
   end
 
   resource "websocket-client" do
-    url "https://files.pythonhosted.org/packages/4a/df/112c278ba1ead96786d24d973429ce1e1a2c86b9843183d9f8ef8c6330d7/websocket_client-0.58.0.tar.gz"
-    sha256 "63509b41d158ae5b7f67eb4ad20fecbb4eee99434e73e140354dc3ff8e09716f"
+    url "https://files.pythonhosted.org/packages/97/ab/f45394f0db306bdcdf78e7922e942117731023e31f44f4dd8bdd926c2391/websocket-client-1.0.0.tar.gz"
+    sha256 "5051b38a2f4c27fbd7ca077ebb23ec6965a626ded5a95637f36be1b35b6c4f81"
   end
 
   def install

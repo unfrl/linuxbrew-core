@@ -16,6 +16,8 @@ class Genstats < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b532a53713cc8fafb4a544bf1d07ab75a5d70436f0fb15d1eaa52d1d11235fad"
   end
 
+  deprecate! date: "2021-05-20", because: "Upstream website has disappeared"
+
   def install
     # Tried to make this a patch.  Applying the patch hunk would
     # fail, even though I used "git diff | pbcopy". Tried messing

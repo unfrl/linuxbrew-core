@@ -2,22 +2,22 @@ class Osm < Formula
   desc "Open Service Mesh (OSM)"
   homepage "https://openservicemesh.io/"
   url "https://github.com/openservicemesh/osm.git",
-      tag:      "v0.8.3",
-      revision: "6fa4a5791cd70ec5eb2f0abaa0c09b7993c2fd34"
+      tag:      "v0.8.4",
+      revision: "3d923b3f2d72006f6cdaad056938c492c364196d"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "bf164602266e8f82f9ddb8ec2491cf75b4b6adebc5cf3d95ace5f5b853963a8e"
-    sha256 cellar: :any_skip_relocation, big_sur:       "6aa5977df9b542dad5fe9acc8720e68e56f8a354a840bfadc9fccc0516403333"
-    sha256 cellar: :any_skip_relocation, catalina:      "09a93bca5d2d5cd90202d908d27faae8471288e4a37f506164784cbe2ddcade2"
-    sha256 cellar: :any_skip_relocation, mojave:        "dc831b364288ee772128a380990d5b0db3b0330b2cd83fb6da53147c848e324f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a917ca14c367a1d78e43590bcc39660ac6f1b6d25ff60d527d09c1f98d9dd41"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "4eb537bd502ed21ebec9c130a278ed222c1c2c5b7fccb75eca277cc561cba6ea"
+    sha256 cellar: :any_skip_relocation, big_sur:       "d4bd3b334c8d769abb682cf7c39886a1f6788a7a3dcc4720887a78022eb8e9a5"
+    sha256 cellar: :any_skip_relocation, catalina:      "878289088fb76f829d453916f4a23057dd3e145de96621bd897c889695c9c4ed"
+    sha256 cellar: :any_skip_relocation, mojave:        "5481457927e9d6fca659375c45995d2972e066ba9572dcd04901ffaadd91517a"
   end
 
   depends_on "go" => :build
 
   def install
     ENV["VERSION"] = "v"+version
+    ENV["BUILD_DATE"] = Time.now.utc.strftime("%Y-%m-%d-%H:%M")
     system "make", "build-osm"
     bin.install "bin/osm"
   end

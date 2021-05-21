@@ -18,6 +18,8 @@ class Truncate < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "41e96e4e675dec121553ea5ecae40f39d3495610c5c35632c7862b7731488107"
   end
 
+  deprecate! date: "2021-05-20", because: :repo_removed
+
   conflicts_with "coreutils", because: "both install `truncate` binaries"
   conflicts_with "uutils-coreutils", because: "both install `truncate` binaries"
 

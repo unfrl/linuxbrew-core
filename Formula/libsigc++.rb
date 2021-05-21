@@ -1,13 +1,15 @@
 class Libsigcxx < Formula
   desc "Callback framework for C++"
   homepage "https://libsigcplusplus.github.io/libsigcplusplus/"
-  url "https://download.gnome.org/sources/libsigc++/3.0/libsigc++-3.0.6.tar.xz"
-  sha256 "b70edcf4611651c54a426e109b17196e1fa17da090592a5000e2d134c03ac5ce"
+  url "https://download.gnome.org/sources/libsigc++/3.0/libsigc++-3.0.7.tar.xz"
+  sha256 "bfbe91c0d094ea6bbc6cbd3909b7d98c6561eea8b6d9c0c25add906a6e83d733"
   license "LGPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "a5b79b43ac38795ae18d82d6762cf36039988c4cec8ff56afc2005d2034084c3"
+    sha256 cellar: :any, arm64_big_sur: "8cec1498075efde0b642bc9fb942f3311fa06cba220abe9d362ee3a7d5e9e4b6"
+    sha256 cellar: :any, big_sur:       "a6cbe2301ae3a6453a595f8ef6af01178b2abac4509ab56056636d9d52ebee07"
+    sha256 cellar: :any, catalina:      "11a842cc1940fe07eac5f4c28de62348c9a4c2aa3ae7d024a44e0f16f83409f0"
+    sha256 cellar: :any, mojave:        "5329e6dd054b51c9dcae16be93635dab3af249f671717d4894b1866a5b5efdf4"
   end
 
   depends_on "meson" => :build
