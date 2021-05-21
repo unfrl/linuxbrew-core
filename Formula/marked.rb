@@ -7,6 +7,10 @@ class Marked < Formula
   sha256 "fe5d5ffb3a6f0ab8c13457b5ec86638e2d83fe4d4e444cd87d504584a0b1c8ba"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ddfa552e04a6048cd487bb04e664aa2e6cc248034f80fb9c78e977d60587eefd"
+  end
+
   depends_on "node"
 
   def install
