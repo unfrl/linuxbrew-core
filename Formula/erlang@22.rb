@@ -12,10 +12,11 @@ class ErlangAT22 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "0d2b2567843b4260f55c3f0b12370862ea470a581becc62730eb777af39b05fa"
-    sha256 cellar: :any, big_sur:       "4abea181707cc3cbdd6007ac66b432dfd4976024deff6a1fe10c3b00458cbacd"
-    sha256 cellar: :any, catalina:      "d3d2afe30bbaf547288f16323bbc4850e36e5922dbcbc5360d360f02df31824f"
-    sha256 cellar: :any, mojave:        "97f3795134f43f5dc56675e5435cffcda3c041ccf484c8c3ee317d27c5b8675d"
+    sha256 cellar: :any,                 arm64_big_sur: "0d2b2567843b4260f55c3f0b12370862ea470a581becc62730eb777af39b05fa"
+    sha256 cellar: :any,                 big_sur:       "4abea181707cc3cbdd6007ac66b432dfd4976024deff6a1fe10c3b00458cbacd"
+    sha256 cellar: :any,                 catalina:      "d3d2afe30bbaf547288f16323bbc4850e36e5922dbcbc5360d360f02df31824f"
+    sha256 cellar: :any,                 mojave:        "97f3795134f43f5dc56675e5435cffcda3c041ccf484c8c3ee317d27c5b8675d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b19ec083b1b9385e9f99e261c335967bd0c61333dabe16f93af6b2b68c5ab9bd"
   end
 
   keg_only :versioned_formula
