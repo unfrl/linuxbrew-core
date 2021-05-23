@@ -13,10 +13,8 @@ class Ghostscript < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "5aa59b2287f35c9f8c0b20d8561c7f0b7c4217d5ba43a41ade1f2e31db1833e0"
-    sha256 big_sur:       "cfe91b44577a206ac0ef1106c5c3681d6eef7559e176cefd3452621d5b5bf974"
-    sha256 catalina:      "b821f9923f8579229634edaa454cb127836f1af97f724a8941ec76c12896b4cd"
-    sha256 mojave:        "23048bf2ec8c47dfe9a58476c7927464ea732af1b0d4fc5787ebef04bfa4f76e"
+    rebuild 1
+    sha256 x86_64_linux: "ef7d088cc989e381042288b50c73273c4fec91b4eb362436ab0bf35ab064c6ed"
   end
 
   head do
