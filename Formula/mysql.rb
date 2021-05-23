@@ -27,10 +27,12 @@ class Mysql < Formula
 
   uses_from_macos "curl"
   uses_from_macos "cyrus-sasl"
-
-  # Fix error: Cannot find system editline libraries.
   uses_from_macos "libedit"
   uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "patchelf" => :build
+  end
 
   conflicts_with "mariadb", "percona-server",
     because: "mysql, mariadb, and percona install the same binaries"
@@ -42,10 +44,12 @@ class Mysql < Formula
   end
 
   def install
-    # Fix libmysqlgcs.a(gcs_logging.cc.o): relocation R_X86_64_32
-    # against `_ZN17Gcs_debug_options12m_debug_noneB5cxx11E' can not be used when making
-    # a shared object; recompile with -fPIC
-    ENV.append_to_cflags "-fPIC" unless OS.mac?
+    on_linux do
+      # Fix libmysqlgcs.a(gcs_logging.cc.o): relocation R_X86_64_32
+      # against `_ZN17Gcs_debug_options12m_debug_noneB5cxx11E' can not be used when making
+      # a shared object; recompile with -fPIC
+      ENV.append_to_cflags "-fPIC"
+    end
 
     # -DINSTALL_* are relative to `CMAKE_INSTALL_PREFIX` (`prefix`)
     args = %W[
