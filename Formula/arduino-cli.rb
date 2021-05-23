@@ -5,6 +5,7 @@ class ArduinoCli < Formula
      tag:      "0.18.3",
      revision: "d710b642ef7992a678053e9d68996c02f5863721"
   license "GPL-3.0-only"
+  revision 1
   head "https://github.com/arduino/arduino-cli.git"
 
   livecheck do
@@ -13,11 +14,10 @@ class ArduinoCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "05baaf3eb15992dd6f4fc1d664afff61b3ae9f68136bce0d704813eadafc1fa8"
-    sha256 cellar: :any_skip_relocation, big_sur:       "698b89996bbb1a67f26e4344fdd1b5f8993f59f14c8cb774309938ed4fac4ebc"
-    sha256 cellar: :any_skip_relocation, catalina:      "2980a7274dccb3ca12c2ca7a54696a2cf8fd086a93edebdee363f75f7c0e1ffa"
-    sha256 cellar: :any_skip_relocation, mojave:        "5cea6da20a71ee40a617e54fa52a0e64951acdc4bbf216bbd7bbc954fee924b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a4885ca14f11dc6eefaf7238f81d6024850e4d093b2893afad21337a1685847"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "c5b440af68597c335014f1af418f2ea7b18a71eeae8eff50f15972642c296507"
+    sha256 cellar: :any_skip_relocation, big_sur:       "62fbd34ab3cc8fdb36699aedeba55b156981ce3bac5af3b2fc126d4b245f756f"
+    sha256 cellar: :any_skip_relocation, catalina:      "7e7ed5fa0d59083c8d84731b0396266da843b9fca24c94ea4cea404be4909831"
+    sha256 cellar: :any_skip_relocation, mojave:        "b0ca98cccef2f4b5b14baefa104514023a9142035f0f75937bc0a06d1926dd5f"
   end
 
   depends_on "go" => :build
@@ -26,7 +26,8 @@ class ArduinoCli < Formula
     ldflags = %W[
       -s -w
       -X github.com/arduino/arduino-cli/version.versionString=#{version}
-      -X github.com/arduino/arduino-cli/version.commit=#{Utils.git_head}
+      -X github.com/arduino/arduino-cli/version.commit=#{Utils.git_head(length: 8)}
+      -X github.com/arduino/arduino-cli/version.date=#{Time.now.utc.iso8601}
     ]
     system "go", "build", *std_go_args, "-ldflags", ldflags.join(" ")
 
@@ -45,6 +46,10 @@ class ArduinoCli < Formula
     assert File.directory?("#{testpath}/test_sketch")
 
     version_output = shell_output("#{bin}/arduino-cli version 2>&1")
-    assert_match "arduino-cli alpha Version: #{version}", version_output
+    assert_match("arduino-cli alpha Version: #{version}", version_output)
+    assert_match("Commit:", version_output)
+    assert_match(/[a-f0-9]{8}/, version_output)
+    assert_match("Date: ", version_output)
+    assert_match(/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z/, version_output)
   end
 end

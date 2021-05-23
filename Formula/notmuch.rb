@@ -1,8 +1,8 @@
 class Notmuch < Formula
   desc "Thread-based email index, search, and tagging"
   homepage "https://notmuchmail.org/"
-  url "https://notmuchmail.org/releases/notmuch-0.32.tar.xz"
-  sha256 "e91e5706ffb615d5ebc5a47ce197d4ec2efca06eea77a0ddcb7af2e4c2543646"
+  url "https://notmuchmail.org/releases/notmuch-0.32.1.tar.xz"
+  sha256 "a747ca4e8cc919d91feda6cadb97e63b72ff79119491989bbcea79ad47680615"
   license "GPL-3.0-or-later"
   head "https://git.notmuchmail.org/git/notmuch", using: :git
 
@@ -12,11 +12,10 @@ class Notmuch < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "93c6a602428df755145f1ac1830ba8991390af976dfd2b76889011a530602e2d"
-    sha256 cellar: :any,                 big_sur:       "3a419b3c9233084d44e5a7f18c164e696f9fb8520cea64e7fadcd25c0ffd3a9a"
-    sha256 cellar: :any,                 catalina:      "44858e39a6d51bf229e7e7ae6b2ca09b631be98a3706c56bf81fb77d1cdd6db9"
-    sha256 cellar: :any,                 mojave:        "a2835bdcb32a8d376cb4c03735c429e9d584776c23f06913ec625d9480d4b0b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "449757d82bb4fa3598f61fd4227f181a35b530ca9cb9dddc45e1bb2113b42a05"
+    sha256 cellar: :any, arm64_big_sur: "0eb2700e35e3687842e99f38f8c197565ee9b6b139944525d5a6297f580cbaaf"
+    sha256 cellar: :any, big_sur:       "e9abbef70a364c7d6f0a70365c71bf0f9681a2691ad4062d5c323d139ab5dd9f"
+    sha256 cellar: :any, catalina:      "582b27d35ec3dcf8924b1a8bac9c56dc97ca93410a1b9ed23ecb65b8e2f942b9"
+    sha256 cellar: :any, mojave:        "0f89750eb2ab0fd7361470777f0eea4196852f68cbae1e78d2e2b493ab682545"
   end
 
   depends_on "doxygen" => :build
@@ -30,6 +29,12 @@ class Notmuch < Formula
   depends_on "xapian"
 
   uses_from_macos "zlib", since: :sierra
+
+  # Remove in the release after 0.32.1
+  patch do
+    url "https://git.notmuchmail.org/git?p=notmuch;a=patch;h=59c953656dbd2e65265a2c850f2375afc9d69589;hp=92454bc0935604f4a623e75dec9506c0283eee70"
+    sha256 "291066e48a26e8f78504413203685bedc77a35d0c8f94143e1daa058b444235e"
+  end
 
   def install
     args = %W[
