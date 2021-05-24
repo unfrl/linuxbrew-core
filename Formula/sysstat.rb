@@ -6,6 +6,10 @@ class Sysstat < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/sysstat/sysstat.git"
 
+  bottle do
+    sha256 x86_64_linux: "fe5d410938c3db2a269966073a71bdafd599afd15ccc2a53f9c3cb88a41b3f06"
+  end
+
   depends_on :linux
 
   def install
