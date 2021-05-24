@@ -10,6 +10,7 @@ class Libslirp < Formula
     sha256 cellar: :any, big_sur:       "82f89a12087d2c4f4a023d390b34a092339f7112bf4f32ad9bb4e157a0857781"
     sha256 cellar: :any, catalina:      "c2b9dca7029b6605fada2f34ea4cca91fece1959daa1cb9e970c2a3143d3b945"
     sha256 cellar: :any, mojave:        "d74adebfe1d982be140295e6f7ebc739fea376d7689cc9f21e6fa868097a3a3c"
+    sha256               x86_64_linux:  "58c08cbd77d27fd9d8524d067188dbc085c954f3a7bee6496524783cc8bdb67b"
   end
 
   depends_on "meson" => :build
