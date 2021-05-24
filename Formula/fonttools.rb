@@ -13,6 +13,7 @@ class Fonttools < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "6d33777171d3c51372ebc3f9056b55e8c247e3cd52efe0043815436d0f35546c"
     sha256 cellar: :any_skip_relocation, catalina:      "6d33777171d3c51372ebc3f9056b55e8c247e3cd52efe0043815436d0f35546c"
     sha256 cellar: :any_skip_relocation, mojave:        "6d33777171d3c51372ebc3f9056b55e8c247e3cd52efe0043815436d0f35546c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ef3e05f9cf218ee4faf6ac15080dfa9be6bfee28bf3ec5464b9facc63a3428b"
   end
 
   depends_on "python@3.9"
