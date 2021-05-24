@@ -1,17 +1,16 @@
 class Texlab < Formula
   desc "Implementation of the Language Server Protocol for LaTeX"
   homepage "https://texlab.netlify.com/"
-  url "https://github.com/latex-lsp/texlab/archive/v3.0.0.tar.gz"
-  sha256 "6ca624104cf9b354badcc3e6304daafca2e022e92dd0d70ac010b6a9b943a5c3"
+  url "https://github.com/latex-lsp/texlab/archive/v3.0.1.tar.gz"
+  sha256 "820d88b078a26eff14e420f985f17704465dfacc70d1097fe0409853420aa6bb"
   license "GPL-3.0-only"
   head "https://github.com/latex-lsp/texlab.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "a7ea2815cad10428a20d326eddcb670151939c865074005f0fdfb6961640c35b"
-    sha256 cellar: :any_skip_relocation, big_sur:       "b22583ca6f3fa70f113f0ddea73a298e6c99be713945cf5c946474fa26d86362"
-    sha256 cellar: :any_skip_relocation, catalina:      "f349b2eccb43df4c40accc2186f5168bc4af44876fa15533b9afa50687a74bb5"
-    sha256 cellar: :any_skip_relocation, mojave:        "0f9901df5e96af58d7710297d3bd272f564a36f184f760e4b2ba8509c31aff12"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a0e8017e5d4bd8278573e08d66e25092b33e050ab798ff5a898d555efcb6e21"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "ff791d68c78982b5854ab833cf716ff1fdd015561fa3ce879ae0a3fbb633466e"
+    sha256 cellar: :any_skip_relocation, big_sur:       "aaa31b7aae793d6c0aadf43e742991209c5647e94b54c1e023702b8847654ccb"
+    sha256 cellar: :any_skip_relocation, catalina:      "6e14171c9d65273d3284ddbd36e3fb2d48e385f7c780944beea601ed097c6ccf"
+    sha256 cellar: :any_skip_relocation, mojave:        "82ed8db0eb1500c8eeaa18b8c1f977a8cccefdda0b4cf0a1e83c7f3f21328f50"
   end
 
   depends_on "rust" => :build

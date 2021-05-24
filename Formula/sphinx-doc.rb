@@ -3,16 +3,15 @@ class SphinxDoc < Formula
 
   desc "Tool to create intelligent and beautiful documentation"
   homepage "https://www.sphinx-doc.org/"
-  url "https://files.pythonhosted.org/packages/53/9f/ab9ac21a877c181312c2cf26089ea4eb8181edd503dc5bcfb73aa2f34f5c/Sphinx-4.0.1.tar.gz"
-  sha256 "cf5104777571b2b7f06fa88ee08fade24563f4a0594cf4bd17d31c47b8740b4c"
+  url "https://files.pythonhosted.org/packages/8d/4d/8a80613d0ceefca5a84e2e30b29da7719d429b4adcdb793d86079fad3790/Sphinx-4.0.2.tar.gz"
+  sha256 "b5c2ae4120bf00c799ba9b3699bc895816d272d120080fbc967292f29b52b48c"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "ae15659782777a9cba84213720fede1ae5b1a508c829addda09c5d4d49a780b4"
-    sha256 cellar: :any_skip_relocation, big_sur:       "d7cd139f25b3dd85e6d15013c9eaa0b238feffb06669836df0e0fbf23429aa21"
-    sha256 cellar: :any_skip_relocation, catalina:      "c057b8d1de7c61002c6b66d2fc7b497b2f97151b84677c20d8b13a67a8f75ead"
-    sha256 cellar: :any_skip_relocation, mojave:        "21286cc64e7b9a4d204132ee10c6b2da91b393fea562c0879bd10eaa866fa8a2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f97e54abf1eaf170d6932a63502263f07494d7ace108a440199d77f286de2b04"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "70faf2c90cc4c183a7838a208ac4e71bdf0e3985c832da751834b811b22aca02"
+    sha256 cellar: :any_skip_relocation, big_sur:       "df254b910ef155cbf68f614a903a7601c583b108252dd2d3a21d304577ceec42"
+    sha256 cellar: :any_skip_relocation, catalina:      "ecdf8c749944856efd460851f87beddf74961a123aa4cab3fb8268bf5d0fd45f"
+    sha256 cellar: :any_skip_relocation, mojave:        "4dfea79f48ca925d52a5f5846236d4ac19d2a09b0bc4e112d19b27079b3b1e7e"
   end
 
   keg_only <<~EOS
@@ -58,13 +57,13 @@ class SphinxDoc < Formula
   end
 
   resource "Jinja2" do
-    url "https://files.pythonhosted.org/packages/4f/e7/65300e6b32e69768ded990494809106f87da1d436418d5f1367ed3966fd7/Jinja2-2.11.3.tar.gz"
-    sha256 "a6d58433de0ae800347cab1fa3043cebbabe8baa9d29e668f1c768cb87a333c6"
+    url "https://files.pythonhosted.org/packages/39/11/8076571afd97303dfeb6e466f27187ca4970918d4b36d5326725514d3ed3/Jinja2-3.0.1.tar.gz"
+    sha256 "703f484b47a6af502e743c9122595cc812b0271f661722403114f71a79d0f5a4"
   end
 
   resource "MarkupSafe" do
-    url "https://files.pythonhosted.org/packages/b9/2e/64db92e53b86efccfaea71321f597fa2e1b2bd3853d8ce658568f7a13094/MarkupSafe-1.1.1.tar.gz"
-    sha256 "29872e92839765e546828bb7754a68c418d927cd064fd4708fab9fe9c8bb116b"
+    url "https://files.pythonhosted.org/packages/bf/10/ff66fea6d1788c458663a84d88787bae15d45daa16f6b3ef33322a51fc7e/MarkupSafe-2.0.1.tar.gz"
+    sha256 "594c67807fb16238b30c44bdf74f36c02cdf22d1c8cda91ef8a0ed8dabf5620a"
   end
 
   resource "packaging" do

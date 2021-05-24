@@ -3,17 +3,16 @@ class Fonttools < Formula
 
   desc "Library for manipulating fonts"
   homepage "https://github.com/fonttools/fonttools"
-  url "https://files.pythonhosted.org/packages/af/c1/e4371eba2a9291bac65d6c5729ba0cf8ebf29d294b5bbb84210205bd3f01/fonttools-4.24.0.zip"
-  sha256 "a77b5c1cf6db4adbe0c67574cc314af2f3a439aeaf6e7607177c0eb78c36a200"
+  url "https://files.pythonhosted.org/packages/1b/94/d5a2f886348737055ef7b06406e720e2413fff8e52a1d898295b769a64b4/fonttools-4.24.3.zip"
+  sha256 "04949bff10a5be4350ce78db314c8b8fad837c3fe6af385574ac34cf5fbf7872"
   license "MIT"
   head "https://github.com/fonttools/fonttools.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "4916300ca397b1dcfe3065e0fa31402bcfd1dc2f67ff35602fa48653e5fde681"
-    sha256 cellar: :any_skip_relocation, big_sur:       "65557ac30e29bd28b930ebb51e0ea48bcbbbd7f4d1b71f775f4f19f3abb633fb"
-    sha256 cellar: :any_skip_relocation, catalina:      "65557ac30e29bd28b930ebb51e0ea48bcbbbd7f4d1b71f775f4f19f3abb633fb"
-    sha256 cellar: :any_skip_relocation, mojave:        "65557ac30e29bd28b930ebb51e0ea48bcbbbd7f4d1b71f775f4f19f3abb633fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "244e98a028f2dbb197a5b44031f0f50499008371530f1b07e2f34b9af0b22db7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "56a35c6887ccfcbe7856dae88062a7a518ea983f45b8f4a734bd5b997ff60b3b"
+    sha256 cellar: :any_skip_relocation, big_sur:       "6d33777171d3c51372ebc3f9056b55e8c247e3cd52efe0043815436d0f35546c"
+    sha256 cellar: :any_skip_relocation, catalina:      "6d33777171d3c51372ebc3f9056b55e8c247e3cd52efe0043815436d0f35546c"
+    sha256 cellar: :any_skip_relocation, mojave:        "6d33777171d3c51372ebc3f9056b55e8c247e3cd52efe0043815436d0f35546c"
   end
 
   depends_on "python@3.9"
