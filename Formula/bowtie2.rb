@@ -7,9 +7,10 @@ class Bowtie2 < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:  "42595bf08b477aef727f3e83bf8f8e8ad3c8d9818b487598aa702e98e0cfb193"
-    sha256 cellar: :any_skip_relocation, catalina: "03fd56e55cbb1807176aca27e8e1924faf762e9d17c0b7362baf27de0fa72c3f"
-    sha256 cellar: :any_skip_relocation, mojave:   "95e10e1d2250a9d228fec785a3b331b3357fd497b6c181a953746be868c20b89"
+    sha256 cellar: :any_skip_relocation, big_sur:      "42595bf08b477aef727f3e83bf8f8e8ad3c8d9818b487598aa702e98e0cfb193"
+    sha256 cellar: :any_skip_relocation, catalina:     "03fd56e55cbb1807176aca27e8e1924faf762e9d17c0b7362baf27de0fa72c3f"
+    sha256 cellar: :any_skip_relocation, mojave:       "95e10e1d2250a9d228fec785a3b331b3357fd497b6c181a953746be868c20b89"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "cd2a462fb59bc7d102119bdc88c85c375eb7216f28eb1fb38239521f54c3c167"
   end
 
   depends_on "tbb"
