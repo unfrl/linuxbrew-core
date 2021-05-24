@@ -4,6 +4,7 @@ class MingwW64 < Formula
   url "https://downloads.sourceforge.net/project/mingw-w64/mingw-w64/mingw-w64-release/mingw-w64-v8.0.2.tar.bz2"
   sha256 "f00cf50951867a356d3dc0dcc7a9a9b422972302e23d54a33fc05ee7f73eee4d"
   license "ZPL-2.1"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,10 +12,9 @@ class MingwW64 < Formula
   end
 
   bottle do
-    sha256 big_sur:      "62b1042ea9745e5056f5dd165d6e766a748fdb14f662b192e92467db7fd6a52a"
-    sha256 catalina:     "ad473543302834e49b7bded4ea31ac357215c8b1a0bc1ec8d85e0f2a98afaafe"
-    sha256 mojave:       "0ce228044b3bc2fc0cbe51f4deb8af9f9434e70d906e615b4eb0d688cb9f1a85"
-    sha256 x86_64_linux: "e20754438f364bb4cf8fa0526f754699be44dfd850ebf8e3a229193fa2aea344"
+    sha256 big_sur:  "4c1b1d4dd9a0be39baf2ba9ce99e89363c359d253e382e689022444f52234f3d"
+    sha256 catalina: "45d5df9885b865ab24dbefcb64d532876652ebf0b4cc75c641be5d125eec250e"
+    sha256 mojave:   "413b17e3a7e557b33ba6eac235b4f8afdeee8f55d6770a8c3453264db61c29ee"
   end
 
   # Apple's makeinfo is old and has bugs
@@ -32,9 +32,9 @@ class MingwW64 < Formula
   end
 
   resource "gcc" do
-    url "https://ftp.gnu.org/gnu/gcc/gcc-10.3.0/gcc-10.3.0.tar.xz"
-    mirror "https://ftpmirror.gnu.org/gcc/gcc-10.3.0/gcc-10.3.0.tar.xz"
-    sha256 "64f404c1a650f27fc33da242e1f2df54952e3963a49e06e73f6940f3223ac344"
+    url "https://ftp.gnu.org/gnu/gcc/gcc-11.1.0/gcc-11.1.0.tar.xz"
+    mirror "https://ftpmirror.gnu.org/gcc/gcc-11.1.0/gcc-11.1.0.tar.xz"
+    sha256 "4c4a6fb8a8396059241c2e674b85b351c26a5d678274007f076957afa1cc9ddf"
   end
 
   def target_archs
@@ -119,8 +119,15 @@ class MingwW64 < Formula
 
       mkdir "mingw-w64-crt/build-#{arch}" do
         system "../configure", *args
-        system "make"
-        system "make", "install"
+        # Resolves "Too many open files in system"
+        # bfd_open failed open stub file dfxvs01181.o: Too many open files in system
+        # bfd_open failed open stub file: dvxvs00563.o: Too many open files in systembfd_open
+        # https://sourceware.org/bugzilla/show_bug.cgi?id=24723
+        # https://sourceware.org/bugzilla/show_bug.cgi?id=23573#c18
+        ENV.deparallelize do
+          system "make"
+          system "make", "install"
+        end
       end
 
       # Build the winpthreads library

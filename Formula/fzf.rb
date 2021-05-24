@@ -1,17 +1,16 @@
 class Fzf < Formula
   desc "Command-line fuzzy finder written in Go"
   homepage "https://github.com/junegunn/fzf"
-  url "https://github.com/junegunn/fzf/archive/0.27.0.tar.gz"
-  sha256 "265c569f3b0c3c210b45831b80d4fba260c5956f3ebf88d2c5c8f9f6d759e388"
+  url "https://github.com/junegunn/fzf/archive/0.27.1.tar.gz"
+  sha256 "d86d879e01dee330d2fd3ef522a5bc5c2eafd31990e6869142fd300a06e4c13e"
   license "MIT"
   head "https://github.com/junegunn/fzf.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "ccc3f270e04389a9cc44d37c8d91a2b7cea3eba1d43c37e89a6cabc66898e2bc"
-    sha256 cellar: :any_skip_relocation, big_sur:       "7b0ca0f1f3bfbdfa55c4d7b7f0c3e11b07dd52db46f1862b54b742761c59c0e3"
-    sha256 cellar: :any_skip_relocation, catalina:      "6a204ecb17beb7375a73569dba8c6ea1a097fa16a42b38a8fa456d205d107e7b"
-    sha256 cellar: :any_skip_relocation, mojave:        "398c27f1750bec0973e9763b56194779915c2428fc6f7506392b2d30e16edb15"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b3f3776ba020ff30ba738f59689636b8d5f029430ff27129cd4d857195f72b6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "05096291897192bd3cc19ffec92dee0ffe93db9920a4be1b8bed195944521a7c"
+    sha256 cellar: :any_skip_relocation, big_sur:       "e0acd79337f89399d9fe7c7602d8b32dbf967cc915e4f658ce6ac5d091828792"
+    sha256 cellar: :any_skip_relocation, catalina:      "e0acd79337f89399d9fe7c7602d8b32dbf967cc915e4f658ce6ac5d091828792"
+    sha256 cellar: :any_skip_relocation, mojave:        "e0acd79337f89399d9fe7c7602d8b32dbf967cc915e4f658ce6ac5d091828792"
   end
 
   depends_on "go" => :build

@@ -8,12 +8,14 @@ class Po4a < Formula
   url "https://github.com/mquinson/po4a/releases/download/v0.63/po4a-0.63.tar.gz"
   sha256 "e21be3ee545444bae2fe6a44aeb9d320604708cc2e4c601bcb3cc440db75b4ce"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/mquinson/po4a.git"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "21232dd62250ea869b56eb7cfb72c541e0b0d890d2e625aaa25d5ea054e0e783"
+    sha256 cellar: :any, arm64_big_sur: "4cf546fc79d0aeb9c75c3fdea4130c1d0d9cfc82d3970681d4994f7cf1c24170"
+    sha256 cellar: :any, big_sur:       "220aecaeb38f1e07661d8c73d8768fcdb61c747f7da530c4bffbdb508a7a2a31"
+    sha256 cellar: :any, catalina:      "87ba2758545027e71dbf025dc647c26c4fe24ced01e3db58f54b99b7ff2427c6"
+    sha256 cellar: :any, mojave:        "8d6f320c3c41fdc9b1d5c501cb14393ab2100b6a2f6875d1de97ea3cd23cbf58"
   end
 
   depends_on "docbook-xsl" => :build

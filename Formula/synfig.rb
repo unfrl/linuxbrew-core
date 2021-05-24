@@ -6,7 +6,7 @@ class Synfig < Formula
   mirror "https://github.com/synfig/synfig/releases/download/v1.4.1/synfig-1.4.1.tar.gz"
   sha256 "f90f1dcff1a409bbe2bfbb2cf42b7019cf735bec3223722db2feba6e198d1bc1"
   license "GPL-3.0-or-later"
-  revision 2
+  revision 3
   head "https://svn.code.sf.net/p/synfig/code/"
 
   livecheck do
@@ -15,9 +15,10 @@ class Synfig < Formula
   end
 
   bottle do
-    sha256 big_sur:  "1cf68a23226e5bee134123f401e2dd7bba6075cfc028cca1c8cfd736362d59dc"
-    sha256 catalina: "b6751c9405940bed45c86f94102b08ef7b99dc4e7a2e6f39ce2f22acd16bb744"
-    sha256 mojave:   "71704ed5b58a6e74c0272dc9111f7f9e71f51d5c7a0cd068fbf53948d337552b"
+    sha256 arm64_big_sur: "a3c313c4c5be6e08adea228eb829027c4cc3c63fc080ec347bc71993ca454307"
+    sha256 big_sur:       "05abae16d105f9860e87715e0a398f9a39d9eeaa71d6efc49b3631cca90bb759"
+    sha256 catalina:      "a542842eb525910bfd8bc2a2845efab6bd053f360e04d2ad757c3ec008cbcf33"
+    sha256 mojave:        "0550efa0ee475077cfd7a5c5f840906cb0e8ddb91aea41fe86ea79376baf83c3"
   end
 
   depends_on "intltool" => :build
@@ -89,9 +90,7 @@ class Synfig < Formula
       -I#{libsigcxx.opt_lib}/sigc++-2.0/include
       -I#{libxmlxx.opt_include}/libxml++-2.6
       -I#{libxmlxx.opt_lib}/libxml++-2.6/include
-      -I#{mlt.opt_include}
-      -I#{mlt.opt_include}/mlt
-      -I#{mlt.opt_include}/mlt++
+      -I#{mlt.opt_include}/mlt-7
       -I#{pango.opt_include}/pango-1.0
       -I#{pixman.opt_include}/pixman-1
       -D_REENTRANT
@@ -111,8 +110,8 @@ class Synfig < Formula
       -lglibmm-2.4
       -lgobject-2.0
       -lintl
-      -lmlt
-      -lmlt++
+      -lmlt-7
+      -lmlt++-7
       -lpango-1.0
       -lpangocairo-1.0
       -lpthread

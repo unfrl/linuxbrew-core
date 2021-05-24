@@ -1,17 +1,16 @@
 class Autorestic < Formula
   desc "High level CLI utility for restic"
   homepage "https://autorestic.vercel.app/"
-  url "https://github.com/cupcakearmy/autorestic/archive/v1.0.9.tar.gz"
-  sha256 "4795e9797fb89361c8108ff8196b90690f85f6744947bd7863ebbe995a0440ca"
+  url "https://github.com/cupcakearmy/autorestic/archive/v1.1.1.tar.gz"
+  sha256 "f1bbc4b64cf5a2ee2e738500109867e3dc77a2190cf847d18ceffc7d2831053b"
   license "Apache-2.0"
   head "https://github.com/cupcakearmy/autorestic.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "63d5a4665eca314d830ffe5875b999995fd2b79fa7e610c069a13ec6a86a0856"
-    sha256 cellar: :any_skip_relocation, big_sur:       "3186dfb8d338205de412465bf2b133e85adca6db367fafc2eb2b2857effba995"
-    sha256 cellar: :any_skip_relocation, catalina:      "e0bc7621e7a2ea7c40605ecbab5f17188be80396d457b032c591b6317e1473f2"
-    sha256 cellar: :any_skip_relocation, mojave:        "219e5017028d6f2e9d5cdf05818574b653ee7c33a5ed15ff279462c32f0883c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef4e066cf7219b96be23e154c0ba4a8f385ee15263c27fdeeddfb71df9413352"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "2cc1a51fdcc1e8ce9c6fbfbadc14aa97c2b3fc28907f9f23633fb4fc16bf668c"
+    sha256 cellar: :any_skip_relocation, big_sur:       "276d5de8b1fbcffb06aa1748d17771d94939b431bbe1748ccb8d932aac9c74d3"
+    sha256 cellar: :any_skip_relocation, catalina:      "dbb8deeb7b735202730220f2edfa4ce019ba52d07be44e80ce68351dc56cb96e"
+    sha256 cellar: :any_skip_relocation, mojave:        "ddc1d2cf89b9aeca14b66e3368b915224ff765ba6fba894e477acef29603ee74"
   end
 
   depends_on "go" => :build
@@ -32,6 +31,7 @@ class Autorestic < Formula
     }
     File.open(testpath/".autorestic.yml", "w") { |file| file.write(config.to_yaml) }
     (testpath/"repo"/"test.txt").write("This is a testfile")
+    system "#{bin}/autorestic", "check"
     system "#{bin}/autorestic", "backup", "-a"
     system "#{bin}/autorestic", "restore", "-l", "foo", "--to", "restore"
     assert compare_file testpath/"repo"/"test.txt", testpath/"restore"/"test.txt"

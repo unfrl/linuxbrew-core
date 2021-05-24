@@ -1,15 +1,15 @@
 class CodeServer < Formula
   desc "Access VS Code through the browser"
   homepage "https://github.com/cdr/code-server"
-  url "https://registry.npmjs.org/code-server/-/code-server-3.10.1.tgz"
-  sha256 "86fa694e312db545c9832a3caa65dca1db2dafdfb5f57c4fe35305ee40f3ffc8"
+  url "https://registry.npmjs.org/code-server/-/code-server-3.10.2.tgz"
+  sha256 "357e0248fd8d9ca687776d3f688b30e7b2e5a873443557c6ee2d4a858fa5c247"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "b1def21cb7a40baaf2ea3d423673c945ddfd6aa4f9da379b277e4153e91ddbf1"
-    sha256 cellar: :any_skip_relocation, big_sur:       "245915a6595ecbc3948b92e488fd14e3369956299e11323d309e5214f6b0c82d"
-    sha256 cellar: :any_skip_relocation, catalina:      "a7bf8376cd2c01535206fac7ad7151a5a65ac219b379d01424d0448ef0ad3b27"
-    sha256 cellar: :any_skip_relocation, mojave:        "68908f6209a38eaa1542d2e2f92c436255d868e8c0e0c8e6ed13eb8e0686b0a9"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "9557e950e9769c5d8203532063ae40922db71581cb1f9940a7c017d4c8b89569"
+    sha256 cellar: :any_skip_relocation, big_sur:       "54eabb3f6db18a6af7efb52d3400428ccf0f16e92b5a9b097779852ed5fb0dcc"
+    sha256 cellar: :any_skip_relocation, catalina:      "5d23e4384836aa2f98da82bc4b6f16736f438699918f72d8d397981c480742b8"
+    sha256 cellar: :any_skip_relocation, mojave:        "cbdba6aac63ee84b6261caeee1791537387856e2776c1acb9c60b05001fa3d30"
   end
 
   depends_on "python@3.9" => :build
