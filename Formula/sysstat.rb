@@ -8,6 +8,15 @@ class Sysstat < Formula
 
   depends_on :linux
 
+  def install
+    system "./configure",
+           "--disable-file-attr", # Fix install: cannot change ownership
+           "--prefix=#{prefix}",
+           "conf_dir=#{etc}/sysconfig",
+           "sa_dir=#{var}/log/sa"
+    system "make", "install"
+  end
+
   test do
     assert_match("PID", shell_output("#{bin}/pidstat"))
     assert_match("avg-cpu", shell_output("#{bin}/iostat"))
