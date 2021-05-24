@@ -11,10 +11,11 @@ class Mysqlxx < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "f7a7c4dc1a39553297a0be0dcae8914afee296416318ce447413988d94306906"
-    sha256 cellar: :any, big_sur:       "d7957ee5ab8476ac890144b0c64bcd20137867b1266d3e022305a5c4f2c3372a"
-    sha256 cellar: :any, catalina:      "14dd4833fb2dbfbefa0267f36ffc828f7306509a2dbd12c6fdec7f6f9173cf81"
-    sha256 cellar: :any, mojave:        "d9a31961dea425b21c279b5fb995d242b6201332e4745662e06647631ff98fba"
+    sha256 cellar: :any,                 arm64_big_sur: "f7a7c4dc1a39553297a0be0dcae8914afee296416318ce447413988d94306906"
+    sha256 cellar: :any,                 big_sur:       "d7957ee5ab8476ac890144b0c64bcd20137867b1266d3e022305a5c4f2c3372a"
+    sha256 cellar: :any,                 catalina:      "14dd4833fb2dbfbefa0267f36ffc828f7306509a2dbd12c6fdec7f6f9173cf81"
+    sha256 cellar: :any,                 mojave:        "d9a31961dea425b21c279b5fb995d242b6201332e4745662e06647631ff98fba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eee8ad4141ff320375e5aa246e04d85c27b8243a7003a06b2f1d3e8ee8acfa2d"
   end
 
   depends_on "mysql-client"
