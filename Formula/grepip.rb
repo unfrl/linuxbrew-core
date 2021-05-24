@@ -1,15 +1,20 @@
 class Grepip < Formula
   desc "Filters IPv4 & IPv6 addresses with a grep-compatible interface"
   homepage "https://ipinfo.io"
-  url "https://github.com/ipinfo/cli/archive/grepip-1.0.2.tar.gz"
-  sha256 "f9258f9f5c2bfdb4278c6cd456072664be7588fc6a8b665d35cbd6fa29f57568"
+  url "https://github.com/ipinfo/cli/archive/grepip-1.0.3.tar.gz"
+  sha256 "c47da974620700560e0c95a445fc9f0e0cfa2fd192aa88094dab8577c9a6a426"
   license "Apache-2.0"
 
+  livecheck do
+    url :stable
+    regex(/^grepip[._-]v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "4eb71156e81900093ab56725a8f8936139f379b342493c706843c14f868260c6"
-    sha256 cellar: :any_skip_relocation, big_sur:       "262686a16d0c33db482872981fba872a57d40a0f3c5c87e84eb61ca7209c14f9"
-    sha256 cellar: :any_skip_relocation, catalina:      "96e604188f0f2eaaf4071cee4fd71deefcd3600356543d1c62d2e92a3e32cba4"
-    sha256 cellar: :any_skip_relocation, mojave:        "4a24e339d049473574048ee2167644ec77ed7f5b965b4f7b02fbcddd98b39166"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "4649b890194c5b7874efc6d38114072ef1ad52f8420bc213e2a9cfd589924a6e"
+    sha256 cellar: :any_skip_relocation, big_sur:       "597bcefc2ec2bcd53ec06f69bafba7d9fdc8926fd9c04b833ac0ab02da1464bc"
+    sha256 cellar: :any_skip_relocation, catalina:      "de9d0dd22135c02f09364b5f30875ae7d9f32894a33270fd80301ccc53485f74"
+    sha256 cellar: :any_skip_relocation, mojave:        "a29a39e9aca3616d9a5400df48b91cdce2c73d91e8475c0d53de41fea4374b1f"
   end
 
   depends_on "go" => :build

@@ -4,7 +4,7 @@ class Influxdb < Formula
   url "https://github.com/influxdata/influxdb/archive/v2.0.6.tar.gz"
   sha256 "b8f019cfb85f7fdcdd5399dc2418cdc1ac302f99da0d031c2e307ecb62e129cd"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/influxdata/influxdb.git"
 
   # The regex below omits a rogue `v9.9.9` tag that breaks version comparison.
@@ -14,10 +14,10 @@ class Influxdb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "6b6e76a963e55583f6f186ce08997d40d033d83a1b37e78ef98e62a6e2921954"
-    sha256 cellar: :any_skip_relocation, big_sur:       "346163b21f87321b136aedd135dc3d7171bce160431b38b77eb991c12b096a4b"
-    sha256 cellar: :any_skip_relocation, catalina:      "b6305c6b87ea4234df24067938b121c4664e1ee89a455dc533832eec1cf10e48"
-    sha256 cellar: :any_skip_relocation, mojave:        "5c7870744b6dfea9229e673d0ea239ef821a730fc3d85186c63885804cf34535"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "95edf72c6341497aa7bc2920fb3ab0823a87ab9ed256c65b1cb51eca66085e6f"
+    sha256 cellar: :any_skip_relocation, big_sur:       "af8204f0b70a60d07fd39fa43eb41d2bfee782c213e03e97f3526d990a473035"
+    sha256 cellar: :any_skip_relocation, catalina:      "185281cbe6acd9c75ca360076dd56cc151a0d89bcdebbb64c9dacc6eb498edd9"
+    sha256 cellar: :any_skip_relocation, mojave:        "c620c352acc4a93e33e0576f3c4997cd31b8501a115ef689a0d63ad33c5d3db7"
   end
 
   depends_on "bazaar" => :build
@@ -58,6 +58,53 @@ class Influxdb < Formula
     ldflags = "-s -w -X main.version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags), "-o", bin/"influx", "./cmd/influx"
     system "go", "build", *std_go_args(ldflags: ldflags), "-tags", "assets", "-o", bin/"influxd", "./cmd/influxd"
+
+    data = var/"lib/influxdb2"
+    data.mkpath
+
+    # Generate default config file.
+    config = buildpath/"config.yml"
+    config.write Utils.safe_popen_read(bin/"influxd", "print-config",
+                                       "--bolt-path=#{data}/influxdb.bolt",
+                                       "--engine-path=#{data}/engine")
+    (etc/"influxdb2").install config
+
+    # Create directory for DB stdout+stderr logs.
+    (var/"log/influxdb2").mkpath
+  end
+
+  plist_options manual: "INFLUXD_CONFIG_PATH=#{HOMEBREW_PREFIX}/etc/influxdb2/config.yml influxd"
+
+  def plist
+    <<~EOS
+      <?xml version="1.0" encoding="UTF-8"?>
+      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+      <plist version="1.0">
+      <dict>
+        <key>Label</key>
+        <string>#{plist_name}</string>
+        <key>WorkingDirectory</key>
+        <string>#{HOMEBREW_PREFIX}</string>
+        <key>EnvironmentVariables</key>
+        <dict>
+          <key>INFLUXD_CONFIG_PATH</key>
+          <string>#{etc}/influxdb2/config.yml</string>
+        </dict>
+        <key>ProgramArguments</key>
+        <array>
+          <string>#{bin}/influxd</string>
+        </array>
+        <key>RunAtLoad</key>
+        <true/>
+        <key>KeepAlive</key>
+        <true/>
+        <key>StandardErrorPath</key>
+        <string>#{var}/log/influxdb2/influxd_output.log</string>
+        <key>StandardOutPath</key>
+        <string>#{var}/log/influxdb2/influxd_output.log</string>
+      </dict>
+      </plist>
+    EOS
   end
 
   test do
@@ -69,8 +116,7 @@ class Influxdb < Formula
     ENV["INFLUX_HOST"] = influx_host
 
     influxd = fork do
-      exec "#{bin}/influxd", "--store=memory",
-                             "--bolt-path=#{testpath}/influxd.bolt",
+      exec "#{bin}/influxd", "--bolt-path=#{testpath}/influxd.bolt",
                              "--engine-path=#{testpath}/engine",
                              "--http-bind-address=:#{influxd_port}",
                              "--log-level=error"

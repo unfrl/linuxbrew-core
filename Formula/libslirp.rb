@@ -1,30 +1,21 @@
 class Libslirp < Formula
   desc "General purpose TCP-IP emulator"
   homepage "https://gitlab.freedesktop.org/slirp/libslirp"
-  url "https://gitlab.freedesktop.org/slirp/libslirp/-/archive/v4.4.0/libslirp-v4.4.0.tar.gz"
-  sha256 "43513390c57bee8c23b31545bfcb765200fccf859062b1c8101e72befdabce2e"
+  url "https://gitlab.freedesktop.org/slirp/libslirp/-/archive/v4.5.0/libslirp-v4.5.0.tar.gz"
+  sha256 "94e1dea99b58259c25e3b1af1f6119419c0b4bcf1dc3d6566776c7aa2d7692f3"
   license "BSD-3-Clause"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "cec97ae53546763da4c377038f43c5a72d2ed14288a0c13441a57ae419bd0ac2"
-    sha256 cellar: :any,                 big_sur:       "911888d8a0ac274363a629b94c07d7b46d2b1eae5fdbf1131f95b0f16684d45a"
-    sha256 cellar: :any,                 catalina:      "f168f09b9cf07d04dbb1a1d5d1a6f5c845a00ace46388ba366846fdcacee7e45"
-    sha256 cellar: :any,                 mojave:        "4dbfe6f24dbac45a0c5d2796d350752ea25ebff528f0ccc1e29f3d476ec51104"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69acfecfd0ef2f0f8510c8c0509d13e5fbdf040d6972d7e0e1ea41d95662eec5"
+    sha256 cellar: :any, arm64_big_sur: "c194843e4b0002808b5b7de69d68c50108e314ee907df514ec67f5046918fd97"
+    sha256 cellar: :any, big_sur:       "82f89a12087d2c4f4a023d390b34a092339f7112bf4f32ad9bb4e157a0857781"
+    sha256 cellar: :any, catalina:      "c2b9dca7029b6605fada2f34ea4cca91fece1959daa1cb9e970c2a3143d3b945"
+    sha256 cellar: :any, mojave:        "d74adebfe1d982be140295e6f7ebc739fea376d7689cc9f21e6fa868097a3a3c"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "glib"
-
-  # Fix QEMU networking
-  # https://gitlab.freedesktop.org/slirp/libslirp/-/issues/35
-  patch do
-    url "https://gitlab.freedesktop.org/slirp/libslirp/-/commit/7271345efe182199acaeae602cb78a94a7c6dc9d.diff"
-    sha256 "240e5b8c3cc21729936ae8a79056a58b4024e2f9d0fbad3c76a4f9398f9dfe65"
-  end
 
   def install
     system "meson", "build", "-Ddefault_library=both", *std_meson_args

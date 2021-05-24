@@ -5,14 +5,13 @@ class Subversion < Formula
   mirror "https://archive.apache.org/dist/subversion/subversion-1.14.1.tar.bz2"
   sha256 "2c5da93c255d2e5569fa91d92457fdb65396b0666fad4fd59b22e154d986e1a9"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 arm64_big_sur: "cc10a37f931098a527772624566986313996921ef4db503574894e7c879a148e"
-    sha256 big_sur:       "b35d05510851c952fb29dfab08291eef60a8635ccd5c04133dca9bfe8d2d3489"
-    sha256 catalina:      "10dfdde7c27501f4dbeb5b31a24faaf3230680c381d3fe3c2998478cbdb1bcc6"
-    sha256 mojave:        "c7b9deadb79fd1bce8efeddcbd6e4097bc8f7e256d2d073acf276aa3d5f6fb7d"
-    sha256 x86_64_linux:  "a2c03f23d972a9a0e107a297b89a968fc96d1ad056003be90b18ff1d8706bd46"
+    sha256 arm64_big_sur: "b423d18ba80a53c6ed46b56d79a5a5de2ed481eaefd13517ad1f320a4ed9a722"
+    sha256 big_sur:       "06616fa9d0ad78cafa32614ed7a2058d8e0ab576df463e0b717ba7971c2f3950"
+    sha256 catalina:      "257063523f77a6107cd0e58cd93952a7f35b6cdb918f0d00ad4ca6ecaa287058"
+    sha256 mojave:        "4c5231f495c38edcf838878a256e65db321d8977bcae96877370cf80c6942bff"
   end
 
   head do
@@ -32,11 +31,10 @@ class Subversion < Formula
   depends_on "apr-util"
 
   # build against Homebrew versions of
-  # gettext, lz4, sqlite and utf8proc for consistency
+  # gettext, lz4 and utf8proc for consistency
   depends_on "gettext"
   depends_on "lz4"
   depends_on "openssl@1.1" # For Serf
-  depends_on "sqlite"
   depends_on "utf8proc"
 
   depends_on "libtool" unless OS.mac?
@@ -45,6 +43,7 @@ class Subversion < Formula
   uses_from_macos "krb5"
   uses_from_macos "perl"
   uses_from_macos "ruby"
+  uses_from_macos "sqlite"
   uses_from_macos "zlib"
 
   resource "py3c" do
@@ -100,7 +99,7 @@ class Subversion < Formula
     # svn can't find libserf-1.so.1 at runtime without this
     ENV.append "LDFLAGS", "-Wl,-rpath=#{serf_prefix}/lib" unless OS.mac?
 
-    # Use existing system zlib
+    # Use existing system zlib and sqlite
     # Use dep-provided other libraries
     # Don't mess with Apache modules (since we're not sudo)
     zlib = OS.mac? ? "#{MacOS.sdk_path_if_needed}/usr" : Formula["zlib"].opt_prefix
@@ -118,7 +117,7 @@ class Subversion < Formula
       --with-ruby-sitedir=#{lib}/ruby
       --with-py3c=#{py3c_prefix}
       --with-serf=#{serf_prefix}
-      --with-sqlite=#{Formula["sqlite"].opt_prefix}
+      --with-sqlite=#{MacOS.sdk_path_if_needed}/usr
       --with-swig=#{Formula["swig"].opt_prefix}
       --with-zlib=#{zlib}
       --without-apache-libexecdir
