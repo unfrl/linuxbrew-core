@@ -6,6 +6,10 @@ class Mhonarc < Formula
   license "GPL-2.0-or-later"
   revision 2
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d9a6c4bddb21af835cc9664460d4cd83dc46175de5d338f4d719d0012a7df45b"
+  end
+
   depends_on "perl"
 
   # Apply a bugfix for syntax. https://savannah.nongnu.org/bugs/?49997
