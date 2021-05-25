@@ -34,8 +34,8 @@ class Yarn < Formula
   test do
     (testpath/"package.json").write('{"name": "test"}')
     system bin/"yarn", "add", "jquery"
-    # macOS specific package
     on_macos do
+      # macOS specific package
       system bin/"yarn", "add", "fsevents", "--build-from-source=true"
     end
   end

@@ -3,16 +3,15 @@ class Dxpy < Formula
 
   desc "DNAnexus toolkit utilities and platform API bindings for Python"
   homepage "https://github.com/dnanexus/dx-toolkit"
-  url "https://files.pythonhosted.org/packages/96/7c/2034c7ee4f7b22266c54c46042f0d0fa51795af3f9476891792105cb462a/dxpy-0.310.0.tar.gz"
-  sha256 "724adfe55c2404fe934d3d5cb569bcbd9339b1dd0b7462a3688b84f47c9cb9e5"
+  url "https://files.pythonhosted.org/packages/e8/c1/d1ce252f300df890db7a510363423c21fbe34db2d5b143cd788db1898e7c/dxpy-0.311.0.tar.gz"
+  sha256 "c9874ef780944ee49fead90cb085479eae8c1182584cb090717900687586694b"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "b2079d98d6b9d6c4258f499c3ae08e5be8f6d478881f43fecbf6a1fc4abbc45a"
-    sha256 cellar: :any,                 big_sur:       "d9cc3c5d4d8e678dfc80f8502eeedfe415cc3d5f76371cab855173ea77b10633"
-    sha256 cellar: :any,                 catalina:      "d288c4a1e930ba8b196f77e5f86267a6498ba0f35450909a8bb887464334f9f5"
-    sha256 cellar: :any,                 mojave:        "de11e6221defe904dfd2a3cc43338db308133becd4a9abcd024de54ac9ccbd41"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "538a2c0ed4c86e4d1dd63ba434ab4705f726325980a3e10a7c9555ed3a9b8a6b"
+    sha256 cellar: :any, arm64_big_sur: "60e6db426f95e39c93db2345fda9da3709d3caea1cbf85e2e21ccfe40e4abf81"
+    sha256 cellar: :any, big_sur:       "3e0ce912380a175b776027556788babc94d233bb4a09951f8bafe37484308f32"
+    sha256 cellar: :any, catalina:      "8b1064bd40e576282f7a5589b7a1cae5fa1cd92d8b0c9f43fca9e7e7bb05d4ae"
+    sha256 cellar: :any, mojave:        "816a71b9df6d0ecfecb605f6c51e945725d57f8dc5b65ec9333dd8ef756927b4"
   end
 
   depends_on "python@3.9"
