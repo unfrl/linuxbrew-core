@@ -8,10 +8,8 @@ class Subversion < Formula
   revision 2
 
   bottle do
-    sha256 arm64_big_sur: "b423d18ba80a53c6ed46b56d79a5a5de2ed481eaefd13517ad1f320a4ed9a722"
-    sha256 big_sur:       "06616fa9d0ad78cafa32614ed7a2058d8e0ab576df463e0b717ba7971c2f3950"
-    sha256 catalina:      "257063523f77a6107cd0e58cd93952a7f35b6cdb918f0d00ad4ca6ecaa287058"
-    sha256 mojave:        "4c5231f495c38edcf838878a256e65db321d8977bcae96877370cf80c6942bff"
+    rebuild 1
+    sha256 x86_64_linux: "4e3a790a714ff384eab404ff230a02c08e1df7dda9f321759cbf64b929fee968"
   end
 
   head do
