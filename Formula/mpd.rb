@@ -11,6 +11,7 @@ class Mpd < Formula
     sha256 cellar: :any, big_sur:       "7c8bbe79789bc8c2b870cd1adc36364f01fbb240465c976e6f7049b4740439e4"
     sha256 cellar: :any, catalina:      "294a0ac898cbb3a3885e923b6bf618d52c9735585f93a22f766d4e709f090a14"
     sha256 cellar: :any, mojave:        "0e0291c0e5a514f57d079e704d83f1fb975cd142b2d2ad151e91bca764a1fddd"
+    sha256               x86_64_linux:  "3a4937ab0faa5ab75b53ef2ef355d763839db67fa0c87c1cb3ab02af3d5e957a"
   end
 
   depends_on "boost" => :build
