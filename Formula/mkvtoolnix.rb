@@ -1,8 +1,8 @@
 class Mkvtoolnix < Formula
   desc "Matroska media files manipulation tools"
   homepage "https://mkvtoolnix.download/"
-  url "https://mkvtoolnix.download/sources/mkvtoolnix-56.1.0.tar.xz"
-  sha256 "75ff6476e7c4eab10c315af4e2dd78f1399d35da7c4611a8f93f4c3c0b475f72"
+  url "https://mkvtoolnix.download/sources/mkvtoolnix-57.0.0.tar.xz"
+  sha256 "961d0487bd273ec45fb142284a5710c09da5625bbc6981e8838899d13d74fcc7"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,8 +11,9 @@ class Mkvtoolnix < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 x86_64_linux: "c19ebe9243032dfbcc28e46888296e64eb270be3fc8b37ebdba7c21de2322d1b"
+    sha256 cellar: :any, arm64_big_sur: "9c2d73b423bada06dbd02d6aacd00288dde4139ad4369bd2e5d86e0470f012f6"
+    sha256 cellar: :any, big_sur:       "49b208943b3e6518ac1003df2c71d6c01899eecc66d7742d46600f629d8ff1b3"
+    sha256 cellar: :any, catalina:      "2d9aa5ec113cc4ff0a0c001632736db639cea4f40ded69938a574e51780eb49e"
   end
 
   head do
