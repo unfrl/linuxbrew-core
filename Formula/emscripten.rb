@@ -3,8 +3,8 @@ require "language/node"
 class Emscripten < Formula
   desc "LLVM bytecode to JavaScript compiler"
   homepage "https://emscripten.org/"
-  url "https://github.com/emscripten-core/emscripten/archive/2.0.20.tar.gz"
-  sha256 "65523a60a98ece5087afc6653a3618ec6db2ecab40241c645cf708cac8f4e9a0"
+  url "https://github.com/emscripten-core/emscripten/archive/2.0.21.tar.gz"
+  sha256 "d8d57d8642c170778b9f8d7f54252f9f0b12212f88b6fb9aeec81a7553c9e9db"
   license all_of: [
     "Apache-2.0", # binaryen
     "Apache-2.0" => { with: "LLVM-exception" }, # llvm
@@ -18,10 +18,10 @@ class Emscripten < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "c7af2e59f5c6d5eac776ea32163e5975f13ffcbf9318c47f73a85c294af7c408"
-    sha256 cellar: :any, big_sur:       "8b1b839dd3848987d40d4d086adafb763f0422f918439cee745f0a6d28dadff4"
-    sha256 cellar: :any, catalina:      "173819f66936a69eedb38e482e7ce3386073d281f7e0e432e1a7ae152e3c8fb7"
-    sha256 cellar: :any, mojave:        "f0bcbab219a19620b5b11f96d96be25c8c799c8a5c25e2bd98a2cad59684c716"
+    sha256 cellar: :any, arm64_big_sur: "678bb4057152c767743764cc3f64e00c7c97f65b58d309a696e3807d5e1fda92"
+    sha256 cellar: :any, big_sur:       "3f7a03bff0d47545643f1cdbc7ea0f3a683cd6afa5b808e51fdeabf610575090"
+    sha256 cellar: :any, catalina:      "edef5739697e2db9e122c84a5d348fdd1c1761b6aab310c37fbad21283ab2413"
+    sha256 cellar: :any, mojave:        "2d5d68f41c73ff841a495b30a3591f178f75614b6959bdf8b4e1f6175d635450"
   end
 
   depends_on "cmake" => :build
@@ -33,18 +33,18 @@ class Emscripten < Formula
   # See llvm resource below for instructions on how to update this.
   resource "binaryen" do
     url "https://github.com/WebAssembly/binaryen.git",
-        revision: "14506179e55978d5f8ef4547d05f8d134bdc4c6b"
+        revision: "dc516f10b5fa8fa7bf270eda97950d6e714956d3"
   end
 
   # emscripten needs argument '-fignore-exceptions', which is only available in llvm >= 12
   # To find the correct llvm revision, find a corresponding commit at:
-  # https://github.com/emscripten-core/emsdk/blob/master/emscripten-releases-tags.txt
+  # https://github.com/emscripten-core/emsdk/blob/main/emscripten-releases-tags.txt
   # Then take this commit and go to:
   # https://chromium.googlesource.com/emscripten-releases/+/<commit>/DEPS
   # Then use the listed llvm_project_revision for the resource below.
   resource "llvm" do
     url "https://github.com/llvm/llvm-project.git",
-        revision: "642df18f1437b1fffea2343fa471aebfff128c6e"
+        revision: "6e1c1dac4c72cc57f4cd2bc8554e8ac9f2f50b6e"
   end
 
   def install
