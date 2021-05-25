@@ -9,10 +9,11 @@ class Molecule < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_big_sur: "1d5de2bc92509056999e4d4b67c45d9cbd6bc3c119ba82f968083fad31df04ea"
-    sha256 cellar: :any, big_sur:       "47ba5fad180a90b63128bd9082ebb9cd36d14c283db7ec1c9ffd16c56f4c9ba6"
-    sha256 cellar: :any, catalina:      "cbe3109e96ef69ac66ced418e9371833b43d56a834fb174cb5ec08e4abc474d7"
-    sha256 cellar: :any, mojave:        "07e705ecd5510ff37ca6b9643213430f48e28e6ca66d75eb5658e566e7567081"
+    sha256 cellar: :any,                 arm64_big_sur: "1d5de2bc92509056999e4d4b67c45d9cbd6bc3c119ba82f968083fad31df04ea"
+    sha256 cellar: :any,                 big_sur:       "47ba5fad180a90b63128bd9082ebb9cd36d14c283db7ec1c9ffd16c56f4c9ba6"
+    sha256 cellar: :any,                 catalina:      "cbe3109e96ef69ac66ced418e9371833b43d56a834fb174cb5ec08e4abc474d7"
+    sha256 cellar: :any,                 mojave:        "07e705ecd5510ff37ca6b9643213430f48e28e6ca66d75eb5658e566e7567081"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cfdf2e4ceffd42c3b9c82f3c83d516459125a20c59d6dc1df869a72a498f87f1"
   end
 
   depends_on "rust" => :build
