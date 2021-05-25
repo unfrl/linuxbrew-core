@@ -2,8 +2,8 @@ class ErlangAT21 < Formula
   desc "Programming language for highly scalable real-time systems"
   homepage "https://www.erlang.org/"
   # Download tarball from GitHub; it is served faster than the official tarball.
-  url "https://github.com/erlang/otp/archive/OTP-21.3.8.21.tar.gz"
-  sha256 "47a0edb246c267f905564245ca3019e8491db5537dfa5441dc5031a4d091ea15"
+  url "https://github.com/erlang/otp/releases/download/OTP-21.3.8.23/otp_src_21.3.8.23.tar.gz"
+  sha256 "fe8230c8efb7a942b8a39281cbb718bd0ca0ed56b57f7fed42cbe10781526ec2"
   license "Apache-2.0"
 
   livecheck do
@@ -12,32 +12,27 @@ class ErlangAT21 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 big_sur:      "cebd6a18804037d11d0e4f58f3e9579721408fe5fca1e6b435a0ffbc1441ef48"
-    sha256 cellar: :any,                 catalina:     "4a15839bac8cc79afb24e6ceeb15cd96201e9466cf699cf5093eda4eb0aa1c34"
-    sha256 cellar: :any,                 mojave:       "8148773da7ad7137b4a9042c96eb3e0a909ae706aaca3afad9dab32d04836f82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e816de62b9585972fc3543eeb1dfcf6cf3fd7ed222b15edb9f58edf84ae3f7f6"
+    sha256 cellar: :any, big_sur:  "cbd1c0ec128c2d4a2eac2fece5f3963724456c6a6958b3d091d56863d9547f3e"
+    sha256 cellar: :any, catalina: "fbeadf0e51da3e9dfebd4151384803971f504b7aa94c3946ff2c6b65c9509504"
+    sha256 cellar: :any, mojave:   "fe56a3928044e070463db1f2da302fb2ab7a53122ac076048a3c0e990d0998b0"
   end
 
   keg_only :versioned_formula
 
-  depends_on "autoconf" => :build
+  depends_on "autoconf@2.69" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on arch: :x86_64
   depends_on "openssl@1.1"
   depends_on "wxmac" # for GUI apps like observer
 
-  uses_from_macos "m4" => :build
-
   resource "man" do
     url "https://www.erlang.org/download/otp_doc_man_21.3.tar.gz"
-    mirror "https://fossies.org/linux/misc/otp_doc_man_21.3.tar.gz"
     sha256 "f5464b5c8368aa40c175a5908b44b6d9670dbd01ba7a1eef1b366c7dc36ba172"
   end
 
   resource "html" do
     url "https://www.erlang.org/download/otp_doc_html_21.3.tar.gz"
-    mirror "https://fossies.org/linux/misc/otp_doc_html_21.3.tar.gz"
     sha256 "258b1e0ed1d07abbf08938f62c845450e90a32ec542e94455e5d5b7c333da362"
   end
 
@@ -61,7 +56,6 @@ class ErlangAT21 < Formula
       --prefix=#{prefix}
       --enable-dynamic-ssl-lib
       --enable-hipe
-      --enable-sctp
       --enable-shared-zlib
       --enable-smp-support
       --enable-threads

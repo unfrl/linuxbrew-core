@@ -1,8 +1,8 @@
 class Abcmidi < Formula
   desc "Converts abc music notation files to MIDI files"
   homepage "https://ifdo.ca/~seymour/runabc/top.html"
-  url "https://ifdo.ca/~seymour/runabc/abcMIDI-2021.05.19.zip"
-  sha256 "b8a465415a7280da56714ec08f399781a69625c25437fd45785f0d15664f80a4"
+  url "https://ifdo.ca/~seymour/runabc/abcMIDI-2021.05.21.zip"
+  sha256 "e3a9cdae35863efe86e57fba59bfb94c06b4225c331b2fb2646bc6569289648b"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,11 +11,10 @@ class Abcmidi < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "08be29581277f92e8a3c26834152e525a63a40f9dacc8ca5b4eea85b26fbd13f"
-    sha256 cellar: :any_skip_relocation, big_sur:       "ff2fb4179a84a19844c8e589ca3982d63ffe2e42ac12fb6a1d639554bdf7fc0f"
-    sha256 cellar: :any_skip_relocation, catalina:      "d2e785c975352d45686cab282fec57ce632626784dee412449f3a37c93a031d1"
-    sha256 cellar: :any_skip_relocation, mojave:        "e652c692f75f0c2f46a46dc64afb100802d8d98039227cf7666ce57de5ef2387"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84d4fa8d4dec4cedf8e07b722ab97232a8950a4b0c695a8a239879743d210e72"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "cb14973fc2bf7bdfcfb80e3c669d920fea9413107e57b205c827808feb60d8cd"
+    sha256 cellar: :any_skip_relocation, big_sur:       "ab07be2ab6c166a6a40de046d4a37245c4474c8417075c2a67efdbc769976c82"
+    sha256 cellar: :any_skip_relocation, catalina:      "ac37a32da66c476f7eb74086cdae293aa1a08a55ba485b6bd72cbae0b6bbadde"
+    sha256 cellar: :any_skip_relocation, mojave:        "5c83b4b2528d56930e65054ac147632d9a5e9ab5da8a98fd9b4fee6a1b1eba5d"
   end
 
   def install
