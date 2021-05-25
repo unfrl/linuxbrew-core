@@ -4,7 +4,7 @@ class Postgis < Formula
   url "https://download.osgeo.org/postgis/source/postgis-3.1.1.tar.gz"
   sha256 "0e96afef586db6939d48fb22fbfbc9d0de5e6bc1722d6d553d63bb41441a2a7d"
   license "GPL-2.0-or-later"
-  revision 2
+  revision 3
 
   livecheck do
     url "https://download.osgeo.org/postgis/source/"
@@ -12,10 +12,10 @@ class Postgis < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "a1ca94ee4eedbc9332dfaef39195f612af0f1325507e262c4581f75d18714d09"
-    sha256 cellar: :any, big_sur:       "d560db2b49805cdf2bc5274f4006f975838f221a56031956005bc64922452c0c"
-    sha256 cellar: :any, catalina:      "d1ed90180612209003f6619c78d05ec0ce5aa27e941a518a6dc9f860f3592cd1"
-    sha256 cellar: :any, mojave:        "37c3536f3b99bbad49ae0a64261da18554647bef6429da87a26adfc9276b4cf0"
+    sha256 cellar: :any, arm64_big_sur: "b4178d7d5038196255f8102b24efd252d51825f59f00c92a9c70b6e7b23f8598"
+    sha256 cellar: :any, big_sur:       "dc4e0d0514b5dbccf24d4039a7b7d1ffcc8e04352745562bcf87c9308f5fe821"
+    sha256 cellar: :any, catalina:      "f76db62b23eb211796c5757c2e00eb884867877aa4b3a429295325e41d1f1054"
+    sha256 cellar: :any, mojave:        "92470ec288a3b45cb71509cb085d84d6af9d41c657c39ed63cc2d6a3fddbdb4d"
   end
 
   head do
@@ -33,7 +33,7 @@ class Postgis < Formula
   depends_on "json-c" # for GeoJSON and raster handling
   depends_on "pcre"
   depends_on "postgresql"
-  depends_on "proj"
+  depends_on "proj@7"
   depends_on "protobuf-c" # for MVT (map vector tiles) support
   depends_on "sfcgal" # for advanced 2D/3D functions
 
@@ -41,7 +41,7 @@ class Postgis < Formula
     ENV.deparallelize
 
     args = [
-      "--with-projdir=#{Formula["proj"].opt_prefix}",
+      "--with-projdir=#{Formula["proj@7"].opt_prefix}",
       "--with-jsondir=#{Formula["json-c"].opt_prefix}",
       "--with-pgconfig=#{Formula["postgresql"].opt_bin}/pg_config",
       "--with-protobufdir=#{Formula["protobuf-c"].opt_bin}",

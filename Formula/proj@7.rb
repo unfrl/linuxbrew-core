@@ -1,31 +1,26 @@
-class Proj < Formula
+class ProjAT7 < Formula
   desc "Cartographic Projections Library"
   homepage "https://proj.org/"
-  url "https://github.com/OSGeo/PROJ/releases/download/8.0.1/proj-8.0.1.tar.gz"
-  sha256 "e0463a8068898785ca75dd49a261d3d28b07d0a88f3b657e8e0089e16a0375fa"
+  url "https://github.com/OSGeo/PROJ/releases/download/7.2.1/proj-7.2.1.tar.gz"
+  sha256 "b384f42e5fb9c6d01fe5fa4d31da2e91329668863a684f97be5d4760dbbf0a14"
   license "MIT"
 
   bottle do
-    sha256 arm64_big_sur: "a4da85e7db113fc2286146cc9a250df2877c36fd766a373915e1b673b3c6ce82"
-    sha256 big_sur:       "2cdcd5418e147d57ec413c5977e05cd56291f138416033810aa075afe873cf1f"
-    sha256 catalina:      "cf990e76cb867cc5896631a6c3c813205676a4c9fbf096d82ec67b7aef764066"
-    sha256 mojave:        "78be51044cce3f368ef821f1adc3e0ae6e353ee67c28d498f32828fb56d46bf2"
+    sha256 arm64_big_sur: "de4c07c82bb48aaacce06186daaa95e975ec13d9c63978ec74e46d00e29c9b4e"
+    sha256 big_sur:       "85fe28900d71302e7a6a433cf97f6c2bbffd760578a731f502a3dbea2be02917"
+    sha256 catalina:      "34dc4a8dda8470ec24951126171ac370232d215a4623e8c8b67161b52a875706"
+    sha256 mojave:        "cfda390ef15a53e47786071d599ded6ecfb540c3c70ae0174135d50c481f058b"
   end
 
-  head do
-    url "https://github.com/OSGeo/proj.git"
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
+  keg_only :versioned_formula
+
+  deprecate! date: "2020-03-01", because: :unsupported
 
   depends_on "pkg-config" => :build
   depends_on "libtiff"
 
   uses_from_macos "curl"
   uses_from_macos "sqlite"
-
-  conflicts_with "blast", because: "both install a `libproj.a` library"
 
   skip_clean :la
 
@@ -37,7 +32,6 @@ class Proj < Formula
 
   def install
     (buildpath/"nad").install resource("datumgrid")
-    system "./autogen.sh" if build.head?
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install"
