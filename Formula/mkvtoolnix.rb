@@ -15,6 +15,7 @@ class Mkvtoolnix < Formula
     sha256 cellar: :any, arm64_big_sur: "18c8c541489a27a489f8d48ce90b458c7b2028bbd0737e64e282b45a6b0dc7b9"
     sha256 cellar: :any, big_sur:       "2ff9f546779b5b827a54e245de9c07f6ca94a9bef11c8d52c7629546b8373f4d"
     sha256 cellar: :any, catalina:      "d6af7128b1009a2d02b8045259f2ce0465cfdaa4f3c7a31cc1c04233d518e99d"
+    sha256               x86_64_linux:  "dcd802afb3d9df59f42cc6873e72b6298960b5a24759ffcbee34c2269f160569"
   end
 
   head do
