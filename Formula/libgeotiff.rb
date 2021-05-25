@@ -7,10 +7,11 @@ class Libgeotiff < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "693599ceb6c27a406ef40a2132fd90736c92e639f09ba9fc73a914a692a7d302"
-    sha256 cellar: :any, big_sur:       "d799eaf361b8ae3a149e616376ccc2bd6c165666931d41bea939eb1d60fd84dc"
-    sha256 cellar: :any, catalina:      "46c76bb3d4807e703b47edbe613f8fcbacf62dbafa3f9c51bc3ea64ea04f76fc"
-    sha256 cellar: :any, mojave:        "f558aff9a210d09cd3b6fd64756ab852bdcf3650c6d377dc007fb276f5f29720"
+    sha256 cellar: :any,                 arm64_big_sur: "693599ceb6c27a406ef40a2132fd90736c92e639f09ba9fc73a914a692a7d302"
+    sha256 cellar: :any,                 big_sur:       "d799eaf361b8ae3a149e616376ccc2bd6c165666931d41bea939eb1d60fd84dc"
+    sha256 cellar: :any,                 catalina:      "46c76bb3d4807e703b47edbe613f8fcbacf62dbafa3f9c51bc3ea64ea04f76fc"
+    sha256 cellar: :any,                 mojave:        "f558aff9a210d09cd3b6fd64756ab852bdcf3650c6d377dc007fb276f5f29720"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1db957a5da5ceae44796620bf38a07695e8afc02fb149970a2213bf73e035703"
   end
 
   head do
