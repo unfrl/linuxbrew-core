@@ -11,10 +11,11 @@ class Librasterlite < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "9a685c2da2eca32a3b8e277e224465cb37c896717043407e64bcf54dbbe2fe67"
-    sha256 cellar: :any, big_sur:       "cf093e2b4e2d5e1e86f089d0dd47cf9fcb7197e2f7028cedc728ce174e5abeaa"
-    sha256 cellar: :any, catalina:      "87bda7a32b6106dd10a0a7b69ab9e2eb7795d72f09be14a264e3cf57c37706e0"
-    sha256 cellar: :any, mojave:        "58f04df469c79fdf8e57077e7ed2226bca0ebda941b527950baefc792df365ac"
+    sha256 cellar: :any,                 arm64_big_sur: "9a685c2da2eca32a3b8e277e224465cb37c896717043407e64bcf54dbbe2fe67"
+    sha256 cellar: :any,                 big_sur:       "cf093e2b4e2d5e1e86f089d0dd47cf9fcb7197e2f7028cedc728ce174e5abeaa"
+    sha256 cellar: :any,                 catalina:      "87bda7a32b6106dd10a0a7b69ab9e2eb7795d72f09be14a264e3cf57c37706e0"
+    sha256 cellar: :any,                 mojave:        "58f04df469c79fdf8e57077e7ed2226bca0ebda941b527950baefc792df365ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a89ecdb42fc1f5b12bd528b08d3c0c1bf0db8585a5109af78087c898293f1a9"
   end
 
   depends_on "pkg-config" => :build
