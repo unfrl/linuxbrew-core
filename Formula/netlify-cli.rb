@@ -13,6 +13,7 @@ class NetlifyCli < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "2d660fb7a8e9cdb2f87a8cac944d909f1d6df186d0e4457f28b96de9b3d5ac1a"
     sha256 cellar: :any_skip_relocation, catalina:      "2d660fb7a8e9cdb2f87a8cac944d909f1d6df186d0e4457f28b96de9b3d5ac1a"
     sha256 cellar: :any_skip_relocation, mojave:        "2d660fb7a8e9cdb2f87a8cac944d909f1d6df186d0e4457f28b96de9b3d5ac1a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "86842f4051589859e27d4ac6af22c9e7cfbbcb4b3cc3492bd40f730155293ad0"
   end
 
   depends_on "node"
