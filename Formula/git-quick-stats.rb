@@ -5,6 +5,10 @@ class GitQuickStats < Formula
   sha256 "990dafeacef180c5f46e537e44416137fd9f5442a139c7ff1f0f50a16beb9287"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c4561f638755f0a240f5e803ee499cff06630011aad663edc812672f27e27eb8"
+  end
+
   on_linux do
     depends_on "util-linux" # for `column`
   end
