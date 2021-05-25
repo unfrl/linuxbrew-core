@@ -15,6 +15,7 @@ class Byacc < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "e12e6e46d3fdf86b1ad7831b1abea455fad76cc036758912dab27cfbe9ce9eeb"
     sha256 cellar: :any_skip_relocation, catalina:      "4d6c32e17bea48b6835cb6b1a091f39a55a047900d25b1e898573685b9209bf5"
     sha256 cellar: :any_skip_relocation, mojave:        "694539f58ff6b4949adb90b697aa90bd9463a5c6062a61f8622f27006f02605e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2a53bf24f95841326b30ad10094beb4f9854237aca755d6eb03551e99c04d51"
   end
 
   def install
