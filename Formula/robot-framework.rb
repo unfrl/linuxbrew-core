@@ -3,17 +3,16 @@ class RobotFramework < Formula
 
   desc "Open source test framework for acceptance testing"
   homepage "https://robotframework.org/"
-  url "https://files.pythonhosted.org/packages/1d/34/1dd668560f4dad65fb913a80b82f942395ace488c02c1ce050c07f3347fb/robotframework-4.0.2.zip"
-  sha256 "efd39558219fddc86473d4d390aeaec60640d7a7567a15fd51c0576f20e46171"
+  url "https://files.pythonhosted.org/packages/e0/81/5247355aba88bc9c54dcf7127a9853cc88a3a0b75124d8391680a3787001/robotframework-4.0.3.zip"
+  sha256 "93c2107f789fd897f234f4b8f1ba8e7b9f4ef326d9bcbfceb71dda8cc197388c"
   license "Apache-2.0"
   head "https://github.com/robotframework/robotframework.git"
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "99643958cff65b1cf3b80a8840ab1681f7201fbf41a61d591c798c95ad8ed8a2"
-    sha256 cellar: :any,                 big_sur:       "1b19e232b3084f8d07391ee81a644159097782db9217b57b31816eb582c53435"
-    sha256 cellar: :any,                 catalina:      "0e4ed0f5020d4ebed1f24ca558ab111f54354ddd5c8f4598bf0b1252ba5a5d85"
-    sha256 cellar: :any,                 mojave:        "01dfb6617e3f8770b044a3d00ec1fb8bb9adbac61c218184194f948026f21406"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "565af4bd3e4139fc58a23796b158510799e932c9e23be67d10310ac078071c40"
+    sha256 cellar: :any, arm64_big_sur: "a0e20933f1824479aa59768ad01588e7de9221227c4e0684ff6904bd40f427c3"
+    sha256 cellar: :any, big_sur:       "6049e2e09ad5bff3c406d2fc53b5274ea44a8d8f5b32f50ea6d480a7f16d9b67"
+    sha256 cellar: :any, catalina:      "1d34cd445b028f3477338f6ccce56267491139fd14d9c45389e6905eb2e6374a"
+    sha256 cellar: :any, mojave:        "6bea33bdab5c5cb74afde044975094803e387e61be5ce4077fb4d87ec7a4a1cb"
   end
 
   depends_on "rust" => :build
@@ -51,8 +50,8 @@ class RobotFramework < Formula
   end
 
   resource "robotframework-archivelibrary" do
-    url "https://files.pythonhosted.org/packages/29/b6/bf5bd38d5764f6afaf17b0debef580aee9bfbd63ad77a0e215389691fdfb/robotframework-archivelibrary-0.4.0.tar.gz"
-    sha256 "d18dd05a9d43decef1352a9a7601522639e4e6f02a084692b6392603c5f6c063"
+    url "https://files.pythonhosted.org/packages/3d/ca/0cd119e4ebf6944d48b7e9467c9bc254ea3188cb2cf9109e8e87ae906a99/robotframework-archivelibrary-0.4.1.tar.gz"
+    sha256 "61cfb1d74717cb11862c87d8f44f5b5cc4a2862de42c441859df83fc33dd3dcf"
   end
 
   resource "robotframework-pythonlibcore" do

@@ -1,24 +1,18 @@
 class Silicon < Formula
   desc "Create beautiful image of your source code"
   homepage "https://github.com/Aloxaf/silicon/"
-  url "https://github.com/Aloxaf/silicon/archive/v0.4.1.tar.gz"
-  sha256 "43c736dce804f91f05f4fff85aaf6f036827278a5d03f35d7c63581a42e6bff3"
+  url "https://github.com/Aloxaf/silicon/archive/v0.4.2.tar.gz"
+  sha256 "a5fb780ea33ca8e3db038a57efdfc8d4548a832e3eb027671057e6657b5d5294"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "d258ffeb373ddd0d6b6bd36660fdd45a36564536c1fb4f43db5c8f1cc0ae8e28"
-    sha256 cellar: :any_skip_relocation, big_sur:       "ed9e6e76ee8b694818de87106ee9c9608781ac5d18f4744ea8d197ba61664fcb"
-    sha256 cellar: :any_skip_relocation, catalina:      "59cd0ab050ed82e525ea507063e26c025de1b18cc7a5eac82119f6a4e42747b0"
-    sha256 cellar: :any_skip_relocation, mojave:        "4b458312692e17e124910bc35b093da0bf6f45909d3ab0bf06ab74816b27961b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "263754894f746da1464ee4b0f9dcdca0aa36d4d65298fc696794b0dd26a89d41"
+    sha256 cellar: :any_skip_relocation, big_sur:       "723f536f0dbcfaf9d7045d081630f4fe2a6b3fdacf5acb96961dbf163d256914"
+    sha256 cellar: :any_skip_relocation, catalina:      "7310d8a125fd568d0349e18d58341314ba834c5209c4526c6b1cf2496afda185"
+    sha256 cellar: :any_skip_relocation, mojave:        "69c3139d3686b14909f21b0e22a216f372ef2495271046c197a4ff36be7cdcf0"
   end
 
   depends_on "rust" => :build
-
-  # Patch the build for big_sur, remove in next release
-  patch do
-    url "https://github.com/Aloxaf/silicon/commit/b3679c4dd4087040950ff9495d76621f2f0f5d0d.patch?full_index=1"
-    sha256 "9d26486421fde04141cba5471910a9d7f7df39f88ef5f58266cdb758f1f88254"
-  end
 
   def install
     system "cargo", "install", *std_cargo_args
