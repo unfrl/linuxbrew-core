@@ -32,14 +32,12 @@ class Yaws < Formula
   skip_clean "lib/yaws/examples/include"
 
   def install
-    extra_args = if OS.mac?
-      # Ensure pam headers are found on Xcode-only installs
-      %W[
-        --with-extrainclude=#{MacOS.sdk_path}/usr/include/security
-        SED=/usr/bin/sed
-      ]
-    else
-      %W[
+    # Ensure pam headers are found on Xcode-only installs
+    extra_args = %W[
+      --with-extrainclude=#{MacOS.sdk_path}/usr/include/security
+    ]
+    on_linux do
+      extra_args = %W[
         --with-extrainclude=#{Formula["linux-pam"].opt_include}/security
       ]
     end
@@ -56,8 +54,8 @@ class Yaws < Formula
     (lib/"yaws/examples/ebin").mkpath
     (lib/"yaws/examples/include").mkpath
 
-    # Remove Homebrew shims references
-    unless OS.mac?
+    # Remove Homebrew shims references on Linux
+    on_linux do
       inreplace Dir["#{prefix}/var/yaws/www/*/Makefile"], HOMEBREW_LIBRARY/"Homebrew/shims/linux/super/",
         "/usr/bin/"
     end
