@@ -9,10 +9,8 @@ class Global < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_big_sur: "f96368bfa6146b1e1ab6df7fa7a830edac7a733e5e5b166da466279cd95f7f24"
-    sha256 big_sur:       "b46b54119d50cad76ba3d214e3bfa746f3734fd36da87b59c8ad94368dd635c3"
-    sha256 catalina:      "60e5977d1120c5e9f5044a424e74626e9ac713f9b5df994e6f3dc65ce9bc121e"
-    sha256 mojave:        "2090e947b5325e6c6927d1c7ada590cedfbe765722eb2376b6690ebacf7bfdbf"
+    rebuild 1
+    sha256 x86_64_linux: "482b59c0832b0b70b24833bcd56f60c50e08646a0fa5229b4c21605f7a4bc3d8"
   end
 
   head do
