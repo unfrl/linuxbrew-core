@@ -13,6 +13,7 @@ class YouGet < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "88e9697583588134f388bc1055980f957e2686438f7167fa2994e712eb3f8d1f"
     sha256 cellar: :any_skip_relocation, catalina:      "88e9697583588134f388bc1055980f957e2686438f7167fa2994e712eb3f8d1f"
     sha256 cellar: :any_skip_relocation, mojave:        "88e9697583588134f388bc1055980f957e2686438f7167fa2994e712eb3f8d1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15d631d598a1724e5d4db72044950eef3836c9dda152c76abdd24a8184d2cf84"
   end
 
   depends_on "python@3.9"
