@@ -6,6 +6,10 @@ class GitVendor < Formula
   license "MIT"
   head "https://github.com/brettlangdon/git-vendor.git"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4a32c52d725602c25e460a58d24f99029753aab5a215530bc0717968841bf8f3"
+  end
+
   # Fix issue with /bin/sh builtin echo not supporting -n option
   # Remove in the next release
   patch do
