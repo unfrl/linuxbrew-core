@@ -1,10 +1,18 @@
 class Qmmp < Formula
   desc "Qt-based Multimedia Player"
   homepage "https://qmmp.ylsoftware.com/"
-  url "https://downloads.sourceforge.net/project/qmmp-dev/qmmp/qmmp-1.4.6.tar.bz2"
-  sha256 "f513774357836ad4983fa216c84cf5db634284faebec48c461733838917fd664"
   license "GPL-2.0-or-later"
-  head "https://svn.code.sf.net/p/qmmp-dev/code/branches/qmmp-1.4/"
+  head "https://svn.code.sf.net/p/qmmp-dev/code/branches/qmmp-1.5/"
+
+  stable do
+    url "https://downloads.sourceforge.net/project/qmmp-dev/qmmp/qmmp-1.5.0.tar.bz2"
+    sha256 "2f796bdbfeee4c1226541e746bcfea3d5b983a559081529e4c86a2c792026be7"
+
+    # Fix build without mpg123
+    # See https://sourceforge.net/p/qmmp-dev/tickets/1082/
+    # Remove in the next release
+    patch :DATA
+  end
 
   livecheck do
     url :stable
@@ -12,9 +20,9 @@ class Qmmp < Formula
   end
 
   bottle do
-    sha256 big_sur:  "314ceb6432da04c39b83c600d22bafee2a680b6c34ef47c238e160181583e7bb"
-    sha256 catalina: "53def71f6922fb2f7f7cfd3557d321011f82015d8d7a259c5aac0f17d0da986b"
-    sha256 mojave:   "2471e481be569677e931cb5588e53d9359bb3ff8b403b8a0051d8c77ff4e7702"
+    sha256 big_sur:  "9dee25c49a89bedc44b8a45cce9c1eee237f0d04b2765a930e2482baed663f3c"
+    sha256 catalina: "3a59c33536865917e8426e7076d6e33aa465add0f0d89a60edb1dded6ef475ab"
+    sha256 mojave:   "7ff2b3f1d2b6adb30d9a8051e1c19e822eaac3643483d16150a15116d0179879"
   end
 
   depends_on "cmake" => :build
@@ -56,3 +64,18 @@ class Qmmp < Formula
     system bin/"qmmp", "--version"
   end
 end
+
+__END__
+--- a/src/plugins/Input/mpeg/decodermpegfactory.cpp
++++ b/src/plugins/Input/mpeg/decodermpegfactory.cpp
+@@ -204,7 +204,9 @@
+         d = new DecoderMAD(crc, input);
+     }
+ #elif defined(WITH_MAD)
+-    d = new DecoderMAD(input);
++    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
++    bool crc = settings.value("MPEG/enable_crc", false).toBool();
++    d = new DecoderMAD(crc, input);
+ #elif defined(WITH_MPG123)
+     d = new DecoderMPG123(input);
+ #endif

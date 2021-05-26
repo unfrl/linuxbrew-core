@@ -1,14 +1,14 @@
 class SignalCli < Formula
   desc "CLI and dbus interface for WhisperSystems/libsignal-service-java"
   homepage "https://github.com/AsamK/signal-cli"
-  url "https://github.com/AsamK/signal-cli/releases/download/v0.8.1/signal-cli-0.8.1.tar.gz"
-  sha256 "2ead51489d5521ae8c1538936c6a8dcbb22a96227019eb9e826ff5f9146dbbe2"
+  url "https://github.com/AsamK/signal-cli/releases/download/v0.8.3/signal-cli-0.8.3.tar.gz"
+  sha256 "56c38b4b070b44a335835275b3a05f8f047d887f6bfb410bf9e4e2e60ce1a15c"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:  "a928fd093ba6d27f6ddd5da51e042ad5b0a1f800418b91a5c77ab3a65b04f24c"
-    sha256 cellar: :any_skip_relocation, catalina: "0a02a6afead5f5dfe2edb031ed6e213327178d17a17f33621590dd62c912e31d"
-    sha256 cellar: :any_skip_relocation, mojave:   "982528ec459f9b42311e9922c983e590be8d8afe766002043ef5178475a00e3c"
+    sha256 cellar: :any_skip_relocation, big_sur:  "d7b81bb970d3b3405b78306125081d5c72dce3469b60e81d0d4438623e51d011"
+    sha256 cellar: :any_skip_relocation, catalina: "21afac88b610cde1221d44247556cf80dcfced2d44d60ea1ff529b9f6133ee1a"
+    sha256 cellar: :any_skip_relocation, mojave:   "c1ff1e88c38fccf4f2935f4eb66436596d27da0dd02310b8a9781336594d55a3"
   end
 
   depends_on "gradle" => :build

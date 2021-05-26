@@ -3,15 +3,15 @@ class CloudformationCli < Formula
 
   desc "CloudFormation Provider Development Toolkit"
   homepage "https://github.com/aws-cloudformation/cloudformation-cli/"
-  url "https://files.pythonhosted.org/packages/45/14/d995bdaa28a1f457e9184f0540fe2aa8292f1641e4f580c556151a0d2005/cloudformation-cli-0.2.11.tar.gz"
-  sha256 "1e41af5fa177585ace790274f0d8ecb3f790d5be7cce5aaf3588823866f3420c"
+  url "https://files.pythonhosted.org/packages/a8/e1/7227509cee69bbb3bbb2d01a35dddfdf81505e9241932a47a4fbc19983d0/cloudformation-cli-0.2.12.tar.gz"
+  sha256 "7a9f84f9e0c6a1286e9ab31013a657766843e21721d27df12b8ae6aa4afa89e4"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "af41ee67d278b422cf519a8a231e534140abedefcc778e6d70a5a7a8123a7e1f"
-    sha256 cellar: :any_skip_relocation, big_sur:       "a66bafdfccf442dc01d17b47634e63b220711b563a4bb71d0d8ff9097d44f912"
-    sha256 cellar: :any_skip_relocation, catalina:      "e5a9039c61e98438f3913588e41da044c68ed9a6d608bf33c952e22ad325bf9a"
-    sha256 cellar: :any_skip_relocation, mojave:        "32a8d8ea81ba8fff3ce5f524cb4247666eff3e2eec4dfaaf07e786170b389cd6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "7eaa68ce607b53279993f0dc5e040547645115ac4688f3f24726d7050095987d"
+    sha256 cellar: :any_skip_relocation, big_sur:       "ccc40327beb9fbc5a79be28ef30de117afb963bb37e61e1b80060653be1f7908"
+    sha256 cellar: :any_skip_relocation, catalina:      "8298336f0aebd0985c46d54f6f01814159b165358188ba8513eaec0eb5ec8612"
+    sha256 cellar: :any_skip_relocation, mojave:        "30f966c0f837f5190187cb3d10bc3d46c2b6a18e60fe0ac9f317fa86a7276af1"
   end
 
   depends_on "go" => :test
@@ -95,8 +95,8 @@ class CloudformationCli < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/2a/25/6aff2b746e2cd4fa1ab5b8d14c82c79e34d1aaea590f6850f74ebc68be41/hypothesis-6.13.3.tar.gz"
-    sha256 "49fbede48837cbee2160a83d1c99c0a9094d74bad0e2f6f5f351ac80ff559a79"
+    url "https://files.pythonhosted.org/packages/06/00/fc3f76d94c7366ef3d5a9c23326db82859fbf66ff96fdac975878f1888c7/hypothesis-6.13.5.tar.gz"
+    sha256 "7b1d886ff78c6d2d3eee921d00116548e67310c2bf3bd13e3e59e073f4fdad88"
   end
 
   resource "idna" do

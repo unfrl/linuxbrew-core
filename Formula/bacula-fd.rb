@@ -1,15 +1,14 @@
 class BaculaFd < Formula
   desc "Network backup solution"
   homepage "https://www.bacula.org/"
-  url "https://downloads.sourceforge.net/project/bacula/bacula/11.0.2/bacula-11.0.2.tar.gz"
-  sha256 "a2868ab0d854231b9b0251ade9f50091b0fe3c331f92afba9672b81bd969e02f"
+  url "https://downloads.sourceforge.net/project/bacula/bacula/11.0.3/bacula-11.0.3.tar.gz"
+  sha256 "01587734f7490fcb7737801b2e1fe1b1f94707bb3fb0b71b36713c7aab03923c"
 
   bottle do
-    sha256                               arm64_big_sur: "331f1ea1e1a5f169bf50acaeec46c2f2fc71324c3ba30fa40ff6b0d74653a021"
-    sha256                               big_sur:       "5e9cfba07ac1ce2145c53f8ef7a55314ec3225ecdbb75d3b783a5283ae7618f7"
-    sha256                               catalina:      "66280b36a3b7c7dd2c9df396ee078934f79b0756389d95e85fec149580c18ca9"
-    sha256                               mojave:        "fc6487297bd56ab45332baf9ee48dc11926d2bdb5efe429fd89111218dcf7dbb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d97a5797a8d1f341f7ba51af276cb95f9b79b12c8c6caabf1d8fbe9bd8adf78"
+    sha256 arm64_big_sur: "870ed54211752a2b5074b4541d7e20a07f7cfc5823b6b4ca02754714664a41a5"
+    sha256 big_sur:       "97a132f840f80286105c4053a9278840c3b87759f9fda275d17b7e21b229b2ee"
+    sha256 catalina:      "fe0716a5da8e44667f410c60b426fa3367b3086e1da3802120d46e0f2798de85"
+    sha256 mojave:        "df8ff109522a1091ab1838926142023f5c0119475c8757d5134149442ee1b610"
   end
 
   depends_on "openssl@1.1"

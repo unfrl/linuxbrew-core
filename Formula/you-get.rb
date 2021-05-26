@@ -3,17 +3,16 @@ class YouGet < Formula
 
   desc "Dumb downloader that scrapes the web"
   homepage "https://you-get.org/"
-  url "https://files.pythonhosted.org/packages/83/f5/fe13c4859e9f7007fd995ecf6a05b85237c879323d070d54d9815f8e0e15/you-get-0.4.1520.tar.gz"
-  sha256 "890be0c9637ae571bf5ead8015c4fe1e75de8adeae3aece545a1c4aeb8282fab"
+  url "https://files.pythonhosted.org/packages/ce/48/ac9a960df2af7ab1c6afe80853320d4d76b219727ff2a2e513cd006d2bdb/you-get-0.4.1525.tar.gz"
+  sha256 "905eae25a7d2aef2262cb6a2cabd036381a6c6c6cc8746e13c4a8fde4602911c"
   license "MIT"
   head "https://github.com/soimort/you-get.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "bea8c3b1b8d6f19d8f0f3fc9ec499d061a8178e1a068952dd64b1c4f37adb78c"
-    sha256 cellar: :any_skip_relocation, big_sur:       "5a5b7e6b35b3050c0034b9c1e8687c833feee4ef1bfaba8a639b1c0ea5b6047d"
-    sha256 cellar: :any_skip_relocation, catalina:      "3e2e928c47300d7585a8c7d6d0a602ca847b32257a543a34e20be1c2e41d2b6b"
-    sha256 cellar: :any_skip_relocation, mojave:        "e8d8cc06b0169589d65bdbcd931141b417ef7a6450ea7734401dfe2f2e074b35"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e52e2f4b29ed5dcf0006c42a563f7d538d1d7602a13fb7b7f655b58ba3939ef"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "61ae27ceb46e418b8be3d42fd09a09aee0a392f1a569d821be945555ddcc990e"
+    sha256 cellar: :any_skip_relocation, big_sur:       "88e9697583588134f388bc1055980f957e2686438f7167fa2994e712eb3f8d1f"
+    sha256 cellar: :any_skip_relocation, catalina:      "88e9697583588134f388bc1055980f957e2686438f7167fa2994e712eb3f8d1f"
+    sha256 cellar: :any_skip_relocation, mojave:        "88e9697583588134f388bc1055980f957e2686438f7167fa2994e712eb3f8d1f"
   end
 
   depends_on "python@3.9"
