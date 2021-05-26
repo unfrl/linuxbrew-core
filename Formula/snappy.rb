@@ -90,5 +90,5 @@ index 672561e..2f97b73 100644
 -  string(REGEX REPLACE "-frtti" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 -  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-rtti")
  endif(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
-
+ 
  # BUILD_SHARED_LIBS is a standard CMake variable, but we declare it here to make
