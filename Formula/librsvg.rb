@@ -6,10 +6,11 @@ class Librsvg < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 arm64_big_sur: "0c2d918158902235211286d53d209664e880fa02be098c470c74e897c67e9fbb"
-    sha256 big_sur:       "eaf3a39901f9c2a7b6d69c25463bfdc4582dd84ace6c693a1bebaf7b21b8a199"
-    sha256 catalina:      "61fe7da68c416ada1fe19fb74d713564c2dbf930757551b3f9e0d444c13026a8"
-    sha256 mojave:        "6f135adfdd0bb99ddcc6f93f895d1963ddc54104df33cebfbe9bf448a363e988"
+    sha256                               arm64_big_sur: "0c2d918158902235211286d53d209664e880fa02be098c470c74e897c67e9fbb"
+    sha256                               big_sur:       "eaf3a39901f9c2a7b6d69c25463bfdc4582dd84ace6c693a1bebaf7b21b8a199"
+    sha256                               catalina:      "61fe7da68c416ada1fe19fb74d713564c2dbf930757551b3f9e0d444c13026a8"
+    sha256                               mojave:        "6f135adfdd0bb99ddcc6f93f895d1963ddc54104df33cebfbe9bf448a363e988"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8cb2f55d30924ab721b1ab1d06a71838559ad65f21b3dd7a37efac4ecdad5157"
   end
 
   depends_on "gobject-introspection" => :build
