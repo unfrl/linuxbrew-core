@@ -52,7 +52,7 @@ index 9c029af..8d3ec20 100644
 +++ b/src/vncdisplaykeymap.c
 @@ -69,6 +69,8 @@
  #endif
-
+ 
  #ifdef GDK_WINDOWING_QUARTZ
 +#include <gdk/gdkquartz.h>
 +
