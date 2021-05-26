@@ -108,12 +108,8 @@ class Tepl < Formula
       -lgio-2.0
       -lglib-2.0
       -lgobject-2.0
-      <<<<<<< HEAD
-      -ltepl-5
-      -l#{gtksourceviewlib}
-      =======
       -ltepl-6
-      >>>>>>> fb1648e0b96
+      -l#{gtksourceviewlib}
       -lgtk-3
       -lpango-1.0
       -lpangocairo-1.0
