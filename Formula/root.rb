@@ -38,13 +38,6 @@ class Root < Formula
   depends_on "xz" # for LZMA
   depends_on "zstd"
 
-  unless OS.mac?
-    depends_on "libx11"
-    depends_on "libxext"
-    depends_on "libxft"
-    depends_on "libxpm"
-  end
-
   uses_from_macos "libxml2"
 
   conflicts_with "glew", because: "root ships its own copy of glew"
@@ -70,6 +63,7 @@ class Root < Formula
               "https://lcgpackages"
 
     args = std_cmake_args + %W[
+      -DCLING_CXX_PATH=clang++
       -DCMAKE_INSTALL_ELISPDIR=#{elisp}
       -DPYTHON_EXECUTABLE=#{Formula["python@3.9"].opt_bin}/python3
       -Dbuiltin_cfitsio=OFF
@@ -93,8 +87,6 @@ class Root < Formula
       -Dxrootd=ON
       -GNinja
     ]
-
-    args << "-DCLING_CXX_PATH=clang++" if OS.mac?
 
     cxx_version = (MacOS.version < :mojave) ? 14 : 17
     args << "-DCMAKE_CXX_STANDARD=#{cxx_version}"
@@ -144,7 +136,6 @@ class Root < Formula
     EOS
 
     # Test ROOT command line mode
-    ENV.prepend_path "LD_LIBRARY_PATH", lib/"root" unless OS.mac?
     system "#{bin}/root", "-b", "-l", "-q", "-e", "gSystem->LoadAllLibraries(); 0"
 
     # Test ROOT executable
