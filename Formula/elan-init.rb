@@ -1,15 +1,15 @@
 class ElanInit < Formula
   desc "Lean Theorem Prover installer and version manager"
   homepage "https://github.com/leanprover/elan"
-  url "https://github.com/leanprover/elan/archive/v1.0.3.tar.gz"
-  sha256 "fb3ddd8915a0694ead0f3a51fdf8b0a5540f983f44eee0e757339244c522b8ee"
+  url "https://github.com/leanprover/elan/archive/v1.0.4.tar.gz"
+  sha256 "31014418604d0297293ce7b8c3d1a7ca7bc000bbb9780ec3afe3c2506569f659"
   license "Apache-2.0"
   head "https://github.com/leanprover/elan.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:  "5186f119f7d51aaba350572cf201667337bba9acaaace66ceb93dcbea64127bc"
-    sha256 cellar: :any_skip_relocation, catalina: "000a57fb44eb1837edea14451ca57cb42563ae976226c36cb0cb4202c7f7aa68"
-    sha256 cellar: :any_skip_relocation, mojave:   "2801b216d9b44a1d0df88dd576f01bc27bdc69812c255a824107f8b990b28bd3"
+    sha256 cellar: :any_skip_relocation, big_sur:  "5a6c9b1787f9b44be7ca3e04279b627329afe53bfba413babda5eea20e2cb7ba"
+    sha256 cellar: :any_skip_relocation, catalina: "d650bf34a478c04054003ca28bd84860e0d0bd4e714ce27d9a12aada47fc96b3"
+    sha256 cellar: :any_skip_relocation, mojave:   "af21e8cbe617d588c37333fa7d5827315e5fdfceefdddbae226d908fcd2c3659"
   end
 
   depends_on "rust" => :build

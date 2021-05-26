@@ -3,16 +3,15 @@ require "language/node"
 class ApolloCli < Formula
   desc "Command-line tool for Apollo GraphQL"
   homepage "https://apollographql.com"
-  url "https://registry.npmjs.org/apollo/-/apollo-2.33.2.tgz"
-  sha256 "881585bc264dfc4788e01764a2f43f6a13d1e8c0471d5dcb1ea4a24c3d697041"
+  url "https://registry.npmjs.org/apollo/-/apollo-2.33.3.tgz"
+  sha256 "c5f5c7ac4cb4d7ed327eda8c6d7a2e8ab24782daaaec4487cb493dd588964781"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "fb23e8bbac3122c952aa214af6b560481952eaf3f6658069ee6c324966a47d92"
-    sha256 cellar: :any_skip_relocation, big_sur:       "664b304b04ddcd9413d42515144e75f1361ecf8c916f96835cc17665a3fa0248"
-    sha256 cellar: :any_skip_relocation, catalina:      "664b304b04ddcd9413d42515144e75f1361ecf8c916f96835cc17665a3fa0248"
-    sha256 cellar: :any_skip_relocation, mojave:        "664b304b04ddcd9413d42515144e75f1361ecf8c916f96835cc17665a3fa0248"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c49a15348831e0faa7514fe900d81ac55ed7c97df78a777f62fbe4a8aac2edfb"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "743cbf5293cb54d0b4f5703aed2c09b1e35152c9dffdad3b58d818ce54e17186"
+    sha256 cellar: :any_skip_relocation, big_sur:       "5ec25f782d02b83e7961f1dd2cee0f23c2f0c3d49bfc4c52c7a558d3cfb43cda"
+    sha256 cellar: :any_skip_relocation, catalina:      "5ec25f782d02b83e7961f1dd2cee0f23c2f0c3d49bfc4c52c7a558d3cfb43cda"
+    sha256 cellar: :any_skip_relocation, mojave:        "5ec25f782d02b83e7961f1dd2cee0f23c2f0c3d49bfc4c52c7a558d3cfb43cda"
   end
 
   depends_on "node"
