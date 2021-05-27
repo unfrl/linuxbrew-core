@@ -13,6 +13,7 @@ class TrashCli < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "1ba0199a5aaf3908ab0625e81402905b8c4999acfe92ebe6e14e64be7efa9ef5"
     sha256 cellar: :any_skip_relocation, catalina:      "fd0bf46e0c3b4f70be6815cdf6bba7cf461ce87b4188aeba835546117433f799"
     sha256 cellar: :any_skip_relocation, mojave:        "e1edc607de541df15941559c343da659efc80f70610421895a8620ee38d42bbe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3deee2c3997dc81a02de84c1ed492834afb47e5f12ef6defa2773f4b7f9e4ebf"
   end
 
   depends_on "python@3.9"
