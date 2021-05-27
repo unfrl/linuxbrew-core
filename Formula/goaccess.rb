@@ -16,6 +16,7 @@ class Goaccess < Formula
     sha256 big_sur:       "4fe5025c31c92f254c124a5a57f64728e726d664c1ee9d2360b6f8f1dbb28923"
     sha256 catalina:      "8843c8f41d07cfd6600d796aa4d03ae7d40e9bb99ad1bcbcd9bbcc542ce0a37a"
     sha256 mojave:        "52fc0724bfd9ea7b500f49ae4cdfab72c17f8946df1aacb89b79a27e129a7cfa"
+    sha256 x86_64_linux:  "5fa8cec8ee23c7a187999191ef45837b4f3283a1d801efd80e58f4eaafd670c7"
   end
 
   depends_on "autoconf" => :build
