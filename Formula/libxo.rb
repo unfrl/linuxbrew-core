@@ -10,6 +10,7 @@ class Libxo < Formula
     sha256 big_sur:       "4c3d730c8da43b89a8e7b322d0093f6a8c1d557800278620dd086d022e0ddeb5"
     sha256 catalina:      "f238413de8067d4a86ddd0e784d033f42effd96f041ac48f97bd1d1e40c55737"
     sha256 mojave:        "9c8f3a24ae3b83cb1d2b9db171fa83e0d9a77415bed8f4930f7d31a7a506e25d"
+    sha256 x86_64_linux:  "93e5d88b3eeef373c863758bff371b224aa9e54efa5dd48d64a99924727d01a9"
   end
 
   depends_on "libtool" => :build
