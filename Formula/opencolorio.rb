@@ -7,11 +7,11 @@ class Opencolorio < Formula
   head "https://github.com/imageworks/OpenColorIO.git"
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "694c70fd1552c49f502983949fd0504d419465dc0883c884264fa747eaf2cba6"
-    sha256 cellar: :any,                 big_sur:       "7faaf59f2708f30b80537ec1106b513b8538191f3ef376bf0f7c75cba6d0f118"
-    sha256 cellar: :any,                 catalina:      "f5717b569e63c1f3de8e5064b4a3482bf78444ae080ae56a7f7f5e70b4848783"
-    sha256 cellar: :any,                 mojave:        "6813acb5bb190308480a66a7a14787d22e85841ab86e144ce9a65b005facbe65"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8386392f5fd7517f547444128fb1a1deb1764e0b11ffa69296e71a22215b417c"
+    rebuild 1
+    sha256 cellar: :any, arm64_big_sur: "ff7921b54ca7e0589fff3dbf2e8f2b071b0f503f1657f4963d80749a8c5aedf0"
+    sha256 cellar: :any, big_sur:       "94fc18f52a783c11afd946c72b100bf16d570767d5934b245c03cabb3f9de715"
+    sha256 cellar: :any, catalina:      "8dcc8e3561f9e564239366ed88a2488b36af37c022e8b98f94e2d6cb1e718bde"
+    sha256 cellar: :any, mojave:        "c0fa4803986b6960a3a3578f6e453428864eff5fb7ed5f51fd6c505258cc0ca5"
   end
 
   depends_on "cmake" => :build
@@ -22,7 +22,7 @@ class Opencolorio < Formula
   def install
     args = std_cmake_args + %W[
       -DCMAKE_VERBOSE_MAKEFILE=OFF
-      -DCMAKE_INSTALL_RPATH=#{lib}
+      -DCMAKE_INSTALL_RPATH=#{rpath}
       -DPYTHON=python3
       -DPYTHON_EXECUTABLE=#{Formula["python@3.9"].opt_bin}/"python3"
     ]

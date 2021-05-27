@@ -7,11 +7,10 @@ class Bnfc < Formula
   head "https://github.com/BNFC/bnfc.git"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, big_sur:      "196fbc36c44e6627bf8c39d852f5f75defbff9c344cfa65f04a89e04c72b6b4a"
-    sha256 cellar: :any_skip_relocation, catalina:     "62c0fb84159e25aab115a74ef6b0b24d728528ce7a7ad7ebc92601d25f3ae96f"
-    sha256 cellar: :any_skip_relocation, mojave:       "b5cc8d548edc6e6a48a3f150f6c20937f9466d6bfec4b64e04a1f56a2c418979"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "01f66aff80a6551d36eb2800e8247e98e200c888ab1175910fb1f4c6069c8d93"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, big_sur:  "0f3c56a6f814bc0625000b7341ffdb6e6b9fbc60f9e9bef4819214e836b9abd8"
+    sha256 cellar: :any_skip_relocation, catalina: "33421a59619bb8911362221d25dc6b4b857be514a63795df2ea0bd297eb5bc8a"
+    sha256 cellar: :any_skip_relocation, mojave:   "dced427e3ffcc7bdffe354025d2e19d45f31c87e8e687d243cd1505108dadc24"
   end
 
   depends_on "cabal-install" => [:build, :test]
@@ -34,7 +33,7 @@ class Bnfc < Formula
       system "make", "text", "man", "SPHINXBUILD=#{Formula["sphinx-doc"].bin/"sphinx-build"}"
       cd "_build" do
         doc.install "text" => "manual"
-        man1.install "man/1/bnfc.1" => "bnfc.1"
+        man1.install "man/bnfc.1" => "bnfc.1"
       end
     end
     doc.install %w[README.md examples]
