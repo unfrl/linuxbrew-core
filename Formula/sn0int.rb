@@ -7,10 +7,11 @@ class Sn0int < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any, arm64_big_sur: "0cae34bb3550466cc2706bc0fcb636ed964217252a35e77f18bddfd46de8ff47"
-    sha256 cellar: :any, big_sur:       "919fc70b0606663155a873ebbb02e97a782d6fc638116fb315c39a66c53c93ea"
-    sha256 cellar: :any, catalina:      "a217f108e992a91d99438f37c06c6859f957e50fba065b91e0c09e0100107e5f"
-    sha256 cellar: :any, mojave:        "380a8a3e38ed826704ca6485d622695ed6a3b270321c7854233804f05af3656e"
+    sha256 cellar: :any,                 arm64_big_sur: "0cae34bb3550466cc2706bc0fcb636ed964217252a35e77f18bddfd46de8ff47"
+    sha256 cellar: :any,                 big_sur:       "919fc70b0606663155a873ebbb02e97a782d6fc638116fb315c39a66c53c93ea"
+    sha256 cellar: :any,                 catalina:      "a217f108e992a91d99438f37c06c6859f957e50fba065b91e0c09e0100107e5f"
+    sha256 cellar: :any,                 mojave:        "380a8a3e38ed826704ca6485d622695ed6a3b270321c7854233804f05af3656e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3677986187de0e3dc28abc701c081884b223ba9eda2ef57c9c501f083f7cf8e"
   end
 
   depends_on "pkg-config" => :build
