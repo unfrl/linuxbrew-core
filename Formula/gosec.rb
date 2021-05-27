@@ -11,6 +11,7 @@ class Gosec < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "71c256c4cd679293b9b50c72f0180d2abc1fbec3cf2c00c16603c931166f1603"
     sha256 cellar: :any_skip_relocation, catalina:      "c51826135ed9073b83828d5bb3fc656db818da9a36b09e0ef8f3d9132b54decb"
     sha256 cellar: :any_skip_relocation, mojave:        "3b5a5c6b0c5fc821206567bd669129a047eea56aa9ad742695cb87ee4e173027"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25895241b90cb219ae77aeedb48bcc12227e55eafbded23d86e02bd4665e67db"
   end
 
   depends_on "go"
