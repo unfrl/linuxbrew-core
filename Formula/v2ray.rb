@@ -1,8 +1,8 @@
 class V2ray < Formula
   desc "Platform for building proxies to bypass network restrictions"
   homepage "https://v2fly.org/"
-  url "https://github.com/v2fly/v2ray-core/archive/v4.38.3.tar.gz"
-  sha256 "b06d2bf63fd08d8a92d51824f69e41345bd90d747d444ca37770b2017a2a5a00"
+  url "https://github.com/v2fly/v2ray-core/archive/v4.39.2.tar.gz"
+  sha256 "bcb35c0fd3fed604762b4c2a0950718b0118d7f4cb0ca9987d716a6a6e471b2b"
   license all_of: ["MIT", "CC-BY-SA-4.0"]
   head "https://github.com/v2fly/v2ray-core.git"
 
@@ -12,22 +12,22 @@ class V2ray < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "6b62a3435c83d8b49147192ce9b6627b4a27705aed17e78b6e0601882ce17621"
-    sha256 cellar: :any_skip_relocation, big_sur:       "22291c2a1266367077d35e129e753279faa023b862fe249fa7e69b4ea948d737"
-    sha256 cellar: :any_skip_relocation, catalina:      "cbbe8abf3cbf92b1860da4a48577676a744bcceb44e66d2cc2307c7414244385"
-    sha256 cellar: :any_skip_relocation, mojave:        "1d26ccd44c19d2eeff908e9c69a2558d4ac682e21506a05ccc3d55bb3ff1295e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "e8ee950a404d8393b41fc960d643c61348ca79d23c3fb8be1002e8e8a28ccb56"
+    sha256 cellar: :any_skip_relocation, big_sur:       "ba6faaabd3976e288f342725059c1652cbeea26a4d8cb92897aad3b85a199a7d"
+    sha256 cellar: :any_skip_relocation, catalina:      "2fe3c93707cd1abf15fd0619bbca35c334dff3d03fc607fd60dfd226abfea4a4"
+    sha256 cellar: :any_skip_relocation, mojave:        "5de7ff4c46993114f85e987807d7cc106ddee0bbc666359e56def4d572c3a556"
   end
 
   depends_on "go" => :build
 
   resource "geoip" do
-    url "https://github.com/v2fly/geoip/releases/download/202104300531/geoip.dat"
-    sha256 "0190fcdc8de045be8454270f514cf28ebcb8a5844c3d4aee7784d70bee9d3a6b"
+    url "https://github.com/v2fly/geoip/releases/download/202105270041/geoip.dat"
+    sha256 "a5f1cec9c252197a07a4b7b7e89da08dec65692715beb5ecad1106c2dea3c73c"
   end
 
   resource "geosite" do
-    url "https://github.com/v2fly/domain-list-community/releases/download/20210430100800/dlc.dat"
-    sha256 "8bd12f2b349aea03c63c3c75aa8fdc8448ea0addf1ffbcee9b908e1b6308e172"
+    url "https://github.com/v2fly/domain-list-community/releases/download/20210526032424/dlc.dat"
+    sha256 "fd83fe6cd88aaf2391e506fc6aba2d75067df729555341c747c00290a25d323d"
   end
 
   def install
