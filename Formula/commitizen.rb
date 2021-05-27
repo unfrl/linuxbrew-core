@@ -3,16 +3,16 @@ class Commitizen < Formula
 
   desc "Defines a standard way of committing rules and communicating it"
   homepage "https://commitizen-tools.github.io/commitizen/"
-  url "https://files.pythonhosted.org/packages/0a/64/e2e378c3ce54ac0599d21b82e168a1c0307d9a0d7dc5cb78b1eb847d8dd2/commitizen-2.17.6.tar.gz"
-  sha256 "38e4e309bb502c1d4d7c944ee604dbed631d814cabc87b1edd6a3cb27f41456a"
+  url "https://files.pythonhosted.org/packages/72/76/4ff4de0a219993c2df319fec8859d5b5818ea4855b5642e0ad357d255d56/commitizen-2.17.7.tar.gz"
+  sha256 "1be15df807e7f0de0663bf51ee8dae7f1ad180c5fa379f7390ae330a1dff5fcc"
   license "MIT"
   head "https://github.com/commitizen-tools/commitizen.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "a205beb4dc2199e07b7aa35875a1f7fdd2ba16e369193d711da7e0ede00424bc"
-    sha256 cellar: :any_skip_relocation, big_sur:       "19ad2e87fdbecd8b57d1ee37f68501ef891404684852231ad3b94b051a8a482c"
-    sha256 cellar: :any_skip_relocation, catalina:      "070ab14721a8cb24f9bd770e1762b49639866d207b4e8f411826ed9bcf51f796"
-    sha256 cellar: :any_skip_relocation, mojave:        "86ff82696fd1d17ab2397e70c0339f85ce2ad4ebe08f8283672186a4bf407647"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "0b75eabf80696ebcd545bf47a5e9a1699157229d0bae4e4f25c718b8490c296f"
+    sha256 cellar: :any_skip_relocation, big_sur:       "e116a6b8c14f1ed451896a2c111918387cfd001b9819d9cb5d7ae0946d5938d7"
+    sha256 cellar: :any_skip_relocation, catalina:      "8ab8ee5905cfecf2843ed3d5e8520297f75f2144cae68b1cff82a7ffaf773fab"
+    sha256 cellar: :any_skip_relocation, mojave:        "c7c0c12f95e8e2cfaf5b3b8bf0b0d6ba24a55ac1ec82d7da9f19cce1dc41b8db"
   end
 
   depends_on "python@3.9"
@@ -38,8 +38,8 @@ class Commitizen < Formula
   end
 
   resource "MarkupSafe" do
-    url "https://files.pythonhosted.org/packages/b9/2e/64db92e53b86efccfaea71321f597fa2e1b2bd3853d8ce658568f7a13094/MarkupSafe-1.1.1.tar.gz"
-    sha256 "29872e92839765e546828bb7754a68c418d927cd064fd4708fab9fe9c8bb116b"
+    url "https://files.pythonhosted.org/packages/bf/10/ff66fea6d1788c458663a84d88787bae15d45daa16f6b3ef33322a51fc7e/MarkupSafe-2.0.1.tar.gz"
+    sha256 "594c67807fb16238b30c44bdf74f36c02cdf22d1c8cda91ef8a0ed8dabf5620a"
   end
 
   resource "packaging" do
@@ -73,8 +73,8 @@ class Commitizen < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/64/e0/6c8c96024d118cb029a97752e9a6d70bd06e4fd4c8b00fd9446ad6178f1d/tomlkit-0.7.0.tar.gz"
-    sha256 "ac57f29693fab3e309ea789252fcce3061e19110085aa31af5446ca749325618"
+    url "https://files.pythonhosted.org/packages/65/ed/7b7216101bc48627b630693b03392f33827901b81d4e1360a76515e3abc4/tomlkit-0.7.2.tar.gz"
+    sha256 "d7a454f319a7e9bd2e249f239168729327e4dd2d27b17dc68be264ad1ce36754"
   end
 
   resource "wcwidth" do
