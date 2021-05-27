@@ -6,6 +6,10 @@ class GitVendor < Formula
   license "MIT"
   head "https://github.com/brettlangdon/git-vendor.git"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0ad163b4e752517720cf3ed6c8de5c67c1fa88764ebfeb793d81bf22d29b3cc1"
+  end
+
   def install
     system "make", "PREFIX=#{prefix}", "install"
   end
