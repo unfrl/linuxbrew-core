@@ -18,6 +18,7 @@ class Nginx < Formula
     sha256 big_sur:       "d4d16dc1e0c696d0e30a3a636c39528276c5a967a09a0e4be29a813cc01aa3f5"
     sha256 catalina:      "03f0a7380a44620e47b410dce2da774d5730a8b12cff3b92e1cd064fc3c623bf"
     sha256 mojave:        "07b8bf7d7e12b3eb92412755690c3c7b58e27f76af1538d13d78b7747a87b584"
+    sha256 x86_64_linux:  "90f53860bfea5cdf32061b521f1b29f5cf042d44e4033457fdc7b002bf5ac5cd"
   end
 
   depends_on "openssl@1.1"
