@@ -6,9 +6,10 @@ class Bowtie2 < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:  "540b354db85c68e4be5276c7a68622b260cf53da5366c11337eeb8e690432b1f"
-    sha256 cellar: :any_skip_relocation, catalina: "8f4ef8f1c8ed01f4fbd930e5ce6ed9363622d9511d33d7d899ec4d4ba194c27c"
-    sha256 cellar: :any_skip_relocation, mojave:   "9341eaa91888215e685123847a3e87f91a2d140612dcb8d1a3850c01c335fc2d"
+    sha256 cellar: :any_skip_relocation, big_sur:      "540b354db85c68e4be5276c7a68622b260cf53da5366c11337eeb8e690432b1f"
+    sha256 cellar: :any_skip_relocation, catalina:     "8f4ef8f1c8ed01f4fbd930e5ce6ed9363622d9511d33d7d899ec4d4ba194c27c"
+    sha256 cellar: :any_skip_relocation, mojave:       "9341eaa91888215e685123847a3e87f91a2d140612dcb8d1a3850c01c335fc2d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "057da6e2d1572b307e44d8d174885d9afc5fd38769327defb3cb766f4ec68ea8"
   end
 
   depends_on "tbb"
