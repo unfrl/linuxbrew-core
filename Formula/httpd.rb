@@ -1,14 +1,16 @@
 class Httpd < Formula
   desc "Apache HTTP server"
   homepage "https://httpd.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=httpd/httpd-2.4.47.tar.bz2"
-  mirror "https://archive.apache.org/dist/httpd/httpd-2.4.47.tar.bz2"
-  sha256 "23d006dbc8e578116a1138fa457eea824048458e89c84087219f0372880c03ca"
+  url "https://www.apache.org/dyn/closer.lua?path=httpd/httpd-2.4.48.tar.bz2"
+  mirror "https://archive.apache.org/dist/httpd/httpd-2.4.48.tar.bz2"
+  sha256 "1bc826e7b2e88108c7e4bf43c026636f77a41d849cfb667aa7b5c0b86dbf966c"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 x86_64_linux: "d201e2a8a1128079f492fd366cda42edc31866c2a25f02b801e514fe6dc3fdcf"
+    sha256 arm64_big_sur: "8dedff70f78bdd4d43b4c700e592c46dd864098b22d0c59cd2c57ad61b98deda"
+    sha256 big_sur:       "06ed80da371f4d6f76b63792c1c611b18305350d48c21ef0772f41b0a069d6df"
+    sha256 catalina:      "cc4bbda7430f0dd430962000f442f9db50cc3faa7fb08acd479adf53ab0fe7d0"
+    sha256 mojave:        "3861ab8553999ab6c77b1604e03b2923480d1c4cae0b34daaed2ce7f27ee1ddc"
   end
 
   depends_on "apr"

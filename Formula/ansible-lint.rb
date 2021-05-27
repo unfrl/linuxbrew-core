@@ -3,15 +3,15 @@ class AnsibleLint < Formula
 
   desc "Checks ansible playbooks for practices and behaviour"
   homepage "https://github.com/ansible/ansible-lint/"
-  url "https://files.pythonhosted.org/packages/9b/fb/21e8e4d099f64f91cea6ba8728278308cd65e924e3aef5194295dd53066a/ansible-lint-5.0.10.tar.gz"
-  sha256 "e7dab22d7826ac623c7c2566e17ee5420633afc844a3a0c0db3adaaa72bc6a82"
+  url "https://files.pythonhosted.org/packages/97/24/11394bf9ba617dd64f6b4042a4e5d49a219e52ec1dc7eb3f891da2a35a0f/ansible-lint-5.0.11.tar.gz"
+  sha256 "c41f398c5a3faaab0481ec988ed42221d9f2de48da1acb06f261546349a870c0"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "0439a9a54cbb3c25ea19273c09925293f54c308544cb6e595458c0506ec1ebd6"
-    sha256 cellar: :any, big_sur:       "1dc2f58b5475a2cceb98bc35efed1e91a472b1f2032e2c0d59f1a0e35410f8d2"
-    sha256 cellar: :any, catalina:      "704796fd30db04a4a4d3dd1bd6cb0b80eb0b1b4b2775b104170d141c912f26d4"
-    sha256 cellar: :any, mojave:        "2c6ead13b5133888c9fb4722666fe18eb021fe5903a0d057f309b354c49881b1"
+    sha256 cellar: :any, arm64_big_sur: "eb2f3f12f690a2d2802d1630ccdfe91d2668bf2314dab94f391446379b944e23"
+    sha256 cellar: :any, big_sur:       "a99957276ff6a81d7af43a762195d6539754c0db8e22fd0d7eb319659d098e50"
+    sha256 cellar: :any, catalina:      "531c1e77c4f68ceb1f123d23535100241fdc3021c85f51ae61ac280c804eefea"
+    sha256 cellar: :any, mojave:        "a019409cfeeefab8830a3d64027e9f9add8f96b0d465a9d5443430fc674b1efe"
   end
 
   depends_on "pkg-config" => :build
