@@ -3,16 +3,15 @@ class Diffoscope < Formula
 
   desc "In-depth comparison of files, archives, and directories"
   homepage "https://diffoscope.org"
-  url "https://files.pythonhosted.org/packages/aa/c2/72af9daa023c5e59eba19901aff28f72a01573a49ff467a4207e7878767a/diffoscope-175.tar.gz"
-  sha256 "b87481752815140e35088647ccdea13297e41a2d72772e842590360b662f7533"
+  url "https://files.pythonhosted.org/packages/e6/17/71c397a6a1b3c1e97b6b72b4935583fc6863bf2dd5467ff482e2f43346fe/diffoscope-176.tar.gz"
+  sha256 "7d62c5837cb24bb0b7290a66d6c79ef27799cc22d2f8de4badebe77570df562e"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "ac0075bb0cafdd9f8c56826f4a2c89d121ca7736dc04e7eec0149e61485f2149"
-    sha256 cellar: :any_skip_relocation, big_sur:       "865d95809b9e21e8af9648730bc157db5c15517c8ba18fcd194c0afc071a89be"
-    sha256 cellar: :any_skip_relocation, catalina:      "710a47a9208fd71ca632dac2c9c59e66597aa7cb2fd59ae7980180cfac5913e7"
-    sha256 cellar: :any_skip_relocation, mojave:        "ea155379881388ab64a02f2b368f8bad0fccb24dbf9a8f0e2547204ec296b65e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf42f0a2d47741ac12bf289f58adbb1d9166cdb34dea7c491f3a5427a08ce39e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "153105ef926dd33e5387ecfc4a22c29ff27511ddcfed096cefec6f935f9be92a"
+    sha256 cellar: :any_skip_relocation, big_sur:       "42936da97f489fc698644c792b14b134e8703a932ad3ca637bbf374a88ed1c57"
+    sha256 cellar: :any_skip_relocation, catalina:      "f7f4a7355f9afc5bdf822ec70c7c3082b3cf5f726427ff1ddab66beaed8c7ef0"
+    sha256 cellar: :any_skip_relocation, mojave:        "4ab18751140fe1082d4dad39ab57959598ebe2e6e567d996009508271ad81f30"
   end
 
   depends_on "libarchive"
@@ -26,8 +25,8 @@ class Diffoscope < Formula
   end
 
   resource "libarchive-c" do
-    url "https://files.pythonhosted.org/packages/63/fe/9e6c78db381934e28c7ec3d30d4f209fe24442d17f1bd8c56d13ae185cf6/libarchive-c-2.9.tar.gz"
-    sha256 "9919344cec203f5db6596a29b5bc26b07ba9662925a05e24980b84709232ef60"
+    url "https://files.pythonhosted.org/packages/af/3f/2f1147f1ef538f282340daa6109093d46c7287699d3a10c7f359b916dc7f/libarchive-c-3.0.tar.gz"
+    sha256 "6f12fa9cf0e44579e5f45bbf11aa455a930fbfdb13ea0ce3c3dfe7b9b9a452ba"
   end
 
   resource "progressbar" do
