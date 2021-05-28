@@ -3,17 +3,16 @@ class Ocrmypdf < Formula
 
   desc "Adds an OCR text layer to scanned PDF files"
   homepage "https://github.com/jbarlow83/OCRmyPDF"
-  url "https://files.pythonhosted.org/packages/c2/4c/b0bcd99e770f051439a99ea8d709364272cdaf0e5c0e23f0664930662e65/ocrmypdf-12.0.2.tar.gz"
-  sha256 "379399f02540afcc20fc483928344055bb41f5be5332c738b4b3d983c50ac85a"
+  url "https://files.pythonhosted.org/packages/90/71/f416f51343b599838c326369397bcd473a5275b251fb04a91882f9796258/ocrmypdf-12.0.3.tar.gz"
+  sha256 "60079df8a0407e30b66b2828ffbf802bb8342d1198db41c27e4e2ef63efb06c3"
   license "MPL-2.0"
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "574f0f4f36630adf192e531853ed6407ac9fcaf994d7090e5fa4e708926674e1"
-    sha256 cellar: :any,                 big_sur:       "4834ec34a2d1d956e1ac86716bf94321ddfdc8107ed32de2d8873617646860f8"
-    sha256 cellar: :any,                 catalina:      "8b0cbe2c816bb33a73f11b8eed2be739e9348961a70741b0ebebb94f06721698"
-    sha256 cellar: :any,                 mojave:        "815214c504a8a1ab1f6108f7dafaa25f47b23625f04a784bcc614c384afe478f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d226b9fb0263102ee5af44f38316ca3df02a5056574ea1f427af9fdb06472bbe"
+    sha256 cellar: :any, arm64_big_sur: "4ba5c678fc289f100b64734900147fe90f22f309204e0c8d61d64c846e7d6082"
+    sha256 cellar: :any, big_sur:       "96740eb97730c99bca6051f7da0a87053b68209cf1db5ddc7c7cf35f2e265e16"
+    sha256 cellar: :any, catalina:      "0fce60c470eaf54255c2a760b12384862170561a3f6550c34079ef41c8c53dc7"
+    sha256 cellar: :any, mojave:        "dc0fab7815b7dcac0285979f813ba6b9549537a9dfb9c0b67aec7dda3409c067"
   end
 
   depends_on "pkg-config" => :build
@@ -115,8 +114,8 @@ class Ocrmypdf < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/35/35/bd5af89c97ad5177ed234d9e79d01a984f8b5226b8ffc8b5d3c4fc8e157d/tqdm-4.60.0.tar.gz"
-    sha256 "ebdebdb95e3477ceea267decfc0784859aa3df3e27e22d23b83e9b272bf157ae"
+    url "https://files.pythonhosted.org/packages/06/ca/721a7abe555012efaa4d6ee18a0048a4f27d84c6220bb6aa6eba049117d6/tqdm-4.61.0.tar.gz"
+    sha256 "cd5791b5d7c3f2f1819efc81d36eb719a38e0906a7380365c556779f585ea042"
   end
 
   def install
