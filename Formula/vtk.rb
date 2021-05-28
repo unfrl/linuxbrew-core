@@ -8,10 +8,11 @@ class Vtk < Formula
   head "https://github.com/Kitware/VTK.git"
 
   bottle do
-    sha256 arm64_big_sur: "825c6b028057f775e3d8d413beadf0602ca165c67571b4d94fef4a653cb648a3"
-    sha256 big_sur:       "c209c5736a3dfad2543a13c7d96519504bf054126199f5e35cb291a6b451e1fb"
-    sha256 catalina:      "078997976ae896300e412516abc10951b2544d8741d8303ba445617b4a8712c3"
-    sha256 mojave:        "05b67385f9bc735ad59c311c1007815db1a7cb443ad82bf7e94a421f0b40c18d"
+    rebuild 1
+    sha256 arm64_big_sur: "8ab6a9fcb8a0f194bf70226b494d7ced7500f0bb767af969f33f2c29441f6e7c"
+    sha256 big_sur:       "fa479befb5c73d21e6a5262f3fe8043adee7343548c1e8442df1211bb2ca745e"
+    sha256 catalina:      "9fb9bd8a35735a863e715f9010767d98a97d679b64e3397f549bc474a96cbfb9"
+    sha256 mojave:        "793df59b482ff9a4ec0026d94c35f6305212f76d9031fa369e04edb4264b60a5"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -50,13 +51,13 @@ class Vtk < Formula
 
   def install
     # Do not record compiler path because it references the shim directory
-    inreplace "Common/Core/vtkConfigure.h.in", "@CMAKE_CXX_COMPILER@", "clang++"
+    inreplace "Common/Core/vtkConfigure.h.in", "@CMAKE_CXX_COMPILER@", ENV.cxx
 
     args = std_cmake_args + %W[
       -DBUILD_SHARED_LIBS:BOOL=ON
       -DBUILD_TESTING:BOOL=OFF
-      -DCMAKE_INSTALL_NAME_DIR:STRING=#{lib}
-      -DCMAKE_INSTALL_RPATH:STRING=#{lib}
+      -DCMAKE_INSTALL_NAME_DIR:STRING=#{opt_lib}
+      -DCMAKE_INSTALL_RPATH:STRING=#{rpath}
       -DVTK_WRAP_PYTHON:BOOL=ON
       -DVTK_PYTHON_VERSION:STRING=3
       -DVTK_LEGACY_REMOVE:BOOL=ON

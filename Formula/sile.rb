@@ -1,17 +1,16 @@
 class Sile < Formula
   desc "Modern typesetting system inspired by TeX"
-  homepage "https://www.sile-typesetter.org"
+  homepage "https://sile-typesetter.org"
   url "https://github.com/sile-typesetter/sile/releases/download/v0.10.15/sile-0.10.15.tar.xz"
   sha256 "49b55730effd473c64a8955a903e48f61c51dd7bb862e6d5481193218d1e3c5c"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
-    sha256                               arm64_big_sur: "72d3d5b07f05e63fa46905ac01d0ca3b43dd7243a7394cf6d049687f496dfd72"
-    sha256                               big_sur:       "f60d2f9eb9682c05e2c28e2060cd03a3ab3c7340a64e27d5734179788efce142"
-    sha256                               catalina:      "173bedc8deef0b383b42c7f7115cb9ca673d8a614b5accdedbde7b1b469be2cd"
-    sha256                               mojave:        "53fbb1d6190196ad6b7d4a4970b3d1872dc104ac53a9661f1071cd35bb751e53"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b3ef92d5c82c2e30efaf814d042f776a78a28f442e65677bd4adf1c3efcaf23e"
+    sha256 cellar: :any, arm64_big_sur: "0d5b8c5f5ef896aa9a86754a4b32b06a57d3093ee6d4d0753759e489e71ee0a5"
+    sha256 cellar: :any, big_sur:       "a0842ed2090150467336ca6b92e7980a082bbcdbd29d60f496796d561e64bccc"
+    sha256 cellar: :any, catalina:      "a2c779829ff7c3b266a138b625abf0edf1a57e32f1b3d8591d1ab4992f64dd7e"
+    sha256 cellar: :any, mojave:        "360263738c4e15900b1396dc54b1a632e512047e65b77cc128d76b63a9f0083f"
   end
 
   head do
@@ -96,6 +95,12 @@ class Sile < Formula
     version "3.0rc1-2"
   end
 
+  # depends on `luasocket`
+  resource "luasec" do
+    url "https://luarocks.org/manifests/brunoos/luasec-1.0.1-1.src.rock"
+    sha256 "0e91f9686ccda7d373d74518da85d22f678a1b0de35e38b4a444041eba53040d"
+  end
+
   resource "penlight" do
     url "https://luarocks.org/manifests/tieske/penlight-1.9.2-1.src.rock"
     sha256 "49e7778ba84a5a8ac67fc2a30357f0975fe11241d7cc86df05a5abb18071d5fb"
@@ -115,14 +120,6 @@ class Sile < Formula
   resource "vstruct" do
     url "https://luarocks.org/manifests/deepakjois/vstruct-2.1.1-1.src.rock"
     sha256 "fcfa781a72b9372c37ee20a5863f98e07112a88efea08c8b15631e911bc2b441"
-  end
-
-  # Install luasec last, as this breaks installing other resources for now
-  # https://github.com/luarocks/luarocks/issues/1302
-  # When this is resolved, move back between `luarepl` and `luasocket`
-  resource "luasec" do
-    url "https://luarocks.org/manifests/brunoos/luasec-1.0-1.src.rock"
-    sha256 "b7e18f475c64896fe4921d367adabae765914f7526a68487a5fa6831040e7138"
   end
 
   def install

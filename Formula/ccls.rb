@@ -20,7 +20,9 @@ class Ccls < Formula
   depends_on "llvm"
   depends_on macos: :high_sierra # C++ 17 is required
 
-  depends_on "gcc" unless OS.mac? # C++17 is required
+  on_linux do
+    depends_on "gcc"
+  end
 
   fails_with gcc: "5"
 

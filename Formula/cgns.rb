@@ -40,9 +40,7 @@ class Cgns < Formula
     end
 
     # Avoid references to Homebrew shims
-    os = OS.mac? ? "mac" : "linux"
-    cc = OS.mac? ? "clang" : "gcc-5"
-    inreplace include/"cgnsBuild.defs", HOMEBREW_LIBRARY/"Homebrew/shims/#{os}/super/#{cc}", "/usr/bin/#{cc}"
+    inreplace include/"cgnsBuild.defs", %r{#{HOMEBREW_SHIMS_PATH}/[^/]+/super/#{ENV.cc}}, ENV.cc
   end
 
   test do

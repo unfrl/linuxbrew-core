@@ -5,14 +5,14 @@ class Kubebuilder < Formula
       tag:      "v3.0.0",
       revision: "533874b302e9bf94cd7105831f8a543458752973"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/kubernetes-sigs/kubebuilder.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "55348fbd6436d4d042b99b4e7cb97f854c9152a70c4601a1dce2bf6991aef14f"
-    sha256 cellar: :any_skip_relocation, big_sur:       "b4da6ec95295019b60db8f1efb01420f135761e773922e5064b5fd062b3cc4e2"
-    sha256 cellar: :any_skip_relocation, catalina:      "f054ded054d4bd66b8c3fd02f52478794dfb71b4e2060598015c8788a1718bbc"
-    sha256 cellar: :any_skip_relocation, mojave:        "3cdd592baf0632d66c5795036c65c994790b9278f6b74d4222e492dbb1ae1bf9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b061c2d264af77f4a70e16be7cddd22f5c5afb8a51c8af216a96a10da390edb0"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "bd8dc4bea7eb83f1e76d5f43a268f9d90e89dc45afa89b48190af8d07e231e95"
+    sha256 cellar: :any_skip_relocation, big_sur:       "494c4b261186aaf111fbb90fc76b88fc95369d147641e3cbb48d49455c1be3cd"
+    sha256 cellar: :any_skip_relocation, catalina:      "bab86959de86527b03aea80b1cd88326ec682446270cadd3d545c07fb1e7b9d7"
+    sha256 cellar: :any_skip_relocation, mojave:        "e108bf609b0106fa290ed289a630d349c1f750ab412f6aca98213a8f83cb988a"
   end
 
   depends_on "git-lfs" => :build
@@ -29,6 +29,13 @@ class Kubebuilder < Formula
       -X main.buildDate=#{Time.now.iso8601}
     ]
     system "go", "build", *std_go_args(ldflags: ldflags.join(" ")), "./cmd"
+
+    output = Utils.safe_popen_read(bin/"kubebuilder", "completion", "bash")
+    (bash_completion/"kubebuilder").write output
+    output = Utils.safe_popen_read(bin/"kubebuilder", "completion", "zsh")
+    (zsh_completion/"_kubebuilder").write output
+    output = Utils.safe_popen_read(bin/"kubebuilder", "completion", "fish")
+    (fish_completion/"kubebuilder.fish").write output
   end
 
   test do
