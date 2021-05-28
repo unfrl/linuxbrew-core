@@ -13,6 +13,7 @@ class Kubebuilder < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "494c4b261186aaf111fbb90fc76b88fc95369d147641e3cbb48d49455c1be3cd"
     sha256 cellar: :any_skip_relocation, catalina:      "bab86959de86527b03aea80b1cd88326ec682446270cadd3d545c07fb1e7b9d7"
     sha256 cellar: :any_skip_relocation, mojave:        "e108bf609b0106fa290ed289a630d349c1f750ab412f6aca98213a8f83cb988a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1a2739f4acffd4e70f38fdb8e6de3264c8ddd6822e31f448514c6f553cc7d0f"
   end
 
   depends_on "git-lfs" => :build
