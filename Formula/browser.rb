@@ -7,7 +7,10 @@ class Browser < Formula
   version "7"
 
   def install
-    inreplace "browser", 'exec "open', 'exec "xdg-open' unless OS.mac?
+    on_linux do
+      # https://gist.github.com/defunkt/318247#gistcomment-3760018
+      inreplace "browser", 'exec "open', 'exec "xdg-open'
+    end
     bin.install "browser"
   end
 
