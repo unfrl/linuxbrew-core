@@ -10,6 +10,7 @@ class Hcloud < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "7b6142d37875ed2283e682c471bbd298d2be104069ff40e7192685b2e8fef354"
     sha256 cellar: :any_skip_relocation, catalina:      "00137c5bda7c47373829c3fdc28d1964863bc41bc82964465711bb9f70eeea60"
     sha256 cellar: :any_skip_relocation, mojave:        "a0d55ec31e314b04035c2108dc84a57eacbb1ef6f3f4381feca3f608831ddc86"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a461339ff682586b8dc7524a6c9eeca306ce2aaacc6266ca1621b8ff5bb189c"
   end
 
   depends_on "go" => :build
