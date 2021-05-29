@@ -74,14 +74,13 @@ class Gegl < Formula
         return 0;
       }
     EOS
-    flags = "-I#{include}/gegl-0.4", "-L#{lib}", "-lgegl-0.4"
-    system ENV.cc, *(flags if OS.mac?),
+    system ENV.cc,
            "-I#{Formula["babl"].opt_include}/babl-0.1",
            "-I#{Formula["glib"].opt_include}/glib-2.0",
            "-I#{Formula["glib"].opt_lib}/glib-2.0/include",
            "-L#{Formula["glib"].opt_lib}", "-lgobject-2.0", "-lglib-2.0",
            testpath/"test.c",
-           *(flags unless OS.mac?),
+           "-I#{include}/gegl-0.4", "-L#{lib}", "-lgegl-0.4",
            "-o", testpath/"test"
     system "./test"
   end
