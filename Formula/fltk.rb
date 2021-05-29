@@ -20,7 +20,7 @@ class Fltk < Formula
   depends_on "jpeg"
   depends_on "libpng"
 
-  unless OS.mac?
+  on_linux do
     depends_on "pkg-config" => :build
     depends_on "libxft"
     depends_on "libxt"
