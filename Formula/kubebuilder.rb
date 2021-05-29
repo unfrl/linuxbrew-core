@@ -2,18 +2,16 @@ class Kubebuilder < Formula
   desc "SDK for building Kubernetes APIs using CRDs"
   homepage "https://github.com/kubernetes-sigs/kubebuilder"
   url "https://github.com/kubernetes-sigs/kubebuilder.git",
-      tag:      "v3.0.0",
-      revision: "533874b302e9bf94cd7105831f8a543458752973"
+      tag:      "v3.1.0",
+      revision: "92e0349ca7334a0a8e5e499da4fb077eb524e94a"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/kubernetes-sigs/kubebuilder.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "bd8dc4bea7eb83f1e76d5f43a268f9d90e89dc45afa89b48190af8d07e231e95"
-    sha256 cellar: :any_skip_relocation, big_sur:       "494c4b261186aaf111fbb90fc76b88fc95369d147641e3cbb48d49455c1be3cd"
-    sha256 cellar: :any_skip_relocation, catalina:      "bab86959de86527b03aea80b1cd88326ec682446270cadd3d545c07fb1e7b9d7"
-    sha256 cellar: :any_skip_relocation, mojave:        "e108bf609b0106fa290ed289a630d349c1f750ab412f6aca98213a8f83cb988a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1a2739f4acffd4e70f38fdb8e6de3264c8ddd6822e31f448514c6f553cc7d0f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "5995e72a7882ed0bbceb0502fa67dae7c8c341f702ff418cad10009fc3418694"
+    sha256 cellar: :any_skip_relocation, big_sur:       "df42a3b0d95979ddde607db44ef7b068121144fb81a1cf3823e5d1f82c9aac4e"
+    sha256 cellar: :any_skip_relocation, catalina:      "7ea09c20fe9e1f8d59976b46ccf8719d55b2da0bebdb1e9843d56febb0440152"
+    sha256 cellar: :any_skip_relocation, mojave:        "4a1cd3cbbfd579bf148c1dac9939c6309c9558471ff92b9594b95caa9cf47936"
   end
 
   depends_on "git-lfs" => :build

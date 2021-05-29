@@ -6,6 +6,14 @@ class BrewGem < Formula
   license "MIT"
   head "https://github.com/sportngin/brew-gem.git"
 
+  # Until versions exceed 2.2, the leading `v` in this regex isn't optional, as
+  # we need to avoid an older `2.2` tag (a typo) while continuing to match
+  # newer tags like `v1.1.1` and allowing for a future `v2.2.0` version.
+  livecheck do
+    url :stable
+    regex(/^v(\d+(?:\.\d+)+)$/i)
+  end
+
   def install
     inreplace "lib/brew/gem/formula.rb.erb", "/usr/local", HOMEBREW_PREFIX
 

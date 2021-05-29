@@ -5,6 +5,11 @@ class Wgetpaste < Formula
   sha256 "e3ec35f1ff49f2204864e3b4d784f6c032cdddb62cadf69263900c67a4896592"
   license "MIT"
 
+  livecheck do
+    url :homepage
+    regex(/href=.*?wgetpaste[._-]v?(\d+(?:\.\d+)+)\.(?:t|bz)/i)
+  end
+
   depends_on "wget"
 
   def install
