@@ -15,6 +15,7 @@ class Groonga < Formula
     sha256 big_sur:       "5876afcfff64e32cc776edc9fea83156a1ecd8291ce8ab39abdb9c7bf054ebb8"
     sha256 catalina:      "051eb330121cda09efd9ebadbb6abe163d91431687d2a5a1e23ab4267a84d1c9"
     sha256 mojave:        "e1aad6d547a57bf2cc02c7645cfa120ef5256069d11326e9b4700ea8a62c37b3"
+    sha256 x86_64_linux:  "c426b2cded11a6f5c7352127d28795eb48bae41cabe94e5284d1a1714e87dfc5"
   end
 
   head do
