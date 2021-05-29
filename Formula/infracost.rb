@@ -11,6 +11,7 @@ class Infracost < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "e7e71e0d6be712b547ea364f3928312217789a92d59694564a21e8cfbbe08a09"
     sha256 cellar: :any_skip_relocation, catalina:      "e7e71e0d6be712b547ea364f3928312217789a92d59694564a21e8cfbbe08a09"
     sha256 cellar: :any_skip_relocation, mojave:        "e7e71e0d6be712b547ea364f3928312217789a92d59694564a21e8cfbbe08a09"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5115c986e555d52bf72f09255c485a1e67cf73e548dfa4b71ee1024fdb149526"
   end
 
   depends_on "go" => :build
