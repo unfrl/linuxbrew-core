@@ -14,6 +14,11 @@ class BrewGem < Formula
     regex(/^v(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "db5b7cf04d8c3a9ccf0e55b035545686d9faeb8d781c20df561fb7c77f8d54f9"
+  end
+
   uses_from_macos "ruby"
 
   def install
