@@ -11,10 +11,11 @@ class Nss < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "79464553ec050fedccda7f3e7e3afab391c2aa716e93f9274d67c8f59fd20bf3"
-    sha256 cellar: :any, big_sur:       "e61fee35c34b082fc20af4ca89b65f8f5caac4bae8f460cc247e611f7785ee8c"
-    sha256 cellar: :any, catalina:      "45332c67dbc4f5414a1c40dc8ba59910de8d9881a6a730b8dfd88e1e3816c7e5"
-    sha256 cellar: :any, mojave:        "6a8b60bf3391c2ad8de030e7a2d43fd2458e9f93d6395c3573a81afb04ff7cb2"
+    sha256 cellar: :any,                 arm64_big_sur: "79464553ec050fedccda7f3e7e3afab391c2aa716e93f9274d67c8f59fd20bf3"
+    sha256 cellar: :any,                 big_sur:       "e61fee35c34b082fc20af4ca89b65f8f5caac4bae8f460cc247e611f7785ee8c"
+    sha256 cellar: :any,                 catalina:      "45332c67dbc4f5414a1c40dc8ba59910de8d9881a6a730b8dfd88e1e3816c7e5"
+    sha256 cellar: :any,                 mojave:        "6a8b60bf3391c2ad8de030e7a2d43fd2458e9f93d6395c3573a81afb04ff7cb2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "134f2a62ef6bc133a10044409ec7eb76b1e2d0b3df670285f300ab9ae16ac8db"
   end
 
   depends_on "nspr"
