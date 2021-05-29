@@ -18,9 +18,9 @@ class Seal < Formula
 
   uses_from_macos "zlib"
 
-  # #pragma GCC error "SEAL requires __GNUC__ >= 6"
-  # In reality gcc@6 does not work because of some missing C++17 features.
-  depends_on "gcc" unless OS.mac?
+  on_linux do
+    depends_on "gcc"
+  end
 
   fails_with gcc: "5"
 

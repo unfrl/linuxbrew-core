@@ -1,17 +1,16 @@
 class Okteto < Formula
   desc "Build better apps by developing and testing code directly in Kubernetes"
   homepage "https://okteto.com"
-  url "https://github.com/okteto/okteto/archive/1.12.13.tar.gz"
-  sha256 "5c7fd60d11e73a6ff526880ef9f633c65ef0f44f748c51b61d1ea9c676a11087"
+  url "https://github.com/okteto/okteto/archive/1.12.14.tar.gz"
+  sha256 "8311dba69d15402d11fc9e44c5f29157c3573782327b78be39bd4507d436969e"
   license "Apache-2.0"
   head "https://github.com/okteto/okteto.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "b4f0d9071d5d2ca1412f6d9cab8e45a226ee3faed8153de741d86cd2ff58d241"
-    sha256 cellar: :any_skip_relocation, big_sur:       "2f2755525e5d7104d47583d126e3ef4a34771942837b2d06db1ed42b1a1874ff"
-    sha256 cellar: :any_skip_relocation, catalina:      "1ca42d1104d9a62ea258edb06c409ad1ace67934c8cc346b633d3e46442be8fe"
-    sha256 cellar: :any_skip_relocation, mojave:        "db97427b64ea8a3d611bfb3f9c7336997ec5257dd7b31f2fbba5b4203f08d6d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc604095176e57c94cd08a86efdb25791293f03e818038f43652dfe4506579b5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "3693b68822f6dfff3c910b871505414c2f1f82df61b44ae97ca76475fe41beae"
+    sha256 cellar: :any_skip_relocation, big_sur:       "dee8ccb91daafca424aa0cb892eddb152484bda09c1081cb0c6578ca71482ef7"
+    sha256 cellar: :any_skip_relocation, catalina:      "997a85645544cb6ecf6eae8ef2cbfc2050de14443e0aacabec78157bc1428b6d"
+    sha256 cellar: :any_skip_relocation, mojave:        "24fe1622bed61b6c3f3795bec67ebca107e32afac7f415e48973c80abb1bbdeb"
   end
 
   depends_on "go" => :build
@@ -19,7 +18,7 @@ class Okteto < Formula
   def install
     ldflags = "-s -w -X github.com/okteto/okteto/pkg/config.VersionString=#{version}"
     tags = "osusergo netgo static_build"
-    system "go", "build", *std_go_args, "-ldflags", ldflags, "-tags", tags
+    system "go", "build", *std_go_args(ldflags: ldflags), "-tags", tags
   end
 
   test do
