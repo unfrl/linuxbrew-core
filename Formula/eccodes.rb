@@ -39,12 +39,8 @@ class Eccodes < Formula
     end
 
     # Avoid references to Homebrew shims directory
-    os = OS.mac? ? "mac" : "linux"
-    cc = OS.mac? ? "clang" : "gcc-5"
-    path = HOMEBREW_LIBRARY/"Homebrew/shims/#{os}/super/#{cc}"
-    inreplace include/"eccodes_ecbuild_config.h", path, "/usr/bin/#{cc}"
-    inreplace lib/"pkgconfig/eccodes.pc", path, "/usr/bin/#{cc}"
-    inreplace lib/"pkgconfig/eccodes_f90.pc", path, "/usr/bin/#{cc}"
+    shim_references = [include/"eccodes_ecbuild_config.h", lib/"pkgconfig/eccodes.pc", lib/"pkgconfig/eccodes_f90.pc"]
+    inreplace shim_references, %r{#{HOMEBREW_SHIMS_PATH}/[^/]+/super/#{ENV.cc}}, ENV.cc
   end
 
   test do
