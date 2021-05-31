@@ -4,17 +4,15 @@ class Commandbox < Formula
   url "https://downloads.ortussolutions.com/ortussolutions/commandbox/5.3.1/commandbox-bin-5.3.1.zip"
   sha256 "f0e1f3b989a8664c3f7d0f02362ae8b0f3ab0ecd2b923b3ceeb89a4cf46cb614"
   license "LGPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url :homepage
     regex(/Download CommandBox v?(\d+(?:\.\d+)+)/i)
   end
 
-  bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "27e2ab80504b237acbdb88584707d50bdda6bfe723934f0959a34fec666d8a5f"
-  end
-
-  depends_on "openjdk"
+  # not yet compatible with Java 17 on ARM
+  depends_on "openjdk@11"
 
   resource "apidocs" do
     url "https://downloads.ortussolutions.com/ortussolutions/commandbox/5.3.1/commandbox-apidocs-5.3.1.zip"
@@ -23,7 +21,7 @@ class Commandbox < Formula
 
   def install
     (libexec/"bin").install "box"
-    (bin/"box").write_env_script libexec/"bin/box", Language::Java.overridable_java_home_env
+    (bin/"box").write_env_script libexec/"bin/box", Language::Java.overridable_java_home_env("11")
     doc.install resource("apidocs")
   end
 
