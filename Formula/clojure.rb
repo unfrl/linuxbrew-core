@@ -1,18 +1,14 @@
 class Clojure < Formula
   desc "Dynamic, general-purpose programming language"
   homepage "https://clojure.org"
-  url "https://download.clojure.org/install/clojure-tools-1.10.3.849.tar.gz"
-  sha256 "d1b1dbe85b0264fd4b771636d7e873ea517e91af4dd32a081d459577ecdcef08"
+  url "https://download.clojure.org/install/clojure-tools-1.10.3.855.tar.gz"
+  sha256 "cb63ee38146ae646654e93d5f0dc245a1b2940a94dc708e5fa4fc3af08b19384"
   license "EPL-1.0"
   version_scheme 1
 
   livecheck do
     url "https://raw.githubusercontent.com/clojure/homebrew-tools/master/Formula/clojure.rb"
     regex(/url ".*?clojure-tools-v?(\d+(?:\.\d+)+)\.t/i)
-  end
-
-  bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "41e325eded77f2013a25527c930dfe130fe3d85e33b7f34604b8f6a961606337"
   end
 
   depends_on "openjdk"
