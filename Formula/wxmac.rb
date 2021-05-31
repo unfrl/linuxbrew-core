@@ -27,6 +27,9 @@ class Wxmac < Formula
 
   on_linux do
     depends_on "pkg-config" => :build
+    depends_on "gtk+"
+    depends_on "libsm"
+    depends_on "mesa-glu"
   end
 
   unless OS.mac?
@@ -59,6 +62,12 @@ class Wxmac < Formula
       # This is the default option, but be explicit
       "--disable-monolithic",
     ]
+
+    on_macos do
+      # Set with-macosx-version-min to avoid configure defaulting to 10.5
+      args << "--with-macosx-version-min=#{MacOS.version}"
+      args << "--with-osx_cocoa"
+    end
 
     system "./configure", *args
     system "make", "install"
