@@ -3,17 +3,16 @@ class Pdm < Formula
 
   desc "Modern Python package manager with PEP 582 support"
   homepage "https://pdm.fming.dev"
-  url "https://files.pythonhosted.org/packages/45/24/163171e57f376af454a183c07377ea10336bd34c09f6e043f95668fce679/pdm-1.5.3.tar.gz"
-  sha256 "44b4c94db4c32a369a66caa380e2ed88e9de4996c41142326b0c3f6f5ac29548"
+  url "https://files.pythonhosted.org/packages/e4/03/31b6a4236fd06813cb9f1e6c3d74a357d1adaf7d2c9c6f6c7438c794069e/pdm-1.6.1.tar.gz"
+  sha256 "d418911a282ab0e89bf2c757c0fa0bf084ccdc67bdb269064ad124a0b66b9002"
   license "MIT"
-  head "https://github.com/frostming/pdm.git"
+  head "https://github.com/pdm-project/pdm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "a3a050c03d20ce8f3f54386f38cf0a1476ce552a1d2ac6b42946b76b2a396ca9"
-    sha256 cellar: :any_skip_relocation, big_sur:       "cf2e11261e37051a73b1a371aeb3edc7e3eee3b29d58033cca1de9d25a5c30b9"
-    sha256 cellar: :any_skip_relocation, catalina:      "9b6b485ed378893636f68d1b7c354a3643097256f77423202cb468a0bbcd4517"
-    sha256 cellar: :any_skip_relocation, mojave:        "d9ba898a1e7250037f67ee29f5769752942d3e26e045f130ddbca2119069c6db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3c692b6bf81e18f222dae1f488915941ea7a774cae7dc4a31297222aa36a24c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "1ac5ab7c327a0d046b9dd13566b3b994a4adc8cfdb6cc1fb01c793b936d20ed1"
+    sha256 cellar: :any_skip_relocation, big_sur:       "0d3fd7ab4f4eaea00c0db3a5b7a7b151641360c790b1994ffb38c6443d101a9d"
+    sha256 cellar: :any_skip_relocation, catalina:      "dc111d11108c22f79effd6f229fc4e656ce00aa4d0a9b32a4d5a1d23c2dd6e96"
+    sha256 cellar: :any_skip_relocation, mojave:        "6d00bcf4ac5a1a1a0de109b33ca5cffac9d13edfcd6b8bec8aafbea02448af87"
   end
 
   depends_on "python@3.9"
@@ -21,6 +20,11 @@ class Pdm < Formula
   resource "appdirs" do
     url "https://files.pythonhosted.org/packages/d7/d8/05696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40/appdirs-1.4.4.tar.gz"
     sha256 "7d5d0167b2b1ba821647616af46a749d1c653740dd0d2415100fe26e27afdf41"
+  end
+
+  resource "atoml" do
+    url "https://files.pythonhosted.org/packages/b2/08/bdf5d2f46be558383a1eff7af3c778126e0039b5f1392fca80898686af22/atoml-1.0.1.tar.gz"
+    sha256 "f8180558dcb74891325e05776f07f8780a7ed9b20948693d07366bff55d3470d"
   end
 
   resource "attrs" do
@@ -34,8 +38,8 @@ class Pdm < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/27/6f/be940c8b1f1d69daceeb0032fee6c34d7bd70e3e649ccac0951500b4720e/click-7.1.2.tar.gz"
-    sha256 "d2b5255c7c6349bc1bd1e59e08cd12acbbd63ce649f2588755783aa94dfb6b1a"
+    url "https://files.pythonhosted.org/packages/21/83/308a74ca1104fe1e3197d31693a7a2db67c2d4e668f20f43a2fca491f9f7/click-8.0.1.tar.gz"
+    sha256 "8c04c11192119b1ef78ea049e0a6f0463e4c48ef00a30160c704337586f3ad7a"
   end
 
   resource "colorama" do
@@ -44,8 +48,8 @@ class Pdm < Formula
   end
 
   resource "distlib" do
-    url "https://files.pythonhosted.org/packages/2f/83/1eba07997b8ba58d92b3e51445d5bf36f9fba9cb8166bcae99b9c3464841/distlib-0.3.1.zip"
-    sha256 "edf6116872c863e1aa9d5bb7cb5e05a022c519a4594dc703843343a9ddd9bff1"
+    url "https://files.pythonhosted.org/packages/45/97/15fdbef466e12c890553cebb1d8b1995375202e30e0c83a1e51061556143/distlib-0.3.2.zip"
+    sha256 "106fef6dc37dd8c0e2c0a60d3fca3e77460a48907f335fa28420463a6f799736"
   end
 
   resource "packaging" do
@@ -103,11 +107,6 @@ class Pdm < Formula
     sha256 "b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"
   end
 
-  resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/64/e0/6c8c96024d118cb029a97752e9a6d70bd06e4fd4c8b00fd9446ad6178f1d/tomlkit-0.7.0.tar.gz"
-    sha256 "ac57f29693fab3e309ea789252fcce3061e19110085aa31af5446ca749325618"
-  end
-
   resource "wheel" do
     url "https://files.pythonhosted.org/packages/ed/46/e298a50dde405e1c202e316fa6a3015ff9288423661d7ea5e8f22f589071/wheel-0.36.2.tar.gz"
     sha256 "e11eefd162658ea59a60a0f6c7d493a7190ea4b9a85e335b33489d9f17e0245e"
@@ -128,7 +127,7 @@ class Pdm < Formula
 
     EOS
     system bin/"pdm", "add", "requests==2.24.0"
-    assert_match "dependencies = [\n    \"requests==2.24.0\",\n]", (testpath/"pyproject.toml").read
+    assert_match "dependencies = [\"requests==2.24.0\"]", (testpath/"pyproject.toml").read
     assert_predicate testpath/"pdm.lock", :exist?
     assert_match "name = \"urllib3\"", (testpath/"pdm.lock").read
     output = shell_output("#{bin}/pdm run python -c 'import requests;print(requests.__version__)'")
