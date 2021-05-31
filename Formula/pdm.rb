@@ -13,6 +13,7 @@ class Pdm < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "0d3fd7ab4f4eaea00c0db3a5b7a7b151641360c790b1994ffb38c6443d101a9d"
     sha256 cellar: :any_skip_relocation, catalina:      "dc111d11108c22f79effd6f229fc4e656ce00aa4d0a9b32a4d5a1d23c2dd6e96"
     sha256 cellar: :any_skip_relocation, mojave:        "6d00bcf4ac5a1a1a0de109b33ca5cffac9d13edfcd6b8bec8aafbea02448af87"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea1ccd47a395716a7ed43fdd6c3d2ca449e738f56263b186b037d2ab01594770"
   end
 
   depends_on "python@3.9"
