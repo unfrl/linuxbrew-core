@@ -8,6 +8,10 @@ class RestShell < Formula
   license "Apache-2.0"
   revision 1
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7e51b5c4e3d3b11db444b9309f7e218474b1150dbc4042af3a40b7912055767c"
+  end
+
   depends_on "openjdk@11"
 
   def install
