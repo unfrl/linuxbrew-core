@@ -10,6 +10,7 @@ class TerraformDocs < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "c278017d514b3b46ad45ee63c0823ea7ef43fc41091b361302618ab75c0b9c07"
     sha256 cellar: :any_skip_relocation, catalina:      "68f0e4331dc354e8089f9bc580692c1125ec725aa61afb669d95c12929ecaff7"
     sha256 cellar: :any_skip_relocation, mojave:        "c7f0532f8b2f0fbe5d80ac61aacbe1c760c4d4b0e206f198363e0ad9192459a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c68908017dbd874550039a8b0fb3a0a05e5bf4685360e23bea99d0d041966ae"
   end
 
   depends_on "go" => :build
