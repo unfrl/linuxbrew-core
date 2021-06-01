@@ -12,6 +12,7 @@ class Pylint < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "c3d754cdc9bea9565d34ce84a5171e0f69f0fa40cfadbd03277546d3e0216a74"
     sha256 cellar: :any_skip_relocation, catalina:      "e9f31b3befa76939cb86e989e53696704a49ac6632b0775cc6654aa7c08ebede"
     sha256 cellar: :any_skip_relocation, mojave:        "bfb98defdc490f7dd7c73ac229e32e5af8f00cd3133757e50b35301b83cfdfae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4d5b1175a3452f4ac2928ee1313d0e1717c254d70b31c77714316f21298d3dc"
   end
 
   depends_on "python@3.9"
