@@ -11,6 +11,7 @@ class Gnumeric < Formula
     sha256 big_sur:       "72d9127c0c9ab4e661d42b4c885b85de3469a06bbf1cc8012cb198c9b338cca5"
     sha256 catalina:      "fdbffb8faa080825c809e8384ebbd7e8624b46de1fbd677dcf4dd5bddd377cec"
     sha256 mojave:        "29408d0f90f55698c76afe425564151764faf3670c298ec7415e86f9ed0a3752"
+    sha256 x86_64_linux:  "e5d8345be95cf3166c0a4471612f85485d91173b7697f37333ff9770b8627089"
   end
 
   depends_on "intltool" => :build
