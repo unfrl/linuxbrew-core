@@ -33,11 +33,12 @@ class Infer < Formula
   uses_from_macos "m4" => :build
   uses_from_macos "unzip" => :build
   uses_from_macos "ncurses"
-
-  depends_on "patchelf" => :build unless OS.mac?
-
   uses_from_macos "xz"
   uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "patchelf" => :build
+  end
 
   def install
     # needed to build clang
@@ -54,7 +55,9 @@ class Infer < Formula
     ENV["OPAMROOT"] = opamroot
     ENV["OPAMYES"] = "1"
     ENV["OPAMVERBOSE"] = "1"
-    ENV["PATCHELF"] = Formula["patchelf"].opt_bin/"patchelf" unless OS.mac?
+    on_linux do
+      ENV["PATCHELF"] = Formula["patchelf"].opt_bin/"patchelf"
+    end
 
     system "opam", "init", "--no-setup", "--disable-sandboxing"
 
