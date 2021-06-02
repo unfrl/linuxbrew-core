@@ -15,6 +15,7 @@ class Ispell < Formula
     sha256 big_sur:       "bb31a94a6248a8298f8f93ba6175336aa4b7e1297440d9cea7af22be117170f9"
     sha256 catalina:      "d588636ea56a940732b17181ad84b1b22b906314f5cbc2171aad5bce76812903"
     sha256 mojave:        "9fe86ce46da93f3f73b2c7ad3bd079d5a4eae7dd86c7ab638841eb5a21895ea7"
+    sha256 x86_64_linux:  "8874ac65af8e9e4bc11a2a5ed6c4f7817266ca215b0bb42bf3e3ba14650e40aa"
   end
 
   uses_from_macos "bison" => :build
