@@ -20,10 +20,8 @@ class Openjdk < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "040b807b1c754ccbb5316484a42089e64d29f0321dc6531017020095b8222c7a"
-    sha256 cellar: :any, big_sur:       "55c120ab6b02ddcf7f3f22678377d70c89ac625239b5af396c60a9b2840f0995"
-    sha256 cellar: :any, catalina:      "04435cc60a4cdf18dade6923a8a039a8ed22ff900068ec95c250f7ea055f381a"
-    sha256 cellar: :any, mojave:        "ea08c6570290923349fa4f908070445c0c4dd5fef9e65b401eb2323f0a8fddd6"
+    rebuild 1
+    sha256 x86_64_linux: "3f0605079feaec84c5b944c16975cc6283bb4f7074bae283ac59d45492fa5a81"
   end
 
   keg_only :shadowed_by_macos
