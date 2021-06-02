@@ -19,10 +19,11 @@ class Re2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "fd9573e36089968186676dfbe4a7af7dfb7ef7049d0523de68c890de509ab2c9"
-    sha256 cellar: :any, big_sur:       "6f4a0ffc9a7a09aea3cf7acfa84b5ebe5ab7834f6a55d6f586e15242ea05d317"
-    sha256 cellar: :any, catalina:      "7170869b764314dd7804bc4d234215965725356739fffd99279f2d4690cf6bc8"
-    sha256 cellar: :any, mojave:        "9587952072674b6432c3bc0c6cdf1200cb5041e154025e13de78c8628c3493e2"
+    sha256 cellar: :any,                 arm64_big_sur: "fd9573e36089968186676dfbe4a7af7dfb7ef7049d0523de68c890de509ab2c9"
+    sha256 cellar: :any,                 big_sur:       "6f4a0ffc9a7a09aea3cf7acfa84b5ebe5ab7834f6a55d6f586e15242ea05d317"
+    sha256 cellar: :any,                 catalina:      "7170869b764314dd7804bc4d234215965725356739fffd99279f2d4690cf6bc8"
+    sha256 cellar: :any,                 mojave:        "9587952072674b6432c3bc0c6cdf1200cb5041e154025e13de78c8628c3493e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22b252135d70ed1b7ac2809a7944a86089f30066c7c22f1f68c590fa5dda1ab8"
   end
 
   depends_on "cmake" => :build
