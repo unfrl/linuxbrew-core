@@ -38,14 +38,14 @@ class Vtk < Formula
   depends_on "theora"
   depends_on "utf8cpp"
   depends_on "xz"
+
   uses_from_macos "expat"
   uses_from_macos "libxml2"
+  uses_from_macos "tcl-tk"
   uses_from_macos "zlib"
 
-  unless OS.mac?
+  on_linux do
     depends_on "szip"
-    depends_on "tcl-tk"
-    depends_on "mesa"
     depends_on "mesa-glu"
   end
 
@@ -88,6 +88,9 @@ class Vtk < Formula
       -DVTK_GROUP_ENABLE_Qt:STRING=YES
     ]
     args << "-DOpenGL_GL_PREFERENCE=LEGACY" unless OS.mac?
+
+    # https://github.com/Homebrew/linuxbrew-core/pull/21654#issuecomment-738549701
+    args << "-DOpenGL_GL_PREFERENCE=LEGACY"
 
     on_macos do
       args << "-DVTK_USE_COCOA:BOOL=ON"
