@@ -18,26 +18,21 @@ class Libre < Formula
   uses_from_macos "zlib"
 
   def install
-    system "make", *("SYSROOT=#{MacOS.sdk_path}/usr" if OS.mac?), "install", "PREFIX=#{prefix}"
+    sysroot = nil
+    on_macos do
+      sysroot = "SYSROOT=#{MacOS.sdk_path}/usr"
+    end
+    system "make", *sysroot, "install", "PREFIX=#{prefix}"
   end
 
   test do
-    if OS.mac?
-      (testpath/"test.c").write <<~EOS
-        #include <re/re.h>
-        int main() {
-          return libre_init();
-        }
-      EOS
-    else
-      (testpath/"test.c").write <<~EOS
-        #include <stdint.h>
-        #include <re/re.h>
-        int main() {
-          return libre_init();
-        }
-      EOS
-    end
+    (testpath/"test.c").write <<~EOS
+      #include <stdint.h>
+      #include <re/re.h>
+      int main() {
+        return libre_init();
+      }
+    EOS
     system ENV.cc, "test.c", "-L#{lib}", "-lre"
   end
 end
