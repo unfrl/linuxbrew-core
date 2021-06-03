@@ -10,6 +10,7 @@ class Monolith < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "3b8ef403bfe2b324d29a4f4afb8d443e42b0e0d5df9a54a4883f3d0188fc69ec"
     sha256 cellar: :any_skip_relocation, catalina:      "af02927793474654eea0f0837cad3a9230f377f8fce03e19a9e5013554ba0aa4"
     sha256 cellar: :any_skip_relocation, mojave:        "a5b4c2c2fe78607b13d3325031ccbae85e3b485ebe13392555048053769620d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2071f95c23afa690e77c5b0df7fa9858dd0aa2bba0ef5612b0387b3ad88a273f"
   end
 
   depends_on "pkg-config" => :build
