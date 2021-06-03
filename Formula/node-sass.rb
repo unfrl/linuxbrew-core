@@ -7,6 +7,10 @@ class NodeSass < Formula
   sha256 "218aeaa96b25092757bcc55615825e1ba58d038e0734c579f9cf066b6debe291"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9256c747a7849ccbb7a113a094335c13282768cc3e52076d52a38e5d3a30572c"
+  end
+
   depends_on "node"
 
   def install
