@@ -11,6 +11,7 @@ class Texlab < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "10fcd4d803c4b2df5185ae5e65b2f98b91e7518f302e8fa89e1cfa3e3b9e436f"
     sha256 cellar: :any_skip_relocation, catalina:      "9065345367fa53592dd9fb282d9b91abbece52937718e7d1ed18de9dc403b2d6"
     sha256 cellar: :any_skip_relocation, mojave:        "058addfe3c8997d291b1d4ca58714a7988449c3c88c6ec18195d0d4e5e57795d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39a914f267e7742b9799b1ff6ab06814da1a169d7dd6a5333c16b2b321b8afbf"
   end
 
   depends_on "rust" => :build
