@@ -7,10 +7,12 @@ class Watchman < Formula
   head "https://github.com/facebook/watchman.git"
 
   bottle do
+    rebuild 1
     sha256 cellar: :any, arm64_big_sur: "c3c035ef3a75a7ac946875126d2d1e1f831e30930e3aaa2c26888aa112f42ecd"
     sha256 cellar: :any, big_sur:       "2e621ce625eb92b220e5a67446ccb09b9d06d4920b34d526cfd027a35fcbd03f"
     sha256 cellar: :any, catalina:      "fc23c7c148a217a82da6de5d7fe40125dbf033072a906a63d4e71025003c1de3"
     sha256 cellar: :any, mojave:        "8ce6f7de265228200cc01bbf47d0f9004ec6d3e67dc71bc142d749b81d9e5114"
+    sha256               x86_64_linux:  "e4c6478ced1a9e522a44d1383d7e95e44930beee84877a69ca18a802c74edc38"
   end
 
   depends_on "cmake" => :build
