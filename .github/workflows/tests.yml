@@ -56,11 +56,11 @@ jobs:
 
       - run: brew test-bot --only-setup
 
-      - name: Run brew test-bot --only-json-tab --only-formulae
+      - name: Run brew test-bot --only-json-tab --only-formulae --keep-old
         run: |
           mkdir ~/bottles
           cd ~/bottles
-          brew test-bot --only-json-tab --only-formulae --fail-fast
+          brew test-bot --only-json-tab --only-formulae --fail-fast --keep-old
 
       - name: Upload logs
         if: failure()
