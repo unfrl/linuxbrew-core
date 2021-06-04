@@ -7,6 +7,10 @@ class SonarScanner < Formula
   revision 1
   head "https://github.com/SonarSource/sonar-scanner-cli.git"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b0fa41c88f0c3b3be3927dc242eec30742239eaeea4b4e3c2b638f1037f7391a"
+  end
+
   depends_on "openjdk@11"
 
   def install
