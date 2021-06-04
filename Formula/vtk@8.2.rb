@@ -32,17 +32,17 @@ class VtkAT82 < Formula
 
   uses_from_macos "expat"
   uses_from_macos "libxml2"
+  uses_from_macos "tcl-tk"
   uses_from_macos "zlib"
 
-  unless OS.mac?
+  on_linux do
     depends_on "icu4c"
     depends_on "libxt"
     depends_on "szip"
-    depends_on "tcl-tk"
-    depends_on "mesa"
     depends_on "mesa-glu"
   end
 
+  # TODO: use diff
   # Fix compile issues on Mojave and later
   patch do
     url "https://gitlab.kitware.com/vtk/vtk/commit/ca3b5a50d945b6e65f0e764b3138cad17bd7eb8d.diff"
