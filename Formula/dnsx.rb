@@ -11,6 +11,7 @@ class Dnsx < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "c9c74cf305fa4939b7b528a43656c84a6b35d9fd249a29b07a023786eaa20081"
     sha256 cellar: :any_skip_relocation, catalina:      "9e5eccd53d43bb234df114e268b19ef7e12fe31d15dafb11429cdf2305706c84"
     sha256 cellar: :any_skip_relocation, mojave:        "f40c3479f34895f14a902799b4a22d8a246b3d492e58d93e8b4eb268afb158da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a832e1c784d20e092734251f568b2781314b0869911bb0a3b9e0a054b1eb010"
   end
 
   depends_on "go" => :build
