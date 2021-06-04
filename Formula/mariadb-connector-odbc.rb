@@ -1,8 +1,8 @@
 class MariadbConnectorOdbc < Formula
   desc "Database driver using the industry standard ODBC API"
   homepage "https://downloads.mariadb.org/connector-odbc/"
-  url "https://downloads.mariadb.org/f/connector-odbc-3.1.11/mariadb-connector-odbc-3.1.11-ga-src.tar.gz"
-  sha256 "d81a35cd9c9d2e1e732b7bd9ee704eb83775ed74bcc38d6cd5d367a3fc525a34"
+  url "https://downloads.mariadb.org/f/connector-odbc-3.1.12/mariadb-connector-odbc-3.1.12-src.tar.gz"
+  sha256 "240333cbd9abd338d2c845e55d22dd077bbd59a6ef725ec47de220e50f54a84e"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -11,11 +11,10 @@ class MariadbConnectorOdbc < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "14eab02c927c39019801250936766b9f913ccee3ce1ebc0a10d87753ec46e5c3"
-    sha256 big_sur:       "8ecf2575cfb6897176626d13821da084b97a86fff29103f21a6122fb508234c6"
-    sha256 catalina:      "9e026906501acc48c754a22cd3415f968121d378d9b23ae02d09a92e771634b9"
-    sha256 mojave:        "7291bc304b018ed6f5b9edbc5dcc35de99135be517eb559217148ae3f9d333c2"
-    sha256 x86_64_linux:  "66dd62f55a62b4e633634509c31360e494aba46e0e0c6558beb8077c7207d999"
+    sha256 cellar: :any, arm64_big_sur: "04c23fb24dccd630e781a6b2ad2f90b24c81cb245eb06070d78f7d61674277ee"
+    sha256 cellar: :any, big_sur:       "b9bfe9c9818674735b07303ff5be62a0dba92fe7e257c242978b8f90fcf86858"
+    sha256 cellar: :any, catalina:      "5b0a11482f81ce2baf03e12c1ab5dae45294e889f39738e103bb44791ec2b20e"
+    sha256 cellar: :any, mojave:        "eaf378dc4748d4515bf3f1f73c2b501d8b5b4eba7952ed0ecff1c27ee542bbdb"
   end
 
   depends_on "cmake" => :build

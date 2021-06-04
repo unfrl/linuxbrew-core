@@ -3,16 +3,15 @@ class Pipgrip < Formula
 
   desc "Lightweight pip dependency resolver"
   homepage "https://github.com/ddelange/pipgrip"
-  url "https://files.pythonhosted.org/packages/ab/26/fc90c4c5b010838ec83a204ad7ed4fb91d1de864c1e8141b44c071a7a3be/pipgrip-0.6.9.tar.gz"
-  sha256 "1c0d0726e94ef87f7ee7355b3417d36b637c5510efca7454c953ce24762b91a4"
+  url "https://files.pythonhosted.org/packages/6d/58/498fceb2264c03e3a7cc672aea29c363995ff7a61d169f2cce7bc297eeba/pipgrip-0.6.10.tar.gz"
+  sha256 "775b82aa6fc33b31bfadb483946172c235285d019f0577ab40fde219a7ff977d"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "dbf57bc17a8c9d5439a2b841c3c5c108529641eaac2be2870e347eb92983336e"
-    sha256 cellar: :any_skip_relocation, big_sur:       "b26968f1a6cc06f5220b1ea52d68b3a0e42bfa0a772cf32505a3b84f6ce3b49d"
-    sha256 cellar: :any_skip_relocation, catalina:      "6b91571022671213ecfc3b10911ccd5eb1603658285e13f7b5e32371e1479bb7"
-    sha256 cellar: :any_skip_relocation, mojave:        "4b677cfd3e6f639d0c20eec9a2fce714c785013381eadd6321882422a010cdae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "896b6fbd7af411855c32c750c1a138c2fa05b6f93e0ca0f21e0fd53bbe019d4c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "186e5d20f5e9efad4af13796d0e0ac79caec559051913fe472e0e7aa1e0986ff"
+    sha256 cellar: :any_skip_relocation, big_sur:       "fe945bd47c9f216c2d0a792cd8e285eb997a3b6f029ecb7b6c7a8db71610f675"
+    sha256 cellar: :any_skip_relocation, catalina:      "0f18bb4595009bba0811ece3c86e74caa1c84799818298431aa9cba38527ef12"
+    sha256 cellar: :any_skip_relocation, mojave:        "d4dad1ab2fa11622134520609287f74ca26f87c7abc12895348318da20852517"
   end
 
   depends_on "python@3.9"

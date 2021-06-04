@@ -2,15 +2,15 @@ class ArchiSteamFarm < Formula
   desc "Application for idling Steam cards from multiple accounts simultaneously"
   homepage "https://github.com/JustArchiNET/ArchiSteamFarm"
   url "https://github.com/JustArchiNET/ArchiSteamFarm.git",
-    tag:      "5.0.6.6",
-    revision: "e26aec339f19c81da5ce303bd157219c1c017c56"
+    tag:      "5.1.0.9",
+    revision: "31a06a8af36360c0f2afaf1bc3e41fdec6d2831b"
   license "Apache-2.0"
   head "https://github.com/JustArchiNET/ArchiSteamFarm.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:  "6f72a4db25f8b58fefe7fabc8034ef704b77fb540f0aa3bd8f7fc1e74a5e37ca"
-    sha256 cellar: :any_skip_relocation, catalina: "c1f20920ffb4e536bd21ced34f49d4a187e8235cf0d276070aa19c636a06183b"
-    sha256 cellar: :any_skip_relocation, mojave:   "79bfb2af406046264a62441ad89934c37015585b29cb99c3b99b2328673342af"
+    sha256 cellar: :any_skip_relocation, big_sur:  "16bc55a12a0957f01360d26ba97cf3e8970a11ae7563bc0ccda5f26b2a09f3c9"
+    sha256 cellar: :any_skip_relocation, catalina: "8b6857a931593bcb24aee55236fbb7a9ecf5d5331ab732ca9530892206911ac8"
+    sha256 cellar: :any_skip_relocation, mojave:   "3ef2bb7a15b61fd19ceb48b371bebdfc8ae04e1ec95e117c8cf9cee77025919a"
   end
 
   depends_on "dotnet"
