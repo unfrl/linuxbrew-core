@@ -5,6 +5,10 @@ class ZshAutosuggestions < Formula
   sha256 "ccd97fe9d7250b634683c651ef8a2fe3513ea917d1b491e8696a2a352b714f08"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4537653cbf3540a0785481966b36291255839f1be4012a22409ef97c46a1860b"
+  end
+
   uses_from_macos "zsh" => :test
 
   def install
