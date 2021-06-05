@@ -12,6 +12,7 @@ class CfnLint < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "259b7345bf3f832948981b86dcfa08f0fd364293e5589cc3b8977a4bd11e7ad1"
     sha256 cellar: :any_skip_relocation, catalina:      "d91f25b68b21af7104870458f58f865be3589b2ee834e33962e9c1c782638f64"
     sha256 cellar: :any_skip_relocation, mojave:        "8e7b34da9cf4b13fa764306558ceb4a58838d373997b4e0c87fc568352b1b9d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d884b847edcf72e143438c04ecb90a461067a21980e88045b6adeef812097db"
   end
 
   depends_on "python@3.9"
