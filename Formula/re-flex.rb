@@ -10,6 +10,7 @@ class ReFlex < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "25db2d95d2e08b8b5f216d0af67e769cd1c0e8dc7530abad14d4303f08f981b6"
     sha256 cellar: :any_skip_relocation, catalina:      "6577b7d550f87fb18f7379e8b93823b4b5262a9f173062d0852afa18ac7d64e9"
     sha256 cellar: :any_skip_relocation, mojave:        "b071537d78265ec8de66fb32b7fa4a18dde206fce2da8a4b076c3613dd4cddd8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07f845e38323f1f67d5bf069ec542f3a67f825ee351a09cad344676cc2a308a2"
   end
 
   depends_on "pcre2"
