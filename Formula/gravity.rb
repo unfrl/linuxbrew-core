@@ -10,6 +10,7 @@ class Gravity < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "49f19ce7992a5e087b879beaf9a4a8fb875a0d063b283e5aadfc320cb2b41f79"
     sha256 cellar: :any_skip_relocation, catalina:      "73e493759b7928d8a557fb194f3fd4b9d4b700fcc2fdb85953f273f68350e31d"
     sha256 cellar: :any_skip_relocation, mojave:        "1ad9606bdd5ff83b24b1220cdde9adfa70ff2b92c887d5cf4a67141cfd1e24c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5ffed2e163aae2226273c079d0e0ca82d4506fd3f8e2f889c584e9cd0948bf9"
   end
 
   def install
