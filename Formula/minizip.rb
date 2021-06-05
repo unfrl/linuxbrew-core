@@ -35,8 +35,8 @@ class Minizip < Formula
     system "make"
 
     cd "contrib/minizip" do
-      # edits to statically link to libz.a
-      if OS.mac?
+      on_macos do
+        # edits to statically link to libz.a
         inreplace "Makefile.am" do |s|
           s.sub! "-L$(zlib_top_builddir)", "$(zlib_top_builddir)/libz.a"
           s.sub! "-version-info 1:0:0 -lz", "-version-info 1:0:0"
