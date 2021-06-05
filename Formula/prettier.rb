@@ -13,6 +13,7 @@ class Prettier < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "f186e1743abb6f2ee9af3da64e34deb7f82c1c443461168de22829d4fa59980e"
     sha256 cellar: :any_skip_relocation, catalina:      "f186e1743abb6f2ee9af3da64e34deb7f82c1c443461168de22829d4fa59980e"
     sha256 cellar: :any_skip_relocation, mojave:        "f186e1743abb6f2ee9af3da64e34deb7f82c1c443461168de22829d4fa59980e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "544a3d936ffac60f1fc4b4102bb7123534f33e5ee4143588617e2220f9043830"
   end
 
   depends_on "node"
