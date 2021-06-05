@@ -3,15 +3,15 @@ class AnsibleLint < Formula
 
   desc "Checks ansible playbooks for practices and behaviour"
   homepage "https://github.com/ansible/ansible-lint/"
-  url "https://files.pythonhosted.org/packages/97/24/11394bf9ba617dd64f6b4042a4e5d49a219e52ec1dc7eb3f891da2a35a0f/ansible-lint-5.0.11.tar.gz"
-  sha256 "c41f398c5a3faaab0481ec988ed42221d9f2de48da1acb06f261546349a870c0"
+  url "https://files.pythonhosted.org/packages/f5/e9/b359bd8b6581734f958a2704d1e8201647fdc99b5ae87fabf97874d91a34/ansible-lint-5.0.12.tar.gz"
+  sha256 "f2b0b74bd05cf55f0bb45304767e1862ed62c05def06e1f03aa2c2d39c67907c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "eb2f3f12f690a2d2802d1630ccdfe91d2668bf2314dab94f391446379b944e23"
-    sha256 cellar: :any, big_sur:       "a99957276ff6a81d7af43a762195d6539754c0db8e22fd0d7eb319659d098e50"
-    sha256 cellar: :any, catalina:      "531c1e77c4f68ceb1f123d23535100241fdc3021c85f51ae61ac280c804eefea"
-    sha256 cellar: :any, mojave:        "a019409cfeeefab8830a3d64027e9f9add8f96b0d465a9d5443430fc674b1efe"
+    sha256 cellar: :any, arm64_big_sur: "b18a3d196f4c146aafc93db6000dce7a8f627a7d9aea007ec9f26aa9c0c2e15b"
+    sha256 cellar: :any, big_sur:       "4c41a9edf368833e7e2d05ffb27422bf3d2ef31f620816a08b2676cce4616f1f"
+    sha256 cellar: :any, catalina:      "eb74deda923e13984c1fee47ffabc7313d9e55abad956e6dfbb597dd3240a7f3"
+    sha256 cellar: :any, mojave:        "f5f7222758b9b2507e967e7ddb520310e729b0713aeb59f44c69fba4caa70fdc"
   end
 
   depends_on "pkg-config" => :build
@@ -65,8 +65,8 @@ class AnsibleLint < Formula
   end
 
   resource "ruamel.yaml" do
-    url "https://files.pythonhosted.org/packages/62/cf/148028462ab88a71046ba0a30780357ae9e07125863ea9ca7808f1ea3798/ruamel.yaml-0.17.4.tar.gz"
-    sha256 "44bc6b54fddd45e4bc0619059196679f9e8b79c027f4131bb072e6a22f4d5e28"
+    url "https://files.pythonhosted.org/packages/fd/6b/b83bdc8fb9aad62f6469117874e7c11b64d94ba9e8557f73ca1f28c2df7d/ruamel.yaml-0.17.7.tar.gz"
+    sha256 "5c3fa739bbedd2f23769656784e671c6335d17a5bf163c3c3901d8663c0af287"
   end
 
   resource "ruamel.yaml.clib" do

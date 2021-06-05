@@ -120,7 +120,6 @@ class GetIplayer < Formula
 
     inreplace ["get_iplayer", "get_iplayer.cgi"] do |s|
       s.gsub!(/^(my \$version_text);/i, "\\1 = \"#{pkg_version}-homebrew\";")
-      s.gsub! "#!/usr/bin/env perl", "#!/usr/bin/perl" if OS.mac?
     end
 
     bin.install "get_iplayer", "get_iplayer.cgi"
