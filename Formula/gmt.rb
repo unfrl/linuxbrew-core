@@ -1,24 +1,24 @@
 class Gmt < Formula
   desc "Tools for manipulating and plotting geographic and Cartesian data"
   homepage "https://www.generic-mapping-tools.org/"
-  url "https://github.com/GenericMappingTools/gmt/releases/download/6.1.1/gmt-6.1.1-src.tar.xz"
-  mirror "https://mirrors.ustc.edu.cn/gmt/gmt-6.1.1-src.tar.xz"
-  sha256 "d476cba999340648146ef53ab4a3f64858cbd2f5511cdec9f7f06f3fb7896625"
+  url "https://github.com/GenericMappingTools/gmt/releases/download/6.2.0/gmt-6.2.0-src.tar.xz"
+  mirror "https://mirrors.ustc.edu.cn/gmt/gmt-6.2.0-src.tar.xz"
+  sha256 "a01f0a14d48bbc0b14855670f366df3cb8238f0ccdfa26fe744968b4f1c14d54"
   license "LGPL-3.0-or-later"
-  revision 6
   head "https://github.com/GenericMappingTools/gmt.git"
 
   bottle do
-    sha256 big_sur:  "c674e173823291de07b175b5ba711f8eddfdf206f5493d7ed7f3957c708c4987"
-    sha256 catalina: "1e13d3e9302d8a721482c9cb129230f49ebec3a7bcb58992b1fe83cf689de396"
-    sha256 mojave:   "cab74831f1b9511d15cee15e7198c7b0b249adc7a217737f178341fcd8006e36"
+    sha256 arm64_big_sur: "ccefbc7f828c5f6391e07f4fcb17cbabc3fce344fac2a102ab4912d41ac92c20"
+    sha256 big_sur:       "b95628775b58b5c4a9616c3684135606a9ef271a9668e09c930f2158cc22f608"
+    sha256 catalina:      "db0d5dcb4fe6015395a2d954f0988d7a0c60dc49c1eb56edc6d6f63171760130"
+    sha256 mojave:        "40b26c2ac3bfd17ec965c55e54df147f40e88ff837e0c365f2e4028b4a176559"
   end
 
   depends_on "cmake" => :build
   depends_on "fftw"
   depends_on "gdal"
   depends_on "netcdf"
-  depends_on "pcre"
+  depends_on "pcre2"
 
   resource "gshhg" do
     url "https://github.com/GenericMappingTools/gshhg-gmt/releases/download/2.3.7/gshhg-gmt-2.3.7.tar.gz"
@@ -27,9 +27,9 @@ class Gmt < Formula
   end
 
   resource "dcw" do
-    url "https://github.com/GenericMappingTools/dcw-gmt/releases/download/1.1.4/dcw-gmt-1.1.4.tar.gz"
-    mirror "https://mirrors.ustc.edu.cn/gmt/dcw-gmt-1.1.4.tar.gz"
-    sha256 "8d47402abcd7f54a0f711365cd022e4eaea7da324edac83611ca035ea443aad3"
+    url "https://github.com/GenericMappingTools/dcw-gmt/releases/download/2.0.0/dcw-gmt-2.0.0.tar.gz"
+    mirror "https://mirrors.ustc.edu.cn/gmt/dcw-gmt-2.0.0.tar.gz"
+    sha256 "d71d209c837a805fed0773c03fadbb26e8c90eb6b68e496ac4a1298c3246cc7a"
   end
 
   def install
@@ -48,7 +48,7 @@ class Gmt < Formula
       -DFFTW3_ROOT=#{Formula["fftw"].opt_prefix}
       -DGDAL_ROOT=#{Formula["gdal"].opt_prefix}
       -DNETCDF_ROOT=#{Formula["netcdf"].opt_prefix}
-      -DPCRE_ROOT=#{Formula["pcre"].opt_prefix}
+      -DPCRE_ROOT=#{Formula["pcre2"].opt_prefix}
       -DFLOCK:BOOL=TRUE
       -DGMT_INSTALL_MODULE_LINKS:BOOL=FALSE
       -DGMT_INSTALL_TRADITIONAL_FOLDERNAMES:BOOL=FALSE

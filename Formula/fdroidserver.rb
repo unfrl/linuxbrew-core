@@ -31,6 +31,13 @@ class Fdroidserver < Formula
   uses_from_macos "libxslt"
   uses_from_macos "zlib"
 
+  on_macos do
+    resource "appnope" do
+      url "https://files.pythonhosted.org/packages/e9/bc/2d2c567fe5ac1924f35df879dbf529dd7e7cabd94745dc9d89024a934e76/appnope-0.1.2.tar.gz"
+      sha256 "dd83cd4b5b460958838f6eb3000c660b1f9caf2a5b1de4264e941512f603258a"
+    end
+  end
+
   resource "androguard" do
     url "https://files.pythonhosted.org/packages/83/78/0f44e8f0fd10493b3118d79d60599c93e5a2cd378d83054014600a620cba/androguard-3.3.5.tar.gz"
     sha256 "f0655ca3a5add74c550951e79bd0bebbd1c5b239178393d30d8db0bd3202cda2"
@@ -39,13 +46,6 @@ class Fdroidserver < Formula
   resource "apache-libcloud" do
     url "https://files.pythonhosted.org/packages/39/e0/64f54da78a1856713810e7b5f540fec53582ca91afaab0568ed44527d4fe/apache-libcloud-3.3.1.tar.gz"
     sha256 "d7450453eaf5904eb4fb4f74cf9f37dc83721a719bce34f5abb336b1a1ab974d"
-  end
-
-  if OS.mac?
-    resource "appnope" do
-      url "https://files.pythonhosted.org/packages/e9/bc/2d2c567fe5ac1924f35df879dbf529dd7e7cabd94745dc9d89024a934e76/appnope-0.1.2.tar.gz"
-      sha256 "dd83cd4b5b460958838f6eb3000c660b1f9caf2a5b1de4264e941512f603258a"
-    end
   end
 
   resource "args" do
@@ -339,18 +339,22 @@ class Fdroidserver < Formula
 
     resource("Pillow").stage do
       inreplace "setup.py" do |s|
-        zlib = Formula["zlib"].opt_prefix
-        jpeg = Formula["jpeg"].opt_prefix
-        freetype = Formula["freetype"].opt_prefix
-        if OS.mac?
-          sdkprefix = MacOS.sdk_path_if_needed ? MacOS.sdk_path : "" if OS.mac?
-          s.gsub! "ZLIB_ROOT = None", "ZLIB_ROOT = ('#{sdkprefix}/usr/lib', '#{sdkprefix}/usr/include')"
-        else
+        s.gsub! "openjpeg.h", "probably_not_a_header_called_this_eh.h"
+        s.gsub! "xcb.h", "probably_not_a_header_called_this_eh.h"
+        on_macos do
+          sdkprefix = MacOS.sdk_path_if_needed ? MacOS.sdk_path : ""
+          s.gsub! "ZLIB_ROOT = None",
+                  "ZLIB_ROOT = ('#{sdkprefix}/usr/lib', '#{sdkprefix}/usr/include')"
+        end
+        on_linux do
+          zlib = Formula["zlib"].opt_prefix
           s.gsub! "ZLIB_ROOT = None", "ZLIB_ROOT = ('#{zlib}/lib', '#{zlib}/include')"
         end
-        s.gsub! "openjpeg.h", "probably_not_a_header_called_this_eh.h"
-        s.gsub! "JPEG_ROOT = None", "JPEG_ROOT = ('#{jpeg}/lib', '#{jpeg}/include')"
-        s.gsub! "FREETYPE_ROOT = None", "FREETYPE_ROOT = ('#{freetype}/lib', '#{freetype}/include')"
+        s.gsub! "JPEG_ROOT = None",
+                "JPEG_ROOT = ('#{Formula["jpeg"].opt_prefix}/lib', '#{Formula["jpeg"].opt_prefix}/include')"
+        s.gsub! "FREETYPE_ROOT = None",
+                "FREETYPE_ROOT = ('#{Formula["freetype"].opt_prefix}/lib', " \
+                                 "'#{Formula["freetype"].opt_prefix}/include')"
       end
 
       # avoid triggering "helpful" distutils code that doesn't recognize Xcode 7 .tbd stubs

@@ -1,28 +1,21 @@
 class Zig < Formula
   desc "Programming language designed for robustness, optimality, and clarity"
   homepage "https://ziglang.org/"
+  # Re-enable C compilation test at 0.8.1
+  url "https://ziglang.org/download/0.8.0/zig-0.8.0.tar.xz"
+  sha256 "03a828d00c06b2e3bb8b7ff706997fd76bf32503b08d759756155b6e8c981e77"
   license "MIT"
-  revision 1
-
-  stable do
-    url "https://ziglang.org/download/0.7.1/zig-0.7.1.tar.xz"
-    sha256 "2db3b944ab368d955b48743d9f7c963b8f96de1a441ba5a35e197237cc6dae44"
-    depends_on "llvm@11"
-  end
+  head "https://github.com/ziglang/zig.git"
 
   bottle do
-    sha256 cellar: :any,                 big_sur:      "36024d6e9270699221abc2fe0d49b9f16e9bfc62636b33750f94d89a07e0e308"
-    sha256 cellar: :any,                 catalina:     "167c21243552b1b309c4cf83bfb8e678a14b5a3e3adf66e7f2501b36d027d693"
-    sha256 cellar: :any,                 mojave:       "63643cea7d45ce511f4cd0a4e7089a64e2dedecc9cd900eaff805c011b299cda"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "8fd5b6eeaff9e360a2ad5234c2245a1f12e2045d81284a7762cf4724ad846d41"
-  end
-
-  head do
-    url "https://github.com/ziglang/zig.git"
-    depends_on "llvm"
+    sha256 cellar: :any, arm64_big_sur: "cbfe30a9fc41655c96d04c98a00d4dd451823ee8f55afaa9387c9cf367f66c62"
+    sha256 cellar: :any, big_sur:       "740bcf88640b02fa8b21a6719c62c21afe3dd59ea60bb2a8d5efd4a3826fd5c7"
+    sha256 cellar: :any, catalina:      "be1c5cab5438eede09322ff1e896202f0cbfaafb0641a596fdd04f0f4f6c6d48"
+    sha256 cellar: :any, mojave:        "207446cc593dd0b1c63716d26bbb552a2242bc94fe19033df177186f610872df"
   end
 
   depends_on "cmake" => :build
+  depends_on "llvm"
 
   def install
     system "cmake", ".", *std_cmake_args, "-DZIG_STATIC_LLVM=ON"
@@ -47,7 +40,11 @@ class Zig < Formula
         return 0;
       }
     EOS
-    system "#{bin}/zig", "cc", "hello.c", "-o", "hello"
-    assert_equal "Hello, world!", shell_output("./hello")
+    # Compiling C is broken on Mojave. Re-enable at 0.8.1.
+    # https://github.com/ziglang/zig/issues/8999
+    if MacOS.version > :mojave
+      system "#{bin}/zig", "cc", "hello.c", "-o", "hello"
+      assert_equal "Hello, world!", shell_output("./hello")
+    end
   end
 end

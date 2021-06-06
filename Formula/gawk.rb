@@ -30,7 +30,7 @@ class Gawk < Formula
 
     system "make"
     if which "cmp"
-      system "make", "check" if OS.mac?
+      system "make", "check"
     else
       opoo "Skipping `make check` due to unavailable `cmp`"
     end
