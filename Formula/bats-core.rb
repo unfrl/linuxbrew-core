@@ -5,6 +5,10 @@ class BatsCore < Formula
   sha256 "1d5075e6e712dc15fbe818b9d88605dbc8908269857f054b046321a4b9cba089"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "fae69721e6ec6a1b07e1d10699187640ef4e5e939460a496bd304d03beb08364"
+  end
+
   depends_on "coreutils"
 
   uses_from_macos "bc" => :test
