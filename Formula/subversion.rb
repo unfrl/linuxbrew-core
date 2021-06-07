@@ -42,11 +42,14 @@ class Subversion < Formula
   uses_from_macos "sqlite"
   uses_from_macos "zlib"
 
-  # Prevent "-arch ppc" from being pulled in from Perl's $Config{ccflags}
-  # Prevent linking into a Python Framework
-  patch :DATA if OS.mac?
+  on_macos do
+    # Prevent "-arch ppc" from being pulled in from Perl's $Config{ccflags}
+    patch :DATA
+  end
 
-  depends_on "libtool" unless OS.mac?
+  on_linux do
+    depends_on "libtool"
+  end
 
   resource "py3c" do
     url "https://github.com/encukou/py3c/archive/v1.1.tar.gz"
@@ -65,7 +68,7 @@ class Subversion < Formula
 
     resource("py3c").unpack py3c_prefix
     resource("serf").stage do
-      unless OS.mac?
+      on_linux do
         inreplace "SConstruct" do |s|
           s.gsub! "env.Append(LIBPATH=['$OPENSSL\/lib'])",
           "\\1\nenv.Append(CPPPATH=['$ZLIB\/include'])\nenv.Append(LIBPATH=['$ZLIB/lib'])"
@@ -85,7 +88,9 @@ class Subversion < Formula
 
       # scons ignores our compiler and flags unless explicitly passed
       krb5 = "/usr"
-      krb5 = Formula["krb5"].opt_prefix unless OS.mac?
+      on_linux do
+        krb5 = Formula["krb5"].opt_prefix
+      end
 
       args = %W[
         PREFIX=#{serf_prefix} GSSAPI=#{krb5} CC=#{ENV.cc}
@@ -95,7 +100,9 @@ class Subversion < Formula
         APU=#{Formula["apr-util"].opt_prefix}
       ]
 
-      args << "ZLIB=#{Formula["zlib"].opt_prefix}" unless OS.mac?
+      on_linux do
+        args << "ZLIB=#{Formula["zlib"].opt_prefix}"
+      end
 
       system "scons", *args
       system "scons", "install"
@@ -105,16 +112,27 @@ class Subversion < Formula
     ENV.append "LDFLAGS", "-Wl,-rpath=#{serf_prefix}/lib" unless OS.mac?
 
     # Use existing system zlib and sqlite
+    on_linux do
+      # svn can't find libserf-1.so.1 at runtime without this
+      ENV.append "LDFLAGS", "-Wl,-rpath=#{serf_prefix}/lib"
+    end
+
     # Use dep-provided other libraries
     # Don't mess with Apache modules (since we're not sudo)
     zlib = "#{MacOS.sdk_path_if_needed}/usr"
-    zlib = Formula["zlib"].opt_prefix unless OS.mac?
+    on_linux do
+      zlib = Formula["zlib"].opt_prefix
+    end
 
     ruby = "/usr/bin/ruby"
-    ruby = "#{Formula["ruby"].opt_bin}/ruby" unless OS.mac?
+    on_linux do
+      ruby = "#{Formula["ruby"].opt_bin}/ruby"
+    end
 
     sqlite = "#{MacOS.sdk_path_if_needed}/usr"
-    sqlite = Formula["sqlite"].opt_prefix unless OS.mac?
+    on_linux do
+      sqlite = Formula["sqlite"].opt_prefix
+    end
 
     args = %W[
       --prefix=#{prefix}
@@ -179,7 +197,7 @@ class Subversion < Formula
 
       onoe "'#{perl_extern_h}' does not exist" unless perl_extern_h.exist?
 
-      if OS.mac?
+      on_macos do
         inreplace "Makefile" do |s|
           s.change_make_var! "SWIG_PL_INCLUDES",
             "$(SWIG_INCLUDES) -arch x86_64 -g -pipe -fno-common " \
@@ -217,10 +235,14 @@ class Subversion < Formula
 
     if Hardware::CPU.intel?
       platform = "darwin-thread-multi-2level"
-      platform = "x86_64-linux-thread-multi" unless OS.mac?
+      on_linux do
+        platform = "x86_64-linux-thread-multi"
+      end
 
-      perl = "usr/bin/perl"
-      perl = "#{Formula["perl"].opt_bin}/perl" unless OS.mac?
+      perl = "/usr/bin/perl"
+      on_linux do
+        perl = "#{Formula["perl"].opt_bin}/perl"
+      end
 
       perl_version = Utils.safe_popen_read(perl.to_s, "--version")[/v(\d+\.\d+(?:\.\d+)?)/, 1]
       ENV["PERL5LIB"] = "#{lib}/perl5/site_perl/#{perl_version}/#{platform}"
