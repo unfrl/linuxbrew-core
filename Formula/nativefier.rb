@@ -12,6 +12,7 @@ class Nativefier < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "351c3f435fe13bbfc232220647869f2ae8647fb4eca45c4442b7567573502893"
     sha256 cellar: :any_skip_relocation, catalina:      "351c3f435fe13bbfc232220647869f2ae8647fb4eca45c4442b7567573502893"
     sha256 cellar: :any_skip_relocation, mojave:        "351c3f435fe13bbfc232220647869f2ae8647fb4eca45c4442b7567573502893"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "813a8416a97bd0b2cc08927590a6fc23a40fbabcde67aada4d39b00e32df8651"
   end
 
   depends_on "node"
