@@ -5,6 +5,10 @@ class Utf8cpp < Formula
   sha256 "8d6aa7d77ad0abb35bb6139cb9a33597ac4c5b33da6a004ae42429b8598c9605"
   license "BSL-1.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "28ec6ef62b638e29d1dbd3efeef96a3484ad643ad99c5ed2912a6752c25a4f4d"
+  end
+
   depends_on "cmake" => [:build, :test]
 
   def install
