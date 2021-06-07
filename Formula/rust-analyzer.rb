@@ -12,6 +12,7 @@ class RustAnalyzer < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "d286243955688823ebc15508d6a0e2a807e4b0fe4f49c0addf8588595f08f68f"
     sha256 cellar: :any_skip_relocation, catalina:      "bcfbf8dd8abd6bf0eb7aac9bca87a82f9eccc444fb95755dcaebe8058037558d"
     sha256 cellar: :any_skip_relocation, mojave:        "eafbe05dd0e7cf967fd6ecf558c0620dfccfd8678a88cbc0a2a4a6de4f71ed82"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "029842e4a190c918dce8b7652e2620f484f634bfd23cd0d3157889df104605b1"
   end
 
   depends_on "rust" => :build
