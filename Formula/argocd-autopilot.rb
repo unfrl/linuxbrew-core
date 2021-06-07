@@ -5,16 +5,19 @@ class ArgocdAutopilot < Formula
       tag:      "v0.1.10",
       revision: "646b3faa598281d0404c4b85443361597173c6c7"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "888e1d9819424e8b4e199883aa5bbddc497e656eaebb85768cb8ae2d8397b9fb"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "73f752116012851ed069bb2e426592bbe139155ce85873e3f2a418c114b6c539"
+    sha256 cellar: :any_skip_relocation, big_sur:       "85a22487dfcda0508d42baeb6a7b02b22b90f22840edb56c53ebf4c170131bd2"
+    sha256 cellar: :any_skip_relocation, catalina:      "fa063a4f517173a24f4b281704bfba8e8e315f883e2ea29a4327e765e1a82556"
+    sha256 cellar: :any_skip_relocation, mojave:        "822450d51563b456e85af678471423e701613b4f8bd9b2b4cb933df9f5ac4b40"
   end
 
   depends_on "go" => :build
 
   def install
-    system "make", "cli-package"
+    system "make", "cli-package", "DEV_MODE=false"
     bin.install "dist/argocd-autopilot"
   end
 

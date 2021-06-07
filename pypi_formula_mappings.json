@@ -84,6 +84,9 @@
   "mycli": {
     "exclude_packages": ["tabulate"]
   },
+  "nox": {
+    "exclude_packages": ["six"]
+  },
   "openstackclient": {
     "extra_packages": ["python-heatclient", "python-octaviaclient"]
   },
@@ -103,6 +106,9 @@
     "extra_packages": ["importlib-metadata", "typing-extensions"]
   },
   "protobuf": {
+    "exclude_packages": ["six"]
+  },
+  "pywhat": {
     "exclude_packages": ["six"]
   },
   "regipy": {

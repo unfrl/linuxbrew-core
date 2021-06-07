@@ -1,17 +1,15 @@
 class Libxc < Formula
   desc "Library of exchange and correlation functionals for codes"
   homepage "https://tddft.org/programs/libxc/"
-  url "https://gitlab.com/libxc/libxc/-/archive/4.3.4/libxc-4.3.4.tar.bz2"
-  sha256 "0efe8b33d151de8787e33c4ba8e2161ffb9da978753f3bd12c5c0a018e7d3ef5"
+  url "https://gitlab.com/libxc/libxc/-/archive/5.1.4/libxc-5.1.4.tar.bz2"
+  sha256 "17ea2328552bccc01463b76f41c297bde8bfc4868951a08c010aba326222cebe"
   license "MPL-2.0"
-  revision OS.mac? ? 2 : 3
 
   bottle do
-    sha256                               arm64_big_sur: "08e052bb3fdc234263a6bafffd84ac393ad7bec9c9053af7b758177313a5cf63"
-    sha256 cellar: :any,                 big_sur:       "2173f36d9439252a028507c8a10f9c918aebdd7804740e4946706fbf13a6ca54"
-    sha256 cellar: :any,                 catalina:      "5b6a06de05d4f4539c46a66e300980848f00f36e221e3988bb08b453aa2ee7db"
-    sha256 cellar: :any,                 mojave:        "3839693eabb3936f15ad769250ee539087b627c3f5ee1d65b1a37504c991f421"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7cd9869942f8397e80d9fbc5bcb8fbb17f9769144468e5f65eacf9d703cd55d"
+    sha256 cellar: :any, arm64_big_sur: "3b98ebf426e6f4b846d108d5f4b61b0d779d38bf9e356dfa14a365fac8f3c47d"
+    sha256 cellar: :any, big_sur:       "66f9da21827ef2de8de328f6cd9024fc55f133fcf9f6d8aec4760255ff623c49"
+    sha256 cellar: :any, catalina:      "123d5b60c730aebee03f3c15837e4202cd6e86e089df9b963b9b2d318da3b6aa"
+    sha256 cellar: :any, mojave:        "3f7a4b898d3405c871a62e61b5bb874ccadb16d2e5d55783af870b638f927993"
   end
 
   depends_on "autoconf" => :build
@@ -44,8 +42,7 @@ class Libxc < Formula
 
     (testpath/"test.f90").write <<~EOS
       program lxctest
-        use xc_f90_types_m
-        use xc_f90_lib_m
+        use xc_f03_lib_m
       end program lxctest
     EOS
     system "gfortran", "test.f90", "-L#{lib}", "-lxc", "-I#{include}",
