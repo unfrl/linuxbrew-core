@@ -15,6 +15,7 @@ class Kubie < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "993809ecc0e1759c1df84d5e1c535b5fb8bb857dd16de933e122d59820734b72"
     sha256 cellar: :any_skip_relocation, catalina:      "7ae832329111b028405c235e41f961ea1e0b749ab4be47cf8c9520f2feda46a4"
     sha256 cellar: :any_skip_relocation, mojave:        "6063f420f052f460de506082bfe6d60ad9695877839c8f48c7ba17226907673d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b38b84c092225da301bb7235164d3e4d5d5c78ac0dbb9db2cb0d97f8f53d4a6"
   end
 
   depends_on "rust" => :build
