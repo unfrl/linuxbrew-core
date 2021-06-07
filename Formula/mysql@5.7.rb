@@ -39,6 +39,9 @@ class MysqlAT57 < Formula
     # a shared object; recompile with -fPIC
     ENV.append_to_cflags "-fPIC" unless OS.mac?
 
+    # Fixes loading of VERSION file; used in conjunction with patch
+    File.rename "VERSION", "MYSQL_VERSION"
+
     # -DINSTALL_* are relative to `CMAKE_INSTALL_PREFIX` (`prefix`)
     args = %W[
       -DCOMPILATION_COMMENT=Homebrew
