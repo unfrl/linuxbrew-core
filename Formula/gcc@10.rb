@@ -39,11 +39,7 @@ class GccAT10 < Formula
   cxxstdlib_check :skip
 
   def version_suffix
-    if build.head?
-      "HEAD"
-    else
-      version.major.to_s
-    end
+    version.major.to_s
   end
 
   def install
@@ -97,7 +93,7 @@ class GccAT10 < Formula
       inreplace "libgcc/config/t-slibgcc-darwin", "@shlib_slibdir@", "#{HOMEBREW_PREFIX}/lib/gcc/#{version_suffix}"
     end
 
-    unless OS.mac?
+    on_linux do
       # Fix cc1: error while loading shared libraries: libisl.so.15
       args << "--with-boot-ldflags=-static-libstdc++ -static-libgcc #{ENV["LDFLAGS"]}"
 
@@ -112,11 +108,18 @@ class GccAT10 < Formula
     mkdir "build" do
       system "../configure", *args
 
-      # Use -headerpad_max_install_names in the build,
-      # otherwise updated load commands won't fit in the Mach-O header.
-      # This is needed because `gcc` avoids the superenv shim.
-      system "make", "BOOT_LDFLAGS=-Wl,-headerpad_max_install_names"
-      system "make", "install"
+      on_macos do
+        # Use -headerpad_max_install_names in the build,
+        # otherwise updated load commands won't fit in the Mach-O header.
+        # This is needed because `gcc` avoids the superenv shim.
+        system "make", "BOOT_LDFLAGS=-Wl,-headerpad_max_install_names"
+        system "make", "install"
+      end
+
+      on_linux do
+        system "make"
+        system "make", "install-strip"
+      end
     end
 
     # Handle conflicts between GCC formulae and avoid interfering
@@ -135,78 +138,78 @@ class GccAT10 < Formula
   end
 
   def post_install
-    return if OS.mac?
+    on_linux do
+      gcc = bin/"gcc-#{version_suffix}"
+      libgcc = Pathname.new(Utils.safe_popen_read(gcc, "-print-libgcc-file-name")).parent
+      raise "command failed: #{gcc} -print-libgcc-file-name" if $CHILD_STATUS.exitstatus.nonzero?
 
-    gcc = bin/"gcc-#{version_suffix}"
-    libgcc = Pathname.new(Utils.safe_popen_read(gcc, "-print-libgcc-file-name")).parent
-    raise "command failed: #{gcc} -print-libgcc-file-name" if $CHILD_STATUS.exitstatus.nonzero?
+      glibc = Formula["glibc"]
+      glibc_installed = glibc.any_version_installed?
 
-    glibc = Formula["glibc"]
-    glibc_installed = glibc.any_version_installed?
+      # Symlink crt1.o and friends where gcc can find it.
+      crtdir = if glibc_installed
+        glibc.opt_lib
+      else
+        Pathname.new(Utils.safe_popen_read("/usr/bin/cc", "-print-file-name=crti.o")).parent
+      end
+      ln_sf Dir[crtdir/"*crt?.o"], libgcc
 
-    # Symlink crt1.o and friends where gcc can find it.
-    crtdir = if glibc_installed
-      glibc.opt_lib
-    else
-      Pathname.new(Utils.safe_popen_read("/usr/bin/cc", "-print-file-name=crti.o")).parent
+      # Create the GCC specs file
+      # See https://gcc.gnu.org/onlinedocs/gcc/Spec-Files.html
+
+      # Locate the specs file
+      specs = libgcc/"specs"
+      ohai "Creating the GCC specs file: #{specs}"
+      specs_orig = Pathname.new("#{specs}.orig")
+      rm_f [specs_orig, specs]
+
+      system_header_dirs = ["#{HOMEBREW_PREFIX}/include"]
+
+      if glibc_installed
+        # https://github.com/Linuxbrew/brew/issues/724
+        system_header_dirs << glibc.opt_include
+      else
+        # Locate the native system header dirs if user uses system glibc
+        target = Utils.safe_popen_read(gcc, "-print-multiarch").chomp
+        raise "command failed: #{gcc} -print-multiarch" if $CHILD_STATUS.exitstatus.nonzero?
+
+        system_header_dirs += ["/usr/include/#{target}", "/usr/include"]
+      end
+
+      # Save a backup of the default specs file
+      specs_string = Utils.safe_popen_read(gcc, "-dumpspecs")
+      raise "command failed: #{gcc} -dumpspecs" if $CHILD_STATUS.exitstatus.nonzero?
+
+      specs_orig.write specs_string
+
+      # Set the library search path
+      # For include path:
+      #   * `-isysroot #{HOMEBREW_PREFIX}/nonexistent` prevents gcc searching built-in
+      #     system header files.
+      #   * `-idirafter <dir>` instructs gcc to search system header
+      #     files after gcc internal header files.
+      # For libraries:
+      #   * `-nostdlib -L#{libgcc}` instructs gcc to use brewed glibc
+      #     if applied.
+      #   * `-L#{libdir}` instructs gcc to find the corresponding gcc
+      #     libraries. It is essential if there are multiple brewed gcc
+      #     with different versions installed.
+      #     Noted that it should only be passed for the `gcc@*` formulae.
+      #   * `-L#{HOMEBREW_PREFIX}/lib` instructs gcc to find the rest
+      #     brew libraries.
+      libdir = HOMEBREW_PREFIX/"lib/gcc/#{version_suffix}"
+      specs.write specs_string + <<~EOS
+        *cpp_unique_options:
+        + -isysroot #{HOMEBREW_PREFIX}/nonexistent #{system_header_dirs.map { |p| "-idirafter #{p}" }.join(" ")}
+
+        *link_libgcc:
+        #{glibc_installed ? "-nostdlib -L#{libgcc}" : "+"} -L#{libdir} -L#{HOMEBREW_PREFIX}/lib
+
+        *link:
+        + --dynamic-linker #{HOMEBREW_PREFIX}/lib/ld.so -rpath #{libdir} -rpath #{HOMEBREW_PREFIX}/lib
+
+      EOS
     end
-    ln_sf Dir[crtdir/"*crt?.o"], libgcc
-
-    # Create the GCC specs file
-    # See https://gcc.gnu.org/onlinedocs/gcc/Spec-Files.html
-
-    # Locate the specs file
-    specs = libgcc/"specs"
-    ohai "Creating the GCC specs file: #{specs}"
-    specs_orig = Pathname.new("#{specs}.orig")
-    rm_f [specs_orig, specs]
-
-    system_header_dirs = ["#{HOMEBREW_PREFIX}/include"]
-
-    if glibc_installed
-      # https://github.com/Linuxbrew/brew/issues/724
-      system_header_dirs << glibc.opt_include
-    else
-      # Locate the native system header dirs if user uses system glibc
-      target = Utils.safe_popen_read(gcc, "-print-multiarch").chomp
-      raise "command failed: #{gcc} -print-multiarch" if $CHILD_STATUS.exitstatus.nonzero?
-
-      system_header_dirs += ["/usr/include/#{target}", "/usr/include"]
-    end
-
-    # Save a backup of the default specs file
-    specs_string = Utils.safe_popen_read(gcc, "-dumpspecs")
-    raise "command failed: #{gcc} -dumpspecs" if $CHILD_STATUS.exitstatus.nonzero?
-
-    specs_orig.write specs_string
-
-    # Set the library search path
-    # For include path:
-    #   * `-isysroot #{HOMEBREW_PREFIX}/nonexistent` prevents gcc searching built-in
-    #     system header files.
-    #   * `-idirafter <dir>` instructs gcc to search system header
-    #     files after gcc internal header files.
-    # For libraries:
-    #   * `-nostdlib -L#{libgcc}` instructs gcc to use brewed glibc
-    #     if applied.
-    #   * `-L#{libdir}` instructs gcc to find the corresponding gcc
-    #     libraries. It is essential if there are multiple brewed gcc
-    #     with different versions installed.
-    #     Noted that it should only be passed for the `gcc@*` formulae.
-    #   * `-L#{HOMEBREW_PREFIX}/lib` instructs gcc to find the rest
-    #     brew libraries.
-    libdir = HOMEBREW_PREFIX/"lib/gcc/#{version_suffix}"
-    specs.write specs_string + <<~EOS
-      *cpp_unique_options:
-      + -isysroot #{HOMEBREW_PREFIX}/nonexistent #{system_header_dirs.map { |p| "-idirafter #{p}" }.join(" ")}
-
-      *link_libgcc:
-      #{glibc_installed ? "-nostdlib -L#{libgcc}" : "+"} -L#{libdir} -L#{HOMEBREW_PREFIX}/lib
-
-      *link:
-      + --dynamic-linker #{HOMEBREW_PREFIX}/lib/ld.so -rpath #{libdir} -rpath #{HOMEBREW_PREFIX}/lib
-
-    EOS
   end
 
   test do
