@@ -12,6 +12,7 @@ class Mkdocs < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "436dc0e8b7b8cb66fb1ba4534736302bf2bafb63b74d847d2f1ce836edae079a"
     sha256 cellar: :any_skip_relocation, catalina:      "6054846d6b256a03546f62032162e8210a0b99045efbbb09c7d44a16d0b9706a"
     sha256 cellar: :any_skip_relocation, mojave:        "836f5323375a936a67d4954be2d5556bfbbd92f086ae164549f3f8aec072ff9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eaee9e327e2076e98ac7916202abdd43c4175c71087170f49763b5fb6d20d721"
   end
 
   depends_on "python@3.9"
