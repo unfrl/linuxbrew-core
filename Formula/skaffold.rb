@@ -12,6 +12,7 @@ class Skaffold < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "75d176a1c964392659e698079ce98d4aef8bbfd1021fba53d474d37faf0734ca"
     sha256 cellar: :any_skip_relocation, catalina:      "843793b86b449821cc549c6d34570e2621659b12bd957c0627ee02ae8103bf29"
     sha256 cellar: :any_skip_relocation, mojave:        "f69975915448eb510495ca893b32a248211ebde8fa86f626099f421d510bdcaa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ddfe319c21d9306dffadc5081683e5c90441af0f0c07b6c3d0e4bb5cf77775cf"
   end
 
   depends_on "go" => :build
