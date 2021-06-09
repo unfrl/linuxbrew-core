@@ -2,7 +2,7 @@ class Agda < Formula
   desc "Dependently typed functional programming language"
   homepage "https://wiki.portal.chalmers.se/agda/"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   stable do
     url "https://hackage.haskell.org/package/Agda-2.6.1.3/Agda-2.6.1.3.tar.gz"
@@ -15,10 +15,9 @@ class Agda < Formula
   end
 
   bottle do
-    sha256 big_sur:      "3ba0c41ad582faea6399a06f6c623a4041a4bdcdf7e4ccf8303bfd2accf0caa9"
-    sha256 catalina:     "aef5681b9ddc4b11c4bdca1be1c1fba54339c0f25993ca7f0b1aad088eb37013"
-    sha256 mojave:       "19cb2f41df599ab3856b10523c327685240c9cc37b0b78eaa276603bf4944439"
-    sha256 x86_64_linux: "2d1a3776b0bdf8a11b5e660be8471ed8098a6bb3296c4dffd3c8bd677c5fe4c7"
+    sha256 big_sur:  "4b24fb91587c0678b749169522a0907bfd4553b50519c226e1ab6a71a055b882"
+    sha256 catalina: "153d4d86e77ac143756932300264dc6fc60bb068d40d3e87cac1cffb27afa3c3"
+    sha256 mojave:   "a87b626c89dbec0edac8cf130b8625d046ada5727a41145e012f667e336b960c"
   end
 
   head do
@@ -31,9 +30,12 @@ class Agda < Formula
 
   depends_on "cabal-install"
   depends_on "emacs"
-  depends_on "ghc"
+  depends_on "ghc" if MacOS.version >= :catalina
 
   uses_from_macos "zlib"
+
+  on_macos { depends_on "ghc@8.8" if MacOS.version <= :mojave }
+  on_linux { depends_on "ghc" }
 
   resource "alex" do
     url "https://hackage.haskell.org/package/alex-3.2.6/alex-3.2.6.tar.gz"
@@ -78,6 +80,10 @@ class Agda < Formula
 
     # Clean up references to Homebrew shims
     rm_rf "#{lib}/agda/dist-newstyle/cache"
+
+    on_macos do
+      bin.env_script_all_files libexec/"bin", PATH: "$PATH:#{Formula["ghc@8.8"].opt_bin}" if MacOS.version <= :mojave
+    end
   end
 
   test do

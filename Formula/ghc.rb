@@ -1,8 +1,8 @@
 class Ghc < Formula
   desc "Glorious Glasgow Haskell Compilation System"
   homepage "https://haskell.org/ghc/"
-  url "https://downloads.haskell.org/~ghc/8.10.4/ghc-8.10.4-src.tar.xz"
-  sha256 "52af871b4e08550257d720c2944ac85727d0b948407cef1bebfe7508c224910e"
+  url "https://downloads.haskell.org/~ghc/8.10.5/ghc-8.10.5-src.tar.xz"
+  sha256 "f10941f16e4fbd98580ab5241b9271bb0851304560c4d5ca127e3b0e20e3076f"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,14 +12,14 @@ class Ghc < Formula
 
   # Cellar should be :any_skip_relocation on Linux
   bottle do
-    sha256                               big_sur:      "965f94c14b56e3db7b239860e0a1d577be0b27caf8adb6212710a7430ce723d3"
-    sha256                               catalina:     "9a4f6c3edf83d5e2020bee5c3dd419bb6c3ebb5988306be9ffeca6bb7810d1f8"
-    sha256                               mojave:       "5230b93b929e970b68aa6778ebd717c32ca08448c3428f97650e4f707c022ed5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "116eeb4f409cf1f2c14936d6581e0bbcbb2a2de65ab546cc568e60d32db14bb7"
+    sha256 cellar: :any, arm64_big_sur: "ebbea1449d40f11b82f7acf47cca422a8c1571d0bc1db75643c39731aabbca3c"
+    sha256               big_sur:       "e1a675c272df603c7f874db5d12d8d72316c6af57b7674db259c4b6ec9e2ec3c"
+    sha256               catalina:      "b6d6080ee6cb8135e72980e07b752184fab99aba99de61299b27c704e1a1e8e7"
   end
 
   depends_on "python@3.9" => :build
-  depends_on "sphinx-doc" => :build
+  depends_on "llvm" if Hardware::CPU.arm?
+  depends_on macos: :catalina
 
   unless OS.mac?
     depends_on "m4" => :build
@@ -41,13 +41,18 @@ class Ghc < Formula
   # A binary of ghc is needed to bootstrap ghc
   resource "binary" do
     on_macos do
-      url "https://downloads.haskell.org/~ghc/8.10.4/ghc-8.10.4-x86_64-apple-darwin.tar.xz"
-      sha256 "725ecf6543e63b81a3581fb8c97afd21a08ae11bc0fa4f8ee25d45f0362ef6d5"
+      if Hardware::CPU.intel?
+        url "https://downloads.haskell.org/~ghc/8.10.5/ghc-8.10.5-x86_64-apple-darwin.tar.xz"
+        sha256 "ef0f47eff8962d58fa447123636cf8ef31c1e5b2d0ae90177d3388861ddf4a22"
+      else
+        url "https://downloads.haskell.org/ghc/8.10.5/ghc-8.10.5-aarch64-apple-darwin.tar.xz"
+        sha256 "03684e70ff03d041b9a4e0f84c177953a241ab8ec7a028c72fa21ac67e66cb09"
+      end
     end
 
     on_linux do
-      url "https://downloads.haskell.org/~ghc/8.10.4/ghc-8.10.4-x86_64-deb9-linux.tar.xz"
-      sha256 "5694200a5c38f22c142baf850b1d2f3784211d2ec9302e11693259a1ae8e38b7"
+      url "https://downloads.haskell.org/~ghc/8.10.5/ghc-8.10.5-x86_64-deb9-linux.tar.xz"
+      sha256 "15e71325c3bdfe3804be0f84c2fc5c913d811322d19b0f4d4cff20f29cdd804d"
     end
   end
 
@@ -64,7 +69,8 @@ class Ghc < Formula
     # is mandatory or else you'll get "illegal text relocs" errors.
     resource("gmp").stage do
       args = if OS.mac?
-        "--build=#{Hardware.oldest_cpu}-apple-darwin#{OS.kernel_version.major}"
+        cpu = Hardware::CPU.arm? ? "aarch64" : Hardware.oldest_cpu
+        "--build=#{cpu}-apple-darwin#{OS.kernel_version.major}"
       else
         "--build=core2-linux-gnu"
       end
@@ -111,7 +117,7 @@ class Ghc < Formula
     end
 
     system "./configure", "--prefix=#{prefix}", *args
-    system "make"
+    system "make", "BUILD_SPHINX_HTML=NO"
 
     ENV.deparallelize { system "make", "install" }
     Dir.glob(lib/"*/package.conf.d/package.cache") { |f| rm f }
