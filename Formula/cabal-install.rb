@@ -8,9 +8,10 @@ class CabalInstall < Formula
   head "https://github.com/haskell/cabal.git", branch: "3.4"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:  "2278e214a2049f3c96f6e7a331db424f4318fddd16112eadd0327ba09d5ff706"
-    sha256 cellar: :any_skip_relocation, catalina: "2d413e0af2bd35e151423a1ad764c471a397bdab5f04a337c31adb96480bdb84"
-    sha256 cellar: :any_skip_relocation, mojave:   "ce70ecbdf305bbefa6bfe41dab1d5e3087e5062e64d500277c7ec9aa71d792bc"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "c3e5e9170c9ab1fe1195fbaccc10d5eda69fcf53407cbc49a4c38464df9a5b4d"
+    sha256 cellar: :any_skip_relocation, big_sur:       "2278e214a2049f3c96f6e7a331db424f4318fddd16112eadd0327ba09d5ff706"
+    sha256 cellar: :any_skip_relocation, catalina:      "2d413e0af2bd35e151423a1ad764c471a397bdab5f04a337c31adb96480bdb84"
+    sha256 cellar: :any_skip_relocation, mojave:        "ce70ecbdf305bbefa6bfe41dab1d5e3087e5062e64d500277c7ec9aa71d792bc"
   end
 
   depends_on "ghc" if MacOS.version >= :catalina
@@ -21,8 +22,14 @@ class CabalInstall < Formula
 
   resource "bootstrap" do
     on_macos do
-      url "https://downloads.haskell.org/~cabal/cabal-install-3.2.0.0/cabal-install-3.2.0.0-x86_64-apple-darwin17.7.0.tar.xz"
-      sha256 "9197c17d2ece0f934f5b33e323cfcaf486e4681952687bc3d249488ce3cbe0e9"
+      if Hardware::CPU.intel?
+        url "https://downloads.haskell.org/~cabal/cabal-install-3.2.0.0/cabal-install-3.2.0.0-x86_64-apple-darwin17.7.0.tar.xz"
+        sha256 "9197c17d2ece0f934f5b33e323cfcaf486e4681952687bc3d249488ce3cbe0e9"
+      else
+        # Bootstrapped on Homebrew CI. Replace with official upstream artefact when one is available.
+        url "https://github.com/haskell/cabal/files/6617482/cabal-install-3.5-arm64-darwin-11.4-bootstrapped.tar.gz"
+        sha256 "e6f2c70fe8946df3980899bd1c564ffea55630b57238cdac9de851178e644a53"
+      end
     end
     on_linux do
       url "https://downloads.haskell.org/~cabal/cabal-install-3.2.0.0/cabal-install-3.2.0.0-x86_64-unknown-linux.tar.xz"

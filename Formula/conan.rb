@@ -3,17 +3,16 @@ class Conan < Formula
 
   desc "Distributed, open source, package manager for C/C++"
   homepage "https://conan.io"
-  url "https://files.pythonhosted.org/packages/3b/a5/627a51563ac3e1164e1d2ee8995e714f93e00be696f8153ef840bee7797e/conan-1.37.0.tar.gz"
-  sha256 "2a5e7f872906912f0b22751046b11397f73dc92602cb87dd2089842d476fb767"
+  url "https://files.pythonhosted.org/packages/63/f5/07110dc9b065c0c11785d2ff1ebedd79cfad094db228120df1503003e996/conan-1.37.1.tar.gz"
+  sha256 "1b68f3c7c672ec161aeff77220e2cce9d42cc732ac162ecc8ec3245971b7d4ae"
   license "MIT"
   head "https://github.com/conan-io/conan.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "a43800cb21ed8e4b7be790af5f95b457eae86d2a6e3f5094620e2a4c1a399a62"
-    sha256 cellar: :any_skip_relocation, big_sur:       "15bc3d0deb5808ab4bcb2b3156b24a234b557fc6349c536e56c5d01696b2d362"
-    sha256 cellar: :any_skip_relocation, catalina:      "05fa3e16936a1f5f07a92f23b004eef64115ff571a93c917058d9e73e2be74dc"
-    sha256 cellar: :any_skip_relocation, mojave:        "c083ad6380ef25bf8a6565c596c336f532e09341000abede9ca8d67ea983514d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7adc22aa088fc8679382e2e6d102710e646c65d8ad9c54fbe12a8bc0001da235"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "473581ef705c5bd67573b8ffacc230cda707094ca44444846ebd378b6a6fe6aa"
+    sha256 cellar: :any_skip_relocation, big_sur:       "f6fcaaad34733747208c1c869c12ec7985fb2a7582ec9673d52a812f7f3c7ca4"
+    sha256 cellar: :any_skip_relocation, catalina:      "bdbd414e3e14ee33a7983cf9a13830d79beeacf650b253f29f0ce176e6c6b6c0"
+    sha256 cellar: :any_skip_relocation, mojave:        "dc1e12245e2615bbc165359d8c6056345201033dc7e09f220d5a6d5df73abf07"
   end
 
   depends_on "pkg-config" => :build
@@ -52,8 +51,8 @@ class Conan < Formula
   end
 
   resource "fasteners" do
-    url "https://files.pythonhosted.org/packages/d1/8f/a6c06f9bce5691a40283e52b92ec1522d6863951e738a31b109bf6bf2002/fasteners-0.16.tar.gz"
-    sha256 "c995d8c26b017c5d6a6de9ad29a0f9cdd57de61ae1113d28fac26622b06a0933"
+    url "https://files.pythonhosted.org/packages/0b/e8/faae4f961991ad1c0c0aca0a5fa16aa88f42d040f05853d1fb1697e2cee2/fasteners-0.16.2.tar.gz"
+    sha256 "2fa2ca17a4fa0510ff63e0a091ab58fdd1bcdbab82e08d4e449b85ff086fa68e"
   end
 
   resource "future" do
