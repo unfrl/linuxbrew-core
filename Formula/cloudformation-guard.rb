@@ -10,6 +10,7 @@ class CloudformationGuard < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "c9f566d3b02500d89fe7782547ad4661dd9cdd0db90cb8f742183220af1801d2"
     sha256 cellar: :any_skip_relocation, catalina:      "97f0bf373f9cc106660bbff1f8e3aac3e86906b15d11633788520b6670f44eb9"
     sha256 cellar: :any_skip_relocation, mojave:        "8b485665e86453b38df8baa6c0715b53aca87129128878384fd62652cf04cacf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88d02cb2326927bb59a3f2c938269ee8642ab09000087e5dc31f91ddc1baf956"
   end
 
   depends_on "rust" => :build
