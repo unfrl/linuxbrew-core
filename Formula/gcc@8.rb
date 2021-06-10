@@ -6,6 +6,10 @@ class GccAT8 < Formula
   url "https://ftp.gnu.org/gnu/gcc/gcc-8.5.0/gcc-8.5.0.tar.xz"
   mirror "https://ftpmirror.gnu.org/gcc/gcc-8.5.0/gcc-8.5.0.tar.xz"
   sha256 "d308841a511bb830a6100397b0042db24ce11f642dab6ea6ee44842e5325ed50"
+  license all_of: [
+    "LGPL-2.1-or-later",
+    "GPL-3.0-or-later" => { with: "GCC-exception-3.1" },
+  ]
 
   livecheck do
     url :stable
@@ -40,11 +44,13 @@ class GccAT8 < Formula
   # GCC bootstraps itself, so it is OK to have an incompatible C++ stdlib
   cxxstdlib_check :skip
 
+  def version_suffix
+    version.major.to_s
+  end
+
   def install
     # GCC will suffer build errors if forced to use a particular linker.
     ENV.delete "LD"
-
-    version_suffix = version.major.to_s
 
     # Even when suffixes are appended, the info pages conflict when
     # install-info is run so pretend we have an outdated makeinfo
@@ -111,13 +117,18 @@ class GccAT8 < Formula
     mkdir "build" do
       system "../configure", *args
 
-      make_args = []
-      # Use -headerpad_max_install_names in the build,
-      # otherwise lto1 load commands cannot be edited on El Capitan
-      make_args << "BOOT_LDFLAGS=-Wl,-headerpad_max_install_names" if OS.mac?
+      on_macos do
+        # Use -headerpad_max_install_names in the build,
+        # otherwise updated load commands won't fit in the Mach-O header.
+        # This is needed because `gcc` avoids the superenv shim.
+        system "make", "BOOT_LDFLAGS=-Wl,-headerpad_max_install_names"
+        system "make", "install"
+      end
 
-      system "make", *make_args
-      system "make", OS.mac? ? "install" : "install-strip"
+      on_linux do
+        system "make"
+        system "make", "install-strip"
+      end
     end
 
     # Handle conflicts between GCC formulae and avoid interfering
@@ -136,8 +147,8 @@ class GccAT8 < Formula
   end
 
   def post_install
-    unless OS.mac?
-      gcc = bin/"gcc-8"
+    on_linux do
+      gcc = bin/"gcc-#{version_suffix}"
       libgcc = Pathname.new(Utils.safe_popen_read(gcc, "-print-libgcc-file-name")).parent
       raise "command failed: #{gcc} -print-libgcc-file-name" if $CHILD_STATUS.exitstatus.nonzero?
 
@@ -195,7 +206,7 @@ class GccAT8 < Formula
       #     Noted that it should only be passed for the `gcc@*` formulae.
       #   * `-L#{HOMEBREW_PREFIX}/lib` instructs gcc to find the rest
       #     brew libraries.
-      libdir = HOMEBREW_PREFIX/"lib/gcc/8"
+      libdir = HOMEBREW_PREFIX/"lib/gcc/#{version_suffix}"
       specs.write specs_string + <<~EOS
         *cpp_unique_options:
         + -isysroot #{HOMEBREW_PREFIX}/nonexistent #{system_header_dirs.map { |p| "-idirafter #{p}" }.join(" ")}
