@@ -4,6 +4,7 @@ class Ghc < Formula
   url "https://downloads.haskell.org/~ghc/8.10.5/ghc-8.10.5-src.tar.xz"
   sha256 "f10941f16e4fbd98580ab5241b9271bb0851304560c4d5ca127e3b0e20e3076f"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url "https://www.haskell.org/ghc/download.html"
@@ -12,15 +13,15 @@ class Ghc < Formula
 
   # Cellar should be :any_skip_relocation on Linux
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "ebbea1449d40f11b82f7acf47cca422a8c1571d0bc1db75643c39731aabbca3c"
-    sha256                               big_sur:       "e1a675c272df603c7f874db5d12d8d72316c6af57b7674db259c4b6ec9e2ec3c"
-    sha256                               catalina:      "b6d6080ee6cb8135e72980e07b752184fab99aba99de61299b27c704e1a1e8e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7511108e04feb57067d6127cfcfc619726780755003a04d383af4ee16566c8d0"
+    sha256 cellar: :any, arm64_big_sur: "5fb211bdab28a5f3f49796439c5d37637d8da68e9bcde04604b501e342945fc7"
+    sha256               big_sur:       "8ed8d1104dc1ca16619434c380642bcfc65f85d01206a24b0e71a15c770a7457"
+    sha256               catalina:      "17d7984c1afe40d2d9a92eb591b640539ef8cfeb04bad7b1f934ce84d8b85724"
+    sha256               mojave:        "dd2289d325865bb59e8009f57c201f6e07a3efd2a435e3f8bd727cf959093df3"
   end
 
   depends_on "python@3.9" => :build
+  depends_on "sphinx-doc" => :build
   depends_on "llvm" if Hardware::CPU.arm?
-  depends_on macos: :catalina
 
   unless OS.mac?
     depends_on "m4" => :build
@@ -43,8 +44,9 @@ class Ghc < Formula
   resource "binary" do
     on_macos do
       if Hardware::CPU.intel?
-        url "https://downloads.haskell.org/~ghc/8.10.5/ghc-8.10.5-x86_64-apple-darwin.tar.xz"
-        sha256 "ef0f47eff8962d58fa447123636cf8ef31c1e5b2d0ae90177d3388861ddf4a22"
+        # We intentionally bootstrap with 8.10.4 on Intel, as 8.10.5 leads to build failure on Mojave
+        url "https://downloads.haskell.org/~ghc/8.10.4/ghc-8.10.4-x86_64-apple-darwin.tar.xz"
+        sha256 "725ecf6543e63b81a3581fb8c97afd21a08ae11bc0fa4f8ee25d45f0362ef6d5"
       else
         url "https://downloads.haskell.org/ghc/8.10.5/ghc-8.10.5-aarch64-apple-darwin.tar.xz"
         sha256 "03684e70ff03d041b9a4e0f84c177953a241ab8ec7a028c72fa21ac67e66cb09"
@@ -58,6 +60,13 @@ class Ghc < Formula
   end
 
   def install
+    # Fix doc build error. Remove at version bump.
+    # https://gitlab.haskell.org/ghc/ghc/-/issues/19962
+    inreplace "docs/users_guide/conf.py" do |s|
+      s.gsub! "'preamble': '''", "'preamble': r'''"
+      s.gsub! "\\setlength{\\\\tymin}{45pt}", "\\setlength{\\tymin}{45pt}"
+    end
+
     ENV["CC"] = ENV.cc
     ENV["LD"] = "ld"
     ENV["PYTHON"] = Formula["python@3.9"].opt_bin/"python3"
@@ -118,7 +127,7 @@ class Ghc < Formula
     end
 
     system "./configure", "--prefix=#{prefix}", *args
-    system "make", "BUILD_SPHINX_HTML=NO"
+    system "make"
 
     ENV.deparallelize { system "make", "install" }
     Dir.glob(lib/"*/package.conf.d/package.cache") { |f| rm f }
