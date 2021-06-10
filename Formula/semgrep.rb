@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https://semgrep.dev"
   url "https://github.com/returntocorp/semgrep.git",
-      tag:      "v0.55.0",
-      revision: "78e25e597cfb65d7d2d042afa8010d7cd8145081"
+      tag:      "v0.55.1",
+      revision: "b927e75a356cfdf494a0f21b6f287ebdf3e2eb70"
   license "LGPL-2.1-only"
   head "https://github.com/returntocorp/semgrep.git", branch: "develop"
 
@@ -15,10 +15,10 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "b6d1850b377776965cdea94eda539a6a5d393b22d924bedc70292fdc87e328d6"
-    sha256 cellar: :any, big_sur:       "2df63353d71f4b41d3c6f83bdc7672f44c234a93a91c09754f83589332cdc367"
-    sha256 cellar: :any, catalina:      "ec583999352f2b7eacf042b25531121c39c3b8bcc2ee694bb28d30000c152e97"
-    sha256 cellar: :any, mojave:        "d447817b0404cb90753c19c0c359d8b21886294c42531b52e03cbeff02c66565"
+    sha256 cellar: :any, arm64_big_sur: "1ddc6f8d55893f374ab12887c62ed1b7bd785fa1ba4c1a85dfcdcd675e398d30"
+    sha256 cellar: :any, big_sur:       "30bbb28c246b06d8149e2249d9d2a9bcb5bf40c1643422ceea214fcded9d8a13"
+    sha256 cellar: :any, catalina:      "093553222bc92e6c407025334fff0265ef8533816fb0c4e5da4362dd2052e34a"
+    sha256 cellar: :any, mojave:        "2e4350afe8329cd7a4d96168c7108bbf9a5b25f987122b62732877586db4c823"
   end
 
   depends_on "cmake" => :build
@@ -81,8 +81,8 @@ class Semgrep < Formula
   end
 
   resource "ruamel.yaml" do
-    url "https://files.pythonhosted.org/packages/fd/6b/b83bdc8fb9aad62f6469117874e7c11b64d94ba9e8557f73ca1f28c2df7d/ruamel.yaml-0.17.7.tar.gz"
-    sha256 "5c3fa739bbedd2f23769656784e671c6335d17a5bf163c3c3901d8663c0af287"
+    url "https://files.pythonhosted.org/packages/13/02/540061c38c27e495d73584663fbc5ce70edda17c1e85c6831582b2f558a8/ruamel.yaml-0.17.8.tar.gz"
+    sha256 "86a8d429ca7288aff0b27f365ffd53e9cee66345b23c8ed6370791c72f9f9f03"
   end
 
   resource "ruamel.yaml.clib" do

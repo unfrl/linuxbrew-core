@@ -3,19 +3,19 @@ class Mkdocs < Formula
 
   desc "Project documentation with Markdown"
   homepage "https://www.mkdocs.org/"
-  url "https://files.pythonhosted.org/packages/16/07/89490a6d824e4cba58417a4e565113b11b52cc449f2d417798e47a34be87/mkdocs-1.2.tar.gz"
-  sha256 "26118adefe1d311b306f14bc2fae313cffcddc2f724d498fb40c26473c7f0017"
+  url "https://files.pythonhosted.org/packages/24/19/4b8422c52fd0f34751c53785da6b7d27fff539f44128d0332fdb4694ba2b/mkdocs-1.2.1.tar.gz"
+  sha256 "6e0ea175366e3a50d334597b0bc042b8cebd512398cdd3f6f34842d0ef524905"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "7a06e8a0c6239a64681b454d5d4c8df58e47c7ec725c055ac6457920f32f26d7"
-    sha256 cellar: :any_skip_relocation, big_sur:       "436dc0e8b7b8cb66fb1ba4534736302bf2bafb63b74d847d2f1ce836edae079a"
-    sha256 cellar: :any_skip_relocation, catalina:      "6054846d6b256a03546f62032162e8210a0b99045efbbb09c7d44a16d0b9706a"
-    sha256 cellar: :any_skip_relocation, mojave:        "836f5323375a936a67d4954be2d5556bfbbd92f086ae164549f3f8aec072ff9f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eaee9e327e2076e98ac7916202abdd43c4175c71087170f49763b5fb6d20d721"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "3a3a7ba1f5a852d52f9016c9304dbebc55ff39fdd7aab772e6875d5b9dbc399c"
+    sha256 cellar: :any_skip_relocation, big_sur:       "0795b30efd608a959240d65f496125134fd546690d87cf4d393115d7a10b3ecb"
+    sha256 cellar: :any_skip_relocation, catalina:      "052d025a4e9640cb9d85727e11faca2843145c4542971fe8a79de98adf0cbb3d"
+    sha256 cellar: :any_skip_relocation, mojave:        "a8336940714d9bc75d8de37e11b2ca06b58270325d3ae92e8559a9c3139eaba8"
   end
 
   depends_on "python@3.9"
+  depends_on "six"
 
   resource "click" do
     url "https://files.pythonhosted.org/packages/21/83/308a74ca1104fe1e3197d31693a7a2db67c2d4e668f20f43a2fca491f9f7/click-8.0.1.tar.gz"
@@ -75,11 +75,6 @@ class Mkdocs < Formula
   resource "pyyaml_env_tag" do
     url "https://files.pythonhosted.org/packages/fb/8e/da1c6c58f751b70f8ceb1eb25bc25d524e8f14fe16edcce3f4e3ba08629c/pyyaml_env_tag-0.1.tar.gz"
     sha256 "70092675bda14fdec33b31ba77e7543de9ddc88f2e5b99160396572d11525bdb"
-  end
-
-  resource "six" do
-    url "https://files.pythonhosted.org/packages/71/39/171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85e/six-1.16.0.tar.gz"
-    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
   end
 
   resource "watchdog" do
