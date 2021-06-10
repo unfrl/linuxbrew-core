@@ -12,9 +12,10 @@ class Librealsense < Formula
   end
 
   bottle do
-    sha256 cellar: :any, big_sur:  "c3f3246b48114cee4e9067c6b4a0a00ecb05101686ce5c17df01f071d2bcc246"
-    sha256 cellar: :any, catalina: "635d42be94f49ec5524b9147396a37a050e62eaaf3acf133adece3c4893d90ba"
-    sha256 cellar: :any, mojave:   "612778d10e1786e5fced72a3968b477e6f2128bfe973317224678bbcaecde9bf"
+    sha256 cellar: :any,                 big_sur:      "c3f3246b48114cee4e9067c6b4a0a00ecb05101686ce5c17df01f071d2bcc246"
+    sha256 cellar: :any,                 catalina:     "635d42be94f49ec5524b9147396a37a050e62eaaf3acf133adece3c4893d90ba"
+    sha256 cellar: :any,                 mojave:       "612778d10e1786e5fced72a3968b477e6f2128bfe973317224678bbcaecde9bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "fe2fdc686866a0c711c5f9907b0a76cf822455e8f407051e2a85a32d936a4d38"
   end
 
   depends_on "cmake" => :build
