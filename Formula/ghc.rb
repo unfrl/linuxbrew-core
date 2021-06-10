@@ -13,10 +13,11 @@ class Ghc < Formula
 
   # Cellar should be :any_skip_relocation on Linux
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "5fb211bdab28a5f3f49796439c5d37637d8da68e9bcde04604b501e342945fc7"
-    sha256               big_sur:       "8ed8d1104dc1ca16619434c380642bcfc65f85d01206a24b0e71a15c770a7457"
-    sha256               catalina:      "17d7984c1afe40d2d9a92eb591b640539ef8cfeb04bad7b1f934ce84d8b85724"
-    sha256               mojave:        "dd2289d325865bb59e8009f57c201f6e07a3efd2a435e3f8bd727cf959093df3"
+    sha256 cellar: :any,                 arm64_big_sur: "5fb211bdab28a5f3f49796439c5d37637d8da68e9bcde04604b501e342945fc7"
+    sha256                               big_sur:       "8ed8d1104dc1ca16619434c380642bcfc65f85d01206a24b0e71a15c770a7457"
+    sha256                               catalina:      "17d7984c1afe40d2d9a92eb591b640539ef8cfeb04bad7b1f934ce84d8b85724"
+    sha256                               mojave:        "dd2289d325865bb59e8009f57c201f6e07a3efd2a435e3f8bd727cf959093df3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f4c158654d53261d2514b3d43410e4e2e62e00a9ccfe7edcdf4f69b0dc73229"
   end
 
   depends_on "python@3.9" => :build
