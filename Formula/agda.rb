@@ -2,7 +2,7 @@ class Agda < Formula
   desc "Dependently typed functional programming language"
   homepage "https://wiki.portal.chalmers.se/agda/"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
 
   stable do
     url "https://hackage.haskell.org/package/Agda-2.6.1.3/Agda-2.6.1.3.tar.gz"
@@ -15,10 +15,10 @@ class Agda < Formula
   end
 
   bottle do
-    sha256 big_sur:      "4b24fb91587c0678b749169522a0907bfd4553b50519c226e1ab6a71a055b882"
-    sha256 catalina:     "153d4d86e77ac143756932300264dc6fc60bb068d40d3e87cac1cffb27afa3c3"
-    sha256 mojave:       "a87b626c89dbec0edac8cf130b8625d046ada5727a41145e012f667e336b960c"
-    sha256 x86_64_linux: "d54c3195698f6579cf84df399978cde58f49e22e3a19875b9941591babdc8e27"
+    sha256 arm64_big_sur: "8791de9da2d33e6e3411907a3e46ff5a53525c22a695a16c99e31118d345b712"
+    sha256 big_sur:       "a17b2a185083a45a26f4c8cfbc49561f2d3f0d90b1e4d069dd0ecab4b10fd2af"
+    sha256 catalina:      "2856aebd3cc86c88c55f2445982670ae2494eae9521995dc8dd8da1fc43776f2"
+    sha256 mojave:        "1c3a40bd0ec48c5963b3b5a140f3bb203abd42d6101389c7f6ac69723b334335"
   end
 
   head do
@@ -29,14 +29,12 @@ class Agda < Formula
     end
   end
 
+  depends_on "llvm" => [:build, :test] if Hardware::CPU.arm?
   depends_on "cabal-install"
   depends_on "emacs"
-  depends_on "ghc" if MacOS.version >= :catalina
+  depends_on "ghc"
 
   uses_from_macos "zlib"
-
-  on_macos { depends_on "ghc@8.8" if MacOS.version <= :mojave }
-  on_linux { depends_on "ghc" }
 
   resource "alex" do
     url "https://hackage.haskell.org/package/alex-3.2.6/alex-3.2.6.tar.gz"
@@ -81,13 +79,11 @@ class Agda < Formula
 
     # Clean up references to Homebrew shims
     rm_rf "#{lib}/agda/dist-newstyle/cache"
-
-    on_macos do
-      bin.env_script_all_files libexec/"bin", PATH: "$PATH:#{Formula["ghc@8.8"].opt_bin}" if MacOS.version <= :mojave
-    end
   end
 
   test do
+    ENV.append_path "PATH", Formula["llvm"].opt_bin
+
     simpletest = testpath/"SimpleTest.agda"
     simpletest.write <<~EOS
       module SimpleTest where
