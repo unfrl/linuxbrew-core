@@ -6,6 +6,10 @@ class Elfutils < Formula
   sha256 "dc8d3e74ab209465e7f568e1b3bb9a5a142f8656e2b57d10049a73da2ae6b5a6"
   license all_of: ["GPL-2.0-or-later", "GPL-3.0-or-later", "LGPL-2.0-only"]
 
+  bottle do
+    sha256 x86_64_linux: "ce01b01cd668db7abb2afd19e97911e2a52dd8009cf2ac538dabc9591fb181bb"
+  end
+
   depends_on "m4" => :build
   depends_on "bzip2"
   depends_on :linux
