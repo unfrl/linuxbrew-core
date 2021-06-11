@@ -6,10 +6,6 @@ class Xkeyboardconfig < Formula
   license "MIT"
   head "https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config.git"
 
-  bottle do
-    sha256 cellar: :any_skip_relocation, all: "ee2aeb16373d0206b469f54ed4b709d1be8e0f13f228721b5610b62fa9bd6c54"
-  end
-
   depends_on "gettext" => :build
   depends_on "intltool" => :build
   depends_on "pkg-config" => [:build, :test]
