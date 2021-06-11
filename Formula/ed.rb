@@ -19,11 +19,16 @@ class Ed < Formula
   def install
     ENV.deparallelize
 
-    system "./configure", "--prefix=#{prefix}", *("--program-prefix=g" if OS.mac?)
+    args = ["--prefix=#{prefix}"]
+    on_macos do
+      args << "--program-prefix=g"
+    end
+
+    system "./configure", *args
     system "make"
     system "make", "install"
 
-    if OS.mac?
+    on_macos do
       %w[ed red].each do |prog|
         (libexec/"gnubin").install_symlink bin/"g#{prog}" => prog
         (libexec/"gnuman/man1").install_symlink man1/"g#{prog}.1" => "#{prog}.1"
@@ -34,21 +39,21 @@ class Ed < Formula
   end
 
   def caveats
-    return unless OS.mac?
-
-    <<~EOS
-      All commands have been installed with the prefix "g".
-      If you need to use these commands with their normal names, you
-      can add a "gnubin" directory to your PATH from your bashrc like:
-        PATH="#{opt_libexec}/gnubin:$PATH"
-    EOS
+    on_macos do
+      <<~EOS
+        All commands have been installed with the prefix "g".
+        If you need to use these commands with their normal names, you
+        can add a "gnubin" directory to your PATH from your bashrc like:
+          PATH="#{opt_libexec}/gnubin:$PATH"
+      EOS
+    end
   end
 
   test do
     testfile = testpath/"test"
     testfile.write "Hello world\n"
 
-    if OS.mac?
+    on_macos do
       pipe_output("#{bin}/ged -s #{testfile}", ",s/o//\nw\n", 0)
       assert_equal "Hell world\n", testfile.read
 
@@ -56,7 +61,7 @@ class Ed < Formula
       assert_equal "He word\n", testfile.read
     end
 
-    unless OS.mac?
+    on_linux do
       pipe_output("#{bin}/ed -s #{testfile}", ",s/o//\nw\n", 0)
       assert_equal "Hell world\n", testfile.read
     end
