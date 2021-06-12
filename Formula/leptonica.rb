@@ -11,10 +11,11 @@ class Leptonica < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "8511608a91a7ebf340b298e77dad939722963c939df1705d8eced03fe94baf6b"
-    sha256 cellar: :any, big_sur:       "85f91f416da83686688c9a37758c8435564fec5cfc8f2c3a1106becc8c131502"
-    sha256 cellar: :any, catalina:      "3a60ca40699a3ac1159cc3a52c09632b4c50bc5cf9f7291aff911dc66237624c"
-    sha256 cellar: :any, mojave:        "1310af15c7bfc64222cc369e571a352b0e4f5131ba631f16cfe8f2ceb398b427"
+    sha256 cellar: :any,                 arm64_big_sur: "8511608a91a7ebf340b298e77dad939722963c939df1705d8eced03fe94baf6b"
+    sha256 cellar: :any,                 big_sur:       "85f91f416da83686688c9a37758c8435564fec5cfc8f2c3a1106becc8c131502"
+    sha256 cellar: :any,                 catalina:      "3a60ca40699a3ac1159cc3a52c09632b4c50bc5cf9f7291aff911dc66237624c"
+    sha256 cellar: :any,                 mojave:        "1310af15c7bfc64222cc369e571a352b0e4f5131ba631f16cfe8f2ceb398b427"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a41218931c6a64dd4b310f9115080d2da48c90200e464d5e491b24faf1009aa"
   end
 
   depends_on "pkg-config" => :build
