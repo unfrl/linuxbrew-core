@@ -44,6 +44,16 @@ class Gtkx3 < Formula
 
   uses_from_macos "libxslt" => :build # for xsltproc
 
+  on_linux do
+    depends_on "cmake" => :build
+    depends_on "at-spi2-atk"
+    depends_on "cairo"
+    depends_on "iso-codes"
+    depends_on "libxkbcommon"
+    depends_on "xorgproto"
+    depends_on "wayland-protocols"
+  end
+
   def install
     args = std_meson_args + %w[
       -Dgtk_doc=false
@@ -51,7 +61,7 @@ class Gtkx3 < Formula
       -Dintrospection=true
     ]
 
-    if OS.mac?
+    on_macos do
       args << "-Dquartz_backend=true"
       args << "-Dx11_backend=false"
     end
