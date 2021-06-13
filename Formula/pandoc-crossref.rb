@@ -10,6 +10,7 @@ class PandocCrossref < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "42d899a340c57df84dad28e52a1e3eeb91520c6842be17bb6fe29ac99b5cfbd8"
     sha256 cellar: :any_skip_relocation, catalina:      "ad0bee2803a212f0447be6071d64ddfb83a89265e82fc225d18bbe06e5467167"
     sha256 cellar: :any_skip_relocation, mojave:        "ba49887843f71a964526ae9d00101250c77fe8f80432f92627dbde5b37640243"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "383be7c1f06a62bc3f88583e5a2d1e139e27803bc4e1d1203847d542f26ed3a4"
   end
 
   depends_on "cabal-install" => :build
