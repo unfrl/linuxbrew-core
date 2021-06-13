@@ -3,16 +3,16 @@ class Pywhat < Formula
 
   desc "🐸 Identify anything: emails, IP addresses, and more 🧙"
   homepage "https://github.com/bee-san/pyWhat"
-  url "https://files.pythonhosted.org/packages/3f/ac/58bbf32079d781e37f38340110c922787f61d1c9cc61640e3f716c47bd5e/pywhat-1.2.0.tar.gz"
-  sha256 "d87f5e368c8bbc50921867caebe03873b775f3c3953d955d40747bfd977ec503"
+  url "https://files.pythonhosted.org/packages/59/e7/f8ecea5b09bf3e1ef74b0d61ed5ad2fb17e00188f31947a7bc9f9f9d7853/pywhat-2.0.0.tar.gz"
+  sha256 "bf0fb5637441566c23868a1ed349209d673dfa477cc11bb5f5bc7390d04c9ed1"
   license "GPL-3.0-or-later"
   head "https://github.com/bee-san/pyWhat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "ee8a987b1a61b027316a2ce589c496854b51a4f54868bab8345107540f81482d"
-    sha256 cellar: :any_skip_relocation, big_sur:       "2691d20218705d419999182d48fa84deaa8b53e320a888be7664c8279d5f7557"
-    sha256 cellar: :any_skip_relocation, catalina:      "6150a7c5c2348fdb554c9a75fb5ec9039feeee65d0d30d49e42e83d4c6c7d6b1"
-    sha256 cellar: :any_skip_relocation, mojave:        "84b30728f490a6c94e35af6ba129b1ce3df77cea3280d36180a267ac69a100fe"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "750729807a39d657a591f085b2917b23be236f08ea850c9bb7bc584ab4e43a67"
+    sha256 cellar: :any_skip_relocation, big_sur:       "f2b53cef05ecb412d19ca7672866291b0844946c6dca6b5d38ff93ec0aa8d93a"
+    sha256 cellar: :any_skip_relocation, catalina:      "a4da10a94cf142b2bf79dcc76b416d90a5cd6dd5a1e131475e41ed36a5070013"
+    sha256 cellar: :any_skip_relocation, mojave:        "ed1cda8967e379008beca253cb6641b58a6236016de107c20b5a7c693007fa53"
   end
 
   depends_on "python@3.9"
@@ -49,8 +49,8 @@ class Pywhat < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/1e/cc/ced09195051b5384e9a82d6de7fc1a3917017fe214d30d41a9935cea465d/rich-10.2.2.tar.gz"
-    sha256 "17b3f486c38e79cc219d8848974b277ef532a82d12b3ad6eb37bb8c6f22ab5fc"
+    url "https://files.pythonhosted.org/packages/42/6e/549283c6f8b9fff54ee8bd35558eb51d3796b1f71509d3385011d9a8c857/rich-10.3.0.tar.gz"
+    sha256 "a83bff83309687e1859c75b499879738b135d700738dd2721c22965497af05bd"
   end
 
   def install
