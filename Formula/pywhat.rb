@@ -3,16 +3,16 @@ class Pywhat < Formula
 
   desc "🐸 Identify anything: emails, IP addresses, and more 🧙"
   homepage "https://github.com/bee-san/pyWhat"
-  url "https://files.pythonhosted.org/packages/59/e7/f8ecea5b09bf3e1ef74b0d61ed5ad2fb17e00188f31947a7bc9f9f9d7853/pywhat-2.0.0.tar.gz"
-  sha256 "bf0fb5637441566c23868a1ed349209d673dfa477cc11bb5f5bc7390d04c9ed1"
+  url "https://files.pythonhosted.org/packages/94/ae/5f02bb71baba179c5978b9c81a9a79b072845ea08e92f29aee89655ff674/pywhat-3.0.0.tar.gz"
+  sha256 "ab709ee56505ff15afdaf4af4b6629b03250df5b24dbfd6c0265adeb851e37d3"
   license "GPL-3.0-or-later"
   head "https://github.com/bee-san/pyWhat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "750729807a39d657a591f085b2917b23be236f08ea850c9bb7bc584ab4e43a67"
-    sha256 cellar: :any_skip_relocation, big_sur:       "f2b53cef05ecb412d19ca7672866291b0844946c6dca6b5d38ff93ec0aa8d93a"
-    sha256 cellar: :any_skip_relocation, catalina:      "a4da10a94cf142b2bf79dcc76b416d90a5cd6dd5a1e131475e41ed36a5070013"
-    sha256 cellar: :any_skip_relocation, mojave:        "ed1cda8967e379008beca253cb6641b58a6236016de107c20b5a7c693007fa53"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "9ca178e8048065ba110356214e813a11e6db1796c6c82f5063b3336052597d60"
+    sha256 cellar: :any_skip_relocation, big_sur:       "9dad47ac4c69ae7fed2dddc2f1d7b64d54fde24bf1b6aacf0856e33eba8eab76"
+    sha256 cellar: :any_skip_relocation, catalina:      "9081e261fd949da9b35fd26105ba023debae053d5599c4c10fdc0567f610ae37"
+    sha256 cellar: :any_skip_relocation, mojave:        "35497bff2bdf89f4169ad57ad454ee8e87b91bc4cc64bd263aad976ef5d051b2"
   end
 
   depends_on "python@3.9"
@@ -31,11 +31,6 @@ class Pywhat < Formula
   resource "commonmark" do
     url "https://files.pythonhosted.org/packages/60/48/a60f593447e8f0894ebb7f6e6c1f25dafc5e89c5879fdc9360ae93ff83f0/commonmark-0.9.1.tar.gz"
     sha256 "452f9dc859be7f06631ddcb328b6919c67984aca654e5fefb3914d54691aed60"
-  end
-
-  resource "langdetect" do
-    url "https://files.pythonhosted.org/packages/0e/72/a3add0e4eec4eb9e2569554f7c70f4a3c27712f40e3284d483e88094cc0e/langdetect-1.0.9.tar.gz"
-    sha256 "cbc1fef89f8d062739774bd51eda3da3274006b3661d199c2655f6b3f6d605a0"
   end
 
   resource "name-that-hash" do

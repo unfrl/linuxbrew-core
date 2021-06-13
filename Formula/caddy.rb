@@ -1,17 +1,16 @@
 class Caddy < Formula
   desc "Powerful, enterprise-ready, open source web server with automatic HTTPS"
   homepage "https://caddyserver.com/"
-  url "https://github.com/caddyserver/caddy/archive/v2.4.1.tar.gz"
-  sha256 "60850f68c76043ad9581cb11de9eaeb35816b521301e61940f9c98d3f62f0650"
+  url "https://github.com/caddyserver/caddy/archive/v2.4.2.tar.gz"
+  sha256 "f6319d36f4e27a197c9aa832524a256ca9a9760f8334b52fbb6c618e63b22bf9"
   license "Apache-2.0"
   head "https://github.com/caddyserver/caddy.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "970a0712c1d544a615b2fa826f6ce609216eac990c21079aa60dd9fc477d7a8a"
-    sha256 cellar: :any_skip_relocation, big_sur:       "5d222e8ef212b69dc705136f550d960ce0bc20d798f3a64a6869119531d25277"
-    sha256 cellar: :any_skip_relocation, catalina:      "5d222e8ef212b69dc705136f550d960ce0bc20d798f3a64a6869119531d25277"
-    sha256 cellar: :any_skip_relocation, mojave:        "5d222e8ef212b69dc705136f550d960ce0bc20d798f3a64a6869119531d25277"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "402bfc64655e79b0a29f8b36d1f620326b2353c0030ff4025b795e10454ac43c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "904dd347eb4ad0aca921385957412d746f9ece5c0f39deae05c32028065c0946"
+    sha256 cellar: :any_skip_relocation, big_sur:       "7b2a8a292805f45b25b6046735182da667fa5eb5566acd9abecd2be3f41f23e8"
+    sha256 cellar: :any_skip_relocation, catalina:      "7b2a8a292805f45b25b6046735182da667fa5eb5566acd9abecd2be3f41f23e8"
+    sha256 cellar: :any_skip_relocation, mojave:        "7b2a8a292805f45b25b6046735182da667fa5eb5566acd9abecd2be3f41f23e8"
   end
 
   depends_on "go" => :build
