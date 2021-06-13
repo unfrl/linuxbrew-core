@@ -17,6 +17,7 @@ class Consul < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "4363d22cedf3fd80695c920272f6162efb8115cd991206193d12dcbda4bbe3a1"
     sha256 cellar: :any_skip_relocation, catalina:      "b09c0cc0d6eadccb2fd92ed30a81319cef6ec2c8e7e83b86de1d0db74c12f032"
     sha256 cellar: :any_skip_relocation, mojave:        "cc9eff66d8f762f3d774aeff553aa5a9e33d054a11ab0a02cfde8d0c7ef61749"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4425f2acb53b717e946aa2f256cfce60cd7cff5967b096b21306599aca00c85"
   end
 
   depends_on "go" => :build
