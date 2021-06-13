@@ -10,6 +10,7 @@ class Anyenv < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "381377f93374c1b1c1b0154c5f08c91dbf33a948a2ac47933a4bbd5d7c0d8ee8"
     sha256 cellar: :any_skip_relocation, catalina:      "381377f93374c1b1c1b0154c5f08c91dbf33a948a2ac47933a4bbd5d7c0d8ee8"
     sha256 cellar: :any_skip_relocation, mojave:        "381377f93374c1b1c1b0154c5f08c91dbf33a948a2ac47933a4bbd5d7c0d8ee8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b40124304dc2d748fac3d493a2cf0d843c80b5711c4d8b17e399d51e738d7ed8"
   end
 
   def install
