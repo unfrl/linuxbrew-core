@@ -9,10 +9,11 @@ class AwsSdkCpp < Formula
   head "https://github.com/aws/aws-sdk-cpp.git"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "253f402f23970c075f1d105fdd7121a8aba43e57a859c91e5217f1a7d60f5691"
-    sha256 cellar: :any, big_sur:       "c83cc325a412e8f9f43329fcbac4643fb00e7826f5eaf16585dcfb45600abe9e"
-    sha256 cellar: :any, catalina:      "cd0cc38544fc85111160a0fa16f4b8ec598915ccf0469898eaf26056125f7619"
-    sha256 cellar: :any, mojave:        "032f0997f868c42b2b83519aab7e04a9b252ad2538ddc257cc60667cc84e31f6"
+    sha256 cellar: :any,                 arm64_big_sur: "253f402f23970c075f1d105fdd7121a8aba43e57a859c91e5217f1a7d60f5691"
+    sha256 cellar: :any,                 big_sur:       "c83cc325a412e8f9f43329fcbac4643fb00e7826f5eaf16585dcfb45600abe9e"
+    sha256 cellar: :any,                 catalina:      "cd0cc38544fc85111160a0fa16f4b8ec598915ccf0469898eaf26056125f7619"
+    sha256 cellar: :any,                 mojave:        "032f0997f868c42b2b83519aab7e04a9b252ad2538ddc257cc60667cc84e31f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b025e0d5296faa9fbf5ae71f75c2d025032edc4094c6e58b4c831e7fba9e9c2a"
   end
 
   depends_on "cmake" => :build
