@@ -27,10 +27,11 @@ class Kcov < Formula
   depends_on "pkg-config" => :build
   depends_on "python@3.9" => :build
 
-  unless OS.mac?
-    depends_on "curl"
+  uses_from_macos "curl"
+  uses_from_macos "zlib"
+
+  on_linux do
     depends_on "elfutils"
-    depends_on "zlib"
   end
 
   def install
