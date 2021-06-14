@@ -26,6 +26,10 @@ class Apachetop < Formula
   depends_on "pcre"
   depends_on "readline"
 
+  on_linux do
+    depends_on "readline"
+  end
+
   def install
     system "./autogen.sh"
     system "./configure", "--prefix=#{prefix}",

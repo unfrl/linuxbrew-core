@@ -74,7 +74,7 @@ class LibtorrentRasterbar < Formula
       "-ltorrent-rasterbar",
     ]
 
-    if OS.mac?
+    on_macos do
       args += [
         "-framework",
         "SystemConfiguration",
