@@ -13,10 +13,11 @@ class Wxmac < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "6f933082804dd002cbe6a7f0c295deb22c53764611c7e0405fb827147b726f31"
-    sha256 cellar: :any, big_sur:       "f5695d7ccacd4140747677cfb215b85d214d7c5ad664f74f677995a7ef61d0cd"
-    sha256 cellar: :any, catalina:      "9c73e111f4393b97c297e175ca7dda6d271b20fc11c8fcbda6b535ba55b1cd8e"
-    sha256 cellar: :any, mojave:        "a2abdcc10d241f9c79155738331def644a5c61b481dcc1b9f06b48ee7a9ee152"
+    sha256 cellar: :any,                 arm64_big_sur: "6f933082804dd002cbe6a7f0c295deb22c53764611c7e0405fb827147b726f31"
+    sha256 cellar: :any,                 big_sur:       "f5695d7ccacd4140747677cfb215b85d214d7c5ad664f74f677995a7ef61d0cd"
+    sha256 cellar: :any,                 catalina:      "9c73e111f4393b97c297e175ca7dda6d271b20fc11c8fcbda6b535ba55b1cd8e"
+    sha256 cellar: :any,                 mojave:        "a2abdcc10d241f9c79155738331def644a5c61b481dcc1b9f06b48ee7a9ee152"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9153753a2a704371f380ff13535cb74c2291ff0b3088a15fa2800fe7e308942"
   end
 
   depends_on "jpeg"
