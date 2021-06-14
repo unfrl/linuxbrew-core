@@ -140,7 +140,7 @@ class GccAT49 < Formula
 
       # Change the default directory name for 64-bit libraries to `lib`
       # http://www.linuxfromscratch.org/lfs/view/development/chapter06/gcc.html
-      inreplace "gcc/config/i386/t-linux64", "m64=../lib64", "m64=." unless OS.mac?
+      inreplace "gcc/config/i386/t-linux64", "m64=../lib64", "m64=."
     end
 
     mkdir "build" do
@@ -167,7 +167,7 @@ class GccAT49 < Formula
   end
 
   def post_install
-    unless OS.mac?
+    on_linux do
       gcc = bin/"gcc-#{version_suffix}"
       libgcc = Pathname.new(Utils.safe_popen_read(gcc, "-print-libgcc-file-name")).parent
       raise "command failed: #{gcc} -print-libgcc-file-name" if $CHILD_STATUS.exitstatus.nonzero?
