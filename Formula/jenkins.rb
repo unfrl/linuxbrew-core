@@ -10,6 +10,10 @@ class Jenkins < Formula
     regex(%r{href=.*?/war/v?(\d+(?:\.\d+)+)/jenkins\.war}i)
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4f21708b0dc8f8dc08827625d9b03b75c9e4d526326d256b715f2bd24918841f"
+  end
+
   head do
     url "https://github.com/jenkinsci/jenkins.git"
     depends_on "maven" => :build
