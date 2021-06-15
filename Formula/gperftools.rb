@@ -28,18 +28,21 @@ class Gperftools < Formula
     depends_on "libtool" => :build
   end
 
+  uses_from_macos "xz"
+
   on_linux do
     # libunwind is strongly recommended for Linux x86_64
     # https://github.com/gperftools/gperftools/blob/master/INSTALL
     depends_on "libunwind"
-    depends_on "xz"
   end
 
   def install
     # Fix "error: unknown type name 'mach_port_t'"
     ENV["SDKROOT"] = MacOS.sdk_path if MacOS.version == :sierra
 
-    ENV.append_to_cflags "-D_XOPEN_SOURCE" if OS.mac?
+    on_macos do
+      ENV.append_to_cflags "-D_XOPEN_SOURCE"
+    end
 
     system "autoreconf", "-fiv" if build.head?
 
@@ -47,7 +50,9 @@ class Gperftools < Formula
       "--disable-dependency-tracking",
       "--prefix=#{prefix}",
     ]
-    args << "--enable-libunwind" unless OS.mac?
+    on_linux do
+      args << "--enable-libunwind"
+    end
 
     system "./configure", *args
     system "make"
