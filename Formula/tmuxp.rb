@@ -3,15 +3,15 @@ class Tmuxp < Formula
 
   desc "Tmux session manager. Built on libtmux"
   homepage "https://tmuxp.git-pull.com/"
-  url "https://files.pythonhosted.org/packages/9d/64/4ea3358fab42bedd4e8eb566382e0d8ffc0671b87759a9d8d630bdbc0096/tmuxp-1.8.1.tar.gz"
-  sha256 "be5d473e645cfb98c1d745548046615dc609443ddfc184ab928186a653e38196"
+  url "https://files.pythonhosted.org/packages/d0/e7/baa0067a83e27ad512165d70cea6f06a0f716dda4706b3ef95ecae395e56/tmuxp-1.8.2.tar.gz"
+  sha256 "e5efd3df8e240d55ca39bc8804a719af41c9949f25a633e39b19dc02e215f1fe"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "759bdeaa5dc57a60010f794d6c727b02866436a616fa32e551c5d00d9609536e"
-    sha256 cellar: :any_skip_relocation, big_sur:       "60462717730f51047b89303d474b45e7f287dd9761f5154224dd1080e0c3a39c"
-    sha256 cellar: :any_skip_relocation, catalina:      "4d9c804f25abf5d3faedbadf3cd64d53dd7dff8f221dc95232a680dd4c3bb505"
-    sha256 cellar: :any_skip_relocation, mojave:        "2024aee3e1c7415f7273721b0c10eb0e7403319bf7965fc3c63e9a4c5225bb91"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "fd31e4e3bcada2d59c232560d7ac5c43118fde84960f84e5cd844f49bf986208"
+    sha256 cellar: :any_skip_relocation, big_sur:       "1fb06b25ccf16e11dd2d0ac026c682077a6394076152837ad721d3ebd4a31df7"
+    sha256 cellar: :any_skip_relocation, catalina:      "7e05a34909e49cdd471fe2306fa0a135d44bd42ba1936ef8e543ba4e46efc5a2"
+    sha256 cellar: :any_skip_relocation, mojave:        "afb6695456b15ad70299cce3d6c4851fb164a6f9cd7c31e45a525546d917148c"
   end
 
   depends_on "python@3.9"
