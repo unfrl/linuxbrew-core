@@ -6,6 +6,15 @@ class Neofetch < Formula
   license "MIT"
   head "https://github.com/dylanaraps/neofetch.git"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "da4b88eedb327e2c50fb80e39c5e2b453d447cc07be88479e11c8fdc26e128ec"
+    sha256 cellar: :any_skip_relocation, big_sur:       "65997eaa4358eba12ea2eaa20d3a7daa3b30acfae81aa447eab47894d808670e"
+    sha256 cellar: :any_skip_relocation, catalina:      "9d88c0c07ebdeddaf68a5512a7f4a36cbc52851dfb1c6fc63b446f6a9baaaa01"
+    sha256 cellar: :any_skip_relocation, mojave:        "9d88c0c07ebdeddaf68a5512a7f4a36cbc52851dfb1c6fc63b446f6a9baaaa01"
+    sha256 cellar: :any_skip_relocation, high_sierra:   "9d88c0c07ebdeddaf68a5512a7f4a36cbc52851dfb1c6fc63b446f6a9baaaa01"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09a8b957e3e61f847d8a169747b1afbb8cc271bfbd21d1d0a5e34f2359289f47"
+  end
+
   if OS.mac?
     depends_on "imagemagick"
     depends_on "screenresolution"
