@@ -11,6 +11,10 @@ class NodeBuild < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "dd571287e121991e2071ff3805f3c259afaeaa81c0c21d2bc558e874a88732aa"
+  end
+
   depends_on "autoconf"
   depends_on "openssl@1.1"
   depends_on "pkg-config"
