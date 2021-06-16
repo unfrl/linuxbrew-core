@@ -86,10 +86,11 @@ class ManDb < Formula
   test do
     ENV["PAGER"] = "cat"
     output = shell_output("#{bin}/gman true")
-    if OS.mac?
+    on_macos do
       assert_match "BSD General Commands Manual", output
       assert_match "The true utility always returns with exit code zero", output
-    else
+    end
+    on_linux do
       assert_match "true - do nothing, successfully", output
       assert_match "GNU coreutils online help: <http://www.gnu.org/software/coreutils/", output
     end
