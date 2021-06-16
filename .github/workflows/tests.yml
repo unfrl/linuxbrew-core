@@ -1,7 +1,8 @@
 name: GitHub Actions CI
 on:
   push:
-    branches: master
+    branches:
+      - master
   pull_request:
     paths-ignore:
       - "Formula/patchelf.rb"
@@ -17,8 +18,10 @@ jobs:
     if: github.repository == 'Homebrew/linuxbrew-core' && ! contains(github.event.pull_request.labels.*.name, 'self-hosted-ci')
     runs-on: ubuntu-latest
     outputs:
-      run-tests: ${{ steps.check-labels.outputs.result }}
-      skip-arm-tests: ${{ steps.check-arm-labels.outputs.result }}
+      run-tests: ${{ steps.check-labels.outputs.run-tests }}
+      skip-arm-tests: ${{ steps.check-labels.outputs.skip-arm-tests }}
+      test-bot-fail-fast: ${{ steps.check-labels.outputs.test-bot-fail-fast }}
+      test-bot-skip-recursive-dependents: ${{ steps.check-labels.outputs.test-bot-skip-recursive-dependents }}
     env:
       HOMEBREW_FORCE_HOMEBREW_ON_LINUX: 1
     steps:
