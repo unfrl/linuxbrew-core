@@ -14,6 +14,7 @@ class Q < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "b8b639d8995691fa073dcdbe8e630fa133028ce97dc59d88a3129b24d8e4c038"
     sha256 cellar: :any_skip_relocation, catalina:      "b8b639d8995691fa073dcdbe8e630fa133028ce97dc59d88a3129b24d8e4c038"
     sha256 cellar: :any_skip_relocation, mojave:        "b8b639d8995691fa073dcdbe8e630fa133028ce97dc59d88a3129b24d8e4c038"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "038cf0d1036c7656f69a3e4e27003803a9c34e61c821cedd34c1356ffbb0f0e8"
   end
 
   depends_on "python@3.9"
