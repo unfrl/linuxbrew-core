@@ -20,7 +20,9 @@ class Libomp < Formula
 
   depends_on "cmake" => :build
 
-  keg_only "provided by LLVM, which is not keg-only on Linux" unless OS.mac?
+  on_linux do
+    keg_only "provided by LLVM, which is not keg-only on Linux"
+  end
 
   def install
     # Disable LIBOMP_INSTALL_ALIASES, otherwise the library is installed as
@@ -49,8 +51,7 @@ class Libomp < Formula
             return 1;
       }
     EOS
-    system ENV.cxx, "-Werror", "-Xpreprocessor", "-fopenmp", "test.cpp",
-                    ("-std=c++11" unless OS.mac?),
+    system ENV.cxx, "-Werror", "-Xpreprocessor", "-fopenmp", "test.cpp", "-std=c++11",
                     "-L#{lib}", "-lomp", "-o", "test"
     system "./test"
   end
