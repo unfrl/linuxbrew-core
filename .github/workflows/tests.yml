@@ -83,7 +83,7 @@ jobs:
         if: always()
         run: |
           cd ~/bottles
-          count=$(ls *.json | wc -l | xargs echo -n)
+          count=$(ls ~/bottles/*.json | wc -l | xargs echo -n)
           echo "$count bottles"
           echo "::set-output name=count::$count"
           failures=$(ls ~/bottles/failed/*.json | wc -l | xargs echo -n)
