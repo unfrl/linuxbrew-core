@@ -42,11 +42,9 @@ class Ode < Formula
         return 0;
       }
     EOS
-    std = OS.mac? ? "-lc++" : "-lstdc++"
     system ENV.cc, "test.cpp", "-I#{include}/ode", "-L#{lib}", "-lode",
-                   "-L#{Formula["libccd"].opt_lib}", "-lccd",
-                   *("-lm" unless OS.mac?),
-                   std, *("-lpthread" unless OS.mac?), "-o", "test"
+                   "-L#{Formula["libccd"].opt_lib}", "-lccd", "-lm", "-lpthread",
+                   "-o", "test"
     system "./test"
   end
 end

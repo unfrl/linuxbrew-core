@@ -3,15 +3,15 @@ class Tmuxp < Formula
 
   desc "Tmux session manager. Built on libtmux"
   homepage "https://tmuxp.git-pull.com/"
-  url "https://files.pythonhosted.org/packages/d0/e7/baa0067a83e27ad512165d70cea6f06a0f716dda4706b3ef95ecae395e56/tmuxp-1.8.2.tar.gz"
-  sha256 "e5efd3df8e240d55ca39bc8804a719af41c9949f25a633e39b19dc02e215f1fe"
+  url "https://files.pythonhosted.org/packages/0d/96/6e7273db2d316f31f0df294a3040521c4542298f13a865018a51a61c92ca/tmuxp-1.9.1.tar.gz"
+  sha256 "d5a81e323bcf2572a75c344af04f92a8feef5e3ebc309ae0436a756a754f2655"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "fd31e4e3bcada2d59c232560d7ac5c43118fde84960f84e5cd844f49bf986208"
-    sha256 cellar: :any_skip_relocation, big_sur:       "1fb06b25ccf16e11dd2d0ac026c682077a6394076152837ad721d3ebd4a31df7"
-    sha256 cellar: :any_skip_relocation, catalina:      "7e05a34909e49cdd471fe2306fa0a135d44bd42ba1936ef8e543ba4e46efc5a2"
-    sha256 cellar: :any_skip_relocation, mojave:        "afb6695456b15ad70299cce3d6c4851fb164a6f9cd7c31e45a525546d917148c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "adb61801748cbfa449a90bc830a8146f307bd68411fb78182697ecd364722160"
+    sha256 cellar: :any_skip_relocation, big_sur:       "3076ab1df50dfc4728aa05e667c57355a84dc862565684bd8dff462a00b49f85"
+    sha256 cellar: :any_skip_relocation, catalina:      "ba9fa5dc41e15b4305725b695eb0b86abcf4e46d0b151772cfec58e07d808f70"
+    sha256 cellar: :any_skip_relocation, mojave:        "e8641e8b91ce59d848918322b20e03856e729138b9da5f618f52d0272019bcff"
   end
 
   depends_on "python@3.9"
@@ -33,8 +33,8 @@ class Tmuxp < Formula
   end
 
   resource "libtmux" do
-    url "https://files.pythonhosted.org/packages/c4/90/a6df68839365ecb1b85b683f008830814deb87dd152acfab5652703d6a5f/libtmux-0.9.0.tar.gz"
-    sha256 "c42727cbbcd02403cffb79c8ba8ea4f95ff1bd8c9328612fea537acd25e5ae16"
+    url "https://files.pythonhosted.org/packages/6d/a1/163e93ac885db77955f333663edf010c5f6fab3bd5e5f9aac639a917993f/libtmux-0.10.1.tar.gz"
+    sha256 "c8bc81499616ba899538704e419463a1c83ba7ca21e53b1efc6abbe98eb26b61"
   end
 
   resource "PyYAML" do
