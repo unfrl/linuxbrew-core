@@ -18,8 +18,8 @@ jobs:
     if: github.repository == 'Homebrew/linuxbrew-core' && ! contains(github.event.pull_request.labels.*.name, 'self-hosted-ci')
     runs-on: ubuntu-latest
     outputs:
-      run-tests: ${{ steps.check-labels.outputs.run-tests }}
-      skip-arm-tests: ${{ steps.check-labels.outputs.skip-arm-tests }}
+      syntax-only: ${{ steps.check-labels.outputs.syntax-only }}
+      force-arm: ${{ steps.check-labels.outputs.force-arm }}
       test-bot-fail-fast: ${{ steps.check-labels.outputs.test-bot-fail-fast }}
       test-bot-skip-recursive-dependents: ${{ steps.check-labels.outputs.test-bot-skip-recursive-dependents }}
     env:
