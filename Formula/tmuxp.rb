@@ -3,23 +3,23 @@ class Tmuxp < Formula
 
   desc "Tmux session manager. Built on libtmux"
   homepage "https://tmuxp.git-pull.com/"
-  url "https://files.pythonhosted.org/packages/0d/96/6e7273db2d316f31f0df294a3040521c4542298f13a865018a51a61c92ca/tmuxp-1.9.1.tar.gz"
-  sha256 "d5a81e323bcf2572a75c344af04f92a8feef5e3ebc309ae0436a756a754f2655"
+  url "https://files.pythonhosted.org/packages/99/d2/566141c87e90362bb5b92c6f99013f3cceea566b752f9746ae78f51254cb/tmuxp-1.9.2.tar.gz"
+  sha256 "dd19536c8abb506bc411232f9dcabdedb863270f0ee26fb468555980140ec243"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "adb61801748cbfa449a90bc830a8146f307bd68411fb78182697ecd364722160"
-    sha256 cellar: :any_skip_relocation, big_sur:       "3076ab1df50dfc4728aa05e667c57355a84dc862565684bd8dff462a00b49f85"
-    sha256 cellar: :any_skip_relocation, catalina:      "ba9fa5dc41e15b4305725b695eb0b86abcf4e46d0b151772cfec58e07d808f70"
-    sha256 cellar: :any_skip_relocation, mojave:        "e8641e8b91ce59d848918322b20e03856e729138b9da5f618f52d0272019bcff"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "11c9d785237a7c0a01853ae55bfa37126e334eafb14b1a4189fca4ea51d88875"
+    sha256 cellar: :any_skip_relocation, big_sur:       "e407ec516f82f1ee9c1c32e18237ebfeb7b311c91d8f1495a6ef065af27d1e78"
+    sha256 cellar: :any_skip_relocation, catalina:      "9c52ecb1ef2c94a17992896e8f91493cffa63cdf111948d3a9b153f4aab6be61"
+    sha256 cellar: :any_skip_relocation, mojave:        "31fddee1eae3fec1ea9d5ae8954a9e99b7e81f0a8495f3ae727178936ce23065"
   end
 
   depends_on "python@3.9"
   depends_on "tmux"
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/27/6f/be940c8b1f1d69daceeb0032fee6c34d7bd70e3e649ccac0951500b4720e/click-7.1.2.tar.gz"
-    sha256 "d2b5255c7c6349bc1bd1e59e08cd12acbbd63ce649f2588755783aa94dfb6b1a"
+    url "https://files.pythonhosted.org/packages/21/83/308a74ca1104fe1e3197d31693a7a2db67c2d4e668f20f43a2fca491f9f7/click-8.0.1.tar.gz"
+    sha256 "8c04c11192119b1ef78ea049e0a6f0463e4c48ef00a30160c704337586f3ad7a"
   end
 
   resource "colorama" do
