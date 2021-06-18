@@ -3,14 +3,10 @@ require "language/node"
 class Typescript < Formula
   desc "Language for application scale JavaScript development"
   homepage "https://www.typescriptlang.org/"
-  url "https://registry.npmjs.org/typescript/-/typescript-4.3.3.tgz"
-  sha256 "92a6f508086a76537153b48c12cc4980a32ed9d4357b6dce90ceb2e035a05442"
+  url "https://registry.npmjs.org/typescript/-/typescript-4.3.4.tgz"
+  sha256 "124624965249ca4788a1852d10c3001a428952551a7a9d7ebe9c1b6243ab4f11"
   license "Apache-2.0"
   head "https://github.com/Microsoft/TypeScript.git"
-
-  bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "17287b127dbb0bf249260760a548d2e49e855feb1e7ebd475757179805371c90"
-  end
 
   depends_on "node"
 

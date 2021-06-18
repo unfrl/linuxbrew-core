@@ -59,7 +59,7 @@ class Postgresql < Formula
       --with-perl
       --with-uuid=e2fs
     ]
-    if OS.mac?
+    on_macos do
       args += %w[
         --with-bonjour
         --with-tcl
@@ -80,7 +80,7 @@ class Postgresql < Formula
                                     "includedir_server=#{include}/postgresql/server",
                                     "includedir_internal=#{include}/postgresql/internal"
 
-    unless OS.mac?
+    on_linux do
       inreplace lib/"postgresql/pgxs/src/Makefile.global",
                 "LD = #{HOMEBREW_PREFIX}/Homebrew/Library/Homebrew/shims/linux/super/ld",
                 "LD = #{HOMEBREW_PREFIX}/bin/ld"
