@@ -8,6 +8,10 @@ class Typescript < Formula
   license "Apache-2.0"
   head "https://github.com/Microsoft/TypeScript.git"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "50866c4631cb1248d5fcbd95743e78853dd7af716f634ee88bc10740a736a3ef"
+  end
+
   depends_on "node"
 
   def install
