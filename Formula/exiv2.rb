@@ -12,10 +12,11 @@ class Exiv2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "2bde081b463a93a9672b7a842c9e37c55795643077b8b71b06b77381579cb8e4"
-    sha256 cellar: :any, big_sur:       "2142d3d9ac41a438aec051a364d76458a7e3be1e2b5b9aa5568f56094ed8b928"
-    sha256 cellar: :any, catalina:      "b07c163f12af0b32df8f5cf728bf8751312c9f04962df2c2cb00b4b13f9ef8da"
-    sha256 cellar: :any, mojave:        "97f623c1b9562b8e39354829c59b766c2c964234899c60e8a982c90c915d59dc"
+    sha256 cellar: :any,                 arm64_big_sur: "2bde081b463a93a9672b7a842c9e37c55795643077b8b71b06b77381579cb8e4"
+    sha256 cellar: :any,                 big_sur:       "2142d3d9ac41a438aec051a364d76458a7e3be1e2b5b9aa5568f56094ed8b928"
+    sha256 cellar: :any,                 catalina:      "b07c163f12af0b32df8f5cf728bf8751312c9f04962df2c2cb00b4b13f9ef8da"
+    sha256 cellar: :any,                 mojave:        "97f623c1b9562b8e39354829c59b766c2c964234899c60e8a982c90c915d59dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a80cd098daaf97fbfb30a57c7092184898e897fd41f042caa87d5d33cf18731c"
   end
 
   depends_on "cmake" => :build
