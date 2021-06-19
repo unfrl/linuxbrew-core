@@ -10,11 +10,6 @@ class AlsaLib < Formula
     regex(/href=.*?alsa-lib[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  bottle do
-    rebuild 1
-    sha256 x86_64_linux: "b91e5524748677d744b486196e343f46916e76fee9ca945591809f32197cf45d"
-  end
-
   depends_on :linux
 
   def install
