@@ -13,6 +13,10 @@ class Llvm < Formula
     regex(/LLVM (\d+\.\d+\.\d+)/i)
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "20849026c96e5206c810fb343d26c0cae3f843c5c90737e3688af5166c5a5906"
+  end
+
   # Clang cannot find system headers if Xcode CLT is not installed
   pour_bottle? only_if: :clt_installed
 
