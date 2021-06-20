@@ -17,6 +17,7 @@ class GitlabRunner < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "e9cbfd5a7839cc1d4f11216892bd4f6ef5d619b248f994559eeae6355ed8bd01"
     sha256 cellar: :any_skip_relocation, catalina:      "c2e6a2e58e7f2f1517ece07b534df58524b8aac95e718b678b09e88b76e6deac"
     sha256 cellar: :any_skip_relocation, mojave:        "48c2c70fdf6d375b8b8598aec6c5a0822dfaba2a642f6feff9cc343f681f51f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "93b39f4da0eb8671808b555f837f24790807b467abd1c8169ce1f8f64dd4c5ee"
   end
 
   depends_on "go" => :build
