@@ -4,7 +4,7 @@ class VagrantCompletion < Formula
   url "https://github.com/hashicorp/vagrant/archive/v2.2.16.tar.gz"
   sha256 "ab3c60bb12b2da916fd073192849f2b5d3f224f95febf3538212247c4cde28d6"
   license "MIT"
-  head "https://github.com/hashicorp/vagrant.git"
+  head "https://github.com/hashicorp/vagrant.git", branch: "main"
 
   def install
     bash_completion.install "contrib/bash/completion.sh" => "vagrant"
