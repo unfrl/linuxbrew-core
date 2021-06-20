@@ -4,8 +4,8 @@ class Snapcraft < Formula
   desc "Package any app for every Linux desktop, server, cloud or device"
   homepage "https://snapcraft.io/"
   url "https://github.com/snapcore/snapcraft.git",
-      tag:      "4.8.1",
-      revision: "245631a94e912120d40b55a945acf0ffa0450bee"
+      tag:      "4.8.2",
+      revision: "78d1d815b8caba7a3369ea38064d816b82230cc2"
   license "GPL-3.0-only"
 
   livecheck do
@@ -14,10 +14,10 @@ class Snapcraft < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "9e5f0bf82b9a394685c85d74f364728fe76e6797ff69b54c1aa49fbe0a62afcc"
-    sha256 cellar: :any, big_sur:       "77848fa60d793288496681c269416dedc2a98e2b1c76f48dc2680b6f44a1f1ee"
-    sha256 cellar: :any, catalina:      "1a0c8507109e3e5f694dc44906697bb2ffe853bbd4d16e3ace4dcd2c8b01380d"
-    sha256 cellar: :any, mojave:        "489e6ce4c2bba17ff81bf2b99708f53aed52ccc6be1f6a4ea47bea63aa2858fa"
+    sha256 cellar: :any, arm64_big_sur: "a33965ce047935f104c84a20dfc1eb4bac83bc0fc532bff8d2136a63623762c5"
+    sha256 cellar: :any, big_sur:       "b2554e6aeff33459eaf27bd837511dad1c8143c25902bf7a4b3ce99f23378104"
+    sha256 cellar: :any, catalina:      "b18c980b95b8f548133b554e0f16911297674dad37a62c0aecec2ea6624173d2"
+    sha256 cellar: :any, mojave:        "05165a0f326f67d07e6ea23f8b45267604342c6be1eda2cf37a7c186a01b3e29"
   end
 
   depends_on "rust" => :build
@@ -282,13 +282,6 @@ class Snapcraft < Formula
   resource "zipp" do
     url "https://files.pythonhosted.org/packages/38/f9/4fa6df2753ded1bcc1ce2fdd8046f78bd240ff7647f5c9bcf547c0df77e3/zipp-3.4.1.tar.gz"
     sha256 "3607921face881ba3e026887d8150cca609d517579abe052ac81fc5aeffdbd76"
-  end
-
-  # Fix error on ARM due to missing architecture definition for 'arm64'
-  # Remove in the next release
-  patch do
-    url "https://github.com/snapcore/snapcraft/commit/61029a4a2ae36f5368a7108b5d99bc99ccac54c5.patch?full_index=1"
-    sha256 "0950b41e5e33ea9c1a40ac4d308d22d0e13adb44655a01f469973fcd1e7c9d91"
   end
 
   def install
