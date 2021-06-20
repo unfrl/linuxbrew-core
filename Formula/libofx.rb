@@ -21,7 +21,7 @@ class Libofx < Formula
   depends_on "open-sp"
 
   def install
-    ENV.cxx11 unless OS.mac?
+    ENV.cxx11
 
     opensp = Formula["open-sp"]
     system "./configure", "--disable-dependency-tracking",
