@@ -41,6 +41,9 @@ class Llvm < Formula
     depends_on "binutils" # needed for gold
     depends_on "libelf" # openmp requires <gelf.h>
 
+    # Apply patches slated for the 12.0.x release stream
+    # to allow building with GCC 5 and 6. Upstream bug:
+    # https://bugs.llvm.org/show_bug.cgi?id=50732
     patch do
       url "https://raw.githubusercontent.com/Homebrew/formula-patches/f0b8ff8b7ad4c2e1d474b214cd615a98e0caa796/llvm/llvm.patch"
       sha256 "084adce7711b07d94197a75fb2162b253186b38d612996eeb6e2bc9ce5b1e6e2"
@@ -79,7 +82,7 @@ class Llvm < Formula
 
     # we install the lldb Python module into libexec to prevent users from
     # accidentally importing it with a non-Homebrew Python or a Homebrew Python
-    # in a non-default prefix
+    # in a non-default prefix. See https://lldb.llvm.org/resources/caveats.html
     args = %W[
       -DLLVM_ENABLE_PROJECTS=#{projects.join(";")}
       -DLLVM_ENABLE_RUNTIMES=#{runtimes.join(";")}
@@ -102,6 +105,9 @@ class Llvm < Formula
       -DLLDB_PYTHON_RELATIVE_PATH=libexec/#{site_packages}
       -DLIBOMP_INSTALL_ALIASES=OFF
       -DCLANG_PYTHON_BINDINGS_VERSIONS=#{py_ver}
+      -DPACKAGE_VENDOR=#{tap.user}
+      -DPACKAGE_BUGREPORT=#{tap.issues_url}
+      -DCLANG_VENDOR_UTI=org.#{tap.user.downcase}.clang
     ]
 
     if MacOS.version >= :catalina
@@ -116,7 +122,7 @@ class Llvm < Formula
       args << "-DLLVM_BUILD_LLVM_C_DYLIB=ON"
       args << "-DLLVM_ENABLE_LIBCXX=ON"
       args << "-DLLVM_CREATE_XCODE_TOOLCHAIN=#{MacOS::Xcode.installed? ? "ON" : "OFF"}"
-      args << "-DRUNTIMES_CMAKE_ARGS=-DCMAKE_INSTALL_RPATH=@loader_path/../lib"
+      args << "-DRUNTIMES_CMAKE_ARGS=-DCMAKE_INSTALL_RPATH=#{rpath}"
 
       sdk = MacOS.sdk_path_if_needed
       args << "-DDEFAULT_SYSROOT=#{sdk}" if sdk
