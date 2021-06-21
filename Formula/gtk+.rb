@@ -39,7 +39,7 @@ class Gtkx < Formula
 
   uses_from_macos "cups"
 
-  unless OS.mac?
+  on_linux do
     depends_on "cairo"
     depends_on "libxinerama"
     depends_on "libxcomposite"
@@ -60,6 +60,14 @@ class Gtkx < Formula
     sha256 "ce5adf1a019ac7ed2a999efb65cfadeae50f5de8663638c7f765f8764aa7d931"
   end
 
+  def backend
+    backend = "quartz"
+    on_linux do
+      backend = "x11"
+    end
+    backend
+  end
+
   def install
     args = ["--disable-dependency-tracking",
             "--disable-silent-rules",
@@ -67,7 +75,7 @@ class Gtkx < Formula
             "--enable-static",
             "--disable-glibtest",
             "--enable-introspection=yes",
-            "--with-gdktarget=#{OS.mac? ? "quartz" : "x11"}",
+            "--with-gdktarget=#{backend}",
             "--disable-visibility"]
 
     if build.head?
@@ -101,7 +109,6 @@ class Gtkx < Formula
     libpng = Formula["libpng"]
     pango = Formula["pango"]
     pixman = Formula["pixman"]
-    backend = OS.mac? ? "quartz" : "x11"
     flags = (ENV.cflags || "").split + (ENV.cppflags || "").split + (ENV.ldflags || "").split
     flags += %W[
       -I#{atk.opt_include}/atk-1.0
