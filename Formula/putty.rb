@@ -52,13 +52,8 @@ class Putty < Formula
   end
 
   test do
-    expect_path = if OS.mac?
-      "/usr/bin/expect"
-    else
-      Formula["expect"].opt_bin/"expect"
-    end
     (testpath/"command.sh").write <<~EOS
-      #!#{expect_path} -f
+      #!/usr/bin/env expect
       set timeout -1
       spawn #{bin}/puttygen -t rsa -b 4096 -q -o test.key
       expect -exact "Enter passphrase to save key: "

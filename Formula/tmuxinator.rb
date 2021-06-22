@@ -1,17 +1,16 @@
 class Tmuxinator < Formula
   desc "Manage complex tmux sessions easily"
   homepage "https://github.com/tmuxinator/tmuxinator"
-  url "https://github.com/tmuxinator/tmuxinator/archive/v3.0.0.tar.gz"
-  sha256 "0e0f28522d6a945b45805026148399708807377cc9b9f03d27e0bfc44a4cefb9"
+  url "https://github.com/tmuxinator/tmuxinator/archive/v3.0.1.tar.gz"
+  sha256 "1d79dd13beaaf2ed24c8a76410c1a41bedc7785498e199534fa3928bbf8aab01"
   license "MIT"
   head "https://github.com/tmuxinator/tmuxinator.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "c50a6bf3415ca64b624e008c1fc53ef24184816a18db526d3ca9310f2880f067"
-    sha256 cellar: :any_skip_relocation, big_sur:       "58d4d39283b202c9bba67eaa8d58dc48e2f7654caa7806273d25e757eb1e25f0"
-    sha256 cellar: :any_skip_relocation, catalina:      "58d4d39283b202c9bba67eaa8d58dc48e2f7654caa7806273d25e757eb1e25f0"
-    sha256 cellar: :any_skip_relocation, mojave:        "58d4d39283b202c9bba67eaa8d58dc48e2f7654caa7806273d25e757eb1e25f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "211347b01d1d651d7f3851236b5c5042ff90ae0fcb09a1bc0ceb02a1b7790504"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "cdd418ca1a015eb94bb192d8605d019ad4acdc69b1d7d066421ea9b0538d5003"
+    sha256 cellar: :any_skip_relocation, big_sur:       "0735adc0586540e832e281dcbc9e43179fb89b6f50045f253a77f6914afea273"
+    sha256 cellar: :any_skip_relocation, catalina:      "0735adc0586540e832e281dcbc9e43179fb89b6f50045f253a77f6914afea273"
+    sha256 cellar: :any_skip_relocation, mojave:        "0735adc0586540e832e281dcbc9e43179fb89b6f50045f253a77f6914afea273"
   end
 
   depends_on "ruby"
@@ -25,8 +24,8 @@ class Tmuxinator < Formula
   end
 
   resource "thor" do
-    url "https://rubygems.org/downloads/thor-1.0.1.gem"
-    sha256 "7572061e3cbe6feee57828670e6a25a66dd397f05c1f8515d49f770a7d9d70f5"
+    url "https://rubygems.org/downloads/thor-1.1.0.gem"
+    sha256 "cacae12a3761be4ccbe63be19261352b108f86c721c37d87664328efeaa6d0a3"
   end
 
   resource "xdg" do

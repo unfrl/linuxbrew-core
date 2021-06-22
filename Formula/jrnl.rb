@@ -136,7 +136,7 @@ class Jrnl < Formula
 
   test do
     (testpath/"tests.sh").write <<~EOS
-      #{OS.mac? ? "#!/usr/bin/expect -f" : "#!/usr/bin/env expect"}
+      #!/usr/bin/env expect
 
       set timeout 3
       match_max 100000
