@@ -6,6 +6,10 @@ class Spaceship < Formula
   license "MIT"
   head "https://github.com/denysdovhan/spaceship-prompt.git"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b9f6c1574bd56c2beb60ce157ec3297594ae22ff5f1b691b3f2de9db7946df1f"
+  end
+
   depends_on "zsh" => :test
 
   def install
