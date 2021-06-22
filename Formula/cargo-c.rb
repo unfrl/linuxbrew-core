@@ -6,10 +6,11 @@ class CargoC < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "50560a7a61f88463803dda19ee0446821efb2eca8211f35de4dd5df90ff2d495"
-    sha256 cellar: :any, big_sur:       "7207f1e1c83bc1a7fc64065dd5d5578579bbde36e1811dd625e759e15229208b"
-    sha256 cellar: :any, catalina:      "dc5bab60bcb4f7ae6a18de5fa8e5130f97ef5792b6e6c435f8c9267c66fb8299"
-    sha256 cellar: :any, mojave:        "878b3db491d968bf965f02cf83f277d6718bee3138015fdc895172259335f5c2"
+    sha256 cellar: :any,                 arm64_big_sur: "50560a7a61f88463803dda19ee0446821efb2eca8211f35de4dd5df90ff2d495"
+    sha256 cellar: :any,                 big_sur:       "7207f1e1c83bc1a7fc64065dd5d5578579bbde36e1811dd625e759e15229208b"
+    sha256 cellar: :any,                 catalina:      "dc5bab60bcb4f7ae6a18de5fa8e5130f97ef5792b6e6c435f8c9267c66fb8299"
+    sha256 cellar: :any,                 mojave:        "878b3db491d968bf965f02cf83f277d6718bee3138015fdc895172259335f5c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f68be7a0cd9e5d846ef7af9c413c1773f0ce8b3e086e53dea6d358404c4024e6"
   end
 
   depends_on "rust" => :build
