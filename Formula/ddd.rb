@@ -56,9 +56,10 @@ class Ddd < Formula
   end
 
   def install
-    unless OS.mac?
+    on_linux do
       # Patch to fix compilation error
       # https://savannah.gnu.org/bugs/?33960
+      # Remove with next release
       inreplace "ddd/strclass.C", "#include <stdlib.h>", "#include <stdlib.h>\n#include <cstdio>"
     end
 

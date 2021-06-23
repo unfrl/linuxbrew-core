@@ -11,7 +11,9 @@ class Neofetch < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "c391809c141a7037056071d41afb5157f44357b922bf45e119f47d6814892453"
   end
 
-  depends_on "screenresolution" if OS.mac?
+  on_macos do
+    depends_on "screenresolution"
+  end
 
   def install
     inreplace "neofetch", "/usr/local", HOMEBREW_PREFIX
