@@ -120,6 +120,18 @@ class Octave < Formula
 
     system "make", "all"
 
+    on_linux do
+      # Explicitly specify aclocal and automake without versions
+      args << "ACLOCAL=aclocal"
+      args << "AUTOMAKE=automake"
+
+      # Mesa OpenGL location must be supplied by LDFLAGS on Linux
+      args << "LDFLAGS=-L#{Formula["mesa"].opt_lib} -L#{Formula["mesa-glu"].opt_lib}"
+
+      # Need to regenerate aclocal.m4 so that it will work with brewed automake
+      system "aclocal"
+    end
+
     # Avoid revision bumps whenever fftw's, gcc's or OpenBLAS' Cellar paths change
     inreplace "src/mkoctfile.cc" do |s|
       s.gsub! Formula["fftw"].prefix.realpath, Formula["fftw"].opt_prefix
