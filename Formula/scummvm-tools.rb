@@ -13,9 +13,10 @@ class ScummvmTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any, big_sur:  "bcc9ac03c2702194f66f8671a11d381dd4d297e6863aba2562d390ebcfee117a"
-    sha256 cellar: :any, catalina: "e2a31dc63a2ed04029a80d03fe3a273b82a4bcd7e4231a339c92067f09c018f9"
-    sha256 cellar: :any, mojave:   "c65273ff136c4f13931a5e1c30918e5410c8419b09dc3fd9e53057489b21ede1"
+    sha256 cellar: :any,                 big_sur:      "bcc9ac03c2702194f66f8671a11d381dd4d297e6863aba2562d390ebcfee117a"
+    sha256 cellar: :any,                 catalina:     "e2a31dc63a2ed04029a80d03fe3a273b82a4bcd7e4231a339c92067f09c018f9"
+    sha256 cellar: :any,                 mojave:       "c65273ff136c4f13931a5e1c30918e5410c8419b09dc3fd9e53057489b21ede1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "539fa20c11dbb19bd8bd162dbfa7e7c17e9ca8ced3524d0629899f2b7e4747d4"
   end
 
   depends_on "boost"
