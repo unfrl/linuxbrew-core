@@ -3,17 +3,16 @@ class Pdm < Formula
 
   desc "Modern Python package manager with PEP 582 support"
   homepage "https://pdm.fming.dev"
-  url "https://files.pythonhosted.org/packages/d6/fc/5f5caaea9e6161aa89dfc51f3efeca81899c04ca174e9085916e25e0cb22/pdm-1.6.3.tar.gz"
-  sha256 "8d3976ff119fdc2c522093e660d64dc101b9c429bbb42454c9b6edf22d0bd2a1"
+  url "https://files.pythonhosted.org/packages/c1/a2/15d20b364a70403acb72d54af594cbc85d95d76f71cffc24028284294db7/pdm-1.6.4.tar.gz"
+  sha256 "6c3ab53fba8fa33811fd1c3cf4652f05d0081f5e3c2885b8690c874c8d77c999"
   license "MIT"
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "82c527a7dedc1c7f18f5bece231d163a309a82773b1826952116be380c24c76f"
-    sha256 cellar: :any_skip_relocation, big_sur:       "30d8758b1d29fcafba376a06d722ba1970e15a77904f1b53280a294fb644afae"
-    sha256 cellar: :any_skip_relocation, catalina:      "e646c992d41132755cc08e878dba88743a70a5c54bc68f3d82ab4c9bc399e8fd"
-    sha256 cellar: :any_skip_relocation, mojave:        "0d2da32aa394dc3446d037d1e282cec080f702162f670e8de7bb7f0ed68f503d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0058d45ceac2d9b86c8afca639337c719eb820ced6c6c32a6e5f39e8e052ce03"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "63be551c91abc01ecfd18cd47107933099a7335ca615312b9f69e86936d2e845"
+    sha256 cellar: :any_skip_relocation, big_sur:       "62b305a7bec9049099aacc9e89bfd7abcc2cc8231670c0c9aec5e3162593f7d1"
+    sha256 cellar: :any_skip_relocation, catalina:      "4cb101d812b752bff72fe9ed46848dc633034735d834079538be1b4bbb79207c"
+    sha256 cellar: :any_skip_relocation, mojave:        "9e118e700656cd5c708a138dd0b383779bbfe68d5aaae32e44a7602da29d6f7b"
   end
 
   depends_on "python@3.9"
@@ -80,8 +79,8 @@ class Pdm < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/66/94/286b7b88e24a7a2f3e020234524e3dc3dfdba313f299054b24b8d4d39b77/python-dotenv-0.17.1.tar.gz"
-    sha256 "b1ae5e9643d5ed987fc57cc2583021e38db531946518130777734f9589b3141f"
+    url "https://files.pythonhosted.org/packages/7a/1c/4dbbae00fc9a3bc605fc2d92dc0e197fcf0b6e0357d217d1819afe8206af/python-dotenv-0.18.0.tar.gz"
+    sha256 "effaac3c1e58d89b3ccb4d04a40dc7ad6e0275fda25fd75ae9d323e2465e202d"
   end
 
   resource "pythonfinder" do
@@ -90,8 +89,8 @@ class Pdm < Formula
   end
 
   resource "resolvelib" do
-    url "https://files.pythonhosted.org/packages/af/91/9c0a7a26d77806184980411f38243acf2611f9ff5c91e8f94ea437688e3a/resolvelib-0.7.0.tar.gz"
-    sha256 "8840a8bf49fd56cff51398ebfe090e5d6aeaf4c4102472bff006aca7db470868"
+    url "https://files.pythonhosted.org/packages/0f/79/248bf2687fdaa4a3d8f695a51f03dac38f4c902de7a48b10ccc374bd6b5c/resolvelib-0.7.1.tar.gz"
+    sha256 "c526cda7f080d908846262d86c738231d9bfb556eb02d77167b685d65d85ace9"
   end
 
   resource "shellingham" do
