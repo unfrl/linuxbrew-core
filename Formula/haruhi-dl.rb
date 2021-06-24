@@ -3,15 +3,15 @@ class HaruhiDl < Formula
 
   desc "Fork of youtube-dl, focused on bringing a fast, steady stream of updates"
   homepage "https://haruhi.download"
-  url "https://files.pythonhosted.org/packages/50/b6/4834af1bac4d81802a8407d918b8d70df41c49f01aa0721104fcf5652c9e/haruhi_dl-2021.6.20.tar.gz"
-  sha256 "c35e10f8c1c691520a4df4b74a45c8d5beca3f83c121277bc0eef132475770a6"
+  url "https://files.pythonhosted.org/packages/e8/67/09bb10e1892c5d8183107981711e9f2db87db33e376e253f3a7340ea3246/haruhi_dl-2021.6.24.tar.gz"
+  sha256 "906ec9b8046183cfe097c086c91c91969fd883dbc482ccd5ed8ab67118bede00"
   license "LGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "efefacfc9907d9c9121b4fbc436eacadc61a502bf81c1951195754d420528789"
-    sha256 cellar: :any_skip_relocation, big_sur:       "cb6c83d8f6a03898850579f0abc08a1cf5e35b4772a00c65acf097cce7b31fb5"
-    sha256 cellar: :any_skip_relocation, catalina:      "cb6c83d8f6a03898850579f0abc08a1cf5e35b4772a00c65acf097cce7b31fb5"
-    sha256 cellar: :any_skip_relocation, mojave:        "cb6c83d8f6a03898850579f0abc08a1cf5e35b4772a00c65acf097cce7b31fb5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "51b79aade5e18603ee17b5751dbba9ec7e4b791b907d37eb0a18411a03f80055"
+    sha256 cellar: :any_skip_relocation, big_sur:       "edc16bcff5ada20ef26101fa7fc093ef62db483cc878a81309b5a7da35649eb5"
+    sha256 cellar: :any_skip_relocation, catalina:      "edc16bcff5ada20ef26101fa7fc093ef62db483cc878a81309b5a7da35649eb5"
+    sha256 cellar: :any_skip_relocation, mojave:        "edc16bcff5ada20ef26101fa7fc093ef62db483cc878a81309b5a7da35649eb5"
   end
 
   depends_on "python@3.9"
