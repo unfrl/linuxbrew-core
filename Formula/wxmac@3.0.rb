@@ -1,21 +1,20 @@
-class Wxmac < Formula
-  desc "Cross-platform C++ GUI toolkit (wxWidgets for macOS)"
+class WxmacAT30 < Formula
+  desc "Cross-platform C++ GUI toolkit (wxWidgets for macOS) - Stable Release"
   homepage "https://www.wxwidgets.org"
-  url "https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.5/wxWidgets-3.1.5.tar.bz2"
-  sha256 "d7b3666de33aa5c10ea41bb9405c40326e1aeb74ee725bb88f90f1d50270a224"
+  url "https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.5.1/wxWidgets-3.0.5.1.tar.bz2"
+  sha256 "440f6e73cf5afb2cbf9af10cec8da6cdd3d3998d527598a53db87099524ac807"
   license "wxWindows"
-  head "https://github.com/wxWidgets/wxWidgets.git"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(/^v?(\d+\.\d*[02468](?:\.\d+)*)$/i)
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "9080b4b039c1267c300977b6a1bab583717f0829f6858eeec580a55473e25a2f"
-    sha256 cellar: :any, big_sur:       "a4ca829d8774407a89b727677286788c2088c7f5814e4e21b07cd339453f6950"
-    sha256 cellar: :any, catalina:      "1b1e632388b899230f8728e21ac2336e741b8233094bf572e9b5e93e9028efe1"
-    sha256 cellar: :any, mojave:        "1be251946ba9b3c4f5acf14a1c3a99f9a5d06360dce108d62ba495c84594159c"
+    sha256 cellar: :any, arm64_big_sur: "781881c92fcaadcfea66e7d33a36ae1d9b55d26839738f44248f39d187f46a3c"
+    sha256 cellar: :any, big_sur:       "42385ebead8045f2f4b1ac40f13f15c18b84b78ffa7110d69ebf8a798cd29dc0"
+    sha256 cellar: :any, catalina:      "d3d18b83d84b79735bda4497ebd92f763ed7cf4200c8ce8d651070ccd1b2719d"
+    sha256 cellar: :any, mojave:        "319f6ca3509265ace16fae3aaab777ae932130b741ba51d99702c0391da7833f"
   end
 
   depends_on "jpeg"
@@ -41,7 +40,8 @@ class Wxmac < Formula
       "--enable-std_string",
       "--enable-svg",
       "--enable-unicode",
-      "--enable-webviewwebkit",
+      "--enable-webkit",
+      "--enable-webview",
       "--with-expat",
       "--with-libjpeg",
       "--with-libpng",
@@ -69,12 +69,28 @@ class Wxmac < Formula
     # which are linked to the same place
     inreplace "#{bin}/wx-config", prefix, HOMEBREW_PREFIX
 
-    # Move some files out of the way to prevent conflict with `wxmac-stable`
-    bin.install_symlink "#{bin}/wx-config" => "wx-config-#{version.major_minor}"
+    # Move some files out of the way to prevent conflict with `wxmac`
+    bin.install "#{bin}/wx-config" => "wx-config-#{version.major_minor}"
+    (bin/"wxrc").unlink
     (share/"wx"/version.major_minor).install share/"aclocal", share/"bakefile"
+    Dir.glob(share/"locale/**/*.mo") { |file| add_suffix file, version.major_minor }
+  end
+
+  def add_suffix(file, suffix)
+    dir = File.dirname(file)
+    ext = File.extname(file)
+    base = File.basename(file, ext)
+    File.rename file, "#{dir}/#{base}-#{suffix}#{ext}"
+  end
+
+  def caveats
+    <<~EOS
+      To avoid conflicts with the wxmac formula, `wx-config` and `wxrc`
+      have been installed as `wx-config-#{version.major_minor}` and `wxrc-#{version.major_minor}`.
+    EOS
   end
 
   test do
-    system bin/"wx-config", "--libs"
+    system bin/"wx-config-#{version.major_minor}", "--libs"
   end
 end
