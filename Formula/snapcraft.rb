@@ -4,8 +4,8 @@ class Snapcraft < Formula
   desc "Package any app for every Linux desktop, server, cloud or device"
   homepage "https://snapcraft.io/"
   url "https://github.com/snapcore/snapcraft.git",
-      tag:      "4.8.2",
-      revision: "78d1d815b8caba7a3369ea38064d816b82230cc2"
+      tag:      "4.8.3",
+      revision: "2f05b212d939e69ccf08ae72108c936caaf6f088"
   license "GPL-3.0-only"
 
   livecheck do
@@ -14,10 +14,10 @@ class Snapcraft < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "a33965ce047935f104c84a20dfc1eb4bac83bc0fc532bff8d2136a63623762c5"
-    sha256 cellar: :any, big_sur:       "b2554e6aeff33459eaf27bd837511dad1c8143c25902bf7a4b3ce99f23378104"
-    sha256 cellar: :any, catalina:      "b18c980b95b8f548133b554e0f16911297674dad37a62c0aecec2ea6624173d2"
-    sha256 cellar: :any, mojave:        "05165a0f326f67d07e6ea23f8b45267604342c6be1eda2cf37a7c186a01b3e29"
+    sha256 cellar: :any, arm64_big_sur: "24f002cb2c9c39a0898d72dacae4b3c64a98268c41a10448eaa0446ab45f28d4"
+    sha256 cellar: :any, big_sur:       "f00e73d4d5d28d70dbdc0972f5427f7d2dbb76d37109207bd685aa17de90b611"
+    sha256 cellar: :any, catalina:      "427eb46a6b43f7da4e45e726c958ea6ad937e845928b10c5ac347685f6a36421"
+    sha256 cellar: :any, mojave:        "1f711efb1de28dcf981f2cb787825614346c2a8e53db3b35a9984a22b28a49d7"
   end
 
   depends_on "rust" => :build
@@ -182,11 +182,6 @@ class Snapcraft < Formula
   resource "pyRFC3339" do
     url "https://files.pythonhosted.org/packages/00/52/75ea0ae249ba885c9429e421b4f94bc154df68484847f1ac164287d978d7/pyRFC3339-1.1.tar.gz"
     sha256 "81b8cbe1519cdb79bed04910dd6fa4e181faf8c88dff1e1b987b5f7ab23a5b1a"
-  end
-
-  resource "pysha3" do
-    url "https://files.pythonhosted.org/packages/73/bf/978d424ac6c9076d73b8fdc8ab8ad46f98af0c34669d736b1d83c758afee/pysha3-1.0.2.tar.gz"
-    sha256 "fe988e73f2ce6d947220624f04d467faf05f1bbdbc64b0a201296bb3af92739e"
   end
 
   resource "pytz" do
