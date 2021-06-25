@@ -10,6 +10,10 @@ class Rabbitmq < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0fcc641c298b170fcbc33e8d9845f47cb6721098ddb6b816c4f0ef741d908628"
+  end
+
   depends_on "python@3.9" => :build
   depends_on "erlang"
 
