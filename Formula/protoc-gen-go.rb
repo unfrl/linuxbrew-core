@@ -11,6 +11,7 @@ class ProtocGenGo < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "db8d23c9a2a2e42898968dcaab47ba2700ec17125a889aa064dd7c74014502ac"
     sha256 cellar: :any_skip_relocation, catalina:      "db8d23c9a2a2e42898968dcaab47ba2700ec17125a889aa064dd7c74014502ac"
     sha256 cellar: :any_skip_relocation, mojave:        "db8d23c9a2a2e42898968dcaab47ba2700ec17125a889aa064dd7c74014502ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ece9718f7dacd06a18bd881d7a75f5aba47cdcd8ecb85941f7b030a391c3c14"
   end
 
   depends_on "go" => :build
