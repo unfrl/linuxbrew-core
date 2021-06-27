@@ -6,6 +6,10 @@ class Makeself < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/megastep/makeself.git"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "82f27c0c737ac961369bdc83e53657439fd7d9c4c1836dc8f569148933ef5905"
+  end
+
   def install
     # Replace `/usr/local` references to make bottles uniform
     inreplace ["makeself-header.sh", "makeself.sh"], "/usr/local", HOMEBREW_PREFIX
