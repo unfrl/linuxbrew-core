@@ -10,6 +10,7 @@ class Tctl < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "61c675934e3bce6e86fe3900b5d7c6b8f7bc7cd45b8cec31d537180ec8f7b5ef"
     sha256 cellar: :any_skip_relocation, catalina:      "9c3a60dca46ff5dbe020a9b09daef15f20aa4bc6dc4509d814e7d38cb9087fd3"
     sha256 cellar: :any_skip_relocation, mojave:        "c09a4f2d31bfb81fa432aa03859bf6a7e260bde8607c325fd0ab618b7b6557f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "62520ff668e1ff318d647a25fb44b5d3a50710675b5437284af7b9fb68e73293"
   end
 
   depends_on "go" => :build
