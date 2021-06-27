@@ -2,16 +2,16 @@ class Revive < Formula
   desc "Fast, configurable, extensible, flexible, and beautiful linter for Go"
   homepage "https://revive.run"
   url "https://github.com/mgechev/revive.git",
-      tag:      "v1.0.7",
-      revision: "c4d52d202d4c4dd7b34899e07899a34b92d62a12"
+      tag:      "v1.0.8",
+      revision: "1d91f74b14e68539aacf14dee98900f9f7ccfd58"
   license "MIT"
   head "https://github.com/mgechev/revive.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "7470c45d28f504e31687ee0549cf4774d1cb430ef3d45714b74991029ed9595c"
-    sha256 cellar: :any_skip_relocation, big_sur:       "ceba55c3db9f94434837c58fc68d64d259de0923bc7950e8ec7894ca29339dcd"
-    sha256 cellar: :any_skip_relocation, catalina:      "038b084e928abb635b08a776e73b8bd198027194c450a03b54bd786f7ee84674"
-    sha256 cellar: :any_skip_relocation, mojave:        "f02d8da6764f5592fc788fc3fc2b4b77b243fdc27b124e018aa41f2aaf6fe74d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "aa43affe200290ca06eb715c288b493638a77cf04b932743f4508136d921d446"
+    sha256 cellar: :any_skip_relocation, big_sur:       "988d57398c94172b3d69cd3210c7ad8144946a643c0d540ee23ba377db6ecac1"
+    sha256 cellar: :any_skip_relocation, catalina:      "d9d3c57b4b8151253042abce2f15bcee73a0468962f8c813922bd50298701da5"
+    sha256 cellar: :any_skip_relocation, mojave:        "a305035aabd26548d25f98ca8583b43f5a1afea9db0d03d1527e248e8232a9bb"
   end
 
   depends_on "go" => :build

@@ -3,18 +3,16 @@ class Ipython < Formula
 
   desc "Interactive computing in Python"
   homepage "https://ipython.org/"
-  url "https://files.pythonhosted.org/packages/59/4a/06f4527f0b47d80f0f86c17e14ee0bf0fedd7028a63a4f81c314f53c6636/ipython-7.24.1.tar.gz"
-  sha256 "9bc24a99f5d19721fb8a2d1408908e9c0520a17fff2233ffe82620847f17f1b6"
+  url "https://files.pythonhosted.org/packages/73/fe/0250e9e85629f7eba7182490364174e50c48d1eac98bc5e81f993cf1a11e/ipython-7.25.0.tar.gz"
+  sha256 "54bbd1fe3882457aaf28ae060a5ccdef97f212a741754e420028d4ec5c2291dc"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/ipython/ipython.git"
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "a817a4d708288fa29a88219eb5c1faab6a8c27b8b74e5ddd4d2ab800f44c0cb9"
-    sha256 cellar: :any,                 big_sur:       "ed1de715697c09f0dbb62a43a9095e0811899473e00c6a3825764fe681f2b751"
-    sha256 cellar: :any,                 catalina:      "8f8660c1cb2c2df2f82215426bd66ed57921f5eac6f3e3652576d2f0944ea538"
-    sha256 cellar: :any,                 mojave:        "37c02dc8c18dfb27ead1d86c18e8142a6c2d1f7577bce03f749d431337399b18"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a48ccda3891ec00fa669c59e50dc379d0404bbf38867529fb9d92aada63f1df7"
+    sha256 cellar: :any, arm64_big_sur: "3add12cfc5cc3aed5ea37da9eb901ee5c66803ccbf0be5f6d592543447634594"
+    sha256 cellar: :any, big_sur:       "898c6725202a6d7e8c086aa2a5d1cf0041a01642ae138cb28e4d8684696c1c32"
+    sha256 cellar: :any, catalina:      "51763ab53bd44b00bf45e2efe804a6f15388f4e2ac3d35086d9c0f6109263f94"
+    sha256 cellar: :any, mojave:        "171e4f4266cd4d1407c00638d2744e4b25fffd0408ecf8d7a655ab70137ff5e7"
   end
 
   depends_on "python@3.9"
@@ -90,8 +88,8 @@ class Ipython < Formula
   end
 
   resource "prompt-toolkit" do
-    url "https://files.pythonhosted.org/packages/f7/e0/47738dadee0ec15ffbfa926f01586db2397201e0af3e06a0e669adfd6f2f/prompt_toolkit-3.0.18.tar.gz"
-    sha256 "e1b4f11b9336a28fa11810bc623c357420f69dfdb6d2dac41ca2c21a55c033bc"
+    url "https://files.pythonhosted.org/packages/88/4b/2c0f9e2b52297bdeede91c8917c51575b125006da5d0485521fa2b1e0b75/prompt_toolkit-3.0.19.tar.gz"
+    sha256 "08360ee3a3148bdb5163621709ee322ec34fc4375099afa4bbf751e9b7b7fa4f"
   end
 
   resource "ptyprocess" do
