@@ -15,6 +15,7 @@ class Abcmidi < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "c59cf2b0d04dfe6404079dbb49cc0a53632d4a0afb61a12c8c1d6ef54c07fe92"
     sha256 cellar: :any_skip_relocation, catalina:      "b2f63b1ce2fa576dd723955ab9f6bfab657b6899ce49e8b5b47a90a11848cbea"
     sha256 cellar: :any_skip_relocation, mojave:        "012223e8738c3ad72cc75afd219c3badbab1c822fd53c168baa4a445e86efee5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fd2e683901b510f458b3bdc2fb48a5ca1617144bb6821fef53e9bbeb9333553"
   end
 
   def install
