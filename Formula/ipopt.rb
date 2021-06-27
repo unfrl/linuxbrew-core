@@ -1,17 +1,16 @@
 class Ipopt < Formula
   desc "Interior point optimizer"
   homepage "https://coin-or.github.io/Ipopt/"
-  url "https://github.com/coin-or/Ipopt/archive/releases/3.14.0.tar.gz"
-  sha256 "9bed72a5456ef37f1b95746c932986e6664eb70b983d4fab61cf8aa811facdf1"
+  url "https://github.com/coin-or/Ipopt/archive/releases/3.14.1.tar.gz"
+  sha256 "afa37bbb0d91003c58284113717dc304718a1f236c97fe097dfab1672cb879c6"
   license "EPL-1.0"
   head "https://github.com/coin-or/Ipopt.git"
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "c2a5b17709effe3b7f429875190a865b5907bfc727b9d48a6f5c57e2fb2925e6"
-    sha256 cellar: :any,                 big_sur:       "3b82a6f61d381dad80b86cadfad1ce82e8e05fc501603093855437892b482782"
-    sha256 cellar: :any,                 catalina:      "1a10ab657bdc1331dd048306db7821d000bc99e9098e8153dcc88c511209eb64"
-    sha256 cellar: :any,                 mojave:        "6ebafbaf6fb8838106c9220985f634205bf8e3cb511357d6b3eade4907784594"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4ca59faa23d7c3e26ce23436f6047cb1762cd3abb81887ff5d0f41479551d8c"
+    sha256 cellar: :any, arm64_big_sur: "dd6168dd885e5c86595dc4d44418672770d31d63f59dd2dc99d503bf89b94b08"
+    sha256 cellar: :any, big_sur:       "3effb180e71de5b365670b7f80b4e7a8af7d126f236744c2a09c4954368a05a9"
+    sha256 cellar: :any, catalina:      "60d8be3bd1f46bfc365a9824c73317719d969193106fd2111dea3c31ff1acfd5"
+    sha256 cellar: :any, mojave:        "9ad773e484d983e1c9f092f07d5e90491779336edf4a940520ad5c0645410b33"
   end
 
   depends_on "openjdk" => :build
@@ -39,8 +38,8 @@ class Ipopt < Formula
   end
 
   resource "test" do
-    url "https://github.com/coin-or/Ipopt/archive/releases/3.14.0.tar.gz"
-    sha256 "9bed72a5456ef37f1b95746c932986e6664eb70b983d4fab61cf8aa811facdf1"
+    url "https://github.com/coin-or/Ipopt/archive/releases/3.14.1.tar.gz"
+    sha256 "afa37bbb0d91003c58284113717dc304718a1f236c97fe097dfab1672cb879c6"
   end
 
   def install
