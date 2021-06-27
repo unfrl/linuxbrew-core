@@ -1,17 +1,16 @@
 class ProtocGenGo < Formula
   desc "Go support for Google's protocol buffers"
   homepage "https://github.com/protocolbuffers/protobuf-go"
-  url "https://github.com/protocolbuffers/protobuf-go/archive/v1.26.0.tar.gz"
-  sha256 "26218474bcf776ecf32d7d194c6bfaca8e7b4f0c087e5b595fd50fbb31409676"
+  url "https://github.com/protocolbuffers/protobuf-go/archive/v1.27.0.tar.gz"
+  sha256 "5a928abfdcc7972e92738e7af2b8d1a41f4b2b7511d5b4f4f5b1ce3705668f45"
   license "BSD-3-Clause"
   head "https://github.com/protocolbuffers/protobuf-go.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "d3d308a1e5375a62fe27fa5377b46cb7523144297911c574c80c35774ce31d5b"
-    sha256 cellar: :any_skip_relocation, big_sur:       "85c47dfa6ae56aae8ca5d3b36275884b0dafe749acf178d11a5b4ba6e28bb1b8"
-    sha256 cellar: :any_skip_relocation, catalina:      "85c47dfa6ae56aae8ca5d3b36275884b0dafe749acf178d11a5b4ba6e28bb1b8"
-    sha256 cellar: :any_skip_relocation, mojave:        "85c47dfa6ae56aae8ca5d3b36275884b0dafe749acf178d11a5b4ba6e28bb1b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4f49dd92d2063d1b4dfaa8b2cab8d40bc3af6ff41b79005dc036e48e42e62b8"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "66a055296f1284d23b625e3864c55df6389c8aff6315de3021ae538ec4d9cc1e"
+    sha256 cellar: :any_skip_relocation, big_sur:       "db8d23c9a2a2e42898968dcaab47ba2700ec17125a889aa064dd7c74014502ac"
+    sha256 cellar: :any_skip_relocation, catalina:      "db8d23c9a2a2e42898968dcaab47ba2700ec17125a889aa064dd7c74014502ac"
+    sha256 cellar: :any_skip_relocation, mojave:        "db8d23c9a2a2e42898968dcaab47ba2700ec17125a889aa064dd7c74014502ac"
   end
 
   depends_on "go" => :build

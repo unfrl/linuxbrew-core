@@ -1,8 +1,8 @@
 class Nexus < Formula
   desc "Repository manager for binary software components"
   homepage "https://www.sonatype.org/"
-  url "https://github.com/sonatype/nexus-public/archive/release-3.31.0-01.tar.gz"
-  sha256 "f0ed53eb1e84fc2c5eabbd4db66d78c504b5f1becb36e824603db734bf3a8d3c"
+  url "https://github.com/sonatype/nexus-public/archive/release-3.31.1-01.tar.gz"
+  sha256 "1f1af308d529dec6bb3835a7201d909c008817cfe763213fb97d4d4f4146480f"
   license "EPL-1.0"
 
   # As of writing, upstream is publishing both v2 and v3 releases. The "latest"
@@ -14,10 +14,9 @@ class Nexus < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:      "28a030e540c9bb246db41dc8808abe4ebbc7a3d7a99f02ed7626e80338ec9332"
-    sha256 cellar: :any_skip_relocation, catalina:     "63584db54560a691e364aac6ed26dfecfcfd4105eddb3276cbf04bd426aa7db0"
-    sha256 cellar: :any_skip_relocation, mojave:       "efdfe9ab642e82cf94e98c01f6c19a60e8e2849b32be411dde7c1ae79f6a382a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "a7c5be671a380d1e0af768fbf09cc7f28df9a4754db440feb8a551d5707b85b9"
+    sha256 cellar: :any_skip_relocation, big_sur:  "c20857fcd052822fa8f0b5cbf6be9a62687ba04f0df7b1097238c8818ad319bb"
+    sha256 cellar: :any_skip_relocation, catalina: "a9b814c63b91113b4a1bba841661ff208b345355393839ac384a0ff938b2210f"
+    sha256 cellar: :any_skip_relocation, mojave:   "319f19a3d0e00895179d3c1a914948226c66a48c08eb156b78e099ce7d27dbc0"
   end
 
   depends_on "maven" => :build

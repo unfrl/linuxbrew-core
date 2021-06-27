@@ -7,7 +7,7 @@ class Makeself < Formula
   head "https://github.com/megastep/makeself.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "82f27c0c737ac961369bdc83e53657439fd7d9c4c1836dc8f569148933ef5905"
+    rebuild 1
   end
 
   def install
@@ -21,8 +21,16 @@ class Makeself < Formula
   end
 
   test do
-    touch "testfile"
-    system "tar", "cvzf", "testfile.tar.gz", "testfile"
-    system "#{bin}/makeself", ".", "testfile.run", '"A test file"', "echo"
+    source = testpath/"source"
+    source.mkdir
+    (source/"foo").write "bar"
+    (source/"script.sh").write <<~EOS
+      #!/bin/sh
+      echo 'Hello Homebrew!'
+    EOS
+    chmod 0755, source/"script.sh"
+    system bin/"makeself", source, "testfile.run", "'A test file'", "./script.sh"
+    assert_match "Hello Homebrew!", shell_output("./testfile.run --target output")
+    assert_equal (source/"foo").read, (testpath/"output/foo").read
   end
 end
