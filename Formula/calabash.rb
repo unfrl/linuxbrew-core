@@ -5,6 +5,10 @@ class Calabash < Formula
   sha256 "dba453614011bb45b1b85b875d8da9642e7c9ed6d42f78e9963aee5485f3ff8d"
   license "GPL-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7706b55f501121dab8d831b4ea05cb8b48202d712896938076634c8bd4e99bd4"
+  end
+
   depends_on "openjdk"
   depends_on "saxon"
 
