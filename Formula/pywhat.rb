@@ -3,16 +3,16 @@ class Pywhat < Formula
 
   desc "🐸 Identify anything: emails, IP addresses, and more 🧙"
   homepage "https://github.com/bee-san/pyWhat"
-  url "https://files.pythonhosted.org/packages/a8/2d/c0c98cca2922c80abb0f45396caf4b737fb87590851074eb85c321ce4364/pywhat-3.1.0.tar.gz"
-  sha256 "89177b77b14f0c1caac3b1cb511dec50edaeeecc4ee8015df6ee4524a3ef33e8"
+  url "https://files.pythonhosted.org/packages/72/30/d5ecb60218687d87d3f97f1e20f8fb83438ac8ab7c40e073e6f4d887e903/pywhat-3.2.0.tar.gz"
+  sha256 "48d15667949976e1f385dc1d96ce71e34c55997d51d45189f7770811f7ac11d1"
   license "GPL-3.0-or-later"
   head "https://github.com/bee-san/pyWhat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "610a201b89ef41a668482f6c5644f87982cc9d7146d098f95bbeda3a9dcc196e"
-    sha256 cellar: :any_skip_relocation, big_sur:       "f69c1214fbc193decdda6346142e21e192a9b52066e5db7fe1a8f0cf4311cabe"
-    sha256 cellar: :any_skip_relocation, catalina:      "ad4b2949f5ec9fcd59f4d4f16500895ef3021390112d57ba363fffbebe86332c"
-    sha256 cellar: :any_skip_relocation, mojave:        "9f6e9658571b1e8cc481cd23bc142309e14ebcfb15edb41c55fbbd17b96a63fa"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "5a38e3dd1128a0f5c57e6a8762f6465515190580c75ce74ad4f68998fea06d69"
+    sha256 cellar: :any_skip_relocation, big_sur:       "8b867969848accf9b819a51e815d2f60f755843f01144d92fb38401ead312ecf"
+    sha256 cellar: :any_skip_relocation, catalina:      "f8e903448963d576386c412e3397a1631b3240c05a53938e666392555c554b3e"
+    sha256 cellar: :any_skip_relocation, mojave:        "689b68c57f2547c7eb27541e7f61e8813300282641262e1f4abc780dff46577d"
   end
 
   depends_on "python@3.9"
