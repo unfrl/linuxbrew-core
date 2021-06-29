@@ -1,15 +1,15 @@
 class RpgCli < Formula
   desc "Your filesystem as a dungeon!"
   homepage "https://github.com/facundoolano/rpg-cli"
-  url "https://github.com/facundoolano/rpg-cli/archive/refs/tags/0.4.1.tar.gz"
-  sha256 "2b68e9c53ff7fcebb319aa741e008b1f8c2ed714558302c1707a1fc87fa09164"
+  url "https://github.com/facundoolano/rpg-cli/archive/refs/tags/0.5.0.tar.gz"
+  sha256 "2746093aeddd27e1fa7b75e460e232b9a84ed26569751341c53f2808c63cc637"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "254ec5c187fadfc48df5a7bfd329aab9357072b0f9896943d212a770f0f6a2b5"
-    sha256 cellar: :any_skip_relocation, big_sur:       "1aa04ab7e110e6792cb420fbd54835ea39611380efe82693ab4f92666a6abfbe"
-    sha256 cellar: :any_skip_relocation, catalina:      "fffa364cf607d471d91f73d0bbae3ca49b007e39aa6bc6e0d449977713046cf0"
-    sha256 cellar: :any_skip_relocation, mojave:        "9b3d14e54c50e29169d6213a8272ddf05a874cfdd05b7e54acc50bd32e66ad8b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "c0bd146083ed5b5591d1a100f7215d424311af4570e9a3ee2f56b6a27c91ae90"
+    sha256 cellar: :any_skip_relocation, big_sur:       "ea2253b83dd273c359c7f7da6075e07721de5fdd8881eb9232a355c04ed707d8"
+    sha256 cellar: :any_skip_relocation, catalina:      "19ec602ca786895f8565143f89c7cdb77f1a73fd374708c753052c92bce6da90"
+    sha256 cellar: :any_skip_relocation, mojave:        "0fba598c7b941d1e8f8c966afe4715dd7ef87723d6cf6143febc1bbf90db750c"
   end
 
   depends_on "rust" => :build

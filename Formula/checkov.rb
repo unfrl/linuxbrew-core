@@ -4,20 +4,20 @@ class Checkov < Formula
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
   # checkov should only be updated every 15 releases on multiples of 15
-  url "https://files.pythonhosted.org/packages/82/0a/492dbd78c766c513b29c8140ddcfb54b28779127ea6367213e53c57a5a52/checkov-2.0.210.tar.gz"
-  sha256 "3a5ccd27397bf2b38e2830cef02a577bc9cdd53898b64041441f6d19b04f9c9d"
+  url "https://files.pythonhosted.org/packages/42/60/b37ea711e89ef0e47fb591560829122862443e7cc84b1ff9fcb7e5626cc0/checkov-2.0.225.tar.gz"
+  sha256 "7ae8c202ac9ac4854bfc171a89abe08ab15ca2a452f321ac794178ece9fab61a"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "96ba13b45168944ca29010e7be6842a2bab8e9fb3cc13570845e8a298f9acad8"
-    sha256 cellar: :any_skip_relocation, big_sur:       "af5558879e4b43b6437b31d8c3eb404c3753c5d0e71e49f00fed2d453533c6e7"
-    sha256 cellar: :any_skip_relocation, catalina:      "3ac9a4e6d7772e773a009030bf0cdb4858f93e241ec76f2a6bf3fcb092f40613"
-    sha256 cellar: :any_skip_relocation, mojave:        "89b006c6b0f45e62404a29b0ee79d4abd4f282117502e0f1d5436105e54cc1d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ddf83b772b314ecd953a3a5f1cc10232d467ec0f5d4d57587540b2a844aa02aa"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "d111b2b5e6802b1d4433a7e6b9f388d7e7576aaf2e082a549ae1c8ef8f76e930"
+    sha256 cellar: :any_skip_relocation, big_sur:       "69f8ee0fc1f3a3911cf6336a3d2926ae4eb574bb432f20498d4781f9943c49ba"
+    sha256 cellar: :any_skip_relocation, catalina:      "255a1a4f32ea1d58a96a2d4650e0d8ed6f66e393aad441c57926a33c884f6fde"
+    sha256 cellar: :any_skip_relocation, mojave:        "0f5a271f23beebced95328473b315e02ca0db18cf8bef59824c8bcc84725f123"
   end
 
   depends_on "python-tabulate"
   depends_on "python@3.9"
+  depends_on "six"
 
   resource "bc-python-hcl2" do
     url "https://files.pythonhosted.org/packages/88/3b/864cc7c4793ec8874a02f293d40f36371b6dbcff414e108a72c95069fd79/bc-python-hcl2-0.3.18.tar.gz"
@@ -30,13 +30,13 @@ class Checkov < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/36/b6/07d93cca724e3ea2630c4ae2bccae2e6a22459a7332797415db37b88508a/boto3-1.17.97.tar.gz"
-    sha256 "0ab5afc51461c30f27aebef944211d16f47697b98ff8d2e2f6e49e59584853bb"
+    url "https://files.pythonhosted.org/packages/51/07/4a40d0188a51398138d4abff7b3c26da476b139a19f24299e71626d98091/boto3-1.17.101.tar.gz"
+    sha256 "77ebaa3645ae153978a0f2c492502fef3804fe0e693abc7dc74620e4884afe67"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/04/7e/bfc3b6a043070a06fd3e79482f159933727de18880f7f0c6f2ccd78b3234/botocore-1.20.97.tar.gz"
-    sha256 "f7e119cf3e0f4a36100f0e983583afa91a84fb27c479a1716820aee4f2e190ab"
+    url "https://files.pythonhosted.org/packages/73/37/27b163e4bb3da2356ba826481c573dddee19616a5f5871e9cade3b211378/botocore-1.20.101.tar.gz"
+    sha256 "f7a44fab1a3739ca54e7f72e8625b71574f8218f05349e59d3b871c887444edd"
   end
 
   resource "cached-property" do
@@ -75,13 +75,13 @@ class Checkov < Formula
   end
 
   resource "ConfigArgParse" do
-    url "https://files.pythonhosted.org/packages/fa/c2/986a0692857b25d6c7998060b21d40068bfb08a510dcf1bf4b0d161745b6/ConfigArgParse-1.4.1.tar.gz"
-    sha256 "6df537158f28c5ef2e8a8146781833abbc6cb7fca81b1b55d18808ce3439235e"
+    url "https://files.pythonhosted.org/packages/dd/00/1d4e01c8f7d9b4e701f0ddba8c5a5d074e919f1a972196897d775ec7c3c0/ConfigArgParse-1.5.tar.gz"
+    sha256 "dded3590373b7dae6ce6d0afeb4ae3def74761fdd78730952863914d4cb4bdb5"
   end
 
   resource "contextlib2" do
-    url "https://files.pythonhosted.org/packages/02/54/669207eb72e3d8ae8b38aa1f0703ee87a0e9f88f30d3c0a47bebdb6de242/contextlib2-0.6.0.post1.tar.gz"
-    sha256 "01f490098c18b19d2bd5bb5dc445b2054d2fa97f09a4280ba2c5f3c394c8162e"
+    url "https://files.pythonhosted.org/packages/c7/13/37ea7805ae3057992e96ecb1cffa2fa35c2ef4498543b846f90dd2348d8f/contextlib2-21.6.0.tar.gz"
+    sha256 "ab1e2bfe1d01d968e1b7e8d9023bc51ef3509bba217bb730cee3827e1ee82869"
   end
 
   resource "decorator" do
@@ -209,11 +209,6 @@ class Checkov < Formula
     sha256 "d2cb2de0558762934679b9a104e82eca7af448c9f4974d1f3eeccff651df8a54"
   end
 
-  resource "six" do
-    url "https://files.pythonhosted.org/packages/6b/34/415834bfdafca3c5f451532e8a8d9ba89a21c9743a0c59fbd0205c7f9426/six-1.15.0.tar.gz"
-    sha256 "30639c035cdb23534cd4aa2dd52c3bf48f06e5f4a941509c8bafd8ce11080259"
-  end
-
   resource "smmap" do
     url "https://files.pythonhosted.org/packages/dd/d4/2b4f196171674109f0fbb3951b8beab06cd0453c1b247ec0c4556d06648d/smmap-4.0.0.tar.gz"
     sha256 "7e65386bd122d45405ddf795637b7f7d2b532e7e401d46bbe3fb49b9986d5182"
@@ -240,8 +235,8 @@ class Checkov < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/94/40/c396b5b212533716949a4d295f91a4c100d51ba95ea9e2d96b6b0517e5a5/urllib3-1.26.5.tar.gz"
-    sha256 "a7acd0977125325f516bda9735fa7142b909a8d01e8b2e4c8108d0984e6e0098"
+    url "https://files.pythonhosted.org/packages/4f/5a/597ef5911cb8919efe4d86206aa8b2658616d676a7088f0825ca08bd7cb8/urllib3-1.26.6.tar.gz"
+    sha256 "f57b4c16c62fa2760b7e3d97c35b255512fb6b59a259730f36ba32ce9f8e342f"
   end
 
   resource "websocket-client" do
@@ -268,7 +263,7 @@ class Checkov < Formula
       }
     EOS
 
-    assert_match "Passed checks: 4, Failed checks: 6, Skipped checks: 0",
+    assert_match "Passed checks: 4, Failed checks: 5, Skipped checks: 0",
       shell_output("#{bin}/checkov -f #{testpath}/test.tf 2>&1", 1)
 
     (testpath/"test2.tf").write <<~EOS
@@ -285,7 +280,7 @@ class Checkov < Formula
         }
       }
     EOS
-    assert_match "Passed checks: 4, Failed checks: 4, Skipped checks: 2",
+    assert_match "Passed checks: 4, Failed checks: 4, Skipped checks: 1",
       shell_output("#{bin}/checkov -f #{testpath}/test2.tf 2>&1", 1)
   end
 end
