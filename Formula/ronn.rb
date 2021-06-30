@@ -5,6 +5,11 @@ class Ronn < Formula
   sha256 "808aa6668f636ce03abba99c53c2005cef559a5099f6b40bf2c7aad8e273acb4"
   license "MIT"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 arm64_big_sur: "5c1633f7c2bbed5e9570abdfeab0e09267d5950cc1dd1e1407390e78f7061c99"
     sha256 big_sur:       "039c6b58bcb2a23599731b0616f86367f599a18ca1e9ac6aabad00c759d51e1c"
@@ -40,8 +45,6 @@ class Ronn < Formula
              simple - a simple ronn example
 
              This document is created by ronn.
-
-
 
                                        January 1970                        SIMPLE(7)
     EOS
