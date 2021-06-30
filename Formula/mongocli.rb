@@ -1,15 +1,15 @@
 class Mongocli < Formula
   desc "MongoDB CLI enables you to manage your MongoDB in the Cloud"
   homepage "https://github.com/mongodb/mongocli"
-  url "https://github.com/mongodb/mongocli/archive/refs/tags/v1.17.0.tar.gz"
-  sha256 "eeaa49e9035bd434a73dc80b71f54281b7bc371c03f82d9497db9552543c40f9"
+  url "https://github.com/mongodb/mongocli/archive/refs/tags/v1.17.1.tar.gz"
+  sha256 "8f62ab86abc6e0fcb60a232c6900234a27707ab5d5c87eb5f3550181d9094fb4"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "44db755d06d629b2db35323fff42f42567243e3b4b32413c1c0f300c4c177516"
-    sha256 cellar: :any_skip_relocation, big_sur:       "3cd0bc211c6c3f10bf6e52dc0cb6102b8b0157d805363a8c81f9e36be9c03300"
-    sha256 cellar: :any_skip_relocation, catalina:      "a1361b711f11529f4007f06a20276f356bf0748ad4ebf36af92bb994054063a6"
-    sha256 cellar: :any_skip_relocation, mojave:        "5d3b3a574543ffca2a7b44f909909d3d4bcc1fac680c98d39ef7529d455c8890"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "779aff7d29c5f3e78ce245320ef6fee655ea58c0bae752c43e4fdf757e53a6d2"
+    sha256 cellar: :any_skip_relocation, big_sur:       "26d9a04bcd53e36f6ba293f70eed92cbf9261305481c34b957355bc81481c605"
+    sha256 cellar: :any_skip_relocation, catalina:      "e682e1ef1c4b73d86c2e8cd8b74d2a376fa396f0b91a4a3fcbfc3465eee46b47"
+    sha256 cellar: :any_skip_relocation, mojave:        "3e0244a434dd90566c795945f1425b6ff0e28f70b625c108fd70866e49ebe56c"
   end
 
   depends_on "go" => :build
