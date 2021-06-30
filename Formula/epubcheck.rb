@@ -5,6 +5,10 @@ class Epubcheck < Formula
   sha256 "3f73c1265cc92e3b53ffda6cd5bbeb58505b2b0c43411c26e74d8df1b193b2c0"
   license "BSD-3-Clause"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "42ac8ea89ae9a6842bf072d5f22e1e243cd409921fa2dae826bb60cbd59b7758"
+  end
+
   depends_on "openjdk"
 
   def install
