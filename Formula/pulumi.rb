@@ -12,6 +12,7 @@ class Pulumi < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "8a693cffeaf1cf394655646983f0f3522cc0e63894f28def6cb9e8dbd2cf2fbb"
     sha256 cellar: :any_skip_relocation, catalina:      "55f91a0597efc99b274e97b8ea512474c13247428abd2a0e4357d0db966ecca5"
     sha256 cellar: :any_skip_relocation, mojave:        "53594759bc1ab698fec0c97c8812f309006e733e63f1664c57f9245b2ca65181"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ba2d7ddee7f8c7cfb90146494d8bea26b986b17f48b113bc571eb0bd0131236"
   end
 
   depends_on "go" => :build
