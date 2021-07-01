@@ -3,17 +3,16 @@ class Regipy < Formula
 
   desc "Offline registry hive parsing tool"
   homepage "https://github.com/mkorman90/regipy"
-  url "https://files.pythonhosted.org/packages/30/f3/3fc1c6408dd25f71f379b95f071dd4cf15417179090284e0458ba7f2744d/regipy-1.9.1.tar.gz"
-  sha256 "644eab1f841298beebfac1121dbd65f2df32ff74ff1f203ce1192b3897f74a09"
+  url "https://files.pythonhosted.org/packages/c6/e3/6a4f66faada110fb7da30daa8f87315ce1ab6fd740af6a90437297ece2cd/regipy-1.9.2.tar.gz"
+  sha256 "3d6f8f2bc2d292ca639e654b89033255af32bb157aed37108a3d17a185394d3e"
   license "MIT"
   head "https://github.com/mkorman90/regipy.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "8fae411c31d51aa2e0438caef5399f141ae186047a341a689ba59cf86b34626c"
-    sha256 cellar: :any_skip_relocation, big_sur:       "8ebb9bd9b48cd477553257982fe0f6195a7edcb23c901cb3a79c78b10286b880"
-    sha256 cellar: :any_skip_relocation, catalina:      "b9b6615dfda260300715401165fc484a32c7405ab0f86898914812e3e013d440"
-    sha256 cellar: :any_skip_relocation, mojave:        "d76123625de70664978336ce0a3999225bcf52a4850d31425f51a3436903b32b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b76b85d41a227bb973e4db7309dd1e01c706832be274393481a278c949fcb831"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "91257770e12748b2294b18fb70712f846a2c218ea1892a4926a1552e5949a103"
+    sha256 cellar: :any_skip_relocation, big_sur:       "616104e4288483c21b232489b8794635f0ff64fb7421455fcbc0aa327ad512ff"
+    sha256 cellar: :any_skip_relocation, catalina:      "e7dff587bcebd61dc189997e5a46e74dc31874083b363c2be235cad38c95af3b"
+    sha256 cellar: :any_skip_relocation, mojave:        "631e3096dd01ecd93df8eb40955a3652fec372542b342cd4bff346b874de192b"
   end
 
   depends_on "python-tabulate"
