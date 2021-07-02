@@ -6,14 +6,14 @@ class Salt < Formula
   url "https://files.pythonhosted.org/packages/49/51/5c6dd25abeda4e11fc8bfbc80601bec5b14e9534c7a031d13bfb90e41fd3/salt-3003.1.tar.gz"
   sha256 "8a7184d3de4d1727618f0d3fbba79e54389aeff85b72f4ceb8200bcc167f6ebe"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/saltstack/salt.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "43a191cac9880b988e733085de42b59cb05142274683eb9662a5f7639760fa7d"
-    sha256 cellar: :any,                 big_sur:       "6f583bb006059cd86964b63894eb659a71e800c6be558fd18327bc2d9d78d212"
-    sha256 cellar: :any,                 catalina:      "f8033b15ede56595cca2c2d393a51ddc5bf7d9707fbc0da0c42f736bdf375937"
-    sha256 cellar: :any,                 mojave:        "d23b4a500e8c352f919e740ec68283d3d02368657566ac8eaaa10fe1505db116"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1bbfa560a531153a82679c4cbf752a12d1016ad905554ee68705e98b8b6ed5bb"
+    sha256 cellar: :any, arm64_big_sur: "64d2ec05ea8e96028d8e4932921968f447f51f78b22e039adddf88698f6a5d3d"
+    sha256 cellar: :any, big_sur:       "4361480356b9abafe2bb980d949607457f9a8b70dc7f3ee70c711d17728adcf4"
+    sha256 cellar: :any, catalina:      "70b57c11b9a3afe5671c5e2aa91208c70528a2eac272e2fc2d269aa4b3ea4cdc"
+    sha256 cellar: :any, mojave:        "303d0de97608541d8573e4b2c733b12b6ad116921159d535fc21c764cb1cdf27"
   end
 
   depends_on "swig" => :build
