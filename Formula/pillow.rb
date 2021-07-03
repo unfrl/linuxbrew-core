@@ -11,6 +11,7 @@ class Pillow < Formula
     sha256 cellar: :any, big_sur:       "f56f60cef2b8bb7c3d5457b48adf5a8d4422117521e3745e8884e80db2f9ee3d"
     sha256 cellar: :any, catalina:      "30f22c9c5b96ae0d74bb77f968b04aba54c2905170664ae8e261d784c6232e7e"
     sha256 cellar: :any, mojave:        "3127367c5ec2f26a577b9b2b1e7d57079e5fda1ea360c04789e88dc30c784e05"
+    sha256               x86_64_linux:  "f5de87b77b992d2fde91d4663c5f9570ac43e18eb802aa8ac27f81a4a3481d37"
   end
 
   depends_on "pkg-config" => :build
