@@ -2,17 +2,16 @@ class PhpAT74 < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-7.4.20.tar.xz"
-  mirror "https://fossies.org/linux/www/php-7.4.20.tar.xz"
-  sha256 "1fa46ca6790d780bf2cb48961df65f0ca3640c4533f0bca743cd61b71cb66335"
+  url "https://www.php.net/distributions/php-7.4.21.tar.xz"
+  mirror "https://fossies.org/linux/www/php-7.4.21.tar.xz"
+  sha256 "cf43384a7806241bc2ff22022619baa4abb9710f12ec1656d0173de992e32a90"
   license "PHP-3.01"
 
   bottle do
-    sha256 arm64_big_sur: "1a16f58da5ab0f6f0d44f7e11a1b86900cc7664fa416b2b8d6aa136f0f97c90a"
-    sha256 big_sur:       "41f4b9372fcc41d78a7afaac0acc62d96716ed859cd9f4405929cd7e03253b01"
-    sha256 catalina:      "8545e5177648e082eb19a1db0bceb965103616cd185bdd850185b59cd40c62f1"
-    sha256 mojave:        "ec4d1b42da2a49db620b78fc6ff125df47e38dcbc1c8e16a75b87cfb8d187056"
-    sha256 x86_64_linux:  "b05c573039e6bd86c2dc15dda61a0ea496175775acde86a93285e4d262adb1b1"
+    sha256 arm64_big_sur: "128a2d4bb90560334eb6bf3a1522da545c10a9c7aed631e0d780dd9a8f5efb27"
+    sha256 big_sur:       "35f2945562939ad4d03b268358677cfe436b8df9e8f9d3d1e7e252340c33c822"
+    sha256 catalina:      "bb7d60f266c1f115c45e1cd824f575bb1dec3ea0a33638e3d561feab0fcd1466"
+    sha256 mojave:        "76144f17e6f0cbee4705d0e94252e8ce4f0c3e99755abcc4b5c8e63272b5e6f9"
   end
 
   keg_only :versioned_formula
