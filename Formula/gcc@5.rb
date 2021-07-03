@@ -40,10 +40,6 @@ class GccAT5 < Formula
   # GCC bootstraps itself, so it is OK to have an incompatible C++ stdlib
   cxxstdlib_check :skip
 
-  def version_suffix
-    version.major.to_s
-  end
-
   # Fix build with Xcode 9
   # https://gcc.gnu.org/bugzilla/show_bug.cgi?id=82091
   if DevelopmentTools.clang_build_version >= 900
@@ -71,6 +67,10 @@ class GccAT5 < Formula
       url "https://raw.githubusercontent.com/Homebrew/formula-patches/91d57ebe88e17255965fa88b53541335ef16f64a/gcc%405/gcc5-xcode10.2.patch"
       sha256 "6834bec30c54ab1cae645679e908713102f376ea0fc2ee993b3c19995832fe56"
     end
+  end
+
+  def version_suffix
+    version.major.to_s
   end
 
   def install

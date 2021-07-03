@@ -3,16 +3,15 @@ class Twarc < Formula
 
   desc "Command-line tool and Python library for archiving Twitter JSON"
   homepage "https://github.com/DocNow/twarc"
-  url "https://files.pythonhosted.org/packages/b6/ff/565eb9fddd983b2feeba638c9b4e05d8e612be2dcf5439ed42c255b4a4eb/twarc-2.3.1.tar.gz"
-  sha256 "47b435ed69cbea02ae3dd1a09591b4c63fa8466affec090d0118ccbd0a40d226"
+  url "https://files.pythonhosted.org/packages/7c/95/2fcc01b45b7d1029070140e8879c88fd25542f687a24e23dcfa40cc08253/twarc-2.3.3.tar.gz"
+  sha256 "d69b3085dd9df703dd047e1a59f9a348b40d28313b3b316e69eaea88f0fdccf1"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "6acdc90b90f04985577f9937b154430062ae5589ccf916db3a4b457155770af3"
-    sha256 cellar: :any_skip_relocation, big_sur:       "c7a01ca3ce4a9bfb96d36789510ba6c3e5c57f8b8f8c63225aa8ba2f9505e2f2"
-    sha256 cellar: :any_skip_relocation, catalina:      "d72b7164db18330e234e5684fba05a93f081f4349fdf589112946e841c13181d"
-    sha256 cellar: :any_skip_relocation, mojave:        "0bf30668aee40dbd778e2af502b364e7e6f52f50c3137a02979c1b1f1e070149"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3467ae30239684446410fde685d08528cceea7abad4b6bf0c93609c5b46ef72a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "61b4da410fda069eab0b39537d87f98519ac6f0146634709da333bc315f9b1a4"
+    sha256 cellar: :any_skip_relocation, big_sur:       "96b9269e24e93dee2869b7b9e0e514a5015c84c6e996883d00b726604b2c770c"
+    sha256 cellar: :any_skip_relocation, catalina:      "2506839289412b6a56ca3ffe6265feff6b5fd9afba80e070d38409c94171e91f"
+    sha256 cellar: :any_skip_relocation, mojave:        "cb5dfc65804b61e53c914b810f8efadc284916e64f0c142417c13415b1a584ff"
   end
 
   depends_on "python@3.9"
@@ -74,8 +73,8 @@ class Twarc < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/94/40/c396b5b212533716949a4d295f91a4c100d51ba95ea9e2d96b6b0517e5a5/urllib3-1.26.5.tar.gz"
-    sha256 "a7acd0977125325f516bda9735fa7142b909a8d01e8b2e4c8108d0984e6e0098"
+    url "https://files.pythonhosted.org/packages/4f/5a/597ef5911cb8919efe4d86206aa8b2658616d676a7088f0825ca08bd7cb8/urllib3-1.26.6.tar.gz"
+    sha256 "f57b4c16c62fa2760b7e3d97c35b255512fb6b59a259730f36ba32ce9f8e342f"
   end
 
   def install
