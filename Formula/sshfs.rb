@@ -20,7 +20,7 @@ class Sshfs < Formula
   depends_on "libfuse"
 
   on_macos do
-    disable! date: "2021-04-08", because: "requires FUSE"
+    disable! date: "2021-04-08", because: "requires closed-source macFUSE"
   end
 
   def install
@@ -29,6 +29,18 @@ class Sshfs < Formula
       system "meson", "configure", "--prefix", prefix
       system "ninja", "--verbose"
       system "ninja", "install", "--verbose"
+    end
+  end
+
+  def caveats
+    on_macos do
+      <<~EOS
+        The reasons for disabling this formula can be found here:
+          https://github.com/Homebrew/homebrew-core/pull/64491
+
+        An external tap may provide a replacement formula. See:
+          https://docs.brew.sh/Interesting-Taps-and-Forks
+      EOS
     end
   end
 
