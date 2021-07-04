@@ -7,10 +7,11 @@ class Libxlsxwriter < Formula
   head "https://github.com/jmcnamara/libxlsxwriter.git"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "b24239371e3016003b7fefea422ce3d2dd1747657857c808bbfcf56654c6c3e8"
-    sha256 cellar: :any, big_sur:       "299b869885d640cf1185a32976611e3ab37cd09e4d7be58ff71e5f2279251703"
-    sha256 cellar: :any, catalina:      "aa40933699f35aefabf4a5ef3f20d346512e03a1d9cbc262475a97871c855014"
-    sha256 cellar: :any, mojave:        "6b9ca979929ee06f76aad98d05704f9a16fa618799669f5021d75296a55818d0"
+    sha256 cellar: :any,                 arm64_big_sur: "b24239371e3016003b7fefea422ce3d2dd1747657857c808bbfcf56654c6c3e8"
+    sha256 cellar: :any,                 big_sur:       "299b869885d640cf1185a32976611e3ab37cd09e4d7be58ff71e5f2279251703"
+    sha256 cellar: :any,                 catalina:      "aa40933699f35aefabf4a5ef3f20d346512e03a1d9cbc262475a97871c855014"
+    sha256 cellar: :any,                 mojave:        "6b9ca979929ee06f76aad98d05704f9a16fa618799669f5021d75296a55818d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f2b7316804c47d8833dbe9c244d1b7e79e7ca21cc13c63b263e888b47ce5be26"
   end
 
   uses_from_macos "zlib"
