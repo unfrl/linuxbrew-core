@@ -18,7 +18,8 @@ class Ronn < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3cfd60e5550c58104384fddf72ff29d467cd721e9b84dfea410720b1c19e160b"
   end
 
-  uses_from_macos "groff" => :test
+  depends_on "groff" => :test
+
   uses_from_macos "ruby"
 
   def install
@@ -39,37 +40,16 @@ class Ronn < Formula
       This document is created by ronn.
     EOS
     system bin/"ronn", "--date", "1970-01-01", "test.ronn"
-    on_macos do
-      assert_equal <<~EOS, shell_output("groff -t -man -Tascii test.7 | col -bx")
-        SIMPLE(7)                                                            SIMPLE(7)
+    assert_equal <<~EOS, shell_output("groff -t -man -Tascii test.7 | col -bx")
+      SIMPLE(7)                                                            SIMPLE(7)
 
 
-
-        NAME
-               simple - a simple ronn example
+      1mNAME0m
+             1msimple 22m- a simple ronn example
 
                This document is created by ronn.
 
-
-
                                          January 1970                        SIMPLE(7)
-      EOS
-    end
-    on_linux do
-      assert_equal <<~EOS, shell_output("groff -t -man -Tascii test.7 | col -bx")
-        SIMPLE(7)                                                            SIMPLE(7)
-
-
-
-        1mNAME0m
-               1msimple 22m- a simple ronn example
-
-               This document is created by ronn.
-
-
-
-                                         January 1970                        SIMPLE(7)
-      EOS
-    end
+    EOS
   end
 end
