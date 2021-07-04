@@ -3,17 +3,16 @@ class Awscurl < Formula
 
   desc "Curl like simplicity to access AWS resources"
   homepage "https://github.com/okigan/awscurl"
-  url "https://files.pythonhosted.org/packages/a7/fc/c3045c4014b85e12815dd12b459fed2d275dda8d0d21968adf9111d8afd2/awscurl-0.22.tar.gz"
-  sha256 "31c7c0f81bd3d86b4ff96574fba0cfdaf5ac7ca966fad1e9563aaa7206089874"
+  url "https://files.pythonhosted.org/packages/6a/11/eb959f2fdf9153371434a959792feb1be57f19109d77a93bbbca98089bfc/awscurl-0.23.tar.gz"
+  sha256 "3c968c508b8d40ea6072b878948a3114d133d22de86847ec2369ca33154acabb"
   license "MIT"
   head "https://github.com/okigan/awscurl.git"
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "6d4e4d520be807811aeef9f0eafc1b2f2baf08e251c66c3593a9cc0c728a74d7"
-    sha256 cellar: :any,                 big_sur:       "10536d83b8e8bc939df88ac89a6a8d702bf49fa4d0939788283564e5b544c6bc"
-    sha256 cellar: :any,                 catalina:      "eac472d7f48b0bc10fcc6fcfa3632d3038e61184adca3d2c7219120cce224d35"
-    sha256 cellar: :any,                 mojave:        "107eb0abf391c2e3cdc2ab2e74e4482cc018bb81d596141ff330583c469c7343"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5960308d1cdaedecc32a5feb150d55386f88172791bfee4155469d4486a8b44f"
+    sha256 cellar: :any, arm64_big_sur: "adad9b16b9ba0446ca1b984d20ba8eaf00173ffd2e86fb5d8644c05ace467169"
+    sha256 cellar: :any, big_sur:       "acee4c8f1abe9c5fd79537e3047252a1e463d3500d7d0991b0f27b1422a48a62"
+    sha256 cellar: :any, catalina:      "88c5978dea4124ccf5e1501e0077bdf4b070bce69450af2a80189e63f87f3a04"
+    sha256 cellar: :any, mojave:        "4222129e83e93919b8759bbc1dc49b9a6e80a182bc72bcbd3d117d19b2c11135"
   end
 
   depends_on "rust" => :build

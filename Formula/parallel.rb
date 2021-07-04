@@ -14,11 +14,7 @@ class Parallel < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "16d3f713faca86360baa01eb65eadd589bedf4328c31e7932e6f7a1c6ce1a470"
-    sha256 cellar: :any_skip_relocation, big_sur:       "72299337713be36fcd8b6c628336d56e028dc273bea043bc63264bffebbb20a5"
-    sha256 cellar: :any_skip_relocation, catalina:      "72299337713be36fcd8b6c628336d56e028dc273bea043bc63264bffebbb20a5"
-    sha256 cellar: :any_skip_relocation, mojave:        "72299337713be36fcd8b6c628336d56e028dc273bea043bc63264bffebbb20a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a9888361eb8d12837c1d7a44572896612f87eaa14a3d713696640b6b7007bf9"
+    rebuild 1
   end
 
   conflicts_with "moreutils", because: "both install a `parallel` executable"
@@ -26,6 +22,15 @@ class Parallel < Formula
   def install
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"
+
+    inreplace_files = [
+      bin/"parallel",
+      doc/"parallel.texi",
+      doc/"parallel_design.texi",
+      man1/"parallel.1",
+      man7/"parallel_design.7",
+    ]
+    inreplace inreplace_files, "/usr/local", HOMEBREW_PREFIX
   end
 
   test do
