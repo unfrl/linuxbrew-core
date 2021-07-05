@@ -4,19 +4,20 @@ class Cppcheck < Formula
   url "https://github.com/danmar/cppcheck/archive/2.5.tar.gz"
   sha256 "dc27154d799935c96903dcc46653c526c6f4148a6912b77d3a50cb35dabd82e1"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/danmar/cppcheck.git"
 
   bottle do
-    sha256 arm64_big_sur: "1d5ef09e2322b11ada20447796e276ca6ba980691ae8a6d811d4c6e3cd3c7d08"
-    sha256 big_sur:       "0dfbe09c31ab6792635fdca6db75c7f8b30e27a5ecad56cef9adcfdb8d67ec57"
-    sha256 catalina:      "0ee9dad44cde5b325051d5ab7566643cf1ed1b193c818001fceafcba4c327bfc"
-    sha256 mojave:        "6cc38c3a7de768756e600f5e607822712acdb2c25db4dc99fa0b4a65c6771d3f"
-    sha256 x86_64_linux:  "ced2ccc81bd6f30509ae1a25557d24f432939280cb4037f20f92ed78c8cc8b8f"
+    sha256 arm64_big_sur: "7a9b2837b94a6ac5517dd8b4b204b940fff42e5b7d98fcfa3fe2f7ea5d3a7d45"
+    sha256 big_sur:       "292c9fa7b2a96ddce21cc2e2ba8ceebb26ccfaa8de3ca990575e82ed26a5e41b"
+    sha256 catalina:      "d0658603bf50226b7eeac77ea3f80f05ea0d49ac2003a92041d97f40e240a5d4"
+    sha256 mojave:        "3c7dd16e8e8924235ccecaf18f524b655c114058e9042322da4d9949ebb169b3"
   end
 
   depends_on "cmake" => :build
   depends_on "python@3.9" => [:build, :test]
   depends_on "pcre"
+  depends_on "tinyxml2"
 
   uses_from_macos "libxml2"
 
@@ -24,6 +25,8 @@ class Cppcheck < Formula
     args = std_cmake_args + %W[
       -DHAVE_RULES=ON
       -DUSE_MATCHCOMPILER=ON
+      -DUSE_BUNDLED_TINYXML2=OFF
+      -DENABLE_OSS_FUZZ=OFF
       -DPYTHON_EXECUTABLE=#{Formula["python@3.9"].opt_bin}/python3
     ]
     system "cmake", "-S", ".", "-B", "build", *args
