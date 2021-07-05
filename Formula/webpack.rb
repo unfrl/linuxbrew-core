@@ -4,17 +4,16 @@ require "json"
 class Webpack < Formula
   desc "Bundler for JavaScript and friends"
   homepage "https://webpack.js.org/"
-  url "https://registry.npmjs.org/webpack/-/webpack-5.42.0.tgz"
-  sha256 "179429acdd229678fcc029b9cadd6a300f7852c27b080493fc4dd79e39f2f01c"
+  url "https://registry.npmjs.org/webpack/-/webpack-5.42.1.tgz"
+  sha256 "5fe9db7590d561fe07c2514079f17881a2417aabd726c152140ee4c32095d115"
   license "MIT"
   head "https://github.com/webpack/webpack.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "d4059d259f715545ed0d7e7cdf493aab6789e18923edd5f923bc351aca4fe464"
-    sha256 cellar: :any_skip_relocation, big_sur:       "20ef2215aca35643add912fcaaf62ff6c2a116a55d7d279cfe9d3fe2f064e893"
-    sha256 cellar: :any_skip_relocation, catalina:      "20ef2215aca35643add912fcaaf62ff6c2a116a55d7d279cfe9d3fe2f064e893"
-    sha256 cellar: :any_skip_relocation, mojave:        "20ef2215aca35643add912fcaaf62ff6c2a116a55d7d279cfe9d3fe2f064e893"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "475d8e7b5b92284cb12a9e066be9e068a910b6b6de3dd34ddf8715fb1381b80b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "6926c83e88b6c9a76fb213d71ede0e03bda394e6de3ca87a3bb7f27127fb2fbe"
+    sha256 cellar: :any_skip_relocation, big_sur:       "9f3d302ffdc7bcc77b7f72a402687b5693e38b0986b8a4110e622ecd7a4bad2c"
+    sha256 cellar: :any_skip_relocation, catalina:      "9f3d302ffdc7bcc77b7f72a402687b5693e38b0986b8a4110e622ecd7a4bad2c"
+    sha256 cellar: :any_skip_relocation, mojave:        "9f3d302ffdc7bcc77b7f72a402687b5693e38b0986b8a4110e622ecd7a4bad2c"
   end
 
   depends_on "node"

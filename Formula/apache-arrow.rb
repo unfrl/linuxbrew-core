@@ -5,14 +5,14 @@ class ApacheArrow < Formula
   mirror "https://archive.apache.org/dist/arrow/arrow-4.0.1/apache-arrow-4.0.1.tar.gz"
   sha256 "75ccbfa276b925c6b1c978a920ff2f30c4b0d3fdf8b51777915b6f69a211896e"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/apache/arrow.git"
 
   bottle do
-    sha256 cellar: :any, arm64_big_sur: "ddfffb9d30ceab7155cf5ddd109e9da83d804378c2a530052a005eea47a7aab1"
-    sha256 cellar: :any, big_sur:       "826864401dd8d62cf2c8f52b5af003cc02f86d291b0f8cb3fa88ee3c892c4628"
-    sha256 cellar: :any, catalina:      "00c4a6086316efa3ebea3735840665fed6561655ff17a2d1b81aff40d9419c52"
-    sha256 cellar: :any, mojave:        "943bfdcbd66d337cccf5a9cdecb340e18c1068c172dc28b9dae9b68bf2b8736e"
+    sha256 cellar: :any, arm64_big_sur: "8a6a94755fa92f764f313dfd45a337b14ea9dfaef5a141188a38450645451aae"
+    sha256 cellar: :any, big_sur:       "9e9ce4de62c9e8dab1ebf1ab7f58636fcb65607ceddf11833d40a7d1a9f867fc"
+    sha256 cellar: :any, catalina:      "3848f588cfa2abdef9f09fa4b525b8efb7dfd499d76f7039e292adfe4c3d2246"
+    sha256 cellar: :any, mojave:        "4548162fe83109277453c4904ff35e409818a6ba31f4a071e54da3e0ba6d6be2"
   end
 
   depends_on "boost" => :build
@@ -30,9 +30,13 @@ class ApacheArrow < Formula
   depends_on "re2"
   depends_on "snappy"
   depends_on "thrift"
+  depends_on "utf8proc"
   depends_on "zstd"
 
   def install
+    # https://github.com/Homebrew/homebrew-core/issues/76537
+    ENV.runtime_cpu_detection if Hardware::CPU.intel?
+
     # link against system libc++ instead of llvm provided libc++
     ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib
     args = %W[
@@ -51,6 +55,7 @@ class ApacheArrow < Formula
       -DARROW_WITH_LZ4=ON
       -DARROW_WITH_SNAPPY=ON
       -DARROW_WITH_BROTLI=ON
+      -DARROW_WITH_UTF8PROC=ON
       -DARROW_INSTALL_NAME_RPATH=OFF
       -DPYTHON_EXECUTABLE=#{Formula["python@3.9"].bin/"python3"}
     ]
