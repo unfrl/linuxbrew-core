@@ -53,7 +53,7 @@ class Libstfl < Formula
       s.gsub! "libstfl.so", "libstfl.dylib"
     end
 
-    xy = "3.8"
+    xy = Language::Python.major_minor_version "python3"
     python_config = Formula["python@3.9"].opt_libexec/"bin/python-config"
 
     inreplace "python/Makefile.snippet" do |s|
@@ -79,7 +79,9 @@ class Libstfl < Formula
 
     system "make"
 
-    inreplace "perl5/Makefile", "Network/Library", libexec/"lib/perl5" if OS.mac?
+    on_macos do
+      inreplace "perl5/Makefile", "Network/Library", libexec/"lib/perl5"
+    end
     system "make", "install", "prefix=#{prefix}"
   end
 
