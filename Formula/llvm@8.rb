@@ -27,10 +27,8 @@ class LlvmAT8 < Formula
   depends_on "libffi"
   depends_on "swig"
 
-  unless OS.mac?
-    if Formula["glibc"].any_version_installed? || OS::Linux::Glibc.system_version < Formula["glibc"].version
-      depends_on "glibc"
-    end
+  on_linux do
+    depends_on "glibc" if Formula["glibc"].any_version_installed?
     depends_on "binutils" # needed for gold and strip
     depends_on "libedit" # llvm requires <histedit.h>
     depends_on "libelf" # openmp requires <gelf.h>
@@ -69,11 +67,6 @@ class LlvmAT8 < Formula
   end
 
   resource "libcxxabi" do
-    on_macos do
-      url "https://llvm.org/releases/6.0.1/libcxxabi-6.0.1.src.tar.xz"
-      sha256 "209f2ec244a8945c891f722e9eda7c54a5a7048401abd62c62199f3064db385f"
-    end
-
     on_linux do
       url "https://github.com/llvm/llvm-project/releases/download/llvmorg-8.0.1/libcxxabi-8.0.1.src.tar.xz"
       sha256 "b75bf3c8dc506e7d950d877eefc8b6120a4651aaa110f5805308861f2cfaf6ef"
@@ -113,7 +106,7 @@ class LlvmAT8 < Formula
     (buildpath/"tools/clang/tools/extra").install resource("clang-extra-tools")
     (buildpath/"projects/openmp").install resource("openmp")
     (buildpath/"projects/libcxx").install resource("libcxx")
-    (buildpath/"projects/libcxxabi").install resource("libcxxabi") unless OS.mac?
+    on_linux { (buildpath/"projects/libcxx").install resource("libcxx") }
     (buildpath/"projects/libunwind").install resource("libunwind")
     (buildpath/"tools/lld").install resource("lld")
     (buildpath/"tools/lldb").install resource("lldb")
@@ -130,7 +123,6 @@ class LlvmAT8 < Formula
     args = %W[
       -DLIBOMP_ARCH=x86_64
       -DLINK_POLLY_INTO_TOOLS=ON
-      -DLLVM_BUILD_EXTERNAL_COMPILER_RT=ON
       -DLLVM_BUILD_LLVM_DYLIB=ON
       -DLLVM_ENABLE_EH=ON
       -DLLVM_ENABLE_FFI=ON
@@ -186,6 +178,50 @@ class LlvmAT8 < Formula
         "list(APPEND LIBUNWIND_LINK_FLAGS \"-rtlib=compiler-rt\")", ""
     end
 
+    on_macos do
+      args << "-DLLVM_BUILD_EXTERNAL_COMPILER_RT=ON" if MacOS.version <= :mojave
+      args << "-DLLVM_CREATE_XCODE_TOOLCHAIN=ON"
+      args << "-DLLVM_ENABLE_LIBCXX=ON"
+      args << "-DDARWIN_osx_ARCHS=x86_64;x86_64h"
+    end
+
+    on_linux do
+      args << "-DLLVM_BUILD_EXTERNAL_COMPILER_RT=ON"
+      args << "-DLLVM_CREATE_XCODE_TOOLCHAIN=OFF"
+      args << "-DLLVM_ENABLE_LIBCXX=OFF"
+      args << "-DCLANG_DEFAULT_CXX_STDLIB=libstdc++"
+
+      # Enable llvm gold plugin for LTO
+      args << "-DLLVM_BINUTILS_INCDIR=#{Formula["binutils"].opt_include}"
+
+      # Add flags to build shared and static libc++ which are independent of GCC
+      args += %w[
+        -DLLVM_ENABLE_PER_TARGET_RUNTIME_DIR=OFF
+        -DCMAKE_POSITION_INDEPENDENT_CODE=ON
+
+        -DLIBCXX_ENABLE_STATIC_ABI_LIBRARY=ON
+        -DLIBCXX_STATICALLY_LINK_ABI_IN_SHARED_LIBRARY=OFF
+        -DLIBCXX_STATICALLY_LINK_ABI_IN_STATIC_LIBRARY=ON
+        -DLIBCXX_USE_COMPILER_RT=ON
+
+        -DLIBCXXABI_ENABLE_STATIC_UNWINDER=ON
+        -DLIBCXXABI_STATICALLY_LINK_UNWINDER_IN_SHARED_LIBRARY=OFF
+        -DLIBCXXABI_STATICALLY_LINK_UNWINDER_IN_STATIC_LIBRARY=ON
+        -DLIBCXXABI_USE_COMPILER_RT=ON
+        -DLIBCXXABI_USE_LLVM_UNWINDER=ON
+
+        -DLIBUNWIND_USE_COMPILER_RT=ON
+      ]
+
+      # Don't pass -rtlib as an argument to GCC because it doesn't understand it.
+      inreplace (buildpath/"projects/libcxx/CMakeLists.txt"),
+        "list(APPEND LIBCXX_LINK_FLAGS \"-rtlib=compiler-rt\")", ""
+      inreplace (buildpath/"projects/libcxxabi/CMakeLists.txt"),
+        "list(APPEND LIBCXXABI_LINK_FLAGS \"-rtlib=compiler-rt\")", ""
+      inreplace (buildpath/"projects/libunwind/CMakeLists.txt"),
+        "list(APPEND LIBUNWIND_LINK_FLAGS \"-rtlib=compiler-rt\")", ""
+    end
+
     if MacOS.version >= :mojave
       sdk_path = MacOS::CLT.installed? ? "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk" : MacOS.sdk_path
       args << "-DDEFAULT_SYSROOT=#{sdk_path}"
@@ -204,13 +240,13 @@ class LlvmAT8 < Formula
     bin.install_symlink share/"clang/tools/scan-build/bin/scan-build", share/"clang/tools/scan-view/bin/scan-view"
     man1.install_symlink share/"clang/tools/scan-build/man/scan-build.1"
 
+    xz = 2.7
     # install llvm python bindings
-    xz = "2.7"
-    xz = "3.8" unless OS.mac?
+    on_linux { xz = "3.8" }
     (lib/"python#{xz}/site-packages").install buildpath/"bindings/python/llvm"
     (lib/"python#{xz}/site-packages").install buildpath/"tools/clang/bindings/python/clang"
 
-    unless OS.mac?
+    on_linux do
       # Strip executables/libraries/object files to reduce their size
       system("strip", "--strip-unneeded", "--preserve-dates", *(Dir[bin/"**/*", lib/"**/*"]).select do |f|
         f = Pathname.new(f)
@@ -250,7 +286,7 @@ class LlvmAT8 < Formula
       "-nobuiltininc",
       "-I#{lib}/clang/#{clean_version}/include",
     ]
-    args << "-Wl,-rpath=#{lib}" unless OS.mac?
+    on_linux { args << "-Wl,-rpath=#{lib}" }
 
     system "#{bin}/clang", *args, "omptest.c", "-o", "omptest", *ENV["LDFLAGS"].split
     testresult = shell_output("./omptest")
@@ -285,7 +321,7 @@ class LlvmAT8 < Formula
     # Testing default toolchain and SDK location.
     system "#{bin}/clang++", "-v",
            "-std=c++11", "test.cpp", "-o", "test++"
-    assert_includes MachO::Tools.dylibs("test++"), "/usr/lib/libc++.1.dylib" if OS.mac?
+    on_macos { assert_includes MachO::Tools.dylibs("test++"), "/usr/lib/libc++.1.dylib" }
     assert_equal "Hello World!", shell_output("./test++").chomp
     system "#{bin}/clang", "-v", "test.c", "-o", "test"
     assert_equal "Hello World!", shell_output("./test").chomp
