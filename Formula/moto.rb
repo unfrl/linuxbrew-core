@@ -12,6 +12,7 @@ class Moto < Formula
     sha256 cellar: :any,                 big_sur:       "5807acbc97649cf76a621ac8e2f0a1e2fbd13b57099371a29390283057919342"
     sha256 cellar: :any,                 catalina:      "17da6d496599879826f64922cf7386abe6ee3a362b98dbc399430591efff2b8f"
     sha256 cellar: :any,                 mojave:        "7101da1ee29414e4b744fcbd1ba5bcb1f2d10bace8e46378152a988bee97612c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4820453153c59c43bab1f5f7f504eb76931152beb6974d96e8850304405d62b3"
   end
 
   depends_on "rust" => :build  # for cryptography
