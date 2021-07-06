@@ -13,6 +13,7 @@ class Proselint < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "e37af822aa0833431e772755d68911bac5c9ce1a2cad4d995d0238e8925039aa"
     sha256 cellar: :any_skip_relocation, catalina:      "50971786c55a1fd46196f16a2a838b2fc328863b32fcdd479a82d8d3640dc339"
     sha256 cellar: :any_skip_relocation, mojave:        "7c4d539da946b87e93d3b198d971ef4146bcaacfbad1b735923c300a8382a245"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f0e6340679dd46138c53fc241dddbd340d0b83b50e7fafef85c0331f38dc738"
   end
 
   depends_on "python@3.9"
