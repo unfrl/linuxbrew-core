@@ -10,6 +10,7 @@ class Toast < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "8fe54aea91d3ebffcdfa098ed913689e34b2385b8094ddfcea601ed3a55dd87f"
     sha256 cellar: :any_skip_relocation, catalina:      "91b6d3c8b66fed63d6c19b24ffb526e40bca9e7e080d5c0a40c151946efbcc3f"
     sha256 cellar: :any_skip_relocation, mojave:        "73edab307a0b7cff590f0c379aa433a264cc5c1960333101c296bba08adc4de2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ddd4c0b46145391bba198762ccec6a46b2a58409588327ef21623e783664a33e"
   end
 
   depends_on "rust" => :build
