@@ -1,17 +1,13 @@
 class Jenkins < Formula
   desc "Extendable open source continuous integration server"
   homepage "https://jenkins.io/"
-  url "http://mirrors.jenkins.io/war/2.300/jenkins.war"
-  sha256 "2f6aa548373b038af4fb6a4d6eaa5d13679510008f1712532732bf77c55b9670"
+  url "http://mirrors.jenkins.io/war/2.301/jenkins.war"
+  sha256 "de0bb6df28721cf8177fe0a6166cf8d6d451e30adb013988e341d8e42e9a0130"
   license "MIT"
 
   livecheck do
     url "https://www.jenkins.io/download/"
     regex(%r{href=.*?/war/v?(\d+(?:\.\d+)+)/jenkins\.war}i)
-  end
-
-  bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "9abcd0cf1b2a165162246347a0c615993f79a7f9a47706aca75eef3380ed0619"
   end
 
   head do
