@@ -160,18 +160,20 @@ class Volatility < Formula
         else
           zlib_prefix = Formula["zlib"].opt_prefix
         end
-        s.gsub! "openjpeg.h", "probably_not_a_header_called_this_eh.h"
         if OS.mac?
           s.gsub! "ZLIB_ROOT = None", "ZLIB_ROOT = ('#{sdkprefix}/usr/lib', '#{sdkprefix}/usr/include')"
         else
           s.gsub! "ZLIB_ROOT = None", "ZLIB_ROOT = ('#{zlib_prefix}/lib', '#{zlib_prefix}/include')"
         end
+        s.gsub! "openjpeg.h", "probably_not_a_header_called_this_eh.hi"
+
+        jpeg_opt_prefix = Formula["jpeg"].opt_prefix
         s.gsub! "JPEG_ROOT = None",
-                "JPEG_ROOT = ('#{Formula["jpeg"].opt_prefix}/lib', " \
-                             "'#{Formula["jpeg"].opt_prefix}/include')"
+                "JPEG_ROOT = ('#{jpeg_opt_prefix}/lib', '#{jpeg_opt_prefix}/include')"
+
+        freetype_opt_prefix = Formula["freetype"].opt_prefix
         s.gsub! "FREETYPE_ROOT = None",
-                "FREETYPE_ROOT = ('#{Formula["freetype"].opt_prefix}/lib', " \
-                                 "'#{Formula["freetype"].opt_prefix}/include')"
+                "FREETYPE_ROOT = ('#{freetype_opt_prefix}/lib', '#{freetype_opt_prefix}/include')"
       end
 
       begin

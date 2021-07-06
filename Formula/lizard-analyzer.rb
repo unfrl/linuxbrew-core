@@ -3,17 +3,15 @@ class LizardAnalyzer < Formula
 
   desc "Extensible Cyclomatic Complexity Analyzer"
   homepage "http://www.lizard.ws"
-  url "https://files.pythonhosted.org/packages/60/a7/7a93f5d004bf86209406c533d21d7dede965f976384d29e8681aa47faed9/lizard-1.17.7.tar.gz"
-  sha256 "d08e7afb4534fc326401ede2d5aace027757fb1a9deb3cc9f8e7f4339983c630"
+  url "https://files.pythonhosted.org/packages/3d/ff/eb45fbc169f9aac6d9798933ad1b624e5d01c2191efc0134d8014e20b4a2/lizard-1.17.8.tar.gz"
+  sha256 "da8f62b478b9b2fffcddba274259b79bacce7509ccc14e1074cb54516d5ade15"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "6261f2b69242bb01b65933bd32cbe97a510465b9648294c3065ac2c3c49c2059"
-    sha256 cellar: :any_skip_relocation, big_sur:       "7c38c8e8ed4b8cb71d2021b6d4eb0aae2d8bae8976634f93242943ce91bf1bbe"
-    sha256 cellar: :any_skip_relocation, catalina:      "f3e7d8d0c1108714727d7b8065166073f207a5d35ad302f1be788d48c91cca51"
-    sha256 cellar: :any_skip_relocation, mojave:        "bc9bca50b8f2d83404353f5692021d00e995ca95dc389eb976584ae29d1bb1f9"
-    sha256 cellar: :any_skip_relocation, high_sierra:   "79f9a6da530de4e7d15a93256a7eb7ec4bcf4b4a227c601974cccdeee21b9a32"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b927c5e084732b6835882c4a30d0be5f820d28a9d8f86aad7f97c68e114bc4af"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "6f448055736149c8292402df3e40cef3e45a6799dba306607a503a42992ca3f4"
+    sha256 cellar: :any_skip_relocation, big_sur:       "d63deffcff2ad35e8ddf2ad9c47e6c0ee7817e215ba9ad23639a46b6ab25b678"
+    sha256 cellar: :any_skip_relocation, catalina:      "d63deffcff2ad35e8ddf2ad9c47e6c0ee7817e215ba9ad23639a46b6ab25b678"
+    sha256 cellar: :any_skip_relocation, mojave:        "d63deffcff2ad35e8ddf2ad9c47e6c0ee7817e215ba9ad23639a46b6ab25b678"
   end
 
   depends_on "python@3.9"
