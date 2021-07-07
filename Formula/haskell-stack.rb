@@ -18,7 +18,6 @@ class HaskellStack < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "4a79fbaaa5a4d95b1d7a1075ce197aaf6430575a3ad897073fae481c45b3092e"
     sha256 cellar: :any_skip_relocation, catalina:      "9029316df99f2db7c5771c7d186d6e749cca6189f0810b816048c771ddd47cc6"
     sha256 cellar: :any_skip_relocation, mojave:        "dcf61ed173b28d67502357a7a4eb6bc3ac3c656df59556099591906bcb3a3e31"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44d63c078238d5709cfec35acb98d61cba8fc31ed4f1d890bdd6eb512f160b02"
   end
 
   depends_on "cabal-install" => :build
