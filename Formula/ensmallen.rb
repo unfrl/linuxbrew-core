@@ -6,6 +6,10 @@ class Ensmallen < Formula
   license "BSD-3-Clause"
   head "https://github.com/mlpack/ensmallen.git"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "cc38c34c95baa0feb8a7f3dd4be40d2bbae443020ca1acff1b969629694646bb"
+  end
+
   depends_on "cmake" => :build
   depends_on "armadillo"
 
