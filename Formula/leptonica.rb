@@ -16,6 +16,7 @@ class Leptonica < Formula
     sha256 cellar: :any,                 big_sur:       "584d359158d6c45de7caf2368f8fc5e3268b67511dbeb8531d6762b03a3efed9"
     sha256 cellar: :any,                 catalina:      "f73dceda2c8430f107f7d134cebd189684de1723639be81be2fd79ec3db07c34"
     sha256 cellar: :any,                 mojave:        "0009444bfbafb359608fef5bf861a275acb2cbbade511572c9c3d08043b7bac4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a41218931c6a64dd4b310f9115080d2da48c90200e464d5e491b24faf1009aa"
   end
 
   depends_on "pkg-config" => :build
