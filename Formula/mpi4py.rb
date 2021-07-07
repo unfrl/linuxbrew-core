@@ -29,20 +29,15 @@ class Mpi4py < Formula
   end
 
   test do
-    system Formula["python@3.9"].opt_bin/"python3",
-           "-c", "import mpi4py"
-    system Formula["python@3.9"].opt_bin/"python3",
-           "-c", "import mpi4py.MPI"
-    system Formula["python@3.9"].opt_bin/"python3",
-           "-c", "import mpi4py.futures"
+    python = Formula["python@3.9"].opt_bin/"python3"
 
-    # Somehow our Azure CI only has two CPU cores available.
-    cpu_cores = (ENV["HOMEBREW_GITHUB_ACTIONS"] ? 2 : 4).to_s
+    system python, "-c", "import mpi4py"
+    system python, "-c", "import mpi4py.MPI"
+    system python, "-c", "import mpi4py.futures"
 
-    system "mpiexec", "-n", cpu_cores, "#{Formula["python@3.9"].opt_bin}/python3",
-           "-m", "mpi4py.run", "-m", "mpi4py.bench", "helloworld"
-    system "mpiexec", "-n", cpu_cores, "#{Formula["python@3.9"].opt_bin}/python3",
-           "-m", "mpi4py.run", "-m", "mpi4py.bench", "ringtest",
-           "-l", "10", "-n", "1024"
+    system "mpiexec", "-n", ENV.make_jobs,
+           python, "-m", "mpi4py.run", "-m", "mpi4py.bench", "helloworld"
+    system "mpiexec", "-n", ENV.make_jobs,
+           python, "-m", "mpi4py.run", "-m", "mpi4py.bench", "ringtest", "-l", "10", "-n", "1024"
   end
 end
