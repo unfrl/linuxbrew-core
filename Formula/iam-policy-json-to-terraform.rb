@@ -11,6 +11,7 @@ class IamPolicyJsonToTerraform < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "414adbbf759816cf41a250c66cf375e85d0d4e03d94cdb6b41aba59000f72b87"
     sha256 cellar: :any_skip_relocation, catalina:      "414adbbf759816cf41a250c66cf375e85d0d4e03d94cdb6b41aba59000f72b87"
     sha256 cellar: :any_skip_relocation, mojave:        "414adbbf759816cf41a250c66cf375e85d0d4e03d94cdb6b41aba59000f72b87"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04e3ec2788df5965f842759d48c939efbd699fbcc66d2d3e000a6c844607630e"
   end
 
   depends_on "go" => :build
