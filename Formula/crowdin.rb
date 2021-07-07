@@ -10,6 +10,10 @@ class Crowdin < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e434dfc849588528b1dc0257406cf3b23b3ba2e9b081efcdabf9ceab6dc6a429"
+  end
+
   depends_on "openjdk"
 
   def install
