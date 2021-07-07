@@ -11,6 +11,7 @@ class Zimg < Formula
     sha256 cellar: :any,                 big_sur:       "fc15c72a67c4165aefcfa6ed60c1d233d7746a156aa8829bf7eb45c0bb0e91dd"
     sha256 cellar: :any,                 catalina:      "07d7a2276860b7183034b2b1518bc50c3e695d34467f9efabdef42fe79c822d8"
     sha256 cellar: :any,                 mojave:        "4b46b64c4c3b1105a338aed5b0a17439994cb42f6b301b5b386f2495fea3aa06"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7eb953613c5b38c565bbaf6db31ff76640eadb138459bfcf713f83fe6fc00e1c"
   end
 
   depends_on "autoconf" => :build
