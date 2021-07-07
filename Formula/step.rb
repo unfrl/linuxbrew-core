@@ -1,23 +1,22 @@
 class Step < Formula
   desc "Crypto and x509 Swiss-Army-Knife"
   homepage "https://smallstep.com"
-  url "https://github.com/smallstep/cli/releases/download/v0.15.16/step_0.15.16.tar.gz"
-  sha256 "4366c90497420ca1a51fd1ba558826d7502467e7eed40654cf7f08dbc8854c27"
+  url "https://github.com/smallstep/cli/releases/download/v0.15.17/step_0.15.17.tar.gz"
+  sha256 "b5eea8a69e4798cc59898e1982ac8286cca07e217815f3c538753ed116b4b39e"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "b488bf4f0ce687ba91bce50f4dd37563dfb0cdc41aeef6a6fc58708309283c63"
-    sha256 cellar: :any_skip_relocation, big_sur:       "2a42a0742849f428c0f50115ea665ad3b99b1680e063b2fdf50c896eb6fe818a"
-    sha256 cellar: :any_skip_relocation, catalina:      "107841d1447a1acce30135b12c4b9f3dc490d28d8db29cd408ea00aac9e4abf8"
-    sha256 cellar: :any_skip_relocation, mojave:        "579cf95e326aa4de5fde7be9ee71bce0260da14662e451e6468991104b4386e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40b79042bc8e74febb5be3cb81e3e78b2562f07e337b44d6ac715baeeb22afc1"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "5cbd9299a0424604902f3840e65c7c7e2b1aea3075134a13d21319c77162cad2"
+    sha256 cellar: :any_skip_relocation, big_sur:       "d7db2c221fe378e0b8fc472f61bc6c00b0f6fe4730666757e270f32047c78b05"
+    sha256 cellar: :any_skip_relocation, catalina:      "3b8a7844a590fe48826da595b3691278f621c32fbcbe956978bdad885e7a7522"
+    sha256 cellar: :any_skip_relocation, mojave:        "e2590f209a8c45079bb7aa3afc6003bb17fcbecc9c190335f4957fa1f76f19ee"
   end
 
   depends_on "go" => :build
 
   resource "certificates" do
-    url "https://github.com/smallstep/certificates/releases/download/v0.15.14/step-ca_0.15.14.tar.gz"
-    sha256 "a2e479444e362dd2045f13941353393cb79bc09eb6c24d19bb07af4bb6a4ffcc"
+    url "https://github.com/smallstep/certificates/releases/download/v0.15.16/step-ca_0.15.16.tar.gz"
+    sha256 "289aaf0204bbf08c2dd4dc453eec5399eee86e0885294c87b86a0d1ba520fbb6"
   end
 
   def install
