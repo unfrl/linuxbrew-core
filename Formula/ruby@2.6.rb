@@ -15,6 +15,7 @@ class RubyAT26 < Formula
     sha256 big_sur:       "f468588cf536eb0e87d47802c8b2b72e49804674d17f94364f1bd603787e772c"
     sha256 catalina:      "92f28ded4949798be9f44a3c68624c63e36a6dfb2ab0fbc05f2dee06fc6a28d9"
     sha256 mojave:        "7b0bd8c3357a44fa869beefc973d484107b9fcaeaf0778768a6112742d3539dd"
+    sha256 x86_64_linux:  "f436319bb56d2027971aa218306775049bd49cf356993dafffbdd60ff0140abe"
   end
 
   keg_only :versioned_formula
