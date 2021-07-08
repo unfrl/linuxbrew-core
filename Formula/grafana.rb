@@ -11,6 +11,7 @@ class Grafana < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "c1300536fb43531680407deb37659092e019a4b9906d50fc2c6ef203ef3f3cdc"
     sha256 cellar: :any_skip_relocation, catalina:      "51111ec101ab87f3e6f06d32f01e6effb3ccdc8b5146ca1e3ce81f223dbd3452"
     sha256 cellar: :any_skip_relocation, mojave:        "5d561e128c626c67d5b609033076fcd98ba64bb2d5b43def029d6d1e8e8dfacc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3cc9b8113155f2ba418a447db8b49cfaa9d4a41c8c6052906b7cca25d8dd22c"
   end
 
   depends_on "go" => :build
