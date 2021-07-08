@@ -4,7 +4,7 @@ class TokyoCabinet < Formula
   url "https://fallabs.com/tokyocabinet/tokyocabinet-1.4.48.tar.gz"
   mirror "https://deb.debian.org/debian/pool/main/t/tokyocabinet/tokyocabinet_1.4.48.orig.tar.gz"
   sha256 "a003f47c39a91e22d76bc4fe68b9b3de0f38851b160bbb1ca07a4f6441de1f90"
-  license "LGPL-2.1"
+  license "LGPL-2.1-or-later"
 
   livecheck do
     url :homepage
@@ -23,6 +23,9 @@ class TokyoCabinet < Formula
     sha256 yosemite:      "3267823914e250aff7c8d3a5a686a010f0fc96242a417dbf47bb1502aa020ad6"
     sha256 x86_64_linux:  "afa59c59ae2f2ffe0450d2dc4c34211ce645115ab6295e88daefbb2ce1991a95"
   end
+
+  uses_from_macos "bzip2"
+  uses_from_macos "zlib"
 
   def install
     system "./configure", "--prefix=#{prefix}"
