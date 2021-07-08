@@ -15,6 +15,7 @@ class Latex2html < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "bcfcf542ab089c183d2e112f92ffb5b5319ca7114fce654923a289cf8978fb47"
     sha256 cellar: :any_skip_relocation, catalina:      "e02b5c3a133eb5d4f3c570dc785aebae13bc7c2af0880cbfe2165cdd80df63a5"
     sha256 cellar: :any_skip_relocation, mojave:        "dd89940ad2d5d7c2e9100a051221b072645f684d0fa73456ca116c315ec7a680"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a61468396b7b536686ce3ebd27568e877c02502cd52a4b28c3c0b148bbecf605"
   end
 
   depends_on "ghostscript"
