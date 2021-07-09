@@ -15,6 +15,7 @@ class Lxc < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "f78ae1e135117e26e1a05f1a78b6929fe8803d1003af256bf5225baff59610f6"
     sha256 cellar: :any_skip_relocation, catalina:      "c653c38bef3df9e3384f4f723bb7f746437d3b5934e41396b2119b7b75fef6e3"
     sha256 cellar: :any_skip_relocation, mojave:        "ee349607b6dc853799695b18c899f35737a41f6658abc4f3c061e6eeb3ff03fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1943e7980196d5e3d3984dd0e3c5398faf7ae56ebb5300754147e870619e2c6"
   end
 
   depends_on "go" => :build
