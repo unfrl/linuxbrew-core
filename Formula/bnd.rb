@@ -9,6 +9,10 @@ class Bnd < Formula
     regex(%r{<version>v?(\d+(?:\.\d+)+)</version>}i)
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8036fc16234ae28f20ff30f9e0264eaccf3326b0bc2af969e3bbf199f01ff1a8"
+  end
+
   depends_on "openjdk"
 
   def install
