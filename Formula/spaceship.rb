@@ -1,17 +1,17 @@
 class Spaceship < Formula
   desc "Zsh prompt for Astronauts"
   homepage "https://spaceship-prompt.sh"
-  url "https://github.com/spaceship-prompt/spaceship-prompt/archive/v3.12.26.tar.gz"
-  sha256 "86ddc49d901d54e6d2f5b1892c24e0679ff3d19e873b7395352e95857e196b36"
+  url "https://github.com/spaceship-prompt/spaceship-prompt/archive/v3.13.0.tar.gz"
+  sha256 "a03615b55456f401fdd55bfb526fee050e238339932c13f323d69a630e3fea65"
   license "MIT"
   head "https://github.com/spaceship-prompt/spaceship-prompt.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "bfd3ca6791e426f02926eabd809cbdfa228edaeb1e8bba8c8ff6c8c60a4fb01d"
-    sha256 cellar: :any_skip_relocation, big_sur:       "bfd3ca6791e426f02926eabd809cbdfa228edaeb1e8bba8c8ff6c8c60a4fb01d"
-    sha256 cellar: :any_skip_relocation, catalina:      "bfd3ca6791e426f02926eabd809cbdfa228edaeb1e8bba8c8ff6c8c60a4fb01d"
-    sha256 cellar: :any_skip_relocation, mojave:        "bfd3ca6791e426f02926eabd809cbdfa228edaeb1e8bba8c8ff6c8c60a4fb01d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37256808f73d7d22ff41a440c8c8f454fc89e4dd1d3a68ffcfa78eca20645429"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "eb03d37977136c8608375c41f20674c6771277a36b9aa28ba2c7080c28b52bb0"
+    sha256 cellar: :any_skip_relocation, big_sur:       "eb03d37977136c8608375c41f20674c6771277a36b9aa28ba2c7080c28b52bb0"
+    sha256 cellar: :any_skip_relocation, catalina:      "eb03d37977136c8608375c41f20674c6771277a36b9aa28ba2c7080c28b52bb0"
+    sha256 cellar: :any_skip_relocation, mojave:        "eb03d37977136c8608375c41f20674c6771277a36b9aa28ba2c7080c28b52bb0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4a62fdd9210d1c41e61a952d84ad15da1d2ede3aa9497ae696c62db72f5dd9c"
   end
 
   depends_on "zsh" => :test
