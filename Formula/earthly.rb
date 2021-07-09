@@ -19,6 +19,8 @@ class Earthly < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3b8af702a1afbb4ec9e795dc1f7f51421938a57378488764463b279cb26afb3"
   end
 
+  disable! date: "2021-07-15", because: "has an incompatible license"
+
   depends_on "go" => :build
 
   def install
