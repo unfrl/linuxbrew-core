@@ -19,7 +19,8 @@ class Vcprompt < Formula
     sha256 cellar: :any, x86_64_linux:  "e02d78730b41bee820ae2cdb772b1966df04ff890076b5c4185a30642a639839"
   end
 
-  depends_on "autoconf" => :build
+  # Check if `autoconf` works when updating to the next release
+  depends_on "autoconf@2.69" => :build
   depends_on "sqlite"
 
   def install
