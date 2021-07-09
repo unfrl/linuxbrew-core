@@ -5,6 +5,10 @@ class OpenapiGenerator < Formula
   sha256 "99960608847b5cebce3673450ccf3aa9233b8ae838f27a0d80170776293cd6f9"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "66919ad4fbdba7a72fde1bbdd55fc64a047fd2710e161f02fe5ce4ce67b107cf"
+  end
+
   head do
     url "https://github.com/OpenAPITools/openapi-generator.git"
 
