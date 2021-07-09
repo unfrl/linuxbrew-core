@@ -17,6 +17,7 @@ class Mercurial < Formula
     sha256 big_sur:       "e051ca9a45ca99ff0871a3e9f0ac27061ab4e8e2cb8326019d5b7e2a6e064f6f"
     sha256 catalina:      "8f194726598cf4457bf06d3806ebc88175a1bf7e1cc81ff8769661e6f7b64398"
     sha256 mojave:        "082c55f177e2bd56909d7b34d20bfe73b27182a23a9dda18d2ba63d5561e4ce5"
+    sha256 x86_64_linux:  "309e0c1be449148424271dbf9169577c72b669ab8ab4cee59cb611d9ca55b8fc"
   end
 
   depends_on "python@3.9"
