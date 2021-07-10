@@ -15,6 +15,7 @@ class Micronaut < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "2d461b6baa8ed6a5b0e79e1d0cb525540604439b7f59497f97330b242b80aca2"
     sha256 cellar: :any_skip_relocation, catalina:      "4a23b96d4d0623c759e644add06bb0553963961a9396c37cb3f021db458c3db0"
     sha256 cellar: :any_skip_relocation, mojave:        "cb3131c069147d2870c9279cb662fc77452a662fe81bf504f9ff64bb67a50df1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0247317230d38fc3c7d35aa3a1e9165845af0221122e9ff016a2675f886ca5c"
   end
 
   if Hardware::CPU.arm?
