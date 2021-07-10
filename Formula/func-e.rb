@@ -1,15 +1,14 @@
 class FuncE < Formula
   desc "Easily run Envoy"
   homepage "https://func-e.io"
-  url "https://github.com/tetratelabs/func-e/archive/v0.5.0.tar.gz"
-  sha256 "17fc6c5c0f7bea8ce59e0bfb315198cc9f9ecfda98d51909149d42ffd125d72f"
+  url "https://github.com/tetratelabs/func-e/archive/v0.5.1.tar.gz"
+  sha256 "ca30aa0ee97db1a9f935bea2d78fefc6c17cae68947866c0837fa7f8174cbc0f"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, big_sur:      "baae422ab7b137ae4eb74e977cf21a9faff0b481ffd733787d478915498fcaff"
-    sha256 cellar: :any_skip_relocation, catalina:     "6955fb6b70ecd1f6873bec2163fdebeb289d3ae2fdd41c341a97febdf7442f85"
-    sha256 cellar: :any_skip_relocation, mojave:       "6cda002dd536d9cb34ad93864344930adac7b12f62f9408711190f6c7a4d4069"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "51db1eb03d9b595353cb3119ec22bb4839d81da9456a28ee24d29f8afbeb1871" # linuxbrew-core
+    sha256 cellar: :any_skip_relocation, big_sur:      "7d80712f8c68b2310377681ba169d32785dd051a4bc2106cbb8b773a45f6e201"
+    sha256 cellar: :any_skip_relocation, catalina:     "b2ac0446c8fdb271c8fe09475029fee7b424f9f02c5b29a4b8f63766cde70628"
+    sha256 cellar: :any_skip_relocation, mojave:       "aebf7879b00cda348d643a358cf0d68bd9fd2052a2995c54025804c4c76c48f2"
   end
 
   depends_on "go" => :build
@@ -17,7 +16,7 @@ class FuncE < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/tetratelabs/func-e/internal/version.funcE=#{version}
+      -X main.version=#{version}
     ]
     system "go", "build", *std_go_args(ldflags: ldflags.join(" "))
   end
