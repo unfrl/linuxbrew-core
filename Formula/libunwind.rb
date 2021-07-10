@@ -6,9 +6,10 @@ class Libunwind < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "5b802d128e935893e9e70e6125ba525e663d0f941b8128e939a9b677e36381e4" # linuxbrew-core
+    rebuild 2
   end
+
+  keg_only "libunwind conflicts with LLVM"
 
   depends_on :linux
 
@@ -19,15 +20,6 @@ class Libunwind < Formula
     system "./configure", *std_configure_args, "--disable-silent-rules"
     system "make"
     system "make", "install"
-
-    # Rename `libunwind.a` to avoid conflict with LLVM's `libunwind.a`
-    mv lib/"libunwind.a", lib/"libunwind-standalone.a"
-  end
-
-  def caveats
-    <<~EOS
-      To avoid conflicts with LLVM, `libunwind.a` has been installed as `libunwind-standalone.a`.
-    EOS
   end
 
   test do
