@@ -17,6 +17,7 @@ class Mbedtls < Formula
     sha256 cellar: :any,                 big_sur:       "84ac67a7a41cafde712cec80c31120c5f1bb896ce9d212da6d132f1c24fdb2de"
     sha256 cellar: :any,                 catalina:      "f848fa5209380ec469d00a9422101fdb2e5f57b9b588c9cadc4a35ec6fca5c23"
     sha256 cellar: :any,                 mojave:        "78827838bf19bec7b526320b8156005bfbdd92b1dd83cf8611f0abc2633f98a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06d8433f2fef8828858388b4381ae618acf4731f53f8c89c9010435408a97d78"
   end
 
   depends_on "cmake" => :build
