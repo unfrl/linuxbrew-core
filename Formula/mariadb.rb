@@ -15,7 +15,7 @@ class Mariadb < Formula
     sha256 big_sur:       "84e53555d27789852d405f63f45e06afc4918c654ae996c3989c05b326cc75db"
     sha256 catalina:      "b9bba3532b154650e8c7e58e55c59a4cdda9918cd6b89840d0efa3f0533f2372"
     sha256 mojave:        "824e0648cffd64e39f994bfd9392678d2c59c39d5f9c7b049b1deefb1cdb8166"
-    sha256 x86_64_linux:  "74fb40e6d1f8dad190bde89d2e4119d80786b104938f90c22096bf6a78169cfe"
+    sha256 x86_64_linux:  "74fb40e6d1f8dad190bde89d2e4119d80786b104938f90c22096bf6a78169cfe" # linuxbrew-core
   end
 
   depends_on "bison" => :build
