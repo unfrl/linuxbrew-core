@@ -5,6 +5,10 @@ class Liquibase < Formula
   sha256 "d98fde44892c92e93eec60bf6ebd7bf17cd64e73f88974857dae726cb8efa830"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "34072818bc9e71bc223be91cfe7a1b1a6ed6314140fee46a06a8cb830388bb26"
+  end
+
   depends_on "openjdk"
 
   def install
