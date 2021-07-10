@@ -20,6 +20,10 @@ class TerraformAT011 < Formula
   depends_on "go" => :build
   depends_on "gox" => :build
 
+  on_linux do
+    depends_on "zip" => :build
+  end
+
   def install
     ENV["GOPATH"] = buildpath
     ENV.prepend_create_path "PATH", buildpath/"bin"
