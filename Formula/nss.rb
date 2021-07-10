@@ -50,7 +50,9 @@ class Nss < Formula
     # rather than copying the referenced file.
     cd "../dist"
     bin.mkpath
-    Dir.glob("*.OBJ/bin/*") do |file|
+    os = "Darwin"
+    on_linux { os = "Linux" }
+    Dir.glob("#{os}*/bin/*") do |file|
       cp file, bin unless file.include? ".dylib"
     end
 
@@ -60,7 +62,7 @@ class Nss < Formula
 
     lib.mkpath
     libexec.mkpath
-    Dir.glob("*.OBJ/lib/*") do |file|
+    Dir.glob("#{os}*/lib/*") do |file|
       if file.include? ".chk"
         cp file, libexec
       else
