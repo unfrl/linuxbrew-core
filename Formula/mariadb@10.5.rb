@@ -1,21 +1,27 @@
-class Mariadb < Formula
+class MariadbAT105 < Formula
   desc "Drop-in replacement for MySQL"
   homepage "https://mariadb.org/"
-  url "https://downloads.mariadb.com/MariaDB/mariadb-10.6.3/source/mariadb-10.6.3.tar.gz"
-  sha256 "5bc125606af5ec1fda80f594c1ddfacef8b305c158ecf8b1ca7a3f01cd0b18db"
+  url "https://downloads.mariadb.com/MariaDB/mariadb-10.5.11/source/mariadb-10.5.11.tar.gz"
+  sha256 "761053605fe30ce393f324852117990350840a93b3e6305ef4d2f8c8305cc47a"
   license "GPL-2.0-only"
 
   livecheck do
     url "https://downloads.mariadb.org/"
-    regex(/Download v?(\d+(?:\.\d+)+) Stable Now/i)
+    regex(/Download v?(10\.5(?:\.\d+)+) Stable Now/i)
   end
 
   bottle do
-    sha256 arm64_big_sur: "41fbb0bbd394de4750e1e9101a94f8a1827d59f0fbf27df76ccc0fd5eeab6da7"
-    sha256 big_sur:       "84e53555d27789852d405f63f45e06afc4918c654ae996c3989c05b326cc75db"
-    sha256 catalina:      "b9bba3532b154650e8c7e58e55c59a4cdda9918cd6b89840d0efa3f0533f2372"
-    sha256 mojave:        "824e0648cffd64e39f994bfd9392678d2c59c39d5f9c7b049b1deefb1cdb8166"
+    sha256 arm64_big_sur: "860b99cdb9a1c49452e98faa38edcce7c27e499c3802872cad3e701d7c2aa266"
+    sha256 big_sur:       "331ea03fb2ba8e83003bcbd7b2bbaab58e7502b18e9780525533762f333d49a2"
+    sha256 catalina:      "5db1bdff46cb07a979bc027edf55e9bbbb9a56f884931ffd48264c7bba2ccb46"
+    sha256 mojave:        "c9c1cf5daec11db466928c9177bb4d661543bc2c250f046e32bfb3d9414f6da6"
+    sha256 x86_64_linux:  "ee4ac662ab2842504fb9e431a560bcf46b120c3c2331fbcc9d9c839079e0b914"
   end
+
+  keg_only :versioned_formula
+
+  # See: https://mariadb.com/kb/en/changes-improvements-in-mariadb-105/
+  deprecate! date: "2025-06-01", because: :unsupported
 
   depends_on "bison" => :build
   depends_on "cmake" => :build
@@ -41,11 +47,6 @@ class Mariadb < Formula
     depends_on "gcc"
     depends_on "linux-pam"
   end
-
-  conflicts_with "mysql", "percona-server",
-    because: "mariadb, mysql, and percona install the same binaries"
-  conflicts_with "mytop", because: "both install `mytop` binaries"
-  conflicts_with "mariadb-connector-c", because: "both install `mariadb_config`"
 
   fails_with gcc: "5"
 
@@ -78,6 +79,9 @@ class Mariadb < Formula
       -DCOMPILATION_COMMENT=#{tap.user}
     ]
 
+    # disable TokuDB, which is currently not supported on macOS
+    args << "-DPLUGIN_TOKUDB=NO"
+
     # Disable RocksDB on Apple Silicon (currently not supported)
     args << "-DPLUGIN_ROCKSDB=NO" if Hardware::CPU.arm?
 
@@ -89,6 +93,11 @@ class Mariadb < Formula
       # Reported upstream at https://jira.mariadb.org/browse/MDEV-7209 - this fix can be
       # removed once that issue is closed and the fix has been merged into a stable release.
       mv "storage/mroonga/version", "storage/mroonga/version.txt"
+      # Reported upstream at https://jira.mariadb.org/browse/MDEV-25716 - fixed by
+      # https://github.com/mariadb-corporation/libmarias3/commit/c71898f82598 and should be fixed
+      # in 10.5.12. Does not affect older versions of mariadb because they do not include this
+      # library.
+      mv "storage/maria/libmarias3/VERSION", "storage/maria/libmarias3/VERSION.txt"
     end
 
     system "make"
