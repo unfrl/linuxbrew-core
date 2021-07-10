@@ -16,7 +16,7 @@ class Mpg123 < Formula
     sha256 big_sur:       "9e64bf29f8b4ae1cbd7f66c26802f0b358cf1dce6562c9905c036f9b1138d483"
     sha256 catalina:      "3e03a2915dad7b439afe28a3c37a9bf32ed5f0eabaa56d4ceb1ef9929a0262b8"
     sha256 mojave:        "84227846875d35bcbeba9980a90b2086c6d929f503986458cd98b5bf37723c05"
-    sha256 x86_64_linux:  "cfdde128c6c9bb0a3471c11fc936853a6bcc1b90d9186e011072b6e00df20121"
+    sha256 x86_64_linux:  "cfdde128c6c9bb0a3471c11fc936853a6bcc1b90d9186e011072b6e00df20121" # linuxbrew-core
   end
 
   def install

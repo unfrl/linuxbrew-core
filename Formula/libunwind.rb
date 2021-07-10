@@ -7,7 +7,7 @@ class Libunwind < Formula
 
   bottle do
     rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "5b802d128e935893e9e70e6125ba525e663d0f941b8128e939a9b677e36381e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "5b802d128e935893e9e70e6125ba525e663d0f941b8128e939a9b677e36381e4" # linuxbrew-core
   end
 
   depends_on :linux
