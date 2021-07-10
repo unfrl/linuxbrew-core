@@ -5,6 +5,10 @@ class DjlServing < Formula
   sha256 "b715a7a83c1116813840a01aabe95dc1bcb83f3888420bb7de8f88d580d7bd0a"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "743b1ae2144c759fd91f41ee853060daff3cc7f54ea5cc8e43489ed1eb251336"
+  end
+
   depends_on "openjdk"
 
   def install
