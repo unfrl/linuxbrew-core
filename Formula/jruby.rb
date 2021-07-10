@@ -15,7 +15,6 @@ class Jruby < Formula
     sha256 cellar: :any,                 big_sur:       "74486e1c636a83f12ee42b200b1ffb44a8205ce4962616a212bc270223200093"
     sha256 cellar: :any,                 catalina:      "74486e1c636a83f12ee42b200b1ffb44a8205ce4962616a212bc270223200093"
     sha256 cellar: :any,                 mojave:        "74486e1c636a83f12ee42b200b1ffb44a8205ce4962616a212bc270223200093"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "faa5d9746cbf594f7a69dab6536ce2786501504c6431930c5e7b18e9cf60b4cc"
   end
 
   depends_on "openjdk"
