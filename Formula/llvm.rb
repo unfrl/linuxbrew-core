@@ -1,11 +1,10 @@
 class Llvm < Formula
   desc "Next-gen compiler infrastructure"
   homepage "https://llvm.org/"
-  url "https://github.com/llvm/llvm-project/releases/download/llvmorg-12.0.0/llvm-project-12.0.0.src.tar.xz"
-  sha256 "9ed1688943a4402d7c904cc4515798cdb20080066efa010fe7e1f2551b423628"
+  url "https://github.com/llvm/llvm-project/releases/download/llvmorg-12.0.1/llvm-project-12.0.1.src.tar.xz"
+  sha256 "129cb25cd13677aad951ce5c2deb0fe4afc1e9d98950f53b51bdcfb5a73afa0e"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
-  revision OS.mac? ? 1 : 6
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
   livecheck do
@@ -14,12 +13,10 @@ class Llvm < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_big_sur: "6c42eae5d3f65719b6cf4396bb9282b126733c6694c6a8a98e6cad2b741759ef"
-    sha256 cellar: :any,                 big_sur:       "8d3cafc2a4704b9ea50ddeab57c3f1d65be5beffaec9cc02314750a7fca765e6"
-    sha256 cellar: :any,                 catalina:      "bc6130bb8c47d81285291c0d14202a60a20a640a76462bd1cdf334f618dff8b3"
-    sha256 cellar: :any,                 mojave:        "88ebb2156518dfae3b1d814c2a9c370dc1bdda9c35593d418ca0974537929c2c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f19bea29fc116831eac8d3477f267d225961d61ac2fc8278b1788c507d950799" # linuxbrew-core
+    sha256 cellar: :any,                 arm64_big_sur: "edf9a855e05e7404e06071e80f7b3c4f7c6b5abfdc6b66945dadc390819e0d1b"
+    sha256 cellar: :any,                 big_sur:       "ff9a71b7b35ecb6c1dfcfe40152b00f4777a3f4a10dcf5cc41044458b02c99cd"
+    sha256 cellar: :any,                 catalina:      "e9a8185649b019863424068c3efa1b3c7d85747d12260b1dac07895690f50383"
+    sha256 cellar: :any,                 mojave:        "2382196cb9626c46aa27ce146270c6625deca1b8a47926457131fb22ba243899"
   end
 
   # Clang cannot find system headers if Xcode CLT is not installed
