@@ -11,7 +11,7 @@ class ShadowsocksLibev < Formula
     sha256 cellar: :any,                 big_sur:       "c0691488442c21ed190330a9ddbf21daf30ce6500fd4a54520616cd09ac63eae"
     sha256 cellar: :any,                 catalina:      "22b6a409bfd608e4cea367d59d85e0b4302e93fcc840c4e461e1ef76e608c9fc"
     sha256 cellar: :any,                 mojave:        "5123668b835d01e19ff38fdf8100b9b3bc2123c797a081394dfd59ba4ff18386"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f312762d6abb6da499745cb5b0a0ec18c35a47d32eecd31cb103fc64002d2ec8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f312762d6abb6da499745cb5b0a0ec18c35a47d32eecd31cb103fc64002d2ec8" # linuxbrew-core
   end
 
   head do
