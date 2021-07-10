@@ -10,7 +10,7 @@ class Curlie < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "b9e22d8ea5d1459740bc0c0f7a8eac471fd81dc4411af99659fd0d7a36583922"
     sha256 cellar: :any_skip_relocation, catalina:      "b9e22d8ea5d1459740bc0c0f7a8eac471fd81dc4411af99659fd0d7a36583922"
     sha256 cellar: :any_skip_relocation, mojave:        "b9e22d8ea5d1459740bc0c0f7a8eac471fd81dc4411af99659fd0d7a36583922"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88e6f1236f129fd2268636d89dad87549739e55050fa23a966fbba5e33517aa4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88e6f1236f129fd2268636d89dad87549739e55050fa23a966fbba5e33517aa4" # linuxbrew-core
   end
 
   depends_on "go" => :build

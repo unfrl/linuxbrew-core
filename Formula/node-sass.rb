@@ -8,7 +8,7 @@ class NodeSass < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "29a0eddfb2124e8a1d017dfa65199cf90cc6007727aac2462bb28618a3fe5692"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "29a0eddfb2124e8a1d017dfa65199cf90cc6007727aac2462bb28618a3fe5692" # linuxbrew-core
   end
 
   depends_on "node"

@@ -12,7 +12,7 @@ class NodeBuild < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b7106ac8fe27fd03b7da33fd7cbb8a21c81d86e845195f757815161a039a8643"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b7106ac8fe27fd03b7da33fd7cbb8a21c81d86e845195f757815161a039a8643" # linuxbrew-core
   end
 
   depends_on "autoconf"

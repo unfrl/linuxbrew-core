@@ -18,7 +18,7 @@ class Lmdb < Formula
     sha256 cellar: :any,                 big_sur:       "c217caa7fc1ab0a1e734739a6a7aae31c9719198b47f487ea266ebcdd8b2c538"
     sha256 cellar: :any,                 catalina:      "b724f5fd1c3a779c43b36426dba75fea12bec8bab0324e5037b45032133dddac"
     sha256 cellar: :any,                 mojave:        "4385403822588575788671d0b2c22edc4543fd76b94ac3228c99fe516c7e4d7c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76758cef0c1fec8530043507ced0c543727e6240654f1751925fc9857ccb6e8b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76758cef0c1fec8530043507ced0c543727e6240654f1751925fc9857ccb6e8b" # linuxbrew-core
   end
 
   def install

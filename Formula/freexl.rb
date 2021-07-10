@@ -15,7 +15,7 @@ class Freexl < Formula
     sha256 cellar: :any,                 big_sur:       "a20523355d18f1ed2259ae198b45c5aa93080fbd4926e0eb6969d2919b7a97ac"
     sha256 cellar: :any,                 catalina:      "1bab8437de88ce5564702dcc3e30a9c2f9491aa9358e767aa3d8ec62ba76922d"
     sha256 cellar: :any,                 mojave:        "003e9d848f354e7f12232f85240f4892f21e6136cd657022fbbc51b3bd286225"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2059ac999e20b72d31a6e586174327431066c01e10c25fca93c80ef5d10f5b4b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2059ac999e20b72d31a6e586174327431066c01e10c25fca93c80ef5d10f5b4b" # linuxbrew-core
   end
 
   depends_on "doxygen" => :build

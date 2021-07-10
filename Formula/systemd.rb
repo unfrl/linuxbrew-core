@@ -8,7 +8,7 @@ class Systemd < Formula
 
   bottle do
     rebuild 1
-    sha256 x86_64_linux: "063ae7cfdf081f72c3d6bfbec87e1a95a1e0f90da0e33c6e232b5a8796ab9a4c"
+    sha256 x86_64_linux: "063ae7cfdf081f72c3d6bfbec87e1a95a1e0f90da0e33c6e232b5a8796ab9a4c" # linuxbrew-core
   end
 
   depends_on "coreutils" => :build

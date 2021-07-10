@@ -10,7 +10,7 @@ class Bnd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "8036fc16234ae28f20ff30f9e0264eaccf3326b0bc2af969e3bbf199f01ff1a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8036fc16234ae28f20ff30f9e0264eaccf3326b0bc2af969e3bbf199f01ff1a8" # linuxbrew-core
   end
 
   depends_on "openjdk"

@@ -16,7 +16,7 @@ class Onnxruntime < Formula
     sha256 cellar: :any,                 big_sur:       "715507acc42c6b996e2075fb079291cd2f06a0e4193d89a89bf7907769f53e61"
     sha256 cellar: :any,                 catalina:      "8995905d5ea6d6feee5eb910b32e86cd577fa557da5d036b8d553fe997382dfc"
     sha256 cellar: :any,                 mojave:        "2b09717c8dbc1616d40270037fac988f1f720ea8edf892b20d7650df826309ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13017f65efcdedca6e1102030a72261012f50f49d557c6f7bdaec7a8917b1dd3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13017f65efcdedca6e1102030a72261012f50f49d557c6f7bdaec7a8917b1dd3" # linuxbrew-core
   end
 
   depends_on "cmake" => :build

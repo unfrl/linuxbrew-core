@@ -10,7 +10,7 @@ class Ucloud < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "a6501723daea0bcf02429ebbe424acbcd03b3e26529be6396cda2d31099f4607"
     sha256 cellar: :any_skip_relocation, catalina:      "a402128a3fba94e3c08cd67e716c3f33852d138af48897db5cdf883b0de59441"
     sha256 cellar: :any_skip_relocation, mojave:        "92bfe9c9fd15143c837bece7bc88296a4287977e156173248b6903dc4e6b817c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d06f78749df5a802fd63f3b6ea5c979eda6386fa4d76c93d39dbdcce3a16e7d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d06f78749df5a802fd63f3b6ea5c979eda6386fa4d76c93d39dbdcce3a16e7d" # linuxbrew-core
   end
 
   depends_on "go" => :build

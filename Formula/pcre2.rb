@@ -26,7 +26,7 @@ class Pcre2 < Formula
     sha256 cellar: :any,                 big_sur:       "2e885570c4dc2eaa61e7a02c66631f9333bbb42f8602d8293e7ce022861ae11e"
     sha256 cellar: :any,                 catalina:      "0e40c8534a5fc26eedbbfb487cf437e8b231e0054ccb61c696834416b7160ac7"
     sha256 cellar: :any,                 mojave:        "c6932648a712a0603d786b4b8868a21519eeb13592cf49261359c3c4b0c5665e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6ec10a997623297bbbf00d0d5854235694c7326ea0296690f89416d7e32ddba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6ec10a997623297bbbf00d0d5854235694c7326ea0296690f89416d7e32ddba" # linuxbrew-core
   end
 
   uses_from_macos "bzip2"

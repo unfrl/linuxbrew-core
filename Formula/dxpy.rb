@@ -12,7 +12,7 @@ class Dxpy < Formula
     sha256 cellar: :any,                 big_sur:       "1bb0373c82549a7553b12cfd643c7c86ceeb298c1b0706686e19b3c66e981e79"
     sha256 cellar: :any,                 catalina:      "18b93681cdb90a1957d6acc230a020f17addcab00f581020955e62e61ea7082b"
     sha256 cellar: :any,                 mojave:        "8ee89831b01e1e0adf447f9e8cb5c27af5a95fad643844e401ce4be19c0cee47"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8aa8f16c38e40d256f6cdf3652c9e402e2dbaeaab8a3785fc31fc7499d33f03d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8aa8f16c38e40d256f6cdf3652c9e402e2dbaeaab8a3785fc31fc7499d33f03d" # linuxbrew-core
   end
 
   depends_on "python@3.9"

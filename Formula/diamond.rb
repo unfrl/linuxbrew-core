@@ -10,7 +10,7 @@ class Diamond < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "746111bc7742376273e84d87c6cd4b09cc2855e4dcf80b7025b09359cdee9496"
     sha256 cellar: :any_skip_relocation, catalina:      "32a3256fb14aebed74c553136929c656ebd4a9423dfa02524886648fd86ae8f7"
     sha256 cellar: :any_skip_relocation, mojave:        "882151cea4d518d0d5f32b13a2eb495b0ea88c845aebbd2b99a8aef1cef8db3f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce393bc62d88cdb7f418fb7fae8603f5ae3790c9040261b182f1f69a6ead72c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce393bc62d88cdb7f418fb7fae8603f5ae3790c9040261b182f1f69a6ead72c6" # linuxbrew-core
   end
 
   depends_on "cmake" => :build

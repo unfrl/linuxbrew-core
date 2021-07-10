@@ -19,7 +19,7 @@ class Xmltoman < Formula
     sha256 cellar: :any_skip_relocation, sierra:        "06a29d1545388d2111008cc244733f36971638e05408e1a7353fe9e142f91b76"
     sha256 cellar: :any_skip_relocation, el_capitan:    "010af030c01ebe6528bbdecfa1153fac5f6e082fa088e1803d0768bb268a509b"
     sha256 cellar: :any_skip_relocation, yosemite:      "6345ec17095eeec7fde97b609c0c88f07fcdd1e911fa7fd3b8db7f3e5b081b9c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40871825d4de904971e52f8f68d362e947e3611bd5c3a6ff58d880d04416102d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40871825d4de904971e52f8f68d362e947e3611bd5c3a6ff58d880d04416102d" # linuxbrew-core
   end
 
   uses_from_macos "perl"

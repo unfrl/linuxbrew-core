@@ -15,7 +15,7 @@ class Ruby < Formula
     sha256 big_sur:       "39da97472055c844b0d23fc3c6030393d8fb8cde17098cf4eae0c590a95e6990"
     sha256 catalina:      "70091e895ac4eee3e256e4357ffc46ad5246b833c958a3b6b6ae1bbf922b5e5e"
     sha256 mojave:        "ec10947a2e2281b7dc4586c06762cf9ef41c48cb9defc683817dbe073988ac25"
-    sha256 x86_64_linux:  "ef0463301086f41ac6140e73429a0c717545572a5e79b508e0e79ec7d51dc3c7"
+    sha256 x86_64_linux:  "ef0463301086f41ac6140e73429a0c717545572a5e79b508e0e79ec7d51dc3c7" # linuxbrew-core
   end
 
   head do

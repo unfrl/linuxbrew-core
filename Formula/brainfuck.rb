@@ -22,7 +22,7 @@ class Brainfuck < Formula
     sha256 cellar: :any,                 big_sur:       "7b128f991009e1e9b4e5ce31b451f49d7aaab01b4a7867ce8709483dee4e8bea"
     sha256 cellar: :any,                 catalina:      "e6df5d077a5a75d2f350064f7d8aab3ac109759ca330753f974c9bd23043a917"
     sha256 cellar: :any,                 mojave:        "ede2edc346ff8bfff8829ced2ec99ef0df74edf6978fb2541bbaa7daa53f8d3a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38510b863336aac8bf1c37a49c74a41451c7cfa7f3cd78de7bc7be27f953f242"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38510b863336aac8bf1c37a49c74a41451c7cfa7f3cd78de7bc7be27f953f242" # linuxbrew-core
   end
 
   depends_on "cmake" => :build

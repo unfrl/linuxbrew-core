@@ -13,7 +13,7 @@ class Artifactory < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "65395028c2f944901489c4176d94c2e22eda1c0d13d4d73294d3baa1e166ff4f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "65395028c2f944901489c4176d94c2e22eda1c0d13d4d73294d3baa1e166ff4f" # linuxbrew-core
   end
 
   depends_on "openjdk"
