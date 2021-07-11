@@ -12,6 +12,7 @@ class GatewayGo < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "ed575679894706f1dfe223c5988cadaf862cfce82137b90e0149536023bfe166"
     sha256 cellar: :any_skip_relocation, catalina:      "87321853027fad8ce4dd0b8bce1900ec4815fc9f3792e9795089acc1a5a68b07"
     sha256 cellar: :any_skip_relocation, mojave:        "26bc78e653b3069a9a84aa95e589d28f41e827a01366e753170eaf09de9f4481"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ea26f646a07fd4ad35346d70c0a34e37100d1bd95f24b46105b6f0466a6d3f1"
   end
 
   depends_on "go" => :build
