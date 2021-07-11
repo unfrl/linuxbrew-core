@@ -5,6 +5,10 @@ class Sshfs < Formula
   sha256 "8a9b0d980e9d34d0d18eacb9e1ca77fc499d1cf70b3674cc3e02f3eafad8ab14"
   license any_of: ["LGPL-2.1-only", "GPL-2.0-only"]
 
+  bottle do
+    sha256 x86_64_linux: "7b018ab2d95da10d832422ee4de2cb6d90a84017b495be5dd57cc4343859f927"
+  end
+
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
