@@ -17,6 +17,8 @@ class Pbzip2 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f212965d48b2321dde49bded9cc2d6e55e6d5083c5a232025f7bc3c077360eec" # linuxbrew-core
   end
 
+  uses_from_macos "bzip2"
+
   def install
     system "make", "PREFIX=#{prefix}",
                    "CC=#{ENV.cxx}",

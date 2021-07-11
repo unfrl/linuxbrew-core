@@ -1,18 +1,16 @@
 class GitCola < Formula
   desc "Highly caffeinated git GUI"
   homepage "https://git-cola.github.io/"
-  url "https://github.com/git-cola/git-cola/archive/v3.9.tar.gz"
-  sha256 "66b62f479ad141322351d62aff76e4882719d08f8f29b35f97d30f355391a54e"
+  url "https://github.com/git-cola/git-cola/archive/v3.10.tar.gz"
+  sha256 "77b48ea85c29a8a0097868119f677718243b90183eea1a5a17e74f0d8aceb6b2"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://github.com/git-cola/git-cola.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "b9a2de2f11aa72f0c4010a89c0118974cca4aed743bd8809cac81d6839a35bb2"
-    sha256 cellar: :any_skip_relocation, big_sur:       "54c0806c423ffadb4bf4e017d8e7b657f0636fd16055e174bdf98881ccbb0ed0"
-    sha256 cellar: :any_skip_relocation, catalina:      "8ba8892158a9e2ceef9f278b4c7a789a2ee26bfffce97c56863d287a5b56d071"
-    sha256 cellar: :any_skip_relocation, mojave:        "ad020b9751ad02ff662b94c1df5bb18a496ec77c46957d6ec200633b45bf2959"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "24b91e748522ea9e2d47156666a9b2d68f8d3c5aa46735026700cf1b8f49b617" # linuxbrew-core
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "de0f152dfbf8c6ea1c381779a74766f361386e7fe638e75f45a125d743f76bbe"
+    sha256 cellar: :any_skip_relocation, big_sur:       "deb9ba8da075147d69c7986c5f56b177435ecf2c2dd8de7f102d7cdc95efede3"
+    sha256 cellar: :any_skip_relocation, catalina:      "deb9ba8da075147d69c7986c5f56b177435ecf2c2dd8de7f102d7cdc95efede3"
+    sha256 cellar: :any_skip_relocation, mojave:        "deb9ba8da075147d69c7986c5f56b177435ecf2c2dd8de7f102d7cdc95efede3"
   end
 
   depends_on "sphinx-doc" => :build

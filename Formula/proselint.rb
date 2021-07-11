@@ -3,17 +3,16 @@ class Proselint < Formula
 
   desc "Linter for prose"
   homepage "http://proselint.com"
-  url "https://files.pythonhosted.org/packages/ea/06/d5d7832b4eb44a79da7d90fb1d7b053b9e329a43f8ee4ea5700018799607/proselint-0.11.2.tar.gz"
-  sha256 "5f90d5e3414928194be23efdf1e3e821bbb79279a598cf1710b29977029c4897"
+  url "https://files.pythonhosted.org/packages/04/ee/60506bd37251f7396d73942e2bd3dac9b788269d46cf1372c5e0602e5682/proselint-0.11.3.tar.gz"
+  sha256 "e92e68b8bbb24dbf535eac59ac69b8b4ae9a0610f4f0dc83c18732150c465abf"
   license "BSD-3-Clause"
   head "https://github.com/amperser/proselint.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "3b1c20bd0b59fd486ad26ae6e1e0d2b880c5f179be56afad5933b691de2a134f"
-    sha256 cellar: :any_skip_relocation, big_sur:       "431e17c8890af9a48429e217c2a40e14fbc056c852525d9292622cfa848e69cf"
-    sha256 cellar: :any_skip_relocation, catalina:      "03fc6a15ddd559ff73537a6dee97be1bbba8f22b8f9fd602f97c0d4c533d83a4"
-    sha256 cellar: :any_skip_relocation, mojave:        "421135829a1cd5991fde1ab1cf82739fbe0f9d4a6d375c51b41dabfdc85dffd2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa00d532996e3ab1e9a33b6f324c147390534750c29cb4bfb839bcabd44fc152" # linuxbrew-core
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "4d55d3cf59433f61715e38ba71aef2f942311040b78aba87cdaf5c74c25f4618"
+    sha256 cellar: :any_skip_relocation, big_sur:       "1e7dc0f85d276cac8a93f4782ad7e9fb04bd32f3ecc4b35d14798acfed6c984d"
+    sha256 cellar: :any_skip_relocation, catalina:      "7eedf6711251d705cfc9ba839393d08dcd4db47cb0ec0d8adb7a1577d8dc7f0f"
+    sha256 cellar: :any_skip_relocation, mojave:        "ba192136fc7438bdc77cf62adaeafb2f9cd44bc626161b2ccdbafeeaac9e11fe"
   end
 
   depends_on "python@3.9"
