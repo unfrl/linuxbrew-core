@@ -5,7 +5,7 @@ class Onedrive < Formula
   sha256 "4f6aa46fc28e859b63c0a2c190f66c3286ec0bde3f54f77af0ddea6b62bba37a"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b8c9f14c01c7dfd43007a21d9a2beea839df5f63a36c4a1b62b8d8d44b1a7080"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b8c9f14c01c7dfd43007a21d9a2beea839df5f63a36c4a1b62b8d8d44b1a7080" # linuxbrew-core
   end
 
   depends_on "dmd" => :build

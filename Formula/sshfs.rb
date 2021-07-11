@@ -6,7 +6,7 @@ class Sshfs < Formula
   license any_of: ["LGPL-2.1-only", "GPL-2.0-only"]
 
   bottle do
-    sha256 x86_64_linux: "7b018ab2d95da10d832422ee4de2cb6d90a84017b495be5dd57cc4343859f927"
+    sha256 x86_64_linux: "7b018ab2d95da10d832422ee4de2cb6d90a84017b495be5dd57cc4343859f927" # linuxbrew-core
   end
 
   depends_on "meson" => :build

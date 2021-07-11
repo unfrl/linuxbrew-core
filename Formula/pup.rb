@@ -13,7 +13,7 @@ class Pup < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "929baa98965ce865620bc15bf4f5951dff558b0ad1f9e439d47faf92798f5405"
     sha256 cellar: :any_skip_relocation, catalina:      "f5f4f5c09cc76054eac2b96357f4b2aca8501daa8c805801d17079aa7e5395f8"
     sha256 cellar: :any_skip_relocation, mojave:        "1801647618fe8e2367ce3d739513c1811259bf1db3fb9ddfbc9301e559102d9b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "47aae499479e6111baa4fd4ac37b9d829e528d8cfda580091921da921d388363"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "47aae499479e6111baa4fd4ac37b9d829e528d8cfda580091921da921d388363" # linuxbrew-core
   end
 
   depends_on "go" => :build

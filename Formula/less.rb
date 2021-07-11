@@ -15,7 +15,7 @@ class Less < Formula
     sha256 cellar: :any,                 big_sur:       "7b8ea7c58b438ef80d6b13fd988061543ab3413a40113cd30644cb22fa6f1081"
     sha256 cellar: :any,                 catalina:      "ccbcf747eac1e0a8338be43a6be0e4f3fb241394a6bc0c921b6e51b4ca32c042"
     sha256 cellar: :any,                 mojave:        "916e88216d17654f290affa519d85ad295696dc6c753d3311ed71fb4cc2f9268"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d3b89016d59864389e96b2c234f9f8e98254374c1b1d20847a03a8fa8bce6d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d3b89016d59864389e96b2c234f9f8e98254374c1b1d20847a03a8fa8bce6d2" # linuxbrew-core
   end
 
   head do
