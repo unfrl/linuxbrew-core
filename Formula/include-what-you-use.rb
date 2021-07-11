@@ -20,6 +20,7 @@ class IncludeWhatYouUse < Formula
     sha256 cellar: :any,                 big_sur:       "94fb1c650d15b9f2af08a4cafb924b0619af872dee33e0345fb0a2f692c62cf6"
     sha256 cellar: :any,                 catalina:      "86bf4452a7a1692b730c1286383762e862a938245c78bc5b8ae581282bfca02c"
     sha256 cellar: :any,                 mojave:        "847acb0d8a7fa1b4e2ae4e9973b213a535d17acfa2f0d2b1a57c4f0a751e0685"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "871901d7a12d83393fb5e08289a0c8b69f3e8dc4157ec0b95391fd544afadc3c"
   end
 
   depends_on "cmake" => :build
