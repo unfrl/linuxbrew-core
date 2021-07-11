@@ -6,6 +6,10 @@ class Gcsfuse < Formula
   license "Apache-2.0"
   head "https://github.com/GoogleCloudPlatform/gcsfuse.git"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "aa9a12ed964314e885960d9749af3d0e8bd3f67adeed597b83ea5d758a852979"
+  end
+
   depends_on "go" => :build
 
   on_macos do
