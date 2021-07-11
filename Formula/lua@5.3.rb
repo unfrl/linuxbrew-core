@@ -17,6 +17,7 @@ class LuaAT53 < Formula
     sha256 cellar: :any,                 big_sur:       "ce0820b10f9329826746487c3d69c475241cc7153dcbae1b250e853320256c27"
     sha256 cellar: :any,                 catalina:      "7ac8234731edf3b0eb86a20cda2bdb6c0de637529790263d076de7da6cc7ab93"
     sha256 cellar: :any,                 mojave:        "564c6e085e6a2bc744982dbdb1934ace6332231b1190e56a08e11248d6b416e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d0605ea8465021517e376123adf6976eb44e1b889a7f5278b426cdf6e91e225"
   end
 
   keg_only :versioned_formula
