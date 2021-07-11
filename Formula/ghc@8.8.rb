@@ -16,6 +16,7 @@ class GhcAT88 < Formula
     sha256                               big_sur:      "b099711b984463a32a073f49ec91e6034519a6140958a6603d3888e565ea2e4e"
     sha256                               catalina:     "38d4abf9ea7ce0ac4c928623a835f39d2d58e4ce8c66e58ff3e245b31d2948a9"
     sha256                               mojave:       "bfa78f1df75b3bd13aae44cd1ccc3a739d75cae0b93f0d060606a75fe1fe9a4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "acd921f59ce314269de2710f46c02dbd4ce49be96f738c1be03eff2d0440a5d1"
   end
 
   keg_only :versioned_formula
