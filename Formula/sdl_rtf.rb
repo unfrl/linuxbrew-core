@@ -17,6 +17,9 @@ class SdlRtf < Formula
     sha256 cellar: :any, x86_64_linux:  "387e1a87657e3cd634cd172140c29804a80dc807b2c8487c0680d0d64a81749e" # linuxbrew-core
   end
 
+  # SDL 1.2 is deprecated, unsupported, and not recommended for new projects.
+  deprecate! date: "2013-08-17", because: :deprecated_upstream
+
   depends_on "sdl"
 
   def install

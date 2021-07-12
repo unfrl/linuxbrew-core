@@ -6,6 +6,7 @@ class PhpAT73 < Formula
   mirror "https://fossies.org/linux/www/php-7.3.29.tar.xz"
   sha256 "7db2834511f3d86272dca3daee3f395a5a4afce359b8342aa6edad80e12eb4d0"
   license "PHP-3.01"
+  revision 1
 
   livecheck do
     url "https://www.php.net/downloads"
@@ -13,10 +14,9 @@ class PhpAT73 < Formula
   end
 
   bottle do
-    sha256 big_sur:      "c168f3f6f4b72a6c8de65dc8f460d518db3d70bd279ca1731b198db6eadc1815"
-    sha256 catalina:     "171f7ca2fd405e8e2ac89dd087a2ac3677c8a774c296fd39929fe9ff25e676ef"
-    sha256 mojave:       "f9a9bf6475459e33705586e4ca89cf8612e26d5a7ae39ca7a7fa5ff3263571fb"
-    sha256 x86_64_linux: "ffec0fac653b5ed969ce588c148d09c927d163c2515ab5fd1eb4537abe3531f0" # linuxbrew-core
+    sha256 big_sur:      "5932ad49302d7cd20e502eee51cfb091838d90c665e594c4e1c2c9f274c0af4a"
+    sha256 catalina:     "b5057607a78bf0aebbd5f55e8dcbff9835e9f6552228c7b979d626d144e3ec81"
+    sha256 mojave:       "fc756662888e4b7273c08e696c9f8b0f335de82322ed1518a260a5713068c5e8"
   end
 
   keg_only :versioned_formula

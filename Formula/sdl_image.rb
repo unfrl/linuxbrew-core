@@ -6,11 +6,6 @@ class SdlImage < Formula
   license "Zlib"
   revision 7
 
-  livecheck do
-    url "https://www.libsdl.org/projects/SDL_image/release/"
-    regex(/href=.*?SDL_image[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
-
   bottle do
     sha256 cellar: :any, arm64_big_sur: "9720413694ba49519d1d1c5213607dbdf177939ae0ee081c03ab2c1d478e2fe3"
     sha256 cellar: :any, big_sur:       "67495888095b02d6716cc51f5a522f2a872c29de418f19210ecd586d23684b81"
@@ -22,6 +17,9 @@ class SdlImage < Formula
     sha256 cellar: :any, yosemite:      "3403edd53a6776bad8dc4390ef8204479f3af7c485e8a7a1f81f86f43b4a7b5c"
     sha256 cellar: :any, x86_64_linux:  "60f326bffef334a867e83b623a416290b1deae519c2c83a7760d16611e916466" # linuxbrew-core
   end
+
+  # SDL 1.2 is deprecated, unsupported, and not recommended for new projects.
+  deprecate! date: "2013-08-17", because: :deprecated_upstream
 
   depends_on "pkg-config" => :build
   depends_on "jpeg"

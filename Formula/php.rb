@@ -6,6 +6,7 @@ class Php < Formula
   mirror "https://fossies.org/linux/www/php-8.0.8.tar.xz"
   sha256 "dc1668d324232dec1d05175ec752dade92d29bb3004275118bc3f7fc7cbfbb1c"
   license "PHP-3.01"
+  revision 1
 
   livecheck do
     url "https://www.php.net/downloads"
@@ -13,11 +14,10 @@ class Php < Formula
   end
 
   bottle do
-    sha256 arm64_big_sur: "753ff7fee3f26708d9dbe17896d456616059cf5a8bf9224736a6a1363c5a1d3b"
-    sha256 big_sur:       "77146557ba689b4ce48444373dcf03049975bf8fdfdd01016ed387b38b27d0dd"
-    sha256 catalina:      "021716acf25dcf5361ad7b43278cb25feb69ca34adc61d1265dd458bd6911536"
-    sha256 mojave:        "585c63043fe2c852c63b9f9b8899ab8d4c13660e2f7beaece085888372458625"
-    sha256 x86_64_linux:  "ba3aefba608e2d9dfa3a4bae6a94452d2f666bf0d7372202e66e4cfe12045c25" # linuxbrew-core
+    sha256 arm64_big_sur: "276ee7fc9b54ad96b45c31150ba58c9dcb8de15e47be5188946f1ea33af8c79c"
+    sha256 big_sur:       "79a5df5e305808abba13373635b85a5c98a64acb0de562ead2e5b20156d3ebf9"
+    sha256 catalina:      "2feb7132eb5907943e7bc5634469ac77c1c6c2418de4339b99448506823874a2"
+    sha256 mojave:        "f0cb4fe10a37c7e711d16348767b1a95399e581dd9ee3f8dc55658891a6e9556"
   end
 
   head do

@@ -5,11 +5,6 @@ class SdlTtf < Formula
   sha256 "724cd895ecf4da319a3ef164892b72078bd92632a5d812111261cde248ebcdb7"
   revision 1
 
-  livecheck do
-    url "https://www.libsdl.org/projects/SDL_ttf/release/"
-    regex(/href=.*?SDL_ttf[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
-
   bottle do
     sha256 cellar: :any, arm64_big_sur: "5e82bcaa6cc1cb3ec449c957678e71f23681f7bc998e16b3f39dd39baf5cd8ad"
     sha256 cellar: :any, big_sur:       "6fa67e2282123689e1391faec02d41a1cda527f9cb0b89f9c0e4bd0dd7ee5407"
@@ -21,6 +16,9 @@ class SdlTtf < Formula
     sha256 cellar: :any, yosemite:      "cea0e7f2cb248778bc3af4cab3f3ddd7469d4b24d72780891d2cd54dbc9d7216"
     sha256 cellar: :any, x86_64_linux:  "69a109b9c2030506f1d667c6f57080cb5287470d731d4d4cb2e89c16739ff284" # linuxbrew-core
   end
+
+  # SDL 1.2 is deprecated, unsupported, and not recommended for new projects.
+  deprecate! date: "2013-08-17", because: :deprecated_upstream
 
   depends_on "pkg-config" => :build
   depends_on "freetype"
