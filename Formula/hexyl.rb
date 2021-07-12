@@ -10,6 +10,7 @@ class Hexyl < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "28782b657ead4ad2d73fb35036eae99bddb5b0c7abb949e9726159df1034bf1f"
     sha256 cellar: :any_skip_relocation, catalina:      "e981e7f1b7c694e34184e99fa9c7b8e8196308868879c5c7925633f8b19ae122"
     sha256 cellar: :any_skip_relocation, mojave:        "3cab619ac9a8f2de7809af2d5d84f8ae9ca556087a0cd7174fa1d8fc778256cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92f4908b139e1bdaee693bb0b57e68a1181ac0805cfb2c9113a92c91269e0f19"
   end
 
   depends_on "rust" => :build
