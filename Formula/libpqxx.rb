@@ -18,6 +18,12 @@ class Libpqxx < Formula
   depends_on "libpq"
   depends_on "postgresql"
 
+  on_linux do
+    depends_on "gcc" # for C++17
+  end
+
+  fails_with gcc: "5"
+
   def install
     ENV.prepend_path "PATH", Formula["python@3.9"].opt_libexec/"bin"
     ENV["PG_CONFIG"] = Formula["libpq"].opt_bin/"pg_config"
