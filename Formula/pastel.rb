@@ -11,7 +11,7 @@ class Pastel < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "d8732bd4a5f40bab0c9ac933227d75890ca70ab4f8641d6c7e6bd06327d76a22"
     sha256 cellar: :any_skip_relocation, catalina:      "1651b1afc8a63413679b2779317d3d0617edf72bdee29baf92b74dd865f1d146"
     sha256 cellar: :any_skip_relocation, mojave:        "a0e9bd8535cb95385d081c1bf657068adb5bf2cf4b2aaf00df5f7ad6cbaf512f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7d5916e318ae7b30b4e827951c68a83469b76d0273afe22e25373802a4bcf50"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7d5916e318ae7b30b4e827951c68a83469b76d0273afe22e25373802a4bcf50" # linuxbrew-core
   end
 
   depends_on "rust" => :build
