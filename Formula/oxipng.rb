@@ -10,6 +10,7 @@ class Oxipng < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "28bed379e7c13681208027dfb2e3f5af489c7fbb8818e9285f8326c669705ac9"
     sha256 cellar: :any_skip_relocation, catalina:      "a1ac61f28ff069dda9d2554f2e682e80ddbf927668de174c8faa1effcf09e0b4"
     sha256 cellar: :any_skip_relocation, mojave:        "f2a4d6a15d5571ddf64a010fd0531326c8f97ea01563ae47035e15cd7dbd3ca3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89f62c3d8d0d281914bba801c7e0534fd3928e5ab4408c5d9603621bcdc1928b"
   end
 
   depends_on "rust" => :build
