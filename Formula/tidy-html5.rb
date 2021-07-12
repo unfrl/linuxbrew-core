@@ -16,7 +16,7 @@ class TidyHtml5 < Formula
     sha256 cellar: :any,                 big_sur:       "9127cf10347816285db70f0ec794a08433e44426f9f4320d5fecedbdcfb15e2b"
     sha256 cellar: :any,                 catalina:      "fe486f6a2455b7c59eac3ba8a5e4b2e1a6ff49bb6440465d9470013a23a5fe0f"
     sha256 cellar: :any,                 mojave:        "4ae3afab500044dfd0fb4cf982ce9411859f50548149cc4f99f8720de1bbd754"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f80a0abaed47dfa224213a413fbe6f23d1a538cf4bfeb633296f5e7e465fb2d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f80a0abaed47dfa224213a413fbe6f23d1a538cf4bfeb633296f5e7e465fb2d" # linuxbrew-core
   end
 
   depends_on "cmake" => :build

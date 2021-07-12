@@ -11,7 +11,7 @@ class Spaceship < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "8a86696ef32d02f4903082a4507c39c7f944e622f98a4cbce25825d68bcc0b4b"
     sha256 cellar: :any_skip_relocation, catalina:      "8a86696ef32d02f4903082a4507c39c7f944e622f98a4cbce25825d68bcc0b4b"
     sha256 cellar: :any_skip_relocation, mojave:        "8a86696ef32d02f4903082a4507c39c7f944e622f98a4cbce25825d68bcc0b4b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "113c9937d9ca55710ffbbd8a92c9a5114bb6a7c7b2c3892301040a9e7f083dd9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "113c9937d9ca55710ffbbd8a92c9a5114bb6a7c7b2c3892301040a9e7f083dd9" # linuxbrew-core
   end
 
   depends_on "zsh" => :test
