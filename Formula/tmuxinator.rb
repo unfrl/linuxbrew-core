@@ -56,13 +56,7 @@ class Tmuxinator < Formula
     version_output = shell_output("#{bin}/tmuxinator version")
     assert_match "tmuxinator #{version}", version_output
 
-    cmd = if OS.mac?
-      "source #{bash_completion}/tmuxinator && complete -p tmuxinator"
-    else
-      "bash -c \"source #{bash_completion}/tmuxinator && complete -p tmuxinator\""
-    end
-
-    completion = shell_output(cmd)
+    completion = shell_output("bash -c 'source #{bash_completion}/tmuxinator && complete -p tmuxinator'")
     assert_match "-F _tmuxinator", completion
 
     commands = shell_output("#{bin}/tmuxinator commands")
