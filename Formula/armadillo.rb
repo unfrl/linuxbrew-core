@@ -4,6 +4,7 @@ class Armadillo < Formula
   url "https://downloads.sourceforge.net/project/arma/armadillo-10.5.3.tar.xz"
   sha256 "e6c51d8d52a6f78b9c6459f6986135093e0ee705a674307110f6175f2cd5ee37"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,11 +12,10 @@ class Armadillo < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "ffc251baf898ec461394c0b3684a79a1134cbb7c5f085eb1327d15881ca50e8d"
-    sha256 cellar: :any,                 big_sur:       "947fedf6c1e9072ca0737ac4b6027ff32e50fc520432c570eb4508e95870864b"
-    sha256 cellar: :any,                 catalina:      "ffcc5e38f5a31570a59a50880be323bfbed0d651d7b3301739e22037272ac00d"
-    sha256 cellar: :any,                 mojave:        "e66c9b43ba17c118a0343910a07f9ec8c3db0ac870b1034bef96c64cecd4e59f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7896cef5352298624f783f674e1519f10ca46bcccdd731b4f4da2f352ce6c0b" # linuxbrew-core
+    sha256 cellar: :any, arm64_big_sur: "797389e5e5a213eec7661c3827fc63613cc4d9f8ab74fae22761a57bcd101af9"
+    sha256 cellar: :any, big_sur:       "9937d6dc3d66446f9c6c5bcb71ca18b9767b691c175991aba73a4359631c692a"
+    sha256 cellar: :any, catalina:      "7aa6135472c7a8c23211279d50f2291f693eb0c86b57bfaad8987e82c7703786"
+    sha256 cellar: :any, mojave:        "dd17f5fb9b42e4c583c9dae41058e22ef0589b9718231171ddb132f573cbbb42"
   end
 
   depends_on "cmake" => :build
@@ -31,6 +31,10 @@ class Armadillo < Formula
 
     system "cmake", ".", "-DDETECT_HDF5=ON", "-DALLOW_OPENBLAS_MACOS=ON", *std_cmake_args
     system "make", "install"
+
+    # Avoid cellar path references that are invalidated by version/revision bumps
+    hdf5 = Formula["hdf5"]
+    inreplace include/"armadillo_bits/config.hpp", hdf5.prefix.realpath, hdf5.opt_prefix
   end
 
   test do

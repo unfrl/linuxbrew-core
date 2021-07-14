@@ -4,11 +4,8 @@ class Ensmallen < Formula
   url "https://github.com/mlpack/ensmallen/archive/2.17.0.tar.gz"
   sha256 "9322cffceaf1e171b427f14e693e03ee9e1033fb404dfdbc8956cd8fa4e331d9"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/mlpack/ensmallen.git"
-
-  bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "cc38c34c95baa0feb8a7f3dd4be40d2bbae443020ca1acff1b969629694646bb" # linuxbrew-core
-  end
 
   depends_on "cmake" => :build
   depends_on "armadillo"
