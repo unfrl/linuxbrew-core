@@ -7,6 +7,10 @@ class Ensmallen < Formula
   revision 1
   head "https://github.com/mlpack/ensmallen.git"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "5fb7dbbdee46a94e038f831925cf693cd982683ffef94467c7d529bce47a4ed2"
+  end
+
   depends_on "cmake" => :build
   depends_on "armadillo"
 
