@@ -11,6 +11,7 @@ class Jrsonnet < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "419f0a50acd6a0cce0abbfe2131d18bdf964fe0d09a095c2c92e10b8b1fb04af"
     sha256 cellar: :any_skip_relocation, catalina:      "08a4bac487db7433903275f05ba23d11a8a8865590a23a868aa105f49416b650"
     sha256 cellar: :any_skip_relocation, mojave:        "d927e34108112f33bfa9bb6d004c3540d983ff789d6e5969a4fc9aa8cba92a99"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8522b75f1d392dfa4b3221baa8d6310f46645f14f8b61319074173cc46723a47"
   end
 
   depends_on "rust" => :build
