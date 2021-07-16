@@ -11,7 +11,7 @@ class Libmatio < Formula
     sha256 cellar: :any,                 big_sur:       "06e8056f9862feace810dd233860e9b77af58e20e3eb916f48525c586e08eb42"
     sha256 cellar: :any,                 catalina:      "84f08acf62972b2fda425f589809892255c401f268b4fbe9465cfdca1a03a3de"
     sha256 cellar: :any,                 mojave:        "36629f8d449fa124cf0557deec222bb732c0ded477b5109011448726bd4f51d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5737ad4a0096f6ff36ec2d208baf1678f0c267b88c1d02a006fdf57172f966d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5737ad4a0096f6ff36ec2d208baf1678f0c267b88c1d02a006fdf57172f966d" # linuxbrew-core
   end
 
   depends_on "hdf5"
