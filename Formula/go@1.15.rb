@@ -15,7 +15,7 @@ class GoAT115 < Formula
     sha256 big_sur:      "4b7fd6ddbe755f924fd0c5509ed9c638445b2cfc973f96ecf1537430710ead3e"
     sha256 catalina:     "b916522c4dc3929e9370f3306476b100b0a42cac514b713eb507a47c7a843d4a"
     sha256 mojave:       "f7d745f62de99ef286c5d0f554964a2242bd0be29ee954be09a0ef9419d6ac2a"
-    sha256 x86_64_linux: "c1ff74df94ea43dfb4e4d8a29889938a4179bcfd4315a3805536b0b10bd4399c"
+    sha256 x86_64_linux: "c1ff74df94ea43dfb4e4d8a29889938a4179bcfd4315a3805536b0b10bd4399c" # linuxbrew-core
   end
 
   keg_only :versioned_formula
